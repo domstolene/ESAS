@@ -31,19 +31,17 @@ Ved introduksjon  av ny versjon er det da avsender sitt ansvar å kommunisere *En
 * Politiet kan da fortsette å behandle meldingene markert med _versjon 1_ helt til de får oppgradert sine systemer til å behandle meldinger merket med _versjon 2_
 * Domstolen forplikter seg da til å sende meldinger på versjon 1 og 2 minst frem til 1.11.2022 (eller til at politiet har informert om at de er på _versjon 2_)
 
-Det vi da oppnår vi at både begge virksomhetene kan implementere oppgradering av kontrakten i takt med sin utrullings sekvens.
+Det vi da oppnår vi at begge virksomhetene kan implementere oppgradering av kontrakten i takt med sin utrullings sekvens.
 I teorien kan avsender være nødt til å sende mange versjoner av den samme meldingen i en periode dersom der det er flere endringer over kort tid.
 
 Med denne løsningen går man fra å være en teknisk utfordring til en mer merkantil beslutning.
 
 
-*Skisse*
+![Rullende Pppgaderinger](./extra/rullendeoppgaderinger.png)
 
-![image info](./extra/rullendeoppgaderinger.png)
+*Grace* - Periode der flere versjoner av den samme meldingen sendes
 
-*Grace* Periode der flere versjoner av den samme meldingen sendes
-
-*EOL Noitfy" Når avsender informerer mottaker om at en gitt versjon ikke publiseres lenger 
+*EOL Noitfy* - Når avsender informerer mottaker om at en gitt versjon ikke publiseres lenger 
 
 *EOL* - Når en gitt versjon ikke publiseres lenger
 
@@ -55,5 +53,5 @@ Med denne løsningen går man fra å være en teknisk utfordring til en mer merkanti
 
 
 ### FAQ
-<Svar til vanlige spørsmål stilt etter RFC til dette forslaget>
+_<Svar til vanlige spørsmål stilt etter RFC til dette forslaget>_
 
