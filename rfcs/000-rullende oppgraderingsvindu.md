@@ -4,7 +4,7 @@
 
 **Authors**: Carl Fredrik Bøkestad
 
-**Status**: Draft
+**Status**: Discussion
 
 ### Problemstilling
 
