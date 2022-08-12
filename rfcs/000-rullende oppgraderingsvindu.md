@@ -37,9 +37,9 @@ I teorien kan avsender være nødt til å sende mange versjoner av den samme mel
 Med denne løsningen går man fra å være en teknisk utfordring til en mer merkantil beslutning.
 
 
-![Rullende Pppgaderinger](./extra/rullendeoppgaderinger.png)
+![Skisse Rullende Pppgaderinger](./extra/Rolling upgrade.svg)
 
-*Grace* - Periode der flere versjoner av den samme meldingen sendes
+*Grace Period* - Periode der flere versjoner av den samme meldingen sendes
 
 *EOL Noitfy* - Når avsender informerer mottaker om at en gitt versjon ikke publiseres lenger 
 
