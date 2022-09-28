@@ -40,9 +40,11 @@
             "navn": "Norge"
           }],
         "adresse": {
-          "adresselinjer": ["Bjørklund 21"],
-          "postnummer": "4137",
-          "poststed": "ÅRDAL I RYFYLKE"
+          "adresse":{
+            "adresselinjer": ["Bjørklund 21"],
+            "postnummer": "4137",
+            "poststed": "ÅRDAL I RYFYLKE"
+          }
         }
       },
       "forsvarer": {
@@ -172,6 +174,7 @@
                 "grunnlagstekst": "Campingbil med kokeutstyr og Breaking Bad DVD'er",
                 "basissaker": [
                   {
+                    "type": "person",
                     "straffesaksnummer": "15434820",
                     "person": {
                       "internId": "700892415",
@@ -183,6 +186,7 @@
                     }
                   },
                   {
+                    "type": "person",
                     "straffesaksnummer": "15434820",
                     "person": {
                       "internId": "700892414",
@@ -210,6 +214,7 @@
                 "grunnlagstekst": "Lormen Quatro ble lappet til av Morsom Kiwi så han blødde neseblod.",
                 "basissaker": [
                   {
+                    "type": "person",
                     "straffesaksnummer": "15434821",
                     "person": {
                       "internId": "700892414",
@@ -237,6 +242,7 @@
                 "grunnlagstekst": "Torsdag 1. januar 2015 kl. 00.00 i Walmannsvegen 81 i Eidskog truet Morsom Kiwi fornærmede med en avsaget hagle.",
                 "basissaker": [
                   {
+                    "type": "person",
                     "straffesaksnummer": "15434850",
                     "person": {
                       "internId": "700892414",
@@ -264,6 +270,7 @@
                 "grunnlagstekst": "Lørdag 1. januar 2022 kl. 00.00 i Waldemar Carlsens veg 4 i Kongsvinger tok Morsom Kiwi og Masse Kiwi og grisebanket dama til Morsom Kiwi Sannferdig Kos. Sannferdig Kos fikk fire knekte ribbeing, knust nese og knekt fot.",
                 "basissaker": [
                   {
+                    "type": "person",
                     "straffesaksnummer": "15434819",
                     "person": {
                       "internId": "700892414",
@@ -275,6 +282,7 @@
                     }
                   },
                   {
+                    "type": "person",
                     "straffesaksnummer": "15434819",
                     "person": {
                       "internId": "700892415",
@@ -286,6 +294,7 @@
                     }
                   },
                   {
+                    "type": "foretak",
                     "straffesaksnummer": "15434819",
                     "foretak": {
                       "internId": "340078107",
@@ -330,54 +339,67 @@
           },
           "medsiktede": [
             {
+              "type": "person",
               "person": {
-                "internId": "700892415",
-                "navn": {
-                  "fornavn": "Masse",
-                  "etternavn": "KIWI"
-                },
-                "foedselsnummer": ["19877099302"],
-                "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19",
-                "statsborgerskap": [
-                  {
-                    "kode": "NOR",
-                    "navn": "Norge"
-                  }],
-                "adresse": {
-                  "adresselinjer": ["Rugdeberget 2"],
-                  "postnummer": "1266",
-                  "poststed": "OSLO"
+                "person": {
+                  "internId": "700892415",
+                  "navn": {
+                    "fornavn": "Masse",
+                    "etternavn": "KIWI"
+                  },
+                  "foedselsnummer": ["19877099302"],
+                  "kjoenn": "MANN",
+                  "foedselsdato": "1970-07-19",
+                  "statsborgerskap": [
+                    {
+                      "kode": "NOR",
+                      "navn": "Norge"
+                    }],
+                  "adresse": {
+                    "adresse": {
+                      "adresselinjer": ["Rugdeberget 2"],
+                      "postnummer": "1266",
+                      "poststed": "OSLO"
+                    }
+                  }
                 }
               }
             },
             {
+              "type": "foretak",
               "foretak": {
-                "internId": "340078107",
-                "organisasjonsnummer": "984954808",
-                "navn": "Obs"
+                "foretak": {
+                  "internId": "340078107",
+                  "organisasjonsnummer": "984954808",
+                  "navn": "Obs"
+                }
               }
             }],
           "fornaermede": [
             {
+              "type": "person",
               "person": {
-                "internId": "700892735",
-                "navn": {
-                  "fornavn": "Sannferdig",
-                  "etternavn": "KOS"
-                },
-                "foedselsnummer": ["31907499858"],
-                "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31",
-                "statsborgerskap": [
-                  {
-                    "kode": "NOR",
-                    "navn": "Norge"
-                  }],
-                "adresse": {
-                  "adresselinjer": ["Bratsberggata 29"],
-                  "postnummer": "3714",
-                  "poststed": "SKIEN"
+                "person": {
+                  "internId": "700892735",
+                  "navn": {
+                    "fornavn": "Sannferdig",
+                    "etternavn": "KOS"
+                  },
+                  "foedselsnummer": ["31907499858"],
+                  "kjoenn": "KVINNE",
+                  "foedselsdato": "1974-10-31",
+                  "statsborgerskap": [
+                    {
+                      "kode": "NOR",
+                      "navn": "Norge"
+                    }],
+                  "adresse": {
+                    "adresse": {
+                      "adresselinjer": ["Bratsberggata 29"],
+                      "postnummer": "3714",
+                      "poststed": "SKIEN"
+                    }
+                  }
                 }
               }
             }],
@@ -397,9 +419,11 @@
                   "navn": "Norge"
                 }],
               "adresse": {
-                "adresselinjer": ["Øvstedalsvegen 87"],
-                "postnummer": "6391",
-                "poststed": "TRESFJORD"
+                "adresse": {
+                  "adresselinjer": ["Øvstedalsvegen 87"],
+                  "postnummer": "6391",
+                  "poststed": "TRESFJORD"
+                }
               }
             }]
         }
@@ -436,33 +460,41 @@
           },
           "medsiktede": [
             {
+              "type": "person",
               "person": {
-                "internId": "700892415",
-                "navn": {
-                  "fornavn": "Masse",
-                  "etternavn": "KIWI"
-                },
-                "foedselsnummer": ["19877099302"],
-                "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19",
-                "statsborgerskap": [
-                  {
-                    "kode": "NOR",
-                    "navn": "Norge"
-                  }],
-                "adresse": {
-                  "adresselinjer": ["Rugdeberget 2"],
-                  "postnummer": "1266",
-                  "poststed": "OSLO"
+                "person": {
+                  "internId": "700892415",
+                  "navn": {
+                    "fornavn": "Masse",
+                    "etternavn": "KIWI"
+                  },
+                  "foedselsnummer": ["19877099302"],
+                  "kjoenn": "MANN",
+                  "foedselsdato": "1970-07-19",
+                  "statsborgerskap": [
+                    {
+                      "kode": "NOR",
+                      "navn": "Norge"
+                    }],
+                  "adresse": {
+                    "adresse": {
+                      "adresselinjer": ["Rugdeberget 2"],
+                      "postnummer": "1266",
+                      "poststed": "OSLO"
+                    }
+                  }
                 }
               }
             }],
           "fornaermede": [
             {
+              "type": "foretak",
               "foretak": {
-                "internId": "60044820",
-                "organisasjonsnummer": "976878442",
-                "navn": "Rema 100"
+                "foretak": {
+                  "internId": "60044820",
+                  "organisasjonsnummer": "976878442",
+                  "navn": "Rema 100"
+                }
               }
             }],
           "vitne": [
@@ -514,19 +546,22 @@
           },
           "fornaermede": [
             {
+              "type": "person",
               "person": {
-                "internId": "700892547",
-                "navn": {
-                  "fornavn": "Lormen",
-                  "etternavn": "QUATRO"
-                },
-                "kjoenn": "MANN",
-                "foedselsdato": "1978-01-12",
-                "statsborgerskap": [
-                  {
-                    "kode": "ITA",
-                    "navn": "Italia"
-                  }]
+                "person": {
+                  "internId": "700892547",
+                  "navn": {
+                    "fornavn": "Lormen",
+                    "etternavn": "QUATRO"
+                  },
+                  "kjoenn": "MANN",
+                  "foedselsdato": "1978-01-12",
+                  "statsborgerskap": [
+                    {
+                      "kode": "ITA",
+                      "navn": "Italia"
+                    }]
+                }
               }
             }]
         }
@@ -563,24 +598,29 @@
           },
           "fornaermede": [
             {
+              "type": "person",
               "person": {
-                "internId": "700892735",
-                "navn": {
-                  "fornavn": "Sannferdig",
-                  "etternavn": "KOS"
-                },
-                "foedselsnummer": ["31907499858"],
-                "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31",
-                "statsborgerskap": [
-                  {
-                    "kode": "NOR",
-                    "navn": "Norge"
-                  }],
-                "adresse": {
-                  "adresselinjer": ["Bratsberggata 29"],
-                  "postnummer": "3714",
-                  "poststed": "SKIEN"
+                "person": {
+                  "internId": "700892735",
+                  "navn": {
+                    "fornavn": "Sannferdig",
+                    "etternavn": "KOS"
+                  },
+                  "foedselsnummer": ["31907499858"],
+                  "kjoenn": "KVINNE",
+                  "foedselsdato": "1974-10-31",
+                  "statsborgerskap": [
+                    {
+                      "kode": "NOR",
+                      "navn": "Norge"
+                    }],
+                  "adresse": {
+                    "adresse": {
+                      "adresselinjer": ["Bratsberggata 29"],
+                      "postnummer": "3714",
+                      "poststed": "SKIEN"
+                    }
+                  }
                 }
               }
             }]

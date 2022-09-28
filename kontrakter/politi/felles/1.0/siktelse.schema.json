@@ -6,12 +6,34 @@
     "basissakerArray": {
       "type": "array",
       "description": "Liste over basissaker med referanse til person eller foretak",
-      "items" :{
-        "oneOf": [
-          {"$ref": "#/$defs/basissakPerson"},
-          {"$ref": "#/$defs/basissakForetak"}
-        ]
-      }
+      "items" : {"$ref": "#/$defs/basissakPersonEllerForetak"}
+    },
+    "basissakPersonEllerForetak": {
+      "description": "Person eller foretak og straffesaksreferanse",
+      "type": "object",
+      "properties": {
+        "straffesaksnummer": {"type": "string"},
+        "type": {"enum": ["person", "foretak"]},
+        "person": {"$ref": "#/references/personMini"},
+        "foretak": {"$ref": "#/references/foretakMini"}
+      },
+      "required": ["straffesaksnummer", "type"],
+      "oneOf": [
+        {
+          "properties":{
+            "type": {"const": "person" },
+            "foretak": {"type": "null"}
+          },
+          "required": ["person"]
+        },
+        {
+          "properties":{
+            "type": {"const": "foretak" },
+            "person": {"type": "null"}
+          },
+          "required": ["foretak"]
+        }
+      ]
     },
     "basissakPerson" : {
       "description": "Person og straffesaksreferanse",

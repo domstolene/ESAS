@@ -5,17 +5,7 @@
   "$defs" :{
     "adresseGradering" : {
       "description" : "Samme enum som folkeregisteret, ugradert hvis den ikke er gradert",
-      "type" : "string", "enum" : ["KLIENT_ADRESSE","FORTROLIG","STRENGT_FORTROLIG"]},
-
-    "personnavn": {
-      "type" : "object",
-      "properties": {
-        "fornavn" : {"type": "string"},
-        "mellomnavn" : {"type": "string"},
-        "etternavn" : {"type": "string"}
-        },
-      "required" : ["etternavn"],
-      "additionalProperties": false
+      "type" : "string", "enum" : ["KLIENT_ADRESSE","FORTROLIG","STRENGT_FORTROLIG"]
     },
 
     "foedselsnummer": {"type" : "string", "pattern": "[0-9]+", "minLength": 11, "maxLength": 11},
@@ -66,19 +56,38 @@
       "required" : ["etternavn"],
       "additionalProperties": false
     },
-
+    "personEllerForetak": {
+      "description": "Person eller foretak og straffesaksreferanse",
+      "type": "object",
+      "properties": {
+        "type": {"enum": ["person", "foretak"]},
+        "person": {"$ref": "#/$defs/personFullNivaa"},
+        "foretak": {"$ref": "#/$defs/foretakNivaa"}
+      },
+      "required": ["type"],
+      "oneOf": [
+        {
+          "properties":{
+            "type": {"const": "person" },
+            "foretak": {"type": "null"}
+          },
+          "required": ["person"]
+        },
+        {
+          "properties":{
+            "type": {"const": "foretak" },
+            "person": {"type": "null"}
+          },
+          "required": ["foretak"]
+        }
+      ]
+    },
+    
     "personForetakArray": {
       "type": "array",
       "title": "Array med person og/eller foretak",
       "items": {
-        "anyOf": [
-          {
-            "$ref": "#/$defs/personFullNivaa"
-          },
-          {
-            "$ref": "#/$defs/foretakNivaa"
-          }
-        ]
+        "$ref": "#/$defs/personEllerForetak"
       }
     },
     "personFullNivaa": {

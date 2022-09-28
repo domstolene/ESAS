@@ -87,17 +87,12 @@
 					"description": "Kanskje fordi domstolene vil trenge å ta kontakt? Trenger vi både postadresse og besøksadresse?"
 				},				
 				"epost": {
-					"anyOf": [
-						{
-							"$ref": "#/definitions/EpostType"
-						},
-						{
-							"items": {
-								"$ref": "#/definitions/EpostType"
-							},
-							"type": "array"
-						}
-					]
+					"items": {
+						"$ref": "#/definitions/EpostType"
+					},
+					"minItems": 1,
+					"type": "array"
+				
 				},
 				"foedselsdato": {
 					"$ref": "#/definitions/xs:date",
@@ -112,17 +107,11 @@
 				},				
 				
 				"telefonnummer": {
-					"anyOf": [
-						{
-							"$ref": "#/definitions/TelefonnummerType"
-						},
-						{
-							"items": {
-								"$ref": "#/definitions/TelefonnummerType"
-							},
-							"type": "array"
-						}
-					]
+					"items": {
+						"$ref": "#/definitions/TelefonnummerType"
+					},
+					"minItems": 1,
+					"type": "array"
 				},
 				"tittel": {
 					"type": "string"
@@ -137,19 +126,12 @@
 					"type": "integer"
 				},
 				"verge": {
-					"anyOf": [
-						{
-							"$ref": "#/definitions/ProfesjonellPerson",
-							"description": "Referanse til person som er verge for denne personen. Vil peke på ProfesjonellPerson."
-						},
-						{
-							"items": {
-								"$ref": "#/definitions/ProfesjonellPerson",
-								"description": "Referanse til person som er verge for denne personen. Vil peke på ProfesjonellPerson."
-							},
-							"type": "array"
-						}
-					]
+					"items": {
+						"$ref": "#/definitions/ProfesjonellPerson",
+						"description": "Referanse til person som er verge for denne personen. Vil peke på ProfesjonellPerson."
+					},
+					"minItems": 1,
+					"type": "array"	
 				},
 				"forsvarer": {					
 					"$ref": "#/definitions/ProfesjonellPerson",
@@ -207,17 +189,10 @@
 					"$ref": "#/definitions/LandkodeType"
 				},
 				"adresselinje": {
-					"anyOf": [
-						{
-							"type": "string"
-						},
-						{
-							"items": {
-								"type": "string"
-							},
-							"type": "array"
-						}
-					]
+					"items": {
+						"type": "string"
+					},
+					"type": "array"
 				},
 				"kommune": {
 					"type": "string"

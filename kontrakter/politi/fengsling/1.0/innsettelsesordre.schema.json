@@ -10,7 +10,7 @@
     "kontaktPersonKDI": {"$ref": "#/definitions/ansatt"},
     "varetektSyklusId": {"type": "string"},
     "ordreId": {"type": "string"},
-    "ordreKjennelse": {"oneOf": [{"$ref": "#/definitions/ordrePaataleOneOf"},{"$ref": "#/definitions/kjennelseVaretektOneOf"}]},
+    "ordreKjennelse": {"$ref": "#/definitions/kjennelseEllerOrdreVaretekt"},
     "paagrepetTidspunkt": {"type": "string","format": "date-time"},
     "personVaretektInfo": {"$ref": "#/definitions/personVaretektInfo"},
     "paategningsdokumentRef": {"$ref": "#/definitions/dokumentRef"},
@@ -159,6 +159,32 @@
       ],
       "type": "string"
     },
+    "kjennelseEllerOrdreVaretekt": {
+      "description": "Kjennelse på varetektsfengsling fra domstolen eller påtale sin ordre/beslutning om fengsling i fengsel",
+      "type": "object",
+      "properties": {
+        "type": {"enum": ["kjennelse", "ordre"]},
+        "kjennelse": {"$ref": "#/definitions/kjennelseVaretekt"},
+        "foretak": {"$ref": "#/definitions/ordreVaretektPaatale"}
+      },
+      "required": ["type"],
+      "oneOf": [
+        {
+          "properties":{
+            "type": {"const": "kjennelse" },
+            "ordre": {"type": "null"}
+          },
+          "required": ["kjennelse"]
+        },
+        {
+          "properties":{
+            "type": {"const": "ordre" },
+            "kjennelse": {"type": "null"}
+          },
+          "required": ["ordre"]
+        }
+      ]
+    },
     "kjennelseVaretekt": {
       "description": "Kjennelse på varetektsfengsling fra domstolen som sendes til Kriminalomsorgen",
       "type": "object",
@@ -171,16 +197,6 @@
         "isolasjon": {"type" : "array", "items": {"$ref": "#/definitions/isolasjonKjennelse"}}
       }
     },
-    "kjennelseVaretektOneOf": {
-      "description": "Enkelt øvereste nivå på OneOf i hovedskjema",
-      "type": "object",
-      "required": ["kjennelse"],
-      "additionalProperties": true,
-      "properties": {
-        "merknad": {"type": "string"},
-        "kjennelse": {"$ref": "#/definitions/kjennelseVaretekt"}
-      }
-    }, 
     "ordreVaretektPaatale": {
       "description": "Påtale sin ordre/beslutning om fengsling i fengsel, før vi har en kjennelse fra retten og for å lette på restriksjoner, det er implisit at det er fengsling",
       "type": "object",
@@ -197,16 +213,6 @@
         "isolasjon": {"$ref": "#/definitions/isolasjonOrdre"}
       }
     },
-    "ordrePaataleOneOf": {
-      "description": "Enkelt øvereste nivå på OneOf i hovedskjema",
-      "type": "object",
-      "required": ["ordre"],
-      "additionalProperties": false,
-      "properties": {
-        "merknad": {"type": "string"},
-        "ordre": {"$ref": "#/definitions/ordreVaretektPaatale"}
-      }
-    },    
     "periodeStartAntall": {
       "description": "Periode for fensling eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
       "type": "object",
@@ -494,16 +500,33 @@
     "personForetakArray": {
       "type": "array",
       "title": "Array med person og/eller foretak",
-      "items": {
-        "oneOf": [
-          {
-            "$ref": "#/definitions/personFullNivaa"
+      "items": {"$ref": "#/definitions/personEllerForetak"}
+    },
+    "personEllerForetak": {
+      "description": "Person eller foretak",
+      "type": "object",
+      "properties": {
+        "type": {"enum": ["person", "foretak"]},
+        "person": {"$ref": "#/definitions/personFullNivaa"},
+        "foretak": {"$ref": "#/definitions/foretakNivaa"}
+      },
+      "required": ["type"],
+      "oneOf": [
+        {
+          "properties":{
+            "type": {"const": "person" },
+            "foretak": {"type": "null"}
           },
-          {
-            "$ref": "#/definitions/foretakNivaa"
-          }
-        ]
-      }
+          "required": ["person"]
+        },
+        {
+          "properties":{
+            "type": {"const": "foretak" },
+            "person": {"type": "null"}
+          },
+          "required": ["foretak"]
+        }
+      ]
     },
     "personFullNivaa": {
       "description": "Ekstra nivå for å få med person navn på item",

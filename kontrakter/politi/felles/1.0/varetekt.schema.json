@@ -111,6 +111,32 @@
       ],
       "type": "string"
     },
+    "kjennelseEllerOrdreVaretekt": {
+      "description": "Kjennelse på varetektsfengsling fra domstolen eller påtale sin ordre/beslutning om fengsling i fengsel",
+      "type": "object",
+      "properties": {
+        "type": {"enum": ["kjennelse", "ordre"]},
+        "kjennelse": {"$ref": "#/definitions/kjennelseVaretekt"},
+        "foretak": {"$ref": "#/definitions/ordreVaretektPaatale"}
+      },
+      "required": ["type"],
+      "oneOf": [
+        {
+          "properties":{
+            "type": {"const": "kjennelse" },
+            "ordre": {"type": "null"}
+          },
+          "required": ["kjennelse"]
+        },
+        {
+          "properties":{
+            "type": {"const": "ordre" },
+            "kjennelse": {"type": "null"}
+          },
+          "required": ["ordre"]
+        }
+      ]
+    },
     "kjennelseVaretekt": {
       "description": "Kjennelse på varetektsfengsling fra domstolen som sendes til Kriminalomsorgen",
       "type": "object",
@@ -123,16 +149,6 @@
         "isolasjon": {"type" : "array", "items": {"$ref": "#/$defs/restriksjonKjennelse"}}
       }
     },
-    "kjennelseVaretektOneOf": {
-      "description": "Enkelt øvereste nivå på OneOf i hovedskjema",
-      "type": "object",
-      "required": ["kjennelse"],
-      "additionalProperties": true,
-      "properties": {
-        "merknad": {"type": "string"},
-        "kjennelse": {"$ref": "#/$defs/kjennelseVaretekt"}
-      }
-    }, 
     "ordreVaretektPaatale": {
       "description": "Påtale sin ordre/beslutning om fengsling i fengsel, før vi har en kjennelse fra retten og for å lette på restriksjoner, det er implisit at det er fengsling",
       "type": "object",
@@ -149,16 +165,6 @@
         "isolasjon": {"$ref": "#/$defs/isolasjonOrdre"}
       }
     },
-    "ordrePaataleOneOf": {
-      "description": "Enkelt øvereste nivå på OneOf i hovedskjema",
-      "type": "object",
-      "required": ["ordre"],
-      "additionalProperties": false,
-      "properties": {
-        "merknad": {"type": "string"},
-        "ordre": {"$ref": "#/$defs/ordreVaretektPaatale"}
-      }
-    },    
     "periodeStartAntall": {
       "description": "Periode for fensling eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
       "type": "object",

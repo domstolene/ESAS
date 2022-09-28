@@ -25,7 +25,7 @@
         "varetektSyklusId": {"type": "string"},
         "personVaretekt": {"$ref": "#/references/personFull"},
         "ordreId": {"type": "string"},
-        "ordreKjennelse": {"oneOf": [{"$ref": "#/references/ordrePaataleOneOf"},{"$ref": "#/references/kjennelseVaretektOneOf"}]},
+        "ordreKjennelse": {"$ref": "#/references/kjennelseEllerOrdreVaretekt"},
         "paagrepetTidspunkt": {"type": "string","format": "date-time"},
         "dokumenter": {"type": "array", "items": {"$ref" : "#/references/dokument"}}
       }
@@ -35,8 +35,7 @@
     "ansatt" : {"$ref" : "../../felles/1.0/basistyper.schema.json#/$defs/ansatt"},
     "dokument": {"$ref": "../../felles/1.0/dokument.schema.json#/$defs/dokument"},
     "forsendelse": {"$ref": "../../felles/1.0/forsendelse.schema.json#/$defs/forsendelse"},
-    "kjennelseVaretektOneOf": {"$ref": "../../felles/1.0/varetekt.schema.json#/$defs/kjennelseVaretektOneOf"},
-    "ordrePaataleOneOf": {"$ref": "../../felles/1.0/varetekt.schema.json#/$defs/ordrePaataleOneOf"},
+    "kjennelseEllerOrdreVaretekt": {"$ref": "../../felles/1.0/varetekt.schema.json#/$defs/kjennelseEllerOrdreVaretekt"},
     "personFull": {"$ref": "../../felles/1.0/person.schema.json#/$defs/personFull"}
   }
 }
