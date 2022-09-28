@@ -341,26 +341,24 @@
             {
               "type": "person",
               "person": {
-                "person": {
-                  "internId": "700892415",
-                  "navn": {
-                    "fornavn": "Masse",
-                    "etternavn": "KIWI"
-                  },
-                  "foedselsnummer": ["19877099302"],
-                  "kjoenn": "MANN",
-                  "foedselsdato": "1970-07-19",
-                  "statsborgerskap": [
-                    {
-                      "kode": "NOR",
-                      "navn": "Norge"
-                    }],
+                "internId": "700892415",
+                "navn": {
+                  "fornavn": "Masse",
+                  "etternavn": "KIWI"
+                },
+                "foedselsnummer": ["19877099302"],
+                "kjoenn": "MANN",
+                "foedselsdato": "1970-07-19",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }],
+                "adresse": {
                   "adresse": {
-                    "adresse": {
-                      "adresselinjer": ["Rugdeberget 2"],
-                      "postnummer": "1266",
-                      "poststed": "OSLO"
-                    }
+                    "adresselinjer": ["Rugdeberget 2"],
+                    "postnummer": "1266",
+                    "poststed": "OSLO"
                   }
                 }
               }
@@ -368,37 +366,33 @@
             {
               "type": "foretak",
               "foretak": {
-                "foretak": {
-                  "internId": "340078107",
-                  "organisasjonsnummer": "984954808",
-                  "navn": "Obs"
-                }
+                "internId": "340078107",
+                "organisasjonsnummer": "984954808",
+                "navn": "Obs"
               }
             }],
           "fornaermede": [
             {
               "type": "person",
               "person": {
-                "person": {
-                  "internId": "700892735",
-                  "navn": {
-                    "fornavn": "Sannferdig",
-                    "etternavn": "KOS"
-                  },
-                  "foedselsnummer": ["31907499858"],
-                  "kjoenn": "KVINNE",
-                  "foedselsdato": "1974-10-31",
-                  "statsborgerskap": [
-                    {
-                      "kode": "NOR",
-                      "navn": "Norge"
-                    }],
+                "internId": "700892735",
+                "navn": {
+                  "fornavn": "Sannferdig",
+                  "etternavn": "KOS"
+                },
+                "foedselsnummer": ["31907499858"],
+                "kjoenn": "KVINNE",
+                "foedselsdato": "1974-10-31",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }],
+                "adresse": {
                   "adresse": {
-                    "adresse": {
-                      "adresselinjer": ["Bratsberggata 29"],
-                      "postnummer": "3714",
-                      "poststed": "SKIEN"
-                    }
+                    "adresselinjer": ["Bratsberggata 29"],
+                    "postnummer": "3714",
+                    "poststed": "SKIEN"
                   }
                 }
               }
@@ -462,26 +456,24 @@
             {
               "type": "person",
               "person": {
-                "person": {
-                  "internId": "700892415",
-                  "navn": {
-                    "fornavn": "Masse",
-                    "etternavn": "KIWI"
-                  },
-                  "foedselsnummer": ["19877099302"],
-                  "kjoenn": "MANN",
-                  "foedselsdato": "1970-07-19",
-                  "statsborgerskap": [
-                    {
-                      "kode": "NOR",
-                      "navn": "Norge"
-                    }],
+                "internId": "700892415",
+                "navn": {
+                  "fornavn": "Masse",
+                  "etternavn": "KIWI"
+                },
+                "foedselsnummer": ["19877099302"],
+                "kjoenn": "MANN",
+                "foedselsdato": "1970-07-19",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }],
+                "adresse": {
                   "adresse": {
-                    "adresse": {
-                      "adresselinjer": ["Rugdeberget 2"],
-                      "postnummer": "1266",
-                      "poststed": "OSLO"
-                    }
+                    "adresselinjer": ["Rugdeberget 2"],
+                    "postnummer": "1266",
+                    "poststed": "OSLO"
                   }
                 }
               }
@@ -490,11 +482,9 @@
             {
               "type": "foretak",
               "foretak": {
-                "foretak": {
-                  "internId": "60044820",
-                  "organisasjonsnummer": "976878442",
-                  "navn": "Rema 100"
-                }
+                "internId": "60044820",
+                "organisasjonsnummer": "976878442",
+                "navn": "Rema 100"
               }
             }],
           "vitne": [
@@ -548,20 +538,18 @@
             {
               "type": "person",
               "person": {
-                "person": {
-                  "internId": "700892547",
-                  "navn": {
-                    "fornavn": "Lormen",
-                    "etternavn": "QUATRO"
-                  },
-                  "kjoenn": "MANN",
-                  "foedselsdato": "1978-01-12",
-                  "statsborgerskap": [
-                    {
-                      "kode": "ITA",
-                      "navn": "Italia"
-                    }]
-                }
+                "internId": "700892547",
+                "navn": {
+                  "fornavn": "Lormen",
+                  "etternavn": "QUATRO"
+                },
+                "kjoenn": "MANN",
+                "foedselsdato": "1978-01-12",
+                "statsborgerskap": [
+                  {
+                    "kode": "ITA",
+                    "navn": "Italia"
+                  }]
               }
             }]
         }
@@ -600,26 +588,24 @@
             {
               "type": "person",
               "person": {
-                "person": {
-                  "internId": "700892735",
-                  "navn": {
-                    "fornavn": "Sannferdig",
-                    "etternavn": "KOS"
-                  },
-                  "foedselsnummer": ["31907499858"],
-                  "kjoenn": "KVINNE",
-                  "foedselsdato": "1974-10-31",
-                  "statsborgerskap": [
-                    {
-                      "kode": "NOR",
-                      "navn": "Norge"
-                    }],
+                "internId": "700892735",
+                "navn": {
+                  "fornavn": "Sannferdig",
+                  "etternavn": "KOS"
+                },
+                "foedselsnummer": ["31907499858"],
+                "kjoenn": "KVINNE",
+                "foedselsdato": "1974-10-31",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }],
+                "adresse": {
                   "adresse": {
-                    "adresse": {
-                      "adresselinjer": ["Bratsberggata 29"],
-                      "postnummer": "3714",
-                      "poststed": "SKIEN"
-                    }
+                    "adresselinjer": ["Bratsberggata 29"],
+                    "postnummer": "3714",
+                    "poststed": "SKIEN"
                   }
                 }
               }

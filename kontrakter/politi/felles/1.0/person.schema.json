@@ -34,14 +34,6 @@
       "required": ["internId","navn"],
       "additionalProperties": false
     },
-    "foretakNivaa": {
-      "description": "Ekstra nivå for å få med foretak navn på item i miks liste",
-      "type": "object",
-      "required": ["foretak"],
-      "properties": {
-        "foretak" : {"$ref": "#/$defs/foretak"}
-      }
-    },
 
     "kjoenn" : {
       "description" : "Samme enum som folkeregisteret",
@@ -61,8 +53,8 @@
       "type": "object",
       "properties": {
         "type": {"enum": ["person", "foretak"]},
-        "person": {"$ref": "#/$defs/personFullNivaa"},
-        "foretak": {"$ref": "#/$defs/foretakNivaa"}
+        "person": {"$ref": "#/$defs/personFull"},
+        "foretak": {"$ref": "#/$defs/foretak"}
       },
       "required": ["type"],
       "oneOf": [
@@ -88,14 +80,6 @@
       "title": "Array med person og/eller foretak",
       "items": {
         "$ref": "#/$defs/personEllerForetak"
-      }
-    },
-    "personFullNivaa": {
-      "description": "Ekstra nivå for å få med person navn på item",
-      "type": "object",
-      "required": ["person"],
-      "properties": {
-        "person" : {"$ref": "#/$defs/personFull"}
       }
     },
 
