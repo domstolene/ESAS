@@ -11,7 +11,7 @@
                 <targetPath>esas/varetekt</targetPath>
                 <directory>kontrakter/politi/varetekt</directory>
                 <includes>
-                    <include>**/*.json</include>
+                    <include>**/*.schema.json</include>
                 </includes>
             </resource>
         </resources>
