@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.esas</groupId>
     <artifactId>kontrakter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
 
     <build>
         <resources>
