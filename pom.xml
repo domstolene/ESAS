@@ -6,6 +6,7 @@
     <version>${revision}</version>
     <packaging>jar</packaging>
     <description>Json-schemaer definert i ESAS-prosjektet</description>
+    <url>https://github.com/domstolene/ESAS</url>
 
     <licenses>
         <license>
@@ -42,6 +43,22 @@
                 </includes>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <distributionManagement>
