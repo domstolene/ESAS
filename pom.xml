@@ -4,6 +4,33 @@
     <groupId>no.esas</groupId>
     <artifactId>kontrakter</artifactId>
     <version>${revision}</version>
+    <packaging>jar</packaging>
+    <description>Json-schemaer definert i ESAS-prosjektet</description>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <organization>Politiet</organization>
+            <organizationUrl>https://www.politiet.no</organizationUrl>
+        </developer>
+        <developer>
+            <organization>Norges domstoler</organization>
+            <organizationUrl>https://www.domstol.no</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <developerConnection>scm:git:git@github.com:domstolene/ESAS.git</developerConnection>
+        <connection>scm:git:git@github.com:domstolene/ESAS.git</connection>
+        <url>https://github.com/domstolene/ESAS</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <build>
         <resources>
