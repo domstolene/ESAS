@@ -7,6 +7,7 @@
     <packaging>jar</packaging>
     <description>Json-schemaer definert i ESAS-prosjektet</description>
     <url>https://github.com/domstolene/ESAS</url>
+    <name>ESAS-kontrakter</name>
 
     <licenses>
         <license>
