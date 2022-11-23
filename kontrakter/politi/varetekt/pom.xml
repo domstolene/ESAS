@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>begjaering-varetekt</artifactId>
     <packaging>jar</packaging>
-    <name>${artifactId}</name>
+    <name>Begjæring om varetekt</name>
     <description>JSON-schema for begjæring om varetekt</description>
 
     <parent>
-        <groupId>io.github.domstolene</groupId>
-        <artifactId>esas-kontrakter</artifactId>
+        <groupId>io.github.domstolene.esas</groupId>
+        <artifactId>kontrakter</artifactId>
         <version>tmp</version>
         <relativePath>../../../pom.xml</relativePath>
     </parent>
@@ -16,10 +16,10 @@
     <build>
         <resources>
             <resource>
-                <targetPath>esas/varetekt</targetPath>
+                <targetPath>schema</targetPath>
                 <directory>./</directory>
                 <includes>
-                    <include>**/*.schema.json</include>
+                    <include>**/*.json</include>
                 </includes>
             </resource>
         </resources>
