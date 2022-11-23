@@ -3,11 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.domstolene</groupId>
     <artifactId>esas-kontrakter</artifactId>
-    <version>${revision}</version>
-    <packaging>jar</packaging>
+    <version>tmp</version>
+    <packaging>pom</packaging>
     <description>Json-schemaer definert i ESAS-prosjektet</description>
     <url>https://github.com/domstolene/ESAS</url>
-    <name>ESAS-kontrakter</name>
 
     <licenses>
         <license>
@@ -34,18 +33,10 @@
         <tag>HEAD</tag>
     </scm>
 
-    <build>
-        <resources>
-            <resource>
-                <targetPath>esas/varetekt</targetPath>
-                <directory>kontrakter/politi/varetekt</directory>
-                <includes>
-                    <include>**/*.schema.json</include>
-                </includes>
-            </resource>
-        </resources>
+    <modules>
+        <module>kontrakter/politi/varetekt</module>
+    </modules>
 
-    </build>
     <profiles>
         <profile>
             <id>ossrh</id>
