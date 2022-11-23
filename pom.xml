@@ -5,8 +5,9 @@
     <artifactId>esas-kontrakter</artifactId>
     <version>tmp</version>
     <packaging>pom</packaging>
-    <description>Json-schemaer definert i ESAS-prosjektet</description>
     <url>https://github.com/domstolene/ESAS</url>
+    <name>${artifactId}</name>
+    <description>Parent for kontrakter definert i ESAS-prosjektet</description>
 
     <licenses>
         <license>
