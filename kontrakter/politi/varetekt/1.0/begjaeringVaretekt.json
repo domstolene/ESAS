@@ -122,7 +122,9 @@
     },
     "saksinformasjon": {
       "varetektsType": "VANLIG",
-      "forlengelse": "Siktede ble fengslet ved <.................> tingretts kjennelse av <.................>, jf. dok. nr. <.................>. ",
+      "forlengelse": {
+        "beskrivelse": "Siktede ble fengslet ved <.................> tingretts kjennelse av <.................>, jf. dok. nr. <.................>. "
+      },
       "hovedforhandling": {
         "beskrivelse": "Påtalemyndigheten har som mål å beramme hovedforhandling før varetektsperioden utløper, hovedforhandling starter ..",
         "berammetDato": "2022-12-01"

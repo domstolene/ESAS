@@ -34,7 +34,7 @@
       "type": "object",
       "properties": {
         "siktelse": {"$ref": "#/definitions/siktelseTiltale"},
-        "straffesaker": {"type": "array", "items": {"$ref": "#/definitions/straffesakMedInvolverteSiktet"}, "minContains": 1},
+        "straffesaker": {"type": "array", "items": {"$ref": "#/definitions/straffesakMedInvolverteSiktet"}, "minItems": 1},
         "dokumenter": {"type": "array", "items": {"$ref": "#/definitions/dokument"}}
       },
       "required": ["straffesaker", "dokumenter"],
@@ -153,8 +153,8 @@
         "adresselinjer": {
           "type": "array",
           "items": {"type": "string","minLength": 1, "maxLength": 500},
-          "minContains": 1,
-          "maxContains": 4
+          "minItems": 1,
+          "maxItems": 4
         },
         "postnummer": {"type": "string"},
         "poststed": {"type": "string"},
@@ -592,7 +592,7 @@
       "properties": {
         "bokstav": {"type": "string"},
         "grunnlagstekst": {"type": "string"},
-        "basissaker": {"type": "array", "items": {"$ref": "#/definitions/basissak"}, "minContains": 1}
+        "basissaker": {"type": "array", "items": {"$ref": "#/definitions/basissak"}, "minItems": 1}
       },
       "required": ["grunnlagstekst","basissaker"],
       "additionalProperties": false
