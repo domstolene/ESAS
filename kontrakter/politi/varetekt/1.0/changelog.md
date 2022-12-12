@@ -1,6 +1,13 @@
 # Versjon 1.0 som vi til slutt skal gå i produksjon med i ESAS II
 
 ## Versjoner log
+### ESAS-157-begjaeringVaretekt-oppdater
+Justering på Schema for å synke med kommentarer de siste ukene.
+Retningslinjer oppdatert: https://domstol.atlassian.net/wiki/spaces/ESAS/pages/4055105853/Retningslinjer+for+modellering+av+meldinger 
+1. oneOf med properties uten enum. Dvs. vi bruker ikke varianten med variabel property definition da de skaper problemer med kodegenerering.
+   personForetak, personForetakEnkel, personIdentifikator
+2. Vilkår som enumerert type
+3. under18
 ### PR ESAS-157 ett schema for begjæring 2
 Endringer etter pull request https://github.com/domstolene/ESAS/pull/16
 1. Organisasjon skal ikke inneholde kontaktinformasjon.

@@ -133,7 +133,7 @@
       "properties": {
         "lovbud": {"$ref": "#/definitions/lovbudEnkel"},
         "paastandVaretekt": {"$ref": "#/definitions/paastandVaretekt", "description": "Påtale sine ønsker for varetekt."},
-        "vilkaar": {"type": "array", "items": {"$ref": "#/definitions/lovbudEnkel"}, "description": "Vilkårene listet enkeltvis. Disse er sammenstilt i lovbudStreng"}
+        "vilkaar": {"type": "array", "items": {"$ref": "#/definitions/vilkaar"}, "description": "Vilkårene listet enkeltvis. Disse er sammenstilt i lovbudStreng"}
       },
       "required": ["lovbud", "paastandVaretekt", "vilkaar"],
       "additionalProperties": false
@@ -146,6 +146,26 @@
       ],
       "type": "string"
     },
+    "vilkaarsType": {
+      "description": "Hvilket vilkår gjelder for varetektsfengslingen. 173 brukes ved vilkårsbrudd.",
+      "enum": [
+        "STRPL170A_FORHOLSMESSIGHET", "STRPL171_1_UNNDRAGELSESFARE", "STRPL171_2_BEVISFORSPILLELSE",
+        "STRPL171_3_GJENTAGELSESFARE", "STRPL171_4_FYLDESTGJOERENDE_GRUNNER", "STRPL172_A_10_AAR",
+        "STRPL172_B_GROV_VOLD",
+        "STRPL173A_A_UNNDRAGELSESFARE_VILK","STRPL173A_B_HINDRE_VILK", "STRPL173A_C_BEGJAERT_SIKTEDE"
+      ],
+      "type": "string"
+    },
+    "vilkaar": {
+      "description": "Et vilkår for varetektsfengsling",
+      "type": "object",
+      "properties": {
+        "type": {"$ref": "#/definitions/vilkaarsType"},
+        "lovbudEnkel": {"$ref": "#/definitions/lovbudEnkel"}
+      },
+      "required": ["type", "lovbudEnkel"],
+      "additionalProperties": false
+    },      
 
     "adresse": {
       "type": "object",
@@ -407,6 +427,11 @@
     "personIdentifikator": {
       "description": "Fødselsnummer, D-nummer eller SSP nummer",
       "type": "object",
+      "properties": {
+        "foedselsnummer": {"$ref": "#/definitions/foedselsnummer"},
+        "sspNummer": {"$ref": "#/definitions/sspNummer"},
+        "dNummer": {"$ref": "#/definitions/dNummer"}
+      },     
       "oneOf": [
         {
           "properties": {
@@ -464,24 +489,22 @@
       "description": "En siktet eller fornærmet kan være en person eller et foretak, denne typen er enten person eller foretak.",
       "type": "object",
       "properties": {
-        "type": {"enum": ["person", "foretak"]},
         "person": {"$ref": "#/definitions/person"},
         "foretak": {"$ref": "#/definitions/foretak"}
       },
-      "required": ["type"],
       "oneOf": [
         {
           "properties":{
-            "type": {"const": "person" },
-            "foretak": {"type": "null"}
+            "person": {"$ref": "#/definitions/person"}
           },
+          "additionalProperties": false,
           "required": ["person"]
         },
         {
           "properties":{
-            "type": {"const": "foretak" },
-            "person": {"type": "null"}
+            "foretak": {"$ref": "#/definitions/foretak"}
           },
+          "additionalProperties": false,
           "required": ["foretak"]
         }
       ]
@@ -491,25 +514,23 @@
       "description": "En siktet eller fornærmet kan være en person eller et foretak, denne typen er enten person eller foretak.",
       "type": "object",
       "properties": {
-        "type": {"enum": ["personEnkel", "foretakEnkel"]},
         "personEnkel": {"$ref": "#/definitions/personEnkel"},
         "foretakEnkel": {"$ref": "#/definitions/foretak"}
       },
-      "required": ["type"],
       "oneOf": [
         {
           "properties":{
-            "type": {"const": "personEnkel" },
-            "foretakEnkel": {"type": "null"}
+            "personEnkel": {"$ref": "#/definitions/personEnkel"}
           },
-          "required": ["personEnkel"]
+          "required": ["personEnkel"],
+          "additionalProperties": false
         },
         {
           "properties":{
-            "type": {"const": "foretakEnkel" },
-            "personEnkel": {"type": "null"}
+            "foretakEnkel": {"$ref": "#/definitions/foretak"}
           },
-          "required": ["foretakEnkel"]
+          "required": ["foretakEnkel"],
+          "additionalProperties": false
         }
       ]
     },
