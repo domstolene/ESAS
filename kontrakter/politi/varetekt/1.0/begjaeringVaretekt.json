@@ -65,12 +65,10 @@
       },
       "paastandVaretekt": {
         "fengsling": {
-          "id": "FA1B8C07-95D0-42CE-96DB-5A2D1ECD54DA",
           "antallDager": 28
         },
         "restriksjoner": [
           {
-            "id": "FC82C8C6-B7B8-4880-8DEC-10B4FC7B0BF5",
             "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
             "lovbudEnkel": {
               "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
@@ -81,7 +79,6 @@
             }
           },
           {
-            "id": "45080BAB-4AC2-4487-A61E-401C18CE6AA4",
             "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
             "lovbudEnkel": {
               "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
@@ -94,7 +91,6 @@
         ],
         "isolasjon": [
           {
-            "id": "40489FA8-387E-4061-907D-B909FE992A5A",
             "isolasjonsType": "FULL_ISOLASJON",
             "lovbudEnkel": {
               "lovbudStreng": "Strpl. § 186a"

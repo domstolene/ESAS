@@ -194,14 +194,11 @@
       "type": "object",
       "description": "Hvor lenge i varetekt ",
       "properties": {
-        "id": {
-          "type": "string"
-        },
         "antallDager": {
           "type": "integer"
         }
       },
-      "required": ["id", "antallDager"],
+      "required": ["antallDager"],
       "additionalProperties": false
     },
     "forlengelseInfo": {
@@ -505,9 +502,6 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": {
-          "type": "string"
-        },
         "isolasjonsType": {
           "$ref": "#/definitions/isolasjonsType"
         },
@@ -518,7 +512,7 @@
           "$ref": "#/definitions/periodeStartAntall"
         }
       },
-      "required": ["id", "isolasjonsType", "lovbudEnkel", "periode"]
+      "required": ["isolasjonsType", "lovbudEnkel", "periode"]
     },
     "isolasjonsType": {
       "type": "string",
@@ -541,12 +535,9 @@
     },
     "restriksjonBegjaering": {
       "type": "object",
-      "required": ["id", "restriksjonsType", "lovbudEnkel", "periode"],
+      "required": ["restriksjonsType", "lovbudEnkel", "periode"],
       "additionalProperties": false,
       "properties": {
-        "id": {
-          "type": "string"
-        },
         "restriksjonsType": {
           "$ref": "#/definitions/restriksjonsType"
         },
