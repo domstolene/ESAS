@@ -11,8 +11,8 @@
     "kontaktPersonKDI": {"$ref": "#/definitions/ansatt"},
     "varetektSyklusId": {"type": "string"},
     "personVaretektInfo": {"$ref": "#/definitions/personVaretektInfo"},
-    "restriksjoner": {"type" : "array", "items": {"$ref": "#/definitions/restriksjonKjennelse"}},
-    "isolasjon": {"type" : "array", "items": {"$ref": "#/definitions/isolasjonKjennelse"}},
+    "restriksjoner": {"type" : "array", "items": {"$ref": "#/definitions/restriksjon"}},
+    "isolasjon": {"type" : "array", "items": {"$ref": "#/definitions/isolasjon"}},
     "paagrepetTidspunkt": {"type": "string","format": "date-time"},
     "paategningsdokumentRef": {"$ref": "#/definitions/dokumentRef"},
     "dokumenter": {"type": "array", "items": {"$ref" : "#/definitions/dokument"}}
@@ -212,40 +212,6 @@
         "tilDato": {"description": "Dato", "type": "string", "format": "date-time"}
       }
     },
-    "isolasjonBegjaering": {
-      "type": "object",
-      "required": ["id","isolasjonsType","lovbud","periode"],
-      "additionalProperties": false,
-      "properties": {
-        "id": {"type": "string"},
-        "isolasjonsType": {"$ref": "#/definitions/isolasjonsType"},
-        "lovbudEnkel": {"$ref": "#/definitions/lovbudEnkel"},
-        "periode": {"$ref": "#/definitions/periodeStartAntall"}
-      }
-    },
-    "isolasjonKjennelse": {
-      "description": "Isolasjon fra domstolen, når vi har mottatt den, uten til fra dato kun når det er anke",
-      "type": "object",
-      "required": ["isolasjon", "domstol"],
-      "additionalProperties": false,
-      "properties": {
-        "avgjoerelseId": {"type": "string"},
-        "domstol": {"$ref": "#/definitions/organisasjon"},
-        "avsagtDato": {"description": "Dato", "type": "string", "format": "date-time"},
-        "isolasjon": {"$ref": "#/definitions/isolasjon"},
-        "anke": {"$ref": "#/definitions/anke"}
-      }
-    },
-    "isolasjonOrdre": {
-      "description": "Isolasjon fra påtale, dvs. fraDato eller tilDato vil ikke være utfylt før første kjennelse",
-      "type": "object",
-      "required": ["merknad","isolasjon"],
-      "additionalProperties": false,
-      "properties": {
-        "merknad": {"type": "string"},
-        "isolasjon": {"type": "array", "items": {"$ref": "#/definitions/isolasjon"}, "minContains": 1}
-      }
-    },
     "isolasjonsType": {
       "description": "Liste over de ulike isolasjonstyper",
       "enum": [
@@ -377,17 +343,6 @@
       }
     },
 
-    "restriksjonBegjaering": {
-      "type": "object",
-      "required": ["id","restriksjonsType","lovbudEnkel","periode"],
-      "additionalProperties": false,
-      "properties": {
-        "id": {"type": "string"},
-        "restriksjonsType": {"$ref": "#/definitions/restriksjonsType"},
-        "lovbudEnkel": {"$ref": "#/definitions/lovbudEnkel"},
-        "periode": {"$ref": "#/definitions/periodeStartAntall"}
-      }
-    },
     "restriksjonKjennelse": {
       "description": "Restriksjon fra domstolen, når vi har mottatt den, uten til fra dato kun når det er anke",
       "type": "object",
