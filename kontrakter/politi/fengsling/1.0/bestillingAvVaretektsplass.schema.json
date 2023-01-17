@@ -7,7 +7,7 @@
     "melding": {"type": "string"},
     "forsendelse": {"$ref": "#/definitions/forsendelse"},
     "hovedStraffesaksnummer": {"type": "string"},
-    "ordreId": {"type": "string"},
+    "bestillingAvVaretektsplassd": {"type": "string"},
     "kontaktPersonKDI": {"$ref": "#/definitions/ansatt"},
     "varetektSyklusId": {"type": "string"},
     "personVaretektInfo": {"$ref": "#/definitions/personVaretektInfo"},
@@ -60,7 +60,6 @@
         }
       }
     },
-
     "adresse": {
       "type" : "object",
       "properties": {
@@ -77,29 +76,10 @@
       "required" : ["adresselinjer"],
       "additionalProperties": false
     },
-
     "adresseGradering" : {
       "description" : "Samme enum som folkeregisteret, ugradert hvis den ikke er gradert",
-      "type" : "string", "enum" : ["KLIENT_ADRESSE","FORTROLIG","STRENGT_FORTROLIG"]},
-
-		"anke": {
-      "description": "Anke av fengsling/restriksjon/kjennelse",
-      "type": "object",
-      "required": ["anketAv", "oppsettendeVirkning"],
-      "additionalProperties": false,
-			"properties": {				
-				
-				"anketDato": {"description": "Dato", "type": "string", "format": "date-time"},
-				"anketAv": {"$ref": "#/definitions/anketAvType"},
-				"oppsettendeVirkning": {"type": "boolean"					
-				}
-			}
-		},		
-		"anketAvType": {
-			"description": "Hvem av partene har anket",
-			"enum": ["SIKTET","FORSVARER", "AKTOR"],
-			"type": "string"
-		},
+      "type" : "string", "enum" : ["KLIENT_ADRESSE","FORTROLIG","STRENGT_FORTROLIG"]
+    },
 	  "ansatt": {
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "type": "object",
@@ -111,8 +91,7 @@
       },
       "required" : ["navn"],
       "additionalProperties": false
-    },
-
+    },    
 	  "avsender" : {
 		  "properties": {
 			  "organisasjon" : {"$ref": "#/definitions/organisasjon"},
@@ -121,18 +100,6 @@
 		  "required" : ["organisasjon"],
 		  "additionalProperties": false
     },
-
-    "avgjoerelseDomstol": {
-      "description": "Kjennelse(r) fra retten, etter anke kan antagelig flere retter være involvert og da må vi endre denne",
-      "type": "object",
-      "required": ["kjennelse"],
-      "additionalProperties": false,
-      "properties": {
-        "merknad": {"type": "string"},
-        "kjennelse": {"type": "string"}
-      }
-    },
-
     "dokument" : {
       "description": "Dokument som oversendes på justishub",
       "properties": {
@@ -145,7 +112,6 @@
       "required" : ["overskrift", "forsendelse"],
       "additionalProperties": false
     },
-
     "dokumentForsendelse" : {
       "description": "Detaljer om lokasjon og type",
       "properties": {
@@ -173,19 +139,6 @@
         "lovbudEnkel": {"$ref": "#/definitions/lovbudEnkel"},
         "fraDato": {"description": "Dato, som domstolene spesifiserer","type": "string", "format": "date-time"},
         "tilDato": {"description": "Dato, som domstolene spesifiserer","type": "string", "format": "date-time"}
-      }
-    },
-    "fengslingKjennelse": {
-      "description": "Fengsling som en del av kjennelsen, uten datoer så er det ikke noe fengsel",
-      "type": "object",
-      "required": ["fengsling", "domstol"],
-      "additionalProperties": false,
-      "properties": {
-        "avgjoerelseId": {"type": "string"},
-        "domstol": {"$ref": "#/definitions/organisasjon"},
-        "avsagtDato": {"description": "Dato","type": "string", "format": "date-time"},
-        "fengsling": {"$ref": "#/definitions/fengsling"},
-        "anke": {"$ref": "#/definitions/anke"}
       }
     },
 	  "forsendelse" : {
@@ -220,7 +173,6 @@
       ],
       "type": "string"
     },
-
 	  "kodeverk" : {
 		  "properties": {
 			"kode" : {"type" : "string"},
@@ -236,7 +188,6 @@
 		  },
 		  "additionalProperties": false
 	  },
-
     "land": {
       "description": "ISO-3166, Kosovo kommer",
       "type": "object",
@@ -246,7 +197,6 @@
         },
       "required" : ["kode"]
     },
-
     "lovbudFull" : {
       "description": "Lovvbudreferanse med gjengivelse og strafferamme",
       "properties": {
@@ -269,7 +219,6 @@
       "required" : ["lovbudStreng", "gjengivelse"],
       "additionalProperties": false
     },
-
     "lovbudEnkel" : {
       "description": "Enkel lovbudreferanse kun lovbudstreng",
       "properties": {
@@ -288,7 +237,6 @@
       "required" : ["rettskilde", "lovreferanse"],
       "additionalProperties": false
     },
-
     "lovreferanseElement" : {
       "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
       "properties": {
@@ -298,7 +246,6 @@
       "required" : ["type", "verdi"],
       "additionalProperties": false
     },
-
 	  "mottaker" : {
 		  "properties": {
 			  "organisasjon" : {"$ref": "#/definitions/organisasjon"}
@@ -306,7 +253,6 @@
 		  "required" : ["organisasjon"],
 		  "additionalProperties": false
     },
-
     "organisasjon": {
       "description": "Organisasjon som kan sende eller motta JustisHub meldinger",
       "type": "object",
@@ -318,7 +264,6 @@
       "required": ["organisasjonsnummer","navn"],
       "additionalProperties": false
     },
-
     "periodeStartAntall": {
       "description": "Periode for fensling eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
       "type": "object",
@@ -342,30 +287,6 @@
         "tilDato": {"description": "Dato","type": "string", "format": "date-time"}
       }
     },
-
-    "restriksjonKjennelse": {
-      "description": "Restriksjon fra domstolen, når vi har mottatt den, uten til fra dato kun når det er anke",
-      "type": "object",
-      "required": ["restriksjon", "domstol"],
-      "additionalProperties": false,
-      "properties": {
-        "avgjoerelseId": {"type": "string"},
-        "domstol": {"$ref": "#/definitions/organisasjon"},
-        "avsagtDato": {"description": "Dato", "type": "string", "format": "date-time"},
-        "restriksjon": {"$ref": "#/definitions/restriksjon"},
-        "anke": {"$ref": "#/definitions/anke"}
-      }
-    },
-    "restriksjonerOrdre": {
-      "description": "Restriksjon fra påtale, dvs. fraDato eller tilDato vil ikke være utfylt før første kjennelse",
-      "type": "object",
-      "required": ["merknad","restriksjoner"],
-      "additionalProperties": false,
-      "properties": {
-        "merknad": {"type": "string"},
-        "restriksjoner": {"type": "array", "items": {"$ref": "#/definitions/restriksjon"}, "minContains": 1}
-      }
-    },
     "restriksjonsType": {
       "description": "Liste over de ulike restriksjonene",
       "enum": [
@@ -376,7 +297,6 @@
       ],
       "type": "string"
     },
-
     "foedselsnummer": {"type" : "string", "pattern": "[0-9]+", "minLength": 11, "maxLength": 11},
     "sspNummer": {"type" : "string", "pattern": "[0-9]+", "minLength": 11, "maxLength": 11},
     "dNummer": {"type" : "string", "pattern": "[0-9]+", "minLength": 11, "maxLength": 11},
@@ -403,11 +323,9 @@
       "required": ["internId","navn"],
       "additionalProperties": false
     },
-
     "kjoenn" : {
       "description" : "Samme enum som folkeregisteret",
       "type" : "string", "enum" : ["KVINNE","MANN"]},
-
     "personnavn": {
       "type" : "object",
       "properties": {
@@ -418,7 +336,6 @@
       "required" : ["etternavn"],
       "additionalProperties": false
     },
-
     "personForetakFull": {
       "description": "En siktet eller fornærmet kan være en person eller et foretak, denne typen er enten person eller foretak.",
       "type": "object",
@@ -445,7 +362,6 @@
         }
       ]
     },
-
     "personAdresse": {
       "description": "Kan være graderte adresser",
       "type": "object",
@@ -456,7 +372,6 @@
       "required": ["adresse"],
       "additionalProperties": false
     },
-   
     "personFull": {
       "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
       "type": "object",
@@ -475,7 +390,6 @@
       "required" : ["internId","navn","foedselsdato", "statsborgerskap", "foedselsnummer", "dNummer"],
       "additionalProperties": false
     },
-
     "personMini": {
       "description": "Kun navn og fødselsdato (hvis den finnes)",
       "type": "object",
@@ -507,7 +421,6 @@
       "required" : ["navn"],
       "additionalProperties": false
     },
-
    "straffesakMedInvolverteSiktet": {
 	  "description": "Straffesak med involverte listet samt enkel versjon av siktede",
       "type": "object",
@@ -556,16 +469,6 @@
         "vitne": {"type": "array", "items": {"$ref": "#/definitions/personFull"}}
       },
       "required": ["medsiktede", "fornaermede", "vitne"]
-    },
-    "siktelseSak": {
-      "description": "Siktelsesinformasjon på en enkeltstående straffesak (kun prinsipal ikke subsidiær)",
-      "type": "object",
-      "required": ["straffesaksnummer","detaljer", "involverte"],
-      "additionalProperties": false,
-      "properties": {
-        "lovbud": {"$ref": "#/definitions/lovbudFull"},
-        "grunnlagstekst": {"type": "string"}
-      }
     },
     "siktelsesinfo": {
 	  "description": "Siktelsesinformasjon fra straffesaken.",
