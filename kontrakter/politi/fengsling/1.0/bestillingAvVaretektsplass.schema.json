@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/1.0/innsettelsesordre",
-  "description": "Innsettelsesordre fra påtale til fengsel KDI, med ordre fra påtale eller kjennelse. Schema versjon 2020-12",
+  "$id": "https://politiet.no/politi/fengsling/1.0/bestillingAvVaretektsplass",
+  "description": "Bestilling av varetektsplass fra påtale til fengsel KDI. Schema versjon 2020-12",
   "type": "object",
   "properties": {
     "melding": {"type": "string"},
@@ -200,7 +200,7 @@
 	  },
 
     "isolasjon": {
-      "description": "Basis isolasjon med til og fra dato, brukes uten datoer på innsettelsesordre",
+      "description": "Basis isolasjon med til og fra dato",
       "type": "object",
       "required": ["isolasjonsType"],
       "additionalProperties": false,
@@ -330,7 +330,7 @@
       }
     },
     "restriksjon": {
-      "description": "Basis restriksjon med til og fra dato,  brukes uten datoer på innsettelsesordre",
+      "description": "Basis restriksjon med til og fra dato",
       "type": "object",
       "required": ["restriksjonsType"],
       "additionalProperties": false,
