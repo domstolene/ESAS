@@ -7,7 +7,7 @@
     "melding": {"type": "string"},
     "forsendelse": {"$ref": "#/definitions/forsendelse"},
     "hovedStraffesaksnummer": {"type": "string"},
-    "bestillingAvVaretektsplassd": {"type": "string"},
+    "bestillingAvVaretektsplassId": {"type": "string"},
     "kontaktPersonKDI": {"$ref": "#/definitions/ansatt"},
     "varetektSyklusId": {"type": "string"},
     "personVaretektInfo": {"$ref": "#/definitions/personVaretektInfo"},
@@ -34,29 +34,27 @@
       "type": "object",
       "required": [
         "personVaretekt",
-        "straffesaker"
+        "straffesaker",
+        "tilstandOgHelseInfo"
       ],
       "additionalProperties": false,
       "properties": {
         "personVaretekt": {
           "$ref": "#/definitions/personFull"
         },
-        "helseopplysninger": {
-          "type": "string"
-        },
-        "saerskilteBehov": {
-            "description" : "Beskrivelse av eventuelle behov som krever særskilt behandling (eks. handicap, krever stor seng, etc.)",
-            "type": "string"
-        },
-        "tilstandIArresten": {
-            "description" : "Beskrivelse av tilstand i arresten",
-            "type": "string"
-        },                  
         "straffesaker": {
           "type": "array",
           "title": "straffesaker",
-          "items": {"$ref": "#/definitions/straffesakLovbudInvolverte"},
+          "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
           "minContains": 1
+        },
+        "tilstandOgHelseInfo": {
+          "description": "Skal gi informasjon om tilstand til den siktede (psykisk, selvmordsrisiko, rus, etc.)",
+          "$ref": "#/definitions/tilstandOgHelseInfo"
+        },
+        "andreViktigeOpplysninger": {
+          "description": "Andre viktige opplysninger (familie informert, personer som skal unngås, etc.)",
+          "type": "string"
         }
       }
     },
@@ -488,8 +486,64 @@
       "properties": {
         "straffesaksnummer": {"type": "string"},
         "detaljer": {"$ref": "#/definitions/straffesakDetaljer"},
-        "siktelsesinfo": {"$ref": "#/definitions/siktelsesinfo", "description": "lovbud og grunnlagsinformasjon som brukes i siktelsen"},
+        "siktelsesinfo": {
+          "$ref": "#/definitions/siktelsesinfo",
+          "description": "lovbud og grunnlagsinformasjon som brukes i siktelsen"
+        },
         "involverte": {"$ref": "#/definitions/involverteStraffesak"}
+      }
+    },
+    "tilstandHelseDetalj": {
+      "type": "object",
+      "description": "Informasjon om tilstand eller helseopplysning",
+      "required": [ "bemerket" ],
+      "additionalProperties": false,
+      "properties": {
+        "bemerket": {
+          "type": "boolean",
+          "description": "Angir om tilstand eller helseopplysning er bemerket."
+        },
+        "beskrivelse": { "type": "string" }
+      }
+    },
+    "tilstandOgHelseInfo": {
+      "type": "object",
+      "required": [
+        "selvmordSelskadeRisiko",
+        "fysiskePsykiskeUtfordringer",
+        "behovForMedisiner",
+        "rushistorikk",
+        "rusetIArrest",
+        "voldshistorikk",
+        "bekymringsverdigOppfoersel",
+        "roemningsFare"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "selvmordSelskadeRisiko": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "fysiskePsykiskeUtfordringer": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "behovForMedisiner": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "rushistorikk": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "rusetIArrest": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "voldshistorikk": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "bekymringsverdigOppfoersel": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        },
+        "roemningsFare": {
+          "$ref": "#/definitions/tilstandHelseDetalj"
+        }
       }
     }
   }
