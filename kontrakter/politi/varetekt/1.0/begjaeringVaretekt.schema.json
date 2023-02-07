@@ -7,7 +7,7 @@
   "properties": {
     "melding": {
       "type": "string",
-      "const": "begjaeringVaretekt",
+      "const": "BEGJAERING_VARETEKT",
       "description": "Navnet på meldingen. Enkelt å se på en melding hvilken type det er."
     },
     "forsendelse": {
@@ -15,7 +15,7 @@
       "description": "avsender og mottaker"
     },
     "hovedStraffesaksnummer": {
-      "type": "string",
+      "$ref": "#/definitions/straffesaksnummer",
       "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
     },
     "begjaeringVaretekt": {
@@ -176,10 +176,10 @@
           "enum": ["LUKKEDE_DOERER", "FORBUD_GJENGIVELSE"]
         },
         "ansvarligPaatalejurist": {
-          "$ref": "#/definitions/ansatt"
+          "$ref": "#/definitions/ansattPerson"
         },
         "aktor": {
-          "$ref": "#/definitions/ansatt"
+          "$ref": "#/definitions/ansattPerson"
         }
       },
       "required": [
@@ -339,10 +339,12 @@
         "epost": {
           "type": "string"
         },
-        "telefon": {
-          "type": "string"
+        "telefonnummer": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/telefonnummer" }
         }
       },
+      "required": ["telefonnummer"],
       "additionalProperties": false
     },
     "land": {
@@ -364,36 +366,48 @@
     },
     "organisasjon": {
       "type": "object",
-      "description": "Organisasjon som kan sende eller motta JustisHub meldinger",
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
       "properties": {
-        "organisasjonsnummer": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
           "type": "string"
         },
-        "navn": {
-          "type": "string"
+        "organisasjonsnummer": {
+          "type": "string",
+          "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel" ,
+          "minLength": 2,
+          "maxLength": 20
         }
       },
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
-    "ansatt": {
+    "ansattPerson": {
       "type": "object",
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
         "brukeridentifikasjon": {
-          "type": "string"
+          "type": "string",
+          "description": "BID hos politiet"
         },
         "tittel": {
           "type": "string"
         },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfo",
+          "decription": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["navn"],
+      "required": ["brukeridentifikasjon", "etternavn"],
       "additionalProperties": false
     },
     "forsendelse": {
@@ -432,8 +446,8 @@
         "organisasjon": {
           "$ref": "#/definitions/organisasjon"
         },
-        "saksbehandler": {
-          "$ref": "#/definitions/ansatt",
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
           "descriptioin": "Person som trykker på send til domstolen."
         }
       },
@@ -846,7 +860,8 @@
       "description": "Kan være graderte adresser",
       "properties": {
         "gradering": {
-          "$ref": "#/definitions/adresseGradering"
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Vi sender ikke med graderte adresser bortsett fra kanskje KLIENT_ADRESSE (sjekker)" 
         },
         "adresse": {
           "$ref": "#/definitions/adresse"
@@ -890,9 +905,10 @@
             "$ref": "#/definitions/personIdentifikator"
           },
           "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
-        },
+         },
         "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering"
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
         },
         "personAdresse": {
           "$ref": "#/definitions/personAdresse"
@@ -961,7 +977,7 @@
       "description": "Person eller foretak og straffesaksreferanse",
       "properties": {
         "straffesaksnummer": {
-          "type": "string"
+          "$ref": "#/definitions/straffesaksnummer"
         },
         "personForetakEnkel": {
           "$ref": "#/definitions/personForetakEnkel"
@@ -970,18 +986,21 @@
       "required": ["straffesaksnummer", "personForetakEnkel"],
       "additionalProperties": false
     },
-    "grunnlagBasisaker": {
+    "grunnlagBasissaker": {
       "type": "object",
       "description": "Grunnlaget er beskrivelse og referanser til basissaker (rolle,sak)",
       "properties": {
         "bokstav": {
-          "type": "string"
+          "type": "string",
+          "description": "Kun for visning i siktelse/tiltae a), b). Vil ikke være med hvis det er bare et grunnlag"
         },
         "grunnlagstekst": {
-          "type": "string"
+          "type": "string",
+          "description": "Den 2. januar 2023 slo han til fornærmede"
         },
         "basissaker": {
           "type": "array",
+          "description": "Liste over person/foretak og straffesaker som inngår i tiltalepunktet. Kan være flere straffesaker hvis aktor har slått sammen flere straffesaker til et tiltalepunkt.",
           "items": {
             "$ref": "#/definitions/basissak"
           },
@@ -993,13 +1012,11 @@
     },
     "punktDetaljer": {
       "type": "object",
-      "description": "Lovbudreferanse, grunnlag med basissaker",
+      "description": "Et tiltalepunkt prinsipalt eller subsidiært",
       "properties": {
-        "nummer": {
-          "type": "string"
-        },
         "lovbud": {
           "type": "array",
+          "description": "Lovbud, hjemmelserekke med gjenngivelse. Det kan være 2 hvis lovbruddet har foregått over en lovendring f.eks. ny straffelov",
           "items": {
             "$ref": "#/definitions/lovbudGjengivelse"
           },
@@ -1008,26 +1025,31 @@
         },
         "grunnlag": {
           "type": "array",
+          "description": "Sortert liste av straffesaker (tid,sted og person/foretak)",
           "items": {
-            "$ref": "#/definitions/grunnlagBasisaker"
-          }
+            "$ref": "#/definitions/grunnlagBasissaker"
+          },
+          "minItems": 1
         }
       },
-      "required": ["lovbud"],
+      "required": ["lovbud","grunnlag"],
       "additionalProperties": false
     },
     "punkt": {
       "type": "object",
-      "description": "Et tiltalepunkt med romertall hvis det er mer en ett punkt",
+      "description": "Et siktelsespunkt/tiltalepunkt har et hoved lovbud referanser (hjemmelrekker) som vises i uthevet skrift i dokumentet.",
       "properties": {
         "nummer": {
-          "type": "string"
+          "type": "string",
+          "description": "Brukes til visning i siktelse/tiltale dokument og er et romertall I, II osv."
         },
         "prinsipalPunkt": {
-          "$ref": "#/definitions/punktDetaljer"
+          "$ref": "#/definitions/punktDetaljer",
+          "description": "Hovedpunkt"
         },
         "subsidiaerPunkt": {
-          "$ref": "#/definitions/punktDetaljer"
+          "$ref": "#/definitions/punktDetaljer",
+          "description": "Hvis ikke skyldig i prinsipal punkt så bes retten vurdere det subsidiære"
         }
       },
       "required": ["prinsipalPunkt"],
@@ -1043,11 +1065,11 @@
         },
         "punkt": {
           "type": "array",
+          "description": "Siktelse/tiltalepunkt i ordnet rekkefølge.",
           "items": {
             "$ref": "#/definitions/punkt"
           },
-          "minItems": 1,
-          "description": "Et siktelsespunkt, kan være flere straffbare forhold og personer (basissaker)"
+          "minItems": 1
         }
       },
       "required": ["punkt"],
@@ -1191,6 +1213,18 @@
       },
       "required": ["internId"],
       "additionalProperties": false
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstander",
+      "minLength": 3,
+      "maxLenght": 30
+    },
+    "telefonnummer": {
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "maxLength": 30,
+      "minLength": 1,
+      "type": "string"
     }
   }
 }
