@@ -861,7 +861,7 @@
       "properties": {
         "gradering": {
           "$ref": "#/definitions/adresseGradering",
-          "description": "Vi sender ikke med graderte adresser bortsett fra kanskje KLIENT_ADRESSE (sjekker)" 
+          "description": "Vi sender ikke med graderte adresser bortsett fra kanskje KLIENT_ADRESSE (sjekker)"
         },
         "adresse": {
           "$ref": "#/definitions/adresse"
@@ -905,7 +905,7 @@
             "$ref": "#/definitions/personIdentifikator"
           },
           "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
-         },
+        },
         "adresseGradering": {
           "$ref": "#/definitions/adresseGradering",
           "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
@@ -1032,7 +1032,7 @@
           "minItems": 1
         }
       },
-      "required": ["lovbud","grunnlag"],
+      "required": ["lovbud", "grunnlag"],
       "additionalProperties": false
     },
     "punkt": {
@@ -1214,13 +1214,13 @@
       "required": ["internId"],
       "additionalProperties": false
     },
-     "organisasjonsnummer": {
+    "organisasjonsnummer": {
       "type": "string",
-      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/" ,
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
       "pattern": "[0-9]+",
       "minLength": 9,
       "maxLength": 9
-     },
+    },
     "straffesaksnummer": {
       "type": "string",
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
