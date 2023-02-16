@@ -8,6 +8,7 @@ Synker med kjennelseVaretekt etter PR branch feature/varetekt_kennellse_refaktor
 2. ansattperson justeringer for å synke med domstolene sin kjennelse.
 3. telefon -> telefonnummer endring.
 4. Bedre beskrivelser på siktelseTiltale. Rettet feil med nummer to steder, skal være bare under "punkt".
+5. Description på fødselsnummer, ssp nummer, d nummer.
 ### ESAS-157-begjaeringVaretekt-oppdater
 Justering på Schema for å synke med kommentarer de siste ukene.
 Retningslinjer oppdatert: https://domstol.atlassian.net/wiki/spaces/ESAS/pages/4055105853/Retningslinjer+for+modellering+av+meldinger 

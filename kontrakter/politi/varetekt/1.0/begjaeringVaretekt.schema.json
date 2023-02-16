@@ -373,10 +373,7 @@
           "type": "string"
         },
         "organisasjonsnummer": {
-          "type": "string",
-          "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel" ,
-          "minLength": 2,
-          "maxLength": 20
+          "$ref": "#/definitions/organisasjonsnummer"
         }
       },
       "required": ["organisasjonsnummer", "navn"],
@@ -687,18 +684,21 @@
     },
     "foedselsnummer": {
       "type": "string",
+      "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
       "pattern": "[0-9]+",
       "minLength": 11,
       "maxLength": 11
     },
     "sspNummer": {
       "type": "string",
+      "description": "Personidentifikator brukt av det sentrale straffe- og personopplysningsregisteret (SSP) hvis personen ikke har fødselsnummer. Validerer som et fødselsnummer med +20 på måned så noen født 10.01.1990 begynner med 102190",
       "pattern": "[0-9]+",
       "minLength": 11,
       "maxLength": 11
     },
     "dNummer": {
       "type": "string",
+      "description": "Se skatteetaten. Dag på datodelen er +40. Født 10.01.1990, begynner med 31.01.90",
       "pattern": "[0-9]+",
       "minLength": 11,
       "maxLength": 11
@@ -756,7 +756,7 @@
           "description": "unik id lokalt i meldingen, samme internId er samme foretak."
         },
         "organisasjonsnummer": {
-          "type": "string"
+          "$ref": "#/definitions/organisasjonsnummer"
         },
         "navn": {
           "type": "string"
@@ -777,7 +777,7 @@
           "description": "unik id lokalt i meldingen, samme internId er samme foretak."
         },
         "organisasjonsnummer": {
-          "type": "string"
+          "$ref": "#/definitions/organisasjonsnummer"
         },
         "navn": {
           "type": "string"
@@ -1078,12 +1078,6 @@
     "hendelse": {
       "type": "object",
       "description": "Tid og sted for det straffbare forholdet",
-      "required": [
-        "gjerningstidspunktFra",
-        "gjerningstidspunktTil",
-        "gjerningssted"
-      ],
-      "additionalProperties": false,
       "properties": {
         "gjerningstidspunktFra": {
           "type": "string",
@@ -1096,12 +1090,17 @@
         "gjerningssted": {
           "$ref": "#/definitions/adresse"
         }
-      }
+      },
+      "required": [
+        "gjerningstidspunktFra",
+        "gjerningstidspunktTil",
+        "gjerningssted"
+      ],
+      "additionalProperties": false
     },
     "involverteStraffesak": {
-      "description": "siktede, vitner og fornærmede",
-      "additionalProperties": false,
       "type": "object",
+      "description": "siktede, vitner og fornærmede",
       "properties": {
         "siktet": {
           "$ref": "#/definitions/personEnkel"
@@ -1125,12 +1124,12 @@
           }
         }
       },
-      "required": ["medsiktede", "fornaermede", "vitne"]
+      "required": ["medsiktede", "fornaermede", "vitne"],
+      "additionalProperties": false
     },
     "straffesakMedInvolverteSiktet": {
       "type": "object",
       "description": "Straffesak med involverte listet samt enkel versjon av siktede",
-      "additionalProperties": false,
       "properties": {
         "straffesaksnummer": {
           "type": "string"
@@ -1142,12 +1141,12 @@
           "$ref": "#/definitions/involverteStraffesak"
         }
       },
-      "required": ["straffesaksnummer", "detaljer", "involverte"]
+      "required": ["straffesaksnummer", "detaljer", "involverte"],
+      "additionalProperties": false
     },
     "straffesakDetaljer": {
       "type": "object",
       "description": "Detaljer rundt straffesaken",
-      "additionalProperties": false,
       "properties": {
         "hendelse": {
           "$ref": "#/definitions/hendelse"
@@ -1159,7 +1158,8 @@
           "$ref": "#/definitions/kodeverk"
         }
       },
-      "required": ["hendelse", "statistikkgruppe"]
+      "required": ["hendelse", "statistikkgruppe"],
+      "additionalProperties": false
     },
     "dokument": {
       "type": "object",
@@ -1214,17 +1214,24 @@
       "required": ["internId"],
       "additionalProperties": false
     },
+     "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/" ,
+      "pattern": "[0-9]+",
+      "minLength": 9,
+      "maxLength": 9
+     },
     "straffesaksnummer": {
       "type": "string",
-      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstander",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
       "minLength": 3,
       "maxLenght": 30
     },
     "telefonnummer": {
+      "type": "string",
       "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
       "maxLength": 30,
-      "minLength": 1,
-      "type": "string"
+      "minLength": 1
     }
   }
 }
