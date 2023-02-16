@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "da/varetekt/0.9/KjennelseVaretekt.schema.json",
+  "$id": "da/varetekt/1.0/KjennelseVaretekt.schema.json",
   "description": "Schema definisjon av en Kjennelse-varetekt",
 
   "properties": {
