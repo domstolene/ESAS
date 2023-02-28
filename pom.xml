@@ -36,6 +36,7 @@
 
     <modules>
         <module>kontrakter/politi/varetekt</module>
+        <module>kontrakter/da/varetekt</module>
         <module>validering-jwks</module>
     </modules>
 
