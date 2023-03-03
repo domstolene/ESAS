@@ -2,7 +2,7 @@ const Ajv2020 = require("ajv/dist/2020")
 const addFormats = require('ajv-formats')
 const fs = require('fs')
 
-const ajv = new Ajv2020()
+const ajv = new Ajv2020(opts = {strict: true})
 addFormats(ajv)
 
 const jsonSchemaFolders = [

@@ -602,6 +602,7 @@
         "kode": { "type": "string" },
         "navn": { "type": "string" }
       },
+      "type": "object",
       "required": ["kode"],
       "additionalProperties": false
     },
