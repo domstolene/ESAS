@@ -16,6 +16,7 @@ jobs:
 
       - run: npm ci
       - run: npm run prettier:check
+      - run: npm run json:validate
 
       - name: Set up Apache Maven Central
         if: ${{ github.ref == 'refs/heads/main' }}

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "prettier:check": "prettier --check \"kontrakter/**/*.json\"",
-    "prettier:write": "prettier --write \"kontrakter/**/*.json\""
+    "prettier:write": "prettier --write \"kontrakter/**/*.json\"",
+    "json:validate": "node validateJsonSchema.js"
   },
   "repository": {
     "type": "git",
