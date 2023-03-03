@@ -6,7 +6,8 @@ const ajv = new Ajv2020()
 addFormats(ajv)
 
 const jsonSchemaFolders = [
-    "kontrakter/politi/varetekt"
+    "kontrakter/politi/varetekt",
+    "kontrakter/da/varetekt"
 ]
 
 const isDirectory = (path) => {
@@ -37,7 +38,7 @@ const readFileContent = (filePath) => {
 const validateJsonSchemas = (directory) => {
     console.log("Finding JSON-schema in " + directory)
     const jsonSchema = getJsonSchema(directory)
-    console.log("Found JSON-schema " + jsonSchema)
+    console.log("Loading JSON-schema " + jsonSchema)
     const jsonSchemaValidator = ajv.compile(readFileContent(jsonSchema).json)
 
     const jsonExamples = getJsonExamples(directory + "/eksempelfiler")
