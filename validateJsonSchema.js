@@ -43,8 +43,15 @@ const validateJsonSchemas = (directory) => {
     const jsonExamples = getJsonExamples(directory + "/eksempelfiler")
         .map(readFileContent)
 
-    console.log('Validating schema ' + jsonSchema)
-    jsonExamples.forEach(json => jsonSchemaValidator(json))
+    jsonExamples.forEach(exampleJson => {
+        console.log("Validating " + exampleJson.file + " using " + jsonSchema)
+        const validationResult = jsonSchemaValidator(exampleJson.json)
+        if (!validationResult) {
+            throw Error(jsonSchemaValidator.errors.map(error => error.instancePath + " " + error.message).join("\n"))
+        }
+    })
+
+    console.log("Successfully validated " + jsonSchema + "\n")
 }
 
 const findAndValidate = (schemaFolderBasePath) => {
