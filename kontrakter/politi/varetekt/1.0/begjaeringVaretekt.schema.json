@@ -401,7 +401,7 @@
         },
         "kontakt": {
           "$ref": "#/definitions/kontaktInfo",
-          "decription": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
       "required": ["brukeridentifikasjon", "etternavn"],
@@ -422,7 +422,7 @@
         },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
-          "decription": "Domstol som skal være mottaker"
+          "description": "Domstol som skal være mottaker"
         },
         "oensketRettssted": {
           "$ref": "#/definitions/organisasjon",
@@ -445,7 +445,7 @@
         },
         "person": {
           "$ref": "#/definitions/ansattPerson",
-          "descriptioin": "Person som trykker på send til domstolen."
+          "description": "Person som trykker på send til domstolen."
         }
       },
       "required": ["organisasjon"],
@@ -1225,7 +1225,7 @@
       "type": "string",
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
       "minLength": 3,
-      "maxLenght": 30
+      "maxLength": 30
     },
     "telefonnummer": {
       "type": "string",

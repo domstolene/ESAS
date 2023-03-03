@@ -27,17 +27,21 @@ const getJsonExamples = (directory) => {
         .map(file => directory + '/' + file)
 }
 
-const readFileContent = (filePath) => fs.readFileSync(filePath).toString()
+const readFileContent = (filePath) => {
+    return {
+        file: filePath,
+        json: JSON.parse(fs.readFileSync(filePath).toString())
+    }
+}
 
 const validateJsonSchemas = (directory) => {
+    console.log("Finding JSON-schema in " + directory)
     const jsonSchema = getJsonSchema(directory)
-    const jsonSchemaValidator = ajv.compile(
-        JSON.parse(readFileContent(jsonSchema))
-    )
+    console.log("Found JSON-schema " + jsonSchema)
+    const jsonSchemaValidator = ajv.compile(readFileContent(jsonSchema).json)
 
-    const jsonExamples = getJsonExamples(directory)
+    const jsonExamples = getJsonExamples(directory + "/eksempelfiler")
         .map(readFileContent)
-        .map(content => JSON.parse(content))
 
     console.log('Validating schema ' + jsonSchema)
     jsonExamples.forEach(json => jsonSchemaValidator(json))
@@ -47,14 +51,10 @@ const findAndValidate = (schemaFolderBasePath) => {
     const folderContents = fs.readdirSync(schemaFolderBasePath)
         .map(content => schemaFolderBasePath + '/' + content)
 
-    if (folderContents.find(isJsonSchema)) {
-        validateJsonSchemas(schemaFolderBasePath)
-    } else {
         folderContents
+            .filter(d => d !== "target")
             .filter(isDirectory)
-            .filter(d => !d.endsWith("target"))
             .forEach(validateJsonSchemas)
-    }
 }
 
 jsonSchemaFolders.forEach(findAndValidate)
