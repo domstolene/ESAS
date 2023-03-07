@@ -14,15 +14,13 @@
     "restriksjoner": {"type" : "array", "items": {"$ref": "#/definitions/restriksjon"}},
     "isolasjon": {"type" : "array", "items": {"$ref": "#/definitions/isolasjon"}},
     "paagrepetTidspunkt": {"type": "string","format": "date-time"},
-    "paategningsdokumentRef": {"$ref": "#/definitions/dokumentRef"},
     "dokumenter": {"type": "array", "items": {"$ref" : "#/definitions/dokument"}}
   },
   "required": [
     "melding",
     "forsendelse",
     "hovedStraffesaksnummer",
-    "varetektSyklusId",
-    "ordreId",
+    "bestillingAvVaretektsplassId",
     "paagrepetTidspunkt",
     "personVaretektInfo"
   ],
@@ -34,8 +32,7 @@
       "type": "object",
       "required": [
         "personVaretekt",
-        "straffesaker",
-        "tilstandOgHelseInfo"
+        "straffesaker"
       ],
       "additionalProperties": false,
       "properties": {
@@ -48,9 +45,9 @@
           "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
           "minContains": 1
         },
-        "tilstandOgHelseInfo": {
-          "description": "Skal gi informasjon om tilstand til den siktede (psykisk, selvmordsrisiko, rus, etc.)",
-          "$ref": "#/definitions/tilstandOgHelseInfo"
+        "risikoOgHelseInfo": {
+          "description": "Risiko og helsevurderinger, ingen betyr at det ikke er noen slike vurderinger ",
+          "$ref": "#/definitions/risikoOgHelseInfo"
         },
         "andreViktigeOpplysninger": {
           "description": "Andre viktige opplysninger (familie informert, personer som skal unngås, etc.)",
@@ -504,6 +501,63 @@
           "description": "Angir om tilstand eller helseopplysning er bemerket."
         },
         "beskrivelse": { "type": "string" }
+      }
+    },
+    "risikoOgHelseInfo": {
+      "type": "object",
+      "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
+      "required": [
+        "risikoVurdering",
+        "tilstandArresten"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "risikoVurdering": {
+          "type": "array",
+          "description": "Opplysninger av betydning for risikovurdering",
+          "items": {
+            "$ref": "#/definitions/risikoVurdering"
+          },
+          "minItems": 1
+        },
+        "tilstandArresten": {
+          "type": "array",
+          "description": "Tilstand i arresten",
+          "items": {
+            "$ref": "#/definitions/tilstandArresten"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "risikoVurdering": {
+      "type": "object",
+      "description": "Vurdering avkrysning og fritekst hvis annet enn ingen risiko",
+      "required": [
+        "risiko"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "risiko": {
+          "type": "string",
+          "enum": ["VOLDSHISTORIKK", "PSYKIATRI", "UOENSKET_HENDELSE", "ROEMNINGSFARE", "FARE_ANSLAG", "ANNET", "UKJENT", "INGEN_RISIKO"]
+        },
+        "beskrivelse": {"type": "string"}
+      }
+    },
+    "tilstandArresten": {
+      "type": "object",
+      "description": "Avkryssing tilstand i arresten",
+      "required": [
+        "tilstand"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tilstand": {
+          "type": "string",
+          "enum": ["RUSET", "OPPFOERSEL", "FARE_PSYKISK_FYSISK_HELSE", "SELVMORDSRISIKO", "MEDISINER", "UKJENT", "INGEN"]
+        },
+        "beskrivelse": {"type": "string"}
       }
     },
     "tilstandOgHelseInfo": {
