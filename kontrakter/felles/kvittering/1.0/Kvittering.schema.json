@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "felles/1.0/Kvittering.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://domstol.no/felles/1.0/Kvittering.schema.json",
   "description": "Schema som beskriver kvitteringer som skal utveksles på tvers av virksomhetene",
   "additionalProperties": true,
   "properties": {
@@ -35,29 +35,7 @@
         "FEILET_AVSENDER_MANGLER",
         "FEILET_MOTTAKER"
       ],
-      "type": "string",
-      "options": [
-        {
-          "value": "UNDER_MOTTAK",
-          "description": "Indikerer at meldingen er mottatt, men ikke ferdig prosessert inn i saksbehandlingssystem. Det kan fremdeles oppstå feil som gjør at avsender eller mottaker må starte feilsøking."
-        },
-        {
-          "value": "MOTTATT",
-          "description": "Indikerer at alt er ok. Ingen nye kvitteringer forventes. Avsender kan fjerne vedlegg fra filtjeneste når MOTTATT er mottatt."
-        },
-        {
-          "value": "FEILET_AVSENDER_TEKNISK",
-          "description": "Indikerer at det er en teknisk feil hos avsender. F.eks. feil format, vedlegg som ikke fins på STFP selv om det fins referanse i melding etc. Feltet 'beskrivelse' skal fylles ut med en feilmelding/exception. Det er forventet av _avsender_ å iverksette nødvendige tiltak for å sende melding på nytt. En slik status skal aldri sendes etter at en MOTTATT melding er sendt. Ingen nye kvitteringer forventes."
-        },
-        {
-          "value": "FEILET_AVSENDER_MANGLER",
-          "description": "Indikerer at det er mangler i forsendelsen som er avdekket av saksbehandler. F.eks. at forventet påtegning er avglemt. Feltet 'beskrivelse' skal fylles ut med en feilmelding skrevet av bruker. Meldingen forkastes og det er forventet av _avsender_ skal sende hele meldingen på nytt. En slik status skal aldri sendes etter at en MOTTATT melding er sendt. Ingen nye kvitteringer forventes."
-        },
-        {
-          "value": "FEILET_MOTTAKER",
-          "description": "Indikerer at det er noe feil hos mottaker. F.eks. bug eller system nede. Det er forventet at _mottaker_ undersøker. En slik status skal aldri sendes etter at en MOTTATT melding er sendt. Det forventes at det skal komme en MOTTATT eller FEILET_AVSENDER kvittering i etterkant dersom feilen utbedres på mottakersiden. Men statusen kan bli stående dersom problemet løses ved at meldingen sendes på nytt"
-        }
-      ]
+      "type": "string"
     }
   },
   "required": ["meldingsId", "meldingsIdRef", "status"],

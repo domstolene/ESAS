@@ -7,7 +7,8 @@ addFormats(ajv)
 
 const jsonSchemaFolders = [
     "kontrakter/politi/varetekt",
-    "kontrakter/da/varetekt"
+    "kontrakter/da/varetekt",
+    "kontrakter/felles/kvittering"
 ]
 
 const isDirectory = (path) => {
