@@ -52,7 +52,7 @@
           "type": "array",
           "title": "straffesaker",
           "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
-          "minContains": 1
+          "minItems": 1
         },
         "risikoOgHelseInfo": {
           "description": "Risiko og helsevurderinger, ingen betyr at det ikke er noen slike vurderinger ",
