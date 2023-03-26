@@ -645,19 +645,6 @@
       "required": ["navn"],
       "additionalProperties": false
     },
-    "straffesakMedInvolverteSiktet": {
-      "description": "Straffesak med involverte listet samt enkel versjon av siktede",
-      "type": "object",
-      "required": ["straffesaksnummer", "detaljer", "involverte"],
-      "additionalProperties": false,
-      "properties": {
-        "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer"
-        },
-        "detaljer": { "$ref": "#/definitions/straffesakDetaljer" },
-        "involverte": { "$ref": "#/definitions/involverteStraffesak" }
-      }
-    },
     "straffesakDetaljer": {
       "description": "Detaljer rundt straffesaken",
       "type": "object",
@@ -697,6 +684,10 @@
         "fornaermede": {
           "type": "array",
           "items": { "$ref": "#/definitions/personForetak" }
+        },
+        "vitne": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/person" }
         }
       },
       "required": ["medsiktede", "fornaermede", "vitne"]
