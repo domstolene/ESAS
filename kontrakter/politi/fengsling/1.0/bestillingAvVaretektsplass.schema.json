@@ -249,6 +249,8 @@
       "type": "string"
     },
     "kodeverk": {
+      "description": "Kode og navn, kommer oppdatering med verdier",
+      "type": "object",
       "properties": {
         "kode": { "type": "string" },
         "navn": { "type": "string" }
