@@ -139,6 +139,7 @@
     },
     "dokument": {
       "description": "Dokument som oversendes på justishub",
+      "type": "object",
       "properties": {
         "internId": { "type": "string" },
         "kategori": { "$ref": "#/definitions/kodeverk" },
@@ -155,6 +156,7 @@
     },
     "dokumentForsendelse": {
       "description": "Detaljer om lokasjon og type",
+      "type": "object",
       "properties": {
         "mimeType": { "type": "string" },
         "uri": { "type": "string" },
@@ -165,6 +167,7 @@
     },
     "dokumentRef": {
       "description": "Referanse internt i melding til dokumenter i dokumentlisten",
+      "type": "object",
       "properties": {
         "internId": { "type": "string" }
       },
@@ -273,8 +276,8 @@
       "additionalProperties": false
     },
     "land": {
-      "type": "object",
       "description": "ISO-3166, Kosovo kommer",
+      "type": "object",
       "properties": {
         "kode": {
           "type": "string",
@@ -291,6 +294,7 @@
     },
     "lovbudFull": {
       "description": "Lovvbudreferanse med gjengivelse og strafferamme",
+      "type": "object",
       "properties": {
         "lovbudId": { "type": "string" },
         "lovbudStreng": { "type": "string" },
@@ -306,6 +310,7 @@
     },
     "lovbudGjengivelse": {
       "description": "Lovvbudreferanse med gjengivelse",
+      "type": "object",
       "properties": {
         "lovbudId": { "type": "string" },
         "lovbudStreng": { "type": "string" },
@@ -316,6 +321,7 @@
     },
     "lovbudEnkel": {
       "description": "Enkel lovbudreferanse kun lovbudstreng",
+      "type": "object",
       "properties": {
         "lovbudId": { "type": "string" },
         "lovbudStreng": { "type": "string" }
@@ -325,6 +331,7 @@
     },
     "lovreferanse": {
       "description": "Eksakt referanse inn i spesifikk lov, paragraf, ledd osv.",
+      "type": "object",
       "properties": {
         "rettskilde": { "$ref": "#/definitions/kodeverk" },
         "lovreferanse": {
@@ -338,6 +345,7 @@
     },
     "lovreferanseElement": {
       "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
+      "type": "object",
       "properties": {
         "type": { "type": "string" },
         "verdi": { "type": "string" }
@@ -346,8 +354,8 @@
       "additionalProperties": false
     },
     "organisasjon": {
-      "type": "object",
       "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "type": "object",
       "properties": {
         "navn": {
           "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
@@ -393,13 +401,13 @@
     },
     "restriksjonsType": {
       "description": "Liste over de ulike restriksjonene",
+      "type": "string",
       "enum": [
         "BREV_OG_BESOEKSFORBUD",
         "BREV_OG_BESOEKSKONTROLL",
         "MEDIEFORBUD",
         "ANNET"
-      ],
-      "type": "string"
+      ]
     },
     "foretak": {
       "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. fornærmet",
@@ -429,29 +437,29 @@
       "additionalProperties": false
     },
     "foedselsnummer": {
-      "type": "string",
       "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+      "type": "string",
       "pattern": "[0-9]+",
       "minLength": 11,
       "maxLength": 11
     },
     "sspNummer": {
-      "type": "string",
       "description": "Personidentifikator brukt av det sentrale straffe- og personopplysningsregisteret (SSP) hvis personen ikke har fødselsnummer. Validerer som et fødselsnummer med +20 på måned så noen født 10.01.1990 begynner med 102190",
+      "type": "string",
       "pattern": "[0-9]+",
       "minLength": 11,
       "maxLength": 11
     },
     "dNummer": {
-      "type": "string",
       "description": "Se skatteetaten. Dag på datodelen er +40. Født 10.01.1990, begynner med 31.01.90",
+      "type": "string",
       "pattern": "[0-9]+",
       "minLength": 11,
       "maxLength": 11
     },
     "personIdentifikator": {
-      "type": "object",
       "description": "Fødselsnummer, D-nummer eller SSP nummer",
+      "type": "object",
       "properties": {
         "foedselsnummer": {
           "$ref": "#/definitions/foedselsnummer"
@@ -494,8 +502,8 @@
       ]
     },
     "personForetak": {
-      "type": "object",
       "description": "En siktet eller fornærmet kan være en person eller et foretak, denne typen er enten person eller foretak.",
+      "type": "object",
       "properties": {
         "person": {
           "$ref": "#/definitions/person"
@@ -536,24 +544,24 @@
       "additionalProperties": false
     },
     "person": {
-      "type": "object",
       "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
+      "type": "object",
       "properties": {
         "internId": {
-          "type": "string",
-          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId",
+          "type": "string"
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
         "foedselsdato": {
-          "type": "string",
           "description": "Dato",
+          "type": "string",
           "format": "date-time"
         },
         "kjoenn": {
-          "$ref": "#/definitions/kjoenn",
-          "description": "Ukjent kjønn hvis denne ikke er med"
+          "description": "Ukjent kjønn hvis denne ikke er med",
+          "$ref": "#/definitions/kjoenn"
         },
         "statsborgerskap": {
           "type": "array",
@@ -562,8 +570,8 @@
           }
         },
         "identitetsnummer": {
-          "$ref": "#/definitions/personIdentifikator",
-          "description": "Fødselsnummer, D-nummer eller SSP nummer som er den i bruk"
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er den i bruk",
+          "$ref": "#/definitions/personIdentifikator"
         },
         "tilleggsId": {
           "type": "array",
