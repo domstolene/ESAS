@@ -31,7 +31,7 @@
       "enum": [
         "UNDER_MOTTAK",
         "MOTTATT",
-        "FEILET_AVSENDER_TEKNINSK",
+        "FEILET_AVSENDER_TEKNISK",
         "FEILET_AVSENDER_MANGLER",
         "FEILET_MOTTAKER"
       ],
