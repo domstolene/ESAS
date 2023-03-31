@@ -9,7 +9,8 @@ const jsonSchemaFolders = [
     "kontrakter/politi/varetekt",
     "kontrakter/politi/fengsling",
     "kontrakter/da/varetekt",
-    "kontrakter/felles/kvittering"
+    "kontrakter/felles/kvittering",
+    "kontrakter/felles/kodeverk"
 ]
 
 const isDirectory = (path) => {
