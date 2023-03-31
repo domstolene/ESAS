@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://domstol.no/felles/1.0/kodeverk.schema.json",
+  "description": "Kodeverk som er definert i json filer i felles repo",
+
+  "type": "object",
+  "properties": {
+    "kodeType": {
+      "$ref": "#/definitions/kode",
+      "description": "unik id for denne typen koder."
+    },
+    "koder": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/kodeverkDefinisjon"
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["kodeType"],
+  "additionalProperties": false,
+
+  "definitions": {
+    "kodeverkDefinisjon": {
+      "type": "object",
+      "description": "En kodeverk definisjon som brukes i definisjonen av kodeverk objekt",
+      "properties": {
+        "kode": {
+          "$ref": "#/definitions/kode"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "gyldigTil": {
+          "type": "string",
+          "description": "Dato tid fordi felles med KDI og Microsoft liker ikke dato så da blir det 23.03.2023 00:00 betyr gyldig til og med 22.03.2023. Vi skal ikke ha med tidspunkt",
+          "format": "date-time"
+        }
+      },
+      "required": ["kode", "beskrivelse"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "description": "Kodeverk objekt definisjon som skal brukes i skjema, nesten",
+      "kodeType": {
+        "$ref": "#/definitions/kodeType"
+      },
+      "kode": {
+        "$ref": "#/definitions/kode"
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "kode": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "kodeType": {
+      "type": "string",
+      "description": "unik id for denne typen koder.",
+      "enum": ["POLITI_DOK", "DOMSTOL_DOK"],
+      "maxLength": 30,
+      "minLength": 1
+    }
+  }
+}
