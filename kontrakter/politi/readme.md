@@ -9,7 +9,7 @@ Eksempler:
 * innsettelsesordre-paatale.json, innsettelsesordre før det er kommet noen kjennelse.
 * innsettelsesordre-kjennelse.json, innsettelsesordre sammen med kjennelse fra domstolen.
 
-### oppdaterVaretekt.scehma.json
+### oppdaterVaretekt.schema.json
 Brukes når kjennelses på varetekt kommer fra domstolen og når påtalejuristen ønsker å endre på restriksjoner.
 Eksempler:
 * oppdaterVaretekt-paatale.json, oppdatering av restriksjoner og isolasjonskrav av påtale. Kan kommer før eller etter første kjennelse.
@@ -31,4 +31,4 @@ Ny schema som ikke refererer til felles skjema for Kriminalomsorgen.
 Sammenslåingen av schema er gjort manuelt i første omgang, skal lage en utility som fikser det automatisk slik at vi slipper å vedlikeholde 2 versjoner av schema.
 
 Versjon 1.0 er synket med felles schema for [begjæring om varetekt](../../varetekt/readme.md) samt at alle detaljer er med.
-[Versjon 0.9](../0.9/readme.md)
+[Versjon 0.9](../../innsettelsesordre/0.9/readme.md)
