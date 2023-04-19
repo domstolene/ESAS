@@ -1,5 +1,5 @@
 {
-  "melding": "bestilling1",
+  "melding": "BESTILLING_VARETEKTSPLASS",
   "forsendelse": {
     "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE5",
     "sendtTid": "2022-11-03T10:19:55+02:00",
@@ -474,8 +474,11 @@
       }
     ],
     "risikoOgHelseInfo": {
-      "risikoVurdering": {
+      "risikovurdering": {
         "risiko": ["ROEMNINGSFARE"]
+      },
+      "helseInfo": {
+        "helse": ["INGEN"]
       },
       "tilstandArresten": {
         "tilstand": ["INGEN"],
@@ -488,6 +491,7 @@
     {
       "internId": "1234567879",
       "overskrift": "Bestilling av varetektsplass, Kiwi",
+      "kategori": { "kode": "BEGJAERING" },
       "skrevetDato": "2022-11-03T00:00:00",
       "forsendelse": {
         "mimeType": "application/pdf",

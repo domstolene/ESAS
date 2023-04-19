@@ -1,3 +1,11 @@
+# Meldinger definert og eiet av politiet
+Alle JSON Schema med eksempler som politiet lager og vedlikeholder ligger på denne katalogen.
+
+## [Bestilling av varetektsplass](bestillvaretektsplass/readme.md)
+Politiet bestiller varetektsplass.
+
+## Rydder i denne
+
 ## Versjon 1.0 som vi til slutt skal gå i produksjon med i ESAS II
 Det er ikke laget eksempel på melding når kjennelsen kommer fra domstolene og den blir sendt videre til Kriminalomsorgen.
 Detaljert lovreferanse (lovreferanseElement) er ikke en del av eksempelet og trenger justering. Type kan kanskje være en enum (utvidbar?) med PARAGRAF, LEDD....
