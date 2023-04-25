@@ -130,7 +130,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14T00:00:00+02:00"
           },
           "medsiktede": [
             {
@@ -142,7 +142,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1975-12-12T00:00:00",
+                "foedselsdato": "1975-12-12T00:00:00+02:00",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -164,7 +164,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19T00:00:00",
+                "foedselsdato": "1970-07-19T00:00:00+02:00",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -202,7 +202,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00",
+                "foedselsdato": "1974-10-31T00:00:00+02:00",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -244,7 +244,7 @@
               },
               "tilleggsId": [],
               "kjoenn": "MANN",
-              "foedselsdato": "1976-10-21T00:00:00",
+              "foedselsdato": "1976-10-21T00:00:00+02:00",
               "statsborgerskap": [
                 {
                   "kode": "NOR",
@@ -305,7 +305,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14T00:00:00+02:00"
           },
           "medsiktede": [
             {
@@ -320,7 +320,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19T00:00:00",
+                "foedselsdato": "1970-07-19T00:00:00+02:00",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -356,7 +356,7 @@
               },
               "tilleggsId": [],
               "kjoenn": "KVINNE",
-              "foedselsdato": "1970-01-01T00:00:00",
+              "foedselsdato": "1970-01-01T00:00:00+02:00",
               "statsborgerskap": [
                 {
                   "kode": "ARM",
@@ -410,7 +410,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14T00:00:00+02:00"
           },
           "medsiktede": [],
           "fornaermede": [
@@ -423,7 +423,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1978-01-12T00:00:00",
+                "foedselsdato": "1978-01-12T00:00:00+02:00",
                 "statsborgerskap": [
                   {
                     "kode": "ITA",
@@ -479,7 +479,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14T00:00:00+02:00"
           },
           "medsiktede": [],
           "fornaermede": [
@@ -495,7 +495,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00",
+                "foedselsdato": "1974-10-31T00:00:00+02:00",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -517,18 +517,18 @@
         }
       }
     ],
-    "risikoOgHelseInfo": {      
-      "risikoVurdering": {
-        "risiko": ["PSYKIATRI"],
-        "beskrivelse": "Vært til vurdering for mentalt ustabil/psykotisk tidligere"
+    "risikoOgHelseInfo": {
+      "risikovurdering": {
+        "risiko": ["ROEMNINGSFARE"]
       },
-
+      "helseInfo": {
+        "helse": ["INGEN"]
+      },
       "tilstandArresten": {
-        "tilstand": ["SELVMORDSRISIKO"],
-        "beskrivelse": "Uttalt ønske om ende eget liv - RØDT FLAGG!"
+        "tilstand": ["INGEN"],
+        "beskrivelse": "Veldig rolig type"
       }
-    },
-    "andreViktigeOpplysninger": "<Rude Boy i B-gjengen er kjent dødsfiende og må ikke sone i samme avdeilng> Kun fritekst i denne versjonen :'("
+    }
   },
   "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
   "paagrepetSted": "Sinsenkrysset, 0570 OSLO kommune fritekst",
@@ -536,7 +536,7 @@
     {
       "internId": "1234567879",
       "overskrift": "Bestilling av varetektsplass, Kiwi",
-      "skrevetDato": "2022-11-03T00:00:00",
+      "skrevetDato": "2022-11-03T00:00:00+02:00",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfasdf",
@@ -549,7 +549,7 @@
       "kategori": {
         "kode": "Bestillingsvedlegg"
       },
-      "skrevetDato": "2022-10-14T00:00:00",
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdf",
