@@ -29,9 +29,9 @@
     "personVaretektInfo": { "$ref": "#/definitions/personVaretektInfo" },
     "restriksjonIsolasjon": { "$ref": "#/definitions/restriksjonIsolasjon" },
     "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
-    "paagrepetSted": { 
-      "type": "string", 
-      "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen." 
+    "paagrepetSted": {
+      "type": "string",
+      "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen."
     },
     "dokumenter": {
       "type": "array",
@@ -795,7 +795,7 @@
             "fornavn": { "type": "string" },
             "mellomnavn": { "type": "string" },
             "etternavn": { "type": "string" }
-          },          
+          },
           "required": ["etternavn"],
           "additionalProperties": false
         },

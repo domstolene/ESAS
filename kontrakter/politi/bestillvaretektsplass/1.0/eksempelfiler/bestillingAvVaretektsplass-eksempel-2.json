@@ -26,7 +26,7 @@
   },
   "varetektSyklusId": "D784D27C-C1BB-4BB2-90FD-96C414A64AE1",
   "restriksjonIsolasjon": {
-    "isolasjon": [  
+    "isolasjon": [
       {
         "id": "B3CA93AD-2A4F-4DAE-B048-94E10622CD66",
         "isolasjonsType": "FULL_ISOLASJON",
@@ -74,19 +74,19 @@
         }
       },
       "verger": [
-        {        
+        {
           "profesjonellPerson": {
             "navn": {
-                "fornavn": "Varg",
-                "etternavn": "Vergenes"
-              },
+              "fornavn": "Varg",
+              "etternavn": "Vergenes"
+            },
             "identitetsnummer": {
               "foedselsnummer": "01018012345"
             }
           }
         }
       ]
-    },   
+    },
     "straffesaker": [
       {
         "straffesaksnummer": "15434811",
@@ -217,18 +217,18 @@
                   }
                 },
                 "verger": [
-                  {        
+                  {
                     "profesjonellPerson": {
                       "navn": {
-                          "fornavn": "Birger",
-                          "etternavn": "Berg-Vergenes"
-                        },
+                        "fornavn": "Birger",
+                        "etternavn": "Berg-Vergenes"
+                      },
                       "identitetsnummer": {
                         "foedselsnummer": "01018012346"
                       }
                     }
                   }
-                ]          
+                ]
               }
             }
           ],
