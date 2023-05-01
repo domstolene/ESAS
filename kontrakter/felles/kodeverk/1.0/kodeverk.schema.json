@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://domstol.no/felles/1.0/kodeverk.schema.json",
-  "description": "Kodeverk som er definert i json filer i felles repo",
+  "description": "Kodeverk liste som er definert i json filer i felles repo",
 
   "type": "object",
   "properties": {
     "kodeType": {
-      "$ref": "#/definitions/kode",
+      "$ref": "#/definitions/kodeType",
       "description": "unik id for denne typen koder."
     },
     "koder": {
@@ -30,40 +30,29 @@
         },
         "beskrivelse": {
           "type": "string",
-          "maxLength": 100,
+          "maxLength": 250,
           "minLength": 1
         },
         "gyldigTil": {
           "type": "string",
-          "description": "Dato tid fordi felles med KDI og Microsoft liker ikke dato så da blir det 23.03.2023 00:00 betyr gyldig til og med 22.03.2023. Vi skal ikke ha med tidspunkt",
-          "format": "date-time"
+          "description": "Gyldig til dato, dvs. 2023-04-01 betyr gyldig til og med 2023-03-31",
+          "format": "date"
         }
       },
       "required": ["kode", "beskrivelse"],
       "additionalProperties": false
     },
-    "kodeverk": {
-      "type": "object",
-      "description": "Kodeverk objekt definisjon som skal brukes i skjema, nesten",
-      "kodeType": {
-        "$ref": "#/definitions/kodeType"
-      },
-      "kode": {
-        "$ref": "#/definitions/kode"
-      },
-      "required": ["kode"],
-      "additionalProperties": false
-    },
     "kode": {
       "type": "string",
-      "maxLength": 30,
+      "pattern": "^[A-Z,Æ,Ø,Å,0-9][A-Z,Æ,Ø,Å,0-9,_]*$",
+      "maxLength": 50,
       "minLength": 1
     },
     "kodeType": {
       "type": "string",
       "description": "unik id for denne typen koder.",
-      "enum": ["POLITI_DOK", "DOMSTOL_DOK"],
-      "maxLength": 30,
+      "pattern": "^[A-Z,Æ,Ø,Å,0-9][A-Z,Æ,Ø,Å,0-9,_]*$",
+      "maxLength": 50,
       "minLength": 1
     }
   }

@@ -1,7 +1,4 @@
-# Kodeverk verdier
-Alle kodeverk verdier legges her.
+# Kodeverk som er felles
+Katalogene indikerer eierskap og de som skal kunne gjøre endringer på kodene.
 
-## Validering 
-* Valider mot kodeverk skjema
-* Sjekk på duplikater
-* 
+* [felles](/felles/)
