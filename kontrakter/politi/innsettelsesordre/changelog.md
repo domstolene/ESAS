@@ -10,6 +10,9 @@ Trenger vudering av all informasjon om risiko, helse og tilstand i arrsesten som
 * forsendelse lik bestillingAvVaretekt (organisasjon)
 * Ansatt person uten brukeridentifikasjon.
 * melding som er navnet på meldingen er slettet. Skal være en del av header informasjon i rabbitMQ.
+* paagrepetTidspunkt er flyttet inn i personVaretektInfo og vi har lagt til en fritekst sted etter ønske fra mergerequest på bestilling av varetektsplass.
+* isolasjon og restriksjoner uten lovbud da lovreferansene er gitt fra reaksjonsType og isolasjonsType enum. Blir mer likt kjennelse fra domstolene.
+* Kjennelse fra domstolene lik som den som blir videresendt i oppdaterVaretekt.
 
 ### Trenger avklaringer
 #### Forsvarer
