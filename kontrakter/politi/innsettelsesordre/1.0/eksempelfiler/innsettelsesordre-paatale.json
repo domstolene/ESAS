@@ -1,5 +1,4 @@
 {
-  "melding": "innsettelsesordre",
   "forsendelse": {
     "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F987186",
     "sendtTid": "2022-11-03T10:19:55+02:00",
@@ -8,18 +7,15 @@
         "organisasjonsnummer": "983997953",
         "navn": "Innlandet politidistrikt"
       },
-      "saksbehandler": {
-        "brukeridentifikasjon": "PD",
+      "person": {
         "navn": {
           "etternavn": "Politiets Datatjeneste"
         }
       }
     },
-    "mottaker": {
-      "organisasjon": {
-        "organisasjonsnummer": "890286712",
-        "navn": "Bjørgvin fengsel"
-      }
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "890286712",
+      "navn": "Bjørgvin fengsel"
     }
   },
   "hovedStraffesaksnummer": "15434819",
@@ -29,19 +25,20 @@
       "etternavn": "navn og bid Jo Å"
     }
   },
-  "varetektSyklusId": "D784D27C-C1BB-4BB2-90FD-96C414A64AEB",
   "personVaretektInfo": {
+    "varetektSyklusId": "D784D27C-C1BB-4BB2-90FD-96C414A64AEB",
     "personVaretekt": {
       "internId": "700892414",
       "navn": {
         "fornavn": "Morsom",
         "etternavn": "KIWI"
       },
-      "foedselsnummer": ["14846399381"],
-      "sspNummer": [],
-      "dNummer": [],
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
       "kjoenn": "MANN",
-      "foedselsdato": "1963-04-14T00:00:00",
+      "foedselsdato": "1963-04-14",
       "statsborgerskap": [
         {
           "kode": "NOR",
@@ -56,9 +53,12 @@
           "postnummer": "4137",
           "poststed": "ÅRDAL I RYFYLKE"
         }
-      }
+      },
+      "verger": []
     },
-    "helseopplysninger": "syk mann",
+    "paagripelse": {
+      "tidspunkt": "2022-11-03T10:19:56+02:00"
+    },
     "straffesaker": [
       {
         "straffesaksnummer": "15434819",
@@ -102,43 +102,41 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [
             {
-              "type": "person",
               "person": {
                 "internId": "700893213",
                 "navn": {
                   "fornavn": "Per",
                   "etternavn": "OTTERSTAD"
                 },
-                "foedselsnummer": [],
-                "sspNummer": [],
-                "dNummer": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1975-12-12T00:00:00",
+                "foedselsdato": "1975-12-12",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
                     "navn": "Norge"
                   }
-                ]
+                ],
+                "tilleggsId": [],
+                "verger": []
               }
             },
             {
-              "type": "person",
               "person": {
                 "internId": "700892415",
                 "navn": {
                   "fornavn": "Masse",
                   "etternavn": "KIWI"
                 },
-                "foedselsnummer": ["19877099302"],
-                "sspNummer": [],
-                "dNummer": [],
+                "identitetsnummer": {
+                  "foedselsnummer": "19877099302"
+                },
+                "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19T00:00:00",
+                "foedselsdato": "1970-07-19",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -151,11 +149,11 @@
                     "postnummer": "1266",
                     "poststed": "OSLO"
                   }
-                }
+                },
+                "verger": []
               }
             },
             {
-              "type": "foretak",
               "foretak": {
                 "internId": "340078107",
                 "organisasjonsnummer": "984954808",
@@ -165,18 +163,19 @@
           ],
           "fornaermede": [
             {
-              "type": "person",
               "person": {
                 "internId": "700892735",
                 "navn": {
                   "fornavn": "Sannferdig",
                   "etternavn": "KOS"
                 },
-                "foedselsnummer": ["31907499858"],
-                "sspNummer": [],
-                "dNummer": [],
+                "identitetsnummer": {
+                  "foedselsnummer": "31907499858"
+                },
+                "tilleggsId": [],
+
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00",
+                "foedselsdato": "1974-10-31",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -189,7 +188,8 @@
                     "postnummer": "3714",
                     "poststed": "SKIEN"
                   }
-                }
+                },
+                "verger": []
               }
             }
           ],
@@ -200,11 +200,14 @@
                 "fornavn": "Naturstridig",
                 "etternavn": "BALLONG"
               },
-              "foedselsnummer": ["21907699738"],
-              "sspNummer": [],
-              "dNummer": [],
+              "identitetsnummer": {
+                "foedselsnummer": "21907699738"
+              },
+              "tilleggsId": [],
+              "verger": [],
+
               "kjoenn": "MANN",
-              "foedselsdato": "1976-10-21T00:00:00",
+              "foedselsdato": "1976-10-21",
               "statsborgerskap": [
                 {
                   "kode": "NOR",
@@ -264,22 +267,23 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [
             {
-              "type": "person",
               "person": {
                 "internId": "700892415",
                 "navn": {
                   "fornavn": "Masse",
                   "etternavn": "KIWI"
                 },
-                "foedselsnummer": ["19877099302"],
-                "sspNummer": [],
-                "dNummer": [],
+                "identitetsnummer": {
+                  "foedselsnummer": "19877099302"
+                },
+                "tilleggsId": [],
+                "verger": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19T00:00:00",
+                "foedselsdato": "1970-07-19",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -298,7 +302,6 @@
           ],
           "fornaermede": [
             {
-              "type": "foretak",
               "foretak": {
                 "internId": "60044820",
                 "organisasjonsnummer": "976878442",
@@ -313,11 +316,10 @@
                 "fornavn": "Ariane",
                 "etternavn": "HUFSETE"
               },
-              "foedselsnummer": [],
-              "sspNummer": [],
-              "dNummer": [],
+              "tilleggsId": [],
+              "verger": [],
               "kjoenn": "KVINNE",
-              "foedselsdato": "1970-01-01T00:00:00",
+              "foedselsdato": "1970-01-01",
               "statsborgerskap": [
                 {
                   "kode": "ARM",
@@ -370,23 +372,21 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [],
           "fornaermede": [
             {
-              "type": "person",
               "person": {
                 "internId": "700892547",
                 "navn": {
                   "fornavn": "Lormen",
                   "etternavn": "QUATRO"
                 },
-                "foedselsnummer": [],
-                "sspNummer": [],
-                "dNummer": [],
+                "tilleggsId": [],
+                "verger": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1978-01-12T00:00:00",
+                "foedselsdato": "1978-01-12",
                 "statsborgerskap": [
                   {
                     "kode": "ITA",
@@ -441,23 +441,25 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [],
           "fornaermede": [
             {
-              "type": "person",
               "person": {
                 "internId": "700892735",
                 "navn": {
                   "fornavn": "Sannferdig",
                   "etternavn": "KOS"
                 },
-                "foedselsnummer": ["31907499858"],
-                "sspNummer": [],
-                "dNummer": [],
+                "identitetsnummer": {
+                  "foedselsnummer": "31907499858"
+                },
+                "tilleggsId": [],
+                "verger": [],
+
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00",
+                "foedselsdato": "1974-10-31",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -480,48 +482,26 @@
     ]
   },
   "ordreEllerKjennelseVaretekt": {
-    "type": "ordreVaretekt",
     "ordreVaretekt": {
       "merknad": "Første ordre fra påtale. Hvilke varianter av brev og besøksforbud og delvs/full isolasjon er mulig.\r\nHva med annet, hvilken lovhjemmel er det og hva kan det være. Det er ikke mulig strukturert i dag",
       "besluttetAv": {
-        "brukeridentifikasjon": "TEB012",
         "tittel": "Politifullmektig",
         "navn": {
           "fornavn": "Tom Erik Wassenaar",
           "etternavn": "Berntsen"
-        },
-        "kontakt": {
-          "telefon": "55224411"
         }
       },
       "tidspunkt": "2022-11-03T10:19:56+02:00",
       "restriksjoner": {
         "merknad": "Ingen brev til denne personen",
-        "restriksjoner": [
-          {
-            "id": "3B7B7E31-84D3-48F7-ABD1-242D58A920E0",
-            "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-            }
-          }
-        ]
+        "restriksjoner": ["BREV_OG_BESOEKSFORBUD"]
       },
       "isolasjon": {
         "merknad": "Ingen kontakt",
-        "isolasjon": [
-          {
-            "id": "B3CA93AD-2A4F-4DAE-B048-94E10622CD66",
-            "isolasjonsType": "FULL_ISOLASJON",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186a"
-            }
-          }
-        ]
+        "isolasjon": ["FULL_ISOLASJON"]
       }
     }
   },
-  "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
   "paategningsdokumentRef": {
     "internId": "1231241"
   },
@@ -529,7 +509,7 @@
     {
       "internId": "1234567879",
       "overskrift": "Begjæring om varetekt, Kiwi",
-      "skrevetDato": "2022-11-03T00:00:00",
+      "skrevetDato": "2022-11-03",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfasdf",
@@ -542,7 +522,7 @@
       "kategori": {
         "kode": "siktelse"
       },
-      "skrevetDato": "2022-10-14T00:00:00",
+      "skrevetDato": "2022-10-14",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdf",
