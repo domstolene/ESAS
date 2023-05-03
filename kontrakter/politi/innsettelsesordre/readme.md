@@ -7,8 +7,8 @@ PIN er politiets innsettelsesordre som er den som kommer før kjennelse fra rett
 
 Dette er en stor og komplisert melding som vi må sjekke om passer sammen med arbeidsprosessene til poltiet. Tenker særlig på informasjon om helse og risiko. En bedre løsning er å dele opp med egen informasjon om helse og risiko og oppdatering når det endres.
 1. Innsettelseordre med fokus på juristen sin ordre, kun restriksjoner hvis kjennelse ikke er mottatt.
-Kjennelse fra domstolene kun egen melding, ikke en del av denne.
-Risiko og helse informasjon egen melding.
+2. Kjennelse fra domstolene kun egen melding, ikke en del av denne.
+3. Risiko og helse informasjon egen melding. Bør også gjelde bestilling av varetektsplass.
 
 ## Begreper
 ### varetektsyklus
