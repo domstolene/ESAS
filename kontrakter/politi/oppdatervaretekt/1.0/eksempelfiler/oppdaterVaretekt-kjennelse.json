@@ -1,5 +1,5 @@
 {
-  "melding": "oppdaterVaretekt",
+  "melding": "OPPDATER_VARETEKT",
   "forsendelse": {
     "meldingsId": "607AC26F-E3C3-4241-AE76-8389B7715968",
     "sendtTid": "2022-11-03T10:19:57+02:00",
@@ -8,22 +8,17 @@
         "organisasjonsnummer": "983997953",
         "navn": "Innlandet politidistrikt"
       },
-      "saksbehandler": {
+      "person": {
         "brukeridentifikasjon": "PD",
-        "navn": {
-          "etternavn": "Politiets Datatjeneste"
-        }
+        "etternavn": "Politiets Datatjeneste"
       }
     },
-    "mottaker": {
-      "organisasjon": {
-        "organisasjonsnummer": "890286712",
-        "navn": "Bjørgvin fengsel"
-      }
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "890286712",
+      "navn": "Bjørgvin fengsel"
     }
   },
   "hovedStraffesaksnummer": "15434819",
-  "ordreId": "1D7D64DB-6C54-4362-AD07-82DEC16D2E73",
   "varetektSyklusId": "0AF242A3-EDCC-4FB7-B1DE-E974A360B73C",
   "personIVaretekt": {
     "internId": "700892414",
@@ -31,17 +26,18 @@
       "fornavn": "Morsom",
       "etternavn": "KIWI"
     },
-    "foedselsnummer": ["14846399381"],
-    "sspNummer": [],
-    "dNummer": [],
+    "foedselsdato": "1963-04-14",
     "kjoenn": "MANN",
-    "foedselsdato": "1963-04-14T00:00:00",
     "statsborgerskap": [
       {
         "kode": "NOR",
         "navn": "Norge"
       }
     ],
+    "identitetsnummer": {
+      "foedselsnummer": "14846399381"
+    },
+    "tilleggsId": [],
     "adresseGradering": "KLIENT_ADRESSE",
     "personAdresse": {
       "gradering": "KLIENT_ADRESSE",
@@ -55,76 +51,53 @@
   "ordreEllerKjennelseVaretekt": {
     "type": "kjennelseVaretekt",
     "kjennelseVaretekt": {
-      "fengslingKjennelse": {
-        "domstol": {
-          "organisasjonsnummer": "826726342",
-          "navn": "Buskerud tingrett"
-        },
-        "avsagtDato": "2022-11-03T00:00:00",
-        "fengsling": {
-          "lovbudEnkel": {
-            "lovbudStreng": "§172..."
-          },
-          "fraDato": "2022-11-03T00:00:00",
-          "tilDato": "2022-11-30T00:00:00"
-        }
-      },
+      "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
+      "avsagtDato": "2022-07-05",
+      "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "restriksjoner": [
         {
-          "domstol": {
-            "organisasjonsnummer": "826726342",
-            "navn": "Buskerud tingrett"
-          },
-          "avsagtDato": "2022-11-03T00:00:00",
-          "restriksjon": {
-            "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-            },
-            "fraDato": "2022-11-03T00:00:00",
-            "tilDato": "2022-11-16T00:00:00"
-          }
+          "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
+          "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
+          "fraDato": "2022-07-06",
+          "tilDato": "2022-07-20"
         },
         {
-          "domstol": {
-            "organisasjonsnummer": "826726342",
-            "navn": "Buskerud tingrett"
-          },
-          "avsagtDato": "2022-11-03T00:00:00",
-          "restriksjon": {
-            "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-            },
-            "fraDato": "2022-11-17T00:00:00",
-            "tilDato": "2022-11-30T00:00:00"
-          }
+          "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
+          "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
+          "fraDato": "2022-07-21",
+          "tilDato": "2022-08-06"
         }
       ],
-      "isolasjon": [
+      "isolasjonsKrav": [
         {
-          "domstol": {
-            "organisasjonsnummer": "826726342",
-            "navn": "Buskerud tingrett"
-          },
-          "avsagtDato": "2022-11-03T00:00:00",
-          "isolasjon": {
-            "isolasjonsType": "FULL_ISOLASJON",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186a"
-            },
-            "fraDato": "2022-11-03T00:00:00",
-            "tilDato": "2022-11-16T00:00:00"
-          }
+          "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
+          "isolasjonsType": "FULL",
+          "fraDato": "2022-07-06",
+          "tilDato": "2022-08-06"
         }
-      ]
+      ],
+      "fengsling": {
+        "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
+        "fraDato": "2022-07-06",
+        "tilDato": "2022-08-06",
+        "fengslingsFristDato": "2022-07-06",
+        "lovbud": {
+          "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
+        },
+        "merknad": "Kiwi må i varetekt så fort som fy"
+      },
+      "anke": {
+        "anketDato": "2022-07-06",
+        "oppsettendeVirkning": false
+      }
     }
   },
+  "paagrepetTidspunkt": "2022-11-03T10:19:59+02:00",
   "dokumenter": [
     {
       "internId": "1234567879",
       "overskrift": "Begjæring om varetekt, Kiwi",
-      "skrevetDato": "2022-11-03T00:00:00",
+      "skrevetDato": "2022-11-03",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfasdf",
@@ -137,7 +110,7 @@
       "kategori": {
         "kode": "siktelse"
       },
-      "skrevetDato": "2022-10-14T00:00:00",
+      "skrevetDato": "2022-10-14",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdf",

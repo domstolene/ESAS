@@ -1,5 +1,5 @@
 {
-  "melding": "oppdaterVaretekt",
+  "melding": "OPPDATER_VARETEKT",
   "forsendelse": {
     "meldingsId": "090388AB-8B5E-47E7-9763-A7EB852823F4",
     "sendtTid": "2022-11-03T10:19:59+02:00",
@@ -8,22 +8,17 @@
         "organisasjonsnummer": "983997953",
         "navn": "Innlandet politidistrikt"
       },
-      "saksbehandler": {
+      "person": {
         "brukeridentifikasjon": "PD",
-        "navn": {
-          "etternavn": "Politiets Datatjeneste"
-        }
+        "etternavn": "Politiets Datatjeneste"
       }
     },
-    "mottaker": {
-      "organisasjon": {
-        "organisasjonsnummer": "890286712",
-        "navn": "Bjørgvin fengsel"
-      }
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "890286712",
+      "navn": "Bjørgvin fengsel"
     }
   },
   "hovedStraffesaksnummer": "15434819",
-  "ordreId": "A96227B1-F3F7-460E-A7DE-DE27504BD7C0",
   "varetektSyklusId": "49E8FCFD-0AA8-40C9-9D7A-1D1CAF7D7320",
   "personIVaretekt": {
     "internId": "700892414",
@@ -31,17 +26,18 @@
       "fornavn": "Morsom",
       "etternavn": "KIWI"
     },
-    "foedselsnummer": ["14846399381"],
-    "sspNummer": [],
-    "dNummer": [],
+    "foedselsdato": "1963-04-14",
     "kjoenn": "MANN",
-    "foedselsdato": "1963-04-14T00:00:00",
     "statsborgerskap": [
       {
         "kode": "NOR",
         "navn": "Norge"
       }
     ],
+    "identitetsnummer": {
+      "foedselsnummer": "14846399381"
+    },
+    "tilleggsId": [],
     "adresseGradering": "KLIENT_ADRESSE",
     "personAdresse": {
       "gradering": "KLIENT_ADRESSE",
@@ -55,44 +51,31 @@
   "ordreEllerKjennelseVaretekt": {
     "type": "ordreVaretekt",
     "ordreVaretekt": {
+      "ordreId": "A96227B1-F3F7-460E-A7DE-DE27504BD7C0",
       "merknad": "Første ordre fra påtale. Hvilke varianter av brev og besøksforbud og delvs/full isolasjon er mulig.\r\nHva med annet, hvilken lovhjemmel er det og hva kan det være. Det er ikke mulig strukturert i dag",
       "besluttetAv": {
         "brukeridentifikasjon": "TEB012",
         "tittel": "Politifullmektig",
-        "navn": {
-          "fornavn": "Tom Erik Wassenaar",
-          "etternavn": "Berntsen"
-        },
+        "fornavn": "Tom Erik Wassenaar",
+        "etternavn": "Berntsen",
         "kontakt": {
-          "telefon": "55224411"
+          "telefonnummer": ["55224411"]
         }
       },
       "tidspunkt": "2022-11-03T10:19:59+02:00",
-      "restriksjoner": {
-        "merknad": "Ingen brev til denne personen",
-        "restriksjoner": [
-          {
-            "id": "FF815BE6-CE92-4A55-8CAE-9BE0F1340101",
-            "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-            }
-          }
-        ]
-      },
-      "isolasjon": {
-        "merknad": "Opphever isolasjon i morgen",
-        "isolasjon": [
-          {
-            "id": "1B6547BE-ABC3-40B4-AFE1-D31DFD162668",
-            "isolasjonsType": "FULL_ISOLASJON",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl. § 186a"
-            },
-            "tilDato": "2022-11-04T00:00:00"
-          }
-        ]
-      }
+      "restriksjoner": [
+        {
+          "restriksjonsId": "FF815BE6-CE92-4A55-8CAE-9BE0F1340101",
+          "restriksjonsType": "BREV_OG_BESOEKSFORBUD"
+        }
+      ],
+      "isolasjonsKrav": [
+        {
+          "isolasjonsId": "1B6547BE-ABC3-40B4-AFE1-D31DFD162668",
+          "isolasjonsType": "FULL",
+          "tilDato": "2022-11-04"
+        }
+      ]
     }
   },
   "paagrepetTidspunkt": "2022-11-03T10:19:59+02:00",
@@ -100,7 +83,7 @@
     {
       "internId": "1234567879",
       "overskrift": "Begjæring om varetekt, Kiwi",
-      "skrevetDato": "2022-11-03T00:00:00",
+      "skrevetDato": "2022-11-03",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfasdf",
@@ -113,7 +96,7 @@
       "kategori": {
         "kode": "siktelse"
       },
-      "skrevetDato": "2022-10-14T00:00:00",
+      "skrevetDato": "2022-10-14",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdf",

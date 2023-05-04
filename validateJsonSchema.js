@@ -8,9 +8,10 @@ addFormats(ajv);
 const jsonSchemaFolders = [
   "kontrakter/politi/varetekt",
   "kontrakter/politi/bestillvaretektsplass",
+  "kontrakter/politi/oppdatervaretekt",
   "kontrakter/da/varetekt",
   "kontrakter/felles/kvittering",
-  "kontrakter/felles/kodeverk",
+  "kontrakter/felles/kodeverk"
 ];
 
 const jsonKodeverkFolders = [
@@ -20,10 +21,6 @@ const jsonKodeverkFolders = [
 
 const isDirectory = (path) => {
   return fs.statSync(path).isDirectory();
-};
-
-const isFile = (path) => {
-  return !fs.statSync(path).isDirectory();
 };
 
 const isJsonSchema = (filename) => {
@@ -119,4 +116,3 @@ const findAndValidateKodeverk = (kodeverkFolderBasePath, jsonValidator) => {
 
 jsonSchemaFolders.forEach(findAndValidate);
 findAndValidateAllKodeverk(jsonKodeverkFolders);
-//jsonKodeverkFolders.forEach(findAndValidateKodeverk);
