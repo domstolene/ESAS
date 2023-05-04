@@ -15,7 +15,6 @@ const jsonSchemaFolders = [
 ];
 
 const jsonKodeverkFolders = [
-    "kodeverk/politi",
     "kodeverk/felles"
 ];
 
