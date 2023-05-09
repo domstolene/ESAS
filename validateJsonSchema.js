@@ -11,6 +11,11 @@ const jsonSchemaFolders = [
   "kontrakter/politi/oppdatervaretekt",
   "kontrakter/da/varetekt",
   "kontrakter/felles/kvittering",
+  "kontrakter/felles/kodeverk"
+];
+
+const jsonKodeverkFolders = [
+    "kodeverk/felles"
 ];
 
 const isDirectory = (path) => {
@@ -75,4 +80,38 @@ const findAndValidate = (schemaFolderBasePath) => {
     .forEach(validateJsonSchemas);
 };
 
+const findAndValidateAllKodeverk = (folderList) => {
+  const jsonSchema = getJsonSchema("kontrakter/felles/kodeverk/1.0");
+  // Kodeverk examples is already validated, empty cache to avoid conflict
+  ajv.removeSchema();
+  console.log("Loading Kodeverk JSON-schema " + jsonSchema);
+  const jsonSchemaValidator = ajv.compile(readFileContent(jsonSchema).json);
+  folderList.forEach((kodeverkDir) => {
+    findAndValidateKodeverk(kodeverkDir, jsonSchemaValidator);
+  });
+};
+
+const findAndValidateKodeverk = (kodeverkFolderBasePath, jsonValidator) => {
+  const folderContents = fs
+    .readdirSync(kodeverkFolderBasePath)
+    .map((content) => kodeverkFolderBasePath + "/" + content);
+  console.log("Validate kodeverk in " + kodeverkFolderBasePath);
+  const jsonExamples = getJsonExamples(kodeverkFolderBasePath).map(
+    readFileContent
+  );
+
+  jsonExamples.forEach((exampleJson) => {
+    console.log("   Validate " + exampleJson.file);
+    const validationResult = jsonValidator(exampleJson.json);
+    if (!validationResult) {
+      throw Error(
+        jsonValidator.errors
+          .map((error) => error.instancePath + " " + error.message)
+          .join("\n")
+      );
+    }
+  });
+};
+
 jsonSchemaFolders.forEach(findAndValidate);
+findAndValidateAllKodeverk(jsonKodeverkFolders);
