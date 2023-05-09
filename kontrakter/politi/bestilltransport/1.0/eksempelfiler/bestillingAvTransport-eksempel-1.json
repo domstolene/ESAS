@@ -533,7 +533,7 @@
   "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
   "paagrepetSted": "Sinsenkrysset, 0570 OSLO kommune fritekst",
   "bestillingAvTransportDetaljer": {
-    "typeFremstilling": "TRANSPORT_DIREKTE_TIL_VARETEKT",
+    "typeFremstilling": "TRANSPORT_FRA_ARREST_TIL_VARETEKT",
     "transportFra": "Arrest 1,  0100 OSLO",
     "transportTil": "Ringerike fengsel, Justisveien 30, 3533 Tyristrand",
     "fremmoetetidspunkt": "2024-04-01T08:00:00+02:00",
