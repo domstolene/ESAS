@@ -533,11 +533,31 @@
   "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
   "paagrepetSted": "Sinsenkrysset, 0570 OSLO kommune fritekst",
   "bestillingAvTransportDetaljer": {
-    "typeFremstilling": "TRANSPORT_FRA_ARREST_TIL_VARETEKT",
-    "transportFra": "Arrest 1,  0100 OSLO",
-    "transportTil": "Ringerike fengsel, Justisveien 30, 3533 Tyristrand",
+    "typeFremstilling": "FOERSTEGANGSFENGSLING",
+    "transportFra": {
+      "stedsnavn": "Hovedarresten",
+      "gateadresse": "Arresteveien 1",
+      "postnummer": "7010",
+      "poststed": "TRONDHEIM"
+    },
+    "transportTil": {
+      "stedsnavn": "Trondheimsfengselet alle vet hvor er ut fra egennavnet alene"
+    },
     "fremmoetetidspunkt": "2024-04-01T08:00:00+02:00",
-    "oppstartstidspunkt": "2024-04-01T09:00:00+02:00"
+    "oppstartstidspunkt": "2024-04-01T09:00:00+02:00",
+    "kontaktopplysningerAdvokater": {
+      "paataleansvarligNavn": { "etternavn": "Paatalesen" },
+      "paataleansvarligTelefon": "11 22 33 44",
+      "forsvarerNavn": {
+        "fornavn": "Fjodor",
+        "etternavn": "Feit"
+      },
+      "forsvarerTelefon": "(+47) 99 88 77 66"
+    },
+    "opplysningerOmAndreSiktedeISaken": {
+      "andreSiktedeISakenMm": "Chi Had rapporteres ha en torn i siden til siktede og fryktes gi grisebank ved anledning",
+      "kanIkkeTransporteresSammen": true
+    }
   },
   "dokumenter": [
     {

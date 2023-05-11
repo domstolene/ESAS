@@ -34,34 +34,7 @@
       "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen."
     },
     "bestillingAvTransportDetaljer": {
-      "typeFremstilling": {
-        "description": "Indikerer formålet med transporten. I versjon 1.0 av dette skjema støttes transport fra arrest til varetekt.",
-        "type": "string",
-        "enum": ["TRANSPORT_FRA_ARREST_TIL_VARETEKT"]
-      },
-      "transportFra": { "type": "string" },
-      "transportTil": { "type": "string" },
-      "fremmoetetidspunkt": {
-        "type": "string",
-        "format": "date-time",
-        "description": "Dato+klokkeslett"
-      },
-      "oppstartstidspunkt": {
-        "type": "string",
-        "format": "date-time",
-        "description": "Dato+klokkeslett"
-      },
-      "returtransportTil": {
-        "type": "string",
-        "description": "Optional. Spesifiser evt. stedet personen skal returneres/videretransporters til etter å først ha blitt fremstilt til stedet angitt i *transportTil*. "
-      },
-      "required": [
-        "typeFremstilling",
-        "transportFra",
-        "transportTil",
-        "fremmoetetidspunkt",
-        "oppstartstidspunkt"
-      ]
+      "$ref": "#/definitions/bestillingAvTransportDetaljer"
     },
     "dokumenter": {
       "type": "array",
@@ -80,6 +53,98 @@
   "additionalProperties": false,
 
   "definitions": {
+    "bestillingAvTransportDetaljer": {
+      "description": "Detaljering i  bestilling av transport ",
+      "title": "bestillingAvTransportDetaljer",
+      "type": "object",
+      "properties": {
+        "typeFremstilling": {
+          "description": "Indikerer formålet med transporten. I versjon 1.0 av dette skjema støttes transport fra arrest til varetekt.",
+          "type": "string",
+          "enum": ["FOERSTEGANGSFENGSLING"]
+        },
+        "transportFra": { "$ref": "#/definitions/transportAdresse" },
+        "transportTil": { "$ref": "#/definitions/transportAdresse" },
+        "fremmoetetidspunkt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Dato+klokkeslett"
+        },
+        "oppstartstidspunkt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Dato+klokkeslett"
+        },
+        "returtransportTil": {
+          "$ref": "#/definitions/transportAdresse",
+          "description": "Optional. Spesifiser evt. stedet personen skal returneres/videretransporters til etter å først ha blitt fremstilt til stedet angitt i *transportTil*. "
+        },
+        "returtidspunkt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Optional. Spesifiser estimert tidspunkt for returtransporten. "
+        },
+        "kontaktopplysningerAdvokater": {
+          "$ref": "#/definitions/kontaktopplysningerAdvokater"
+        },
+        "opplysningerOmAndreSiktedeISaken": {
+          "$ref": "#/definitions/opplysningerOmAndreSiktedeISaken"
+        }
+      },
+      "required": [
+        "typeFremstilling",
+        "transportFra",
+        "transportTil",
+        "fremmoetetidspunkt",
+        "oppstartstidspunkt"
+      ],
+      "additionalProperties": false
+    },
+    "opplysningerOmAndreSiktedeISaken": {
+      "description": "Informasjon om andre siktede m.m. og evt. frarådning av at disse transporteres samlet. Fritekst for fleksibilitet, siktelse/tiltale benyttes for strukturerte data. Opplysninger her skal heller ikke brukes utover til sikker gjennomføring av transportoppdraget. ",
+      "title": "opplysningerOmAndreSiktedeISaken",
+      "type": "object",
+      "properties": {
+        "andreSiktedeISakenMm": { "type": "string" },
+        "kanIkkeTransporteresSammen": {
+          "type": "boolean",
+          "description": "true verdi indikerer at personer nevnt i *andreSiktedeISakenMm* ikke kan transporteres sammen. "
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "kontaktopplysningerAdvokater": {
+      "description": "Kontaktopplysninger for relevante aktører. ",
+      "title": "kontaktopplysningerAdvokater",
+      "type": "object",
+      "properties": {
+        "paataleansvarligNavn": { "$ref": "#/definitions/personnavn" },
+        "paataleansvarligTelefon": { "$ref": "#/definitions/telefonnummer" },
+        "aktorNavn": { "$ref": "#/definitions/personnavn" },
+        "aktorTelefon": { "$ref": "#/definitions/telefonnummer" },
+        "forsvarerNavn": { "$ref": "#/definitions/personnavn" },
+        "forsvarerTelefon": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "transportAdresse": {
+      "description": "Adressetype til bruk i transportbestillinger. ",
+      "title": "transportAdresse",
+      "type": "object",
+      "properties": {
+        "stedsnavn": { "type": "string" },
+        "gateadresse": { "type": "string" },
+        "postnummer": {
+          "type": "string",
+          "pattern": "^\\d{4}$"
+        },
+        "poststed": { "type": "string" }
+      },
+      "required": ["stedsnavn"],
+      "additionalProperties": false
+    },
     "personVaretektInfo": {
       "title": "personVaretektInfo",
       "type": "object",
