@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://domstol.no/felles/1.0/kodeverk.schema.json",
+  "description": "Kodeverk liste som er definert i json filer i felles repo",
+
+  "type": "object",
+  "properties": {
+    "kodeType": {
+      "$ref": "#/definitions/kodeType",
+      "description": "unik id for denne typen koder."
+    },
+    "koder": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/kodeverkDefinisjon"
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["kodeType"],
+  "additionalProperties": false,
+
+  "definitions": {
+    "kodeverkDefinisjon": {
+      "type": "object",
+      "description": "En kodeverk definisjon som brukes i definisjonen av kodeverk objekt",
+      "properties": {
+        "kode": {
+          "$ref": "#/definitions/kode"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "maxLength": 250,
+          "minLength": 1
+        },
+        "gyldigTil": {
+          "type": "string",
+          "description": "Gyldig til dato, dvs. 2023-04-01 betyr gyldig til og med 2023-03-31",
+          "format": "date"
+        }
+      },
+      "required": ["kode", "beskrivelse"],
+      "additionalProperties": false
+    },
+    "kode": {
+      "type": "string",
+      "pattern": "^[A-Z,Æ,Ø,Å,0-9][A-Z,Æ,Ø,Å,0-9,_]*$",
+      "maxLength": 50,
+      "minLength": 1
+    },
+    "kodeType": {
+      "type": "string",
+      "description": "unik id for denne typen koder.",
+      "pattern": "^[A-Z,Æ,Ø,Å,0-9][A-Z,Æ,Ø,Å,0-9,_]*$",
+      "maxLength": 50,
+      "minLength": 1
+    }
+  }
+}
