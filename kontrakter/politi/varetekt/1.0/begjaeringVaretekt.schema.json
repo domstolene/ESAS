@@ -176,10 +176,10 @@
           "enum": ["LUKKEDE_DOERER", "FORBUD_GJENGIVELSE"]
         },
         "ansvarligPaatalejurist": {
-          "$ref": "#/definitions/ansattPerson"
+          "$ref": "#/definitions/paataleJurist"
         },
         "aktor": {
-          "$ref": "#/definitions/ansattPerson"
+          "$ref": "#/definitions/paataleJurist"
         }
       },
       "required": [
@@ -384,6 +384,30 @@
       "type": "object",
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "paataleJurist": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker. Beholder brukeridentifikasjon pga. av gammel historikk og behov for identifisering.",
+      "properties": {
         "brukeridentifikasjon": {
           "type": "string",
           "description": "BID hos politiet nå"
@@ -405,7 +429,7 @@
           "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["brukeridentifikasjon", "etternavn"],
+      "required": ["etternavn"],
       "additionalProperties": false
     },
     "forsendelse": {
