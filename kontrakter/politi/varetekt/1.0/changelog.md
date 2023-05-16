@@ -5,11 +5,11 @@
 Hvis det ikke er helt nødvendig som det kanskje er på Jurister.
 La til en dato også i Changelog.
 ansattPerson fjernet bid laget paataleJurist.
-### ESAS-294 justeringer
+### Justeringer (ESAS-294)
 1. Verger skal være ordentlige personer så verger er lagt til som en vanlig person type.
 2. Lovbud trenger ikke lovbudId.
 3. Flere ting som er ønsket som ikke er med er dokumentert i readme.md fil.
-### ESAS-222 Endringer i Begjæring varetekt etter MR på kjennelseVaretekt fra domstolene
+### Endringer i Begjæring varetekt etter MR på kjennelseVaretekt fra domstolene (ESAS-222)
 Synker med kjennelseVaretekt etter PR branch feature/varetekt_kennellse_refaktorering
 1. melding med store bokstaver og _ som enum.
 2. organisasjon med restriksjoner på organisasjonsnummer....
