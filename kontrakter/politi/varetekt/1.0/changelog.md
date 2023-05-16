@@ -1,6 +1,10 @@
 # Versjon 1.0 som vi til slutt skal gå i produksjon med i ESAS II
-
 ## Versjoner log
+### Fjerne påloggingsinformasjon i meldinger (ESAS-424)
+16.05.2023
+Hvis det ikke er helt nødvendig som det kanskje er på Jurister.
+La til en dato også i Changelog.
+ansattPerson fjernet bid laget paataleJurist.
 ### ESAS-294 justeringer
 1. Verger skal være ordentlige personer så verger er lagt til som en vanlig person type.
 2. Lovbud trenger ikke lovbudId.
