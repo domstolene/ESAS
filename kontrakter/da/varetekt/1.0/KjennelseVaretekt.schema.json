@@ -334,15 +334,11 @@
     "ansattPerson": {
       "description": "Type for personer som er ansatt hos påtale eller domstolen(saksbehandlere, påtaleadvokater, statsadvokater,...)",
       "properties": {
-        "brukeridentifikasjon": {
-          "type": "string",
-          "description": "Brukernavn til de ansatte"
-        },
         "etternavn": { "type": "string" },
         "fornavn": { "type": "string" },
         "tittel": { "type": "string" }
       },
-      "required": ["etternavn", "brukeridentifikasjon"],
+      "required": ["etternavn"],
       "type": "object",
       "additionalProperties": false
     },

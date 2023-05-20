@@ -9,7 +9,6 @@
         "navn": "Buskerud tingrett"
       },
       "person": {
-        "brukeridentifikasjon": "tbuslrs",
         "etternavn": "Saksbehandler",
         "fornavn": "Litt",
         "tittel": "Saksbehandler"
@@ -25,13 +24,11 @@
   },
   "aktoerer": {
     "dommer": {
-      "brukeridentifikasjon": "tbuslds",
       "etternavn": "Dommersen",
       "fornavn": "Lars",
       "tittel": "Dommerfullmeltig"
     },
     "saksbehandler": {
-      "brukeridentifikasjon": "tbuslrs",
       "etternavn": "Saksbehandler",
       "fornavn": "Litt",
       "tittel": "Saksbehandler"
