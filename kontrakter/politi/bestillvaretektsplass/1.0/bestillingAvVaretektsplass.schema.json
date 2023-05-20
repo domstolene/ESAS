@@ -31,8 +31,9 @@
     "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
     "paagrepetSted": {
       "type": "string",
-      "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen."
+      "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen. Dette bør struktureres som en adresse i framtiden, men politiet har fritekst p.t."
     },
+    "kontaktopplysningerAdvokater":  { "$ref": "#/definitions/kontaktopplysningerAdvokater" },
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -44,6 +45,7 @@
     "hovedStraffesaksnummer",
     "bestillingAvVaretektsplassId",
     "paagrepetTidspunkt",
+    "paagrepetSted",
     "personVaretektInfo"
   ],
   "additionalProperties": false,
@@ -69,6 +71,21 @@
           "$ref": "#/definitions/risikoOgHelseInfo"
         }
       }
+    },
+    "kontaktopplysningerAdvokater": {
+      "description": "Kontaktopplysninger for relevante aktører. Fylles ut direkte her når det ikke fremgår av siktelsen ennå.",
+      "title": "kontaktopplysningerAdvokater",
+      "type": "object",
+      "properties": {
+        "paataleansvarligNavn": { "$ref": "#/definitions/personnavn" },
+        "paataleansvarligKontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
+        "aktorNavn": { "$ref": "#/definitions/personnavn" },
+        "aktorKontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
+        "forsvarerNavn": { "$ref": "#/definitions/personnavn" },
+        "forsvarerKontaktInfo": { "$ref": "#/definitions/kontaktInfo" }
+      },
+      "required": [],
+      "additionalProperties": false
     },
     "adresse": {
       "type": "object",
@@ -174,12 +191,12 @@
     "fengsling": {
       "description": "Basis fengsling med til og fra dato",
       "type": "object",
-      "required": ["lovbudEnkel"],
+      "required": ["lovbudEnkel","fraDato"],
       "additionalProperties": false,
       "properties": {
         "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" },
         "fraDato": {
-          "description": "Dato, som domstolene spesifiserer",
+          "description": "Dato, som domstolene spesifiserer. Settes obligatorisk  i bestillingen for å gjøre denne så ekspisitt som mulig, men feltet kan formodentlig ofte forhåndsutfylles med dagens dato i bestillingssystemet",
           "type": "string",
           "format": "date-time"
         },
@@ -192,7 +209,7 @@
     },
     "forsendelse": {
       "type": "object",
-      "description": "Sender (påtale) og mottaker (domstol) av meldingen",
+      "description": "Sender (påtale) og mottaker (kriminalomsorg) av meldingen",
       "properties": {
         "meldingsId": {
           "type": "string"
@@ -206,7 +223,7 @@
         },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
-          "description": "Kriminalomsorgen/eller fengsel tror jeg."
+          "description": "Kriminalomsorgen har et sentralt mottak og styrer videre ruting internt. Påtale kan be om ruting direkte til fengsel her, dette kan etterkommes avhengig av tidspunkt og kapasitet. Ruting rett til fengsel planlegges utenfor kontortid, ruting til regional domskoordinator er ellers norm per 2023."
         }
       },
       "required": [
@@ -365,7 +382,7 @@
     "straffesakDetaljer": {
       "description": "Detaljer rundt straffesaken",
       "type": "object",
-      "required": ["hendelse", "statistikkgruppe"],
+      "required": ["hendelse", "statistikkgruppe","krimtype"],
       "additionalProperties": false,
       "properties": {
         "hendelse": { "$ref": "#/definitions/hendelse" },

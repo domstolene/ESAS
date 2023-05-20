@@ -1,7 +1,7 @@
 {
   "melding": "BESTILLING_VARETEKTSPLASS",
   "forsendelse": {
-    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE5",
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE2",
     "sendtTid": "2022-11-03T10:19:55+02:00",
     "avsender": {
       "organisasjon": {
@@ -19,7 +19,7 @@
     }
   },
   "hovedStraffesaksnummer": "15434811",
-  "bestillingAvVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
+  "bestillingAvVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE2",
   "kontaktPersonKDI": {
     "fornavn": "Peder",
     "etternavn": "Superduper"
@@ -44,6 +44,18 @@
         }
       }
     ]
+  },
+  "kontaktopplysningerAdvokater": {
+    "paataleansvarligNavn": { "etternavn": "Paatalesen" },
+    "paataleansvarligKontaktInfo": {"telefonnummer": ["11 22 33 44"]},
+    "forsvarerNavn": {
+      "fornavn": "Fjodor",
+      "etternavn": "Feit"
+    },
+    "forsvarerKontaktInfo": {
+      "telefonnummer": ["(+47) 99 88 77 66"],
+      "epost": "Feit@fatboysfix.com"
+    }
   },
   "personVaretektInfo": {
     "personVaretekt": {
