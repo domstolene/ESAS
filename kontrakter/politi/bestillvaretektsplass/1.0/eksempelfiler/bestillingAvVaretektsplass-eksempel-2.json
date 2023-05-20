@@ -47,7 +47,7 @@
   },
   "kontaktopplysningerAdvokater": {
     "paataleansvarligNavn": { "etternavn": "Paatalesen" },
-    "paataleansvarligKontaktInfo": {"telefonnummer": ["11 22 33 44"]},
+    "paataleansvarligKontaktInfo": { "telefonnummer": ["11 22 33 44"] },
     "forsvarerNavn": {
       "fornavn": "Fjodor",
       "etternavn": "Feit"

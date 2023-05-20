@@ -33,7 +33,9 @@
       "type": "string",
       "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen. Dette bør struktureres som en adresse i framtiden, men politiet har fritekst p.t."
     },
-    "kontaktopplysningerAdvokater":  { "$ref": "#/definitions/kontaktopplysningerAdvokater" },
+    "kontaktopplysningerAdvokater": {
+      "$ref": "#/definitions/kontaktopplysningerAdvokater"
+    },
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -191,7 +193,7 @@
     "fengsling": {
       "description": "Basis fengsling med til og fra dato",
       "type": "object",
-      "required": ["lovbudEnkel","fraDato"],
+      "required": ["lovbudEnkel", "fraDato"],
       "additionalProperties": false,
       "properties": {
         "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" },
@@ -382,7 +384,7 @@
     "straffesakDetaljer": {
       "description": "Detaljer rundt straffesaken",
       "type": "object",
-      "required": ["hendelse", "statistikkgruppe","krimtype"],
+      "required": ["hendelse", "statistikkgruppe", "krimtype"],
       "additionalProperties": false,
       "properties": {
         "hendelse": { "$ref": "#/definitions/hendelse" },
