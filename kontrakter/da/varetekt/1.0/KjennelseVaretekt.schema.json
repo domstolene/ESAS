@@ -4,11 +4,6 @@
   "description": "Schema definisjon av en Kjennelse-varetekt",
 
   "properties": {
-    "melding": {
-      "type": "string",
-      "enum": ["VARETEKT_KJENNELSE"],
-      "description": "Type melding"
-    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse"
     },
@@ -40,7 +35,6 @@
     }
   },
   "required": [
-    "melding",
     "forsendelse",
     "aktoerer",
     "siktede",
