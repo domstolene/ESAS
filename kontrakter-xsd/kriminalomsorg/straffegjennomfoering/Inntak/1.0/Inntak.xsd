@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Inntak"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Inntak"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="Inntak" type="tns:InntakType" />
+
+  <xs:complexType name="InntakType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+
+      <xs:element name="InnsettelsesData" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="InnsettelsesDato" type="xs:dateTime" nillable="false"/>
+            <xs:element name="Politidistrikt" type="xs:string" nillable="false" />
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Domsinformasjon" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Dom" type="fns:DomsinformasjonType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Datoer">
+        <xs:complexType>
+          <xs:all>
+            <!-- En av verdiene blir alltid satt -->
+            <xs:element name="UbetingetDatoer" type="fns:UbetingetDatoerType" minOccurs="0"/>
+            <xs:element name="SamfunnDatoer" type="fns:SamfunnDatoerType" minOccurs="0"/>
+            <xs:element name="ForvaringDatoer" type="fns:ForvaringDatoerType" minOccurs="0" />
+            <xs:element name="VaretektDatoer" type="fns:VaretektDatoerType" minOccurs="0" />
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Lokasjon">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="LokasjonEnhet" type="fns:LokasjonEnhetType" />
+            <xs:element name="LokasjonPrivat" type="fns:LokasjonPrivatType" minOccurs="0"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

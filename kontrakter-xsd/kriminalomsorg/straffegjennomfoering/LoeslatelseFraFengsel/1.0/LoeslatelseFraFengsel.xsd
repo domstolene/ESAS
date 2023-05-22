@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/LoeslatelseFraFengsel"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/LoeslatelseFraFengsel"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="LoeslatelseFraFengsel" type="tns:LoeslatelseFraFengselType" />
+
+  <xs:complexType name="LoeslatelseFraFengselType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+      <xs:element name="Loeslatelsestidspunkt" type="xs:dateTime" nillable="false"/>
+      <xs:element name="LoeslatelseFraFengselAarsak" type="fns:LoeslatelseFraFengselAarsakType" nillable="false"/>
+      <xs:element name="LokasjonEnhet" type="fns:LokasjonEnhetType" />
+
+      <xs:element name="ResterendeTid" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <!-- En av verdiene blir satt -->
+            <xs:element name="ResterendeTidAar" type="xs:int" nillable="true"/>
+            <xs:element name="ResterendeTidMnd" type="xs:int" nillable="true"/>
+            <xs:element name="ResterendeTidDag" type="xs:int" nillable="true"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Saervilkaar" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Moeteplikt" type="fns:MoetepliktType" nillable="true"/>
+            <xs:element name="Bosted" type="fns:AdresseType"  nillable="true"/>
+            <xs:element name="MoeteAnvistEkstern" type="fns:EksterntMoeteType"  nillable="true"/> <!-- person, myndighet og organisasjon -->
+            <xs:element name="Behandling" type="fns:VarighetMerknadType" nillable="true"/>
+            <xs:element name="OppholdsstedArbeidOpplaering" type="fns:OppholdsstedArbeidOpplaeringType"  nillable="true"/> <!-- oppholdssted, arbeid og opplæring -->
+            <xs:element name="UnnlateSamkvemMedPersoner" type="fns:RelasjonerType" nillable="true"/> <!-- merknad og liste med personer -->
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

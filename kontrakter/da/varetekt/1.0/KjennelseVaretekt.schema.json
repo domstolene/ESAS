@@ -4,11 +4,6 @@
   "description": "Schema definisjon av en Kjennelse-varetekt",
 
   "properties": {
-    "melding": {
-      "type": "string",
-      "enum": ["VARETEKT_KJENNELSE"],
-      "description": "Type melding"
-    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse"
     },
@@ -40,7 +35,6 @@
     }
   },
   "required": [
-    "melding",
     "forsendelse",
     "aktoerer",
     "siktede",
@@ -334,15 +328,11 @@
     "ansattPerson": {
       "description": "Type for personer som er ansatt hos påtale eller domstolen(saksbehandlere, påtaleadvokater, statsadvokater,...)",
       "properties": {
-        "brukeridentifikasjon": {
-          "type": "string",
-          "description": "Brukernavn til de ansatte"
-        },
         "etternavn": { "type": "string" },
         "fornavn": { "type": "string" },
         "tittel": { "type": "string" }
       },
-      "required": ["etternavn", "brukeridentifikasjon"],
+      "required": ["etternavn"],
       "type": "object",
       "additionalProperties": false
     },

@@ -1,5 +1,4 @@
 {
-  "melding": "VARETEKT_KJENNELSE",
   "forsendelse": {
     "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0AA",
     "sendtTid": "2022-07-06T16:35:00+02:00",
@@ -9,7 +8,6 @@
         "navn": "Buskerud tingrett"
       },
       "person": {
-        "brukeridentifikasjon": "tbuslrs",
         "etternavn": "Saksbehandler",
         "fornavn": "Litt",
         "tittel": "Saksbehandler"
@@ -25,13 +23,11 @@
   },
   "aktoerer": {
     "dommer": {
-      "brukeridentifikasjon": "tbuslds",
       "etternavn": "Dommersen",
       "fornavn": "Lars",
       "tittel": "Dommerfullmeltig"
     },
     "saksbehandler": {
-      "brukeridentifikasjon": "tbuslrs",
       "etternavn": "Saksbehandler",
       "fornavn": "Litt",
       "tittel": "Saksbehandler"

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+           xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           xml:lang="no">
+
+  <!-- Metadata -->
+  <xs:complexType name="MetadataType">
+    <xs:all>
+      <xs:element name="MeldingsId" type="xs:string" nillable="false" />
+		<xs:element name="HendelseId" type="xs:string" nillable="true"/>
+      <xs:element name="HendelseOpprettetTid" type="xs:dateTime" minOccurs="1"/>
+	    <xs:element name="HendelseEndretTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="SSP" type="xs:string" nillable="true" />
+      <xs:element name="DUF" type="tns:DUFNummerListe" nillable="true" />
+      <xs:element name="StraffesaksNummer" type="xs:string" nillable="true" />
+      <xs:element name="ReaksjonsId" type="xs:string" nillable="true" />
+      <xs:element name="Fornavn" type="xs:string" nillable="true" />
+      <xs:element name="Mellomnavn" type="xs:string" nillable="true" />
+      <xs:element name="Etternavn" type="xs:string" nillable="true" />
+      <xs:element name="Fnr" type="xs:string" nillable="true" />
+      <xs:element name="Kjoenn" type="tns:KjoennsType" minOccurs="1" />
+      <xs:element name="Statsborgerskap" type="xs:string" nillable="true" />
+      <xs:element name="InnsattKategori" type="tns:InnsattKategoriType" nillable="true" />
+      <xs:element name="ErIAnstalt" type="xs:boolean" nillable="false"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="DUFNummerListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">Liste med DUF nummer</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DUFNummer" type="xs:string"  minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="KjoennsType">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">M: Mann, K: Kvinne, U: Uspesifisert</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="K"/>
+      <xs:enumeration value="U"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- LokasjonEnhent -->
+  <xs:complexType name="LokasjonEnhetType">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">I hvilken enhet personen befinner seg / hvilken enhet personen er tilknyttet</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Distrikt" type="xs:string" nillable="false"/>
+      <xs:element name="Enhet" type="xs:string" nillable="false"/>
+      <xs:element name="EnhetNr" type="xs:string" nillable="false"/>
+    </xs:all>
+  </xs:complexType>
+
+  <!-- LokasjonPrivat -->
+  <xs:complexType name="LokasjonPrivatType">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">Hvor personen befinner seg på privat adresse</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Oppholdssted" type="xs:string" nillable="true"/>
+      <xs:element name="Adresse" type="xs:string" nillable="true"/>
+      <xs:element name="Postnr" type="xs:string" nillable="true"/>
+      <xs:element name="Poststed" type="xs:string" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <!-- Soningsdatoer -->
+  <xs:complexType name="UbetingetDatoerType">
+    <xs:all>
+      <xs:element name="StartDato" type="xs:dateTime" nillable="false"/>
+      <xs:element name="EndtTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="EnTredjedelsTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="HalvTid" type="xs:dateTime" nillable="true" />
+      <xs:element name="ToTredjedelsTid" type="xs:dateTime" nillable="true" />
+      <xs:element name="PermisjonsDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="EKbakdoerdato" type="xs:dateTime" nillable="true" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="SamfunnDatoerType">
+    <xs:all>
+      <xs:element name="Iverksattdato" type="xs:dateTime" nillable="false"/>
+      <xs:element name="ForventetSluttdato" type="xs:dateTime" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ForvaringDatoerType">
+    <xs:all>
+      <xs:element name="StartDato" type="xs:dateTime" nillable="false"/>
+      <xs:element name="MaksDato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="MinsteDato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="PermisjonsDato" type="xs:dateTime" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="VaretektDatoerType">
+    <xs:all>
+      <xs:element name="FraDato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="TilDato" type="xs:dateTime" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <!-- Årsakskoder-->
+  <xs:simpleType name="EndringAarsakType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Korrigering"/>
+      <xs:enumeration value="Straffavrudd"/>
+      <xs:enumeration value="Soningsavbrudd"/>
+      <xs:enumeration value="Samfunnsavbrudd"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Addresse -->
+  <xs:complexType name="AdresseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">Allt som ikke er postnummer/poststed er adresselinje.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Adresselinje" type="xs:string" maxOccurs="4"/>
+      <xs:element name="Postnummer" type="xs:string" nillable="true"/>
+      <xs:element name="Poststed" type="xs:string" nillable="true"/>
+      <xs:element name="Landkode" type="tns:LandkodeType" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="LandkodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">En landkode bestaar av tre storeFraURL bokstaver fra kodelisten ISO 3166-1-alpha-3.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\p{L}{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- GjennomfoeringsStatus -->
+  <xs:simpleType name="GjennomfoeringsStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Stanset"/>
+      <xs:enumeration value="Gjennopptatt"/>
+      <xs:enumeration value="Uendret"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Permisjonstype -->
+  <xs:complexType name="PermisjonType">
+    <xs:all>
+      <xs:element name="FraTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="TilTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="LokasjonPrivat" type="tns:LokasjonPrivatType" nillable="false"/>
+      <xs:element name="Saervilkaar" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Varighet" type="tns:VarighetType"/> <!-- år, måneder og dager -->
+            <xs:element name="StartDato" type="xs:dateTime"/>
+            <xs:element name="Merknad" type="xs:string" nillable="true"/>
+            <!-- Vilkår -->
+            <xs:element name="Meldeplikt" type="tns:MeldepliktType" nillable="true"/>
+            <xs:element name="Bosted" type="tns:AdresseType" nillable="true"/>
+            <xs:element name="OppholdsstedArbeidOpplaering" type="tns:OppholdsstedArbeidOpplaeringType" nillable="true"/> <!-- oppholdssted, arbeid og opplæring -->
+            <xs:element name="UnnlateSamkvemMedPersoner" type="tns:RelasjonerType" nillable="true"/> <!-- merknad og liste med personer -->
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="LoeslatelseFraFengselAarsakType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Benådning"/>
+      <xs:enumeration value="Dødsfall i fengsel"/>
+      <xs:enumeration value="Dommen opphevet"/>
+      <xs:enumeration value="Dødsfall under opphold utenfor fengsel"/>
+      <xs:enumeration value="Løslatt pga at dom er sonet (utholdt) i varetekt"/>
+      <xs:enumeration value="Løslatt bøter med møteplikt"/>
+      <xs:enumeration value="Løslatt etter soning av bøter"/>
+      <xs:enumeration value="Løslatt endt tid"/>
+      <xs:enumeration value="Løslatt på grunn av frifinnende dom"/>
+      <xs:enumeration value="Løslatt etter særskilt beslutning før kjennelsens utløp"/>
+      <xs:enumeration value="Løslatt pga forsøksvis innstilling av sikringsmidler"/>
+      <xs:enumeration value="Løslatt pga. innstilling av sikringsmidler"/>
+      <xs:enumeration value="Løslatt lengstetid sikring"/>
+      <xs:enumeration value="Løslatt lengstetid forvaring"/>
+      <xs:enumeration value="Løslatt pga. ombytte av sikringsmidler"/>
+      <xs:enumeration value="Løslatt på prøve fra forvaring, §45"/>
+      <xs:enumeration value="Løslatt på prøve etter ½ tid"/>
+      <xs:enumeration value="Løslatt av politiet"/>
+      <xs:enumeration value="Løslatt på prøve etter 2/3 tid"/>
+      <xs:enumeration value="Løslatt til gjennomføring av samfunnsstraff"/>
+      <xs:enumeration value="Løslatt etter særskilt beslutning"/>
+      <xs:enumeration value="Løslatt kort tid før endt tid, §42.4"/>
+      <xs:enumeration value="Løslatt kort tid før ½ eller 2/3 tid, §42"/>
+      <xs:enumeration value="Løslatt ved kjennelsens utløp"/>
+      <xs:enumeration value="Overført til fortsatt soning av norsk dom i utlandet"/>
+      <xs:enumeration value="Utvist fra Norge"/>
+      <xs:enumeration value="Utlevert til utlandet etter begjæring"/>
+      <xs:enumeration value="Løslatt etter 7/12 tid"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EndringOppdaterteDatoerAarsakType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Straffavbrudd"/>
+      <xs:enumeration value="Tilbakeført soning el. sikring etter varetekt annen sak"/>
+      <xs:enumeration value="Gjeninnsatt etter gjennomføring av straff etter §16"/>
+      <xs:enumeration value="Gjeninnsatt annet fengsel"/>
+      <xs:enumeration value="Gjeninnsatt samme fengsel"/>
+      <xs:enumeration value="Stanset til aktiv"/>
+      <xs:enumeration value="Ny straffetidsberegning foretatt"/>
+      <xs:enumeration value="Periode for straffavbrudd"/>
+      <xs:enumeration value="Overført bøtesoning"/>
+      <xs:enumeration value="Overført til dom"/>
+      <xs:enumeration value="Overført til forvaring"/>
+      <xs:enumeration value="Overført til foregrepet soning"/>
+      <xs:enumeration value="Overført til rettskraftig dom"/>
+      <xs:enumeration value="Overført til varetekt"/>
+      <xs:enumeration value="Forlengelse av varetekt"/>   
+      <xs:enumeration value="Ny forvaring (forlengelse)"/> 
+      <xs:enumeration value="Ny reaksjon"/>
+	  <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
+	  <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
+	  <xs:enumeration value="Ny straffegjennomføring"/>
+	</xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EndringGjennomfoeringAarsakType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Overført bøtesoning"/>
+      <xs:enumeration value="Overført til dom"/>
+      <xs:enumeration value="Overført til forvaring"/>
+      <xs:enumeration value="Overført til foregrepet soning"/>
+      <xs:enumeration value="Overført til rettskraftig dom"/>
+      <xs:enumeration value="Overført til sikring"/>
+      <xs:enumeration value="Overført til sikring med straffbortfall"/>
+      <xs:enumeration value="Overført til varetekt"/>
+      <xs:enumeration value="Avbrutt soning el. sikring pga. varetekt ny sak"/>
+      <xs:enumeration value="Overført ny kategori etter endt tid"/>
+      <xs:enumeration value="Avbrutt soning pga. bøtesoning"/>
+      <xs:enumeration value="Avgang etter rømning"/>
+      <xs:enumeration value="Avgang etter uteblivelse"/>
+      <xs:enumeration value="Gjeninnsatt annet fengsel"/>
+      <xs:enumeration value="Gjeninnsatt samme fengsel"/>
+      <xs:enumeration value="Melding om straffavbrudd pga brudd på vilkår*"/>
+      <xs:enumeration value="Vedtak om stans av gjennomføring"/>
+      <xs:enumeration value="Autom. endret status fra STA til AKT"/>
+      <xs:enumeration value="Tilbakeført soning el. sikring etter varetekt annen sak"/>
+      <xs:enumeration value="Rømt/unnveket - Behandlingsinstitusjon etter §12"/>
+      <xs:enumeration value="Rømt/unnveket - Fra lukket område"/>
+      <xs:enumeration value="Rømt/unnveket - Fra fremstilling utført av kriminalomsorgen"/>
+      <xs:enumeration value="Rømt/unnveket - Fremstilling utført av politiet eller andre"/>
+      <xs:enumeration value="Rømt/unnveket - Fra åpent område"/>
+      <xs:enumeration value="Rømt/unnveket - Gjennomføring av straff utenfor fengsel etter §16.1"/>
+      <xs:enumeration value="Rømt/unnveket - Sykehus med vakt"/>
+      <xs:enumeration value="Rømt/unnveket - Sykehus uten vakt"/>
+      <xs:enumeration value="Innkomster Straffavbrudd"/>
+      <xs:enumeration value="Utganger Straffavbrudd"/>
+      <xs:enumeration value="Uteblivelse - Gjeninnsatt"/>
+      <xs:enumeration value="Uteblivelse - Frigang"/>
+      <xs:enumeration value="Uteblivelse - Permisjon, ikke kvotebelagt"/>
+      <xs:enumeration value="Uteblivelse - Permisjon, kvotebelagt"/>
+      <xs:enumeration value="Uteblivelse - Straffavbrudd"/>
+      <xs:enumeration value="Uteblivelse - 10 timers permisjon"/>
+      <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
+	  <xs:enumeration value="Overført ny kategori etter 1/2 tid"/>
+	  <xs:enumeration value="Overført ny kategori etter 2/3 tid"/>
+	  <xs:enumeration value="Overført ny kategori kort tid før 1/2 eller 2/3, §42.4"/>
+	  <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
+	  <xs:enumeration value="Melding om straffavbrudd pga ny straffbar handling*"/>
+	  <xs:enumeration value="Avbrytelse av straff*"/>
+	  <xs:enumeration value="Unnveket/uteblitt fra fengsel"/>
+	  <xs:enumeration value="Autom. endret status fra AKT til STA"/>
+	  <xs:enumeration value="Periode for straffeavbrudd"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LoeslatelseFraSamfunnAarsakType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Betalt gjenstående beløp*"/>
+      <xs:enumeration value="Fullført med brudd på vilkår*"/>
+      <xs:enumeration value="Fullført med brudd på vilkår og ny kriminalite"/>
+      <xs:enumeration value="Fullført med brudd på særvilkår*"/>
+      <xs:enumeration value="Fullført med ny kriminalitet*"/>
+      <xs:enumeration value="Fullført uten brudd/ny kriminalitet*"/>
+      <xs:enumeration value="Løslatt til gjennomføring av samfunnsstraff*"/>
+      <xs:enumeration value="Løslatt kort tid før endt tid*"/>
+      <xs:enumeration value="Løslatt på prøve etter 2/3-tid*"/>
+      <xs:enumeration value="Løslatt endt tid*"/>
+      <xs:enumeration value="Overført til Utland*"/>
+      <xs:enumeration value="Overført til soning etter §16 1.ledd*"/>
+      <xs:enumeration value="Tilbakeført til EK fra soning etter §16 1.ledd"/>
+      <xs:enumeration value="Utført*"/>
+      <xs:enumeration value="Avbrutt gr. ny kriminalitet*"/>
+      <xs:enumeration value="Avbrutt gr. brudd på vilkår*"/>
+      <xs:enumeration value="Avbrutt gr. brudd på særvilkår*"/>
+      <xs:enumeration value="Avbrutt gr. ny krim. i tilsynstiden*"/>
+      <xs:enumeration value="Avbrutt gr. ny krim. og br. på særvilkår.*"/>
+      <xs:enumeration value="Annet (sluttårsak)*"/>
+      <xs:enumeration value="Avbrutt gr. ny krim og brudd på vilkår*"/>
+      <xs:enumeration value="Avbrutt gr. opphevet vilkår om møteplikt *"/>
+      <xs:enumeration value="Avbrutt gr. krim begått før iverkset*"/>
+      <xs:enumeration value="Benådet*"/>
+      <xs:enumeration value="Dødsfall*"/>
+      <xs:enumeration value="Avbrutt ved overføring til fengsel"/>
+      <xs:enumeration value="Innsatt i varetekt"/>
+      <xs:enumeration value="Ombytting av sikringsmidler*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OverfoeringstypeType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Permanent fra annet fengsel"/>
+        <xs:enumeration value="Midlertidig fra annet fengsel"/>
+        <xs:enumeration value="Tilbake etter midlertidig opphold annet fengsel"/>
+        <xs:enumeration value="Fra elektronisk kontroll"/>
+        <xs:enumeration value="Overført midlertidig til annet fengsel"/>
+        <xs:enumeration value="Gjeninnsatt etter gjennomføring av straff etter §16"/>
+        <xs:enumeration value="Gjeninnsatt annet fengsel"/>
+        <xs:enumeration value="Elektronisk kontroll"/>
+        <xs:enumeration value="Forvaring"/>
+        <xs:enumeration value="Soning etter § 16 1. ledd"/>
+        <xs:enumeration value="Prøveløslatt med møteplikt"/>
+        <xs:enumeration value="Samfunnstraff"/>
+        <xs:enumeration value="Bet.dom med narkotikaprogram med domstolskontroll"/>
+        <xs:enumeration value="Bet.dom med program mot ruspåvirket kjøring"/>
+        <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="InnsattKategoriType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Forvaring"/>
+      <xs:enumeration value="Samfunn"/>
+      <xs:enumeration value="Ubetinget"/>
+      <xs:enumeration value="Boetesoning"/>
+      <xs:enumeration value="Varetekt"/>
+      <xs:enumeration value="Foregrepet Soning"/>
+      <xs:enumeration value="Bet.dom med narkotikaprogram med domstolskontroll"/>
+      <xs:enumeration value="Bet.dom med promilleprogram"/>
+      <xs:enumeration value="Bet.dom med program mot ruspåvirket kjøring"/>
+      <xs:enumeration value="Betinget dom"/>
+      <xs:enumeration value="Bøtetjeneste"/>
+      <xs:enumeration value="Elektronisk kontroll"/>
+      <xs:enumeration value="Frisikring"/>
+      <xs:enumeration value="Soning etter § 16 1. ledd"/>
+      <xs:enumeration value="Personundersøkelse"/>
+      <xs:enumeration value="Prøveløslatt med møteplikt"/>
+      <xs:enumeration value="Påtaleunnlatelse"/>
+      <xs:enumeration value="Samfunnstjeneste"/>
+      <xs:enumeration value="Frisikring-etter lukket si.eller ubet.d."/>
+      <xs:enumeration value="Samfunnstraff"/>            
+    </xs:restriction>
+  </xs:simpleType>
+	
+  <xs:complexType name="DomsinformasjonType">
+    <xs:all>
+      <xs:element name="Domstol" type="xs:string"/>
+      <xs:element name="AvsagtDato " type="xs:dateTime" nillable="true"/>
+      <xs:element name="LengdeAar" type="xs:int" nillable="true" />
+      <xs:element name="LengdeMaaneder" type="xs:int" nillable="true" />
+      <xs:element name="LengdeDager" type="xs:int" nillable="true" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="MoetepliktType">
+    <xs:all>
+      <xs:element name="Varighet" type="tns:VarighetType"/> <!-- år, måneder og dager -->
+      <xs:element name="FoersteOppmoete" type="xs:dateTime"/> <!-- år, måned, dag, time, minutt, sekund -->
+      <xs:element name="Merknad" type="xs:string" nillable="true" />
+      <xs:element name="KriminalOmsorg" type="tns:LokasjonEnhetType" nillable="true" /> <!-- region, kontor -->
+      <xs:element name="EksternKontakt" type="tns:NavnMerknadType" nillable="true" /> <!-- navn, merknad -->
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="MeldepliktType">
+    <xs:all>
+      <xs:element name="Varighet" type="tns:VarighetType"/> <!-- år, måneder og dager -->
+      <xs:element name="FoersteOppmoete" type="xs:dateTime"/> <!-- år, måned, dag, time, minutt, sekund -->
+      <xs:element name="Merknad" type="xs:string" nillable="true" />
+      <xs:element name="Myndighet" type="tns:NavnMerknadType" nillable="true" /> <!-- navn, merknad -->
+      <xs:element name="EksternKontakt" type="tns:NavnMerknadType" nillable="true" /> <!-- navn, merknad -->
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="OrganisasjonType">
+    <xs:all>  
+      <xs:element name="Navn" type="xs:string"/>
+      <xs:element name="OrganisasjonsNummer" type="xs:string"/>
+      <xs:element name="Adresse" type="tns:AdresseType"/>
+      <xs:element name="Merknad" type="xs:string" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="OppholdsstedArbeidOpplaeringType">
+    <xs:all>  
+    <!-- Et element må være satt -->
+      <xs:element name="Oppholdssted" type="tns:OrganisasjonType" nillable="true"/>
+      <xs:element name="Arbeid" type="tns:OrganisasjonType" nillable="true"/>
+      <xs:element name="Opplaering" type="tns:OrganisasjonType" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="EksterntMoeteType">
+    <xs:all>  
+      <xs:element name="Person" type="tns:NavnMerknadType" nillable="true"/>
+      <xs:element name="Myndighet" type="tns:NavnMerknadType" nillable="true"/>
+      <xs:element name="Organisasjon" type="tns:NavnMerknadType" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="RelasjonerType">
+    <xs:all>  
+      <xs:element name="Merknad" type="xs:string"/>
+      <xs:element name="Personer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Person" type="tns:PersonType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PersonType">
+    <xs:sequence>
+      <xs:element name="Fornavn" type="xs:string" nillable="true"/>
+      <xs:element name="Mellomnavn" type="xs:string" nillable="true"/>
+      <xs:element name="Etternavn" type="xs:string" nillable="true"/>
+      <xs:element name="Fnr" type="xs:string" nillable="true"/>
+      <xs:element name="Relasjon" type="xs:string" nillable="true"/>
+      <xs:element name="Merknad" type="xs:string" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VarighetType">
+    <xs:all>
+      <xs:element name="Aar" type="xs:int"/>
+      <xs:element name="Maaneder" type="xs:int"/>
+      <xs:element name="Dager" type="xs:int"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="NavnMerknadType">
+    <xs:all>
+      <xs:element name="Navn" type="xs:string"/>
+      <xs:element name="Merknad" type="xs:string" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="VarighetMerknadType">
+    <xs:all>
+      <xs:element name="Varighet" type="tns:VarighetType"/>
+      <xs:element name="Merknad" type="xs:string" nillable="true"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

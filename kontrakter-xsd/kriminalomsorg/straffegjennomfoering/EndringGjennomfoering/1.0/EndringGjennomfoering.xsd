@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringGjennomfoering"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringGjennomfoering"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="EndringGjennomfoering" type="tns:EndringGjennomfoeringType" />
+
+  <xs:complexType name="EndringGjennomfoeringType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+
+      <xs:element name="Domsinformasjon" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Dom" type="fns:DomsinformasjonType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="RestDager" type="xs:int" nillable="false"/>
+
+      <xs:element name="DagerVaretektEtterDom" type="xs:int" nillable="true" />
+           
+      <xs:element name="DagerVaretektFoerDom" type="xs:int" nillable="true" />
+                
+      <xs:element name="GjennomfoeringsStatus" type="fns:GjennomfoeringsStatusType" />
+
+      <xs:element name="EndringAarsak" type="fns:EndringGjennomfoeringAarsakType" nillable="false" />
+
+      <xs:element name="GjennomfoeringEndretTid" type="xs:dateTime" nillable="false"/>
+
+      <xs:element name="Lokasjon">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="LokasjonEnhet" type="fns:LokasjonEnhetType" />
+            <xs:element name="LokasjonPrivat" type="fns:LokasjonPrivatType" minOccurs="0"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Saervilkaar" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Varighet" type="fns:VarighetType"/> <!-- år, måneder og dager -->
+            <xs:element name="StartDato" type="xs:dateTime"/> <!-- år, måned, dag, time, minutt, sekund -->
+            <xs:element name="Merknad" type="xs:string" nillable="true"/>  
+            <!-- Vilkår -->
+            <xs:element name="Meldeplikt" type="fns:MoetepliktType" nillable="true"/>
+            <xs:element name="Bosted" type="fns:AdresseType" nillable="true"/>
+            <xs:element name="OppholdsstedArbeidOpplaering" type="fns:OppholdsstedArbeidOpplaeringType" nillable="true"/> <!-- oppholdssted, arbeid og opplæring -->
+            <xs:element name="UnnlateSamkvemMedPersoner" type="fns:RelasjonerType" nillable="true"/> <!-- merknad og liste med personer -->
+            <xs:element name="UnnlateBrukAvRusmidler" type="xs:boolean" nillable="true"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

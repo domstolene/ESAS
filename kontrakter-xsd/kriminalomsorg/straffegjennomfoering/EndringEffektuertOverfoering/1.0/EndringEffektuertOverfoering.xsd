@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringEffektuertOverfoering"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringEffektuertOverfoering"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="EndringEffektuertOverfoering" type="tns:EndringEffektuertOverfoeringType" />
+
+  <xs:complexType name="EndringEffektuertOverfoeringType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+
+      <xs:element name="AnkommetTid" type="xs:dateTime" nillable="false"/>
+
+      <xs:element name="FraLokasjon" type="fns:LokasjonEnhetType"  minOccurs="0"/>
+
+      <xs:element name="TilLokasjon">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="LokasjonEnhet" type="fns:LokasjonEnhetType" />
+            <xs:element name="LokasjonPrivat" type="fns:LokasjonPrivatType" minOccurs="0"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Overfoeringstype" type="fns:OverfoeringstypeType"/>
+
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

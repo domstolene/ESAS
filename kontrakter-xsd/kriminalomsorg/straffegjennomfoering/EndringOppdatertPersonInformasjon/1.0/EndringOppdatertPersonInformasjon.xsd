@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringOppdatertPersonInformasjon"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringOppdatertPersonInformasjon"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="EndringOppdatertPersonInformasjon" type="tns:EndringOppdatertPersonInformasjonType" />
+
+  <xs:complexType name="EndringOppdatertPersonInformasjonType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

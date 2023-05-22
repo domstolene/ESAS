@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/StatistikkLoeslatelse"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/StatistikkLoeslatelse"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="StatistikkLoeslatelse" type="tns:StatistikkLoeslatelseType" />
+
+  <xs:complexType name="StatistikkLoeslatelseType">
+    <xs:all>
+        <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+
+        <xs:element name="InnsattkategoriForStatistikk" type="fns:InnsattKategoriType" />
+
+        <xs:element name="DagerPermisjon" type="xs:int" nillable="true" />
+        <xs:element name="DagerFrigang" type="xs:int" nillable="true" />
+        <xs:element name="DagerArrest" type="xs:int" nillable="true" />
+        <xs:element name="DagerLukketAvdeling" type="xs:int" nillable="true" />
+        <xs:element name="DagerAapenAvdeling" type="xs:int" nillable="true" />
+        <xs:element name="DagerBehandling" type="xs:int" nillable="true" />
+        <xs:element name="DagerAvkortet" type="xs:int" nillable="true" />
+        <xs:element name="DagerVaretektEtterDom" type="xs:int" nillable="true" />
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

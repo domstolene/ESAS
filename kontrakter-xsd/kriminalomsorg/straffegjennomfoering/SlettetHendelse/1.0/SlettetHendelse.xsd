@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/SlettetHendelse"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/SlettetHendelse"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:element name="SlettetHendelse" type="tns:SlettetHendelseType" />
+
+  <xs:complexType name="SlettetHendelseType">
+    <xs:all>
+      <xs:element name="DeletedMessageId" type="xs:string" nillable="false"/>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

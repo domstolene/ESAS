@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringFattetVedtakForvaring"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringFattetVedtakForvaring"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="EndringFattetVedtakForvaring" type="tns:EndringFattetVedtakForvaringType" />
+
+  <xs:complexType name="EndringFattetVedtakForvaringType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+
+      <xs:element name="Beslutningsdato" type="xs:dateTime" nillable="false"/>
+      <xs:element name="BesluttetAv" type="xs:string" nillable="false"/>
+      <xs:element name="Beslutning" type="xs:string"/>
+      <xs:element name="Effektueringsdato" type="xs:dateTime" nillable="false"/>
+
+      <!-- Når det dreier seg om permisjon, blir denne satt-->
+      <xs:element name="Permisjon" type="fns:PermisjonType" />
+
+      <xs:element name="Vedtakstype" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Overfoering"/>
+            <xs:enumeration value="Loeslatelse"/>
+            <xs:enumeration value="Permisjon"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>
