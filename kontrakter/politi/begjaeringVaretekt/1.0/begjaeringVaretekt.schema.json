@@ -5,11 +5,6 @@
 
   "type": "object",
   "properties": {
-    "melding": {
-      "type": "string",
-      "const": "BEGJAERING_VARETEKT",
-      "description": "Navnet på meldingen. Enkelt å se på en melding hvilken type det er."
-    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
@@ -26,7 +21,6 @@
     }
   },
   "required": [
-    "melding",
     "forsendelse",
     "hovedStraffesaksnummer",
     "begjaeringVaretekt",
