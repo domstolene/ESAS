@@ -3,19 +3,18 @@ Denne meldingen brukes av politiet når de skal begjære om varetekt til en ting
 Det legges ved sakstyrende dokumenter som vedlegg til denne meldingen. Restene av dokumentene (politdokumentene) kommer som en sammenstilling med kobling
 til riktig begjæring om varetekt (kravId). Sammenstillingen lages vha. BL Straffesaksforsendelse.
 
-## Status på data som politiet klarer å fylle ut 23.05.2023
+## Status på data som politiet klarer å fylle ut i dag
 Det er ikke med siktelse.
 Det er ikke med verger.
 Det er ikke med aktor.
 Det er ikke mulig i varetekt å sende begjæring om varetekt med grunn vilkårsbrudd.
 Dokumenter får ikke med dokumentkategori
 Forlengelse har ikke med noen referanse til forrige fengsling.
-Påtale ber om mere restriksjoner uten å endre varetektstiden, se avklaring.
 
 ## Data endringer som ikke er med i JSON Schema
 ### Begrenset offentlighet
 Ønsker 
-Kan være Domstolloven 130a eller b eller en kombinasjon. Se avklaring
+Kan være Domstolloven 130a eller b eller en kombinasjon.
 
 ### Forlengelser
 Forlengelser, med fengslingsfrist med i frivillig kontrakt.
