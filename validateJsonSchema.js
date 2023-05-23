@@ -6,7 +6,7 @@ const ajv = new Ajv2020((opts = { strict: true }));
 addFormats(ajv);
 
 const jsonSchemaFolders = [
-  "kontrakter/politi/varetekt",
+  "kontrakter/politi/begjaeringVaretekt",
   "kontrakter/politi/bestillvaretektsplass",
   "kontrakter/politi/oppdatervaretekt",
   "kontrakter/politi/innsettelsesordre",

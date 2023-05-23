@@ -1,5 +1,9 @@
-# Versjon 1.0 som vi til slutt skal gå i produksjon med i ESAS II
-## Versjoner log
+# Endringslogg begjæring om varetek
+## Versjon 1.0
+### Fjerner melding på begjæringVaretekt meldingen
+23.05.2023
+Navn på meldingen skal ligge i header informasjon på rabbitMQ så det er ikke nødvendig at den er en del av selve meldingen.
+Endret navn på katalog fra varetekt -> begjaeringVaretekt.
 ### Fjerne påloggingsinformasjon i meldinger (ESAS-424)
 16.05.2023
 Hvis det ikke er helt nødvendig som det kanskje er på Jurister.
