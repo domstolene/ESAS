@@ -7,7 +7,11 @@ Hver kvitteringsmelding skal som minimum inkludere en egen _meldingsid_, en _ref
 Dersom noe er feil på referansemeldingen skal kvitteringsmeldingen indikere om feilen ligger på avsenders eller mottakers side, og indikere om det er en teknisk feil eller mangler dersom feilen er på avsendersiden.
 En kvitteringsmelding som indikerer feil bør også inneholde en beskrivelse om hva som har feilet.
 
+## Headere forsendelse justisHub
+SchmaName=KVITTERING  
+SchemaVersion=1.0
 
+[RFC](../../../rfc/MessageName-header.md)
 
 ### Noen prinsipper:
 
