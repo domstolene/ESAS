@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema  xmlns:fns="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles"
+            targetNamespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringPermisjoner"
+            xmlns:tns="http://justishub.justisnett.no/straffegjennomfoering/1.0/EndringPermisjoner"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xml:lang="no">
+
+  <xs:import schemaLocation="Felles.xsd" namespace="http://justishub.justisnett.no/straffegjennomfoering/1.0/Felles" />
+
+  <xs:element name="EndringPermisjoner" type="tns:EndringPermisjonerType" />
+
+  <xs:complexType name="EndringPermisjonerType">
+    <xs:all>
+      <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
+      <xs:element name="Permisjon" type="fns:PermisjonType" nillable="false"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

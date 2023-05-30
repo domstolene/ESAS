@@ -4,11 +4,6 @@
   "description": "Kjennelse fra domstolen eller oppdatering av restriksjoner/isolasjon fra påtale",
   "type": "object",
   "properties": {
-    "melding": {
-      "type": "string",
-      "const": "OPPDATER_VARETEKT",
-      "description": "Navnet på meldingen. Enkelt å se på en melding hvilken type det er."
-    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
@@ -39,7 +34,6 @@
     }
   },
   "required": [
-    "melding",
     "forsendelse",
     "hovedStraffesaksnummer",
     "personIVaretekt",

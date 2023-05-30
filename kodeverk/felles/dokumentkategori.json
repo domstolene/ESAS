@@ -1,0 +1,45 @@
+{
+  "kodeType": "DOKUMENTKATEGORI",
+  "koder": [
+    {
+      "kode": "SIKTELSE",
+      "beskrivelse": "Siktelse med siktelsespunkter, ser likt ut som et tiltale. Brukes ved begjæringer om tvangsmidler"
+    },
+    {
+      "kode": "TILTALE",
+      "beskrivelse": "Tiltale til hovedforhandlinger"
+    },
+    {
+      "kode": "PÅTEGNING",
+      "beskrivelse": "Følgebrev ved oversendelser, f.eks. ved oversendelse av tilsvar på anke"
+    },
+    {
+      "kode": "KJENNELSE",
+      "beskrivelse": "Avgjørelse fra domstolen, f.eks. kjennelse på varetekt"
+    },
+    {
+      "kode": "BESLUTNING",
+      "beskrivelse": "Andre avgjørelser fra domstolene, f.eks. beslutning om at anke nektes fremmet."
+    },
+    {
+      "kode": "DOM",
+      "beskrivelse": "Avgjørelse som avgjør skyld"
+    },
+    {
+      "kode": "RETTSBOK",
+      "beskrivelse": "Referat fra rettsmøtet."
+    },
+    {
+      "kode": "SAMMENSTILLING_STRAFFESAK",
+      "beskrivelse": "Sammenstilling av flere dokumenter fra straffesaken kalt politidokmenter av domstolene."
+    },
+    {
+      "kode": "SAMMENSTILLING_STRAFFESAK_ANNOTERT",
+      "beskrivelse": "I løpet av rettsmøtet kan retten lage en annotert versjon av politidokumentene som returneres sammen med avgjørelsen."
+    },
+    {
+      "kode": "UKJENT",
+      "beskrivelse": "Gamle dok og nye dokument som vi ikke vet eller som ikke passer inn i listen over."
+    }
+  ]
+}

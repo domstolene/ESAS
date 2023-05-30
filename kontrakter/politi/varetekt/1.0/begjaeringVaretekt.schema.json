@@ -5,11 +5,6 @@
 
   "type": "object",
   "properties": {
-    "melding": {
-      "type": "string",
-      "const": "BEGJAERING_VARETEKT",
-      "description": "Navnet på meldingen. Enkelt å se på en melding hvilken type det er."
-    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
@@ -26,7 +21,6 @@
     }
   },
   "required": [
-    "melding",
     "forsendelse",
     "hovedStraffesaksnummer",
     "begjaeringVaretekt",
@@ -176,10 +170,10 @@
           "enum": ["LUKKEDE_DOERER", "FORBUD_GJENGIVELSE"]
         },
         "ansvarligPaatalejurist": {
-          "$ref": "#/definitions/ansattPerson"
+          "$ref": "#/definitions/paataleJurist"
         },
         "aktor": {
-          "$ref": "#/definitions/ansattPerson"
+          "$ref": "#/definitions/paataleJurist"
         }
       },
       "required": [
@@ -354,7 +348,7 @@
       "properties": {
         "kode": {
           "type": "string",
-          "pattern": "[A-Z]+",
+          "pattern": "^[A-Z]+$",
           "minLength": 3,
           "maxLength": 3
         },
@@ -384,6 +378,30 @@
       "type": "object",
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "paataleJurist": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker. Beholder brukeridentifikasjon pga. av gammel historikk og behov for identifisering.",
+      "properties": {
         "brukeridentifikasjon": {
           "type": "string",
           "description": "BID hos politiet nå"
@@ -405,7 +423,7 @@
           "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["brukeridentifikasjon", "etternavn"],
+      "required": ["etternavn"],
       "additionalProperties": false
     },
     "forsendelse": {
@@ -677,21 +695,21 @@
     "foedselsnummer": {
       "type": "string",
       "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
-      "pattern": "[0-9]+",
+      "pattern": "^[0-3][0-9][0189][0-9]+$",
       "minLength": 11,
       "maxLength": 11
     },
     "sspNummer": {
       "type": "string",
       "description": "Personidentifikator brukt av det sentrale straffe- og personopplysningsregisteret (SSP) hvis personen ikke har fødselsnummer. Validerer som et fødselsnummer med +20 på måned så noen født 10.01.1990 begynner med 102190",
-      "pattern": "[0-9]+",
+      "pattern": "^[0-3][0-9][2-3][0-9]+$",
       "minLength": 11,
       "maxLength": 11
     },
     "dNummer": {
       "type": "string",
-      "description": "Se skatteetaten. Dag på datodelen er +40. Født 10.01.1990, begynner med 31.01.90",
-      "pattern": "[0-9]+",
+      "description": "Se skatteetaten. Dag på datodelen er +40. Født 10.01.1990, begynner med 51.01.90. Fiktivt (Tenor) dNummer vil har +80 på måned som for Tenor fødselsnummer",
+      "pattern": "^[4-7][0-9][0189][0-9]+$",
       "minLength": 11,
       "maxLength": 11
     },
@@ -1210,7 +1228,7 @@
     "organisasjonsnummer": {
       "type": "string",
       "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
-      "pattern": "[0-9]+",
+      "pattern": "^[0-9]+$",
       "minLength": 9,
       "maxLength": 9
     },

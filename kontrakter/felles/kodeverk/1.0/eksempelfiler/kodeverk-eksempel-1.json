@@ -1,0 +1,30 @@
+{
+  "kodeType": "POLITI_DOK",
+  "koder": [
+    {
+      "kode": "PÅTALEDOKUMENT_TADA2",
+      "beskrivelse": "Siktelse, forelegg, tiltale osv."
+    },
+    {
+      "kode": "SIKTELSE",
+      "beskrivelse": "Siktelse følger med tvangsmidler og tilståelsessaker"
+    },
+    {
+      "kode": "T1ILTALTE_1",
+      "beskrivelse": "Tiltale til hovedforhandlinger"
+    },
+    {
+      "kode": "PÅTEGNING_1",
+      "beskrivelse": "Følger med en forsendelse, beskrivelse hva som følger med"
+    },
+    {
+      "kode": "1BEGJ_O",
+      "beskrivelse": "Begjæering om varetket dokument (skulle hatt noe mer generelt)"
+    },
+    {
+      "kode": "JALLA",
+      "beskrivelse": "Kode gyldig til og med 2023-03-31",
+      "gyldigTil": "2023-04-01"
+    }
+  ]
+}

@@ -1,11 +1,18 @@
-# Versjon 1.0 som vi til slutt skal gå i produksjon med i ESAS II
-
-## Versjoner log
-### ESAS-294 justeringer
+# Endringslogg begjæring om varetek
+## Versjon 1.0
+### Fjerner melding på begjæringVaretekt meldingen
+23.05.2023
+Navn på meldingen skal ligge i header informasjon på rabbitMQ så det er ikke nødvendig at den er en del av selve meldingen.
+### Fjerne påloggingsinformasjon i meldinger (ESAS-424)
+16.05.2023
+Hvis det ikke er helt nødvendig som det kanskje er på Jurister.
+La til en dato også i Changelog.
+ansattPerson fjernet bid laget paataleJurist.
+### Justeringer (ESAS-294)
 1. Verger skal være ordentlige personer så verger er lagt til som en vanlig person type.
 2. Lovbud trenger ikke lovbudId.
 3. Flere ting som er ønsket som ikke er med er dokumentert i readme.md fil.
-### ESAS-222 Endringer i Begjæring varetekt etter MR på kjennelseVaretekt fra domstolene
+### Endringer i Begjæring varetekt etter MR på kjennelseVaretekt fra domstolene (ESAS-222)
 Synker med kjennelseVaretekt etter PR branch feature/varetekt_kennellse_refaktorering
 1. melding med store bokstaver og _ som enum.
 2. organisasjon med restriksjoner på organisasjonsnummer....

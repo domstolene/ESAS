@@ -2,6 +2,10 @@
 Denne meldingen brukes av politiet når de skal begjære om varetekt til en tingrett og samme melding brukes til førstegangsfengsling og forlengelser.
 Det legges ved sakstyrende dokumenter som vedlegg til denne meldingen. Restene av dokumentene (politdokumentene) kommer som en sammenstilling med kobling
 til riktig begjæring om varetekt (kravId). Sammenstillingen lages vha. BL Straffesaksforsendelse.
+## Headere forsendelse justisHub
+SchmaName=BEGJAERING_VARETEKT  
+SchemaVersion=1.0  
+[RFC](../../../rfc/MessageName-header.md)
 
 ## Status på data som politiet klarer å fylle ut i dag
 Det er ikke med siktelse.
