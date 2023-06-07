@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Dommen i tingretten ankes ved at siktedes advokat laster opp et ankedokument på vegne av siktede i aktørportalen.
+Tingretten får inn anken og sender den til påtalemyndigheten (politi). Det finnes ikke noe krav om anke i saken, men avgjørelsen er sendt elektronisk.
+-->
+<n1:meldingStraffesak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aktoer="http://justishub.justisnett.no/felles/1.1/aktoer" xmlns:n1="http://justishub.justisnett.no/melding/1.1/meldingStraffesak" xsi:schemaLocation="http://justishub.justisnett.no/melding/1.1/meldingStraffesak meldingStraffesak.xsd">
+	<forsendelse>
+		<meldingsId>{lange-guid-kanskje}</meldingsId>
+		<avsender>
+			<orgenhet>
+				<orgnr>974737418</orgnr>
+				<navn>Bergen Tingrett</navn>
+			</orgenhet>
+			<saksbehandler>
+				<brukerIdentifikasjon>rar8</brukerIdentifikasjon>
+				<navn>
+					<fornavn>Ragna</fornavn>
+					<etternavn>Å</etternavn>
+				</navn>
+				<tittel>Saksbehandler</tittel>
+			</saksbehandler>
+			<saksreferanse>
+				<kilde>Domstolen</kilde>
+				<referanse>LOV-hhhhhh-ssss</referanse>
+			</saksreferanse>
+		</avsender>
+		<mottaker>
+			<orgnr>961398142</orgnr>
+			<navn>Oslo politidistrikt</navn>
+		</mottaker>
+	</forsendelse>
+	<meldingskategori>
+		<tittel>Siktede Pro Jo dom av 20.06.2020 via advokat Jurius</tittel>
+		<kategori>
+			<id>{kodeverk-unik-id-123}</id>
+			<kode>ankeDomInformasjon</kode>
+		</kategori>
+	</meldingskategori>
+	<!-- Det finnes ikke noen kravId fordi det har ikke kommet noen anke fra påtalemyndigheten, ennå -->
+	<straffesaksnummer>14775557</straffesaksnummer>
+	<avgjoerelseId>{lovisa-avgjoerelse-id-567}</avgjoerelseId>
+	<aktoerer>
+		<rolle>
+			<rolleType>
+				<id>{kodeverk-unik-id-777}</id>
+				<kode>siktet</kode>
+			</rolleType>
+			<personForetak xsi:type="aktoer:PersonType" id="id_pers_1">
+				<navn>
+					<fornavn>Pro</fornavn>
+					<etternavn>jo</etternavn>
+				</navn>
+				<kjoenn>M</kjoenn>
+				<foedselsdato>1987-04-15</foedselsdato>
+				<adresse>
+					<adresselinje>Nordre Dals vei 4</adresselinje>
+					<postnummer>4568</postnummer>
+					<poststed>Fredrikstad</poststed>
+					<landkode>NOR</landkode>
+				</adresse>
+				<telefonnummer>789856548</telefonnummer>
+				<epost>pjb@jokmok.n.cat</epost>
+				<nasjonalitet>SWE</nasjonalitet>
+			</personForetak>
+		</rolle>
+		<rolle>
+			<rolleType>
+				<id>{kodeverk-unik-id-888}</id>
+				<kode>forsvarer</kode>
+			</rolleType>
+			<personForetak xsi:type="aktoer:ProfesjonellPersonType" id="id_pers_2">
+				<navn>
+					<fornavn>Lars</fornavn>
+					<etternavn>Jurius</etternavn>
+				</navn>
+			</personForetak>
+		</rolle>
+	</aktoerer>
+	<dokumenter>
+		<dokument id="dok_1">
+			<dokumentId>lov-dok-3</dokumentId>
+			<overskrift>Anke urettferdig dom mot min veldig snille klient</overskrift>
+			<dokumentforsendelse>
+				<mimeType>application/pdf</mimeType>
+				<uri>/sdf/download</uri>
+				<sjekksum>sjekker-sum324234</sjekksum>
+			</dokumentforsendelse>
+		</dokument>
+		<dokument id="dok_2">
+			<dokumentId>lov-dok-456</dokumentId>
+			<overskrift>Bilde av katten min som også er uskyldig</overskrift>
+			<dokumentforsendelse>
+				<mimeType>application/pdf</mimeType>
+				<uri>/sdf/download</uri>
+				<sjekksum>sjekker-sum-katt-123</sjekksum>
+			</dokumentforsendelse>
+		</dokument>
+	</dokumenter>
+</n1:meldingStraffesak>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Anken er levert fra Oslo Statsadvokatembeter og lagmannsretten sender berammingstidspunkt kanskje ?
+-->
+<n1:meldingStraffesak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aktoer="http://justishub.justisnett.no/felles/1.1/aktoer" xmlns:n1="http://justishub.justisnett.no/melding/1.1/meldingStraffesak" xsi:schemaLocation="http://justishub.justisnett.no/melding/1.1/meldingStraffesak meldingStraffesak.xsd">
+	<forsendelse>
+		<meldingsId>{lange-guid-kanskje}</meldingsId>
+		<avsender>
+			<orgenhet>
+				<orgnr>974707365</orgnr>
+				<navn>Oslo statsadvokatembete</navn>
+
+			</orgenhet>
+			<saksbehandler>
+				<brukerIdentifikasjon>las004</brukerIdentifikasjon>
+				<navn>
+					<fornavn>Lene</fornavn>
+					<etternavn>Stormarken</etternavn>
+				</navn>
+				<tittel>Rådgiver</tittel>
+			</saksbehandler>
+			<saksreferanse>
+				<kilde>Politiet</kilde>
+				<referanse>14775557</referanse>
+			</saksreferanse>
+		</avsender>
+		<mottaker>
+			<orgnr>974757494</orgnr>
+			<navn>Hålogaland lagmannsrett</navn>
+		</mottaker>
+	</forsendelse>
+	<meldingskategori>
+		<tittel>Trekker anke mot domfelte Pro Jo</tittel>
+		<kategori>
+			<id>{kodeverk-unik-id-125}</id>
+			<kode>trekkerAnkeDom</kode>
+		</kategori>
+	</meldingskategori>
+	<kravId>{krav-pol-id-789}</kravId>
+	<straffesaksnummer>14775557</straffesaksnummer>
+	<aktoerer>
+		<rolle>
+			<rolleType>
+				<id>{kodeverk-unik-id-777}</id>
+				<kode>siktet</kode>
+			</rolleType>
+			<personForetak xsi:type="aktoer:PersonType" id="id_pers_1">
+				<navn>
+					<fornavn>Pro</fornavn>
+					<etternavn>jo</etternavn>
+				</navn>
+				<kjoenn>M</kjoenn>
+				<foedselsdato>1987-04-15</foedselsdato>
+				<adresse>
+					<adresselinje>Nordre Dals vei 4</adresselinje>
+					<postnummer>4568</postnummer>
+					<poststed>Fredrikstad</poststed>
+					<landkode>NOR</landkode>
+				</adresse>
+				<telefonnummer>789856548</telefonnummer>
+				<epost>pjb@jokmok.n.cat</epost>
+				<nasjonalitet>SWE</nasjonalitet>
+			</personForetak>
+		</rolle>
+		<rolle>
+			<rolleType>
+				<id>{kodeverk-unik-id-888}</id>
+				<kode>forsvarer</kode>
+			</rolleType>
+			<personForetak xsi:type="aktoer:ProfesjonellPersonType" id="id_pers_2">
+				<navn>
+					<fornavn>Lars</fornavn>
+					<etternavn>Jurius</etternavn>
+				</navn>
+			</personForetak>
+		</rolle>
+	</aktoerer>
+	<dokumenter>
+		<dokument id="dok_1">
+			<dokumentId>98876987</dokumentId>
+			<dokumentnummer>10,01</dokumentnummer>
+			<skrevetDato>2020-01-31</skrevetDato>
+			<overskrift>Påtegning ankesak mot Pro Jo</overskrift>
+			<dokumentforsendelse>
+				<mimeType>application/pdf</mimeType>
+				<uri>/sdf/download</uri>
+				<sjekksum>sjekksum</sjekksum>
+			</dokumentforsendelse>
+		</dokument>
+	</dokumenter>
+</n1:meldingStraffesak>

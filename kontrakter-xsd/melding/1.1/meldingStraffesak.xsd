@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Generell melding for utveksling av informasjon mellom domstoler, påtale og kriminalomsorgen i straffesaker.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:basis="http://justishub.justisnett.no/felles/1.1/basistyper"
+	xmlns:oversendelse="http://justishub.justisnett.no/felles/1.1/oversendelse"
+	xmlns:aktoer="http://justishub.justisnett.no/felles/1.1/aktoer"
+	xmlns:dok="http://justishub.justisnett.no/felles/1.1/dokument"
+	xmlns:straffesak="http://justishub.justisnett.no/felles/1.1/straffbartForhold"
+
+		
+	xmlns="http://justishub.justisnett.no/melding/1.1/meldingStraffesak"
+	targetNamespace="http://justishub.justisnett.no/melding/1.1/meldingStraffesak">
+
+	<xs:import namespace="http://justishub.justisnett.no/felles/1.1/basistyper" schemaLocation="../../felles/1.1/basistyper.xsd"/>
+	<xs:import namespace="http://justishub.justisnett.no/felles/1.1/oversendelse" schemaLocation="../../felles/1.1/oversendelse.xsd"/>
+	<xs:import namespace="http://justishub.justisnett.no/felles/1.1/dokument" schemaLocation="../../felles/1.1/dokument.xsd"/>
+	<xs:import namespace="http://justishub.justisnett.no/felles/1.1/aktoer" schemaLocation="../../felles/1.1/aktoer.xsd"/>
+	<xs:import namespace="http://justishub.justisnett.no/felles/1.1/straffbartForhold" schemaLocation="../../felles/1.1/straffbartForhold.xsd"/>
+	
+	<xs:element name="meldingStraffesak" type="MeldingStraffesakType"/>
+
+	<xs:complexType name="MeldingskategoriType">
+		<xs:annotation>
+			<xs:documentation xml:lang="no">Beskrivelse av hva slags type melding dette er.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="tittel" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Tittel på meldingen skal beskrive kort hva meldingen er for noe og skal kunne brukes som beskrivelse av meldingen i mottagende system.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kategori" type="basis:KodeType">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Hvilke typer meldinger: ankeDomInformasjon, ankeKjennelseInformasjon, beramming, trekkerAnke, annet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="MeldingStraffesakType">
+		<xs:annotation>
+			<xs:documentation xml:lang="no">Melding mellom domstol, påtale og kriminalomsorgen i straffesaker.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="forsendelse" type="oversendelse:ForsendelsesType">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Avsender og mottakerinformasjon med avsender referanse informasjon.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="meldingskategori" type="MeldingskategoriType">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Type melding som kodeverk: ankeInformasjon, oppdatering, annet, ... (legge til ved behov)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kravId" type="basis:UnikIdType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Hvis denne finnes fra før og avsender er politi/påtale så er dette en oppdatering/mer informasjon. Hvis avsender er domstolene kan det være spørsmål, oppdatert informasjon f.eks. oppdatert informasjon fra siktede i anke. Det skal ikke være en avgjørelse eller et nytt krav ? (stemmer ikke helt med anke over kjennelse).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="opprinneligKravId" type="basis:UnikIdType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Brukes fra lagmannsretten/høyesterett hvis det ikke er kommet noen anke melding fra politiet med anke detaljer.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="straffesaksnummer" type="basis:StraffesaksnummerType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Hvis det ikke finnes et elektronisk krav til avgjørelse fra påtale så må saksnummeret hos politiet spesifiseres (saksbehandlingssaken).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="avgjoerelseId" type="basis:UnikIdType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Referanse til avgjørelse, fra domstolene er det oppdatert informasjon og det finnes ikke et elektronisk krav fra påtale. Oppdatering av anke informasjon på avgjørelse fra påtale så refereres avgjørelsen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="frist" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Frist f.eks. frist på innlevering av tilsvar/annet i forbindelse med anke over kjennelse.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="aktoerer" type="straffesak:StraffesakRollelisteType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Liste over aktører. Dokumenter i anke over dom, siktede og siktedes advokat kanskje, trenger vi rolle informasjon.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dokumenter" type="dok:DokumentlisteType">
+				<xs:annotation>
+					<xs:documentation xml:lang="no">Liste over dokumenter som sendes, antar det alltid vil være minst 1 dokument.</xs:documentation>
+				</xs:annotation>
+			</xs:element>	
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
