@@ -138,7 +138,7 @@
         "beskrivelse": "Forsvarer er varslet om fengslingsmøtet og har fått gjenpart av saksdokumentene"
       },
       "varsleBistandsadvokat": "Retten anmodes om å varsle bistandsadvokaten om tidspunktet for rettsmøtet, jf. straffeprosessloven § 107c, 2. led",
-      "begrenseOffentlighet": "FORBUD_GJENGIVELSE",
+      "begrenseOffentlighet": ["FORBUD_GJENGIVELSE"],
       "ansvarligPaatalejurist": {
         "brukeridentifikasjon": "BLC218",
         "fornavn": "BLC218",

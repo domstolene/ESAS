@@ -166,8 +166,10 @@
           "type": "string"
         },
         "begrenseOffentlighet": {
-          "type": "string",
-          "enum": ["LUKKEDE_DOERER", "FORBUD_GJENGIVELSE"]
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/begrenseOffentlighetKrav"
+          }
         },
         "ansvarligPaatalejurist": {
           "$ref": "#/definitions/paataleJurist"
@@ -183,7 +185,11 @@
       ],
       "additionalProperties": false
     },
-
+    "begrenseOffentlighetKrav": {
+      "type": "string",
+      "description": "Liste over ulike begrense offentlighet krav.",
+      "enum": ["LUKKEDE_DOERER", "FORBUD_GJENGIVELSE", "HEMMELIGHOLD"]
+    },
     "fengsling": {
       "type": "object",
       "description": "Hvor lenge i varetekt ",
