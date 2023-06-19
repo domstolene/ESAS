@@ -181,7 +181,7 @@
       "required": [
         "varetektsType",
         "paagrepetTidspunkt",
-		"begrenseOffentlighet",
+        "begrenseOffentlighet",
         "ansvarligPaatalejurist"
       ],
       "additionalProperties": false
