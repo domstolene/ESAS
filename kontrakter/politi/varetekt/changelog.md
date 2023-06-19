@@ -4,11 +4,15 @@
 | 1.1 | Første versjon til produksjon, pilot| | |
 | 1.0 | Brukertest juni 2023, ikke til produksjon | | |
 ## Versjon 1.1 - pilot 2023
+### Oppdatert begrense offentlighet
+Kan velge flere krav under begrense offentlighet, samt lagt til HEMMELIGHOLD som alternativ
+
 Endringer fra brukertest til pilot, her er noen endringer som kommer:
-1. Begrensning av offentlighet.
-2. Tolk.
-3. Fengslingssurrogater.
-4. ...
+1. Tolk.
+2. Fengslingssurrogater.
+3. ...
+
+
 ## Versjon 1.0 - brukertest juni 2023
 ### Fjerner melding på begjæringVaretekt meldingen
 23.05.2023
