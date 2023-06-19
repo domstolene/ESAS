@@ -1,5 +1,15 @@
 # Endringslogg begjæring om varetek
-## Versjon 1.0
+| Versjon | Beskrivelse | Aktiv fra | Aktiv til |
+| --- | --- | --- | --- |
+| 1.1 | Første versjon til produksjon, pilot| | |
+| 1.0 | Brukertest juni 2023, ikke til produksjon | | |
+## Versjon 1.1 - pilot 2023
+Endringer fra brukertest til pilot, her er noen endringer som kommer:
+1. Begrensning av offentlighet.
+2. Tolk.
+3. Fengslingssurrogater.
+4. ...
+## Versjon 1.0 - brukertest juni 2023
 ### Fjerner melding på begjæringVaretekt meldingen
 23.05.2023
 Navn på meldingen skal ligge i header informasjon på rabbitMQ så det er ikke nødvendig at den er en del av selve meldingen.
