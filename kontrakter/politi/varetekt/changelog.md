@@ -6,6 +6,9 @@
 ## Versjon 1.1 - pilot 2023
 ### Oppdatert begrense offentlighet
 Kan velge flere krav under begrense offentlighet, samt lagt til HEMMELIGHOLD som alternativ
+### Varetekt til hovedforhandlingsdato
+Fengslingsobjektet kan enten spesifisere antall dager i varetekt eller til hovedforhandlingsdato (påkrevd å velge en av de to)
+
 
 Endringer fra brukertest til pilot, her er noen endringer som kommer:
 1. Tolk.

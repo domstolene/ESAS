@@ -193,14 +193,37 @@
     },
     "fengsling": {
       "type": "object",
-      "description": "Hvor lenge i varetekt ",
+      "description": "Hvor lenge i varetekt, antall dager eller frem til hovedforhandlingsdato",
       "properties": {
         "antallDager": {
           "type": "integer"
+        },
+        "tilHovedforhandlingsdato": {
+          "type": "string",
+          "format": "date"
         }
       },
-      "required": ["antallDager"],
-      "additionalProperties": false
+      "oneOf": [
+        {
+        "properties": {
+          "antallDager": {
+            "type": "integer"
+          }
+        },
+        "required": ["antallDager"],
+        "additionalProperties": false
+        },
+        {
+          "properties": {
+            "tilHovedforhandlingsdato": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": ["tilHovedforhandlingsdato"],
+          "additionalProperties": false
+        }
+      ]
     },
     "forlengelseInfo": {
       "type": "object",
