@@ -583,12 +583,12 @@
       "additionalProperties": false
     },
     "person": {
-      "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
       "type": "object",
+      "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
       "properties": {
         "internId": {
-          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId",
-          "type": "string"
+          "type": "string",
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
@@ -597,8 +597,8 @@
           "$ref": "#/definitions/date"
         },
         "kjoenn": {
-          "description": "Ukjent kjønn hvis denne ikke er med",
-          "$ref": "#/definitions/kjoenn"
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
         },
         "statsborgerskap": {
           "type": "array",
@@ -607,8 +607,8 @@
           }
         },
         "identitetsnummer": {
-          "description": "Fødselsnummer, D-nummer eller SSP nummer som er den i bruk",
-          "$ref": "#/definitions/personIdentifikator"
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
         },
         "tilleggsId": {
           "type": "array",
@@ -628,7 +628,7 @@
           "type": "array",
           "description": "Verge skal være med på siktet, fornærmet, vitne.",
           "items": {
-            "$ref": "#/definitions/personEnkel"
+            "$ref": "#/definitions/personRelatert"
           }
         }
       },
@@ -653,7 +653,39 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": { "$ref": "#/definitions/date" }
+        "foedselsdato": {
+          "$ref": "#/definitions/date"
+        }
+      },
+      "required": ["internId", "navn"],
+      "additionalProperties": false
+    },
+    "personRelatert": {
+      "type": "object",
+      "description": "Personer relatert til straffesaken som verger og advokater",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId, en verge kan f.eks. også være vitne i saken"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "$ref": "#/definitions/date",
+          "description": "På de vi har det, sjekke om vi kan dele"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "foedselsnummer": {
+          "$ref": "#/definitions/foedselsnummer",
+          "description": "Fødselsnummer f.eks på verger, men usikker på om det er behov. Vil ikke være utfylt på advokater."
+        }
       },
       "required": ["internId", "navn"],
       "additionalProperties": false
