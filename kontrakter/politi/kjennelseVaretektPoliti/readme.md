@@ -1,16 +1,15 @@
-# Kjennelse på varetekt videresendt til Kriminalomsorgen (kjennelseVaretektPoliti)
+# Kjennelse på varetekt til Kriminalomsorgen (kjennelseVaretektPoliti)
 Når politiet mottar kjennelse så blir kjennelsen strukturert og med kjennelse/rettsbok PDF rutet videre til Kriminalomsorgen.
 Det skal legges ved data om straffesakene, se nedenfor.
 
 Denne meldingen skal brukes på førstegangsfengslinger og forlengelser i etterkant og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)
 
 [Endringslogg](changelog.md)
-## Headere forsendelse justisHub
-SchmaName=KJENNELSE_VARETEKT_POLITI
+## Headere forsendelse justisHub - [RFC](../../../rfc/MessageName-header.md)
+SchmaName=KJENNELSE_VARETEKT_POLITI  
 SchemaVersion=1.0  
-[RFC](../../../rfc/MessageName-header.md)
 
-Versjon 1.0 er første versjon som skal til pilot og er en del av oppdaterVaretekt som skal utgå og erstattes av 
+Versjon 1.0 er første versjon som skal til pilot høsten 2023 og er en del av oppdaterVaretekt som skal utgå og erstattes av 
 ## Status - ikke godkjent
 Begge parter må være enige om innholdet før vi kan gå i produksjon.
 ## Data
