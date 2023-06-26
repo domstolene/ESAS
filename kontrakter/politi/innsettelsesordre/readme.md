@@ -1,16 +1,15 @@
-# Innsettelsesordre
-Når siktet blir satt i fengsel hos Kriminalomsorgen (KDI) skal det alltid følge med en innsettelsesordre. Tidligere ble dette gjort ved at politiet fyllte ut en rødlapp som var et skjema med detaljer om siktede og soning i varetekt.
-Innsettelsesordren kan komme før kjennelse når en siktet blir flyttet fra politiarresten til Kriminalomsorgen og etter kjennelsen. Når innsettelsesordren kommer etter kjennelse så skal kjennelsen følge med.
-PIN er politiets innsettelsesordre som er den som kommer før kjennelse fra retten.
+# Innsettelsesordre (PIN)
+Innsettelsesordre er påtale sin ordre til Kriminalomsorgen om at en person skal sitte i varetekt og er istedet for en kjennelse fra retten når den ikke har kommet ennå. Denne blir kalt politiets innsettelsesordre av Kriminalomsorgen.
+
+*Hvis rettens kjennelse kommer så er det ikke nødvendig med en innsettelsesordre så tidligere versjon med "innsettelsesordre" også når det foreligger en kjennelse utgår. Meldingen er ikke oppdatert ennå. De endringene kommer i en egen MR*
 
 [Endringslogg](changelog.md)
-
-Dette er en stor og komplisert melding som vi må sjekke om passer sammen med arbeidsprosessene til poltiet. Tenker særlig på informasjon om helse og risiko. En bedre løsning er å dele opp med egen informasjon om helse og risiko og oppdatering når det endres.
-1. Innsettelseordre med fokus på juristen sin ordre, kun restriksjoner hvis kjennelse ikke er mottatt.
-2. Kjennelse fra domstolene kun egen melding, ikke en del av denne.
-3. Risiko og helse informasjon egen melding. Bør også gjelde bestilling av varetektsplass.
-
-## Begreper
+## Status - ikke godkjent
+Begge parter må være enige om innholdet før vi kan gå i produksjon.
+## Data
+I tillegg til forsendelse og detaljer om personen så blir følgende data med.
+### Straffesaksdata
+I første omgang så kommer informasjon kun fra hovedsaken og det kommer ikke med lovbud. Når siktelsen kommer (sammen med tilståelsessaker) så vil vi kunne sende med informasjon på alle straffesaker som siktede er involvert i.
 ### varetektsyklus
 En varetektsyklus er en serie av varetektshendelser fra en person blir pågrepet til han slipper ut av fengsel. F.eks. følgende hendelser.
  1. Besluting om pågripelse
@@ -19,17 +18,7 @@ En varetektsyklus er en serie av varetektshendelser fra en person blir pågrepet
  4. Overføre fra politiarresten til kriminalomsorgen.
  5. Slipper ut av fengsel ferdig med varetekt.
 
- VaretektSyklusId vil være lik på alle hendelser fra politiet på denne.
+ VaretektSyklusId vil være lik på alle hendelser fra politiet på denne, men ikke til å begynne med. Alle som meldinger som er på nytt format har egen syklusId.
 
 ## Avklaringer
-Restriksjonstype annet, trenger eksempler fra påtale.
-
-Deling av data, kan vi dele fødselsnummer mm. på vitner og verger. Hva trenger Kriminalomsorgen det til?
-Hva med kjønn, er det nødvendig på verger?
-
-Risiko og helseinformasjon ligger med som frivillig element nå, krever mer kartlegging av prosessen hos politiet. Kanskje denne kommer like i etterkant i egen melding eller kune i bestilling av varetektsplass.
-
-## Stegvis implementering
-Verger
-Straffesaker som er de som er med i siktelsen.
-Varetektsyklusid - senere 
+Er det behov for noen PDF dokumenter i den nye innsettelsesordren?
