@@ -205,13 +205,13 @@
       },
       "oneOf": [
         {
-        "properties": {
-          "antallDager": {
-            "type": "integer"
-          }
-        },
-        "required": ["antallDager"],
-        "additionalProperties": false
+          "properties": {
+            "antallDager": {
+              "type": "integer"
+            }
+          },
+          "required": ["antallDager"],
+          "additionalProperties": false
         },
         {
           "properties": {
