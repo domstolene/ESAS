@@ -1,5 +1,6 @@
 # Oppdatering av varetekt
 Oppdatering av varetekt når kjennelsen kommer eller når påtale letter på restriksjoner/isolasjon.
+Denne utgår og erstattes av [kjennelseVaretektPoliti](../kjennelseVaretektPoliti/readme.md) og [endreRestriksjoner](../endreRestriksjoner/readme.md)
 
 ## Headere forsendelse justisHub
 SchmaName=OPPDATER_VARETEKT  
