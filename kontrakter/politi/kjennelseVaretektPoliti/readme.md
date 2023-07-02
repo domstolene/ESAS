@@ -14,6 +14,12 @@ Versjon 1.0 er første versjon som skal til pilot høsten 2023 og er en del av o
 Begge parter må være enige om innholdet før vi kan gå i produksjon.
 ## Data
 I tillegg til forsendelse og detaljer om personen så blir følgende data med.
+### Siktede
+Siktede fra domstolen kan være en en annen person en den som finnes på straffesaken, dvs. vi finner ikke match mellom data fra domstolen og det vi har som straffesaksdata.
+* *personVaretektInfo->personVaretekt* er personen fra straffesak hvis vi finner match mellom domstolen sin person og en siktet person på straffesaken.
+* Siktede informasjon fra domstolen finnes en kopi i kjennelsen   
+*kjennelseVaretekt->domstolPersonVaretekt*.
+* Siktedes informasjon fra straffesaken vil finnes på: *personVaretektInfo->straffesaksInfo->siktet*
 ### Straffesaksdata
 I første omgang så kommer informasjon kun fra hovedsaken og det kommer ikke med lovbud. Når siktelsen kommer (sammen med tilståelsessaker) så vil vi kunne sende med informasjon på alle straffesaker som siktede er involvert i.
 ### Data om helse, risiko og tilstand
@@ -42,10 +48,12 @@ sequenceDiagram
   activate pd
   pd->>kdi:kjennelseVaretektPoliti
   deactivate pd
+  pd-->>kdi:endreRestriksjoner
 ```
 * Kvitteringer skal sendes på alle meldinger og er ikke vist i diagrammet.
 * varetektsplass er tilbud på plass i et gitt fengsel, se [bestillingVaretekt](../bestillvaretektsplass/readme.md)
 * Innsettelsesordren er vist som et eksempel og vil bli brukt hvis kjennelsen ikke er klar til når personen skal flyttes til Kriminalomsorgen.
+* [endreRestriksjoner](../endreRestriksjoner/readme.md) så påtale kan lette på restriksjoner. Ikke planlagt når denne skal implementeres.
 ## Avklaringer
 I arbeidet med fengslinger og informasjon mellom politi og Kriminalomsorgen er det gjort noen antagelser i den nye meldingen for kjennelse fra domstolene.
 ### Straffesaksinformasn (Siktelse) og data til Kriminalomsorgen
