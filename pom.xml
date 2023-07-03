@@ -39,6 +39,7 @@
         <module>kontrakter/politi/oppdatervaretekt</module>
         <module>kontrakter/da/varetekt</module>
         <module>kontrakter/felles/kvittering</module>
+        <module>kodeverk/felles</module>
         <module>validering-jwks</module>
     </modules>
 
