@@ -579,7 +579,7 @@
           "type": "integer"
         },
         "varighet": {
-          "type": "#/definitions/varighet"
+          "$ref": "#/definitions/varighet"
         }
       }
     },
