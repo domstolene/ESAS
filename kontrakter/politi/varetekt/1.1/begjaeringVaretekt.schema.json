@@ -195,7 +195,6 @@
           "type": "integer"
         },
         "tilHovedforhandling": {
-          "type": "boolean",
           "const": true
         }
       },
