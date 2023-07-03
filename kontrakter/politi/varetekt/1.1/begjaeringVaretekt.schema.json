@@ -182,14 +182,18 @@
     },
     "fengsling": {
       "type": "object",
-      "description": "Hvor lenge i varetekt, antall dager eller frem til hovedforhandlingsdato",
-      "varighet": {
-        "$ref": "#/definitions/varighet"
-      }
+      "description": "Hvor lenge i varetekt",
+      "properties": {
+        "varighet": {
+          "$ref": "#/definitions/varighet"
+        }
+      },
+      "required": ["varighet"],
+      "additionalProperties": false
     },
     "varighet": {
       "type": "object",
-      "description": "Varighet på fengsling/restriksjon, antall dager eller frem til hovedforhandlingsdato som er satt i saksinformasjon",
+      "description": "Varighet på fengsling/restriksjon, antall dager eller frem til hovedforhandling (dato satt i saksinformasjon)",
       "properties": {
         "antallDager": {
           "type": "integer"
@@ -211,12 +215,12 @@
         },
         {
           "properties": {
-            "tilHovedforhandlingsdato": {
+            "tilHovedforhandling": {
               "type": "boolean",
               "const": true
             }
           },
-          "required": ["tilHovedforhandlingsdato"],
+          "required": ["tilHovedforhandling"],
           "additionalProperties": false
         }
       ]
