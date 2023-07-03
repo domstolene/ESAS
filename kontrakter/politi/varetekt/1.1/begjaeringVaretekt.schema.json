@@ -195,23 +195,29 @@
           "type": "integer"
         },
         "tilHovedforhandling": {
+          "type": "boolean",
           "const": true
         }
       },
       "oneOf": [
         {
+          "properties": {
+            "antallDager": {
+              "type": "integer"
+            }
+          },
           "required": ["antallDager"],
-          "additionalProperties": false,
-          "not": {
-            "required": ["tilHovedforhandling"]
-          }
+          "additionalProperties": false
         },
         {
-          "required": ["tilHovedforhandling"],
-          "additionalProperties": false,
-          "not": {
-            "required": ["antallDager"]
-          }
+          "properties": {
+            "tilHovedforhandlingsdato": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": ["tilHovedforhandlingsdato"],
+          "additionalProperties": false
         }
       ]
     },

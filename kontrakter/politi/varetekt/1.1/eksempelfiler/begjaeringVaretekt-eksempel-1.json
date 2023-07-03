@@ -85,7 +85,7 @@
             },
             "periode": {
               "startDag": 15,
-              "variget": {
+              "varighet": {
                 "antallDager": 14
               }
             }
@@ -99,7 +99,9 @@
             },
             "periode": {
               "startDag": 1,
-              "antallDager": 14
+              "varighet": {
+                "antallDager": 14
+              }
             }
           }
         ]
@@ -130,10 +132,7 @@
       "forlengelse": {
         "beskrivelse": "forlengelse"
       },
-      "hovedforhandling": {
-        "beskrivelse": "Påtalemyndigheten har som mål å beramme hovedforhandling før varetektsperioden utløper, hovedforhandling starter ..",
-        "berammetDato": "2023-04-09"
-      },
+      "hovedforhandlingsdato": "2023-08-20",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
