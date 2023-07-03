@@ -7,8 +7,9 @@
 ### Oppdatert begrense offentlighet
 Kan velge flere krav under begrense offentlighet, samt lagt til HEMMELIGHOLD som alternativ
 ### Varetekt til hovedforhandlingsdato
-Fengslingsobjektet kan enten spesifisere antall dager i varetekt eller til hovedforhandlingsdato (påkrevd å velge en av de to)
-
+Saksinformasjon inneholder hovedforhandlingsdato, og fengsling, restriksjoner og isolasjon inneholder en ny definisjon - varighet. 
+Varighet kan defineres enten ved å spesifisere antall dager i varetekt eller til hovedforhandling. 
+Dersom til hovedforhandling er false må antall dager være minimum 1 og hvis til hovedforhandling er true må antall dager være 0.
 
 Endringer fra brukertest til pilot, her er noen endringer som kommer:
 1. Tolk.

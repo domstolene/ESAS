@@ -61,7 +61,9 @@
       },
       "paastandVaretekt": {
         "fengsling": {
-          "antallDager": 28
+          "varighet": {
+            "antallDager": 28
+          }
         },
         "restriksjoner": [
           {
@@ -71,7 +73,9 @@
             },
             "periode": {
               "startDag": 1,
-              "antallDager": 14
+              "varighet": {
+                "antallDager": 14
+              }
             }
           },
           {
@@ -81,7 +85,9 @@
             },
             "periode": {
               "startDag": 15,
-              "antallDager": 14
+              "variget": {
+                "antallDager": 14
+              }
             }
           }
         ],

@@ -110,20 +110,9 @@
           "$ref": "#/definitions/forlengelseInfo",
           "description": "Hvis det er en forlengelse så er dette elementet med"
         },
-        "hovedforhandling": {
-          "type": "object",
-          "description": "Hvis de tror hovedforhandling kommer før varetektsfengsling er ferdig",
-          "properties": {
-            "beskrivelse": {
-              "type": "string"
-            },
-            "berammetDato": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          "required": ["beskrivelse"],
-          "additionalProperties": false
+        "hovedforhandlingsdato": {
+          "type": "string",
+          "format": "date"
         },
         "paagrepetTidspunkt": {
           "type": "string",
@@ -194,34 +183,36 @@
     "fengsling": {
       "type": "object",
       "description": "Hvor lenge i varetekt, antall dager eller frem til hovedforhandlingsdato",
+      "varighet": {
+        "$ref": "#/definitions/varighet"
+      }
+    },
+    "varighet": {
+      "type": "object",
+      "description": "Varighet på fengsling/restriksjon, antall dager eller frem til hovedforhandlingsdato som er satt i saksinformasjon",
       "properties": {
         "antallDager": {
           "type": "integer"
         },
-        "tilHovedforhandlingsdato": {
-          "type": "string",
-          "format": "date"
+        "tilHovedforhandling": {
+          "type": "boolean",
+          "const": true
         }
       },
       "oneOf": [
         {
-          "properties": {
-            "antallDager": {
-              "type": "integer"
-            }
-          },
           "required": ["antallDager"],
-          "additionalProperties": false
+          "additionalProperties": false,
+          "not": {
+            "required": ["tilHovedforhandling"]
+          }
         },
         {
-          "properties": {
-            "tilHovedforhandlingsdato": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          "required": ["tilHovedforhandlingsdato"],
-          "additionalProperties": false
+          "required": ["tilHovedforhandling"],
+          "additionalProperties": false,
+          "not": {
+            "required": ["antallDager"]
+          }
         }
       ]
     },
@@ -569,7 +560,7 @@
           "$ref": "#/definitions/lovbudEnkel"
         },
         "periode": {
-          "$ref": "#/definitions/periodeStartAntall"
+          "$ref": "#/definitions/periodeStartVarighet"
         }
       },
       "required": ["isolasjonsType", "lovbudEnkel", "periode"]
@@ -579,17 +570,17 @@
       "description": "Liste over de ulike isolasjonstyper",
       "enum": ["FULL_ISOLASJON", "DELVIS_ISOLASJON"]
     },
-    "periodeStartAntall": {
+    "periodeStartVarighet": {
       "type": "object",
-      "description": "Periode for fensling eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
-      "required": ["startDag", "antallDager"],
+      "description": "Periode for isolasjon eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
+      "required": ["startDag", "varighet"],
       "additionalProperties": false,
       "properties": {
         "startDag": {
           "type": "integer"
         },
-        "antallDager": {
-          "type": "integer"
+        "varighet": {
+          "type": "#/definitions/varighet"
         }
       }
     },
@@ -605,7 +596,7 @@
           "$ref": "#/definitions/lovbudEnkel"
         },
         "periode": {
-          "$ref": "#/definitions/periodeStartAntall"
+          "$ref": "#/definitions/periodeStartVarighet"
         }
       }
     },
