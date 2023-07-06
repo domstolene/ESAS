@@ -245,7 +245,7 @@
           }
         }
       },
-      "required": ["person", "verger", "tolk"],
+      "required": ["person", "verger"],
       "additionalProperties": false
     },
     "spraakkodeType": {
@@ -256,7 +256,7 @@
     "behovForTolkType": {
       "type": "string",
       "description": "Er det behov for tolk",
-      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER, IKKE_BEHOV"]
+      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER"]
     },
     "varetektInfo": {
       "type": "object",
