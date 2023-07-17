@@ -104,7 +104,7 @@
             "periode": {
               "startDag": 1,
               "varighet": {
-                "antallDager": 14
+                "tilHovedforhandling": true
               }
             }
           }
