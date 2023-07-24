@@ -46,6 +46,10 @@
           }
         }
       },
+      "tolk": {
+        "behov": "JA_POLITIET_STILLER",
+        "spraak": "CMN"
+      },
       "forsvarer": {
         "tittel": "Advokat",
         "navn": {

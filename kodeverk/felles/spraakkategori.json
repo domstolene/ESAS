@@ -1,0 +1,441 @@
+{
+  "kodeType": "SPRAKKATEGORI",
+  "koder": [
+    {
+      "beskrivelse": "Afar",
+      "kode": "AAR"
+    },
+    {
+      "beskrivelse": "Albansk",
+      "kode": "ALN"
+    },
+    {
+      "beskrivelse": "Amharisk",
+      "kode": "AMH"
+    },
+    {
+      "beskrivelse": "Arabisk",
+      "kode": "ARB"
+    },
+    {
+      "beskrivelse": "Armensk",
+      "kode": "HYE"
+    },
+    {
+      "beskrivelse": "Aserbajdsjansk",
+      "kode": "AZJ"
+    },
+    {
+      "beskrivelse": "Assyrisk",
+      "kode": "AII"
+    },
+    {
+      "beskrivelse": "Bengali",
+      "kode": "BEN"
+    },
+    {
+      "beskrivelse": "Berbisk",
+      "kode": "BER"
+    },
+    {
+      "beskrivelse": "Bilen",
+      "kode": "BYN"
+    },
+    {
+      "beskrivelse": "Bosnisk",
+      "kode": "BOS"
+    },
+    {
+      "beskrivelse": "Bosnisk/Kroatisk/Serbisk",
+      "kode": "HBS"
+    },
+    {
+      "beskrivelse": "Bulgarsk",
+      "kode": "BUL"
+    },
+    {
+      "beskrivelse": "Burmesisk",
+      "kode": "MYA"
+    },
+    {
+      "beskrivelse": "Cebuano",
+      "kode": "CEB"
+    },
+    {
+      "beskrivelse": "Chin Haka",
+      "kode": "CNH"
+    },
+    {
+      "beskrivelse": "Dansk",
+      "kode": "DAN"
+    },
+    {
+      "beskrivelse": "Dari",
+      "kode": "PRS"
+    },
+    {
+      "beskrivelse": "Dioula",
+      "kode": "DYU"
+    },
+    {
+      "beskrivelse": "Engelsk",
+      "kode": "ENG"
+    },
+    {
+      "beskrivelse": "Estisk",
+      "kode": "EST"
+    },
+    {
+      "beskrivelse": "Farsi (Persisk)",
+      "kode": "PER"
+    },
+    {
+      "beskrivelse": "Finsk",
+      "kode": "FIN"
+    },
+    {
+      "beskrivelse": "Flamsk",
+      "kode": "VLS"
+    },
+    {
+      "beskrivelse": "Fransk",
+      "kode": "FRE"
+    },
+    {
+      "beskrivelse": "Fransk",
+      "kode": "FRA"
+    },
+    {
+      "beskrivelse": "Fullah",
+      "kode": "FUL"
+    },
+    {
+      "beskrivelse": "Gassisk",
+      "kode": "MLG"
+    },
+    {
+      "beskrivelse": "Georgisk",
+      "kode": "KAT"
+    },
+    {
+      "beskrivelse": "Gresk",
+      "kode": "ELL"
+    },
+    {
+      "beskrivelse": "Hausa",
+      "kode": "HAU"
+    },
+    {
+      "beskrivelse": "Hazaragi",
+      "kode": "HAZ"
+    },
+    {
+      "beskrivelse": "Hebraisk",
+      "kode": "HEB"
+    },
+    {
+      "beskrivelse": "Hindi",
+      "kode": "HIN"
+    },
+    {
+      "beskrivelse": "Hviterussisk",
+      "kode": "BEL"
+    },
+    {
+      "beskrivelse": "Igbo",
+      "kode": "IBO"
+    },
+    {
+      "beskrivelse": "Indonesisk",
+      "kode": "IND"
+    },
+    {
+      "beskrivelse": "Islandsk",
+      "kode": "ISL"
+    },
+    {
+      "beskrivelse": "Italiensk",
+      "kode": "ITA"
+    },
+    {
+      "beskrivelse": "Japansk",
+      "kode": "JPN"
+    },
+    {
+      "beskrivelse": "Jiddisk",
+      "kode": "YID"
+    },
+    {
+      "beskrivelse": "Kantonesisk",
+      "kode": "YUE"
+    },
+    {
+      "beskrivelse": "Kinesisk",
+      "kode": "ZHO"
+    },
+    {
+      "beskrivelse": "Kinyarwanda",
+      "kode": "KIN"
+    },
+    {
+      "beskrivelse": "Kirundi",
+      "kode": "RUN"
+    },
+    {
+      "beskrivelse": "Koreansk",
+      "kode": "KOR"
+    },
+    {
+      "beskrivelse": "Kreolsk",
+      "kode": "KEA"
+    },
+    {
+      "beskrivelse": "Kroatisk",
+      "kode": "HRV"
+    },
+    {
+      "beskrivelse": "Kurdisk-Badini",
+      "kode": "BDF"
+    },
+    {
+      "beskrivelse": "Kurdisk-Gorani",
+      "kode": "HAC"
+    },
+    {
+      "beskrivelse": "Kurdisk-Kurmanji",
+      "kode": "KMR"
+    },
+    {
+      "beskrivelse": "Kurdisk-Sorani",
+      "kode": "CKB"
+    },
+    {
+      "beskrivelse": "Latvisk",
+      "kode": "LAV"
+    },
+    {
+      "beskrivelse": "Lingala",
+      "kode": "LIN"
+    },
+    {
+      "beskrivelse": "Litauisk",
+      "kode": "LIT"
+    },
+    {
+      "beskrivelse": "Makedonsk",
+      "kode": "MKD"
+    },
+    {
+      "beskrivelse": "Mandarin",
+      "kode": "CMN"
+    },
+    {
+      "beskrivelse": "Mandinka",
+      "kode": "MNK"
+    },
+    {
+      "beskrivelse": "Masalit",
+      "kode": "MLS"
+    },
+    {
+      "beskrivelse": "Mongolsk",
+      "kode": "KHK"
+    },
+    {
+      "beskrivelse": "Nederlandsk",
+      "kode": "NLD"
+    },
+    {
+      "beskrivelse": "Nepali",
+      "kode": "NEP"
+    },
+    {
+      "beskrivelse": "Nepali",
+      "kode": "NPI"
+    },
+    {
+      "beskrivelse": "Nigerian Pidgin",
+      "kode": "PCM"
+    },
+    {
+      "beskrivelse": "Norsk",
+      "kode": "NOR"
+    },
+    {
+      "beskrivelse": "Norsk tegnspråk",
+      "kode": "NSL"
+    },
+    {
+      "beskrivelse": "Nuer",
+      "kode": "NUS"
+    },
+    {
+      "beskrivelse": "Oromo",
+      "kode": "ORM"
+    },
+    {
+      "beskrivelse": "Panjabi",
+      "kode": "PAN"
+    },
+    {
+      "beskrivelse": "Pashto",
+      "kode": "PBT"
+    },
+    {
+      "beskrivelse": "Polsk",
+      "kode": "POL"
+    },
+    {
+      "beskrivelse": "Portugisisk",
+      "kode": "POR"
+    },
+    {
+      "beskrivelse": "Rohingya",
+      "kode": "RHG"
+    },
+    {
+      "beskrivelse": "Romanes",
+      "kode": "RMO"
+    },
+    {
+      "beskrivelse": "Romani",
+      "kode": "ROM"
+    },
+    {
+      "beskrivelse": "Rumensk",
+      "kode": "RON"
+    },
+    {
+      "beskrivelse": "Russisk",
+      "kode": "RUS"
+    },
+    {
+      "beskrivelse": "Saho",
+      "kode": "SSY"
+    },
+    {
+      "beskrivelse": "Samisk (Nord-samisk)",
+      "kode": "SME"
+    },
+    {
+      "beskrivelse": "Serbisk",
+      "kode": "SRP"
+    },
+    {
+      "beskrivelse": "Sinhala",
+      "kode": "SIN"
+    },
+    {
+      "beskrivelse": "Slovakisk",
+      "kode": "SLK"
+    },
+    {
+      "beskrivelse": "Slovensk",
+      "kode": "SLV"
+    },
+    {
+      "beskrivelse": "Somalisk",
+      "kode": "SOM"
+    },
+    {
+      "beskrivelse": "Spansk",
+      "kode": "SPA"
+    },
+    {
+      "beskrivelse": "Susu",
+      "kode": "SUS"
+    },
+    {
+      "beskrivelse": "Svensk",
+      "kode": "SWE"
+    },
+    {
+      "beskrivelse": "Swahili",
+      "kode": "SWH"
+    },
+    {
+      "beskrivelse": "Tadsjikisk",
+      "kode": "TGK"
+    },
+    {
+      "beskrivelse": "Tagalog",
+      "kode": "TGL"
+    },
+    {
+      "beskrivelse": "Tamil",
+      "kode": "TAM"
+    },
+    {
+      "beskrivelse": "Thai",
+      "kode": "THA"
+    },
+    {
+      "beskrivelse": "Tibetansk",
+      "kode": "BOD"
+    },
+    {
+      "beskrivelse": "Tigré",
+      "kode": "TIG"
+    },
+    {
+      "beskrivelse": "Tigrinja",
+      "kode": "TIR"
+    },
+    {
+      "beskrivelse": "Tsjekkisk",
+      "kode": "CES"
+    },
+    {
+      "beskrivelse": "Tsjetsjensk",
+      "kode": "CHE"
+    },
+    {
+      "beskrivelse": "Turkmensk",
+      "kode": "TUK"
+    },
+    {
+      "beskrivelse": "Twi",
+      "kode": "TWI"
+    },
+    {
+      "beskrivelse": "Tyrkisk",
+      "kode": "TUR"
+    },
+    {
+      "beskrivelse": "Tysk",
+      "kode": "DEU"
+    },
+    {
+      "beskrivelse": "Uighur",
+      "kode": "UIG"
+    },
+    {
+      "beskrivelse": "Ukrainsk",
+      "kode": "UKR"
+    },
+    {
+      "beskrivelse": "Ungarsk",
+      "kode": "HUN"
+    },
+    {
+      "beskrivelse": "Urdu",
+      "kode": "URD"
+    },
+    {
+      "beskrivelse": "Usbekisk",
+      "kode": "UZB"
+    },
+    {
+      "beskrivelse": "Vietnamesisk",
+      "kode": "VIE"
+    },
+    {
+      "beskrivelse": "Wolof",
+      "kode": "WOL"
+    },
+    {
+      "beskrivelse": "Zaza",
+      "kode": "ZZA"
+    }
+  ]
+}

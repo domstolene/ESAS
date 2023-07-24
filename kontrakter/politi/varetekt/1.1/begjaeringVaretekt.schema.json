@@ -225,6 +225,15 @@
           "$ref": "#/definitions/person",
           "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
         },
+        "tolk": {
+          "type": "object",
+          "properties": {
+            "behov": { "$ref": "#/definitions/behovForTolkType" },
+            "spraak": { "$ref": "#/definitions/spraakkodeType" }
+          },
+          "required": ["behov"],
+          "additionalProperties": false
+        },
         "forsvarer": {
           "$ref": "#/definitions/profesjonellPerson"
         },
@@ -236,8 +245,18 @@
           }
         }
       },
-      "required": ["person", "verger"],
+      "required": ["person", "verger", "tolk"],
       "additionalProperties": false
+    },
+    "spraakkodeType": {
+      "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
+      "pattern": "^([A-Z]{3,3})$",
+      "type": "string"
+    },
+    "behovForTolkType": {
+      "type": "string",
+      "description": "Er det behov for tolk",
+      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER, IKKE_BEHOV"]
     },
     "varetektInfo": {
       "type": "object",
