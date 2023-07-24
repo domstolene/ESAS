@@ -2,7 +2,8 @@
 Når politiet mottar kjennelse så blir kjennelsen strukturert og med kjennelse/rettsbok PDF rutet videre til Kriminalomsorgen.
 Det skal legges ved data om straffesakene, se nedenfor.
 
-Denne meldingen skal brukes på førstegangsfengslinger og forlengelser i etterkant og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)
+Denne meldingen skal brukes på førstegangsfengslinger og fengslingsforlengelser og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)  
+Når politiet mottar en kjennelse på varetekt så blir denne meldingen sendt automatisk til Kriminalomsorgen og den vil inneholde kjennelsen strukturert og på PDF format fra domstolen samt data fra straffesaken hos politiet.
 
 [Endringslogg](changelog.md) - [RFC](../../../rfc/MessageName-header.md)
 ## Headere forsendelse justisHub
@@ -11,7 +12,7 @@ SchemaVersion=1.0
 
 Versjon 1.0 er første versjon som skal til pilot høsten 2023 og er en del av oppdaterVaretekt som skal utgå og erstattes av 
 ## Status - ikke godkjent
-Begge parter må være enige om innholdet før vi kan gå i produksjon.
+Begge parter må være enige om innholdet.
 ## Data
 I tillegg til forsendelse og detaljer om personen så blir følgende data med.
 ### Siktede
@@ -41,12 +42,14 @@ sequenceDiagram
   da->>pd:kjennelseVaretekt
   activate pd
   pd->>kdi:kjennelseVaretektPoliti
+  note right of kdi: Førstegangsfengsling
   deactivate pd
   note over pd: Varetektstiden løper ut
   pd->>da: begjaeringVaretekt
   da->>pd:kjennelseVaretekt
   activate pd
   pd->>kdi:kjennelseVaretektPoliti
+  note right of kdi: Fengslingsforlengelse
   deactivate pd
   pd-->>kdi:endreRestriksjoner
 ```
