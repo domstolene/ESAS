@@ -171,12 +171,12 @@
         "fraDato": {
           "description": "Dato, som domstolene spesifiserer",
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         },
         "tilDato": {
           "description": "Dato, som domstolene spesifiserer",
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         }
       }
     },
