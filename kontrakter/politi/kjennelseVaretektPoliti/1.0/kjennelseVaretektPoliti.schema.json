@@ -378,8 +378,9 @@
         },
         "kravid": {
           "type": "string",
-          "description": "Kravid som opprettes i politiet"
+          "description": "Kravid som opprettes i politiet (begjæring om varetektsfengsling)"
         },
+		"forlengelse": {"type": "boolean"},
         "restriksjoner": {
           "type": "array",
           "items": {
@@ -406,6 +407,7 @@
         "avgjoerelseId",
         "avsagtDato",
         "kravid",
+		"forlengelse",
         "fengsling",
         "restriksjoner",
         "isolasjonsKrav"
