@@ -1,4 +1,4 @@
-# oppdaterinv av varetekt endringer
+# oppdatering av varetekt endringer
 
 ### Skal ikke brukes lenger 23.06.2023
 Delt opp i to meldinger [](../)

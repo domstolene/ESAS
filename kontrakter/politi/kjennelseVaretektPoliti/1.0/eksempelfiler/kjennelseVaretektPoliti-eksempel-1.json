@@ -111,9 +111,37 @@
       "organisasjonsnummer": "926722794",
       "navn": "Trøndelag tingrett"
     },
+    "domstolsaktoerer": {
+      "dommer": {
+        "etternavn": "Straff",
+        "fornavn": "Streng",
+        "tittel": "Dommerfullmektig"
+      }
+    },
     "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
     "avsagtDato": "2022-07-05",
     "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+    "personVaretektDomstol": {
+      "internId": "23492414789",
+      "navn": {
+        "fornavn": "Morsom",
+        "etternavn": "KIWI"
+      },
+      "foedselsdato": "1963-04-14",
+      "kjoenn": "MANN",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "verger": []
+    },
+
     "forlengelse": false,
     "restriksjoner": [
       {

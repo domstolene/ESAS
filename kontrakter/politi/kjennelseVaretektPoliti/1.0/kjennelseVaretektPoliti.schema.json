@@ -71,7 +71,10 @@
       "type": "object",
       "description": "Data om personen og straffesaker personen er involvert i",
       "properties": {
-        "personVaretekt": { "$ref": "#/definitions/person" },
+        "personVaretekt": {
+          "$ref": "#/definitions/person",
+          "description": "Straffesak personen, forskjeller ser du ved å sammenligne med data fra domstolen"
+        },
         "straffesaker": {
           "type": "array",
           "title": "straffesaker",
@@ -171,8 +174,8 @@
       ],
       "additionalProperties": false
     },
-    "fengslingKjennelse": {
-      "description": "Fengsling som en del av kjennelsen, uten datoer så er det ikke noe fengsel",
+    "fengsling": {
+      "description": "Fengsling som en del av kjennelsen, uten datoer så er det ikke noe fengsel nå.",
       "properties": {
         "fengslingsId": {
           "type": "string",
@@ -301,6 +304,7 @@
       "type": "object",
       "properties": {
         "domstol": { "$ref": "#/definitions/organisasjon" },
+        "domstolsaktoerer": { "$ref": "#/definitions/domstolsaktoerer" },
         "avgjoerelseId": {
           "type": "string",
           "description": "Domstolen sin nøkkel til avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse"
@@ -310,7 +314,18 @@
           "type": "string",
           "description": "Kravid som opprettes i politiet (begjæring om varetektsfengsling)"
         },
-        "forlengelse": { "type": "boolean" },
+        "personVaretektDomstol": {
+          "$ref": "#/definitions/person",
+          "description": "Persondata fra domstolene, kan være forskjellig fra politiet sine data"
+        },
+        "forlengelse": {
+          "type": "boolean",
+          "description": "Forlengelse = true også hvis det er en endring i restriksjoner fra domstolene"
+        },
+        "fengsling": {
+          "$ref": "#/definitions/fengsling",
+          "description": "Førstegangsfengslinger vil alltid inneholde fengsling, men senere kan det komme med kun restriksjoner, isolasjon."
+        },
         "restriksjoner": {
           "type": "array",
           "items": { "$ref": "#/definitions/restriksjon" }
@@ -319,10 +334,6 @@
           "type": "array",
           "items": { "$ref": "#/definitions/isolasjon" }
         },
-        "fengsling": {
-          "$ref": "#/definitions/fengslingKjennelse",
-          "description": "Førstegangsfengslinger vil alltid inneholde fengslingskjennelse, men senere kan det komme med kun restriksjoner, isolasjon"
-        },
         "anke": {
           "$ref": "#/definitions/anke",
           "description": "Settes kun dersom hele eller deler av avgjørelsen ankes før kjennelsen sendes til påtale"
@@ -330,11 +341,12 @@
       },
       "required": [
         "domstol",
+        "domstolsaktoerer",
         "avgjoerelseId",
         "avsagtDato",
+        "personVaretektDomstol",
         "kravid",
         "forlengelse",
-        "fengsling",
         "restriksjoner",
         "isolasjonsKrav"
       ],
@@ -413,16 +425,6 @@
       },
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
-    },
-    "periodeStartAntall": {
-      "description": "Periode for fensling eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
-      "type": "object",
-      "required": ["startDag", "antallDager"],
-      "additionalProperties": false,
-      "properties": {
-        "startDag": { "type": "integer" },
-        "antallDager": { "type": "integer" }
-      }
     },
     "personnavn": {
       "type": "object",
@@ -599,7 +601,22 @@
         "involverte": { "$ref": "#/definitions/involverteStraffesak" }
       }
     },
-
+    "domstolsaktoerer": {
+      "type": "object",
+      "description": "Aktører fra domstolen",
+      "properties": {
+        "dommer": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Dommer på saken"
+        },
+        "saksbehandler": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Saksbehandler på saken"
+        }
+      },
+      "required": ["dommer"],
+      "additionalProperties": false
+    },
     "straffesakDetaljer": {
       "type": "object",
       "description": "Detaljer rundt straffesaken, OBS krimType er ikke klart ennå-.s",
