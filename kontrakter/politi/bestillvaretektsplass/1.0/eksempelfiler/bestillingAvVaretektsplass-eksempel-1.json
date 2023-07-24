@@ -1,5 +1,4 @@
 {
-  "melding": "BESTILLING_VARETEKTSPLASS",
   "forsendelse": {
     "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE5",
     "sendtTid": "2022-11-03T10:19:55+02:00",
@@ -37,7 +36,7 @@
       },
       "tilleggsId": [],
       "kjoenn": "MANN",
-      "foedselsdato": "1963-04-14T00:00:00",
+      "foedselsdato": "1963-04-14",
       "statsborgerskap": [
         {
           "kode": "NOR",
@@ -98,7 +97,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [
             {
@@ -110,7 +109,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1975-12-12T00:00:00",
+                "foedselsdato": "1975-12-12",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -132,7 +131,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19T00:00:00",
+                "foedselsdato": "1970-07-19",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -170,7 +169,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00",
+                "foedselsdato": "1974-10-31",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -200,7 +199,7 @@
               },
               "tilleggsId": [],
               "kjoenn": "MANN",
-              "foedselsdato": "1976-10-21T00:00:00",
+              "foedselsdato": "1976-10-21",
               "statsborgerskap": [
                 {
                   "kode": "NOR",
@@ -261,7 +260,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [
             {
@@ -276,7 +275,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1970-07-19T00:00:00",
+                "foedselsdato": "1970-07-19",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -312,7 +311,7 @@
               },
               "tilleggsId": [],
               "kjoenn": "KVINNE",
-              "foedselsdato": "1970-01-01T00:00:00",
+              "foedselsdato": "1970-01-01",
               "statsborgerskap": [
                 {
                   "kode": "ARM",
@@ -366,7 +365,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [],
           "fornaermede": [
@@ -379,7 +378,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "MANN",
-                "foedselsdato": "1978-01-12T00:00:00",
+                "foedselsdato": "1978-01-12",
                 "statsborgerskap": [
                   {
                     "kode": "ITA",
@@ -435,7 +434,7 @@
               "fornavn": "Morsom",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "1963-04-14T00:00:00"
+            "foedselsdato": "1963-04-14"
           },
           "medsiktede": [],
           "fornaermede": [
@@ -451,7 +450,7 @@
                 },
                 "tilleggsId": [],
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00",
+                "foedselsdato": "1974-10-31",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -492,7 +491,7 @@
       "internId": "1234567879",
       "overskrift": "Bestilling av varetektsplass, Kiwi",
       "kategori": { "kode": "BEGJAERING" },
-      "skrevetDato": "2022-11-03T00:00:00",
+      "skrevetDato": "2022-11-03",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfasdf",
@@ -505,7 +504,7 @@
       "kategori": {
         "kode": "Bestillingsvedlegg"
       },
-      "skrevetDato": "2022-10-14T00:00:00",
+      "skrevetDato": "2022-10-14",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdf",

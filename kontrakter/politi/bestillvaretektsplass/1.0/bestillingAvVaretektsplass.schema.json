@@ -4,11 +4,6 @@
   "description": "Bestilling av varetektsplass fra påtale til fengsel KDI. Schema versjon 2020-12",
   "type": "object",
   "properties": {
-    "melding": {
-      "type": "string",
-      "const": "BESTILLING_VARETEKTSPLASS",
-      "description": "Navnet på meldingen. Enkelt å se på en melding hvilken type det er."
-    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
@@ -35,7 +30,6 @@
     }
   },
   "required": [
-    "melding",
     "forsendelse",
     "hovedStraffesaksnummer",
     "bestillingAvVaretektsplassId",
@@ -149,7 +143,7 @@
         "skrevetDato": {
           "description": "Dato",
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         },
         "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
       },
@@ -680,7 +674,7 @@
         "foedselsdato": {
           "description": "Dato",
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         },
         "kjoenn": {
           "description": "Ukjent kjønn hvis denne ikke er med",
@@ -742,7 +736,7 @@
         "foedselsdato": {
           "type": "string",
           "description": "Dato",
-          "format": "date-time"
+          "format": "date"
         }
       },
       "required": ["internId", "navn"],
