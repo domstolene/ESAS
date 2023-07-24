@@ -2,23 +2,28 @@
 Når politiet mottar kjennelse så blir kjennelsen strukturert og med kjennelse/rettsbok PDF rutet videre til Kriminalomsorgen.
 Det skal legges ved data om straffesakene, se nedenfor.
 
-Denne meldingen skal brukes på førstegangsfengslinger og forlengelser i etterkant og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)
+Denne meldingen skal brukes på førstegangsfengslinger og fengslingsforlengelser og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)  
+Når politiet mottar en kjennelse på varetekt så blir denne meldingen sendt automatisk til Kriminalomsorgen og den vil inneholde kjennelsen strukturert og på PDF format fra domstolen samt data fra straffesaken hos politiet.
 
 [Endringslogg](changelog.md) - [RFC](../../../rfc/MessageName-header.md)
 ## Headere forsendelse justisHub
 SchmaName=KJENNELSE_VARETEKT_POLITI  
 SchemaVersion=1.0  
 
-Versjon 1.0 er første versjon som skal til pilot høsten 2023 og er en del av oppdaterVaretekt som skal utgå og erstattes av 
+Versjon 1.0 er første versjon som skal til pilot høsten 2023 og er en del av oppdaterVaretekt som skal erstattes av kjennelseVaretektPoliti og 
 ## Status - ikke godkjent
-Begge parter må være enige om innholdet før vi kan gå i produksjon.
+Begge parter må være enige om innholdet.
 ## Data
-I tillegg til forsendelse og detaljer om personen så blir følgende data med.
+### avsender og domstol
+Det er automatisk videresending av kjennelsen fra domstolen fra politiet, avsender vil være eierdistriktet for straffesaken. Informasjon om domstol, dommmer og saksbehandler kommer sammen med kjennelsen.
+### Forlengelse
+Hvis kjennelsen er et svar på en begjæring om varetekt med forlengelse.  
+**OBS** til å begynne med så er flagget forelengelse i begjæringen satt av brukerne hvis førstegangsfengslingen er gjort på gammelmåten via BL.
 ### Siktede
 Siktede fra domstolen kan være en en annen person en den som finnes på straffesaken, dvs. vi finner ikke match mellom data fra domstolen og det vi har som straffesaksdata.
-* *personVaretektInfo->personVaretekt* er personen fra straffesak hvis vi finner match mellom domstolen sin person og en siktet person på straffesaken.
-* Siktede informasjon fra domstolen finnes en kopi i kjennelsen   
-*kjennelseVaretekt->domstolPersonVaretekt*.
+* *personVaretektInfo->personVaretekt* er personen fra straffesak hvis vi finner match mellom domstolen sin person og en siktet person på straffesaken (fødselsnummer, SSP nummer, D-nummer, etternavn, fornavn), det bør alltid være match.
+* Siktede informasjon fra domstolen finnes i kjennelsen   
+*kjennelseVaretekt->personVaretektDomstol*.
 * Siktedes informasjon fra straffesaken vil finnes på: *personVaretektInfo->straffesaksInfo->siktet*
 ### Straffesaksdata
 I første omgang så kommer informasjon kun fra hovedsaken og det kommer ikke med lovbud. Når siktelsen kommer (sammen med tilståelsessaker) så vil vi kunne sende med informasjon på alle straffesaker som siktede er involvert i.
@@ -41,14 +46,18 @@ sequenceDiagram
   da->>pd:kjennelseVaretekt
   activate pd
   pd->>kdi:kjennelseVaretektPoliti
+  note right of kdi: Førstegangsfengsling
   deactivate pd
   note over pd: Varetektstiden løper ut
   pd->>da: begjaeringVaretekt
   da->>pd:kjennelseVaretekt
   activate pd
   pd->>kdi:kjennelseVaretektPoliti
+  note right of kdi: Fengslingsforlengelse
   deactivate pd
+  note over pd: etterforskning ferdig
   pd-->>kdi:endreRestriksjoner
+  note right of kdi: Trenger ikke isolasjon lenger
 ```
 * Kvitteringer skal sendes på alle meldinger og er ikke vist i diagrammet.
 * varetektsplass er tilbud på plass i et gitt fengsel, se [bestillingVaretekt](../bestillvaretektsplass/readme.md)
