@@ -4,8 +4,8 @@ Det skal legges ved data om straffesakene, se nedenfor.
 
 Denne meldingen skal brukes på førstegangsfengslinger og forlengelser i etterkant og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)
 
-[Endringslogg](changelog.md)
-## Headere forsendelse justisHub - [RFC](../../../rfc/MessageName-header.md)
+[Endringslogg](changelog.md) - [RFC](../../../rfc/MessageName-header.md)
+## Headere forsendelse justisHub
 SchmaName=KJENNELSE_VARETEKT_POLITI  
 SchemaVersion=1.0  
 
