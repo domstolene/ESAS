@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>bestillvaretektsplass</artifactId>
     <packaging>jar</packaging>
-    <name>Begjæring om varetekt</name>
-    <description>JSON-schema for begjæring om varetekt</description>
+    <name>Bestilling av varetektsplass</name>
+    <description>JSON-schema for bestilling av varetektsplass</description>
 
     <parent>
         <groupId>io.github.domstolene.esas</groupId>
