@@ -141,7 +141,6 @@
         "kategori": { "$ref": "#/definitions/kodeverk" },
         "overskrift": { "type": "string" },
         "skrevetDato": {
-          "description": "Dato",
           "type": "string",
           "format": "date"
         },
@@ -169,14 +168,14 @@
       "properties": {
         "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" },
         "fraDato": {
-          "description": "Dato, som domstolene spesifiserer",
+          "description": "Dato som domstolene spesifiserer",
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         },
         "tilDato": {
-          "description": "Dato, som domstolene spesifiserer",
+          "description": "Dato som domstolene spesifiserer",
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         }
       }
     },
@@ -332,7 +331,7 @@
       "additionalProperties": false
     },
     "restriksjon": {
-      "description": "Basis restriksjon med til og fra dato",
+      "description": "Basis restriksjon",
       "type": "object",
       "required": ["restriksjonsType"],
       "additionalProperties": false,
@@ -672,7 +671,6 @@
           "$ref": "#/definitions/personnavn"
         },
         "foedselsdato": {
-          "description": "Dato",
           "type": "string",
           "format": "date"
         },
@@ -735,7 +733,6 @@
         },
         "foedselsdato": {
           "type": "string",
-          "description": "Dato",
           "format": "date"
         }
       },
