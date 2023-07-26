@@ -38,6 +38,7 @@
         <module>kontrakter/politi/varetekt</module>
         <module>kontrakter/politi/oppdatervaretekt</module>
         <module>kontrakter/politi/bestillvaretektsplass</module>
+        <module>kontrakter/politi/innsettelsesordre</module>
         <module>kontrakter/da/varetekt</module>
         <module>kontrakter/felles/kvittering</module>
         <module>kodeverk/felles</module>
