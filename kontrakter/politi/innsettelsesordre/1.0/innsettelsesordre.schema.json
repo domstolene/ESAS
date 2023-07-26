@@ -1092,25 +1092,6 @@
       "description": "Helseopplysninger",
       "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
     },
-
-    "land": {
-      "type": "object",
-      "description": "ISO-3166, Kosovo kommer",
-      "properties": {
-        "kode": {
-          "type": "string",
-          "pattern": "[A-Z]+",
-          "minLength": 3,
-          "maxLength": 3
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "required": ["kode"],
-      "additionalProperties": false
-    },
-
     "kjoenn": {
       "description": "Samme enum som folkeregisteret",
       "type": "string",
