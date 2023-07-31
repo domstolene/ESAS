@@ -23,7 +23,7 @@
     },
     "personVaretektInfo": { "$ref": "#/definitions/personVaretektInfo" },
     "restriksjonIsolasjon": { "$ref": "#/definitions/restriksjonIsolasjon" },
-    "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
+    "paagrepetTidspunkt": { "$ref": "#/definitions/datoTid" },
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -51,7 +51,7 @@
         "straffesaker": {
           "type": "array",
           "title": "straffesaker",
-          "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
+          "items": { "$ref": "#/definitions/straffesakInvolverte" },
           "minItems": 1
         },
         "risikoOgHelseInfo": {
@@ -73,15 +73,9 @@
           "minItems": 1,
           "maxItems": 4
         },
-        "postnummer": {
-          "type": "string"
-        },
-        "poststed": {
-          "type": "string"
-        },
-        "land": {
-          "$ref": "#/definitions/land"
-        }
+        "postnummer": { "type": "string" },
+        "poststed": { "type": "string" },
+        "land": { "$ref": "#/definitions/land" }
       },
       "required": ["adresselinjer"],
       "additionalProperties": false
@@ -95,22 +89,10 @@
       "type": "object",
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
-        "brukeridentifikasjon": {
-          "type": "string",
-          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
-        },
-        "tittel": {
-          "type": "string"
-        },
-        "fornavn": {
-          "type": "string"
-        },
-        "mellomnavn": {
-          "type": "string"
-        },
-        "etternavn": {
-          "type": "string"
-        },
+        "tittel": { "type": "string" },
+        "fornavn": { "type": "string" },
+        "mellomnavn": { "type": "string" },
+        "etternavn": { "type": "string" },
         "kontakt": {
           "$ref": "#/definitions/kontaktInfo",
           "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
@@ -122,12 +104,10 @@
     "avsender": {
       "type": "object",
       "properties": {
-        "organisasjon": {
-          "$ref": "#/definitions/organisasjon"
-        },
+        "organisasjon": { "$ref": "#/definitions/organisasjon" },
         "person": {
           "$ref": "#/definitions/ansattPerson",
-          "description": "Person som trykker på send til domstolen."
+          "description": "Person som trykker på send til Kriminalomsrogen."
         }
       },
       "required": ["organisasjon"],
@@ -140,10 +120,7 @@
         "internId": { "type": "string" },
         "kategori": { "$ref": "#/definitions/kodeverk" },
         "overskrift": { "type": "string" },
-        "skrevetDato": {
-          "type": "string",
-          "format": "date"
-        },
+        "skrevetDato": { "$ref": "#/definitions/dato" },
         "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
       },
       "required": ["overskrift", "forsendelse"],
@@ -169,30 +146,21 @@
         "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" },
         "fraDato": {
           "description": "Dato som domstolene spesifiserer",
-          "type": "string",
-          "format": "date"
+          "$ref": "#/definitions/dato"
         },
         "tilDato": {
           "description": "Dato som domstolene spesifiserer",
-          "type": "string",
-          "format": "date"
+          "$ref": "#/definitions/dato"
         }
       }
     },
     "forsendelse": {
       "type": "object",
-      "description": "Sender (påtale) og mottaker (domstol) av meldingen",
+      "description": "Sender (påtale) og mottaker (Kriminalomsrogen) av meldingen",
       "properties": {
-        "meldingsId": {
-          "type": "string"
-        },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "avsender": {
-          "$ref": "#/definitions/avsender"
-        },
+        "meldingsId": { "type": "string" },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
+        "avsender": { "$ref": "#/definitions/avsender" },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
           "description": "Kriminalomsorgen/eller fengsel tror jeg."
@@ -214,71 +182,24 @@
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string" },
-        "isolasjonsType": { "$ref": "#/definitions/isolasjonsType" },
-        "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" }
+        "isolasjonsType": { "$ref": "#/definitions/isolasjonsType" }
       }
     },
     "isolasjonsType": {
+      "type": "string",
       "description": "Liste over de ulike isolasjonstyper",
-      "enum": ["FULL_ISOLASJON", "DELVIS_ISOLASJON"],
-      "type": "string"
+      "enum": ["FULL", "DELVIS"]
     },
     "kontaktInfo": {
       "type": "object",
       "properties": {
-        "epost": {
-          "type": "string"
-        },
+        "epost": { "type": "string" },
         "telefonnummer": {
           "type": "array",
           "items": { "$ref": "#/definitions/telefonnummer" }
         }
       },
       "required": ["telefonnummer"],
-      "additionalProperties": false
-    },
-    "land": {
-      "description": "ISO-3166, Kosovo kommer",
-      "type": "object",
-      "properties": {
-        "kode": {
-          "type": "string",
-          "pattern": "[A-Z]+",
-          "minLength": 3,
-          "maxLength": 3
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "required": ["kode"],
-      "additionalProperties": false
-    },
-    "lovbudFull": {
-      "description": "Lovvbudreferanse med gjengivelse og strafferamme",
-      "type": "object",
-      "properties": {
-        "lovbudId": { "type": "string" },
-        "lovbudStreng": { "type": "string" },
-        "gjengivelse": { "type": "string" },
-        "hjemmel": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/lovreferanse" }
-        },
-        "strafferamme": { "type": "integer", "description": "Antall måneder" }
-      },
-      "required": ["lovbudStreng", "gjengivelse", "hjemmel"],
-      "additionalProperties": false
-    },
-    "lovbudGjengivelse": {
-      "description": "Lovvbudreferanse med gjengivelse",
-      "type": "object",
-      "properties": {
-        "lovbudId": { "type": "string" },
-        "lovbudStreng": { "type": "string" },
-        "gjengivelse": { "type": "string" }
-      },
-      "required": ["lovbudStreng", "gjengivelse"],
       "additionalProperties": false
     },
     "lovbudEnkel": {
@@ -291,96 +212,67 @@
       "required": ["lovbudStreng"],
       "additionalProperties": false
     },
-    "lovreferanse": {
-      "description": "Eksakt referanse inn i spesifikk lov, paragraf, ledd osv.",
-      "type": "object",
-      "properties": {
-        "rettskilde": { "$ref": "#/definitions/kodeverk" },
-        "lovreferanse": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/lovreferanseElement" },
-          "minItems": 1
-        }
-      },
-      "required": ["rettskilde", "lovreferanse"],
-      "additionalProperties": false
-    },
-    "lovreferanseElement": {
-      "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
-      "type": "object",
-      "properties": {
-        "type": { "type": "string" },
-        "verdi": { "type": "string" }
-      },
-      "required": ["type", "verdi"],
-      "additionalProperties": false
-    },
     "organisasjon": {
       "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
       "type": "object",
       "properties": {
         "navn": {
-          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
-          "type": "string"
+          "type": "string",
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett"
         },
-        "organisasjonsnummer": {
-          "$ref": "#/definitions/organisasjonsnummer"
-        }
+        "organisasjonsnummer": { "$ref": "#/definitions/organisasjonsnummer" }
       },
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
     "restriksjon": {
-      "description": "Basis restriksjon",
       "type": "object",
-      "required": ["restriksjonsType"],
-      "additionalProperties": false,
+      "description": "Basis restriksjon",
       "properties": {
         "id": { "type": "string" },
-        "restriksjonsType": { "$ref": "#/definitions/restriksjonsType" },
-        "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" }
-      }
+        "restriksjonsType": { "$ref": "#/definitions/restriksjonsType" }
+      },
+      "required": ["restriksjonsType"],
+      "additionalProperties": false
     },
     "restriksjonsType": {
-      "description": "Liste over de ulike restriksjonene",
       "type": "string",
+      "description": "Liste over de ulike restriksjonene",
       "enum": [
         "BREV_OG_BESOEKSFORBUD",
         "BREV_OG_BESOEKSKONTROLL",
-        "MEDIEFORBUD",
-        "ANNET"
+        "MEDIEFORBUD"
       ]
     },
     "straffesakDetaljer": {
-      "description": "Detaljer rundt straffesaken",
       "type": "object",
-      "required": ["hendelse", "statistikkgruppe"],
-      "additionalProperties": false,
+      "description": "Detaljer rundt straffesaken, OBS krimType er ikke klart ennå-.s",
       "properties": {
         "hendelse": { "$ref": "#/definitions/hendelse" },
         "statistikkgruppe": { "$ref": "#/definitions/kodeverk" },
         "krimtype": { "$ref": "#/definitions/kodeverk" }
-      }
+      },
+      "required": ["hendelse", "statistikkgruppe"],
+      "additionalProperties": false
     },
     "hendelse": {
-      "title": "hendelse",
       "type": "object",
+      "description": "Tid og sted for den straffbare handlingen",
+      "properties": {
+        "gjerningstidspunktFra": { "$ref": "#/definitions/datoTid" },
+        "gjerningstidspunktTil": { "$ref": "#/definitions/datoTid" },
+        "gjerningssted": { "$ref": "#/definitions/adresse" }
+      },
       "required": [
         "gjerningstidspunktFra",
         "gjerningstidspunktTil",
         "gjerningssted"
       ],
-      "additionalProperties": false,
-      "properties": {
-        "gjerningstidspunktFra": { "type": "string", "format": "date-time" },
-        "gjerningstidspunktTil": { "type": "string", "format": "date-time" },
-        "gjerningssted": { "$ref": "#/definitions/adresse" }
-      }
+      "additionalProperties": false
     },
     "involverteStraffesak": {
-      "description": "siktede, vitner og fornærmede",
       "type": "object",
-      "additionalProperties": true,
+      "description": "siktede, vitner og fornærmede",
       "properties": {
         "siktet": { "$ref": "#/definitions/personEnkel" },
         "medsiktede": {
@@ -391,39 +283,24 @@
           "type": "array",
           "items": { "$ref": "#/definitions/personForetak" }
         },
-        "vitne": {
+        "vitner": {
           "type": "array",
           "items": { "$ref": "#/definitions/person" }
         }
       },
-      "required": ["medsiktede", "fornaermede", "vitne"]
+      "required": ["medsiktede", "fornaermede", "vitner"],
+      "additionalProperties": false
     },
-    "siktelsesinfo": {
-      "description": "Siktelsesinformasjon fra straffesaken.",
+    "straffesakInvolverte": {
       "type": "object",
-      "required": ["lovbud"],
-      "additionalProperties": false,
+      "description": "Straffesak med statistikkgrupper, krimtype og de involverte",
       "properties": {
-        "lovbud": { "$ref": "#/definitions/lovbudFull" },
-        "grunnlagstekst": { "type": "string" }
-      }
-    },
-    "straffesakLovbudInvolverte": {
-      "description": "Straffesak med også krimtype og lovbud, grunnlag samt de involverte",
-      "type": "object",
-      "required": ["straffesaksnummer", "detaljer", "involverte"],
-      "additionalProperties": true,
-      "properties": {
-        "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer"
-        },
+        "straffesaksnummer": { "$ref": "#/definitions/straffesaksnummer" },
         "detaljer": { "$ref": "#/definitions/straffesakDetaljer" },
-        "siktelsesinfo": {
-          "$ref": "#/definitions/siktelsesinfo",
-          "description": "lovbud og grunnlagsinformasjon som brukes i siktelsen"
-        },
         "involverte": { "$ref": "#/definitions/involverteStraffesak" }
-      }
+      },
+      "required": ["straffesaksnummer", "detaljer", "involverte"],
+      "additionalProperties": false
     },
     "restriksjonIsolasjon": {
       "type": "object",
@@ -450,9 +327,7 @@
     },
     "risikoOgHelseInfo": {
       "type": "object",
-      "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
-      "required": ["risikovurdering", "helseInfo", "tilstandArresten"],
-      "additionalProperties": false,
+      "description": "Risiko og helsevurderinger samt tilstand i arrensen",
       "properties": {
         "risikovurdering": {
           "$ref": "#/definitions/risikovurdering",
@@ -466,26 +341,31 @@
           "$ref": "#/definitions/tilstandArresten",
           "description": "Tilstand til siktede i arresten, skal alltid fylles ut."
         }
-      }
+      },
+      "required": ["risikovurdering", "helseInfo", "tilstandArresten"],
+      "additionalProperties": false
     },
     "risikovurdering": {
       "type": "object",
       "description": "Vurdering avkrysning og mulighet for beskrivelse i fritekst",
-      "required": ["risiko"],
-      "additionalProperties": false,
       "properties": {
         "risiko": {
           "type": "array",
-          "description": "Valg av vilke risikotyper, hvis det er ingen risiko så skal INGER_RISIKO brukes.",
+          "description": "Valg av vilke risikotyper, hvis det er ingen risiko så skal INGEN brukes.",
           "items": {
-            "$ref": "#/definitions/risikoVurderingTyper"
+            "$ref": "#/definitions/risikoVurderingType"
           },
           "minItems": 1
         },
-        "beskrivelse": { "type": "string" }
-      }
+        "beskrivelse": {
+          "type": "string",
+          "description": "Fylles bare ut når det er noen type risiko"
+        }
+      },
+      "required": ["risiko"],
+      "additionalProperties": false
     },
-    "risikoVurderingTyper": {
+    "risikoVurderingType": {
       "type": "string",
       "description": "Risikovurderinger",
       "enum": [
@@ -494,7 +374,7 @@
         "UOENSKET_HENDELSE",
         "ROEMNINGSFARE",
         "FARE_ANSLAG",
-        "ANNET",
+        "ANDRE_FORHOLD",
         "UKJENT",
         "INGEN"
       ]
@@ -509,14 +389,14 @@
           "type": "array",
           "description": "Valg av hvilken tilstand",
           "items": {
-            "$ref": "#/definitions/tilstandArrestenTyper"
+            "$ref": "#/definitions/tilstandArrestenType"
           },
           "minItems": 1
         },
         "beskrivelse": { "type": "string" }
       }
     },
-    "tilstandArrestenTyper": {
+    "tilstandArrestenType": {
       "type": "string",
       "description": "Tilstand i arresten",
       "enum": [
@@ -524,7 +404,6 @@
         "OPPFOERSEL",
         "FARE_PSYKISK_FYSISK_HELSE",
         "SELVMORDSRISIKO",
-        "MEDISINER",
         "UKJENT",
         "INGEN"
       ]
@@ -539,14 +418,17 @@
           "type": "array",
           "description": "Helseinformasjon, velger ingen hvis det ikke er noe å bemerke.",
           "items": {
-            "$ref": "#/definitions/helseTyper"
+            "$ref": "#/definitions/helseType"
           },
           "minItems": 1
         },
-        "beskrivelse": { "type": "string" }
+        "beskrivelse": {
+          "type": "string",
+          "description": "Fylles bare ut når det er noen type risiko"
+        }
       }
     },
-    "helseTyper": {
+    "helseType": {
       "type": "string",
       "description": "Helseopplysninger",
       "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
@@ -670,10 +552,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "description": "Ukjent kjønn hvis denne ikke er med",
           "$ref": "#/definitions/kjoenn"
@@ -731,10 +610,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        }
+        "foedselsdato": { "$ref": "#/definitions/dato" }
       },
       "required": ["internId", "navn"],
       "additionalProperties": false
@@ -765,6 +641,21 @@
       "type": "object",
       "properties": {
         "kode": { "type": "string" },
+        "navn": { "type": "string" }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "land": {
+      "description": "ISO-3166, Kosovo kommer",
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "[A-Z]+",
+          "minLength": 3,
+          "maxLength": 3
+        },
         "navn": { "type": "string" }
       },
       "required": ["kode"],
@@ -820,6 +711,14 @@
       "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
       "maxLength": 40,
       "minLength": 1
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     }
   }
 }

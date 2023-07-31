@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politiet.no/politi/fellese/siktelse-lovbud",
+  "description": "Siktelsesinformasjon som vist til Kriminalomsorgen. Ligger her for referanse.",
+
+  "siktelsesinfo": {
+    "description": "Siktelsesinformasjon fra straffesaken.",
+    "type": "object",
+    "required": ["lovbud"],
+    "additionalProperties": false,
+    "properties": {
+      "lovbud": { "$ref": "#/definitions/lovbudFull" },
+      "grunnlagstekst": { "type": "string" }
+    }
+  },
+
+  "lovbudFull": {
+    "description": "Lovvbudreferanse med gjengivelse og strafferamme",
+    "type": "object",
+    "properties": {
+      "lovbudId": { "type": "string" },
+      "lovbudStreng": { "type": "string" },
+      "gjengivelse": { "type": "string" },
+      "hjemmel": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/lovreferanse" }
+      },
+      "strafferamme": { "type": "integer", "description": "Antall måneder" }
+    },
+    "required": ["lovbudStreng", "gjengivelse", "hjemmel"],
+    "additionalProperties": false
+  },
+  "lovbudGjengivelse": {
+    "description": "Lovvbudreferanse med gjengivelse",
+    "type": "object",
+    "properties": {
+      "lovbudId": { "type": "string" },
+      "lovbudStreng": { "type": "string" },
+      "gjengivelse": { "type": "string" }
+    },
+    "required": ["lovbudStreng", "gjengivelse"],
+    "additionalProperties": false
+  },
+  "lovbudEnkel": {
+    "description": "Enkel lovbudreferanse kun lovbudstreng",
+    "type": "object",
+    "properties": {
+      "lovbudId": { "type": "string" },
+      "lovbudStreng": { "type": "string" }
+    },
+    "required": ["lovbudStreng"],
+    "additionalProperties": false
+  },
+  "lovreferanse": {
+    "description": "Eksakt referanse inn i spesifikk lov, paragraf, ledd osv.",
+    "type": "object",
+    "properties": {
+      "rettskilde": { "$ref": "#/definitions/kodeverk" },
+      "lovreferanse": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/lovreferanseElement" },
+        "minItems": 1
+      }
+    },
+    "required": ["rettskilde", "lovreferanse"],
+    "additionalProperties": false
+  },
+  "lovreferanseElement": {
+    "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
+    "type": "object",
+    "properties": {
+      "type": { "type": "string" },
+      "verdi": { "type": "string" }
+    },
+    "required": ["type", "verdi"],
+    "additionalProperties": false
+  }
+}
