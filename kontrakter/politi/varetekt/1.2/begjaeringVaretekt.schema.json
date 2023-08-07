@@ -227,7 +227,7 @@
     },
     "forlengelseInfo": {
       "type": "object",
-      "description": "Hvis det er en forlengelse så referer vi til forrige fengsling, trenger domstolene mer informasjon ?",
+      "description": "Hvis det er en forlengelse så referer vi til forrige avgjørelse og legger ved dato for når gjeldende fengsling utløper",
       "properties": {
         "avgjoerelseId": {
           "type": "string",
@@ -236,6 +236,11 @@
         "beskrivelse": {
           "type": "string",
           "description": "Kanskje referanse til dokument etc"
+        },
+        "fengslingUtløperDato": {
+          "type": "string",
+          "format": "date",
+          "description": "Dato for når gjeldene/forrige fengsling utløper"
         }
       },
       "required": ["beskrivelse"],
