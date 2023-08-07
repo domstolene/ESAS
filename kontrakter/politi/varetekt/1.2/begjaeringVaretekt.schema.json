@@ -237,7 +237,7 @@
           "type": "string",
           "description": "Kanskje referanse til dokument etc"
         },
-        "fengslingUtløperDato": {
+        "fengslingUtloeperDato": {
           "type": "string",
           "format": "date",
           "description": "Dato for når gjeldene/forrige fengsling utløper"
