@@ -50,11 +50,25 @@
         "behov": "JA_POLITIET_STILLER",
         "spraak": "CMN"
       },
-      "forsvarer": {
-        "tittel": "Advokat",
-        "navn": {
-          "fornavn": "Ole",
-          "etternavn": "Olsen"
+      "forsvarerinformasjon": {
+        "oppnevntForsvarer": {
+          "person": {
+            "tittel": "Advokat",
+            "navn": {
+              "fornavn": "Ole",
+              "etternavn": "Olsen"
+            }
+          },
+          "erVarsletOmFenglingsmoete": true
+        },
+        "oensketForsvarer": {
+          "person": {
+            "tittel": "Advokat",
+            "navn": {
+              "fornavn": "Ole",
+              "etternavn": "Olsen"
+            }
+          }
         }
       },
       "verger": []
@@ -140,10 +154,6 @@
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
         "sted": "Sal 3, tinghuset"
-      },
-      "forsvarerSaksdokumenter": {
-        "status": "VARSLET_DOK",
-        "beskrivelse": "Forsvarer er varslet om fengslingsmøtet og har fått gjenpart av saksdokumentene"
       },
       "varsleBistandsadvokat": "Retten anmodes om å varsle bistandsadvokaten om tidspunktet for rettsmøtet, jf. straffeprosessloven § 107c, 2. led",
       "begrenseOffentlighet": ["FORBUD_GJENGIVELSE"],
