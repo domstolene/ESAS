@@ -8,6 +8,10 @@
 
 ## Versjon 1.2 (under arbeid)
 
+### Fengsling utløper dato ved forlengelse
+
+Det er lagt til dato for når forrige/gjeldene fengsling utløper under forlengelseInfo ved begjæring om varetekt forlengelse
+
 Andre del av endringer fra brukertest til pilot, planlagte endringer:
 1. Forsvareroppnevning
 2. Fengslingssurrogater (?)
