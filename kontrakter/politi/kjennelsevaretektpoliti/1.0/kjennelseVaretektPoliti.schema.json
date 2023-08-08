@@ -280,6 +280,10 @@
           "type": "string",
           "description": "Domstolen sin nøkkel til avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse"
         },
+        "kjennelseSendtTid": {
+          "$ref": "#/definitions/datoTid",
+          "description": "Tidspunktet kjennelsen ble sendt fra domstolen"
+        },
         "avsagtDato": { "$ref": "#/definitions/dato" },
         "kravid": {
           "type": "string",
@@ -316,6 +320,7 @@
         "domstol",
         "domstolsaktoerer",
         "avgjoerelseId",
+        "kjennelseSendtTid",
         "avsagtDato",
         "personVaretektDomstol",
         "kravid",
