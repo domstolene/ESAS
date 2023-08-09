@@ -1,15 +1,17 @@
 # kjennelseVaretekt til Kriminalomsrogen
-| Versjon | Beskrivelse | Aktiv fra | Aktiv til |
-| --- | --- | --- | --- |
-| 1.0 | Første versjon til produksjon, pilot dato ??| | |
+| Versjon | Beskrivelse                                  | Aktiv fra | Aktiv til |
+|---------|----------------------------------------------|-----------|-----------|
+| 1.0     | Første versjon til produksjon, pilot dato ?? |           |           |
 
-Denne meldingen sammen med [endreRestriksjoner](../endreRestriksjoner/readme.md) erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md)
+Denne meldingen sammen med [endreRestriksjoner](../endreRestriksjoner/readme.md) erstatter oppdaterVaretekt (slettet)
 ## Versjon 1.0
 Nyeste endringer øverst.
 ### Sendt tid fra domstolen 08.08.2023
 Kriminalomsorgen trenger tidspunktet kjennelsen er sendt fra domstolene for å være sikker på hva somer siste kjennelse.
 ### Første versjon 26.07.2023
-Endringsbeskrivelsen er i forhold til [oppdaterVaretekt](../oppdatervaretekt/readme.md) versjon 1.0 som vi kjørte med i brukertest juni 2023.
+Endringsbeskrivelsen er i forhold til oppdaterVaretekt 
+(slettet - nå [kjennelsevaretektPoliti](../kjennelsevaretektPoliti/readme.md)) 
+versjon 1.0 som vi kjørte med i brukertest juni 2023.
 
 1. siktelsesInfo er fjernet (kommer med siktelsesdata) som vi implementerer sammen med begjæring om tilståelsesdom til tingretten.
 1. Det er lagt til straffesaker som i fremtiden skal inneholde lovbud.

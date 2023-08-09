@@ -36,7 +36,6 @@
 
     <modules>
         <module>kontrakter/politi/varetekt</module>
-        <module>kontrakter/politi/oppdatervaretekt</module>
         <module>kontrakter/politi/kjennelsevaretektpoliti</module>
         <module>kontrakter/politi/bestillvaretektsplass</module>
         <module>kontrakter/politi/innsettelsesordre</module>
