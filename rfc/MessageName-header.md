@@ -1,4 +1,3 @@
-
 ## Headere for unik identifisering av skjema for melding på JustisHub
 
 **To be Reviewed By**: Martin Myran, Carl Fredrik Bøkestad
@@ -52,7 +51,7 @@ channel.basicPublish("",myQueue,messageProperties,message.getBytes())
 
 ```
 
-### Changelog: 
+### Changelog
 
 01.05.2023: Opprettet RFC for header MessageName.
 10.05.2023: Endret RFC til å gjelde headere SchemaName, SchemaVersion, SchemaId. 
