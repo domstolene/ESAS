@@ -21,6 +21,9 @@
                 <includes>
                     <include>**/*.json</include>
                 </includes>
+                <excludes>
+                    <exclude>current/**</exclude>
+                </excludes>
             </resource>
         </resources>
     </build>

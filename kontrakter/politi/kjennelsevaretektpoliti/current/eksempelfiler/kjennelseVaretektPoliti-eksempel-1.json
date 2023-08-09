@@ -1,0 +1,197 @@
+{
+  "forsendelse": {
+    "meldingsId": "607AC26F-E3C3-4241-AE76-8389B7715968",
+    "sendtTid": "2022-11-03T10:19:57+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Politiets Datatjeneste"
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "890286712",
+      "navn": "Bjørgvin fengsel"
+    }
+  },
+  "hovedStraffesaksnummer": "15434819",
+  "varetektSyklusId": "0AF242A3-EDCC-4FB7-B1DE-E974A360B73C",
+  "personVaretektInfo": {
+    "personVaretekt": {
+      "internId": "700892414",
+      "navn": {
+        "fornavn": "Morsom",
+        "etternavn": "KIWI"
+      },
+      "foedselsdato": "1963-04-14",
+      "kjoenn": "MANN",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "adresseGradering": "KLIENT_ADRESSE",
+      "personAdresse": {
+        "gradering": "KLIENT_ADRESSE",
+        "adresse": {
+          "adresselinjer": ["Bjørklund 21"],
+          "postnummer": "4137",
+          "poststed": "ÅRDAL I RYFYLKE"
+        }
+      },
+      "verger": []
+    },
+    "straffesaker": [
+      {
+        "straffesaksnummer": "15434819",
+        "detaljer": {
+          "hendelse": {
+            "gjerningstidspunktFra": "2022-01-01T00:00:00+02:00",
+            "gjerningstidspunktTil": "2022-01-01T00:00:00+02:00",
+            "gjerningssted": {
+              "adresselinjer": ["Waldemar Carlsens veg 4"],
+              "postnummer": "2214",
+              "poststed": "KONGSVINGER",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            }
+          },
+          "statistikkgruppe": {
+            "kode": "0933",
+            "navn": "Mindre tyveri diverse"
+          }
+        },
+        "involverte": {
+          "siktet": {
+            "internId": "700892414",
+            "navn": {
+              "fornavn": "Morsom",
+              "etternavn": "KIWI"
+            },
+            "foedselsdato": "1963-04-14"
+          },
+          "medsiktede": [
+            {
+              "person": {
+                "internId": "700893213",
+                "navn": {
+                  "fornavn": "Per",
+                  "etternavn": "OTTERSTAD"
+                },
+                "tilleggsId": [],
+                "kjoenn": "MANN",
+                "foedselsdato": "1975-12-12",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }
+                ],
+                "verger": []
+              }
+            }
+          ],
+          "fornaermede": [],
+          "vitner": []
+        }
+      }
+    ]
+  },
+  "kjennelseVaretekt": {
+    "domstol": {
+      "organisasjonsnummer": "926722794",
+      "navn": "Trøndelag tingrett"
+    },
+    "domstolsaktoerer": {
+      "dommer": {
+        "etternavn": "Straff",
+        "fornavn": "Streng",
+        "tittel": "Dommerfullmektig"
+      }
+    },
+    "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
+    "kjennelseSendtTid": "2022-11-03T10:00:00+02:00",
+    "avsagtDato": "2022-07-05",
+    "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+    "personVaretektDomstol": {
+      "internId": "23492414789",
+      "navn": {
+        "fornavn": "Morsom",
+        "etternavn": "KIWI"
+      },
+      "foedselsdato": "1963-04-14",
+      "kjoenn": "MANN",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "verger": []
+    },
+
+    "forlengelse": false,
+    "restriksjoner": [
+      {
+        "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
+        "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
+        "fraDato": "2022-07-06",
+        "tilDato": "2022-07-20"
+      },
+      {
+        "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
+        "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
+        "fraDato": "2022-07-21",
+        "tilDato": "2022-08-06"
+      }
+    ],
+    "isolasjonsKrav": [
+      {
+        "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
+        "isolasjonsType": "FULL",
+        "fraDato": "2022-07-06",
+        "tilDato": "2022-08-06"
+      }
+    ],
+    "fengsling": {
+      "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
+      "fraDato": "2022-07-06",
+      "tilDato": "2022-08-06",
+      "fengslingsFristDato": "2022-07-06",
+      "lovbud": {
+        "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
+      },
+      "merknad": "Kiwi må i varetekt så fort som fy"
+    },
+    "anke": {
+      "anketDato": "2022-07-06",
+      "oppsettendeVirkning": false
+    }
+  },
+  "paagrepetTidspunkt": "2022-11-03T10:19:59+02:00",
+  "dokumenter": [
+    {
+      "internId": "1234567879",
+      "overskrift": "Begjæring om varetekt, Kiwi",
+      "skrevetDato": "2022-11-03",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    }
+  ]
+}
