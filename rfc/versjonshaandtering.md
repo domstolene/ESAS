@@ -23,13 +23,13 @@ Dette medfører et par problemstillinger:
 
 ## Løsningsforslag
 
-Vi innfører en mappe `current` ved siden av versjon-mappene i repoet. Denne inneholder json-schema for en melding som
+Vi innfører en mappe `arbeidsversjon` ved siden av versjon-mappene i repoet. Denne inneholder json-schema for en melding som
 det aktivt jobbes med. Når man ønsker å "release" en ny versjon av meldingen, opprettes det en ny versjonsmappe,
-og nåværende versjon i `current`-mappen kopieres ut dit.
+og nåværende versjon i `arbeidsversjon`-mappen kopieres ut dit.
 
 Dette gjør at versjonmappen representerer endelige versjoner som ikke skal muteres videre.
 
-`current`-mappen releases ikke med maven, slik at kun endelige versjoner releases.
+`arbeidsversjon`-mappen releases ikke med maven, slik at kun endelige versjoner releases.
 
 ## Eksempel
 
@@ -42,16 +42,16 @@ Gitt melding `innsettelsesordre` som allerede har en versjon `1.0`:
     │   ├── foo.schema.json
     │   └── eksempelfiler
     │       └── foo-eksempel.json
-    └── current
+    └── arbeidsversjon
         ├── foo.schema.json
         └── eksempelfiler
             └── foo-oppdatert-eksempel.json
 ```
 
-Så vil det kontinuerlig legges inn nye endringer i `innsettelsesordre/current/foo.schema.json`, med endringshistorikk 
+Så vil det kontinuerlig legges inn nye endringer i `innsettelsesordre/arbeidsversjon/foo.schema.json`, med endringshistorikk 
 i `changelog.md`.
 
-Når man ønsker å release en ny versjon av `innsettelsesorde`-schema, kopierer man ut nåværende versjon fra `current`
+Når man ønsker å release en ny versjon av `innsettelsesorde`-schema, kopierer man ut nåværende versjon fra `arbeidsversjon`
 inn i en ny versjonsmappe:
 
 ```
@@ -65,7 +65,7 @@ inn i en ny versjonsmappe:
     │   ├── foo.schema.json
     │   └── eksempelfiler
     │       └── foo-oppdatert-eksempel.json
-    └── current
+    └── arbeidsversjon
         ├── foo.schema.json
         └── eksempelfiler
             └── foo-oppdatert-eksempel.json

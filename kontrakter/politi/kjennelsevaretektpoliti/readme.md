@@ -2,7 +2,7 @@
 Når politiet mottar kjennelse så blir kjennelsen strukturert og med kjennelse/rettsbok PDF rutet videre til Kriminalomsorgen.
 Det skal legges ved data om straffesakene, se nedenfor.
 
-Denne meldingen skal brukes på førstegangsfengslinger og fengslingsforlengelser og den erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)  
+Denne meldingen skal brukes på førstegangsfengslinger og fengslingsforlengelser og den erstatter oppdaterVaretekt (nå slettet) sammen med meldingen [endreRestriksjoner](../endreRestriksjoner/readme.md)  
 Når politiet mottar en kjennelse på varetekt så blir denne meldingen sendt automatisk til Kriminalomsorgen og den vil inneholde kjennelsen strukturert og på PDF format fra domstolen samt data fra straffesaken hos politiet.
 
 [Endringslogg](changelog.md) 
