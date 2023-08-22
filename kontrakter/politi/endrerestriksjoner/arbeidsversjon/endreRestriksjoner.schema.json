@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/endreRestriksjoner/1.0/endreRestriksjoner",
+  "$id": "https://politiet.no/politi/endreRestriksjoner/arbeidsversjon/endreRestriksjoner",
   "description": "Påtale gir ordre til Kriminalomsorgen om endringer i restriksjoner (lettelser), skjerpelser må komme fra domstolen. (IKKE KLAR)",
 
   "type": "object",

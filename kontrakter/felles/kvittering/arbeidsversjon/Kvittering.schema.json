@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://domstol.no/felles/arbeidsversjon/Kvittering.schema.json",
+  "description": "Schema som beskriver kvitteringer som skal utveksles på tvers av virksomhetene",
+  "additionalProperties": true,
+  "properties": {
+    "meldingsId": {
+      "type": "string",
+      "description": "Meldingsid for selve kvitteringen"
+    },
+    "meldingsIdRef": {
+      "type": "string",
+      "description": "Meldingsid for meldingen vi kvitterer"
+    },
+    "status": {
+      "$ref": "#/definitions/StatusType",
+      "description": "Status for meldingen vi kvitterer"
+    },
+    "beskrivelse": {
+      "type": "string",
+      "description": "Tekstlig beskrivelse. Brukes i forbindelse med statusene FEILET_AVSENDER og FEILET_MOTTAKER"
+    },
+    "saksRef": {
+      "type": "string",
+      "description": "Saksnummeret fra Lovisa. Vil kun være med fra domstolen dersom status er MOTTATT (altså kun etter at saken er opprettet"
+    }
+  },
+  "definitions": {
+    "StatusType": {
+      "description": "Liste over mulige statuser",
+      "enum": [
+        "UNDER_MOTTAK",
+        "MOTTATT",
+        "FEILET_AVSENDER_TEKNISK",
+        "FEILET_AVSENDER_MANGLER",
+        "FEILET_MOTTAKER"
+      ],
+      "type": "string"
+    }
+  },
+  "required": ["meldingsId", "meldingsIdRef", "status"],
+  "type": "object"
+}
