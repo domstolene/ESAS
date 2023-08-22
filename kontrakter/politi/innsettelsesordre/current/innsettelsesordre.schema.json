@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/current/innsettelsesordre",
+  "$id": "https://politiet.no/politi/fengsling/arbeidsversjon/innsettelsesordre",
   "description": "Innsettelsesordre fra påtale til fengsel KDI, med ordre fra påtale eller kjennelse. Schema versjon 2020-12",
   "type": "object",
   "properties": {

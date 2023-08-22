@@ -22,7 +22,7 @@
                     <include>**/*.json</include>
                 </includes>
                 <excludes>
-                    <exclude>current/**</exclude>
+                    <exclude>arbeidsversjon/**</exclude>
                 </excludes>
             </resource>
         </resources>

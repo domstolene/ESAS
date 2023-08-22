@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/felles/current/Kvittering.schema.json",
+  "$id": "https://domstol.no/felles/arbeidsversjon/Kvittering.schema.json",
   "description": "Schema som beskriver kvitteringer som skal utveksles på tvers av virksomhetene",
   "additionalProperties": true,
   "properties": {
