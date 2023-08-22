@@ -1,5 +1,5 @@
 # Endre restriksjoner (endreRestriksjoner)
-Denne meldingen sammen med [kjennelseVaretektPoliti](../kjennelseVaretektPoliti/readme.md) erstatter [oppdaterVaretekt](../oppdatervaretekt/readme.md)  
+Denne meldingen sammen med [kjennelseVaretektPoliti](../kjennelseVaretektPoliti/readme.md) erstatter oppdaterVaretekt (slettet)  
 Hvis påtale bestemmer seg for å lette på restriksjoner/isolasjon så skal denne meldingen brukes.
 
 **OBS** denne meldingen har prioritet 3 hos politiet og det betyr vi vet ikke vet når den vil bli implementert.
