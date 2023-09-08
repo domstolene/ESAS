@@ -26,6 +26,19 @@
       "description": "Til å begynne med vil dette være et løpenummer, kan endres til GUID senere. Første forsendelsene vil ikke inneholde dette."
     },
     "fengselDerPlassTilbys": { "$ref": "#/definitions/organisasjon" },
+    "fengseletsTelefonnummer": {
+      "$ref": "#/definitions/telefonnummer",
+      "description": "Et evt. telefonnumer til fengselet. Typisk sentralbordets nummer, oppgis slik at politiet kan spare tid om man må kontakte fengsel f.eks. grunnet problemer som kan oppstå under transport."
+    },
+    "kommentarTilPlasstilbudet": {
+      "type": "string",
+      "description": "Utfyllende informasjon om tilbudet, hvis nødvendig. Kan brukes til å oppgi direkte telefonnummer i første versjoner og spesielle tilfeller m.m."
+    },
+    "varetetktsplassTilbysFra": {
+      "description": "Plassen tilbys normalt fra dagen i dag. Plass kan evt. tilbys fra dagen etter i enkelte tilfeller og ved spesielle forespørsler. (Mulig denne fjernes fra modell om den ikke skal benyttes i praksis - vi må erfare mer.) ",
+      "type": "string",
+      "format": "date-time"
+    },
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
