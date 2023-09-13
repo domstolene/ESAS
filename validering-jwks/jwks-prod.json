@@ -1,3 +1,12 @@
 {
-  "keys": []
+  "keys": [
+    {
+      "kty": "RSA",
+      "n": "txpNvgrpcUUgAHm_DnWuJ4eOQyzWxhHAnwTt64d3E91ag1KXNXZ6NDV3o6m0FzubT8oMqeSHYwnB3citpcmxKgqnfovO8hX4azH6mvDqACJvM1l6-KxECK90Uz4dlw0uvIZSYouGobsPAnzGkEypni8Rx50Tc1y_trcm6xyh4aHJeL9rnEdG7u3oy0Y8EqqcWMF6bnmAvFhbxSixRq08PWpvwCSFo3xLFdPAj7hwxYOp4YnsGDNXuzvONmVdhLjzD9TiEzI1cf7oTuLeg-5R3BOHXjCFaBSEKsfM8vI_2lUQ0GkoA2wJ05CaH5v366Bc2ZBuvemjyBW0v7jWtE6okQ",
+      "e": "AQAB",
+      "alg": "RS256",
+      "kid": "politiet-1",
+      "use": "sig"
+    }
+  ]
 }
