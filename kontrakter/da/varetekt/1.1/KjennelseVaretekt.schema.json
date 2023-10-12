@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/da/varetekt/arbeidsversjon/KjennelseVaretekt.schema.json",
+  "$id": "https://domstol.no/da/varetekt/1.1/KjennelseVaretekt.schema.json",
   "description": "Schema definisjon av en Kjennelse-varetekt",
   "properties": {
     "forsendelse": {
