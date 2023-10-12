@@ -2,7 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://domstol.no/da/varetekt/1.0/KjennelseVaretekt.schema.json",
   "description": "Schema definisjon av en Kjennelse-varetekt",
-
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse"
@@ -28,7 +27,9 @@
     },
     "dokumenter": {
       "type": "array",
-      "items": { "$ref": "#/definitions/dokument" }
+      "items": {
+        "$ref": "#/definitions/dokument"
+      }
     },
     "saksInformasjon": {
       "$ref": "#/definitions/saksInformasjon"
@@ -89,11 +90,15 @@
         },
         "restriksjoner": {
           "type": "array",
-          "items": { "$ref": "#/definitions/restriksjon" }
+          "items": {
+            "$ref": "#/definitions/restriksjon"
+          }
         },
         "isolasjonsKrav": {
           "type": "array",
-          "items": { "$ref": "#/definitions/isolasjon" }
+          "items": {
+            "$ref": "#/definitions/isolasjon"
+          }
         },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
@@ -185,7 +190,6 @@
       "type": "object",
       "additionalProperties": false
     },
-
     "lovbud": {
       "properties": {
         "lovbudStreng": {
@@ -225,10 +229,19 @@
     },
     "forsendelse": {
       "properties": {
-        "meldingsId": { "type": "string" },
-        "sendtTid": { "type": "string", "format": "date-time" },
-        "avsender": { "$ref": "#/definitions/avsender" },
-        "mottaker": { "$ref": "#/definitions/mottaker" },
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottaker": {
+          "$ref": "#/definitions/mottaker"
+        },
         "rettelse": {
           "type": "boolean",
           "description": "Settes til true dersom det er en menneskelig endring av en tidligere kjennelse. (Dersom meldingen er resendt av tekniske årsaker vil denne stå som false)",
@@ -247,7 +260,9 @@
     },
     "avsender": {
       "properties": {
-        "organisasjon": { "$ref": "#/definitions/organisasjon" },
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
         "person": {
           "description": "Person som sender meldingen. Vanligvis dommeren eller saksbehandleren",
           "$ref": "#/definitions/ansattPerson"
@@ -259,7 +274,9 @@
     },
     "mottaker": {
       "properties": {
-        "organisasjon": { "$ref": "#/definitions/organisasjon" }
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        }
       },
       "required": ["organisasjon"],
       "type": "object",
@@ -312,36 +329,49 @@
       "type": "object",
       "additionalProperties": false
     },
-
     "dokumentforsendelse": {
       "description": "Detaljer om lokasjon og type",
       "properties": {
-        "mimeType": { "type": "string" },
-        "sjekksum": { "type": "string" },
-        "uri": { "type": "string" }
+        "mimeType": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        }
       },
       "required": ["mimeType", "sjekksum", "uri"],
       "type": "object",
       "additionalProperties": false
     },
-
     "ansattPerson": {
       "description": "Type for personer som er ansatt hos påtale eller domstolen(saksbehandlere, påtaleadvokater, statsadvokater,...)",
       "properties": {
-        "etternavn": { "type": "string" },
-        "fornavn": { "type": "string" },
-        "tittel": { "type": "string" }
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string"
+        }
       },
       "required": ["etternavn"],
       "type": "object",
       "additionalProperties": false
     },
-
     "privatPerson": {
       "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
       "properties": {
-        "etternavn": { "type": "string" },
-        "fornavn": { "type": "string" },
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
           "description": "Fødselsnummer, D-nummer eller SSP nummer. Alle personer som det er foretatt tvangsmidler mot skal ha et D-nummer eller fødselsnummer. Dersom politiet ikke har et slikt nummer vil de generere ett 'SSP nummer'"
@@ -379,7 +409,9 @@
           "minLength": 3,
           "maxLength": 3
         },
-        "navn": { "type": "string" }
+        "navn": {
+          "type": "string"
+        }
       },
       "required": ["kode"]
     },
@@ -387,9 +419,15 @@
       "description": "Fødselsnummer, D-nummer eller SSP nummer.",
       "type": "object",
       "properties": {
-        "foedselsnummer": { "$ref": "#/definitions/foedselsnummer" },
-        "sspNummer": { "$ref": "#/definitions/sspNummer" },
-        "dNummer": { "$ref": "#/definitions/dNummer" }
+        "foedselsnummer": {
+          "$ref": "#/definitions/foedselsnummer"
+        },
+        "sspNummer": {
+          "$ref": "#/definitions/sspNummer"
+        },
+        "dNummer": {
+          "$ref": "#/definitions/dNummer"
+        }
       },
       "oneOf": [
         {
@@ -404,14 +442,18 @@
         },
         {
           "properties": {
-            "sspNummer": { "$ref": "#/definitions/sspNummer" }
+            "sspNummer": {
+              "$ref": "#/definitions/sspNummer"
+            }
           },
           "required": ["sspNummer"],
           "additionalProperties": false
         },
         {
           "properties": {
-            "dNummer": { "$ref": "#/definitions/dNummer" }
+            "dNummer": {
+              "$ref": "#/definitions/dNummer"
+            }
           },
           "required": ["dNummer"],
           "additionalProperties": false
@@ -436,11 +478,14 @@
       "minLength": 11,
       "maxLength": 11
     },
-
     "kodeverk": {
       "properties": {
-        "kode": { "type": "string" },
-        "navn": { "type": "string" }
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
       },
       "type": "object",
       "required": ["kode"],
