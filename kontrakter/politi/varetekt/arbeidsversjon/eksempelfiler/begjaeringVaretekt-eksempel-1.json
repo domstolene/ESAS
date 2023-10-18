@@ -40,9 +40,7 @@
         ],
         "personAdresse": {
           "adresse": {
-            "adresselinjer": [
-              "Rugdeberget 2"
-            ],
+            "adresselinjer": ["Rugdeberget 2"],
             "postnummer": "1266",
             "poststed": "OSLO"
           }
@@ -165,9 +163,7 @@
         "sted": "Sal 3, tinghuset"
       },
       "varsleBistandsadvokat": "Retten anmodes om å varsle bistandsadvokaten om tidspunktet for rettsmøtet, jf. straffeprosessloven § 107c, 2. led",
-      "begrenseOffentlighet": [
-        "FORBUD_GJENGIVELSE"
-      ],
+      "begrenseOffentlighet": ["FORBUD_GJENGIVELSE"],
       "ansvarligPaatalejurist": {
         "brukeridentifikasjon": "BLC218",
         "fornavn": "BLC218",
@@ -189,9 +185,7 @@
             "gjerningstidspunktFra": "2022-01-01T00:00:00+02:00",
             "gjerningstidspunktTil": "2022-01-01T00:00:00+02:00",
             "gjerningssted": {
-              "adresselinjer": [
-                "Waldemar Carlsens veg 4"
-              ],
+              "adresselinjer": ["Waldemar Carlsens veg 4"],
               "postnummer": "2214",
               "poststed": "KONGSVINGER",
               "land": {
@@ -236,9 +230,7 @@
                 ],
                 "personAdresse": {
                   "adresse": {
-                    "adresselinjer": [
-                      "Bjørklund 21"
-                    ],
+                    "adresselinjer": ["Bjørklund 21"],
                     "postnummer": "4137",
                     "poststed": "ÅRDAL I RYFYLKE"
                   }
@@ -293,9 +285,7 @@
                 ],
                 "personAdresse": {
                   "adresse": {
-                    "adresselinjer": [
-                      "Bratsberggata 29"
-                    ],
+                    "adresselinjer": ["Bratsberggata 29"],
                     "postnummer": "3714",
                     "poststed": "SKIEN"
                   }
@@ -322,9 +312,7 @@
               ],
               "personAdresse": {
                 "adresse": {
-                  "adresselinjer": [
-                    "Øvstedalsvegen 87"
-                  ],
+                  "adresselinjer": ["Øvstedalsvegen 87"],
                   "postnummer": "6391",
                   "poststed": "TRESFJORD"
                 }
@@ -349,9 +337,7 @@
               ],
               "personAdresse": {
                 "adresse": {
-                  "adresselinjer": [
-                    "Geisnesvegen 1505"
-                  ],
+                  "adresselinjer": ["Geisnesvegen 1505"],
                   "postnummer": "7960",
                   "poststed": "SALSBRUKET"
                 }
