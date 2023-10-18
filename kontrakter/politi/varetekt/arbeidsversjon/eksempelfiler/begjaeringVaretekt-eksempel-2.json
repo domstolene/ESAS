@@ -90,7 +90,9 @@
               "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
             },
             "periode": {
-              "startDag": 1,
+              "periodeStart": {
+                "startDato": "2023-04-01"
+              },
               "varighet": {
                 "antallDager": 14
               }
@@ -102,7 +104,9 @@
               "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
             },
             "periode": {
-              "startDag": 15,
+              "periodeStart": {
+                "startDato": "2023-04-01"
+              },
               "varighet": {
                 "antallDager": 14
               }
@@ -116,7 +120,9 @@
               "lovbudStreng": "Strpl. § 186a"
             },
             "periode": {
-              "startDag": 1,
+              "periodeStart": {
+                "startDato": "2023-04-01"
+              },
               "varighet": {
                 "antallDager": 14
               }
@@ -148,7 +154,9 @@
     "saksinformasjon": {
       "varetektsType": "VANLIG",
       "forlengelse": {
-        "beskrivelse": "forlengelse"
+        "avgjoerelseId": "avgjoerleseID_1",
+        "beskrivelse": "Begjæring om restriksjoner",
+        "fengslingUtloeperDato": "2023-04-19"
       },
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {

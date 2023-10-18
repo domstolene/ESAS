@@ -108,7 +108,7 @@
         },
         "forlengelse": {
           "$ref": "#/definitions/forlengelseInfo",
-          "description": "Hvis det er en forlengelse så er dette elementet med"
+          "description": "Hvis det er en forlengelse eller en begjæring om kun restriksjoner så er dette elementet med"
         },
         "hovedforhandlingsdato": {
           "type": "string",
@@ -210,9 +210,43 @@
         }
       ]
     },
+    "periodeStart": {
+      "type": "object",
+      "description": "Periode start på restriksjon/isolasjon, start dag ved begjæring om varetekt eller start dato ved begjæring om kun restriksjoner",
+      "properties": {
+        "startDag": {
+          "type": "integer"
+        },
+        "startDato": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "startDag": {
+              "type": "integer"
+            }
+          },
+          "required": ["startDag"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "startDato": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": ["startDato"],
+          "additionalProperties": false
+        }
+      ]
+    },
     "forlengelseInfo": {
       "type": "object",
-      "description": "Hvis det er en forlengelse så referer vi til forrige avgjørelse og legger ved dato for når gjeldende fengsling utløper",
+      "description": "Hvis det er en forlengelse eller begjæring om restriksjoner så referer vi til forrige avgjørelse og legger ved dato for når gjeldende fengsling utløper",
       "properties": {
         "avgjoerelseId": {
           "type": "string",
@@ -220,7 +254,7 @@
         },
         "beskrivelse": {
           "type": "string",
-          "description": "Kanskje referanse til dokument etc"
+          "description": "Kanskje referanse til dokument etc, ved begjæring av kun restriksjoner/isolasjon flagges dette her"
         },
         "fengslingUtloeperDato": {
           "type": "string",
@@ -628,12 +662,12 @@
     },
     "periodeStartVarighet": {
       "type": "object",
-      "description": "Periode for isolasjon eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
-      "required": ["startDag", "varighet"],
+      "description": "Periode for isolasjon eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner. Ved begjæring om kun restriksjon eller isolasjon spesifiseres startDato.",
+      "required": ["periodeStart", "varighet"],
       "additionalProperties": false,
       "properties": {
-        "startDag": {
-          "type": "integer"
+        "periodeStart": {
+          "$ref": "#/definitions/periodeStart"
         },
         "varighet": {
           "$ref": "#/definitions/varighet"
