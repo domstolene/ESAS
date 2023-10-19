@@ -78,11 +78,6 @@
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
       },
       "paastandVaretekt": {
-        "fengsling": {
-          "varighet": {
-            "antallDager": 28
-          }
-        },
         "restriksjoner": [
           {
             "restriksjonsType": "BREV_OG_BESOEKSFORBUD",

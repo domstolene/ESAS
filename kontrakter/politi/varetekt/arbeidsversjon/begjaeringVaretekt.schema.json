@@ -78,8 +78,8 @@
     },
     "paastandVaretekt": {
       "type": "object",
-      "description": "Påtale sier hvor hvor lenge i varetekt og hvilke restriksjoner/isolasjonskrav som de ønsker",
-      "required": ["fengsling", "restriksjoner", "isolasjon"],
+      "description": "Påtale sier hvilke restriksjoner/isolasjonskrav som de ønsker og hvor lenge i varetekt er med dersom det er begjæring om varetekt",
+      "required": ["restriksjoner", "isolasjon"],
       "additionalProperties": false,
       "properties": {
         "fengsling": {
