@@ -78,10 +78,14 @@
     },
     "paastandVaretekt": {
       "type": "object",
-      "description": "Påtale sier hvilke restriksjoner/isolasjonskrav som de ønsker og hvor lenge i varetekt er med dersom det er begjæring om varetekt",
+      "description": "Påtale sier hvilke restriksjoner/isolasjonskrav som de ønsker og hvor lenge i varetekt er med dersom det er begjæring om varetekt. Gydlig fra settes dersom det begjæres om varetekt frem i tid.",
       "required": ["restriksjoner", "isolasjon"],
       "additionalProperties": false,
       "properties": {
+        "gyldigFra": {
+          "type": "string",
+          "format": "date"
+        },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
         },
