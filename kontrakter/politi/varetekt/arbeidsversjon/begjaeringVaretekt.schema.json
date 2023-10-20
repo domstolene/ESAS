@@ -82,7 +82,7 @@
       "required": ["restriksjoner", "isolasjon"],
       "additionalProperties": false,
       "properties": {
-        "gyldigFra": {
+        "gyldigFraDato": {
           "type": "string",
           "format": "date"
         },

@@ -7,6 +7,17 @@
 | 1.1     | Tolk og til hovedforhandling              | 01.08.2023 | 09.10.2023 |
 | 1.0     | Brukertest juni 2023, ikke til produksjon |            | 01.08.2023 |
 
+## Versjon 1.4
+
+### Begjæring om kun restriksjoner
+
+Ved forlengelse eller skjerping av restriksjoner i en gjeldene varetektsfengsling skal det kunne begjæres om kun restriksjoner. 
+Det er lagt til periodeStart bestående av startDag og startDato, hvor startDato for restriksjoner/isolasjon settes for å kunne si når de skal gjelde/forlenges fra. 
+
+### Begjæring om varetekt gyldig fra 
+
+Dersom det begjæres om varetekt frem i tid er det lagt til et felt gyldigFraDato i paastandVaretekt som sier når begjæringen er gyldig fra.
+
 ## Versjon 1.3
 
 ### Fødselsdato på vitner er optional
