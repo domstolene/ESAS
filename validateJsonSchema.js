@@ -11,6 +11,7 @@ const jsonSchemaFolders = [
   "kontrakter/politi/bestillvaretektsplass",
   "kontrakter/politi/innsettelsesordre",
   "kontrakter/politi/overfoeresakkonfliktraad",
+  "kontrakter/politi/rekvisisjonPersonundersoekelse",
   "kontrakter/da/varetekt",
   "kontrakter/felles/kvittering",
   "kontrakter/felles/kodeverk",

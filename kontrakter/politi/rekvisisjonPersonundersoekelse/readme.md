@@ -5,7 +5,7 @@ Versjon 1.0 er første versjon som vi skal i produksjon med.
 - [JSON Schema](1.0/rekvirerePersonundersoekelse.schema.json)
 - [Eksempler](1.0/eksempelfiler/)
 
-[Se changelog for endringer](changelog.md)
+[Se changelog for endringer](kontrakter/politi/rekvisisjonPersonundersoekelse/changelog.md)
 
 ## Avklaringer
 
