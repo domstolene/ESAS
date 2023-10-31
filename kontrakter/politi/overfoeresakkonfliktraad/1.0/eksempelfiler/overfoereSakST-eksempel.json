@@ -1,0 +1,131 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE5",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "brukeridentifikasjon": "XYZ233",
+        "etternavn": "Årdal",
+        "kontaktInfo": {
+          "telefonnummer": ["99999999"]
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "986074465",
+      "navn": "Konfliktrådet Oslo"
+    }
+  },
+  "straffesaksnummer": "15434811",
+  "siktet": {
+    "person": {
+      "navn": {
+        "fornavn": "Sannferdig",
+        "etternavn": "KOS"
+      },
+      "foedselsdato": "1974-10-31",
+      "identitetsnummer": {
+        "foedselsnummer": "31907499858"
+      },
+      "kontaktInfo": {
+        "epost": "sannferdig@kos.no",
+        "telefonnummer": ["99999999"]
+      },
+      "personAdresse": {
+        "adresse": {
+          "adresselinjer": ["Bratsberggata 29"],
+          "postnummer": "3714",
+          "poststed": "SKIEN"
+        }
+      },
+      "verger": []
+    },
+    "samtykke": true
+  },
+  "fornaermede": [
+    {
+      "person": {
+        "navn": {
+          "fornavn": "Fornærma",
+          "etternavn": "KOKOS"
+        },
+        "foedselsdato": "1964-11-01",
+        "identitetsnummer": {
+          "foedselsnummer": "01116499858"
+        },
+        "kontaktInfo": {
+          "epost": "fornaerma@kokos.no",
+          "telefonnummer": ["55555555"]
+        },
+        "personAdresse": {
+          "adresse": {
+            "adresselinjer": ["Bratsberggata 39"],
+            "postnummer": "3714",
+            "poststed": "SKIEN"
+          }
+        },
+        "verger": [
+          {
+            "navn": {
+              "fornavn": "Mor",
+              "etternavn": "KOKOS"
+            },
+            "foedselsdato": "1940-11-14",
+            "identitetsnummer": {
+              "foedselsnummer": "14114099858"
+            },
+            "kontaktInfo": {
+              "epost": "fornaerma@kokos.no",
+              "telefonnummer": []
+            },
+            "personAdresse": {
+              "adresse": {
+                "adresselinjer": ["Bratsberggata 39"],
+                "postnummer": "3714",
+                "poststed": "SKIEN"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "saksinformasjon": {
+    "sakstype": "ST",
+    "lovbud": {
+      "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
+    },
+    "hendelse": {
+      "gjerningstidspunktFra": "2022-01-01T00:00:00+02:00",
+      "gjerningstidspunktTil": "2022-01-01T00:00:00+02:00",
+      "gjerningssted": {
+        "adresselinjer": ["Waldemar Carlsens veg 4"],
+        "postnummer": "2214",
+        "poststed": "KONGSVINGER",
+        "land": {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      }
+    },
+    "dokumenter": [
+      {
+        "forsendelse": {
+          "mimeType": "application/pdf",
+          "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7ac",
+          "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb"
+        },
+        "overskrift": "Rettsbok varetektsfengsling",
+        "skrevetDato": "2022-07-06",
+        "kategori": {
+          "kode": "DOKUMENTKATEGORI#RETTSBOK#1900-01-01",
+          "navn": "Rettsbok"
+        }
+      }
+    ]
+  }
+}

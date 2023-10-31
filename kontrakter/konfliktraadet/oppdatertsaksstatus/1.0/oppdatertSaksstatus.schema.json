@@ -1,0 +1,600 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://konfliktraadet.no/konfliktradet/oppdatertstatus/1.0/oppdatertSaksstatus",
+  "description": "Melding fra konfliktrådet når en sak endrer status hos de",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "straffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
+    },
+    "statusOppdatering": {
+      "description": "Oppdatert statusinformasjon",
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/status"
+        },
+        "kommentar": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["status"]
+    },
+    "siktet": {
+      "$ref": "#/definitions/personEnkel"
+    }
+  },
+  "required": ["forsendelse", "straffesaksnummer", "statusOppdatering"],
+  "additionalProperties": false,
+  "definitions": {
+    "status": {
+      "type": "object",
+      "description": "object med status fra enten straffesak-object eller ungdomsoppfløging/ungdomsstraff-object",
+      "properties": {
+        "straffesakStatus": {
+          "$ref": "#/definitions/straffesakStatus"
+        },
+        "ungdomsreaksjonStatus": {
+          "$ref": "#/definitions/ungdomsreaksjonStatus"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "straffesakStatus": {
+              "$ref": "#/definitions/straffesakStatus"
+            }
+          },
+          "required": ["straffesakStatus"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "ungdomsreaksjonStatus": {
+              "$ref": "#/definitions/ungdomsreaksjonStatus"
+            }
+          },
+          "required": ["ungdomsreaksjonStatus"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "straffesakStatus": {
+      "type": "object",
+      "description": "Status på straffesak",
+      "properties": {
+        "tildeltSaksansvarlig": {
+          "$ref": "#/definitions/tildeltSaksansvarlig"
+        },
+        "tildeltMekler": {
+          "$ref": "#/definitions/tildeltMekler"
+        },
+        "meklingGjennomfoert": {
+          "$ref": "#/definitions/meklingGjennomfoert"
+        },
+        "meklingIkkeGjennomfoert": {
+          "$ref": "#/definitions/meklingIkkeGjennomfoert"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "tildeltSaksansvarlig": {
+              "$ref": "#/definitions/tildeltSaksansvarlig"
+            }
+          },
+          "required": ["tildeltSaksansvarlig"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "tildeltMekler": {
+              "$ref": "#/definitions/tildeltMekler"
+            }
+          },
+          "required": ["tildeltMekler"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "meklingGjennomfoert": {
+              "$ref": "#/definitions/meklingGjennomfoert"
+            }
+          },
+          "required": ["meklingGjennomfoert"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "meklingIkkeGjennomfoert": {
+              "$ref": "#/definitions/meklingIkkeGjennomfoert"
+            }
+          },
+          "required": ["meklingIkkeGjennomfoert"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ungdomsreaksjonStatus": {
+      "type": "object",
+      "description": "Status på ungdomsreaksjon (enten ungdomsoppfølging eller ungdomsstraff)",
+      "properties": {
+        "tildeltSaksansvarlig": {
+          "$ref": "#/definitions/tildeltSaksansvarlig"
+        },
+        "ungdomsplanSignert": {
+          "$ref": "#/definitions/ungdomsplanSignert"
+        },
+        "stansUngdomsreaksjon": {
+          "$ref": "#/definitions/stansUngdomsreaksjon"
+        },
+        "oppstartEtterStans": {
+          "$ref": "#/definitions/oppstartEtterStans"
+        },
+        "avsluttetUngdomsreaksjon": {
+          "$ref": "#/definitions/avsluttetUngdomsreaksjon"
+        },
+        "overfoertAnnetKonfliktraad": {
+          "$ref": "#/definitions/overfoertAnnetKonfliktraad"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "tildeltSaksansvarlig": {
+              "$ref": "#/definitions/tildeltSaksansvarlig"
+            }
+          },
+          "required": ["tildeltSaksansvarlig"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "ungdomsplanSignert": {
+              "$ref": "#/definitions/ungdomsplanSignert"
+            }
+          },
+          "required": ["ungdomsplanSignert"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "stansUngdomsreaksjon": {
+              "$ref": "#/definitions/stansUngdomsreaksjon"
+            }
+          },
+          "required": ["stansUngdomsreaksjon"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "oppstartEtterStans": {
+              "$ref": "#/definitions/oppstartEtterStans"
+            }
+          },
+          "required": ["oppstartEtterStans"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "avsluttetUngdomsreaksjon": {
+              "$ref": "#/definitions/avsluttetUngdomsreaksjon"
+            }
+          },
+          "required": ["avsluttetUngdomsreaksjon"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "overfoertAnnetKonfliktraad": {
+              "$ref": "#/definitions/overfoertAnnetKonfliktraad"
+            }
+          },
+          "required": ["overfoertAnnetKonfliktraad"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "tildeltSaksansvarlig": {
+      "type": "object",
+      "description": "Saken har blitt tildelt saksansvarlig/rådgiver hos konfliktrådet",
+      "properties": {
+        "saksansvarlig": {
+          "$ref": "#/definitions/ansattPerson"
+        }
+      },
+      "required": ["saksansvarlig"],
+      "additionalProperties": false
+    },
+    "meklingGjennomfoert": {
+      "type": "object",
+      "description": "Mekling gjennomført og resultat av mekling",
+      "properties": {
+        "resultat": {
+          "$ref": "#/definitions/meklingGjennomFoertType"
+        },
+        "avtale": {
+          "$ref": "#/definitions/avtaleType"
+        }
+      },
+      "required": ["resultat", "avtale"],
+      "additionalProperties": false
+    },
+    "meklingIkkeGjennomfoert": {
+      "type": "object",
+      "description": "Mekling er ikke gjennomført og årsak til dette",
+      "properties": {
+        "resultat": {
+          "$ref": "#/definitions/meklingIkkeGjennomFoertType"
+        },
+        "aarsak": {
+          "$ref": "#/definitions/aarsakMeklingIkkeGjennomFoertType"
+        }
+      },
+      "required": ["resultat", "aarsak"],
+      "additionalProperties": false
+    },
+    "tildeltMekler": {
+      "type": "object",
+      "description": "Saken har blitt tildelt mekler hos konfliktrådet",
+      "properties": {
+        "mekler": {
+          "$ref": "#/definitions/ansattPerson"
+        }
+      },
+      "required": ["mekler"],
+      "additionalProperties": false
+    },
+    "ungdomsplanSignert": {
+      "type": "object",
+      "description": "Ungdomsplanen har blitt signert",
+      "properties": {
+        "datoSignering": {
+          "type": "string",
+          "description": "Dato for signering av ungdomsplan",
+          "format": "date"
+        },
+        "datoGjenopprettendeMoete": {
+          "type": "string",
+          "description": "Dato for første gjenopprettende møte",
+          "format": "date"
+        }
+      },
+      "required": ["datoSignering", "datoGjenopprettendeMoete"],
+      "additionalProperties": false
+    },
+    "stansUngdomsreaksjon": {
+      "type": "object",
+      "description": "Hvis det er midlertidig stans i gjennomføring av ungdomsreaksjon",
+      "properties": {
+        "aarsak": {
+          "$ref": "#/definitions/stansUngdomsreaksjonType"
+        }
+      },
+      "required": ["aarsak"],
+      "additionalProperties": false
+    },
+    "oppstartEtterStans": {
+      "type": "object",
+      "description": "Oppstart i gjennomføring av ungdomsreaksjon etter stans",
+      "properties": {
+        "aarsak": {
+          "$ref": "#/definitions/oppstartEtterStansUngdomsreaksjonType"
+        }
+      },
+      "required": ["aarsak"],
+      "additionalProperties": false
+    },
+    "avsluttetUngdomsreaksjon": {
+      "type": "object",
+      "description": "Gjennomføring av ungdomsreaksjon er avsluttet",
+      "properties": {
+        "aarsak": {
+          "$ref": "#/definitions/avsluttetUngdomsreaksjonType"
+        },
+        "totalLengde": {
+          "type": "integer",
+          "description": "Straffens totale lengde"
+        },
+        "dokumenter": {
+          "type": "array",
+          "description": "Avsluttende dokumenter",
+          "items": {
+            "$ref": "#/definitions/dokument"
+          }
+        }
+      },
+      "required": ["aarsak"],
+      "additionalProperties": false
+    },
+    "overfoertAnnetKonfliktraad": {
+      "type": "object",
+      "description": "Hvis saken overføres annet konfliktråd for videre oppfølging",
+      "properties": {
+        "konfliktraad": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "nySaksansvarlig": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som er tilordnet saken hos konfliktrådet."
+        }
+      },
+      "required": ["konfliktraad", "nySaksansvarlig"],
+      "additionalProperties": false
+    },
+    "meklingGjennomFoertType": {
+      "type": "string",
+      "description": "Resultat av gjennomført mekling",
+      "enum": ["MEKLET_HELT_LOEST", "MEKLET_DELVIST_LOEST", "MEKLET_IKKE_LOEST"]
+    },
+    "avtaleType": {
+      "type": "string",
+      "description": "Avtaletype for mekling",
+      "enum": ["SKRIFTLIG", "MUNTLIG", "NEI"]
+    },
+    "meklingIkkeGjennomFoertType": {
+      "type": "string",
+      "description": "Resultat av ikke gjennomført mekling",
+      "enum": [
+        "IKKE_MEKLET_LOEST_FOER_MEKLING",
+        "IKKE_MEKLET",
+        "AVVIST_IKKE_EGNET"
+      ]
+    },
+    "aarsakMeklingIkkeGjennomFoertType": {
+      "type": "string",
+      "description": "Årsak til hvorfor mekling ikke er gjennomført",
+      "enum": [
+        "SAMTYKKE_IKKE_GITT",
+        "SAMTYKKE_TRUKKET",
+        "OPPNAADDE_IKKE_KONTAKT_MED_PART",
+        "ANDRE_AARSAKER"
+      ]
+    },
+    "stansUngdomsreaksjonType": {
+      "type": "string",
+      "description": "Årsak til stans",
+      "enum": [
+        "UTSATT_GJENNOMFOERING",
+        "BRUDD_PGA_VILKÅR",
+        "BRUDD_PGA_STRAFFBARE_FORHOLD",
+        "BRUDD_PGA_VILKÅR_OG_STRAFFBARE_FORHOLD"
+      ]
+    },
+    "oppstartEtterStansUngdomsreaksjonType": {
+      "type": "string",
+      "description": "Årsak til oppstart etter stans",
+      "enum": [
+        "AARSAK_TIL_BRUDD_IKKE_LENGER_TIL_STEDE",
+        "OENSKER_IKKE_OMGJOERE",
+        "NYTT_STRAFFBART_FORHOLD_HENLAGT",
+        "SAERSKILT_DOM_I_NY_SAK"
+      ]
+    },
+    "avsluttetUngdomsreaksjonType": {
+      "type": "string",
+      "description": "Årsak til gjennomføring er avsluttet",
+      "enum": [
+        "FULLFOERT",
+        "BRUDD_PAA_VILKAAR",
+        "BRUDD_NYE_LOVBRUDD",
+        "BRUDD_NYE_LOVBRUDD_OG_VILKAAR",
+        "BRUDD_NYE_LOVBRUDD_FOER_IVERKSETTELSE",
+        "SAMTYKKE_TRUKKET_FOER_SIGNERT_UNGDOMSPLAN",
+        "SAMTYKKE_TRUKKET_ETTER_SIGNERT_UNGDOMSPLAN",
+        "ANNEN_AARSAK"
+      ]
+    },
+    "dokument": {
+      "type": "object",
+      "description": "Dokument som oversendes på justishub",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Id for dokumentet internt i meldingen slik at det kan refereres til et bestemt dokument (dokumentRef)"
+        },
+        "kategori": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "overskrift": {
+          "type": "string"
+        },
+        "skrevetDato": {
+          "type": "string",
+          "format": "date"
+        },
+        "forsendelse": {
+          "$ref": "#/definitions/dokumentForsendelse"
+        }
+      },
+      "required": ["overskrift", "skrevetDato", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "type": "object",
+      "description": "Detaljer om lokasjon og type",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string"
+        }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene, kriminalomsorgen eller konfliktrådet",
+      "properties": {
+        "tittel": {
+          "type": "string",
+          "description": "F.eks. saksansvarlig"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Kontaktinformasjon til person i konfliktrådet."
+        }
+      },
+      "required": ["etternavn", "kontakt"],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som er tilordnet saken hos konfliktrådet."
+        }
+      },
+      "required": ["organisasjon"],
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "type": "object",
+      "description": "Sender (konfliktrådet) og mottaker (påtale) av meldingen",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Påtale."
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "type": "object",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "personEnkel": {
+      "description": "Kun navn og fødselsdato (hvis den finnes)",
+      "type": "object",
+      "properties": {
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "$ref": "#/definitions/date"
+        }
+      },
+      "required": ["navn"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "[0-9]+",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "maxLength": 30,
+      "minLength": 1
+    }
+  }
+}

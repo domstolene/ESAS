@@ -10,14 +10,14 @@ const jsonSchemaFolders = [
   "kontrakter/politi/kjennelsevaretektpoliti",
   "kontrakter/politi/bestillvaretektsplass",
   "kontrakter/politi/innsettelsesordre",
+  "kontrakter/politi/overfoeresakkonfliktraad",
   "kontrakter/da/varetekt",
   "kontrakter/felles/kvittering",
-  "kontrakter/felles/kodeverk"
+  "kontrakter/felles/kodeverk",
+  "kontrakter/konfliktraadet/oppdatertsaksstatus",
 ];
 
-const jsonKodeverkFolders = [
-    "kodeverk/felles"
-];
+const jsonKodeverkFolders = ["kodeverk/felles"];
 
 const isDirectory = (path) => {
   return fs.statSync(path).isDirectory();
