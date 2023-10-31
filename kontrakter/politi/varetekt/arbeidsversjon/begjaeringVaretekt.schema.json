@@ -49,12 +49,7 @@
           "$ref": "#/definitions/saksinformasjon"
         }
       },
-      "required": [
-        "kravId",
-        "siktet",
-        "varetekt",
-        "saksinformasjon"
-      ],
+      "required": ["kravId", "siktet", "varetekt", "saksinformasjon"],
       "additionalProperties": false
     },
     "vedlegg": {
@@ -78,19 +73,13 @@
           }
         }
       },
-      "required": [
-        "straffesaker",
-        "dokumenter"
-      ],
+      "required": ["straffesaker", "dokumenter"],
       "additionalProperties": false
     },
     "paastandVaretekt": {
       "type": "object",
       "description": "Påtale sier hvilke restriksjoner/isolasjonskrav som de ønsker og hvor lenge i varetekt er med dersom det er begjæring om varetekt. Gydlig fra settes dersom det begjæres om varetekt frem i tid.",
-      "required": [
-        "restriksjoner",
-        "isolasjon"
-      ],
+      "required": ["restriksjoner", "isolasjon", "begjaeringInfo"],
       "additionalProperties": false,
       "properties": {
         "begjaeringInfo": {
@@ -148,9 +137,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "dato"
-          ],
+          "required": ["dato"],
           "additionalProperties": false
         },
         "varsleBistandsadvokat": {
@@ -180,39 +167,44 @@
     "begrenseOffentlighetKrav": {
       "type": "string",
       "description": "Liste over ulike begrense offentlighet krav.",
-      "enum": [
-        "LUKKEDE_DOERER",
-        "FORBUD_GJENGIVELSE",
-        "HEMMELIGHOLD"
-      ]
+      "enum": ["LUKKEDE_DOERER", "FORBUD_GJENGIVELSE", "HEMMELIGHOLD"]
     },
     "begjaeringInfo": {
       "type": "object",
       "description": "Informasjon om hvilken type begjæring dette er og fengsling er med dersom typen begjæring er førstegangsfengsling eller forlengelse",
       "properties": {
         "begjaeringType": {
-          "$ref": "#/definitions/begjaeringType"
+          "type": "string",
+          "description": "Liste over ulike typer begjæringer.",
+          "enum": ["FOERSTEGANGS", "FORLENGELSE", "RESTRIKSJONS_ENDRING"]
         },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
-        },
-        "required": ["begjaeringType"],
-        "if": {
-          "properties": {
-            "begjaeringType": { "enum": ["FOERSTEGANGS", "FORLENGELSE"] }
-          },
-          "required": ["fengsling"]
+        }
+      },
+      "required": ["begjaeringType"],
+      "dependencies": {
+        "begjaeringType": {
+          "oneOf": [
+            {
+              "properties": {
+                "begjaeringType": { "enum": ["FOERSTEGANGS", "FORLENGELSE"] },
+                "fengsling": {
+                  "$ref": "#/definitions/fengsling"
+                }
+              },
+              "required": ["fengsling"],
+              "additionalProperties": false
+            },
+            {
+              "properties": {
+                "begjaeringType": { "enum": ["RESTRIKSJONS_ENDRING"] }
+              },
+              "additionalProperties": false
+            }
+          ]
         }
       }
-    },
-    "begjaeringType": {
-      "type": "string",
-      "description": "Liste over ulike typer begjæringer.",
-      "enum": [
-        "FOERSTEGANGS",
-        "FORLENGELSE",
-        "RESTRIKSJONS_ENDRING"
-      ]
     },
     "fengsling": {
       "type": "object",
@@ -222,9 +214,7 @@
           "$ref": "#/definitions/varighet"
         }
       },
-      "required": [
-        "varighet"
-      ],
+      "required": ["varighet"],
       "additionalProperties": false
     },
     "varighet": {
@@ -246,9 +236,7 @@
               "type": "integer"
             }
           },
-          "required": [
-            "antallDager"
-          ],
+          "required": ["antallDager"],
           "additionalProperties": false
         },
         {
@@ -258,9 +246,7 @@
               "const": true
             }
           },
-          "required": [
-            "tilHovedforhandling"
-          ],
+          "required": ["tilHovedforhandling"],
           "additionalProperties": false
         }
       ]
@@ -284,9 +270,7 @@
               "type": "integer"
             }
           },
-          "required": [
-            "startDag"
-          ],
+          "required": ["startDag"],
           "additionalProperties": false
         },
         {
@@ -296,9 +280,7 @@
               "format": "date"
             }
           },
-          "required": [
-            "startDato"
-          ],
+          "required": ["startDato"],
           "additionalProperties": false
         }
       ]
@@ -336,9 +318,7 @@
               "$ref": "#/definitions/spraakkodeType"
             }
           },
-          "required": [
-            "behov"
-          ],
+          "required": ["behov"],
           "additionalProperties": false
         },
         "forsvarerinformasjon": {
@@ -352,10 +332,7 @@
           }
         }
       },
-      "required": [
-        "person",
-        "verger"
-      ],
+      "required": ["person", "verger"],
       "additionalProperties": false
     },
     "spraakkodeType": {
@@ -366,10 +343,7 @@
     "behovForTolkType": {
       "type": "string",
       "description": "Er det behov for tolk",
-      "enum": [
-        "JA_POLITIET_STILLER",
-        "JA_DOMSTOLEN_STILLER"
-      ]
+      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER"]
     },
     "forsvarerinformasjon": {
       "type": "object",
@@ -386,10 +360,7 @@
               "type": "boolean"
             }
           },
-          "required": [
-            "person",
-            "erVarsletOmFenglingsmoete"
-          ],
+          "required": ["person", "erVarsletOmFenglingsmoete"],
           "additionalProperties": false
         },
         "oensketForsvarer": {
@@ -400,9 +371,7 @@
               "$ref": "#/definitions/profesjonellPerson"
             }
           },
-          "required": [
-            "person"
-          ],
+          "required": ["person"],
           "additionalProperties": false
         }
       },
@@ -427,20 +396,13 @@
           "description": "Vilkårene listet enkeltvis. Disse er sammenstilt i lovbudStreng"
         }
       },
-      "required": [
-        "lovbud",
-        "paastandVaretekt",
-        "vilkaar"
-      ],
+      "required": ["lovbud", "paastandVaretekt", "vilkaar"],
       "additionalProperties": false
     },
     "varetektsType": {
       "type": "string",
       "description": "Vanlig, eller brudd på vilkår",
-      "enum": [
-        "VANLIG",
-        "VILKAARSBRUDD"
-      ]
+      "enum": ["VANLIG", "VILKAARSBRUDD"]
     },
     "vilkaarsType": {
       "type": "string",
