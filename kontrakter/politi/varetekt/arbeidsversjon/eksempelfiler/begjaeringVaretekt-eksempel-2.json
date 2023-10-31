@@ -78,6 +78,14 @@
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
       },
       "paastandVaretekt": {
+        "begjaeringInfo": {
+          "begjaeringType": "FORLENGELSE",
+          "fengsling": {
+            "varighet": {
+              "tilHovedforhandling": true
+            }
+          }
+        },
         "restriksjoner": [
           {
             "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
@@ -148,9 +156,8 @@
     },
     "saksinformasjon": {
       "varetektsType": "VANLIG",
-      "forlengelse": {
+      "aktivFengsling": {
         "avgjoerelseId": "avgjoerleseID_1",
-        "beskrivelse": "Begjæring om restriksjoner",
         "fengslingUtloeperDato": "2023-04-19"
       },
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",

@@ -79,12 +79,7 @@
       },
       "paastandVaretekt": {
         "begjaeringInfo": {
-          "begjaeringType": "FOERSTEGANGS",
-          "fengsling": {
-            "varighet": {
-              "tilHovedforhandling": true
-            }
-          }
+          "begjaeringType": "RESTRIKSJONS_ENDRING"
         },
         "restriksjoner": [
           {
@@ -94,7 +89,7 @@
             },
             "periode": {
               "periodeStart": {
-                "startDag": 1
+                "startDato": "2023-04-01"
               },
               "varighet": {
                 "antallDager": 14
@@ -108,7 +103,7 @@
             },
             "periode": {
               "periodeStart": {
-                "startDag": 15
+                "startDato": "2023-04-01"
               },
               "varighet": {
                 "antallDager": 14
@@ -124,10 +119,10 @@
             },
             "periode": {
               "periodeStart": {
-                "startDag": 1
+                "startDato": "2023-04-01"
               },
               "varighet": {
-                "tilHovedforhandling": true
+                "antallDager": 14
               }
             }
           }
@@ -156,7 +151,10 @@
     },
     "saksinformasjon": {
       "varetektsType": "VANLIG",
-      "hovedforhandlingsdato": "2023-12-11",
+      "aktivFengsling": {
+        "avgjoerelseId": "avgjoerleseID_1",
+        "fengslingUtloeperDato": "2023-04-19"
+      },
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
