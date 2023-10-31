@@ -9,10 +9,9 @@
 
 ## Versjon 1.4
 
-### Begjæring om kun restriksjoner
+### Begjæring info 
 
-Ved forlengelse eller skjerping av restriksjoner i en gjeldene varetektsfengsling skal det kunne begjæres om kun restriksjoner. 
-Det er lagt til periodeStart bestående av startDag og startDato, hvor startDato for restriksjoner/isolasjon settes for å kunne si når de skal gjelde/forlenges fra. 
+Lagt til begjæring info objekt som inneholder typen begjæring (enum verdi: FOERSTEGANGS, FORLENGELSE, RESTRIKSJONS_ENDRING) og fengslingsobjekt med varighet er påkrevd dersom typen er førstegangsfengsling eller forlengelse. Dersom det er en begjæring om kun restriksjoner (RESTRIKSJONS_ENDRING) er fengslingsobjektet ikke med og det er lagt til periodeStart bestående av startDag og startDato, hvor startDato for restriksjoner/isolasjon settes for å kunne si når de skal gjelde/forlenges fra. 
 
 ### Begjæring om varetekt gyldig fra 
 

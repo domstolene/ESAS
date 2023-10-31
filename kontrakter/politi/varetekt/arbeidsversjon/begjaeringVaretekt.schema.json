@@ -78,7 +78,7 @@
     },
     "paastandVaretekt": {
       "type": "object",
-      "description": "Påtale sier hvilke restriksjoner/isolasjonskrav som de ønsker og hvor lenge i varetekt er med dersom det er begjæring om varetekt. Gydlig fra settes dersom det begjæres om varetekt frem i tid.",
+      "description": "Påtale sier hvilke restriksjoner/isolasjonskrav som de ønsker og info om begjaeringen, type og varighet. Gydlig fra settes dersom det begjæres om varetekt frem i tid.",
       "required": ["restriksjoner", "isolasjon", "begjaeringInfo"],
       "additionalProperties": false,
       "properties": {
@@ -202,7 +202,7 @@
               },
               "additionalProperties": false
             }
-          ]
+          ] 
         }
       }
     },
