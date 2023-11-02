@@ -85,10 +85,6 @@
         "begjaeringInfo": {
           "$ref": "#/definitions/begjaeringInfo"
         },
-        "gyldigFraDato": {
-          "type": "string",
-          "format": "date"
-        },
         "restriksjoner": {
           "type": "array",
           "items": {

@@ -7,15 +7,11 @@
 | 1.1     | Tolk og til hovedforhandling              | 01.08.2023 | 09.10.2023 |
 | 1.0     | Brukertest juni 2023, ikke til produksjon |            | 01.08.2023 |
 
-## Versjon 1.4
+## Versjon 1.X TODO: oppdatere til riktig versjon ved merge
 
 ### Begjæring info 
 
 Lagt til begjæring info objekt som inneholder typen begjæring (enum verdi: FOERSTEGANGS, FORLENGELSE, RESTRIKSJONS_ENDRING) og fengslingsobjekt med varighet er påkrevd dersom typen er førstegangsfengsling eller forlengelse. Dersom det er en begjæring om kun restriksjoner (RESTRIKSJONS_ENDRING) er fengslingsobjektet ikke med og det er lagt til periodeStart bestående av startDag og startDato, hvor startDato for restriksjoner/isolasjon settes for å kunne si når de skal gjelde/forlenges fra. 
-
-### Begjæring om varetekt gyldig fra 
-
-Dersom det begjæres om varetekt frem i tid er det lagt til et felt gyldigFraDato i paastandVaretekt som sier når begjæringen er gyldig fra.
 
 ## Versjon 1.3
 
