@@ -180,23 +180,23 @@
       },
       "required": ["begjaeringType"],
       "oneOf": [
-            {
-              "properties": {
-                "begjaeringType": { "enum": ["FOERSTEGANGS", "FORLENGELSE"] },
-                "fengsling": {
-                  "$ref": "#/definitions/fengsling"
-                }
-              },
-              "required": ["fengsling"],
-              "additionalProperties": false
-            },
-            {
-              "properties": {
-                "begjaeringType": { "enum": ["RESTRIKSJONS_ENDRING"] }
-              },
-              "additionalProperties": false
+        {
+          "properties": {
+            "begjaeringType": { "enum": ["FOERSTEGANGS", "FORLENGELSE"] },
+            "fengsling": {
+              "$ref": "#/definitions/fengsling"
             }
-          ]
+          },
+          "required": ["fengsling"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "begjaeringType": { "enum": ["RESTRIKSJONS_ENDRING"] }
+          },
+          "additionalProperties": false
+        }
+      ]
     },
     "fengsling": {
       "type": "object",
