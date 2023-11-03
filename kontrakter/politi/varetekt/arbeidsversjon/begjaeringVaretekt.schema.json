@@ -179,9 +179,7 @@
         }
       },
       "required": ["begjaeringType"],
-      "dependencies": {
-        "begjaeringType": {
-          "oneOf": [
+      "oneOf": [
             {
               "properties": {
                 "begjaeringType": { "enum": ["FOERSTEGANGS", "FORLENGELSE"] },
@@ -199,8 +197,6 @@
               "additionalProperties": false
             }
           ]
-        }
-      }
     },
     "fengsling": {
       "type": "object",
