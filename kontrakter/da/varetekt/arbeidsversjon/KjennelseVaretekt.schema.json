@@ -85,6 +85,13 @@
           "type": "string",
           "description": "Kravid som opprettes i politiet"
         },
+        "avgjoerelseType": {
+          "$ref": "#/definitions/avgjoerelseType"
+        },
+        "rettsInstans": {
+          "$ref": "#/definitions/rettsInstansType",
+          "description": "Rettsinstans avjørelsen kommer fra"
+        },
         "restriksjoner": {
           "type": "array",
           "items": {
@@ -103,12 +110,18 @@
         "anke": {
           "$ref": "#/definitions/anke",
           "description": "Settes kun dersom hele eller deler av avgjørelsen ankes før kjennelsen sendes til påtale"
+        },
+        "ankeSak": {
+          "$ref": "#/definitions/ankeSak",
+          "description": "Settes kun dersom dette er en kjennelse på en ankesak"
         }
       },
       "required": [
         "avgjoerelseId",
         "avsagtDato",
         "kravid",
+        "avgjoerelseType",
+        "rettsInstans",
         "fengsling",
         "restriksjoner",
         "isolasjonsKrav"
@@ -209,6 +222,34 @@
       "required": ["anketDato"],
       "type": "object",
       "additionalProperties": false
+    },
+    "ankeSak": {
+      "properties": {
+        "avgjoerelseIdForrigeInstans": {
+          "type": "string",
+          "description": "Domstolen sin nøkkel til avgjørelsen i forrige instans."
+        }
+      },
+      "additionalProperties": false
+    },
+    "avgjoerelseType": {
+      "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",
+      "enum": [
+        "FENGSLING",
+        "LOESLATELSE",
+        "FENGSLINGSSURROGAT",
+        "ANKEN_FORKASTES",
+        "OPPHEVELSE"
+      ],
+      "type": "string"
+    },
+    "rettsInstansType": {
+      "enum": [
+        "TINGRETT",
+        "LAGMANNSRETT",
+        "HOEYESTERETT"
+      ],
+      "type": "string"
     },
     "restriksjonsType": {
       "description": "Liste over de ulike restriksjonene",
