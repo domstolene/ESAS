@@ -78,12 +78,19 @@
           "type": "string",
           "description": "Domstolen sin nøkkel til avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse"
         },
+        "avgjoerelseIdForrigeInstans": {
+          "type": "string",
+          "description": "Domstolen sin nøkkel til avgjørelsen i forrige instans. Settes kun dersom dette er en kjennelse i en ankesak"
+        },
         "avsagtDato": {
           "$ref": "#/definitions/dato"
         },
         "kravid": {
           "type": "string",
           "description": "Kravid som opprettes i politiet"
+        },
+        "avgjoerelseResultat": {
+          "$ref": "#/definitions/avgjoerelseResultat"
         },
         "restriksjoner": {
           "type": "array",
@@ -109,6 +116,7 @@
         "avgjoerelseId",
         "avsagtDato",
         "kravid",
+        "avgjoerelseResultat",
         "fengsling",
         "restriksjoner",
         "isolasjonsKrav"
@@ -210,6 +218,25 @@
       "type": "object",
       "additionalProperties": false
     },
+    "avgjoerelseResultat": {
+      "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",
+      "enum": [
+        "FENGSLING",
+        "LOESLATELSE",
+        "FENGSLINGSSURROGAT",
+        "ANKEN_FORKASTES",
+        "OPPHEVELSE"
+      ],
+      "type": "string"
+    },
+    "rettsInstansType": {
+      "enum": [
+        "TINGRETT",
+        "LAGMANNSRETT",
+        "HOEYESTERETT"
+      ],
+      "type": "string"
+    },
     "restriksjonsType": {
       "description": "Liste over de ulike restriksjonene",
       "enum": [
@@ -263,9 +290,13 @@
         "person": {
           "description": "Person som sender meldingen. Vanligvis dommeren eller saksbehandleren",
           "$ref": "#/definitions/ansattPerson"
+        },
+          "rettsInstans": {
+          "$ref": "#/definitions/rettsInstansType",
+          "description": "Rettsinstans avjørelsen er sendt fra"
         }
       },
-      "required": ["organisasjon"],
+      "required": ["organisasjon", "rettsInstans"],
       "type": "object",
       "additionalProperties": false
     },

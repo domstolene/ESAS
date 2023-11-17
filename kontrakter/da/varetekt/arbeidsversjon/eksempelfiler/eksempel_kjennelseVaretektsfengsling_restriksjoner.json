@@ -7,6 +7,7 @@
         "organisasjonsnummer": "826726342",
         "navn": "Buskerud tingrett"
       },
+      "rettsInstans": "TINGRETT",
       "person": {
         "etternavn": "Saksbehandler",
         "fornavn": "Litt",
@@ -71,6 +72,7 @@
       "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
       "avsagtDato": "2022-07-05",
       "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+      "avgjoerelseResultat": "FENGSLING",
       "restriksjoner": [
         {
           "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
