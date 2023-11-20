@@ -84,7 +84,11 @@
         "lovbud": {
           "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
         },
+<<<<<<< HEAD
         "merknad": "Anke tas til følge og Kiwi må i fengsel"
+=======
+        "merknad": "Anke tas til følge og Kiwi må i fengsel"      
+>>>>>>> bbbdb262df38b1b0402faee7689d39e50ca6fb8f
       }
     }
   }
