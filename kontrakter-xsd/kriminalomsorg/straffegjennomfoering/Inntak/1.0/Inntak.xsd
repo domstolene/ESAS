@@ -14,6 +14,10 @@
     <xs:all>
       <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
 
+      <xs:element name="DagerVaretektEtterDom" type="xs:int" nillable="true" />
+
+      <xs:element name="DagerVaretektFoerDom" type="xs:int" nillable="true" />
+
       <xs:element name="InnsettelsesData" nillable="true">
         <xs:complexType>
           <xs:all>
