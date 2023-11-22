@@ -87,7 +87,11 @@
         },
         "kravid": {
           "type": "string",
-          "description": "Kravid som opprettes i politiet"
+          "description": "Kravid i nåværende instans. Kan være null dersom saken er opprettet manuelt"
+        },
+        "opprinneligKravid": {
+          "type": "string",
+          "description": "Kraviden i første instans"
         },
         "avgjoerelseResultat": {
           "$ref": "#/definitions/avgjoerelseResultat"
@@ -115,7 +119,7 @@
       "required": [
         "avgjoerelseId",
         "avsagtDato",
-        "kravid",
+        "opprinneligKravid",
         "avgjoerelseResultat",
         "fengsling",
         "restriksjoner",
