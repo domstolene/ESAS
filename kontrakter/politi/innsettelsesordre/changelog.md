@@ -1,4 +1,7 @@
 # Innsettelsesordre endringslogg
+
+## 03.10.2023 pågripelsesTid og Pågripelsestid er lagt til
+
 ## 28.04.2023 synkroniser med begjæring om varetekt og bestilling av varetektsplass
 Innsettelsesordren er ikke endret på lenge og trenger oppfriskning med struktur som er mer lik begjæring om varetekt og bestilling av varetetektsplass.
 Trenger vudering av all informasjon om risiko, helse og tilstand i arrsesten som kanskje ikke er releveant for juristen å fylle ut. Dette må vi avklare på vår side.

@@ -44,7 +44,6 @@
     "rekvisisjonPersonundersoekelseId",
     "hovedStraffesaksnummer",
     "paagrepetTidspunkt",
-    "paagrepetSted",
     "kontaktopplysningerAdvokater",
     "personundersoekelseInfo"
   ],
@@ -149,7 +148,6 @@
       "required": [],
       "additionalProperties": false
     },
-
     "adresse": {
       "type": "object",
       "properties": {
@@ -173,7 +171,7 @@
           "$ref": "#/definitions/land"
         }
       },
-      "required": ["postnummer"],
+      "required": ["adresselinjer"],
       "additionalProperties": false
     },
     "adresseGradering": {
@@ -393,7 +391,7 @@
     "straffesakDetaljer": {
       "description": "Detaljer rundt straffesaken",
       "type": "object",
-      "required": ["hendelse", "statistikkgruppe", "krimtype"],
+      "required": ["hendelse", "statistikkgruppe"],
       "additionalProperties": false,
       "properties": {
         "hendelse": { "$ref": "#/definitions/hendelse" },
@@ -432,7 +430,7 @@
         },
         "vitne": {
           "type": "array",
-          "items": { "$ref": "#/definitions/person" }
+          "items": { "$ref": "#/definitions/personRelatert" }
         }
       },
       "required": ["medsiktede", "fornaermede", "vitne"]
@@ -450,7 +448,7 @@
     "straffesakLovbudInvolverte": {
       "description": "Straffesak med også krimtype og lovbud, grunnlag samt de involverte",
       "type": "object",
-      "required": ["straffesaksnummer", "detaljer"],
+      "required": ["straffesaksnummer", "detaljer", "involverte"],
       "additionalProperties": true,
       "properties": {
         "straffesaksnummer": {
@@ -530,6 +528,46 @@
         }
       ]
     },
+    "personRelatert": {
+      "type": "object",
+      "description": "Personer som er involverte, men ikke siktet. Kan være verger, vitner, etc.",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        }
+      },
+      "required": ["internId", "navn", "statsborgerskap"],
+      "additionalProperties": false
+    },
     "personForetak": {
       "description": "En siktet eller fornærmet kan være en person eller et foretak, denne typen er enten person eller foretak.",
       "type": "object",
@@ -567,10 +605,9 @@
       "type": "object",
       "properties": {
         "gradering": { "$ref": "#/definitions/adresseGradering" },
-        "adresseType": { "$ref": "#/definitions/adresseType" },
         "adresse": { "$ref": "#/definitions/adresse" }
       },
-      "required": ["adresse", "adresseType"],
+      "required": ["adresse"],
       "additionalProperties": false
     },
     "person": {
@@ -581,6 +618,24 @@
           "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId",
           "type": "string"
         },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "description": "Ukjent kjønn hvis denne ikke er med",
+          "$ref": "#/definitions/kjoenn"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "kontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
         "identitetsnummer": {
           "description": "Fødselsnummer, D-nummer eller SSP nummer som er den i bruk",
           "$ref": "#/definitions/personIdentifikator"
@@ -592,23 +647,12 @@
           },
           "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
         },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
         },
-        "foedselsdato": {
-          "description": "Dato",
-          "type": "string",
-          "format": "date-time"
-        },
-        "kjoenn": {
-          "description": "Ukjent kjønn hvis denne ikke er med",
-          "$ref": "#/definitions/kjoenn"
-        },
-        "statsborgerskap": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/land"
-          }
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
         },
         "tolk": {
           "type": "object",
@@ -621,34 +665,21 @@
           "required": ["behov"],
           "additionalProperties": false
         },
-        "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering",
-          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
-        },
-        "personAdresse": {
-          "description": "Adressen påtale mener er rett sted å nå personen. Ofte en bostedsadresse, men kan være en siste kjente adresse der en person er på institusjon, i arrest/varetekt, eller uten fast bopel.",
-          "$ref": "#/definitions/personAdresse"
-        },
-        "kontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
-        },
         "verger": {
           "type": "array",
-          "description": "Evt. verger skal være med på siktet, fornærmet, vitne.",
+          "description": "Verge skal være med på siktet, fornærmet, vitne.",
           "items": {
-            "$ref": "#/definitions/profesjonellPersonForetak"
+            "$ref": "#/definitions/personRelatert"
           }
         }
       },
       "required": [
         "internId",
-        "identitetsnummer",
-        "tilleggsId",
         "navn",
         "foedselsdato",
-        "statsborgerskap",
-        "personAdresse",
         "tolk",
+        "statsborgerskap",
+        "tilleggsId",
         "verger"
       ],
       "additionalProperties": false
@@ -667,7 +698,7 @@
         "foedselsdato": {
           "type": "string",
           "description": "Dato",
-          "format": "date-time"
+          "format": "date"
         }
       },
       "required": ["internId", "navn"],

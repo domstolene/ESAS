@@ -23,11 +23,12 @@
   "straffesaksnummer": "15434811",
   "statusOppdatering": {
     "straffesakStatus": {
-      "meklingIkkeGjennomfoert": {
-        "resultat": "IKKE_MEKLET",
-        "aarsak": "SAMTYKKE_TRUKKET"
+      "meklingGjennomfoert": {
+        "resultat": "MEKLET_HELT_LOEST",
+        "avtale": "SKRIFTLIG"
       }
-    }
+    },
+    "kommentar": "Dette er en test"
   },
   "siktet": {
     "navn": {

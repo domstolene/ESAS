@@ -70,7 +70,7 @@
         "etternavn": "KIWI"
       },
       "kjoenn": "MANN",
-      "foedselsdato": "2008-01-01T00:00:00+02:00",
+      "foedselsdato": "2008-01-01",
       "statsborgerskap": [
         {
           "kode": "NOR",
@@ -84,7 +84,6 @@
       "adresseGradering": "KLIENT_ADRESSE",
       "personAdresse": {
         "gradering": "KLIENT_ADRESSE",
-        "adresseType": "SISTE_KJENTE_ADRESSE",
         "adresse": {
           "adresselinjer": ["Institusjonsveien 1"],
           "postnummer": "0177",
@@ -94,19 +93,7 @@
       "kontaktInfo": {
         "telefonnummer": ["11 22 33 40", "11 22 33 41"]
       },
-      "verger": [
-        {
-          "profesjonellPerson": {
-            "navn": {
-              "fornavn": "Varg",
-              "etternavn": "Vergenes"
-            },
-            "identitetsnummer": {
-              "foedselsnummer": "01018012345"
-            }
-          }
-        }
-      ]
+      "verger": []
     },
     "straffesaker": [
       {
@@ -151,23 +138,23 @@
               "fornavn": "Ung",
               "etternavn": "KIWI"
             },
-            "foedselsdato": "2008-01-01T00:00:00+02:00"
+            "foedselsdato": "2008-01-01"
           },
           "medsiktede": [],
           "fornaermede": [
             {
               "person": {
                 "internId": "700892735",
-                "identitetsnummer": {
-                  "foedselsnummer": "31907499858"
-                },
-                "tilleggsId": [],
                 "navn": {
                   "fornavn": "Sannferdig",
                   "etternavn": "KOS"
                 },
+                "identitetsnummer": {
+                  "foedselsnummer": "31907499858"
+                },
+                "tilleggsId": [],
                 "kjoenn": "KVINNE",
-                "foedselsdato": "1974-10-31T00:00:00+02:00",
+                "foedselsdato": "1974-10-31",
                 "statsborgerskap": [
                   {
                     "kode": "NOR",
@@ -176,64 +163,43 @@
                 ],
                 "tolk": {
                   "behov": true,
-                  "spraak": "ARA"
+                  "spraak": "DEU"
                 },
                 "personAdresse": {
-                  "adresseType": "BOSTEDSADRESSE",
                   "adresse": {
                     "adresselinjer": ["Bratsberggata 29"],
                     "postnummer": "3714",
                     "poststed": "SKIEN"
                   }
                 },
-
-                "verger": [
-                  {
-                    "profesjonellPerson": {
-                      "navn": {
-                        "fornavn": "Birger",
-                        "etternavn": "Berg-Vergenes"
-                      },
-                      "identitetsnummer": {
-                        "foedselsnummer": "01018012346"
-                      }
-                    }
-                  }
-                ]
+                "verger": []
               }
             }
           ],
           "vitne": [
             {
               "internId": "700892775",
-              "identitetsnummer": {
-                "foedselsnummer": "21907699738"
-              },
-              "tilleggsId": [],
               "navn": {
                 "fornavn": "Naturstridig",
                 "etternavn": "BALLONG"
               },
+              "identitetsnummer": {
+                "foedselsnummer": "21907699738"
+              },
               "kjoenn": "MANN",
-              "foedselsdato": "1976-10-21T00:00:00+02:00",
               "statsborgerskap": [
                 {
                   "kode": "NOR",
                   "navn": "Norge"
                 }
               ],
-              "tolk": {
-                "behov": false
-              },
               "personAdresse": {
-                "adresseType": "BOSTEDSADRESSE",
                 "adresse": {
                   "adresselinjer": ["Øvstedalsvegen 87"],
                   "postnummer": "6391",
                   "poststed": "TRESFJORD"
                 }
-              },
-              "verger": []
+              }
             }
           ]
         }

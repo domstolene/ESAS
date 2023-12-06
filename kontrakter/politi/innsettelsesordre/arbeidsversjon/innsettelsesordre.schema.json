@@ -25,6 +25,11 @@
     "ordreVaretekt": {
       "$ref": "#/definitions/ordreVaretekt"
     },
+    "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
+    "paagrepetSted": {
+      "type": "string",
+      "description": "Sted for pågripelsen."
+    },
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -37,6 +42,7 @@
     "ordreVaretekt",
     "personVaretektInfo",
     "bestillingAvVaretektsplassId",
+    "paagrepetTidspunkt",
     "dokumenter"
   ],
   "additionalProperties": false,
@@ -464,7 +470,10 @@
           "$ref": "#/definitions/ansattPerson"
         },
         "beslutningsTidspunkt": { "$ref": "#/definitions/datoTid" },
-        "fengslingFraDato": { "$ref": "#/definitions/dato" },
+        "fengslingFraDato": {
+          "$ref": "#/definitions/dato",
+          "description": "Denne vil alltid være lik pågripelsestidspunkt, og kan muligens fases ut"
+        },
         "fengslingTilDato": { "$ref": "#/definitions/dato" },
         "restriksjoner": {
           "$ref": "#/definitions/restriksjonerOrdre"

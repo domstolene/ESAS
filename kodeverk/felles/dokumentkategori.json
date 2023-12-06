@@ -38,6 +38,18 @@
       "beskrivelse": "I løpet av rettsmøtet kan retten lage en annotert versjon av politidokumentene som returneres sammen med avgjørelsen."
     },
     {
+      "kode": "REKVISISJON_PERSONUNDERSOEKELSE",
+      "beskrivelse": "Revkisisjon av en personundersøkelse. "
+    },
+    {
+      "kode": "PERSONALIARAPPORT",
+      "beskrivelse": "Personaliarapport. Siktelse, personaliarapport og straffeattest vedlegges normalt ved rekvisisjon av en personundersøkelse."
+    },
+    {
+      "kode": "STRAFFEATTEST",
+      "beskrivelse": "Straffeattest. Siktelse, personaliarapport og straffeattest vedlegges normalt ved rekvisisjon av en personundersøkelse."
+    },
+    {
       "kode": "RETUR_PERSONUNDERSOEKELSE",
       "beskrivelse": "Retur / svar på en PeU-rekvisisjon. Normalt en ferdig PeU-rapport, men brukes også når undersøkelsen ikke kunne utføres (f.eks. når siktet nekter)"
     },

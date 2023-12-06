@@ -16,32 +16,14 @@
       "description": "Oppdatert statusinformasjon",
       "type": "object",
       "properties": {
-        "status": {
-          "$ref": "#/definitions/status"
-        },
-        "kommentar": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": ["status"]
-    },
-    "siktet": {
-      "$ref": "#/definitions/personEnkel"
-    }
-  },
-  "required": ["forsendelse", "straffesaksnummer", "statusOppdatering"],
-  "additionalProperties": false,
-  "definitions": {
-    "status": {
-      "type": "object",
-      "description": "object med status fra enten straffesak-object eller ungdomsoppfløging/ungdomsstraff-object",
-      "properties": {
         "straffesakStatus": {
           "$ref": "#/definitions/straffesakStatus"
         },
         "ungdomsreaksjonStatus": {
           "$ref": "#/definitions/ungdomsreaksjonStatus"
+        },
+        "kommentar": {
+          "type": "string"
         }
       },
       "oneOf": [
@@ -49,6 +31,9 @@
           "properties": {
             "straffesakStatus": {
               "$ref": "#/definitions/straffesakStatus"
+            },
+            "kommentar": {
+              "type": "string"
             }
           },
           "required": ["straffesakStatus"],
@@ -58,35 +43,56 @@
           "properties": {
             "ungdomsreaksjonStatus": {
               "$ref": "#/definitions/ungdomsreaksjonStatus"
+            },
+            "kommentar": {
+              "type": "string"
             }
           },
           "required": ["ungdomsreaksjonStatus"],
           "additionalProperties": false
         }
-      ]
+      ],
+      "additionalProperties": false
     },
+    "siktet": {
+      "$ref": "#/definitions/personEnkel"
+    },
+    "dokumenter": {
+      "type": "array",
+      "description": "Aktuelle saks dokumenter",
+      "items": {
+        "$ref": "#/definitions/dokument"
+      }
+    }
+  },
+  "required": ["forsendelse", "straffesaksnummer", "statusOppdatering"],
+  "additionalProperties": false,
+  "definitions": {
     "straffesakStatus": {
       "type": "object",
       "description": "Status på straffesak",
       "properties": {
         "tildeltSaksansvarlig": {
-          "$ref": "#/definitions/tildeltSaksansvarlig"
+          "$ref": "#/definitions/ansattPerson"
         },
         "tildeltMekler": {
-          "$ref": "#/definitions/tildeltMekler"
+          "$ref": "#/definitions/ansattPerson"
         },
         "meklingGjennomfoert": {
           "$ref": "#/definitions/meklingGjennomfoert"
         },
         "meklingIkkeGjennomfoert": {
           "$ref": "#/definitions/meklingIkkeGjennomfoert"
+        },
+        "kommentar": {
+          "type": "string"
         }
       },
       "oneOf": [
         {
           "properties": {
             "tildeltSaksansvarlig": {
-              "$ref": "#/definitions/tildeltSaksansvarlig"
+              "$ref": "#/definitions/ansattPerson"
             }
           },
           "required": ["tildeltSaksansvarlig"],
@@ -95,7 +101,7 @@
         {
           "properties": {
             "tildeltMekler": {
-              "$ref": "#/definitions/tildeltMekler"
+              "$ref": "#/definitions/ansattPerson"
             }
           },
           "required": ["tildeltMekler"],
@@ -126,7 +132,7 @@
       "description": "Status på ungdomsreaksjon (enten ungdomsoppfølging eller ungdomsstraff)",
       "properties": {
         "tildeltSaksansvarlig": {
-          "$ref": "#/definitions/tildeltSaksansvarlig"
+          "$ref": "#/definitions/ansattPerson"
         },
         "ungdomsplanSignert": {
           "$ref": "#/definitions/ungdomsplanSignert"
@@ -148,7 +154,7 @@
         {
           "properties": {
             "tildeltSaksansvarlig": {
-              "$ref": "#/definitions/tildeltSaksansvarlig"
+              "$ref": "#/definitions/ansattPerson"
             }
           },
           "required": ["tildeltSaksansvarlig"],
@@ -201,17 +207,6 @@
         }
       ]
     },
-    "tildeltSaksansvarlig": {
-      "type": "object",
-      "description": "Saken har blitt tildelt saksansvarlig/rådgiver hos konfliktrådet",
-      "properties": {
-        "saksansvarlig": {
-          "$ref": "#/definitions/ansattPerson"
-        }
-      },
-      "required": ["saksansvarlig"],
-      "additionalProperties": false
-    },
     "meklingGjennomfoert": {
       "type": "object",
       "description": "Mekling gjennomført og resultat av mekling",
@@ -238,17 +233,6 @@
         }
       },
       "required": ["resultat", "aarsak"],
-      "additionalProperties": false
-    },
-    "tildeltMekler": {
-      "type": "object",
-      "description": "Saken har blitt tildelt mekler hos konfliktrådet",
-      "properties": {
-        "mekler": {
-          "$ref": "#/definitions/ansattPerson"
-        }
-      },
-      "required": ["mekler"],
       "additionalProperties": false
     },
     "ungdomsplanSignert": {
@@ -301,13 +285,6 @@
         "totalLengde": {
           "type": "integer",
           "description": "Straffens totale lengde"
-        },
-        "dokumenter": {
-          "type": "array",
-          "description": "Avsluttende dokumenter",
-          "items": {
-            "$ref": "#/definitions/dokument"
-          }
         }
       },
       "required": ["aarsak"],
