@@ -66,8 +66,6 @@
   "saksInformasjon": {
     "saksnummer": "22-025462ENE-TBUS/TDRA",
     "straffesaksnummer": "15434820",
-    "rettsmoeteTidFra": "2022-07-06T10:00:00+02:00",
-    "rettsmoeteTidTil": "2022-07-06T14:00:00+02:00",
     "avgjoerelse": {
       "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1EEE",
       "avgjoerelseIdForrigeInstans": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
@@ -85,6 +83,14 @@
           "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
         },
         "merknad": "Anke tas til følge og Kiwi må i fengsel"
+      },
+      "erklaering": {
+        "erklaeringPaatale": {
+          "meddeltIRettsmoete": false
+        },
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": false
+        }
       }
     }
   }

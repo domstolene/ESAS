@@ -79,9 +79,21 @@
       "fengsling": {
         "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888"
       },
-      "anke": {
-        "anketDato": "2022-07-06",
-        "oppsettendeVirkning": true
+      "erklaering": {
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": true,
+          "erklaert": "VEDTATT"
+        },
+        "erklaeringPaatale": {
+          "erklaert": "ANKET",
+          "meddeltIRettsmoete": true,
+          "ankeDetaljer": {
+            "anketDato": "2022-07-06",
+            "oppsettendeVirkning": true,
+            "ankedeForhold": ["LOESLATELSE", "ANNET"],
+            "ankeBeskrivelse": "Påtale stiller spørsmål ved bruk av paragraf x under vurderingen av... fordi..."
+          }
+        }
       }
     }
   }

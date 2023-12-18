@@ -111,9 +111,9 @@
         "fengsling": {
           "$ref": "#/definitions/fengsling"
         },
-        "anke": {
-          "$ref": "#/definitions/anke",
-          "description": "Settes kun dersom hele eller deler av avgjørelsen ankes før kjennelsen sendes til påtale"
+        "erklaering": {
+          "$ref": "#/definitions/erklaering",
+          "description": "Erklæring fra siktede og påtale"
         }
       },
       "required": [
@@ -123,7 +123,8 @@
         "avgjoerelseResultat",
         "fengsling",
         "restriksjoner",
-        "isolasjonsKrav"
+        "isolasjonsKrav",
+        "erklaering"
       ],
       "type": "object",
       "additionalProperties": false
@@ -209,18 +210,79 @@
       "type": "object",
       "additionalProperties": false
     },
-    "anke": {
+    "erklaering": {
+      "properties": {
+        "erklaeringSiktede": {
+          "$ref": "#/definitions/erklaeringsDetaljer"
+        },
+        "erklaeringPaatale": {
+          "$ref": "#/definitions/erklaeringsDetaljer"
+        }
+      },
+      "required": ["erklaeringSiktede", "erklaeringPaatale"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "erklaeringsDetaljer": {
+      "properties": {
+        "meddeltIRettsmoete": {
+          "type": "boolean",
+          "description": "Settes til true desom avgjørelsen er meddelt i rettsmøtet"
+        },
+        "erklaert": {
+          "$ref": "#/definitions/erklaertType",
+          "description": "Settes dersom avgjørelsen er meddelt i retten"
+        },
+        "ankeDetaljer": {
+          "$ref": "#/definitions/ankeDetaljer",
+          "description": "Settes dersom parten har anket hele eller deler av avgjørelsen"
+        }
+      },
+      "required": ["meddeltIRettsmoete"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ankeDetaljer": {
       "properties": {
         "anketDato": {
           "$ref": "#/definitions/dato"
         },
         "oppsettendeVirkning": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Settes kun dersom det er påtale som anker"
+        },
+        "ankedeForhold": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/anketForholdType"
+          },
+          "minItems": 1,
+          "description": "Liste over hvilke fohold som ankes"
+        },
+        "ankeBeskrivelse": {
+          "type": "string",
+          "description": "Kan brukes for å utdype hva som er anket. F.eks. dersom man velger 'ANNET' som anket forhold"
         }
       },
-      "required": ["anketDato"],
+      "required": ["anketDato", "ankedeForhold"],
       "type": "object",
       "additionalProperties": false
+    },
+    "erklaertType": {
+      "enum": ["VEDTATT", "ANKET", "BETENKNINGSTID"]
+    },
+    "anketForholdType": {
+      "enum": [
+        "BREV_OG_BESOEKSFORBUD",
+        "BREV_OG_BESOEKSKONTROLL",
+        "MEDIEFORBUD",
+        "DELVIS_ISOLASJON",
+        "FULL_ISOLASJON",
+        "FENGSLING",
+        "LOESLATELSE",
+        "ANNET"
+      ],
+      "type": "string"
     },
     "avgjoerelseResultat": {
       "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",

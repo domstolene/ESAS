@@ -93,9 +93,19 @@
         },
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
-      "anke": {
-        "anketDato": "2022-07-06",
-        "oppsettendeVirkning": false
+      "erklaering": {
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": true,
+          "erklaert": "ANKET",
+          "ankeDetaljer": {
+            "anketDato": "2022-07-06",
+            "ankedeForhold": ["FENGSLING", "FULL_ISOLASJON"]
+          }
+        },
+        "erklaeringPaatale": {
+          "meddeltIRettsmoete": true,
+          "erklaert": "VEDTATT"
+        }
       }
     }
   }

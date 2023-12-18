@@ -105,9 +105,13 @@
         },
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
-      "anke": {
-        "anketDato": "2022-07-06",
-        "oppsettendeVirkning": false
+      "erklaering": {
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": false
+        },
+        "erklaeringPaatale": {
+          "meddeltIRettsmoete": false
+        }
       }
     }
   }

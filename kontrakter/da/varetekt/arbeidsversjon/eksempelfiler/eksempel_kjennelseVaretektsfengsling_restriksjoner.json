@@ -98,6 +98,16 @@
           "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
         },
         "merknad": "Kiwi må i varetekt så fort som fy"
+      },
+      "erklaering": {
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": true,
+          "erklaert": "VEDTATT"
+        },
+        "erklaeringPaatale": {
+          "meddeltIRettsmoete": true,
+          "erklaert": "VEDTATT"
+        }
       }
     }
   }
