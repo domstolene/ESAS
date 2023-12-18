@@ -17,43 +17,98 @@
       "navn": "Bjørgvin fengsel"
     }
   },
+  "bestillingVaretekt": {
+    "bestillingAvVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
+    "personVaretektInfo": {
+      "personVaretekt": {
+        "internId": "700892414",
+        "navn": {
+          "fornavn": "Morsom",
+          "etternavn": "KIWI"
+        },
+        "identitetsnummer": {
+          "foedselsnummer": "14846399381"
+        },
+        "tilleggsId": [],
+        "kjoenn": "MANN",
+        "foedselsdato": "1963-04-14",
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ],
+        "adresseGradering": "KLIENT_ADRESSE",
+        "personAdresse": {
+          "gradering": "KLIENT_ADRESSE",
+          "adresse": {
+            "adresselinjer": ["Bjørklund 21"],
+            "postnummer": "4137",
+            "poststed": "ÅRDAL I RYFYLKE"
+          }
+        },
+        "verger": []
+      },
+      "forsvarerinformasjon": {
+        "navn": {
+          "etternavn": "Olsen"
+        }
+      },
+      "risikoOgHelseInfo": {
+        "risikovurdering": {
+          "risiko": ["ROEMNINGSFARE"]
+        },
+        "helseInfo": {
+          "helse": ["INGEN"]
+        },
+        "tilstandArresten": {
+          "tilstand": ["INGEN"],
+          "beskrivelse": "Veldig rolig type"
+        }
+      }
+    },
+    "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
+    "paagrepetSted": "Mysen",
+    "ansvarligPaatalejurist": {
+      "brukeridentifikasjon": "bid234",
+      "etternavn": "Hansen"
+    }
+  },
   "hovedStraffesaksnummer": "15434811",
-  "bestillingAvVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
   "kontaktPersonKDI": {
     "fornavn": "Peder",
     "etternavn": "Superduper"
   },
   "varetektSyklusId": "D784D27C-C1BB-4BB2-90FD-96C414A64AE1",
-  "personVaretektInfo": {
-    "personVaretekt": {
-      "internId": "700892414",
-      "navn": {
-        "fornavn": "Morsom",
-        "etternavn": "KIWI"
-      },
-      "identitetsnummer": {
-        "foedselsnummer": "14846399381"
-      },
-      "tilleggsId": [],
-      "kjoenn": "MANN",
-      "foedselsdato": "1963-04-14",
-      "statsborgerskap": [
-        {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
-      ],
-      "adresseGradering": "KLIENT_ADRESSE",
-      "personAdresse": {
-        "gradering": "KLIENT_ADRESSE",
-        "adresse": {
-          "adresselinjer": ["Bjørklund 21"],
-          "postnummer": "4137",
-          "poststed": "ÅRDAL I RYFYLKE"
+  "vedlegg": {
+    "dokumenter": [
+      {
+        "internId": "1234567879",
+        "overskrift": "Bestilling av varetektsplass, Kiwi",
+        "kategori": {
+          "kode": "BEGJAERING"
+        },
+        "skrevetDato": "2022-11-03",
+        "forsendelse": {
+          "mimeType": "application/pdf",
+          "uri": "file:///asdfasdf",
+          "sjekksum": "234s"
         }
       },
-      "verger": []
-    },
+      {
+        "internId": "123234567879",
+        "overskrift": "Best dok",
+        "kategori": {
+          "kode": "Bestillingsvedlegg"
+        },
+        "skrevetDato": "2022-10-14",
+        "forsendelse": {
+          "mimeType": "application/pdf",
+          "uri": "file:///asdfaasdfsdf",
+          "sjekksum": "234asass"
+        }
+      }
+    ],
     "straffesaker": [
       {
         "straffesaksnummer": "15434811",
@@ -79,16 +134,6 @@
             "kode": "02",
             "navn": "Vinning"
           }
-        },
-        "siktelsesinfo": {
-          "lovbud": {
-            "lovbudId": "{DC423098-A15E-4408-BB35-85C101725AE0}",
-            "lovbudStreng": "Straffeloven § 323 første ledd, jf. § 321",
-            "gjengivelse": "for å ha tatt en gjenstand som tilhørte en annen, med forsett om å skaffe seg eller andre en uberettiget vinning ved å selge, forbruke eller på annen måte tilegne seg den. \r\n\r\nStraffskylden er liten fordi det gjelder en ubetydelig verdi og forholdene for øvrig tilsier det.",
-            "hjemmel": [],
-            "strafferamme": 0
-          },
-          "grunnlagstekst": "Lørdag 1. januar 2022 kl. 00.00 i Waldemar Carlsens veg 4 i Kongsvinger tok Morsom Kiwi og Masse Kiwi og grisebanket dama til Morsom Kiwi Sannferdig Kos. Sannferdig Kos fikk fire knekte ribbeing, knust nese og knekt fot."
         },
         "involverte": {
           "siktet": {
@@ -240,16 +285,6 @@
             "navn": "Narkotika"
           }
         },
-        "siktelsesinfo": {
-          "lovbud": {
-            "lovbudId": "{0B0D6AED-3A43-4B70-AD86-8A4FE38B090B}",
-            "lovbudStreng": "Straffeloven § 232 annet ledd første straffalternativ, jf. § 231 første ledd, jf. straffeloven § 27",
-            "gjengivelse": "for ulovlig å ha tilvirket, innført, utført, ervervet, oppbevart, sendt eller overdratt narkotika. \r\n\r\nOvertredelsen omfatter en meget betydelig mengde.\r\n\r\nNår et straffebud er overtrådt av noen som har handlet på vegne av et foretak, kan foretaket straffes.",
-            "hjemmel": [],
-            "strafferamme": 180
-          },
-          "grunnlagstekst": "Campingbil med kokeutstyr og Breaking Bad DVD'er"
-        },
         "involverte": {
           "siktet": {
             "internId": "700892414",
@@ -343,16 +378,6 @@
             "navn": "Vold"
           }
         },
-        "siktelsesinfo": {
-          "lovbud": {
-            "lovbudId": "{664DC73B-828D-4196-9D94-5EB1D1811A9B}",
-            "lovbudStreng": "Straffeloven § 273",
-            "gjengivelse": "for å ha skadet en annens kropp eller helse, gjort en annen fysisk maktesløs eller fremkalt bevisstløshet eller liknende tilstand hos en annen.",
-            "hjemmel": [],
-            "strafferamme": 72
-          },
-          "grunnlagstekst": "Lormen Quatro ble lappet til av Morsom Kiwi så han blødde neseblod."
-        },
         "involverte": {
           "siktet": {
             "internId": "700892414",
@@ -412,16 +437,6 @@
             "navn": "Vold"
           }
         },
-        "siktelsesinfo": {
-          "lovbud": {
-            "lovbudId": "{1713FA29-4E82-7F97-E053-0B3EA30AAE0D}",
-            "lovbudStreng": "Straffeloven (1902) § 227 første straffalternativ",
-            "gjengivelse": "for i ord eller handling å ha truet med en straffbar handling som kan medføre høyere straff enn 6 måneders fengsel, under slike omstendigheter at trusselen var skikket til å fremkalle alvorlig frykt",
-            "hjemmel": [],
-            "strafferamme": 36
-          },
-          "grunnlagstekst": "Torsdag 1. januar 2015 kl. 00.00 i Walmannsvegen 81 i Eidskog truet Morsom Kiwi fornærmede med en avsaget hagle."
-        },
         "involverte": {
           "siktet": {
             "internId": "700892414",
@@ -466,45 +481,6 @@
           "vitne": []
         }
       }
-    ],
-    "risikoOgHelseInfo": {
-      "risikovurdering": {
-        "risiko": ["ROEMNINGSFARE"]
-      },
-      "helseInfo": {
-        "helse": ["INGEN"]
-      },
-      "tilstandArresten": {
-        "tilstand": ["INGEN"],
-        "beskrivelse": "Veldig rolig type"
-      }
-    }
-  },
-  "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
-  "dokumenter": [
-    {
-      "internId": "1234567879",
-      "overskrift": "Bestilling av varetektsplass, Kiwi",
-      "kategori": { "kode": "BEGJAERING" },
-      "skrevetDato": "2022-11-03",
-      "forsendelse": {
-        "mimeType": "application/pdf",
-        "uri": "file:///asdfasdf",
-        "sjekksum": "234s"
-      }
-    },
-    {
-      "internId": "123234567879",
-      "overskrift": "Best dok",
-      "kategori": {
-        "kode": "Bestillingsvedlegg"
-      },
-      "skrevetDato": "2022-10-14",
-      "forsendelse": {
-        "mimeType": "application/pdf",
-        "uri": "file:///asdfaasdfsdf",
-        "sjekksum": "234asass"
-      }
-    }
-  ]
+    ]
+  }
 }

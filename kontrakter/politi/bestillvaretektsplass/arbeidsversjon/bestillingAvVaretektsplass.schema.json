@@ -12,51 +12,88 @@
       "$ref": "#/definitions/straffesaksnummer",
       "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
     },
-    "bestillingAvVaretektsplassId": {
-      "$ref": "#/definitions/unikId",
-      "description": "Nøkkel på bestillingen, alle svar på bestilling skal koble til den samme nøkkelen."
-    },
+
     "kontaktPersonKDI": { "$ref": "#/definitions/ansattPerson" },
     "varetektSyklusId": {
       "$ref": "#/definitions/unikId",
       "description": "Til å begynne med vil dette være et løpenummer, kan endres til GUID senere. Første forsendelsene vil ikke inneholde dette."
     },
-    "personVaretektInfo": { "$ref": "#/definitions/personVaretektInfo" },
-    "restriksjonIsolasjon": { "$ref": "#/definitions/restriksjonIsolasjon" },
-    "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
-    "paagrepetSted": {
-      "type": "string",
-      "description": "Sted for pågripelsen."
+    "bestillingVaretekt": {
+      "$ref": "#/definitions/bestillingVaretekt",
+      "description": "Inneholder selve bestillingen"
     },
-    "dokumenter": {
-      "type": "array",
-      "items": { "$ref": "#/definitions/dokument" }
+    "vedlegg": {
+      "$ref": "#/definitions/vedlegg"
     }
   },
   "required": [
     "forsendelse",
     "hovedStraffesaksnummer",
-    "bestillingAvVaretektsplassId",
-    "paagrepetTidspunkt",
-    "personVaretektInfo"
+    "bestillingVaretekt",
+    "vedlegg"
   ],
   "additionalProperties": false,
-
   "definitions": {
+    "vedlegg": {
+      "type": "object",
+      "description": "Bekgrunsinformasjon (grunnlag) som retten trenger som dokumenter, informasjon om straffesaken (vitner, fornærmede), siktelse og dokumenter.",
+      "properties": {
+        "straffesaker": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/straffesakMedInvolverteSiktet"
+          },
+          "minItems": 1
+        },
+        "dokumenter": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/dokument"
+          }
+        }
+      },
+      "required": ["straffesaker", "dokumenter"],
+      "additionalProperties": false
+    },
+    "bestillingVaretekt": {
+      "title": "bestillingVaretekt",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bestillingAvVaretektsplassId",
+        "paagrepetTidspunkt",
+        "personVaretektInfo"
+      ],
+      "properties": {
+        "bestillingAvVaretektsplassId": {
+          "$ref": "#/definitions/unikId",
+          "description": "Nøkkel på bestillingen, alle svar på bestilling skal koble til den samme nøkkelen."
+        },
+        "personVaretektInfo": { "$ref": "#/definitions/personVaretektInfo" },
+        "restriksjonIsolasjon": {
+          "$ref": "#/definitions/restriksjonIsolasjon"
+        },
+        "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
+        "paagrepetSted": {
+          "type": "string",
+          "description": "Sted for pågripelsen."
+        },
+        "ansvarligPaatalejurist": {
+          "$ref": "#/definitions/paataleJurist"
+        }
+      }
+    },
     "personVaretektInfo": {
       "title": "personVaretektInfo",
       "type": "object",
-      "required": ["personVaretekt", "straffesaker", "risikoOgHelseInfo"],
+      "required": ["personVaretekt", "risikoOgHelseInfo"],
       "additionalProperties": false,
       "properties": {
         "personVaretekt": {
           "$ref": "#/definitions/person"
         },
-        "straffesaker": {
-          "type": "array",
-          "title": "straffesaker",
-          "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
-          "minItems": 1
+        "forsvarerinformasjon": {
+          "$ref": "#/definitions/profesjonellPerson"
         },
         "risikoOgHelseInfo": {
           "description": "Risiko og helsevurderinger, ingen betyr at det ikke er noen slike vurderinger ",
@@ -94,6 +131,34 @@
       "description": "Samme enum som folkeregisteret, ugradert hvis den ikke er gradert",
       "type": "string",
       "enum": ["KLIENT_ADRESSE", "FORTROLIG", "STRENGT_FORTROLIG"]
+    },
+    "paataleJurist": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker. Beholder brukeridentifikasjon pga. av gammel historikk og behov for identifisering.",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "BID hos politiet nå"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
     },
     "ansattPerson": {
       "type": "object",
@@ -412,22 +477,22 @@
         "grunnlagstekst": { "type": "string" }
       }
     },
-    "straffesakLovbudInvolverte": {
-      "description": "Straffesak med også krimtype og lovbud, grunnlag samt de involverte",
+    "straffesakMedInvolverteSiktet": {
       "type": "object",
-      "required": ["straffesaksnummer", "detaljer", "involverte"],
-      "additionalProperties": true,
+      "description": "Straffesak med involverte listet samt enkel versjon av siktede",
       "properties": {
         "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer"
+          "type": "string"
         },
-        "detaljer": { "$ref": "#/definitions/straffesakDetaljer" },
-        "siktelsesinfo": {
-          "$ref": "#/definitions/siktelsesinfo",
-          "description": "lovbud og grunnlagsinformasjon som brukes i siktelsen"
+        "detaljer": {
+          "$ref": "#/definitions/straffesakDetaljer"
         },
-        "involverte": { "$ref": "#/definitions/involverteStraffesak" }
-      }
+        "involverte": {
+          "$ref": "#/definitions/involverteStraffesak"
+        }
+      },
+      "required": ["straffesaksnummer", "detaljer", "involverte"],
+      "additionalProperties": false
     },
     "restriksjonIsolasjon": {
       "type": "object",
