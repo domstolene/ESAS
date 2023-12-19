@@ -257,7 +257,7 @@
             "$ref": "#/definitions/anketForholdType"
           },
           "minItems": 1,
-          "description": "Liste over hvilke fohold som ankes"
+          "description": "Liste over hvilke forhold som ankes"
         },
         "ankeBeskrivelse": {
           "type": "string",
