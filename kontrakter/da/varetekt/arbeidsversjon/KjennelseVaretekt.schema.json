@@ -227,7 +227,7 @@
       "properties": {
         "meddeltIRettsmoete": {
           "type": "boolean",
-          "description": "Settes til true desom avgjørelsen er meddelt i rettsmøtet"
+          "description": "Settes til true dersom avgjørelsen er meddelt i rettsmøtet"
         },
         "erklaert": {
           "$ref": "#/definitions/erklaertType",
@@ -256,8 +256,8 @@
           "items": {
             "$ref": "#/definitions/anketForholdType"
           },
-          "minItems": 1,
-          "description": "Liste over hvilke forhold som ankes"
+          "minItems": 0,
+          "description": "Liste over hvilke forhold som ankes. Det kan være tilfeller der ingen forhold velges, men avgjørelsen ankes likevel"
         },
         "ankeBeskrivelse": {
           "type": "string",
