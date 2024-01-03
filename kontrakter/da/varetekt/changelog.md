@@ -15,9 +15,16 @@
 
 
 # Versjon 1.0
-1. Bump verskpm fra 0.9 til 1.0
+1. Bump versjon fra 0.9 til 1.0
 2. Fjernet utviklings-versjonen (0.9)
 
 # Versjon 1.1
 1. Legger til krav om at minst ett dokument er vedlagt meldingen.
 2. Fjerner 'required' på 'rettsmoeteTidFra' og 'rettsmoeteTidTil'
+
+# Versjon 1.2
+1. Støtte for kjennelse fra Lagmanserett/Høyesterett. Melding inneholder nå:
+   * Hvilken rettsinstans som sender kjennelse
+   * Opprinnelig kravId
+   * Avgjørelse-resultat
+2. Flere detaljer rundt hva som er anket
