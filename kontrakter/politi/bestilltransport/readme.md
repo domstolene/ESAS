@@ -8,6 +8,9 @@ Versjon 1.0 er første versjon som vi skal i produksjon med.
 
 [Se changelog for endringer](changelog.md)
 
+## Status
+1. versjon merge til main for å kunne omstrukturere. PR og Branch er slettet. Jobber med i detalj når denne blir aktuell og implementere.
+
 ## Ønsker / mangler
 
 ## Avklaringer
