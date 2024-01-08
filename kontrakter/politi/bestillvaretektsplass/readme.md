@@ -10,7 +10,18 @@ SchemaVersion=1.0
 
 [Se changelog for endringer](changelog.md)
 
+## Status
+Venter på avklaring fra styringsgrupp/Justisdepartementet, avslutter alle PR for å kunne omorganisere.
+
 ## Ønsker / mangler
+### Gammel PR #50 gjennomgang med Øivind Bjørløw
+branch feature/paagrepetsted-og-verge-full-person, sletter branch når vi har inkorporert endringer.
+
+- Pågrepet sted er vel viktigst. Er det vanskeligheter med å få med i ny løsning?
+- Kontaktopplysninger for advokater var foreslått inn. Etter modellen brukt i PeU, mener jeg huske.
+- Krimtype foreslått obligatorisk (men det kan vel utledes om det er vanskelig for dere).
+- Bedre/utvidede beskrivelser.
+- Mye av PR var et ekstra eksempel. Vi bør generelt bli bedre på flere og bedre eksempler, tenker jeg.
 ### Pågrepet kommune
 Pågrepet kommune brukes til NAV av Kriminalomsorgen fordi det er det lokale NAV kontoret i pågrepet kommune som har ansvaret ?
 

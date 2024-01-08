@@ -1,6 +1,9 @@
 # bestilling varetektsplass endringer
 Omorganisert slik at det er en katalog for hver melding og eksempelfiler på samme sted (forrige PR).
 
+### 08.01.2024 rydder i PR
+Se [readme.md](./readme.md) for endringer i PR som vi skal se på til neste versjon.
+
 ### 17.04.2023
 melding og forsendelse justeringer i hennhold til [begjaering varetekt](../varetekt/1.0/begjaeringVaretekt.schema.json)
 
