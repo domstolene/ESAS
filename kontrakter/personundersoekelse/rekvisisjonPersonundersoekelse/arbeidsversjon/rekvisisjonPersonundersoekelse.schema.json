@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/rekvisisjonPersonundersoekelse",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/arbeidsversjon/rekvisisjonPersonundersoekelse",
   "description": "Rekvirering / anmodning om personundersøkelse fra påtale til kriminalomsorg. Schema versjon 2020-12",
   "type": "object",
   "properties": {
