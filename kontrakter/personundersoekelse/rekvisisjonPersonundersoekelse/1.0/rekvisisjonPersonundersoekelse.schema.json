@@ -234,7 +234,7 @@
         "kategori": { "$ref": "#/definitions/kodeverk" },
         "overskrift": { "type": "string" },
         "skrevetDato": {
-          "description": "Dato",
+          "description": "Dato-tid når dokumentet er opprettet av brukeren i fagsystem. Vil ofte representere dato for ferdigstillelse, men det er ikke gitt i alle tilfeller.",
           "type": "string",
           "format": "date-time"
         },
