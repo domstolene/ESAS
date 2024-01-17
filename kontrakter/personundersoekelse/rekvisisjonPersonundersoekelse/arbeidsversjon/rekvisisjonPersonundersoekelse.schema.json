@@ -1,0 +1,836 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/rekvisisjonPersonundersoekelse",
+  "description": "Rekvirering / anmodning om personundersøkelse fra påtale til kriminalomsorg. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
+    },
+    "rekvisisjonPersonundersoekelseId": {
+      "$ref": "#/definitions/unikId",
+      "description": "ID  på rekvisisjonen. "
+    },
+    "personundersoekelseInfo": {
+      "$ref": "#/definitions/personundersoekelseInfo"
+    },
+    "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
+    "paagrepetSted": {
+      "type": "string",
+      "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen. Dette bør struktureres som en adresse i framtiden, men politiet har fritekst p.t."
+    },
+    "kontaktopplysningerAdvokater": {
+      "$ref": "#/definitions/kontaktopplysningerAdvokater"
+    },
+    "kontaktpersonerForInnhentingAvOpplysningerFraKilder": {
+      "$ref": "#/definitions/kontaktpersonerForInnhentingAvOpplysningerFraKilder"
+    },
+    "prioriteringsdetaljer": {
+      "$ref": "#/definitions/prioriteringsdetaljer"
+    },
+
+    "dokumenter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/dokument" }
+    }
+  },
+  "required": [
+    "forsendelse",
+    "rekvisisjonPersonundersoekelseId",
+    "hovedStraffesaksnummer",
+    "paagrepetTidspunkt",
+    "kontaktopplysningerAdvokater",
+    "personundersoekelseInfo"
+  ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "personundersoekelseInfo": {
+      "title": "personundersoekelseInfo",
+      "type": "object",
+      "required": [
+        "personundersoekelseType",
+        "personForPersonundersoekelse",
+        "straffesaker"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "personForPersonundersoekelse": {
+          "description": "Subjektet for personundersøkelsen. Den siktede det anmodes om personundersøkelse av.",
+          "$ref": "#/definitions/person"
+        },
+        "personundersoekelseType": {
+          "description": "Typen og formålet med personundersøkelse man rekvirerer. (Det kan revireres både en spesialisert undersøkelse  eller  generell personundesøkelse).",
+          "type": "string",
+          "enum": [
+            "MINDREAARIG",
+            "NARKOTIKAPROGRAM",
+            "RUSKJOERING",
+            "FORVARING",
+            "GENERELL_PERSONUNDERSOEKELSE"
+          ]
+        },
+        "tekstligUdypingAvFormaalet": {
+          "description": "Mulighet for å beskrive formålet med anmodningen videre i fritekst.",
+          "type": "string"
+        },
+        "initiativtakerTilUndersoekelse": {
+          "description": "Firvillig: Indikerer hvem som har tatt initiativ til personundersøkelse.  Forsvarer, Domstol eller  Påtale etc. ... ",
+          "type": "string",
+          "enum": ["FORSVARER", "PAATALE", "DOMSTOL"]
+        },
+        "straffesaker": {
+          "type": "array",
+          "title": "straffesaker",
+          "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
+          "minItems": 1
+        }
+      }
+    },
+    "kontaktopplysningerAdvokater": {
+      "description": "Kontaktopplysninger for relevante aktører. Fylles ut direkte her når det ikke fremgår av siktelsen ennå.",
+      "title": "kontaktopplysningerAdvokater",
+      "type": "object",
+      "properties": {
+        "paataleansvarligNavn": { "$ref": "#/definitions/personnavn" },
+        "paataleansvarligKontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
+        "aktorNavn": { "$ref": "#/definitions/personnavn" },
+        "aktorKontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
+        "forsvarerNavn": { "$ref": "#/definitions/personnavn" },
+        "forsvarerKontaktInfo": { "$ref": "#/definitions/kontaktInfo" }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "kontaktpersonerForInnhentingAvOpplysningerFraKilder": {
+      "description": "Kontaktopplysninger for kilder i personundersøkelsen.  Fylles ut der politiet har informasjonen. Formålet er at KO slipper bruker tid på å ringe rundt og politiet slipper bruke tid på å svare ut dette. ",
+      "title": "kontaktpersonerForInnhentingAvOpplysningerFraKilder",
+      "type": "object",
+      "properties": {
+        "kontaktpersonBarnevernNavn": { "$ref": "#/definitions/personnavn" },
+        "kontaktpersonBarnevernKontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        },
+        "kontaktpersonUngdomskoordinatorNavn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kontaktpersonUngdomskoordinatorKontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        },
+        "kontaktpersonPoltiNavn": { "$ref": "#/definitions/personnavn" },
+        "kontaktpersonPolitiKontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+
+    "prioriteringsdetaljer": {
+      "description": "Opplysninger som ønsket frist for ferdig personundersøkelse, melding om berammingsdato for hovedforhandling.",
+      "title": "prioriteringsdetaljer",
+      "type": "object",
+      "properties": {
+        "oensketFristForFerdigPersonundersoekelse": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "berammetDatoForHovedforhandling": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "adresse": {
+      "type": "object",
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "postnummer": {
+          "type": "string"
+        },
+        "poststed": {
+          "type": "string"
+        },
+        "land": {
+          "$ref": "#/definitions/land"
+        }
+      },
+      "required": ["adresselinjer"],
+      "additionalProperties": false
+    },
+    "adresseGradering": {
+      "description": "Samme enum som folkeregisteret, ugradert hvis den ikke er gradert",
+      "type": "string",
+      "enum": ["KLIENT_ADRESSE", "FORTROLIG", "STRENGT_FORTROLIG"]
+    },
+    "adresseType": {
+      "description": "Spesifisere bosted, evt. oppholdsadresse.",
+      "type": "string",
+      "enum": ["BOSTEDSADRESSE", "SISTE_KJENTE_ADRESSE", "POSTADRESSE"]
+    },
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn", "kontakt"],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til kriminalomsorgen."
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "description": "Dokument som oversendes på justishub",
+      "type": "object",
+      "properties": {
+        "internId": { "type": "string" },
+        "kategori": { "$ref": "#/definitions/kodeverk" },
+        "overskrift": { "type": "string" },
+        "skrevetDato": {
+          "description": "Dato",
+          "type": "string",
+          "format": "date-time"
+        },
+        "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
+      },
+      "required": ["overskrift", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "description": "Detaljer om lokasjon og type",
+      "type": "object",
+      "properties": {
+        "mimeType": { "type": "string" },
+        "uri": { "type": "string" },
+        "sjekksum": { "type": "string" }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "type": "object",
+      "description": "Sender (påtale) og mottaker (kriminalomsorg) av meldingen",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Kriminalomsorgen har et sentralt mottak og styrer videre ruting internt. Påtale kan be om ruting direkte til fengsel her, dette kan etterkommes avhengig av tidspunkt og kapasitet. Ruting rett til fengsel planlegges utenfor kontortid, ruting til regional domskoordinator er ellers norm per 2023."
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/telefonnummer" }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "land": {
+      "description": "ISO-3166, Kosovo kommer",
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "[A-Z]+",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "lovbudFull": {
+      "description": "Lovvbudreferanse med gjengivelse og strafferamme",
+      "type": "object",
+      "properties": {
+        "lovbudId": { "type": "string" },
+        "lovbudStreng": { "type": "string" },
+        "gjengivelse": { "type": "string" },
+        "hjemmel": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/lovreferanse" }
+        },
+        "strafferamme": { "type": "integer", "description": "Antall måneder" }
+      },
+      "required": ["lovbudStreng", "gjengivelse", "hjemmel"],
+      "additionalProperties": false
+    },
+    "lovbudGjengivelse": {
+      "description": "Lovvbudreferanse med gjengivelse",
+      "type": "object",
+      "properties": {
+        "lovbudId": { "type": "string" },
+        "lovbudStreng": { "type": "string" },
+        "gjengivelse": { "type": "string" }
+      },
+      "required": ["lovbudStreng", "gjengivelse"],
+      "additionalProperties": false
+    },
+    "lovbudEnkel": {
+      "description": "Enkel lovbudreferanse kun lovbudstreng",
+      "type": "object",
+      "properties": {
+        "lovbudId": { "type": "string" },
+        "lovbudStreng": { "type": "string" }
+      },
+      "required": ["lovbudStreng"],
+      "additionalProperties": false
+    },
+    "lovreferanse": {
+      "description": "Eksakt referanse inn i spesifikk lov, paragraf, ledd osv.",
+      "type": "object",
+      "properties": {
+        "rettskilde": { "$ref": "#/definitions/kodeverk" },
+        "lovreferanse": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/lovreferanseElement" },
+          "minItems": 1
+        }
+      },
+      "required": ["rettskilde", "lovreferanse"],
+      "additionalProperties": false
+    },
+    "lovreferanseElement": {
+      "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "verdi": { "type": "string" }
+      },
+      "required": ["type", "verdi"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "type": "object",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "straffesakDetaljer": {
+      "description": "Detaljer rundt straffesaken",
+      "type": "object",
+      "required": ["hendelse", "statistikkgruppe"],
+      "additionalProperties": false,
+      "properties": {
+        "hendelse": { "$ref": "#/definitions/hendelse" },
+        "statistikkgruppe": { "$ref": "#/definitions/kodeverk" },
+        "krimtype": { "$ref": "#/definitions/kodeverk" }
+      }
+    },
+    "hendelse": {
+      "title": "hendelse",
+      "type": "object",
+      "required": [
+        "gjerningstidspunktFra",
+        "gjerningstidspunktTil",
+        "gjerningssted"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "gjerningstidspunktFra": { "type": "string", "format": "date-time" },
+        "gjerningstidspunktTil": { "type": "string", "format": "date-time" },
+        "gjerningssted": { "$ref": "#/definitions/adresse" }
+      }
+    },
+    "involverteStraffesak": {
+      "description": "siktede, vitner og fornærmede",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "siktet": { "$ref": "#/definitions/personEnkel" },
+        "medsiktede": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/personForetak" }
+        },
+        "fornaermede": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/personForetak" }
+        },
+        "vitne": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/personRelatert" }
+        }
+      },
+      "required": ["medsiktede", "fornaermede", "vitne"]
+    },
+    "siktelsesinfo": {
+      "description": "Siktelsesinformasjon fra straffesaken.",
+      "type": "object",
+      "required": ["lovbud"],
+      "additionalProperties": false,
+      "properties": {
+        "lovbud": { "$ref": "#/definitions/lovbudFull" },
+        "grunnlagstekst": { "type": "string" }
+      }
+    },
+    "straffesakLovbudInvolverte": {
+      "description": "Straffesak med også krimtype og lovbud, grunnlag samt de involverte",
+      "type": "object",
+      "required": ["straffesaksnummer", "detaljer", "involverte"],
+      "additionalProperties": true,
+      "properties": {
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer"
+        },
+        "detaljer": { "$ref": "#/definitions/straffesakDetaljer" },
+        "siktelsesinfo": {
+          "$ref": "#/definitions/siktelsesinfo",
+          "description": "lovbud og grunnlagsinformasjon som brukes i siktelsen"
+        },
+        "involverte": { "$ref": "#/definitions/involverteStraffesak" }
+      }
+    },
+    "foretak": {
+      "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. fornærmet",
+      "type": "object",
+      "properties": {
+        "internId": { "type": "string" },
+        "organisasjonsnummer": { "type": "string" },
+        "navn": { "type": "string" },
+        "adresse": { "$ref": "#/definitions/adresse" }
+      },
+      "required": ["internId", "navn"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": { "type": "string" },
+        "mellomnavn": { "type": "string" },
+        "etternavn": { "type": "string" }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "personIdentifikator": {
+      "description": "Fødselsnummer, D-nummer eller SSP nummer",
+      "type": "object",
+      "properties": {
+        "foedselsnummer": {
+          "$ref": "#/definitions/foedselsnummer"
+        },
+        "sspNummer": {
+          "$ref": "#/definitions/sspNummer"
+        },
+        "dNummer": {
+          "$ref": "#/definitions/dNummer"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "foedselsnummer": {
+              "$ref": "#/definitions/foedselsnummer"
+            }
+          },
+          "required": ["foedselsnummer"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "sspNummer": {
+              "$ref": "#/definitions/sspNummer"
+            }
+          },
+          "required": ["sspNummer"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "dNummer": {
+              "$ref": "#/definitions/dNummer"
+            }
+          },
+          "required": ["dNummer"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "personRelatert": {
+      "type": "object",
+      "description": "Personer som er involverte, men ikke siktet. Kan være verger, vitner, etc.",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        }
+      },
+      "required": ["internId", "navn", "statsborgerskap"],
+      "additionalProperties": false
+    },
+    "personForetak": {
+      "description": "En siktet eller fornærmet kan være en person eller et foretak, denne typen er enten person eller foretak.",
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/person"
+        },
+        "foretak": {
+          "$ref": "#/definitions/foretak"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "person": {
+              "$ref": "#/definitions/person"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["person"]
+        },
+        {
+          "properties": {
+            "foretak": {
+              "$ref": "#/definitions/foretak"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["foretak"]
+        }
+      ]
+    },
+    "personAdresse": {
+      "description": "Kan være graderte adresser",
+      "type": "object",
+      "properties": {
+        "gradering": { "$ref": "#/definitions/adresseGradering" },
+        "adresse": { "$ref": "#/definitions/adresse" }
+      },
+      "required": ["adresse"],
+      "additionalProperties": false
+    },
+    "person": {
+      "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
+      "type": "object",
+      "properties": {
+        "internId": {
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId",
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "description": "Ukjent kjønn hvis denne ikke er med",
+          "$ref": "#/definitions/kjoenn"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "kontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
+        "identitetsnummer": {
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er den i bruk",
+          "$ref": "#/definitions/personIdentifikator"
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          },
+          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        },
+        "tolk": {
+          "type": "object",
+          "properties": {
+            "behov": { "type": "boolean" },
+            "spraak": {
+              "$ref": "#/definitions/spraakkodeType"
+            }
+          },
+          "required": ["behov"],
+          "additionalProperties": false
+        },
+        "verger": {
+          "type": "array",
+          "description": "Verge skal være med på siktet, fornærmet, vitne.",
+          "items": {
+            "$ref": "#/definitions/personRelatert"
+          }
+        }
+      },
+      "required": [
+        "internId",
+        "navn",
+        "foedselsdato",
+        "tolk",
+        "statsborgerskap",
+        "tilleggsId",
+        "verger"
+      ],
+      "additionalProperties": false
+    },
+    "personEnkel": {
+      "type": "object",
+      "description": "Kun navn og fødselsdato (hvis den finnes)",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Intern som peker på samme person i en spesifikk melding"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "description": "Dato",
+          "format": "date"
+        }
+      },
+      "required": ["internId", "navn"],
+      "additionalProperties": false
+    },
+    "profesjonellPersonForetak": {
+      "description": "En verge el.l. Både personer og foretak kan være verger.",
+      "type": "object",
+      "properties": {
+        "profesjonellPerson": {
+          "$ref": "#/definitions/profesjonellPerson"
+        },
+        "foretak": {
+          "$ref": "#/definitions/foretak"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "profesjonellPerson": {
+              "$ref": "#/definitions/profesjonellPerson"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["profesjonellPerson"]
+        },
+        {
+          "properties": {
+            "foretak": {
+              "$ref": "#/definitions/foretak"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["foretak"]
+        }
+      ]
+    },
+    "profesjonellPerson": {
+      "description": "Advokater, tolker, sakkyndige vitner, verger",
+      "type": "object",
+      "properties": {
+        "tittel": { "type": "string" },
+        "navn": {
+          "type": "object",
+          "properties": {
+            "fornavn": { "type": "string" },
+            "mellomnavn": { "type": "string" },
+            "etternavn": { "type": "string" }
+          },
+          "required": ["etternavn"],
+          "additionalProperties": false
+        },
+        "identitetsnummer": {
+          "description": "Fødselsnummer eller D-nummer. Ideelt påbudt for Verger m.m. så KO kan finne oppdatert addresse i Folkereg. ved kontaktbehov ",
+          "$ref": "#/definitions/personIdentifikator"
+        },
+        "kontakt": { "$ref": "#/definitions/kontaktInfo" }
+      },
+      "required": ["navn"],
+      "additionalProperties": false
+    },
+
+    "kodeverk": {
+      "description": "Kode og navn, kommer oppdatering med verdier",
+      "type": "object",
+      "properties": {
+        "kode": { "type": "string" },
+        "navn": { "type": "string" }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "kjoenn": {
+      "description": "Samme enum som folkeregisteret",
+      "type": "string",
+      "enum": ["KVINNE", "MANN"]
+    },
+    "foedselsnummer": {
+      "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+      "type": "string",
+      "pattern": "[0-9]+",
+      "minLength": 11,
+      "maxLength": 11
+    },
+    "sspNummer": {
+      "description": "Personidentifikator brukt av det sentrale straffe- og personopplysningsregisteret (SSP) hvis personen ikke har fødselsnummer. Validerer som et fødselsnummer med +20 på måned så noen født 10.01.1990 begynner med 102190",
+      "type": "string",
+      "pattern": "[0-9]+",
+      "minLength": 11,
+      "maxLength": 11
+    },
+    "dNummer": {
+      "description": "Se skatteetaten. Dag på datodelen er +40. Født 10.01.1990, begynner med 31.01.90",
+      "type": "string",
+      "pattern": "[0-9]+",
+      "minLength": 11,
+      "maxLength": 11
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "[0-9]+",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "spraakkodeType": {
+      "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
+      "pattern": "^([A-Z]{3,3})$",
+      "type": "string"
+    },
+    "behovForTolkType": {
+      "type": "string",
+      "description": "Er det behov for tolk",
+      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER"]
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 1
+    }
+  }
+}
