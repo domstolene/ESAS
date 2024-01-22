@@ -9,7 +9,9 @@
 ## Problemstilling
 Dagens organisering basert på hvem som sender meldingen kan forbedres. Forslaget i koordineringsmøtene er å bruke en funksjonell oppdeling istedet.
 
-## Forslag til oppdeling
+Øverste nivå f.eks. kjennelser er for håndtering av alle kjennelser som ikke er varetekt, hvis det blir behov for mer spesifikke meldinger så kan det f.eks. lages en tvangsmiddel katalog med begjaering om kjennelse på tvangsmiddel og kjennelse på tvangsmiddel (som varetekt)
+
+## Forslag til oppdeling av dagens meldinger
 Har laget en generell gruppe for kjennelser som skal fikse resten av kjennelsene f.eks. på tvangsmiddel. Hvis vi får behov for spesielle inndelinger så kan vi lage kjennelseTvangsmiddel på samme nivå.
 ```
 └── kontrakter
