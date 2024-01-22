@@ -1,0 +1,222 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE2",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Årdal",
+        "kontakt": {
+          "telefonnummer": ["22 99 33 44"]
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "911830868",
+      "navn": "Akershus friomsorgskontor"
+    }
+  },
+  "hovedStraffesaksnummer": "15434811",
+  "rekvisisjonPersonundersoekelseId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "kontaktopplysningerAdvokater": {
+    "paataleansvarligNavn": { "etternavn": "Paatalesen" },
+    "paataleansvarligKontaktInfo": { "telefonnummer": ["11 22 33 44"] },
+    "forsvarerNavn": {
+      "fornavn": "Fjodor",
+      "etternavn": "Feit"
+    },
+    "forsvarerKontaktInfo": {
+      "telefonnummer": ["(+47) 99 88 77 66"],
+      "epost": "Feit@fatboysfix.com"
+    }
+  },
+  "kontaktpersonerForInnhentingAvOpplysningerFraKilder": {
+    "kontaktpersonPoltiNavn": { "etternavn": "Mikke Snusen" },
+    "kontaktpersonPolitiKontaktInfo": {
+      "epost": "msnus@polti.no",
+      "telefonnummer": ["33 22 11 00"]
+    }
+  },
+  "prioriteringsdetaljer": {
+    "oensketFristForFerdigPersonundersoekelse": "2023-01-02T10:00:00+02:00",
+    "berammetDatoForHovedforhandling": "2023-01-14T10:00:00+02:00"
+  },
+  "personundersoekelseInfo": {
+    "personundersoekelseType": "GENERELL_PERSONUNDERSOEKELSE",
+    "initiativtakerTilUndersoekelse": "FORSVARER",
+    "personForPersonundersoekelse": {
+      "internId": "700892414",
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "navn": {
+        "fornavn": "Ung",
+        "etternavn": "KIWI"
+      },
+      "kjoenn": "MANN",
+      "foedselsdato": "2008-01-01",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "kontaktInfo": {
+        "telefonnummer": ["11 22 33 40"]
+      },
+      "tolk": {
+        "behov": false
+      },
+      "personAdresse": {
+        "adresse": {
+          "adresselinjer": ["Bjørklund 21"],
+          "postnummer": "4137",
+          "poststed": "ÅRDAL I RYFYLKE"
+        }
+      },
+      "verger": []
+    },
+    "straffesaker": [
+      {
+        "straffesaksnummer": "15434811",
+        "detaljer": {
+          "hendelse": {
+            "gjerningstidspunktFra": "2022-01-01T00:00:00+02:00",
+            "gjerningstidspunktTil": "2022-01-01T00:00:00+02:00",
+            "gjerningssted": {
+              "adresselinjer": ["Waldemar Carlsens veg 4"],
+              "postnummer": "2214",
+              "poststed": "KONGSVINGER",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            }
+          },
+          "statistikkgruppe": {
+            "kode": "0933",
+            "navn": "Mindre tyveri diverse"
+          },
+          "krimtype": {
+            "kode": "02",
+            "navn": "Vinning"
+          }
+        },
+        "siktelsesinfo": {
+          "lovbud": {
+            "lovbudId": "{0B0D6AED-3A43-4B70-AD86-8A4FE38B090B}",
+            "lovbudStreng": "Straffeloven § 232 annet ledd første straffalternativ, jf. § 231 første ledd, jf. straffeloven § 27",
+            "gjengivelse": "for ulovlig å ha tilvirket, innført, utført, ervervet, oppbevart, sendt eller overdratt narkotika. \r\n\r\nOvertredelsen omfatter en meget betydelig mengde.\r\n\r\nNår et straffebud er overtrådt av noen som har handlet på vegne av et foretak, kan foretaket straffes.",
+            "hjemmel": [],
+            "strafferamme": 180
+          },
+          "grunnlagstekst": "Campingbil med kokeutstyr og Breaking Bad DVD'er"
+        },
+        "involverte": {
+          "siktet": {
+            "internId": "700892414",
+            "navn": {
+              "fornavn": "Morsom",
+              "etternavn": "KIWI"
+            },
+            "foedselsdato": "1963-04-14"
+          },
+          "medsiktede": [
+            {
+              "person": {
+                "internId": "700892415",
+                "navn": {
+                  "fornavn": "Masse",
+                  "etternavn": "KIWI"
+                },
+                "identitetsnummer": {
+                  "foedselsnummer": "19877099302"
+                },
+                "tilleggsId": [],
+                "kjoenn": "MANN",
+                "foedselsdato": "1970-07-19",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }
+                ],
+                "tolk": {
+                  "behov": false
+                },
+                "personAdresse": {
+                  "adresse": {
+                    "adresselinjer": ["Rugdeberget 2"],
+                    "postnummer": "1266",
+                    "poststed": "OSLO"
+                  }
+                },
+                "verger": []
+              }
+            }
+          ],
+          "fornaermede": [
+            {
+              "foretak": {
+                "internId": "60044820",
+                "organisasjonsnummer": "976878442",
+                "navn": "Rema 100"
+              }
+            }
+          ],
+          "vitne": [
+            {
+              "internId": "700892688",
+              "navn": {
+                "fornavn": "Ariane",
+                "etternavn": "HUFSETE"
+              },
+              "kjoenn": "KVINNE",
+              "foedselsdato": "1970-01-01",
+              "statsborgerskap": [
+                {
+                  "kode": "ARM",
+                  "navn": "Armenia"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
+  "paagrepetSted": "Sinsenkrysset, 0570 OSLO kommune fritekst",
+  "dokumenter": [
+    {
+      "internId": "123234567871",
+      "overskrift": "Siktelse",
+      "kategori": {
+        "kode": "Siktelse"
+      },
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdfu",
+        "sjekksum": "234asass"
+      }
+    },
+    {
+      "internId": "123234567871",
+      "overskrift": "Straffeattest",
+      "kategori": {
+        "kode": "Straffeattest"
+      },
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdfx",
+        "sjekksum": "234asass"
+      }
+    }
+  ]
+}
