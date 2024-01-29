@@ -35,13 +35,13 @@
     </scm>
 
     <modules>
-        <module>kontrakter/politi/varetekt</module>
-        <module>kontrakter/politi/kjennelsevaretektpoliti</module>
+        <module>kontrakter/varetekt/begjaeringVaretekt</module>
+        <module>kontrakter/varetekt/kjennelsevaretektpoliti</module>
+        <module>kontrakter/varetekt/bestillvaretektsplass</module>
+        <module>kontrakter/varetekt/innsettelsesordre</module>
+        <module>kontrakter/varetekt/kjennelseVaretekt</module>
+        <module>kontrakter/varetekt/tilbudVaretektsplass</module>
         <module>kontrakter/politi/overfoeresakkonfliktraad</module>
-        <module>kontrakter/politi/bestillvaretektsplass</module>
-        <module>kontrakter/politi/innsettelsesordre</module>
-        <module>kontrakter/da/varetekt</module>
-        <module>kontrakter/kriminalomsorg/tilbudVaretektsplass</module>
         <module>kontrakter/personundersoekelse/rekvisisjonPersonundersoekelse</module>
         <module>kontrakter/personundersoekelse/returPersonundersoekelse</module>
         <module>kontrakter/konfliktraadet/oppdatertsaksstatus</module>
