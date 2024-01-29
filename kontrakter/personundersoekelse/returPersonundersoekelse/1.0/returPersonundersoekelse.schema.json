@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/returPersonundersoekelse",
+  "description": "Retur som svarer ut en rekvirert personundersøkelse. Inneholder normalt den ferdige PeU-rapporten (PDF). Sendes fra kriminalomsorgen til politiet. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
+    },
+    "rekvisisjonPersonundersoekelseId": {
+      "$ref": "#/definitions/unikId",
+      "description": "ID  på den tidligere rekvisisjonen kriminalomsorgen nå svarer ut. "
+    },
+    "returPersonundersoekelseId": {
+      "$ref": "#/definitions/unikId",
+      "description": "ID  på returen. "
+    },
+    "dokumenter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/dokument" }
+    }
+  },
+  "required": [
+    "forsendelse",
+    "hovedStraffesaksnummer",
+    "rekvisisjonPersonundersoekelseId",
+    "returPersonundersoekelseId",
+    "dokumenter"
+  ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn", "kontakt"],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til kriminalomsorgen."
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "description": "Dokument som oversendes på justishub",
+      "type": "object",
+      "properties": {
+        "internId": { "type": "string" },
+        "kategori": { "$ref": "#/definitions/kodeverk" },
+        "overskrift": { "type": "string" },
+        "skrevetDato": {
+          "description": "Dato",
+          "type": "string",
+          "format": "date-time"
+        },
+        "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
+      },
+      "required": ["overskrift", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "description": "Detaljer om lokasjon og type",
+      "type": "object",
+      "properties": {
+        "mimeType": { "type": "string" },
+        "uri": { "type": "string" },
+        "sjekksum": { "type": "string" }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "type": "object",
+      "description": "Sender (kriminalomsorg) og mottaker (påtale)  av meldingen",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Returneres til rekvirerende enhet hos politiet. Politiet ruter videre internt basert på rekvisisjonsID."
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/telefonnummer" }
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": { "type": "string" },
+        "mellomnavn": { "type": "string" },
+        "etternavn": { "type": "string" }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "description": "Kode og navn, kommer oppdatering med verdier",
+      "type": "object",
+      "properties": {
+        "kode": { "type": "string" },
+        "navn": { "type": "string" }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "[0-9]+",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "organisasjon": {
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "type": "object",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 1
+    }
+  }
+}

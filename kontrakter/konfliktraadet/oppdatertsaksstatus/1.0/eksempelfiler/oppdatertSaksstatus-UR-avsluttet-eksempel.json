@@ -22,13 +22,29 @@
   },
   "straffesaksnummer": "15434811",
   "statusOppdatering": {
-    "straffesakStatus": {
-      "meklingIkkeGjennomfoert": {
-        "resultat": "IKKE_MEKLET",
-        "aarsak": "SAMTYKKE_TRUKKET"
+    "ungdomsreaksjonStatus": {
+      "avsluttetUngdomsreaksjon": {
+        "aarsak": "FULLFOERT",
+        "totalLengde": 56
       }
     }
   },
+  "dokumenter": [
+    {
+      "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "sjekksum": "zG4JHcRs9dly360EYR9XzaCqLWRPEebL/LhNrDeEPQ8=",
+        "uri": "sftp://62.148.45.102/exchange/justishub/f048a6be-52c3-4ae1-94d3-0e4538c81393"
+      },
+      "overskrift": "Rettsbok førstegangsfengsling",
+      "skrevetDato": "2023-04-19",
+      "kategori": {
+        "kode": "DOKUMENTKATEGORI#RETTSBOK#1900-01-01",
+        "navn": "Rettsbok"
+      }
+    }
+  ],
   "siktet": {
     "navn": {
       "fornavn": "Morsom",

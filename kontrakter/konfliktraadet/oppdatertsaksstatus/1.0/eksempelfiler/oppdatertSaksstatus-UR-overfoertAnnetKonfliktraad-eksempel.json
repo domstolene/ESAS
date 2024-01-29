@@ -22,10 +22,20 @@
   },
   "straffesaksnummer": "15434811",
   "statusOppdatering": {
-    "straffesakStatus": {
-      "meklingIkkeGjennomfoert": {
-        "resultat": "IKKE_MEKLET",
-        "aarsak": "SAMTYKKE_TRUKKET"
+    "ungdomsreaksjonStatus": {
+      "overfoertAnnetKonfliktraad": {
+        "konfliktraad": {
+          "organisasjonsnummer": "986074465",
+          "navn": "Konfliktrådet Agder"
+        },
+        "nySaksansvarlig": {
+          "tittel": "Saksansvarlig",
+          "fornavn": "Ansvarlig",
+          "etternavn": "Voksen",
+          "kontakt": {
+            "telefonnummer": ["77777777"]
+          }
+        }
       }
     }
   },

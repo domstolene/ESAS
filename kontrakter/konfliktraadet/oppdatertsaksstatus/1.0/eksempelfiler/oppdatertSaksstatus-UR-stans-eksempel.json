@@ -22,10 +22,9 @@
   },
   "straffesaksnummer": "15434811",
   "statusOppdatering": {
-    "straffesakStatus": {
-      "meklingIkkeGjennomfoert": {
-        "resultat": "IKKE_MEKLET",
-        "aarsak": "SAMTYKKE_TRUKKET"
+    "ungdomsreaksjonStatus": {
+      "stansUngdomsreaksjon": {
+        "aarsak": "BRUDD_PGA_VILKÅR"
       }
     }
   },

@@ -25,9 +25,9 @@
       <xs:element name="RestDager" type="xs:int" nillable="false"/>
 
       <xs:element name="DagerVaretektEtterDom" type="xs:int" nillable="true" />
-           
+
       <xs:element name="DagerVaretektFoerDom" type="xs:int" nillable="true" />
-                
+
       <xs:element name="GjennomfoeringsStatus" type="fns:GjennomfoeringsStatusType" />
 
       <xs:element name="EndringAarsak" type="fns:EndringGjennomfoeringAarsakType" nillable="false" />

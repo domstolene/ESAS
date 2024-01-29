@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorgen.no/kriminalomsorg/fengsling/1.0/tilbudVaretektsplass",
+  "description": "Tilbud om varetektsplass fra KO til påtale. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
+    },
+    "tilbudVaretektsplassId": {
+      "$ref": "#/definitions/unikId",
+      "description": "ID på plasstilbudet. alle svar påtilbudet skal koble til denne  nøkkelen."
+    },
+    "bestillingAvVaretektsplassId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Nøkkel på bestillingen. Denne meldingen er et svar på  bestilling og må referere til denne bestillingsID-en."
+    },
+    "kontaktPersonKDI": { "$ref": "#/definitions/ansattPerson" },
+    "varetektSyklusId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Til å begynne med vil dette være et løpenummer, kan endres til GUID senere. Første forsendelsene vil ikke inneholde dette."
+    },
+    "fengselDerPlassTilbys": { "$ref": "#/definitions/organisasjon" },
+    "fengseletsTelefonnummer": {
+      "$ref": "#/definitions/telefonnummer",
+      "description": "Et evt. telefonnumer til fengselet. Typisk sentralbordets nummer, oppgis slik at politiet kan spare tid om man må kontakte fengsel f.eks. grunnet problemer som kan oppstå under transport."
+    },
+    "kommentarTilPlasstilbudet": {
+      "type": "string",
+      "description": "Utfyllende informasjon om tilbudet, hvis nødvendig. Kan brukes til å oppgi direkte telefonnummer i første versjoner og spesielle tilfeller m.m."
+    },
+    "varetetktsplassTilbysFra": {
+      "description": "Plassen tilbys normalt fra dagen i dag. Plass kan evt. tilbys fra dagen etter i enkelte tilfeller og ved spesielle forespørsler. (Mulig denne fjernes fra modell om den ikke skal benyttes i praksis - vi må erfare mer.) ",
+      "type": "string",
+      "format": "date-time"
+    },
+    "dokumenter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/dokument" }
+    }
+  },
+  "required": [
+    "forsendelse",
+    "hovedStraffesaksnummer",
+    "bestillingAvVaretektsplassId",
+    "tilbudVaretektsplassId",
+    "fengselDerPlassTilbys"
+  ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til domstolen."
+        }
+      },
+      "required": ["organisasjon"],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/telefonnummer" }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "description": "Dokument som oversendes på justishub",
+      "type": "object",
+      "properties": {
+        "internId": { "type": "string" },
+        "kategori": { "$ref": "#/definitions/kodeverk" },
+        "overskrift": { "type": "string" },
+        "skrevetDato": {
+          "description": "Dato",
+          "type": "string",
+          "format": "date-time"
+        },
+        "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
+      },
+      "required": ["overskrift", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "description": "Detaljer om lokasjon og type",
+      "type": "object",
+      "properties": {
+        "mimeType": { "type": "string" },
+        "uri": { "type": "string" },
+        "sjekksum": { "type": "string" }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "type": "object",
+      "description": "Sender (kriminalomsorg) og mottaker (påtale) av meldingen",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Bestillende politidistrikt."
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "type": "object",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": { "type": "string" },
+        "mellomnavn": { "type": "string" },
+        "etternavn": { "type": "string" }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "description": "Kode og navn, kommer oppdatering med verdier",
+      "type": "object",
+      "properties": {
+        "kode": { "type": "string" },
+        "navn": { "type": "string" }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "[0-9]+",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 1
+    }
+  }
+}

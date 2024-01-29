@@ -1,0 +1,168 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F987186",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Politiets Datatjeneste"
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "890286712",
+      "navn": "Bjørgvin fengsel"
+    }
+  },
+  "bestillingAvVaretektsplassId": "6322B3E2-B22B-40B6-8940-799C48707D89",
+  "hovedStraffesaksnummer": "15434819",
+  "ordreId": "0322B3E2-B12B-40B6-8940-799C48706D89",
+  "personVaretektInfo": {
+    "varetektSyklusId": "D784D27C-C1BB-4BB2-90FD-96C414A64AEB",
+    "personVaretekt": {
+      "internId": "700892414",
+      "navn": {
+        "fornavn": "Morsom",
+        "etternavn": "KIWI"
+      },
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "kjoenn": "MANN",
+      "foedselsdato": "1963-04-14",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "adresseGradering": "KLIENT_ADRESSE",
+      "personAdresse": {
+        "gradering": "KLIENT_ADRESSE",
+        "adresse": {
+          "adresselinjer": ["Bjørklund 21"],
+          "postnummer": "4137",
+          "poststed": "ÅRDAL I RYFYLKE"
+        }
+      },
+      "verger": []
+    },
+    "straffesaker": [
+      {
+        "straffesaksnummer": "15434819",
+        "detaljer": {
+          "hendelse": {
+            "gjerningstidspunktFra": "2022-01-01T00:00:00+02:00",
+            "gjerningstidspunktTil": "2022-01-01T00:00:00+02:00",
+            "gjerningssted": {
+              "adresselinjer": ["Waldemar Carlsens veg 4"],
+              "postnummer": "2214",
+              "poststed": "KONGSVINGER",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            }
+          },
+          "statistikkgruppe": {
+            "kode": "0933",
+            "navn": "Mindre tyveri diverse"
+          }
+        },
+        "involverte": {
+          "siktet": {
+            "internId": "700892414",
+            "navn": {
+              "fornavn": "Morsom",
+              "etternavn": "KIWI"
+            },
+            "foedselsdato": "1963-04-14"
+          },
+          "medsiktede": [
+            {
+              "person": {
+                "internId": "700893213",
+                "navn": {
+                  "fornavn": "Per",
+                  "etternavn": "OTTERSTAD"
+                },
+                "identitetsnummer": {
+                  "foedselsnummer": "14846399381"
+                },
+                "tilleggsId": [],
+                "personAdresse": {
+                  "gradering": "KLIENT_ADRESSE",
+                  "adresse": {
+                    "adresselinjer": ["Bjørklund 21"],
+                    "postnummer": "4137",
+                    "poststed": "ÅRDAL I RYFYLKE"
+                  }
+                },
+                "kjoenn": "MANN",
+                "foedselsdato": "1975-12-12",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }
+                ],
+                "verger": []
+              }
+            }
+          ],
+          "fornaermede": [],
+          "vitner": []
+        }
+      }
+    ]
+  },
+  "ordreVaretekt": {
+    "merknad": "Første ordre fra påtale. Hvilke varianter av brev og besøksforbud og delvs/full isolasjon er mulig.\r\nHva med annet, hvilken lovhjemmel er det og hva kan det være. Det er ikke mulig strukturert i dag",
+    "besluttetAv": {
+      "tittel": "Politifullmektig",
+      "fornavn": "Tom Erik Wassenaar",
+      "etternavn": "Berntsen"
+    },
+    "fengslingFraDato": "2023-01-01",
+    "fengslingTilDato": "2023-01-03",
+    "beslutningsTidspunkt": "2022-11-03T10:19:56+02:00",
+    "restriksjoner": {
+      "merknad": "Ingen brev til denne personen",
+      "restriksjoner": ["BREV_OG_BESOEKSFORBUD"]
+    },
+    "isolasjon": {
+      "merknad": "Ingen kontakt",
+      "isolasjon": ["FULL"]
+    }
+  },
+  "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00",
+  "paagrepetSted": "Alvdal",
+  "dokumenter": [
+    {
+      "internId": "1234567879",
+      "overskrift": "Begjæring om varetekt, Kiwi",
+      "skrevetDato": "2022-11-03",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    },
+    {
+      "internId": "123234567879",
+      "overskrift": "Siktelse",
+      "kategori": {
+        "kode": "siktelse"
+      },
+      "skrevetDato": "2022-10-14",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdf",
+        "sjekksum": "234asass"
+      }
+    }
+  ]
+}

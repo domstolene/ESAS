@@ -9,9 +9,9 @@
   <xs:complexType name="MetadataType">
     <xs:all>
       <xs:element name="MeldingsId" type="xs:string" nillable="false" />
-		<xs:element name="HendelseId" type="xs:string" nillable="true"/>
+      <xs:element name="HendelseId" type="xs:string" nillable="true"/>
       <xs:element name="HendelseOpprettetTid" type="xs:dateTime" minOccurs="1"/>
-	    <xs:element name="HendelseEndretTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="HendelseEndretTid" type="xs:dateTime" nillable="true"/>
       <xs:element name="SSP" type="xs:string" nillable="true" />
       <xs:element name="DUF" type="tns:DUFNummerListe" nillable="true" />
       <xs:element name="StraffesaksNummer" type="xs:string" nillable="true" />
@@ -202,6 +202,9 @@
       <xs:enumeration value="Utvist fra Norge"/>
       <xs:enumeration value="Utlevert til utlandet etter begjæring"/>
       <xs:enumeration value="Løslatt etter 7/12 tid"/>
+      <xs:enumeration value="Løslatt endt tid og utvist (soning)"/>
+      <xs:enumeration value="Prøveløslatt strgjfl. § 42.1 og utvist (soning) (prøveløslatelse 2/3-tid)"/>
+      <xs:enumeration value="Prøveløslatt strgjfl. § 42.4 og utvist (soning) (kort tid før endt tid)"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EndringOppdaterteDatoerAarsakType">
@@ -223,10 +226,10 @@
       <xs:enumeration value="Forlengelse av varetekt"/>   
       <xs:enumeration value="Ny forvaring (forlengelse)"/> 
       <xs:enumeration value="Ny reaksjon"/>
-	  <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
-	  <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
-	  <xs:enumeration value="Ny straffegjennomføring"/>
-	</xs:restriction>
+      <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
+      <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
+      <xs:enumeration value="Ny straffegjennomføring"/>
+    </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EndringGjennomfoeringAarsakType">
     <xs:restriction base="xs:string">
@@ -266,15 +269,15 @@
       <xs:enumeration value="Uteblivelse - Straffavbrudd"/>
       <xs:enumeration value="Uteblivelse - 10 timers permisjon"/>
       <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
-	  <xs:enumeration value="Overført ny kategori etter 1/2 tid"/>
-	  <xs:enumeration value="Overført ny kategori etter 2/3 tid"/>
-	  <xs:enumeration value="Overført ny kategori kort tid før 1/2 eller 2/3, §42.4"/>
-	  <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
-	  <xs:enumeration value="Melding om straffavbrudd pga ny straffbar handling*"/>
-	  <xs:enumeration value="Avbrytelse av straff*"/>
-	  <xs:enumeration value="Unnveket/uteblitt fra fengsel"/>
-	  <xs:enumeration value="Autom. endret status fra AKT til STA"/>
-	  <xs:enumeration value="Periode for straffeavbrudd"/>
+      <xs:enumeration value="Overført ny kategori etter 1/2 tid"/>
+      <xs:enumeration value="Overført ny kategori etter 2/3 tid"/>
+      <xs:enumeration value="Overført ny kategori kort tid før 1/2 eller 2/3, §42.4"/>
+      <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
+      <xs:enumeration value="Melding om straffavbrudd pga ny straffbar handling*"/>
+      <xs:enumeration value="Avbrytelse av straff*"/>
+      <xs:enumeration value="Unnveket/uteblitt fra fengsel"/>
+      <xs:enumeration value="Autom. endret status fra AKT til STA"/>
+      <xs:enumeration value="Periode for straffavbrudd"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="LoeslatelseFraSamfunnAarsakType">
@@ -352,7 +355,7 @@
       <xs:enumeration value="Samfunnstraff"/>            
     </xs:restriction>
   </xs:simpleType>
-	
+
   <xs:complexType name="DomsinformasjonType">
     <xs:all>
       <xs:element name="Domstol" type="xs:string"/>

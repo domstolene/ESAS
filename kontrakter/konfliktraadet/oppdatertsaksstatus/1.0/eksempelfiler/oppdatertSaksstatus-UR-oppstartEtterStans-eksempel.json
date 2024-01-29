@@ -22,10 +22,9 @@
   },
   "straffesaksnummer": "15434811",
   "statusOppdatering": {
-    "straffesakStatus": {
-      "meklingIkkeGjennomfoert": {
-        "resultat": "IKKE_MEKLET",
-        "aarsak": "SAMTYKKE_TRUKKET"
+    "ungdomsreaksjonStatus": {
+      "oppstartEtterStans": {
+        "aarsak": "OENSKER_IKKE_OMGJOERE"
       }
     }
   },

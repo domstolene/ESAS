@@ -42,7 +42,8 @@
         <module>kontrakter/politi/innsettelsesordre</module>
         <module>kontrakter/da/varetekt</module>
         <module>kontrakter/kriminalomsorg/tilbudVaretektsplass</module>
-        <module>kontrakter/kriminalomsorg/rekvisisjonPersonundersoekelse</module>
+        <module>kontrakter/personundersoekelse/rekvisisjonPersonundersoekelse</module>
+        <module>kontrakter/personundersoekelse/returPersonundersoekelse</module>
         <module>kontrakter/konfliktraadet/oppdatertsaksstatus</module>
         <module>kontrakter/felles/kvittering</module>
         <module>kodeverk/felles</module>

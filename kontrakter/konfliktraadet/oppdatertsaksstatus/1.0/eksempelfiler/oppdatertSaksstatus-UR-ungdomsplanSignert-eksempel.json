@@ -22,10 +22,10 @@
   },
   "straffesaksnummer": "15434811",
   "statusOppdatering": {
-    "straffesakStatus": {
-      "meklingIkkeGjennomfoert": {
-        "resultat": "IKKE_MEKLET",
-        "aarsak": "SAMTYKKE_TRUKKET"
+    "ungdomsreaksjonStatus": {
+      "ungdomsplanSignert": {
+        "datoSignering": "1923-11-19",
+        "datoGjenopprettendeMoete": "1923-12-19"
       }
     }
   },

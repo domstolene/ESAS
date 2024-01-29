@@ -1,0 +1,118 @@
+{
+  "forsendelse": {
+    "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0AA",
+    "sendtTid": "2022-07-06T16:35:00+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "826726342",
+        "navn": "Buskerud tingrett"
+      },
+      "rettsInstans": "TINGRETT",
+      "person": {
+        "etternavn": "Saksbehandler",
+        "fornavn": "Litt",
+        "tittel": "Saksbehandler"
+      }
+    },
+    "mottaker": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      }
+    },
+    "rettelse": false
+  },
+  "aktoerer": {
+    "dommer": {
+      "etternavn": "Dommersen",
+      "fornavn": "Lars",
+      "tittel": "Dommerfullmeltig"
+    },
+    "saksbehandler": {
+      "etternavn": "Saksbehandler",
+      "fornavn": "Litt",
+      "tittel": "Saksbehandler"
+    }
+  },
+  "siktede": {
+    "identitetsnummer": {
+      "foedselsnummer": "14846399381"
+    },
+    "tilleggsId": [],
+    "fornavn": "Morsom",
+    "etternavn": "Kivi",
+    "kjoenn": "MANN",
+    "foedselsdato": "1963-04-14",
+    "nasjonalitet": {
+      "kode": "NOR",
+      "navn": "Norge"
+    }
+  },
+  "dokumenter": [
+    {
+      "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7ac",
+        "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb"
+      },
+      "overskrift": "Rettsbok varetektsfengsling",
+      "skrevetDato": "2022-07-06",
+      "kategori": {
+        "kode": "DOKUMENTKATEGORI#RETTSBOK#1900-01-01",
+        "navn": "Rettsbok"
+      }
+    }
+  ],
+  "saksInformasjon": {
+    "saksnummer": "22-025462ENE-TBUS/TDRA",
+    "straffesaksnummer": "15434820",
+    "avgjoerelse": {
+      "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
+      "avsagtDato": "2022-07-05",
+      "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+      "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+      "avgjoerelseResultat": "FENGSLING",
+      "restriksjoner": [
+        {
+          "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
+          "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
+          "fraDato": "2022-07-06",
+          "tilDato": "2022-07-20"
+        },
+        {
+          "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
+          "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
+          "fraDato": "2022-07-21",
+          "tilDato": "2022-08-06"
+        }
+      ],
+      "isolasjonsKrav": [
+        {
+          "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
+          "isolasjonsType": "FULL",
+          "fraDato": "2022-07-06",
+          "tilDato": "2022-08-06"
+        }
+      ],
+      "fengsling": {
+        "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
+        "fraDato": "2022-07-06",
+        "tilDato": "2022-08-06",
+        "fengslingsFristDato": "2022-07-06",
+        "lovbud": {
+          "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
+        },
+        "merknad": "Kiwi må i varetekt så fort som fy"
+      },
+      "erklaering": {
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": false
+        },
+        "erklaeringPaatale": {
+          "meddeltIRettsmoete": false
+        }
+      }
+    }
+  }
+}
