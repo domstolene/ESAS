@@ -20,6 +20,12 @@
       "$ref": "#/definitions/unikId",
       "description": "ID  på returen. "
     },
+    "returPersonundersoekelseType": {
+      "type": "string",
+      "enum": ["UTFOERT_PERSONUNDERSOEKELSE", "RETURNERT_IKKE_UTFOERT"],
+      "description": "Spesifiserer om returen inneoholder en ferdig utarbeidet personundersøkelse - eller om den er'returnert ikke utført', f.eks. om siktede har nektet samarbeide. "
+    },
+  
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -30,6 +36,7 @@
     "hovedStraffesaksnummer",
     "rekvisisjonPersonundersoekelseId",
     "returPersonundersoekelseId",
+    "returPersonundersoekelseType",
     "dokumenter"
   ],
   "additionalProperties": false,
