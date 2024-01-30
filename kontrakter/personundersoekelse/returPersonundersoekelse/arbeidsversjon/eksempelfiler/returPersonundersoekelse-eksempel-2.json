@@ -32,7 +32,15 @@
       "overskrift": "Saskbehandlers forklaring av hvorfor undersøkelse ikke kunne utføres (PDF)",
       "kategori": {
         "kode": "UKJENT"
+      },
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfzzdfsdfu",
+        "sjekksum": "234asass"
       }
+    }
+
     }
   ]
 }
