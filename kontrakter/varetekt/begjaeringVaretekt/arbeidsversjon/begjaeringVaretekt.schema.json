@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/arbeidsversjon/begjaeringVaretekt",
+  "$id": "https://politiet.no/varetekt/arbeidsversjon/begjaeringVaretekt",
   "description": "Skjema for begjæring av varetektsmeldinger fra påtale til tingretten, JSON Schema versjon 2020-12",
   "type": "object",
   "properties": {
