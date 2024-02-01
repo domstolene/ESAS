@@ -1,6 +1,6 @@
 {
   "forsendelse": {
-    "meldingsId": "C5E8E429-4321-48A9-A9D3-FDAA5F9BE2",
+    "meldingsId": "C5E8E429-4321-48A9-A9D3-FDAA5F9BE3",
     "sendtTid": "2023-11-03T10:19:55+02:00",
     "avsender": {
       "organisasjon": {
@@ -24,19 +24,19 @@
   },
   "hovedStraffesaksnummer": "15434811",
   "rekvisisjonPersonundersoekelseId": "0322B3E2-B12B-40B6-8940-799C48706123",
-  "returPersonundersoekelseId": "0322B3E2-B12B-40B6-1234-799C48706123",
-  "returPersonundersoekelseType": "UTFOERT_PERSONUNDERSOEKELSE",
+  "returPersonundersoekelseId": "0322B3E2-B12B-40B6-1234-799C48706124",
+  "returPersonundersoekelseType": "RETURNERT_IKKE_UTFOERT",
   "dokumenter": [
     {
-      "internId": "123234567871",
-      "overskrift": "Personundersøkelse(PDF)",
+      "internId": "123234562271",
+      "overskrift": "Saskbehandlers forklaring av hvorfor undersøkelse ikke kunne utføres (PDF)",
       "kategori": {
-        "kode": "RETUR_PERSONUNDERSOEKELSE"
+        "kode": "UKJENT"
       },
       "skrevetDato": "2022-10-14T00:00:00+02:00",
       "forsendelse": {
         "mimeType": "application/pdf",
-        "uri": "file:///asdfaasdfsdfu",
+        "uri": "file:///asdfzzdfsdfu",
         "sjekksum": "234asass"
       }
     }
