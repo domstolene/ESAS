@@ -7,6 +7,12 @@
 | 1.1     | Tolk og til hovedforhandling              | 01.08.2023 | 09.10.2023 |
 | 1.0     | Brukertest juni 2023, ikke til produksjon |            | 01.08.2023 |
 
+## Versjon 1.X
+
+### Begjæring om varetekt gyldig fra 
+
+Dersom det begjæres om varetekt frem i tid er det lagt til et felt gyldigFraDato i paastandVaretekt som sier når begjæringen skal gjelde fra.
+
 ## Versjon 1.3
 
 ### Fødselsdato på vitner er optional
