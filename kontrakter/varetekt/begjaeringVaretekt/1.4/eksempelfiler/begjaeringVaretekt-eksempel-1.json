@@ -1,0 +1,370 @@
+{
+  "forsendelse": {
+    "meldingsId": "A1D283D1-7436-411A-B2F8-20CB9CFB11C2",
+    "sendtTid": "2023-03-30T17:21:27+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Politiets Datatjeneste"
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "926723480",
+      "navn": "Agder tingrett"
+    }
+  },
+  "hovedStraffesaksnummer": "15434819",
+  "begjaeringVaretekt": {
+    "kravId": "9ED6D9E4-64D7-49B3-A873-5E098AE0F635",
+    "siktet": {
+      "person": {
+        "internId": "700892415",
+        "navn": {
+          "fornavn": "Masse",
+          "etternavn": "KIWI"
+        },
+        "identitetsnummer": {
+          "foedselsnummer": "19877099302"
+        },
+        "tilleggsId": [],
+        "kjoenn": "MANN",
+        "foedselsdato": "1970-07-19",
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ],
+        "personAdresse": {
+          "adresse": {
+            "adresselinjer": ["Rugdeberget 2"],
+            "postnummer": "1266",
+            "poststed": "OSLO"
+          }
+        }
+      },
+      "tolk": {
+        "behov": "JA_POLITIET_STILLER",
+        "spraak": "CMN"
+      },
+      "forsvarerinformasjon": {
+        "oppnevntForsvarer": {
+          "person": {
+            "tittel": "Advokat",
+            "navn": {
+              "fornavn": "Ole",
+              "etternavn": "Olsen"
+            }
+          },
+          "erVarsletOmFenglingsmoete": true
+        },
+        "oensketForsvarer": {
+          "person": {
+            "tittel": "Advokat",
+            "navn": {
+              "fornavn": "Ole",
+              "etternavn": "Olsen"
+            }
+          }
+        }
+      },
+      "verger": []
+    },
+    "varetekt": {
+      "lovbud": {
+        "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
+      },
+      "paastandVaretekt": {
+        "fengsling": {
+          "varighet": {
+            "tilHovedforhandling": true
+          }
+        },
+        "restriksjoner": [
+          {
+            "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
+            "lovbudEnkel": {
+              "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
+            },
+            "periode": {
+              "startDag": 1,
+              "varighet": {
+                "antallDager": 14
+              }
+            }
+          },
+          {
+            "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
+            "lovbudEnkel": {
+              "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
+            },
+            "periode": {
+              "startDag": 15,
+              "varighet": {
+                "antallDager": 14
+              }
+            }
+          }
+        ],
+        "isolasjon": [
+          {
+            "isolasjonsType": "FULL_ISOLASJON",
+            "lovbudEnkel": {
+              "lovbudStreng": "Strpl. § 186a"
+            },
+            "periode": {
+              "startDag": 1,
+              "varighet": {
+                "tilHovedforhandling": true
+              }
+            }
+          }
+        ]
+      },
+      "vilkaar": [
+        {
+          "type": "STRPL171_2_BEVISFORSPILLELSE",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl § 171 nr 2"
+          }
+        },
+        {
+          "type": "STRPL171_3_GJENTAGELSESFARE",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl § 171 nr 3"
+          }
+        },
+        {
+          "type": "STRPL170A_FORHOLSMESSIGHET",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl § 170a"
+          }
+        }
+      ]
+    },
+    "saksinformasjon": {
+      "varetektsType": "VANLIG",
+      "forlengelse": {
+        "beskrivelse": "forlengelse"
+      },
+      "hovedforhandlingsdato": "2023-12-11",
+      "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
+      "berammetFengslingsmoete": {
+        "dato": "2023-04-19",
+        "sted": "Sal 3, tinghuset"
+      },
+      "varsleBistandsadvokat": "Retten anmodes om å varsle bistandsadvokaten om tidspunktet for rettsmøtet, jf. straffeprosessloven § 107c, 2. led",
+      "begrenseOffentlighet": ["FORBUD_GJENGIVELSE"],
+      "ansvarligPaatalejurist": {
+        "brukeridentifikasjon": "BLC218",
+        "fornavn": "BLC218",
+        "etternavn": "BLC218"
+      },
+      "aktor": {
+        "brukeridentifikasjon": "BLC218",
+        "fornavn": "BLC218",
+        "etternavn": "BLC218"
+      }
+    }
+  },
+  "vedlegg": {
+    "straffesaker": [
+      {
+        "straffesaksnummer": "15434819",
+        "detaljer": {
+          "hendelse": {
+            "gjerningstidspunktFra": "2022-01-01T00:00:00+02:00",
+            "gjerningstidspunktTil": "2022-01-01T00:00:00+02:00",
+            "gjerningssted": {
+              "adresselinjer": ["Waldemar Carlsens veg 4"],
+              "postnummer": "2214",
+              "poststed": "KONGSVINGER",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            }
+          },
+          "statistikkgruppe": {
+            "kode": "0933",
+            "navn": "Mindre tyveri diverse"
+          }
+        },
+        "involverte": {
+          "siktet": {
+            "internId": "700892415",
+            "navn": {
+              "fornavn": "Masse",
+              "etternavn": "KIWI"
+            },
+            "foedselsdato": "1970-07-19"
+          },
+          "medsiktede": [
+            {
+              "person": {
+                "internId": "700892414",
+                "navn": {
+                  "fornavn": "Morsom",
+                  "etternavn": "KIWI"
+                },
+                "identitetsnummer": {
+                  "foedselsnummer": "14846399381"
+                },
+                "tilleggsId": [],
+                "kjoenn": "MANN",
+                "foedselsdato": "1963-04-14",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }
+                ],
+                "personAdresse": {
+                  "adresse": {
+                    "adresselinjer": ["Bjørklund 21"],
+                    "postnummer": "4137",
+                    "poststed": "ÅRDAL I RYFYLKE"
+                  }
+                }
+              }
+            },
+            {
+              "foretak": {
+                "internId": "340078107",
+                "organisasjonsnummer": "984954808",
+                "navn": "Obs"
+              }
+            },
+            {
+              "person": {
+                "internId": "700893213",
+                "navn": {
+                  "fornavn": "Per",
+                  "etternavn": "OTTERSTAD"
+                },
+                "tilleggsId": [],
+                "kjoenn": "MANN",
+                "foedselsdato": "1975-12-12",
+                "statsborgerskap": [
+                  {
+                    "kode": "SWE",
+                    "navn": "Sverige"
+                  }
+                ]
+              }
+            }
+          ],
+          "fornaermede": [
+            {
+              "person": {
+                "internId": "700892735",
+                "navn": {
+                  "fornavn": "Sannferdig",
+                  "etternavn": "KOS"
+                },
+                "identitetsnummer": {
+                  "foedselsnummer": "31907499858"
+                },
+                "tilleggsId": [],
+                "kjoenn": "KVINNE",
+                "foedselsdato": "1974-10-31",
+                "statsborgerskap": [
+                  {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                  }
+                ],
+                "personAdresse": {
+                  "adresse": {
+                    "adresselinjer": ["Bratsberggata 29"],
+                    "postnummer": "3714",
+                    "poststed": "SKIEN"
+                  }
+                }
+              }
+            }
+          ],
+          "vitne": [
+            {
+              "internId": "700892775",
+              "navn": {
+                "fornavn": "Naturstridig",
+                "etternavn": "BALLONG"
+              },
+              "identitetsnummer": {
+                "foedselsnummer": "21907699738"
+              },
+              "kjoenn": "MANN",
+              "statsborgerskap": [
+                {
+                  "kode": "NOR",
+                  "navn": "Norge"
+                }
+              ],
+              "personAdresse": {
+                "adresse": {
+                  "adresselinjer": ["Øvstedalsvegen 87"],
+                  "postnummer": "6391",
+                  "poststed": "TRESFJORD"
+                }
+              }
+            },
+            {
+              "internId": "700893306",
+              "navn": {
+                "fornavn": "Taktfull",
+                "etternavn": "HOPPE"
+              },
+              "identitetsnummer": {
+                "foedselsnummer": "14845795658"
+              },
+              "kjoenn": "KVINNE",
+              "foedselsdato": "1957-04-14",
+              "statsborgerskap": [
+                {
+                  "kode": "NOR",
+                  "navn": "Norge"
+                }
+              ],
+              "personAdresse": {
+                "adresse": {
+                  "adresselinjer": ["Geisnesvegen 1505"],
+                  "postnummer": "7960",
+                  "poststed": "SALSBRUKET"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "dokumenter": [
+      {
+        "internId": "1234567879",
+        "overskrift": "Begjæring om varetekt, Kiwi",
+        "skrevetDato": "2023-03-30",
+        "forsendelse": {
+          "mimeType": "application/pdf",
+          "uri": "file:///asdfasdf",
+          "sjekksum": "234s"
+        }
+      },
+      {
+        "internId": "123234567879",
+        "overskrift": "Siktelse",
+        "kategori": {
+          "kode": "siktelse"
+        },
+        "skrevetDato": "2023-03-10",
+        "forsendelse": {
+          "mimeType": "application/pdf",
+          "uri": "file:///asdfaasdfsdf",
+          "sjekksum": "234asass"
+        }
+      }
+    ]
+  }
+}
