@@ -1,7 +1,8 @@
 # kjennelseVaretekt endringslogg
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til  |
 |---------|---------------------------------------------|----------------|--------------|------------|
-| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | ??             | 05.02.2024   |            |
+| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | ??             |              |            |
+| 1.1     | Kjennelse med minst ett dokument            | aktiv nå       | aktiv nå     |            |
 | 1.0     | Første versjon i produksjon                 |                |              | 05.02.2024 |
 
 # Versjon 1.2
