@@ -52,7 +52,9 @@ Så vil det kontinuerlig legges inn nye endringer i `innsettelsesordre/arbeidsve
 i `changelog.md`.
 
 Når man ønsker å release en ny versjon av `innsettelsesorde`-schema, kopierer man ut nåværende versjon fra `arbeidsversjon`
-inn i en ny versjonsmappe:
+inn i en ny versjonsmappe
+
+Eldre versjoner som ikke lenger er i bruk kan flyttes til en mappe "gammel" som ikke valideres lenger.
 
 ```
 └── innsettelsesordre
@@ -65,12 +67,16 @@ inn i en ny versjonsmappe:
     │   ├── foo.schema.json
     │   └── eksempelfiler
     │       └── foo-oppdatert-eksempel.json
-    └── arbeidsversjon
-        ├── foo.schema.json
-        └── eksempelfiler
-            └── foo-oppdatert-eksempel.json
+    ├── arbeidsversjon
+    │   ├── foo.schema.json
+    │   └── eksempelfiler
+    │       └── foo-oppdatert-eksempel.json
+    └── gammel
+        └── 0.9
+  
 ```
 
 ## Changelog
 
 09.08.2023: Opprettet RFC for versjonshåndtering av meldinger.
+07.02.2024: gammel katalog for eldre versjoner
