@@ -165,7 +165,8 @@
       "required": [
         "siktedeErInformertOmAnmodningOmPersonundersoekelse",
         "vergerErInformertOmAnmodningOmPersonundersoekelse",
-        "siktedeHarSamtykketTilPersonundersoekelse", "vergerHarSamtykketTilPersonundersoekelse",
+        "siktedeHarSamtykketTilPersonundersoekelse", 
+        "vergerHarSamtykketTilPersonundersoekelse",
         "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen",
         "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"
       ],
