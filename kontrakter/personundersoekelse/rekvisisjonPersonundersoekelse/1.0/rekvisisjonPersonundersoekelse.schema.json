@@ -155,14 +155,14 @@
       "title": "samtykkerOgInformering",
       "type": "object",
       "properties": {
-        "siktedeErKjentMedAnmodningOmPersonundersoekelse": { "type": "boolean" },
-        "vergerErKjentMedAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "siktedeErInformertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "vergerErInformertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
         "siktedeHarSamtykketTilPersonundersoekelse": { "type": "boolean" },
         "vergerHarSamtykketTilPersonundersoekelse": { "type": "boolean" },
         "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" },
         "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" }
       },
-      "required": ["siktedeErKjentMedAnmodningOmPersonundersoekelse", "vergerErKjentMedAnmodningOmPersonundersoekelse", "siktedeHarSamtykketTilPersonundersoekelse", "vergerHarSamtykketTilPersonundersoekelse", "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen", "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"],
+      "required": ["siktedeErInformertOmAnmodningOmPersonundersoekelse", "vergerErInformertOmAnmodningOmPersonundersoekelse", "siktedeHarSamtykketTilPersonundersoekelse", "vergerHarSamtykketTilPersonundersoekelse", "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen", "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"],
       "additionalProperties": false
     },
     "adresse": {

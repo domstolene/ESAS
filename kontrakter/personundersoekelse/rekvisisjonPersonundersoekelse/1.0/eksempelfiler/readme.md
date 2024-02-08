@@ -3,7 +3,6 @@ Eksempel 1 beskriver er en enklest mulig rekvisisjon (generisk PeU).
  - Ikke informert om PUM. Ikke samtykket til denne, heller ikke  deling av opplysninger i KOG
 
 Eksempel 2 beskriver en mer fyldig rekvisisjon av type PUM:
-
 - Tekstlig utdypelse av formålet med undersøkelsen (i tillegg til type)
 - Siktet får Varg Vergernes fnr 01018012345 som verge
 - Siktet har tolkebehov for språkkode DEU (tysk)

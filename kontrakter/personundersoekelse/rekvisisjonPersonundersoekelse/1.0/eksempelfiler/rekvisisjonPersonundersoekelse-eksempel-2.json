@@ -56,11 +56,11 @@
     "berammetDatoForHovedforhandling": "2023-01-14T10:00:00+02:00"
   },
   "samtykkerOgInformering": {
-    "siktedeErKjentMedAnmodningOmPersonundersoekelse":true, 
-    "vergerErKjentMedAnmodningOmPersonundersoekelse": true,
-    "siktedeHarSamtykketTilPersonundersoekelse": true, 
-    "vergerHarSamtykketTilPersonundersoekelse":true, 
-    "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen":true,
+    "siktedeErInformertOmAnmodningOmPersonundersoekelse": true,
+    "vergerErInformertOmAnmodningOmPersonundersoekelse":  true,
+    "siktedeHarSamtykketTilPersonundersoekelse": true,
+    "vergerHarSamtykketTilPersonundersoekelse": true,
+    "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": true,
     "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": true
   },
   "personundersoekelseInfo": {
