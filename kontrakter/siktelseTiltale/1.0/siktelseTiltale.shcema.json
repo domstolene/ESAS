@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/arbeidsversjon/siktelseTiltalepunkter",
+  "$id": "https://politiet.no/1.0/siktelseTiltale",
   "description": "Siktelse, tiltale, forelegg, tilleggssiktelse, tilleggstiltale som egen melding, JSON Schema versjon 2020-12",
 
   "type": "object",
@@ -39,15 +39,6 @@
           "$ref": "#/definitions/person",
           "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
         },
-        "tolk": {
-          "type": "object",
-          "properties": {
-            "behov": { "$ref": "#/definitions/behovForTolkType" },
-            "spraak": { "$ref": "#/definitions/spraakkodeType" }
-          },
-          "required": ["behov"],
-          "additionalProperties": false
-        },
         "forsvarer": {
           "$ref": "#/definitions/profesjonellPerson"
         },
@@ -66,57 +57,6 @@
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
       "pattern": "^([A-Z]{3,3})$",
       "type": "string"
-    },
-    "behovForTolkType": {
-      "type": "string",
-      "description": "Er det behov for tolk",
-      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER"]
-    },
-    "varetektInfo": {
-      "type": "object",
-      "description": "Varetekt type, dager, restriksjoner, isolasjon",
-      "properties": {
-        "lovbud": {
-          "$ref": "#/definitions/lovbudEnkel"
-        }
-      },
-      "required": ["lovbud"],
-      "additionalProperties": false
-    },
-    "varetektsType": {
-      "type": "string",
-      "description": "Vanlig, eller brudd på vilkår",
-      "enum": ["VANLIG", "VILKAARSBRUDD"]
-    },
-    "vilkaarsType": {
-      "type": "string",
-      "description": "Hvilket vilkår gjelder for varetektsfengslingen. 173 brukes ved vilkårsbrudd.",
-      "enum": [
-        "STRPL170A_FORHOLSMESSIGHET",
-        "STRPL171_1_UNNDRAGELSESFARE",
-        "STRPL171_2_BEVISFORSPILLELSE",
-        "STRPL171_3_GJENTAGELSESFARE",
-        "STRPL171_4_FYLDESTGJOERENDE_GRUNNER",
-        "STRPL172_A_10_AAR",
-        "STRPL172_B_GROV_VOLD",
-        "STRPL173A_A_UNNDRAGELSESFARE_VILK",
-        "STRPL173A_B_HINDRE_VILK",
-        "STRPL173A_C_BEGJAERT_SIKTEDE"
-      ]
-    },
-    "vilkaar": {
-      "type": "object",
-      "description": "Et vilkår for varetektsfengsling",
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/vilkaarsType"
-        },
-        "lovbudEnkel": {
-          "$ref": "#/definitions/lovbudEnkel"
-        }
-      },
-      "required": ["type", "lovbudEnkel"],
-      "additionalProperties": false
     },
     "adresse": {
       "type": "object",
@@ -299,199 +239,22 @@
       "required": ["organisasjon"],
       "additionalProperties": false
     },
-    "anke": {
+    "lovbud": {
       "type": "object",
-      "description": "Anke av fengsling/restriksjon/kjennelse",
-      "additionalProperties": false,
+      "description": "Lovbud ",
       "properties": {
-        "anketDato": {
-          "type": "string",
-          "format": "date"
+        "lovbudId": {
+          "$ref": "#/definitions/unikId"
         },
-        "anketAv": {
-          "$ref": "#/definitions/anketAvType"
-        },
-        "oppsettendeVirkning": {
-          "type": "boolean"
-        }
-      },
-      "required": ["anketAv", "oppsettendeVirkning"]
-    },
-    "anketAvType": {
-      "type": "string",
-      "description": "Hvem av partene har anket",
-      "enum": ["SIKTET", "FORSVARER", "AKTOR"]
-    },
-    "avgjoerelseDomstol": {
-      "type": "object",
-      "description": "Kjennelse(r) fra retten, etter anke kan antagelig flere retter være involvert og da må vi endre denne",
-      "additionalProperties": false,
-      "properties": {
-        "merknad": {
-          "type": "string"
-        },
-        "kjennelse": {
-          "type": "string"
-        }
-      },
-      "required": ["kjennelse"]
-    },
-    "fengslingKjennelse": {
-      "type": "object",
-      "description": "Fengsling som en del av kjennelsen, uten datoer så er det ikke noe fengsel",
-      "additionalProperties": false,
-      "properties": {
-        "domstol": {
-          "$ref": "#/definitions/organisasjon"
-        },
-        "avsagtDato": {
-          "type": "string",
-          "format": "date"
-        },
-        "anke": {
-          "$ref": "#/definitions/anke"
-        }
-      },
-      "required": ["fengsling", "domstol"]
-    },
-    "isolasjonBegjaering": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "isolasjonsType": {
-          "$ref": "#/definitions/isolasjonsType"
-        },
-        "lovbudEnkel": {
-          "$ref": "#/definitions/lovbudEnkel"
-        },
-        "periode": {
-          "$ref": "#/definitions/periodeStartVarighet"
-        }
-      },
-      "required": ["isolasjonsType", "lovbudEnkel", "periode"]
-    },
-    "isolasjonsType": {
-      "type": "string",
-      "description": "Liste over de ulike isolasjonstyper",
-      "enum": ["FULL_ISOLASJON", "DELVIS_ISOLASJON"]
-    },
-    "periodeStartVarighet": {
-      "type": "object",
-      "description": "Periode for isolasjon eller restriksjon, bruker ikke å spesifisere startdato, derfor lengde og antall dager inn i fengslingen for restriksjoner",
-      "required": ["startDag", "varighet"],
-      "additionalProperties": false,
-      "properties": {
-        "startDag": {
-          "type": "integer"
-        }
-      }
-    },
-    "restriksjonBegjaering": {
-      "type": "object",
-      "required": ["restriksjonsType", "lovbudEnkel", "periode"],
-      "additionalProperties": false,
-      "properties": {
-        "restriksjonsType": {
-          "$ref": "#/definitions/restriksjonsType"
-        },
-        "lovbudEnkel": {
-          "$ref": "#/definitions/lovbudEnkel"
-        },
-        "periode": {
-          "$ref": "#/definitions/periodeStartVarighet"
-        }
-      }
-    },
-    "restriksjonsType": {
-      "type": "string",
-      "description": "Liste over de ulike restriksjonene",
-      "enum": [
-        "BREV_OG_BESOEKSFORBUD",
-        "BREV_OG_BESOEKSKONTROLL",
-        "MEDIEFORBUD",
-        "ANNET"
-      ]
-    },
-    "lovbudFull": {
-      "type": "object",
-      "description": "Lovvbudreferanse med gjengivelse og strafferamme",
-      "properties": {
         "lovbudStreng": {
-          "type": "string"
-        },
-        "gjengivelse": {
-          "type": "string"
-        },
-        "hjemmel": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/lovreferanse"
-          },
-          "minItems": 1
-        },
-        "strafferamme": {
-          "type": "integer",
-          "description": "Antall måneder"
-        }
-      },
-      "required": ["lovbudStreng", "gjengivelse"],
-      "additionalProperties": false
-    },
-    "lovbudGjengivelse": {
-      "type": "object",
-      "description": "Lovvbudreferanse med gjengivelse",
-      "properties": {
-        "lovbudStreng": {
-          "type": "string"
+          "type": "string",
+          "description": "Hjemmelsrekken som til sammen blir tiltale/siktelsespunktet"
         },
         "gjengivelse": {
           "type": "string"
         }
       },
       "required": ["lovbudStreng", "gjengivelse"],
-      "additionalProperties": false
-    },
-    "lovbudEnkel": {
-      "type": "object",
-      "description": "Enkel lovbudreferanse kun lovbudstreng",
-      "properties": {
-        "lovbudStreng": {
-          "type": "string"
-        }
-      },
-      "required": ["lovbudStreng"],
-      "additionalProperties": false
-    },
-    "lovreferanse": {
-      "type": "object",
-      "description": "Eksakt referanse inn i spesifikk lov, paragraf, ledd osv.",
-      "properties": {
-        "rettskilde": {
-          "$ref": "#/definitions/kodeverk"
-        },
-        "lovreferanse": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/lovreferanseElement"
-          },
-          "minItems": 1
-        }
-      },
-      "required": ["rettskilde", "lovreferanse"],
-      "additionalProperties": false
-    },
-    "lovreferanseElement": {
-      "type": "object",
-      "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
-      "properties": {
-        "type": {
-          "type": "string"
-        },
-        "verdi": {
-          "type": "string"
-        }
-      },
-      "required": ["type", "verdi"],
       "additionalProperties": false
     },
     "adresseGradering": {
@@ -850,9 +613,9 @@
       "properties": {
         "lovbud": {
           "type": "array",
-          "description": "Lovbud, hjemmelserekke med gjenngivelse. Det kan være 2 hvis lovbruddet har foregått over en lovendring f.eks. ny straffelov",
+          "description": "Kan være to hvis den straffbare handlingen foregår i tid over en levendring",
           "items": {
-            "$ref": "#/definitions/lovbudGjengivelse"
+            "$ref": "#/definitions/lovbud"
           },
           "minItems": 1,
           "maxItems": 2
@@ -1055,6 +818,52 @@
       "minLength": 9,
       "maxLength": 9
     },
+    "personForetakRef": {
+      "type": "object",
+      "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
+      "properties": {
+        "personRef": {
+          "$ref": "#/definitions/personRef"
+        },
+        "foretak": {
+          "$ref": "#/definitions/foretakRef"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "personRef": {
+              "$ref": "#/definitions/personRef"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["personRef"]
+        },
+        {
+          "properties": {
+            "foretakRef": {
+              "$ref": "#/definitions/foretakRef"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["foretakRef"]
+        }
+      ]
+    },
+    "personRef": {
+        "$ref": "#/definitions/internId",
+        "description": "Referanse inn i personlisten"
+    },
+    "foretakRef": {
+      "$ref": "#/definitions/internId",
+      "description": "Referanse inn i foretakslisten"
+    },
+    "internId": {
+      "type": "string",
+      "description": "id, unik innenfor melding",
+      "maxLength": 40,
+      "minLength": 1
+    },
     "straffesaksnummer": {
       "type": "string",
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
@@ -1065,6 +874,12 @@
       "type": "string",
       "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
       "maxLength": 30,
+      "minLength": 1
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
       "minLength": 1
     }
   }
