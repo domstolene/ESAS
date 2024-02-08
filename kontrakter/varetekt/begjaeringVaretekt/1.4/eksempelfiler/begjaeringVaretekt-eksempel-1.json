@@ -80,10 +80,9 @@
       "paastandVaretekt": {
         "fengsling": {
           "varighet": {
-            "antallDager": 28
+            "tilHovedforhandling": true
           }
         },
-        "gyldigFraDato": "2024-01-02",
         "restriksjoner": [
           {
             "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
@@ -119,7 +118,7 @@
             "periode": {
               "startDag": 1,
               "varighet": {
-                "antallDager": 14
+                "tilHovedforhandling": true
               }
             }
           }
@@ -151,6 +150,7 @@
       "forlengelse": {
         "beskrivelse": "forlengelse"
       },
+      "hovedforhandlingsdato": "2023-12-11",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
