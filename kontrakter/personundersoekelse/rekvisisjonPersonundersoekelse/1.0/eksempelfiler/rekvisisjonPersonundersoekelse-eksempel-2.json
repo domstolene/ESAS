@@ -57,7 +57,7 @@
   },
   "samtykkerOgInformering": {
     "siktedeErInformertOmAnmodningOmPersonundersoekelse": true,
-    "vergerErInformertOmAnmodningOmPersonundersoekelse":  true,
+    "vergerErInformertOmAnmodningOmPersonundersoekelse": true,
     "siktedeHarSamtykketTilPersonundersoekelse": true,
     "vergerHarSamtykketTilPersonundersoekelse": true,
     "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": true,
