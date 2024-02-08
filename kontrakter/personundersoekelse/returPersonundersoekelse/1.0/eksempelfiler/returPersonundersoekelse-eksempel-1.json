@@ -25,6 +25,7 @@
   "hovedStraffesaksnummer": "15434811",
   "rekvisisjonPersonundersoekelseId": "0322B3E2-B12B-40B6-8940-799C48706123",
   "returPersonundersoekelseId": "0322B3E2-B12B-40B6-1234-799C48706123",
+  "returPersonundersoekelseType": "UTFOERT_PERSONUNDERSOEKELSE",
   "dokumenter": [
     {
       "internId": "123234567871",
