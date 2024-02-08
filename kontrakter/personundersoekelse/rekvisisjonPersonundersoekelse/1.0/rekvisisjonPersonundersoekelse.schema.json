@@ -154,12 +154,20 @@
       "title": "samtykkerOgInformering",
       "type": "object",
       "properties": {
-        "siktedeErInformertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
-        "vergerErInformertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "siktedeErInformertOmAnmodningOmPersonundersoekelse": {
+          "type": "boolean"
+        },
+        "vergerErInformertOmAnmodningOmPersonundersoekelse": {
+          "type": "boolean"
+        },
         "siktedeHarSamtykketTilPersonundersoekelse": { "type": "boolean" },
         "vergerHarSamtykketTilPersonundersoekelse": { "type": "boolean" },
-        "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" },
-        "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" }
+        "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": {
+          "type": "boolean"
+        },
+        "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": {
+          "type": "boolean"
+        }
       },
       "required": [
         "siktedeErInformertOmAnmodningOmPersonundersoekelse",
