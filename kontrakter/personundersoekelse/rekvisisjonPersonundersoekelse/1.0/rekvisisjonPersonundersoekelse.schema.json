@@ -162,7 +162,13 @@
         "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" },
         "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" }
       },
-      "required": ["siktedeErInformertOmAnmodningOmPersonundersoekelse", "vergerErInformertOmAnmodningOmPersonundersoekelse", "siktedeHarSamtykketTilPersonundersoekelse", "vergerHarSamtykketTilPersonundersoekelse", "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen", "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"],
+      "required": [
+        "siktedeErInformertOmAnmodningOmPersonundersoekelse",
+        "vergerErInformertOmAnmodningOmPersonundersoekelse",
+        "siktedeHarSamtykketTilPersonundersoekelse", "vergerHarSamtykketTilPersonundersoekelse",
+        "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen",
+        "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"
+      ],
       "additionalProperties": false
     },
     "adresse": {
