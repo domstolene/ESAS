@@ -55,6 +55,14 @@
     "oensketFristForFerdigPersonundersoekelse": "2023-01-02T10:00:00+02:00",
     "berammetDatoForHovedforhandling": "2023-01-14T10:00:00+02:00"
   },
+  "samtykkerOgInformering": {
+    "siktedeErKjentMedAnmodningOmPersonundersoekelse":true, 
+    "vergerErKjentMedAnmodningOmPersonundersoekelse": true,
+    "siktedeHarSamtykketTilPersonundersoekelse": true, 
+    "vergerHarSamtykketTilPersonundersoekelse":true, 
+    "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen":true,
+    "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": true
+  },
   "personundersoekelseInfo": {
     "personundersoekelseType": "MINDREAARIG",
     "tekstligUdypingAvFormaalet": "Kombinert problematikk. Mindreårig på gjerningstidspunkt  - og hva er rett her? Ubetinget, eller ND-program, eller RK?",

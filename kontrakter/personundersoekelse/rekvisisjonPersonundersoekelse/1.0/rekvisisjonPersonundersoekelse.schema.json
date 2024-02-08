@@ -33,6 +33,9 @@
     "prioriteringsdetaljer": {
       "$ref": "#/definitions/prioriteringsdetaljer"
     },
+    "samtykkerOgInformering": {
+      "$ref": "#/definitions/samtykkerOgInformering"
+    },
 
     "dokumenter": {
       "type": "array",
@@ -44,7 +47,8 @@
     "rekvisisjonPersonundersoekelseId",
     "hovedStraffesaksnummer",
     "kontaktopplysningerAdvokater",
-    "personundersoekelseInfo"
+    "personundersoekelseInfo",
+    "samtykkerOgInformering"
   ],
   "additionalProperties": false,
 
@@ -129,7 +133,6 @@
       "required": [],
       "additionalProperties": false
     },
-
     "prioriteringsdetaljer": {
       "description": "Opplysninger som ønsket frist for ferdig personundersøkelse, melding om berammingsdato for hovedforhandling.",
       "title": "prioriteringsdetaljer",
@@ -145,6 +148,21 @@
         }
       },
       "required": [],
+      "additionalProperties": false
+    },    
+    "samtykkerOgInformering": {
+      "description": "Opplysninger om siktede er informert om undersøkelsen og evt. innhentet samtykke fra siktede og verger.",
+      "title": "samtykkerOgInformering",
+      "type": "object",
+      "properties": {
+        "siktedeErKjentMedAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "vergerErKjentMedAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "siktedeHarSamtykketTilPersonundersoekelse": { "type": "boolean" },
+        "vergerHarSamtykketTilPersonundersoekelse": { "type": "boolean" },
+        "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" },
+        "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": { "type": "boolean" }
+      },
+      "required": ["siktedeErKjentMedAnmodningOmPersonundersoekelse", "vergerErKjentMedAnmodningOmPersonundersoekelse", "siktedeHarSamtykketTilPersonundersoekelse", "vergerHarSamtykketTilPersonundersoekelse", "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen", "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"],
       "additionalProperties": false
     },
     "adresse": {

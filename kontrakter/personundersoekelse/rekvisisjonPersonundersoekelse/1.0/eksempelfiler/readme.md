@@ -1,5 +1,6 @@
 EKSEMPELDETALJER
 Eksempel 1 beskriver er en enklest mulig rekvisisjon (generisk PeU).
+ - Ikke informert om PUM. Ikke samtykket til denne, heller ikke  deling av opplysninger i KOG
 
 Eksempel 2 beskriver en mer fyldig rekvisisjon av type PUM:
 
@@ -8,6 +9,7 @@ Eksempel 2 beskriver en mer fyldig rekvisisjon av type PUM:
 - Siktet har tolkebehov for språkkode DEU (tysk)
 - Siktede har en adressegraderingmerknad og en adresse av type"sist kjent adresse"
 - Siktede har oppgitt 2 telefonnummer
+- Siktede og verger er informert om PUM og har samtykket til denne, samt deling av opplysninger i KOG
 - (Markør) for en vedlagt rettsbok fra en lavere rettsintans
 - Fornærmet Sannferdig KOS får Birger Berg-Vergenes som verge i straffesak
 - Fornærmet har tolkebehov for språkkode ARB (arabisk)

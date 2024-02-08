@@ -44,6 +44,14 @@
     "oensketFristForFerdigPersonundersoekelse": "2023-01-02T10:00:00+02:00",
     "berammetDatoForHovedforhandling": "2023-01-14T10:00:00+02:00"
   },
+  "samtykkerOgInformering": {
+    "siktedeErKjentMedAnmodningOmPersonundersoekelse":false, 
+    "vergerErKjentMedAnmodningOmPersonundersoekelse": false,
+    "siktedeHarSamtykketTilPersonundersoekelse": false, 
+    "vergerHarSamtykketTilPersonundersoekelse":false, 
+    "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen":false,
+    "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen": false
+  },
   "personundersoekelseInfo": {
     "personundersoekelseType": "GENERELL_PERSONUNDERSOEKELSE",
     "initiativtakerTilUndersoekelse": "FORSVARER",
