@@ -36,7 +36,6 @@
     "samtykkerOgInformering": {
       "$ref": "#/definitions/samtykkerOgInformering"
     },
-
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -165,7 +164,7 @@
       "required": [
         "siktedeErInformertOmAnmodningOmPersonundersoekelse",
         "vergerErInformertOmAnmodningOmPersonundersoekelse",
-        "siktedeHarSamtykketTilPersonundersoekelse", 
+        "siktedeHarSamtykketTilPersonundersoekelse",
         "vergerHarSamtykketTilPersonundersoekelse",
         "siktedeHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen",
         "vergerHarSamtykketTilDelingAvOpplysningerIKoordineringsgruppen"
