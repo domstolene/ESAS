@@ -148,7 +148,7 @@
       },
       "required": [],
       "additionalProperties": false
-    },    
+    },
     "samtykkerOgInformering": {
       "description": "Opplysninger om siktede er informert om undersøkelsen og evt. innhentet samtykke fra siktede og verger.",
       "title": "samtykkerOgInformering",
