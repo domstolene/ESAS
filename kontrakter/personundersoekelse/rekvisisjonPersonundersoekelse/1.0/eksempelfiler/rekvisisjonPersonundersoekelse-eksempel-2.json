@@ -97,17 +97,20 @@
         {
           "internId": "700892638",
           "navn": {
-            "fornavn": "Tilbakeholden",
-            "etternavn": "BRILLE"
+            "fornavn": "Varg",
+            "etternavn": "VERGERNES"
           },
           "kjoenn": "KVINNE",
           "foedselsdato": "1970-01-01",
           "statsborgerskap": [
             {
-              "kode": "ARM",
-              "navn": "Armenia"
+              "kode": "NOR",
+              "navn": "Norge"
             }
-          ]
+          ],
+          "identitetsnummer": {
+            "foedselsnummer": "01018012345"
+          }
         }
       ]
     },
