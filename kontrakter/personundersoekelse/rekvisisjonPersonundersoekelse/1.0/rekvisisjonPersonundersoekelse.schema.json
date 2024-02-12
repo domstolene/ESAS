@@ -43,8 +43,7 @@
     "rekvisisjonPersonundersoekelseId",
     "hovedStraffesaksnummer",
     "kontaktopplysningerAdvokater",
-    "personundersoekelseInfo",
-    "samtykkerOgInformering"
+    "personundersoekelseInfo"
   ],
   "additionalProperties": false,
 
