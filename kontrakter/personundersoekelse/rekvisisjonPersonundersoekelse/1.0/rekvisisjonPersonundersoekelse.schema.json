@@ -85,11 +85,7 @@
         "initiativtakerTilUndersoekelse": {
           "description": "Firvillig: Indikerer hvem som har tatt initiativ til personundersøkelse.  Forsvarer, Domstol eller  Påtale etc. ... ",
           "type": "string",
-          "enum": [
-            "FORSVARER",
-            "PAATALE",
-            "DOMSTOL"
-          ]
+          "enum": ["FORSVARER", "PAATALE", "DOMSTOL"]
         },
         "straffesaker": {
           "type": "array",
@@ -188,10 +184,13 @@
       "additionalProperties": false
     },
     "samtykkerOgInformeringDetaljer": {
-      "informertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
-      "samtykketTilPersonundersoekelse": { "type": "boolean" },
-      "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": {
-        "type": "boolean"
+      "type": "object",
+      "properties": {
+        "informertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "samtykketTilPersonundersoekelse": { "type": "boolean" },
+        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": {
+          "type": "boolean"
+        }
       },
       "required": [
         "informertOmAnmodningOmPersonundersoekelse",
