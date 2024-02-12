@@ -73,13 +73,15 @@ const validateJsonSchemas = (directory) => {
 };
 
 const findAndValidate = (schemaFolderBasePath) => {
+  var path = require('path');
   const folderContents = fs
     .readdirSync(schemaFolderBasePath)
     .map((content) => schemaFolderBasePath + "/" + content);
 
   folderContents
-    .filter((d) => d !== "target")
     .filter(isDirectory)
+    .filter(d => path.basename(d) !== "target")
+    .filter(d => path.basename(d) !== "gammel")
     .forEach(validateJsonSchemas);
 };
 
