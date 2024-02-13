@@ -1,4 +1,24 @@
-# Versjon 0.9
+# kjennelseVaretekt endringslogg
+| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til  |
+|---------|---------------------------------------------|----------------|--------------|------------|
+| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     |              |            |
+| 1.1     | Kjennelse med minst ett dokument            | aktiv nå       | aktiv nå     |            |
+| 1.0     | Første versjon i produksjon                 |                |              | 05.02.2024 |
+
+# Versjon 1.2
+1. Støtte for kjennelse fra Lagmanserett/Høyesterett. Melding inneholder nå:
+   * Hvilken rettsinstans som sender kjennelse
+   * Opprinnelig kravId
+   * Avgjørelse-resultat
+2. Flere detaljer rundt hva som er anket
+
+# Versjon 1.1
+1. Legger til krav om at minst ett dokument er vedlagt meldingen.
+2. Fjerner 'required' på 'rettsmoeteTidFra' og 'rettsmoeteTidTil'
+
+# Versjon 1.0
+1. Bump versjon fra 0.9 til 1.0
+2. Fjernet utviklings-versjonen (0.9)
 
 ### Endringer etter pull request https://github.com/domstolene/ESAS/pull/19
 1. Generell opprydning
@@ -14,17 +34,5 @@
 6. Lagt inn ny property "rettelse"
 
 
-# Versjon 1.0
-1. Bump versjon fra 0.9 til 1.0
-2. Fjernet utviklings-versjonen (0.9)
 
-# Versjon 1.1
-1. Legger til krav om at minst ett dokument er vedlagt meldingen.
-2. Fjerner 'required' på 'rettsmoeteTidFra' og 'rettsmoeteTidTil'
 
-# Versjon 1.2
-1. Støtte for kjennelse fra Lagmanserett/Høyesterett. Melding inneholder nå:
-   * Hvilken rettsinstans som sender kjennelse
-   * Opprinnelig kravId
-   * Avgjørelse-resultat
-2. Flere detaljer rundt hva som er anket
