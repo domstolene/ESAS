@@ -250,7 +250,7 @@
           "format": "date"
         }
       },
-      "required": ["datoSignering", "datoGjenopprettendeMoete"],
+      "required": ["datoSignering", "datoForventetFullfoert"],
       "additionalProperties": false
     },
     "stansUngdomsreaksjon": {
