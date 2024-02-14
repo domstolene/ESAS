@@ -8,5 +8,7 @@ SchemaVersion=1.0
 
 [Se changelog for endringer](changelog.md)
 
+## Siktelse / tiltale
+Ref Harmoniseringsrapporten av 2006 så er en siktelse/tiltale en liste over basissaker som skal avgjøres
 ## Status
-Jobber med første utkast.
+Jobber med første utkast som er basert på siktelsen vi leverte sammen med opprinnelig begjæring om varetekt.
