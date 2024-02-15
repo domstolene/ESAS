@@ -202,10 +202,6 @@
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
           "description": "Domstol som skal være mottaker"
-        },
-        "oensketRettssted": {
-          "$ref": "#/definitions/organisasjon",
-          "description": "Ønsket sted for rettsmøtet, f.eks. Brekstad i Trøndelag tingrett. Vil ikke bli implementert til å begynne med"
         }
       },
       "required": [
@@ -556,7 +552,7 @@
       "required": ["prinsipal"],
       "additionalProperties": false
     },
-    "siktelsestype": {
+    "siktelsesType": {
       "type": "string",
       "description": "Hvilken type siktelse/tiltale er dettte.",
       "enum": [
@@ -571,7 +567,8 @@
       "type": "object",
       "description": "Strukturert siktelse/tiltale.",
       "properties": {
-        "siktelsestype": { "$ref": "#/definitions/siktelsestype" },
+        "siktelsesId": {"$ref": "#/definitions/unikId"},
+        "siktelsesType": { "$ref": "#/definitions/siktelsesType" },
         "poster": {
           "type": "array",
           "description": "Siktelse/tiltalepunkt i ordnet rekkefølge.",
@@ -586,7 +583,7 @@
           "description": "Referanse til siktelsesdokumentet (PDF) som er vedlagt meldingen"
         }
       },
-      "required": ["poster", "skrevetAv"],
+      "required": ["siktelsesId","siktelsesType","poster", "skrevetAv"],
       "additionalProperties": false
     },
     "hendelse": {
