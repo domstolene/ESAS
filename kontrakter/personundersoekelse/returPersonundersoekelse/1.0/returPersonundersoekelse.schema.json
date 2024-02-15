@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/returPersonundersoekelse",
-  "description": "Retur som svarer ut en rekvirert personundersøkelse. Inneholder normalt den ferdige PeU-rapporten (PDF). Sendes fra kriminalomsorgen til politiet. Schema versjon 2020-12",
+  "description": "Retur som svarer ut en rekvirert personundersøkelse. Inneholder normalt den ferdige PeU-rapporten (PDF). Sendes fra kriminalomsorgen til politiet. Det vil sendes kun én retur per rekvisisjon. Schema versjon 2020-12",
   "type": "object",
   "properties": {
     "forsendelse": {
@@ -23,7 +23,7 @@
     "returPersonundersoekelseType": {
       "type": "string",
       "enum": ["UTFOERT_PERSONUNDERSOEKELSE", "RETURNERT_IKKE_UTFOERT"],
-      "description": "Spesifiserer om returen inneoholder en ferdig utarbeidet personundersøkelse - eller om den er'returnert ikke utført', f.eks. om siktede har nektet samarbeide. "
+      "description": "Spesifiserer om returen inneholder en ferdig utarbeidet personundersøkelse, eller om den er'returnert ikke utført', f.eks. om siktede har nektet samarbeide. Hvis forholdene som gjorde at undersøkelsen ikke kunne gjennomføres har endret seg, vil det ikke sendes en ny retur på samme rekvisisjon, da må en ny rekvisisjon sendes."
     },
     "dokumenter": {
       "type": "array",
