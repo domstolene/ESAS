@@ -57,6 +57,11 @@
     "siktet": {
       "$ref": "#/definitions/personEnkel"
     },
+    "datoForventetFullfoert": {
+      "type": "string",
+      "description": "Dato for forventet fullført straff",
+      "format": "date"
+    },
     "dokumenter": {
       "type": "array",
       "description": "Aktuelle saks dokumenter",
@@ -65,7 +70,12 @@
       }
     }
   },
-  "required": ["forsendelse", "straffesaksnummer", "statusOppdatering"],
+  "required": [
+    "forsendelse",
+    "straffesaksnummer",
+    "statusOppdatering",
+    "datoForventetFullfoert"
+  ],
   "additionalProperties": false,
   "definitions": {
     "straffesakStatus": {
@@ -243,14 +253,9 @@
           "type": "string",
           "description": "Dato for signering av ungdomsplan",
           "format": "date"
-        },
-        "datoForventetFullfoert": {
-          "type": "string",
-          "description": "Dato for forventet fullført straff",
-          "format": "date"
         }
       },
-      "required": ["datoSignering", "datoForventetFullfoert"],
+      "required": ["datoSignering"],
       "additionalProperties": false
     },
     "stansUngdomsreaksjon": {

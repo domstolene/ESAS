@@ -21,11 +21,11 @@
     }
   },
   "straffesaksnummer": "15434811",
+  "datoForventetFullfoert": "1923-12-19",
   "statusOppdatering": {
     "ungdomsreaksjonStatus": {
       "ungdomsplanSignert": {
-        "datoSignering": "1923-11-19",
-        "datoForventetFullfoert": "1923-12-19"
+        "datoSignering": "1923-11-19"
       }
     }
   },
