@@ -14,7 +14,7 @@ SchemaVersion=1.0
 ## Avklaringer
 Retur / svar på en rekvisisjon. 
 Inneholder i første versjon metadata for å rute meldingen hos rekvirent (saksreferanse+rekvisisjonsID) samt selve rapporten som vedlegg.  
-Meldingen brukes også om siktede ikke ønsket møte eller at undersøkelse ikke kunne gjennomføres av annen årsak - da vil dette fremgå av vedlegget.
+Meldingen brukes også om siktede ikke ønsket møte eller at undersøkelse ikke kunne gjennomføres av annen årsak - da vil dette fremgå av vedlegget og `returPersonundersoekelseType` vil være `RETURNERT_IKKE_UTFOERT`. Det vil kun sendes én retur per rekvisisjon, så hvis undersøkelsen ikke kunne utføres må det eventuelt sendes en ny rekvisisjon.
 
 ### Utestående avklaringer
 
