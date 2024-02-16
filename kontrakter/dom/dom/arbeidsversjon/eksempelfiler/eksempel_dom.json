@@ -34,20 +34,39 @@
       "tittel": "Saksbehandler"
     }
   },
-  "siktede": [
+  "siktedeTiltalte": [
     {
-      "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
-      "identitetsnummer": {
-        "foedselsnummer": "14846399381"
-      },
-      "tilleggsId": [],
-      "fornavn": "Morsom",
-      "etternavn": "Kivi",
-      "kjoenn": "MANN",
-      "foedselsdato": "1963-04-14",
-      "nasjonalitet": {
-        "kode": "NOR",
-        "navn": "Norge"
+      "person": {
+        "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
+        "identitetsnummer": {
+          "foedselsnummer": "14846399381"
+        },
+        "tilleggsId": [],
+        "fornavn": "Morsom",
+        "etternavn": "Kiwi",
+        "kjoenn": "MANN",
+        "foedselsdato": "1963-04-14",
+        "nasjonalitet": {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      }
+    },
+    {
+      "person": {
+        "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
+        "identitetsnummer": {
+          "foedselsnummer": "19077046529"
+        },
+        "tilleggsId": [],
+        "fornavn": "Masse",
+        "etternavn": "Kiwi",
+        "kjoenn": "MANN",
+        "foedselsdato": "1970-07-19",
+        "nasjonalitet": {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
       }
     }
   ],
@@ -90,51 +109,61 @@
         "punkt": [
           {
             "nummer": "I",
-            "lovbud": "strl. § 322 jf. § 321 jf. § 79 c jf. § 15",
-            "detaljer": [
-              {
-                "bokstav": "a",
-                "grunnlagstekst": "Fredag 25. mai 2018 kl. 04.00 eller kort forut for dette, i Toveien 28 i Vestby, som deltaker i en samhandlende gruppe, tok han seg inn i et vogntog og stjal 8 544 stk. 0,5 liters bokser øl av typen Urquell. Tyveriet anses som grovt blant annet fordi tyveriet har et profesjonelt preg og gjaldt betydelige verdier.",
-                "grunnlagstekstEndret": false,
-                "id": "I.a",
-                "personer": [
-                  {
-                    "personInternId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
-                    "skyldig": true
-                  }
-                ]
-              },
-              {
-                "bokstav": "b",
-                "grunnlagstekst": "30. november 2017 i tidsrommet mellom kl. 04.00 og 05.00 i Sivløkka 1 i Fredrikstad, som deltaker i en samhandlende gruppe, tok de seg inn i Invest Auto AS sine avlåste lokaler, hvor de samarbeidet om å bortta flere bilnøkler, husnøkler og en Mercedes Benz GLK 220 med kjennemerke [kjennemerke1] tilhørende Invest Auto AS, og en BMW M 550D med kjennemerke [kjennemerke2] tilhørende N1. Tyveriet anses som grovt blant annet fordi tyveriet har et profesjonelt preg og gjaldt betydelige verdier.",
-                "grunnlagstekstEndret": false,
-                "id": "I.b",
-                "personer": [
-                  {
-                    "personInternId": "",
-                    "skyldig": true
-                  }
-                ]
-              }
-            ]
+            "prinsipalPunkt": {
+              "lovbud": "strl. § 322 jf. § 321 jf. § 79 c jf. § 15",
+              "grunnlag": [
+                {
+                  "bokstav": "a",
+                  "grunnlagstekst": "Fredag 25. mai 2018 kl. 04.00 eller kort forut for dette, i Toveien 28 i Vestby, som deltaker i en samhandlende gruppe, tok han seg inn i et vogntog og stjal 8 544 stk. 0,5 liters bokser øl av typen Urquell. Tyveriet anses som grovt blant annet fordi tyveriet har et profesjonelt preg og gjaldt betydelige verdier.",
+                  "grunnlagstekstEndret": false,
+                  "id": "I.a",
+                  "basissaker": [
+                    {
+                      "personForetakInternId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
+                      "skyldig": true,
+                      "straffesaksnummer": "131221",
+                      "omsubsummert": {
+                        "lovbudStreng": "strl. § 322 jf. § 321 jf. § 79 c jf. § 23"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "bokstav": "b",
+                  "grunnlagstekst": "30. november 2017 i tidsrommet mellom kl. 04.00 og 05.00 i Sivløkka 1 i Fredrikstad, som deltaker i en samhandlende gruppe, tok de seg inn i Invest Auto AS sine avlåste lokaler, hvor de samarbeidet om å bortta flere bilnøkler, husnøkler og en Mercedes Benz GLK 220 med kjennemerke [kjennemerke1] tilhørende Invest Auto AS, og en BMW M 550D med kjennemerke [kjennemerke2] tilhørende N1. Tyveriet anses som grovt blant annet fordi tyveriet har et profesjonelt preg og gjaldt betydelige verdier.",
+                  "grunnlagstekstEndret": false,
+                  "id": "I.b",
+                  "basissaker": [
+                    {
+                      "personForetakInternId": "",
+                      "skyldig": true,
+                      "straffesaksnummer": "131222"
+                    }
+                  ]
+                }
+              ]
+            }
           },
           {
             "nummer": "II",
-            "lovbud": "§ 16-17 jf. § 16-22 jf. § 3-1 andre ledd jf. § 79 c jf. § 15",
-            "detaljer": [
-              {
-                "bokstav": "a",
-                "grunnlagstekst": "Søndag 29. oktober 2017 kl. 15.53 i Sponvikveien 7 i Halden, som deltaker i en samhandlende gruppe, medvirket de til innførsel av 3 600 liter rødvin av typen Torrero, 11 700 liter øl av typen Carlsberg og Tuborg, samt 1441,44 liter Coca Cola. B foresto det hele ved kontakt med N2 som deretter leide inn N3 som sjåfør. A lot varene betales med sitt bankkort kort forut for at varene ble innført til Norge. Ved vurderingen av om tollovertredelsen er grov, er det særlig lagt vekt på beslagets størrelse og beregnet avgiftsunndragelse",
-                "grunnlagstekstEndret": true,
-                "id": "II.a",
-                "personer": [
-                  {
-                    "personInternId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
-                    "skyldig": true
-                  }
-                ]
-              }
-            ]
+            "prinsipalPunkt": {
+              "lovbud": "§ 16-17 jf. § 16-22 jf. § 3-1 andre ledd jf. § 79 c jf. § 15",
+              "grunnlag": [
+                {
+                  "bokstav": "a",
+                  "grunnlagstekst": "Søndag 29. oktober 2017 kl. 15.53 i Sponvikveien 7 i Halden, som deltaker i en samhandlende gruppe, medvirket de til innførsel av 3 600 liter rødvin av typen Torrero, 11 700 liter øl av typen Carlsberg og Tuborg, samt 1441,44 liter Coca Cola. B foresto det hele ved kontakt med N2 som deretter leide inn N3 som sjåfør. A lot varene betales med sitt bankkort kort forut for at varene ble innført til Norge. Ved vurderingen av om tollovertredelsen er grov, er det særlig lagt vekt på beslagets størrelse og beregnet avgiftsunndragelse",
+                  "grunnlagstekstEndret": true,
+                  "id": "II.a",
+                  "basissaker": [
+                    {
+                      "personForetakInternId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
+                      "skyldig": true,
+                      "straffesaksnummer": "131223"
+                    }
+                  ]
+                }
+              ]
+            }
           }
         ]
       },
@@ -153,12 +182,59 @@
                   }
                 },
                 "bot": {
-                  "beloep": 2400,
-                  "subsidertStraff": {
+                  "beloep": 24000,
+                  "proevetid": {
                     "lengde": {
-                      "antallDager": 2
+                      "antallAar": 2
+                    }
+                  },
+                  "subsidaerFengseltraff": {
+                    "lengde": {
+                      "antallDager": 24
                     }
                   }
+                }
+              }
+            ]
+          },
+          {
+            "personInternId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
+            "reaksjoner": [
+              {
+                "fengsel": {
+                  "straff": {
+                    "lengde": {
+                      "antallAar": 2,
+                      "antallMaaneder": 4
+                    }
+                  },
+                  "betinget": {
+                    "lengde": {
+                      "antallMaaneder": 6
+                    }
+                  },
+                  "proevetid": {
+                    "lengde": {
+                      "antallAar": 2
+                    }
+                  },
+                  "fradrag": {
+                    "lengde": {
+                      "antallDager": 24
+                    }
+                  },
+                  "saervilkaar": [
+                    {
+                      "paragraf": "§35",
+                      "tekst": "Særvilkår om meldeplikt",
+                      "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+                    },
+                    {
+                      "paragraf": "§36",
+                      "tekst": "Andre særvilkår",
+                      "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+                    }
+                  ]
                 }
               }
             ]

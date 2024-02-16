@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/da/tilstaaelse/arbeidsversjon/DomTilstaaelse.schema.json",
-  "description": "Schema definisjon av en Dom-tilståelse",
+  "$id": "https://domstol.no/dom/dom/arbeidsversjon/Dom.schema.json",
+  "description": "Schema definisjon av en Domsagjørele",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse"
@@ -22,11 +22,12 @@
       "type": "object",
       "additionalProperties": false
     },
-    "siktede": {
+    "siktedeTiltalte": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/privatPerson"
-      }
+        "$ref": "#/definitions/personForetak"
+      },
+      "$description": "Liste av siktede (eller tiltale) personer eller foretak."
     },
     "dokumenter": {
       "type": "array",
@@ -42,7 +43,7 @@
   "required": [
     "forsendelse",
     "aktoerer",
-    "siktede",
+    "siktedeTiltalte",
     "saksInformasjon",
     "dokumenter"
   ],
@@ -56,7 +57,7 @@
           "description": "Domstolen sitt interne saksnummer"
         },
         "straffesaksnummer": {
-          "type": "string",
+          "$ref": "#/definitions/straffesaksnummer",
           "description": "Politiet sitt interne saksnummer"
         },
         "rettsmoeter": {
@@ -173,11 +174,8 @@
     },
     "reaksjon": {
       "properties": {
-        "betinget": {
-          "$ref": "#/definitions/betinget"
-        },
-        "ubetinget": {
-          "$ref": "#/definitions/ubetinget"
+        "fengsel": {
+          "$ref": "#/definitions/fengsel"
         },
         "forvaring": {
           "$ref": "#/definitions/forvaring"
@@ -221,10 +219,6 @@
         "ungdomststraff": {
           "$ref": "#/definitions/ungdomststraff"
         },
-        "vilkaar": {
-          "$comment": "Er dette en reaksjon, eller noe som må oppfylles - f.eks. i en betingent straff",
-          "$ref": "#/definitions/vilkaar"
-        },
         "proeveloeslatelse": {
           "$ref": "#/definitions/proeveloeslatelse"
         },
@@ -251,8 +245,42 @@
       "additionalProperties": false
     },
 
-    "betinget": {
+    "fengsel": {
       "properties": {
+        "straff": {
+          "$ref": "#/definitions/varighet",
+          "description": "Lengden på fengselsstraffen"
+        },
+        "betinget": {
+          "$ref": "#/definitions/varighet",
+          "description": "Fylles kun dersom deler eller hele straffen er betinget"
+        },
+        "proevetid": {
+          "$ref": "#/definitions/varighet"
+        },
+        "fradrag": {
+          "$ref": "#/definitions/varighet",
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
+        },
+        "saervilkaar": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/saervilkaar"
+          },
+          "minItems": 0
+        }
+      },
+      "required": ["straff"],
+      "additionalProperties": false
+    },
+    "betinget": {
+      "comment:": "Denne tas ut og erstattes med 'fengsel'",
+      "properties": {
+        "subsidiaerStraff": {
+          "type": "boolean",
+          "default": false,
+          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
+        },
         "straff": {
           "$ref": "#/definitions/varighet",
           "description": "Lengden betinget straff"
@@ -264,10 +292,6 @@
         "proevetid": {
           "$ref": "#/definitions/varighet",
           "description": "Orøvedtid for betinget straff"
-        },
-        "vilkaar": {
-          "$ref": "#/definitions/vilkaar",
-          "description": "Vilkår som må oppfylles i prøveperioden"
         },
         "utsattStraffeutmaaling": {
           "type": "boolean",
@@ -286,7 +310,13 @@
       "additionalProperties": false
     },
     "ubetinget": {
+      "comment:": "Denne tas ut og erstattes med 'fengsel'",
       "properties": {
+        "subsidiaerStraff": {
+          "type": "boolean",
+          "default": false,
+          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
+        },
         "straff": {
           "$ref": "#/definitions/varighet",
           "description": "Lengden betinget straff"
@@ -305,27 +335,27 @@
     },
     "forvaring": {
       "properties": {
-        "lengstetid": {
+        "tidsramme": {
           "$ref": "#/definitions/varighet",
-          "description": "Lengstetid for forvaring"
+          "description": "Tidsrammen/lengstetiden for forvaringsdommen"
         },
         "minstetid": {
           "$ref": "#/definitions/varighet",
-          "description": "Minstetid for forvaring"
+          "description": "Minstetid for forvaringsdommen"
         },
         "fradrag": {
           "$ref": "#/definitions/varighet",
-          "description": "Fradrag fra straff - feks varetektsfradrag"
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         },
-        "fraDato": {
-          "$ref": "#/definitions/dato",
-          "description": "Forvaring fra dato"
-        },
-        "tilDato": {
-          "$ref": "#/definitions/dato",
-          "description": "Forvaring til dato"
+        "hjemmel": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/lovreferanse"
+          },
+          "minItems": 0
         }
       },
+      "required": ["tidsramme"],
       "additionalProperties": false
     },
     "bot": {
@@ -335,15 +365,24 @@
           "description": "Nettobeløp i NOK",
           "$comment": "Trenger vi støtte for andre valuta??"
         },
-        "vilkaar": {
-          "$ref": "#/definitions/vilkaar",
-          "$comment": "Er dette det samme som vilkår f.eks i en betingen straff?"
-        },
-        "subsidertStraff": {
+        "proevetid": {
           "$ref": "#/definitions/varighet",
-          "description": "Varighet på soning"
+          "description": "Kan settes dersom boten er betinget"
+        },
+        "saervilkaar": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/saervilkaar"
+          },
+          "minItems": 0,
+          "description": "Kan settes dersom boten er betinget"
+        },
+        "subsidaerFengseltraff": {
+          "$ref": "#/definitions/varighet",
+          "description": "Varighet på subsidiær fengselsstraff"
         }
       },
+      "required": ["beloep"],
       "additionalProperties": false
     },
     "samfunnsstraff": {
@@ -352,22 +391,45 @@
           "$ref": "#/definitions/varighet",
           "description": "Lengden på idømt samfunnsstraff - som regel oppgitt i timer"
         },
-        "subsidertStraff": {
+        "subsidaerFengseltraff": {
           "$ref": "#/definitions/varighet",
           "description": "Varighet på subsidiær fengselsstraff"
         },
         "fradrag": {
           "$ref": "#/definitions/varighet",
-          "description": "Fradrag fra straff - feks varetektsfradrag"
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         },
-        "merknad": {
-          "type": "string"
+        "vilkaar": {
+          "type": "string",
+          "description": "Vilkår vedrørenede gjennomføring av straffen (jf. §50)"
+        }
+      },
+      "required": ["straff"],
+      "additionalProperties": false
+    },
+    "ungdomststraff": {
+      "properties": {
+        "straff": {
+          "$ref": "#/definitions/varighet",
+          "description": "Lengden på idømt straff"
+        },
+        "subsidaerFengseltraff": {
+          "$ref": "#/definitions/varighet",
+          "description": "Varighet på subsidiær fengselsstraff"
+        },
+        "fradrag": {
+          "$ref": "#/definitions/varighet",
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         }
       },
       "additionalProperties": false
     },
     "rettighetstap": {
       "properties": {
+        "subsidiaerStraff": {
+          "type": "boolean",
+          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
+        },
         "hjemmel": {
           "type": "array",
           "items": {
@@ -389,12 +451,15 @@
           "description": "Fritekst som beskriver rettighetstapet"
         }
       },
-
       "additionalProperties": false
     },
     "foererkort": {
       "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel ting (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
       "properties": {
+        "subsidiaerStraff": {
+          "type": "boolean",
+          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
+        },
         "hjemmel": {
           "type": "array",
           "items": {
@@ -494,15 +559,6 @@
       "properties": {},
       "additionalProperties": false
     },
-    "ungdomststraff": {
-      "properties": {},
-      "additionalProperties": false
-    },
-    "vilkaar": {
-      "$comment": "Er dette en reakajon eller vilkår som må oppfylles f.eks. i en betinget dom",
-      "properties": {},
-      "additionalProperties": false
-    },
     "proeveloeslatelse": {
       "properties": {},
       "additionalProperties": false
@@ -519,43 +575,59 @@
     },
 
     "punkt": {
-      "$comment": "Mulig vi burde kalle dette en post i stedet. Men da bør kanskje politiet gjøre det samme. Her må man legge til rette for å omsubsummere på ett eller annet nivå",
       "properties": {
         "nummer": {
           "type": "string",
           "description": "Romertall I, II osv. som identifiserer punktet"
         },
+        "prinsipalPunkt": {
+          "$ref": "#/definitions/punktDetaljer",
+          "description": "Hovedpunkt"
+        },
+        "subsidiaerPunkt": {
+          "$ref": "#/definitions/punktDetaljer",
+          "description": "Hvis ikke skyldig i prinsipal punkt så bes retten vurdere det subsidiære"
+        }
+      },
+      "required": ["prinsipalPunkt"],
+      "additionalProperties": false
+    },
+    "punktDetaljer": {
+      "properties": {
         "lovbud": {
           "items": {
             "$ref": "#/definitions/lovbud"
-          }
+          },
+          "minItems": 1,
+          "maxItems": 2,
+          "comment": "Kan være 2 lovbud i de tilfellene lovbruddet har skjedd over en tidsperiode der loven har endret seg. Kan vurdere å kalle dette 'straffebud' i stedet kanskje??"
         },
-        "detaljer": {
+        "grunnlag": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/punktDetaljer"
+            "$ref": "#/definitions/grunnlag"
           },
           "minItems": 1
         }
       },
+      "required": ["lovbud", "grunnlag"],
       "additionalProperties": false
     },
-    "punktDetaljer": {
-      "$comment": "Hvodan gjør vi det om omsubsumering??",
+    "grunnlag": {
       "properties": {
         "id": {
-          "$comment": "GUID eller 'relativ sti' fra posten. F.eks. III.c (romertal + . + bokestav)",
+          "$comment": "GUID eller 'relativ sti' til grunnlaget. F.eks. III.c (romertal + . + bokestav)",
           "type": "string",
-          "description": "Unik id som indentifiserer punktet. "
+          "description": "Unik id som indentifiserer grunnlaget. "
         },
         "bokstav": {
           "type": "string",
-          "description": "Bokstav som identifiserer punktet"
+          "description": "Bokstav som identifiserer grunnlaget"
         },
-        "personer": {
+        "basissaker": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/personSkyldig"
+            "$ref": "#/definitions/basissakSkyldig"
           },
           "minItems": 1
         },
@@ -571,24 +643,32 @@
       "required": [
         "id",
         "bokstav",
-        "personer",
+        "basissaker",
         "grunnlagstekst",
         "grunnlagstekstEndret"
       ],
       "additionalProperties": false
     },
-    "personSkyldig": {
+    "basissakSkyldig": {
       "properties": {
-        "personInternId": {
+        "personForetakInternId": {
           "type": "string",
-          "description": "Intern id til person. Denne skal være det samme som internId til en av peronene i 'siktede' elementet"
+          "description": "Intern id til person eller foretak. Denne skal være det samme som internId til en av personene i 'siktede' elementet"
         },
         "skyldig": {
           "type": "boolean",
-          "description": "Om retten finner den siketed skyldig eller ikke skyldig i punktet"
+          "description": "Om retten finner den siketede skyldig eller ikke skyldig i punktet"
+        },
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer",
+          "desctioption": "Politiets interne saksnummer"
+        },
+        "omsubsummert": {
+          "$ref": "#/definitions/lovbud",
+          "desctioption": "Satt kun dersom basissaken er omsubsumert i domstolen. Om satt, inneholder dette feltet verdien av det omsubsumerte lovbudet."
         }
       },
-      "required": ["personInternId", "skyldig"],
+      "required": ["personForetakInternId", "skyldig", "straffesaksnummer"],
       "additionalProperties": false
     },
     "lovbud": {
@@ -634,7 +714,7 @@
       "additionalProperties": false
     },
     "erklaering": {
-      "$comment": "Er erklaering i tilståelsessaker tilsvarende som varetekts-saker?",
+      "$comment": "Er erklaering i domsavgjørelser tilsvarende som varetekts-saker?",
       "properties": {
         "erklaeringSiktede": {
           "$ref": "#/definitions/erklaeringsDetaljer"
@@ -766,10 +846,7 @@
           "description": "F.eks. Nordland politidistrikt eller Oslo tingrett."
         },
         "organisasjonsnummer": {
-          "type": "string",
-          "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politidistrikt, embete osv.",
-          "maxLength": 20,
-          "minLength": 2
+          "$ref": "#/definitions/organisasjonsnummer"
         }
       },
       "required": ["organisasjonsnummer"],
@@ -839,6 +916,39 @@
       "type": "object",
       "additionalProperties": false
     },
+    "personForetak": {
+      "type": "object",
+      "description": "En siktet kan være en person eller et foretak.",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/privatPerson",
+          "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
+        },
+        "foretak": {
+          "$ref": "#/definitions/foretak"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "person": {
+              "$ref": "#/definitions/privatPerson"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["person"]
+        },
+        {
+          "properties": {
+            "foretak": {
+              "$ref": "#/definitions/foretak"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["foretak"]
+        }
+      ]
+    },
     "privatPerson": {
       "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
       "properties": {
@@ -877,6 +987,25 @@
       },
       "required": ["internId", "etternavn", "identitetsnummer", "tilleggsId"],
       "type": "object",
+      "additionalProperties": false
+    },
+    "foretak": {
+      "type": "object",
+      "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. siktet",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "unik id lokalt i meldingen, samme internId er samme foretak."
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "$comment": "Bør vi ha med 'adresse' her? (politiet har det i begjæring). Kan også vurdere å slå denne sammen med organisasjon",
+      "required": ["internId", "navn"],
       "additionalProperties": false
     },
     "rettsmoete": {
@@ -1003,6 +1132,33 @@
         }
       ]
     },
+    "saervilkaar": {
+      "properties": {
+        "paragraf": {
+          "type": "string",
+          "description": "Eks. '§37'"
+        },
+        "tekst": {
+          "type": "string",
+          "description": "Eks. Andre særvilkår'"
+        },
+        "detaljer": {
+          "type": "string",
+          "description": "Detaljer for særvilkåret. Fylles ut ved '§ 37.Andre særvilkår'"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "description": "Brukerens egen beskrivelse av særvilkåret"
+        }
+      }
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
+    },
     "foedselsnummer": {
       "type": "string",
       "pattern": "^[0-3][0-9][0189][0-9]+$",
@@ -1033,6 +1189,12 @@
       "type": "object",
       "required": ["kode"],
       "additionalProperties": false
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
     },
     "epost": {
       "description": "Lange epostadresser.",
