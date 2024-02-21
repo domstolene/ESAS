@@ -13,7 +13,7 @@
       "$ref": "#/definitions/straffesaksnummer",
       "description": "BL saksbehandlersak, trenger ikke være med i siktelsen (men er det som regel)"
     },
-    "begjaeringAnmomdning": {
+    "begjaeringAnmodning": {
       "$ref": "#/definitions/begjaeringAnmodningsId",
       "description": "Referanse til oversendelse siktelsen/tiltalen er en del av"
     },
@@ -34,17 +34,22 @@
       "items": { "$ref": "#/definitions/straffesak" },
       "minItems": 1
     },
-    "vedlegg": { "$ref": "#/definitions/vedlegg" }
+    "dokumenter": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/dokument"
+      }
+    }
   },
   "required": [
     "forsendelse",
     "hovedStraffesaksnummer",
-    "begjaeringAnmomdning",
+    "begjaeringAnmodning",
     "siktelseTiltale",
     "personer",
     "foretak",
     "straffesaker",
-    "vedlegg"
+    "dokumenter"
   ],
   "additionalProperties": false,
 
@@ -237,7 +242,7 @@
       "type": "object",
       "description": "liste over lovbud hvis det straffbare forholdet har skjedde over en lovendring (kombinert)",
       "properties": {
-        "lovbudKombindertId": {
+        "lovbudKombinertId": {
           "$ref": "#/definitions/unikId",
           "description": "Skal refereres til i resultatet"
         },
@@ -250,7 +255,7 @@
           "maxItems": 2
         }
       },
-      "required": ["lovbudKombindertId", "lovbud"],
+      "required": ["lovbudKombinertId", "lovbud"],
       "additionalProperties": false
     },
 
@@ -474,7 +479,7 @@
           "type": "string",
           "description": "Kun for visning i siktelse/tiltae a), b). Vil ikke være med hvis det er bare et grunnlag"
         },
-        "straffesaksnummer": { "ref": "#/definitions/straffesaksnummer" },
+        "straffesaksnummer": { "$ref": "#/definitions/straffesaksnummer" },
         "grunnlag": {
           "type": "string",
           "description": "Tekstlig beskrivelse av endringen, kan være lang tekst med mange linjeskift"
@@ -730,13 +735,6 @@
       "type": "object",
       "description": "Bekgrunsinformasjon (grunnlag) som retten trenger som dokumenter, informasjon om straffesaken (vitner, fornærmede), siktelse og dokumenter.",
       "properties": {
-        "straffesaker": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/straffesak"
-          },
-          "minItems": 1
-        },
         "dokumenter": {
           "type": "array",
           "items": {
@@ -744,7 +742,7 @@
           }
         }
       },
-      "required": ["straffesaker", "dokumenter"],
+      "required": ["dokumenter"],
       "additionalProperties": false
     },
     "internId": {
