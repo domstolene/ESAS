@@ -39,12 +39,14 @@
           },
           "grunnlag": [
             {
+              "bokstav": "a)",
               "straffesaksnummer": "15439561",
               "grunnlag": "Mandag 1. mai 2023 kl. 00.00 i Gartneriveien 2 i Kragerø ...",
               "basissaker": ["74668EF6-C952-4D7F-8CDD-92A7CA0207E3"],
               "inkluderteBasissaker": []
             },
             {
+              "bokstav": "b)",
               "straffesaksnummer": "15439560",
               "grunnlag": "Lørdag 1. juli 2023 kl. 00.00 i Weiss gate 5D i Kongsberg ...",
               "basissaker": ["35F313E4-495B-4B74-B069-AED932B4EC72"],
