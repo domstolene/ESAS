@@ -9,7 +9,7 @@ Katalogstruktur:
 ```
 └── dom
      ├── begjaeringDom (tilståelsessaker, meddomssaker eller vi må splitte)
-     ├── dom (eventuelt domTingrett, domLagmannsrett, domHoeyesterett hvis stor forskjeller)
+     ├── domsavgjoerelse
      ├── ankeDom (eventuelt en for lagmannsrett og en for Høyesterett)
 
 ```

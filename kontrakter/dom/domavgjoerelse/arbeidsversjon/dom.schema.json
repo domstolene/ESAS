@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/dom/dom/arbeidsversjon/Dom.schema.json",
+  "$id": "https://domstol.no/dom/domsavjoerelse/arbeidsversjon/Domsavgjoerelse.schema.json",
   "description": "Schema definisjon av en Domsagjørele",
   "properties": {
     "forsendelse": {
-      "$ref": "#/definitions/forsendelse"
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
     },
     "aktoerer": {
-      "$comment": "Skal vi kalle dette domstol-aktører. Evt. ta med 'siktede' inn under aktører",
       "description": "Aktører fra domstolen",
       "properties": {
         "dommer": {
@@ -66,7 +66,7 @@
             "$ref": "#/definitions/rettsmoete"
           },
           "minItems": 0,
-          "description": "Dersom rettsmøte ikke avholdes, f.eks. ved kontorforrenting, skal dette bli en top array",
+          "description": "Dersom rettsmøte ikke avholdes, f.eks. ved kontorforrenting, skal dette bli en tom array",
           "$comment": "Trenger påtale disse? Og kan vi filtrere på møtetyper - f.eks. kun hovedforhandling"
         },
         "avgjoerelse": {
@@ -81,11 +81,11 @@
       "properties": {
         "avgjoerelseId": {
           "type": "string",
-          "description": "Domstolen sin nøkkel til avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseID beholdes ved korigeringer"
+          "description": "Domstolen sin id til avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseIs beholdes ved korigeringer"
         },
         "avgjoerelseIdForrigeInstans": {
           "type": "string",
-          "description": "Domstolen sin nøkkel til avgjørelsen i forrige instans. Settes kun dersom dette er en kjennelse i en ankesak"
+          "description": "Domstolen sin id til avgjørelsen i forrige instans. Settes kun dersom dette er en dom i en ankesak"
         },
         "avsagtDato": {
           "$ref": "#/definitions/dato"
@@ -96,10 +96,10 @@
         },
         "opprinneligKravid": {
           "type": "string",
-          "description": "Kraviden i første instans"
+          "description": "Kravid'en i første instans"
         },
-        "avgjoerelseType": {
-          "$ref": "#/definitions/avgjoerelseType"
+        "domsresultatType": {
+          "$ref": "#/definitions/domsresultatType"
         },
         "resultat": {
           "$ref": "#/definitions/resultat"
@@ -116,15 +116,15 @@
         "avgjoerelseId",
         "avsagtDato",
         "opprinneligKravid",
-        "avgjoerelseType",
+        "domsresultatType",
         "resultat",
         "reaksjoner"
       ],
       "type": "object",
       "additionalProperties": false
     },
-    "avgjoerelseType": {
-      "$comment": "Er denne listen komplett? Kan det typen være henleggelse eller forlik f.eks?",
+    "domsresultatType": {
+      "$comment": "Er denne listen komplett? Kan denutvides med f.eks. henleggelse eller forlik f.eks?",
       "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",
       "enum": ["REAKSJON", "LOESLATELSE", "ANKEN_FORKASTES", "OPPHEVELSE"],
       "type": "string"
