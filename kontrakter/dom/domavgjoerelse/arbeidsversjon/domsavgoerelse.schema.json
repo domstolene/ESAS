@@ -22,12 +22,19 @@
       "type": "object",
       "additionalProperties": false
     },
-    "siktedeTiltalte": {
+    "siktedeTiltaltePersoner": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/personForetak"
+        "$ref": "#/definitions/privatPerson"
       },
-      "$description": "Liste av siktede (eller tiltale) personer eller foretak."
+      "$description": "Liste av siktede (eller tiltale) personer. Kan være tom liste"
+    },
+    "siktedeTiltalteForetak": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/foretak"
+      },
+      "$description": "Liste av siktede (eller tiltale) foretak. Kan være tom liste"
     },
     "dokumenter": {
       "type": "array",
@@ -43,7 +50,8 @@
   "required": [
     "forsendelse",
     "aktoerer",
-    "siktedeTiltalte",
+    "siktedeTiltaltePersoner",
+    "siktedeTiltalteForetak",
     "saksInformasjon",
     "dokumenter"
   ],
@@ -104,8 +112,8 @@
         "resultat": {
           "$ref": "#/definitions/resultat"
         },
-        "reaksjoner": {
-          "$ref": "#/definitions/reaksjoner"
+        "reaksjon": {
+          "$ref": "#/definitions/reaksjon"
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
@@ -118,7 +126,7 @@
         "opprinneligKravid",
         "domsresultatType",
         "resultat",
-        "reaksjoner"
+        "reaksjon"
       ],
       "type": "object",
       "additionalProperties": false
@@ -131,48 +139,49 @@
     },
     "resultat": {
       "properties": {
-        "punkt": {
+        "poster": {
           "type": "array",
+          "description": "Siktelse/tiltalepunkt i ordnet rekkefølge.",
           "items": {
-            "$ref": "#/definitions/punkt"
+            "$ref": "#/definitions/post"
           },
           "minItems": 1
         }
       },
-      "required": ["punkt"],
+      "required": ["poster"],
       "additionalProperties": false
     },
-    "reaksjoner": {
+    "reaksjon": {
       "properties": {
-        "personer": {
+        "personForetak": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/personReaksjon"
+            "$ref": "#/definitions/personForetakReaksjon"
           },
           "minItems": 1
         }
       },
       "additionalProperties": false
     },
-    "personReaksjon": {
+    "personForetakReaksjon": {
       "properties": {
-        "personInternId": {
-          "type": "string",
-          "description": "Intern id til person. Denne skal være det samme som internId til en av peronene i 'siktede' elementet"
+        "personForetak": {
+          "$ref": "#/definitions/personForetakRef",
+          "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i 'siktedeTiltaltePersoner' eller 'siktedeTiltalteForetak elementet"
         },
         "reaksjoner": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/reaksjon"
+            "$ref": "#/definitions/reaksjonsType"
           },
           "minItems": 0,
           "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom"
         }
       },
-      "required": ["personInternId", "reaksjoner"],
+      "required": ["personForetak", "reaksjoner"],
       "additionalProperties": false
     },
-    "reaksjon": {
+    "reaksjonsType": {
       "properties": {
         "fengsel": {
           "$ref": "#/definitions/fengsel"
@@ -574,33 +583,31 @@
       "additionalProperties": false
     },
 
-    "punkt": {
+    "post": {
+      "type": "object",
       "properties": {
         "nummer": {
           "type": "string",
-          "description": "Romertall I, II osv. som identifiserer punktet"
+          "description": "Romertall I, II osv. som identifiserer posten"
         },
-        "prinsipalPunkt": {
-          "$ref": "#/definitions/punktDetaljer",
+        "prinsipal": {
+          "$ref": "#/definitions/postDetaljer",
           "description": "Hovedpunkt"
         },
-        "subsidiaerPunkt": {
-          "$ref": "#/definitions/punktDetaljer",
-          "description": "Hvis ikke skyldig i prinsipal punkt så bes retten vurdere det subsidiære"
+        "subsidiaer": {
+          "$ref": "#/definitions/postDetaljer",
+          "description": "Hvis ikke skyldig i prinsipal-punkt så bes retten vurdere det subsidiære"
         }
       },
-      "required": ["prinsipalPunkt"],
+      "required": ["prinsipal"],
       "additionalProperties": false
     },
-    "punktDetaljer": {
+    "postDetaljer": {
+      "type": "object",
+      "description": "En siktele-/tiltale-post kan være prinsipalt eller subsidiært",
       "properties": {
-        "lovbud": {
-          "items": {
-            "$ref": "#/definitions/lovbud"
-          },
-          "minItems": 1,
-          "maxItems": 2,
-          "comment": "Kan være 2 lovbud i de tilfellene lovbruddet har skjedd over en tidsperiode der loven har endret seg. Kan vurdere å kalle dette 'straffebud' i stedet kanskje??"
+        "lovbudKombinert": {
+          "$ref": "#/definitions/lovbudKombinert"
         },
         "grunnlag": {
           "type": "array",
@@ -610,22 +617,18 @@
           "minItems": 1
         }
       },
-      "required": ["lovbud", "grunnlag"],
+      "required": ["lovbudKombinert", "grunnlag"],
       "additionalProperties": false
     },
     "grunnlag": {
       "properties": {
-        "id": {
-          "$comment": "GUID eller 'relativ sti' til grunnlaget. F.eks. III.c (romertal + . + bokestav)",
-          "type": "string",
-          "description": "Unik id som indentifiserer grunnlaget. "
-        },
         "bokstav": {
           "type": "string",
           "description": "Bokstav som identifiserer grunnlaget"
         },
         "basissaker": {
           "type": "array",
+          "description": "En for hver person for hvert grunnlag/straffesak",
           "items": {
             "$ref": "#/definitions/basissakSkyldig"
           },
@@ -641,7 +644,6 @@
         }
       },
       "required": [
-        "id",
         "bokstav",
         "basissaker",
         "grunnlagstekst",
@@ -650,14 +652,15 @@
       "additionalProperties": false
     },
     "basissakSkyldig": {
+      "$comment": "Ønsker poltiet den interne id'en tilbake (kalt basissakId i siktelsen)?",
       "properties": {
-        "personForetakInternId": {
-          "type": "string",
+        "personForetak": {
+          "$ref": "#/definitions/personForetakRef",
           "description": "Intern id til person eller foretak. Denne skal være det samme som internId til en av personene i 'siktede' elementet"
         },
         "skyldig": {
           "type": "boolean",
-          "description": "Om retten finner den siketede skyldig eller ikke skyldig i punktet"
+          "description": "Om retten finner den siketede skyldig eller ikke skyldig for denne basissaken"
         },
         "straffesaksnummer": {
           "$ref": "#/definitions/straffesaksnummer",
@@ -668,7 +671,27 @@
           "desctioption": "Satt kun dersom basissaken er omsubsumert i domstolen. Om satt, inneholder dette feltet verdien av det omsubsumerte lovbudet."
         }
       },
-      "required": ["personForetakInternId", "skyldig", "straffesaksnummer"],
+      "required": ["personForetak", "skyldig", "straffesaksnummer"],
+      "additionalProperties": false
+    },
+    "lovbudKombinert": {
+      "type": "object",
+      "properties": {
+        "lovbudKombinertId": {
+          "$ref": "#/definitions/unikId",
+          "description": "Id generert av politiet som skal returneres i resultatet"
+        },
+        "lovbud": {
+          "type": "array",
+          "description": "Liste over lovbud hvis det straffbare forholdet har skjedde over en lovendring (kombinert)",
+          "items": {
+            "$ref": "#/definitions/lovbud"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        }
+      },
+      "required": ["lovbudKombinertId", "lovbud"],
       "additionalProperties": false
     },
     "lovbud": {
@@ -916,44 +939,51 @@
       "type": "object",
       "additionalProperties": false
     },
-    "personForetak": {
+    "personForetakRef": {
       "type": "object",
-      "description": "En siktet kan være en person eller et foretak.",
+      "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
       "properties": {
-        "person": {
-          "$ref": "#/definitions/privatPerson",
-          "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
+        "personRef": {
+          "$ref": "#/definitions/personRef"
         },
-        "foretak": {
-          "$ref": "#/definitions/foretak"
+        "foretakRef": {
+          "$ref": "#/definitions/foretakRef"
         }
       },
       "oneOf": [
         {
           "properties": {
-            "person": {
-              "$ref": "#/definitions/privatPerson"
+            "personRef": {
+              "$ref": "#/definitions/personRef"
             }
           },
           "additionalProperties": false,
-          "required": ["person"]
+          "required": ["personRef"]
         },
         {
           "properties": {
-            "foretak": {
-              "$ref": "#/definitions/foretak"
+            "foretakRef": {
+              "$ref": "#/definitions/foretakRef"
             }
           },
           "additionalProperties": false,
-          "required": ["foretak"]
+          "required": ["foretakRef"]
         }
       ]
+    },
+    "personRef": {
+      "$ref": "#/definitions/internId",
+      "description": "Referanse inn i personlisten"
+    },
+    "foretakRef": {
+      "$ref": "#/definitions/internId",
+      "description": "Referanse inn i foretakslisten"
     },
     "privatPerson": {
       "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
       "properties": {
         "internId": {
-          "type": "string",
+          "ref": "#/definitions/internId",
           "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
         },
         "etternavn": {
@@ -994,8 +1024,8 @@
       "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. siktet",
       "properties": {
         "internId": {
-          "type": "string",
-          "description": "unik id lokalt i meldingen, samme internId er samme foretak."
+          "ref": "#/definitions/internId",
+          "description": "Unik id lokalt i meldingen, samme internId er samme foretak."
         },
         "organisasjonsnummer": {
           "$ref": "#/definitions/organisasjonsnummer"
@@ -1086,6 +1116,18 @@
     "moeteType": {
       "enum": [""],
       "type": "string"
+    },
+    "internId": {
+      "type": "string",
+      "description": "id, unik innenfor melding",
+      "maxLength": 40,
+      "minLength": 1
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 1
     },
     "personIdentifikator": {
       "description": "Fødselsnummer, D-nummer eller SSP nummer.",
