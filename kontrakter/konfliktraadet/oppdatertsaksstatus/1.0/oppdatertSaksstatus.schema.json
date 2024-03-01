@@ -57,11 +57,6 @@
     "siktet": {
       "$ref": "#/definitions/personEnkel"
     },
-    "datoForventetFullfoert": {
-      "type": "string",
-      "description": "Dato for forventet fullført straff",
-      "format": "date"
-    },
     "dokumenter": {
       "type": "array",
       "description": "Aktuelle saks dokumenter",
@@ -70,12 +65,7 @@
       }
     }
   },
-  "required": [
-    "forsendelse",
-    "straffesaksnummer",
-    "statusOppdatering",
-    "datoForventetFullfoert"
-  ],
+  "required": ["forsendelse", "straffesaksnummer", "statusOppdatering"],
   "additionalProperties": false,
   "definitions": {
     "straffesakStatus": {
