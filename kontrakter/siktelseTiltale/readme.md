@@ -23,6 +23,12 @@ Når en forbrytelse har foregått over tid og vi har hatt en lovendring i den pe
 <!-- Eksempel på en slik post --> 
 Denne funksjonaliteten ble innført når ny straffelov ble aktivert i 2015. <!-- sjekk dato i BL kode -->
 
-### inkluderte saker
-Enkelte lovbrudd kan kombineres hvis de er pågått flere ganger over en periode slik at det blir bare ett grunnlag med en et annet lovbud.
+### inkluderte forhold
+Enkelte lovbrudd kan slås sammen hvis de er pågått flere ganger over en periode slik at det blir bare ett grunnlag med en et annet lovbud.
 _Finn eksempel, kanskje bruk av narkotika flere ganger til i perioden har NN blitt tatt 4 gangaer i bruke av Narkotika_
+### straffbart forhold
+Ett Straffbart forhold vil ha sitt utspring i en Hendelse (ev. en serie Hendelser av samme type) som  antas å være straffbar og skal etterforskes. I BL/STRASAK modeleres et straffbart forhold som en straffesak med hendelse, kobling til personer/foretak.
+I BL så har et straffbart forhold et prinsipal lovbud med grunnlag og et subsidiært lovbud med grunnlag. Dvs. hvis en hendelse er opphave til flere lovbrudd så lages det flere straffesaker (straffbare forhold).
+### Subsidiære lovbud
+En straffesak kan ha et subsidiært lovbud og i BL sin implementasjon av siktelse så kan en post samle alle straffesaker som har samme prinsipale lovbud selv om de subsidiære lovbudene er forskjellig.
+_Vi har ikke fått snakket med fagpersoner om det er vanlig å bruke._

@@ -11,7 +11,7 @@
     },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
-      "description": "BL saksbehandlersak, trenger ikke være med i siktelsen (men er det som regel)"
+      "description": "BL saksbehandlersak, trenger ikke være med i siktelsen (men er det som regel). Blir kalt hovedsaken i BL"
     },
     "begjaeringAnmodning": {
       "$ref": "#/definitions/begjaeringAnmodningsId",
@@ -61,9 +61,7 @@
       "type": "object",
       "description": "Referanse til begjæring til domstolen (kravId) eller forsendelse til Kriminalomsorgen anmodningsId",
       "properties": {
-        "kravId": {
-          "$ref": "#/definitions/unikId"
-        },
+        "kravId": { "$ref": "#/definitions/unikId" },
         "anmodningsId": {
           "$ref": "#/definitions/unikId"
         }
@@ -459,66 +457,37 @@
     },
     "basissak": {
       "type": "object",
-      "description": "Et straffbart forhold, lovbud og en person/foretak",
+      "description": "Et straffbart forhold, lovbud og en person/foretak. Del av en sak i meldingen",
       "properties": {
         "basissakId": { "$ref": "#/definitions/basissakId" },
-        "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer",
-          "description": "Tid, sted, statistikkgrupper (straffbart forhold)"
-        },
         "personForetak": { "$ref": "#/definitions/personForetakRef" }
       },
-      "required": ["basissakId", "straffesaksnummer", "personForetak"],
+      "required": ["basissakId", "personForetak"],
       "additionalProperties": false
     },
     "grunnlag": {
       "type": "object",
       "description": "Tekstlig beskrivelse av en hendelse i en siktelse/tiltale",
       "properties": {
-        "bokstav": {
-          "type": "string",
-          "description": "Kun for visning i siktelse/tiltae a), b). Vil ikke være med hvis det er bare et grunnlag"
-        },
-        "straffesaksnummer": { "$ref": "#/definitions/straffesaksnummer" },
-        "grunnlag": {
+        "grunnlagTekst": {
           "type": "string",
           "description": "Tekstlig beskrivelse av endringen, kan være lang tekst med mange linjeskift"
-        },
-        "basissaker": {
-          "type": "array",
-          "description": "En for hver person for hvert grunnlag/straffesak",
-          "items": { "$ref": "#/definitions/basissakId" },
-          "minItems": 1
-        },
-        "inkluderteBasissaker": {
-          "type": "array",
-          "description": "Basissaker inkludert i dette lovbud/grunnlag. Samme personer som i basissaker.",
-          "items": { "$ref": "#/definitions/basissakId" }
         }
       },
-      "required": [
-        "grunnlag",
-        "straffesaksnummer",
-        "basissaker",
-        "inkluderteBasissaker"
-      ],
+      "required": ["grunnlagTekst"],
       "additionalProperties": false
     },
-    "postDetaljer": {
+    "lovbudGrunnlag": {
       "type": "object",
-      "description": "Et tiltalepunkt prinsipalt eller subsidiært",
+      "description": "Tekstlig beskrivelse av en hendelse i en siktelse/tiltale",
       "properties": {
-        "lovbudKombinert": { "$ref": "#/definitions/lovbudKombinert" },
-        "grunnlag": {
-          "type": "array",
-          "description": "Liste over beskrivelser av straffbare forhold som er knyttet til denne posten.",
-          "items": {
-            "$ref": "#/definitions/grunnlag"
-          },
-          "minItems": 1
+        "lovbud": { "$ref": "#/definitions/lovbudKombinert" },
+        "grunnlagTekst": {
+          "type": "string",
+          "description": "Tekstlig beskrivelse av endringen, kan være lang tekst med mange linjeskift"
         }
       },
-      "required": ["lovbudKombinert", "grunnlag"],
+      "required": ["lovbud", "grunnlagTekst"],
       "additionalProperties": false
     },
     "post": {
@@ -527,18 +496,20 @@
       "properties": {
         "nummer": {
           "type": "string",
-          "description": "Brukes til visning i siktelse/tiltale dokument og er et romertall I, II osv"
+          "description": "Brukes til visning i siktelse/tiltale dokument og er et romertall I, II osv. med for å lettere sammenligne med dokument."
         },
-        "prinsipal": {
-          "$ref": "#/definitions/postDetaljer",
+        "prinsipalLovbud": {
+          "$ref": "#/definitions/lovbudKombinert",
           "description": "Hovedpunkt"
         },
-        "subsidiaer": {
-          "$ref": "#/definitions/postDetaljer",
-          "description": "Hvis ikke skyldig i det prinsipale lovbudet så bes retten vurdere det subsidiære lovbudet"
+        "straffbareForhold": {
+          "type": "array",
+          "description": "Alle straffbare forhold med dette lovbudet (prinsipal og subsidiæert), med tilhørende basissaker",
+          "items": { "$ref": "#/definitions/straffbartForhold" },
+          "minItems": 1
         }
       },
-      "required": ["prinsipal"],
+      "required": ["prinsipalLovbud", "straffbareForhold"],
       "additionalProperties": false
     },
     "siktelsesType": {
@@ -566,25 +537,13 @@
           },
           "minItems": 1
         },
-        "basissaker": {
-          "type": "array",
-          "description": "Alle basissaker koblet til denne posten",
-          "items": { "$ref": "#/definitions/basissak" },
-          "minItems": 1
-        },
         "skrevetAv": { "$ref": "#/definitions/ansattPerson" },
         "dokument": {
           "$ref": "#/definitions/dokumentRef",
           "description": "Referanse til siktelsesdokumentet (PDF) som er vedlagt meldingen"
         }
       },
-      "required": [
-        "siktelsesId",
-        "siktelsesType",
-        "poster",
-        "basissaker",
-        "skrevetAv"
-      ],
+      "required": ["siktelsesId", "siktelsesType", "poster", "skrevetAv"],
       "additionalProperties": false
     },
     "hendelse": {
@@ -610,6 +569,35 @@
       ],
       "additionalProperties": false
     },
+    "straffbartForhold": {
+      "type": "object",
+      "description": "Hendelse, tid, siktede (basissaker), fornærmede og vitner.",
+      "properties": {
+        "bokstav": { "type": "string" },
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer",
+          "description": "Straffesaken er BL sin implementasjon av et straffbart forhold. Detaljer om straffesaken i egen liste."
+        },
+        "prinsipalGrunnlag": { "$ref": "#/definitions/grunnlag" },
+        "subsidiaerLovbudGrunnlag": {
+          "$ref": "#/definitions/lovbudGrunnlag",
+          "description": "Subsidiære lovbudet kan være forskjellig for hver straffesak i en post"
+        },
+        "basissaker": {
+          "type": "array",
+          "description": "En basissak for hver siktet/tiltalt person i det straffbare forholdet.",
+          "items": { "$ref": "#/definitions/basissak" },
+          "minItems": 1
+        },
+        "inkluderteForhold": {
+          "type": "array",
+          "description": "Samler flere forhold i et straffbartForhold og bruker et annet lovbud",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
+        }
+      },
+      "required": ["straffesaksnummer", "basissaker", "inkluderteForhold"],
+      "additionalProperties": false
+    },
     "straffesak": {
       "type": "object",
       "description": "Straffesak, hendelse og koding",
@@ -617,6 +605,17 @@
         "straffesaksnummer": {
           "type": "string"
         },
+        "detaljer": {
+          "$ref": "#/definitions/straffesakDetaljer"
+        }
+      },
+      "required": ["straffesaksnummer", "detaljer"],
+      "additionalProperties": false
+    },
+    "straffesakDetaljer": {
+      "type": "object",
+      "description": "Detaljer rundt straffesaken",
+      "properties": {
         "hendelse": {
           "$ref": "#/definitions/hendelse"
         },
@@ -624,13 +623,13 @@
           "$ref": "#/definitions/kodeverk"
         },
         "krimtype": {
-          "$ref": "#/definitions/kodeverk",
-          "description": "Ikke tilgjengelig til å begynn med"
+          "$ref": "#/definitions/kodeverk"
         }
       },
-      "required": ["straffesaksnummer", "hendelse", "statistikkgruppe"],
+      "required": ["hendelse", "statistikkgruppe"],
       "additionalProperties": false
     },
+
     "dokument": {
       "type": "object",
       "description": "Dokument som oversendes på justishub",
@@ -684,13 +683,6 @@
       "required": ["internId"],
       "additionalProperties": false
     },
-    "organisasjonsnummer": {
-      "type": "string",
-      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
-      "pattern": "^[0-9]+$",
-      "minLength": 9,
-      "maxLength": 9
-    },
     "personForetakRef": {
       "type": "object",
       "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
@@ -698,7 +690,7 @@
         "personRef": {
           "$ref": "#/definitions/personRef"
         },
-        "foretak": {
+        "foretakRef": {
           "$ref": "#/definitions/foretakRef"
         }
       },
@@ -731,25 +723,18 @@
       "$ref": "#/definitions/internId",
       "description": "Referanse inn i foretakslisten"
     },
-    "vedlegg": {
-      "type": "object",
-      "description": "Bekgrunsinformasjon (grunnlag) som retten trenger som dokumenter, informasjon om straffesaken (vitner, fornærmede), siktelse og dokumenter.",
-      "properties": {
-        "dokumenter": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/dokument"
-          }
-        }
-      },
-      "required": ["dokumenter"],
-      "additionalProperties": false
-    },
     "internId": {
       "type": "string",
       "description": "id, unik innenfor melding",
       "maxLength": 40,
       "minLength": 1
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
     },
     "straffesaksnummer": {
       "type": "string",
