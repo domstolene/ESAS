@@ -481,13 +481,13 @@
       "type": "object",
       "description": "Tekstlig beskrivelse av en hendelse i en siktelse/tiltale",
       "properties": {
-        "lovbud": { "$ref": "#/definitions/lovbudKombinert" },
+        "subsidiaerLovbud": { "$ref": "#/definitions/lovbudKombinert" },
         "grunnlagTekst": {
           "type": "string",
           "description": "Tekstlig beskrivelse av endringen, kan være lang tekst med mange linjeskift"
         }
       },
-      "required": ["lovbud", "grunnlagTekst"],
+      "required": ["subsidiaerLovbud", "grunnlagTekst"],
       "additionalProperties": false
     },
     "post": {
