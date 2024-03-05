@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politiet.no/dom/1.0/begjaeringDom",
+  "description": "Skjema for begjæring av dom til tingretten første omgang tilståelsesdom, JSON Schema versjon 2020-12",
+
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL Saksbehandlersak er hovedsaken i et sakskompleks (som er 1 eller flere straffesaker)"
+    },
+    "begjaeringDom": {
+      "$ref": "#/definitions/begjaeringDom"
+    }
+  },
+  "required": [
+    "forsendelse",
+    "hovedStraffesaksnummer",
+    "begjaeringDom"
+  ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "begjaeringDom": {
+      "type": "object",
+      "description": "Begjæring om at saken skal behandles av tingretten med dom. Krav om avgjørelse",
+      "properties": {
+        "kravId": { "$ref": "#/definitions/unikId" }
+      },
+      "required": ["kravId"],
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "type": "object",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Domstol som skal være mottaker"
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til domstolen."
+        }
+      },
+      "required": ["organisasjon"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "type": "object",
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/telefonnummer" }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "land": {
+      "type": "object",
+      "description": "ISO-3166, Kosovo kommer",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "^[A-Z]+$",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "type": "object",
+      "description": "Dokument som oversendes på justishub",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Id for dokumentet internt i meldingen slik at det kan refereres til et bestemt dokument (dokumentRef)"
+        },
+        "kategori": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "overskrift": {
+          "type": "string"
+        },
+        "skrevetDato": {
+          "type": "string",
+          "format": "date"
+        },
+        "forsendelse": {
+          "$ref": "#/definitions/dokumentForsendelse"
+        }
+      },
+      "required": ["overskrift", "skrevetDato", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "type": "object",
+      "description": "Detaljer om lokasjon og type",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string"
+        }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "dokumentRef": {
+      "type": "object",
+      "description": "Referanse internt i melding til dokumenter i dokumentlisten",
+      "properties": {
+        "internId": {
+          "type": "string"
+        }
+      },
+      "required": ["internId"],
+      "additionalProperties": false
+    },
+    "personForetakRef": {
+      "type": "object",
+      "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
+      "properties": {
+        "personRef": {
+          "$ref": "#/definitions/personRef"
+        },
+        "foretakRef": {
+          "$ref": "#/definitions/foretakRef"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "personRef": {
+              "$ref": "#/definitions/personRef"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["personRef"]
+        },
+        {
+          "properties": {
+            "foretakRef": {
+              "$ref": "#/definitions/foretakRef"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["foretakRef"]
+        }
+      ]
+    },
+    "personRef": {
+      "$ref": "#/definitions/internId",
+      "description": "Referanse inn i personlisten"
+    },
+    "foretakRef": {
+      "$ref": "#/definitions/internId",
+      "description": "Referanse inn i foretakslisten"
+    },
+    "internId": {
+      "type": "string",
+      "description": "id, unik innenfor melding",
+      "maxLength": 40,
+      "minLength": 1
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 1
+    }}
+  }
