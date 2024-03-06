@@ -198,8 +198,11 @@
         "rettighetstap": {
           "$ref": "#/definitions/rettighetstap"
         },
-        "foererkort": {
-          "$ref": "#/definitions/foererkort"
+        "rettighetstapMotorvogn": {
+          "$ref": "#/definitions/rettighetstap"
+        },
+        "rettighetstapTransport": {
+          "$ref": "#/definitions/rettighetstap"
         },
         "kontaktforbud": {
           "$ref": "#/definitions/kontaktforbud"
@@ -267,16 +270,16 @@
         "proevetid": {
           "$ref": "#/definitions/varighet"
         },
-        "fradrag": {
-          "$ref": "#/definitions/varighet",
-          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
-        },
         "saervilkaar": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/saervilkaar"
           },
           "minItems": 0
+        },
+        "fradrag": {
+          "$ref": "#/definitions/varighet",
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         }
       },
       "required": ["straff"],
@@ -357,9 +360,10 @@
           "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         },
         "hjemmel": {
+          "$comment": "Usiker på om dette er en liste eller kun ett element",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/lovreferanse"
+            "$ref": "#/definitions/lovbud"
           },
           "minItems": 0
         }
@@ -379,6 +383,7 @@
           "description": "Kan settes dersom boten er betinget"
         },
         "saervilkaar": {
+          "description": "Henvisning til §36 eller §37",
           "type": "array",
           "items": {
             "$ref": "#/definitions/saervilkaar"
@@ -399,6 +404,10 @@
         "straff": {
           "$ref": "#/definitions/varighet",
           "description": "Lengden på idømt samfunnsstraff - som regel oppgitt i timer"
+        },
+        "gjennomfoeringstid": {
+          "$ref": "#/definitions/varighet",
+          "description": "Innen hvor lang tidsperiode straffen må gjennomføres. Som regel oppgitt i timer"
         },
         "subsidaerFengseltraff": {
           "$ref": "#/definitions/varighet",
@@ -435,21 +444,21 @@
     },
     "rettighetstap": {
       "properties": {
-        "subsidiaerStraff": {
-          "type": "boolean",
-          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
-        },
-        "hjemmel": {
+        "detaljer": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/lovreferanse"
+            "$ref": "#/definitions/rettighetstapDetaljer"
           },
           "minItems": 1
-        },
-        "typeRettighet": {
-          "type": "string",
-          "$comment": "Enum? kodeverk? Trolig lite hensiktsmessig ifølge rapport. Kanskje en enum med stilling/virksomhet/aktvitet som hovedtype og fritekst som type",
-          "description": "Type rettighet som fratas. Typisk en gitt stilling, virksomhet eller aktivitet."
+        }
+      },
+      "additionalProperties": false
+    },
+    "rettighetstapDetaljer": {
+      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel ting (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
+      "properties": {
+        "hjemmel": {
+          "$ref": "#/definitions/lovbud"
         },
         "varighet": {
           "$ref": "#/definitions/varighet",
@@ -458,36 +467,6 @@
         "tekst": {
           "type": "string",
           "description": "Fritekst som beskriver rettighetstapet"
-        }
-      },
-      "additionalProperties": false
-    },
-    "foererkort": {
-      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel ting (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
-      "properties": {
-        "subsidiaerStraff": {
-          "type": "boolean",
-          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
-        },
-        "hjemmel": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/lovreferanse"
-          },
-          "minItems": 1
-        },
-        "typeNyProeve": {
-          "type": "string",
-          "$comment": "Kanskje en ENUM/kodeverk??",
-          "description": "F.eks. 'ny(full) førerprøve' eller 'delvis (praktisk) førerprøve'"
-        },
-        "varighet": {
-          "$ref": "#/definitions/varighet",
-          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet"
-        },
-        "ubestemtTid": {
-          "type": "boolean",
-          "$comment": "OneOf i forhold til varighet. Eller kanskje legge det innunder varighet elementet??"
         }
       },
       "additionalProperties": false
@@ -531,7 +510,7 @@
         "hjemmel": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/lovreferanse"
+            "$ref": "#/definitions/lovbud"
           },
           "minItems": 1
         }
@@ -658,8 +637,8 @@
           "$ref": "#/definitions/personForetakRef",
           "description": "Intern id til person eller foretak. Denne skal være det samme som internId til en av personene i 'siktede' elementet"
         },
-        "skyldig": {
-          "type": "boolean",
+        "resultat": {
+          "type": "#/definitions/basissakResultat",
           "description": "Om retten finner den siketede skyldig eller ikke skyldig for denne basissaken"
         },
         "straffesaksnummer": {
@@ -671,7 +650,7 @@
           "desctioption": "Satt kun dersom basissaken er omsubsumert i domstolen. Om satt, inneholder dette feltet verdien av det omsubsumerte lovbudet."
         }
       },
-      "required": ["personForetak", "skyldig", "straffesaksnummer"],
+      "required": ["personForetak", "resultat", "straffesaksnummer"],
       "additionalProperties": false
     },
     "lovbudKombinert": {
@@ -702,38 +681,6 @@
       },
       "required": ["lovbudStreng"],
       "type": "object",
-      "additionalProperties": false
-    },
-    "lovreferanse": {
-      "type": "object",
-      "description": "Eksakt referanse inn i spesifikk lov, paragraf, ledd osv.",
-      "properties": {
-        "rettskilde": {
-          "$ref": "#/definitions/kodeverk"
-        },
-        "lovreferanse": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/lovreferanseElement"
-          },
-          "minItems": 1
-        }
-      },
-      "required": ["rettskilde", "lovreferanse"],
-      "additionalProperties": false
-    },
-    "lovreferanseElement": {
-      "type": "object",
-      "description": "Referanse til paragraf, ledd osv, type kan bli enum som er utvidbar .. PARAGRAG, LEDD, STRAFFALTERNATIV",
-      "properties": {
-        "type": {
-          "type": "string"
-        },
-        "verdi": {
-          "type": "string"
-        }
-      },
-      "required": ["type", "verdi"],
       "additionalProperties": false
     },
     "erklaering": {
@@ -1242,6 +1189,11 @@
       "description": "Lange epostadresser.",
       "maxLength": 150,
       "minLength": 5,
+      "type": "string"
+    },
+    "basissakResultat": {
+      "description": "Resultatet av basissaken",
+      "enum": ["SKYLDIG", "FRIKJENT", "IKKE_VURDERT"],
       "type": "string"
     },
     "kjoenn": {

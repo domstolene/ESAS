@@ -125,7 +125,7 @@
                       "personForetak": {
                         "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
                       },
-                      "skyldig": true,
+                      "resultat": "SKYLDIG",
                       "straffesaksnummer": "131221",
                       "omsubsummert": {
                         "lovbudStreng": "strl. § 322 jf. § 321 jf. § 79 c jf. § 23"
@@ -142,7 +142,7 @@
                       "personForetak": {
                         "personRef": "5d516a2c-3283-4636-961a-456e1f26cea4"
                       },
-                      "skyldig": true,
+                      "resultat": "FRIKJENT",
                       "straffesaksnummer": "131222"
                     }
                   ]
@@ -171,7 +171,33 @@
                       "personForetak": {
                         "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
                       },
-                      "skyldig": true,
+                      "resultat": "IKKE_VURDERT",
+                      "straffesaksnummer": "131223"
+                    }
+                  ]
+                }
+              ]
+            },
+            "subsidiaer": {
+              "lovbudKombinert": {
+                "lovbudKombinertId": "61AE16B2-E360-451E-82B5-2D2C3AD68FB4",
+                "lovbud": [
+                  {
+                    "lovbudStreng": "§ 16-17 jf. § 16-22 jf. § 3-1 andre ledd jf. § 79 c jf. § 17"
+                  }
+                ]
+              },
+              "grunnlag": [
+                {
+                  "bokstav": "a",
+                  "grunnlagstekst": "Søndag 29. oktober 2017 kl. 15.53 i Sponvikveien 7 i Halden, som deltaker i en samhandlende gruppe, medvirket de til innførsel av 3 600 liter rødvin av typen Torrero, 11 700 liter øl av typen Carlsberg og Tuborg, samt 1441,44 liter Coca Cola. B foresto det hele ved kontakt med N2 som deretter leide inn N3 som sjåfør. A lot varene betales med sitt bankkort kort forut for at varene ble innført til Norge. Ved vurderingen av om tollovertredelsen er grov, er det særlig lagt vekt på beslagets størrelse og beregnet avgiftsunndragelse",
+                  "grunnlagstekstEndret": true,
+                  "basissaker": [
+                    {
+                      "personForetak": {
+                        "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
+                      },
+                      "resultat": "SKYLDIG",
                       "straffesaksnummer": "131223"
                     }
                   ]
@@ -189,13 +215,21 @@
             },
             "reaksjoner": [
               {
-                "foererkort": {
-                  "varighet": {
-                    "lengde": {
-                      "antallAar": 2,
-                      "antallMaaneder": 4
+                "rettighetstapMotorvogn": {
+                  "detaljer": [
+                    {
+                      "hjemmel": {
+                        "lovbudStreng": "§24a annet ledd. Sperrefrist for retten til å føre førerkortpliktig motorvogn pga. straffbart forhold mm."
+                      },
+                      "varighet": {
+                        "lengde": {
+                          "antallAar": 2,
+                          "antallMaaneder": 4
+                        }
+                      },
+                      "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
                     }
-                  }
+                  ]
                 },
                 "bot": {
                   "beloep": 24000,
