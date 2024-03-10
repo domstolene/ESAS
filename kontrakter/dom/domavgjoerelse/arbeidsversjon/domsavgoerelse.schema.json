@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://domstol.no/dom/domsavjoerelse/arbeidsversjon/Domsavgjoerelse.schema.json",
-  "description": "Schema definisjon av en Domsagjørele",
+  "description": "Schema definisjon av en Domsagjørelse",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
-      "description": "avsender og mottaker"
+      "description": "Avsender og mottaker"
     },
     "aktoerer": {
       "description": "Aktører fra domstolen",
@@ -74,7 +74,7 @@
             "$ref": "#/definitions/rettsmoete"
           },
           "minItems": 0,
-          "description": "Dersom rettsmøte ikke avholdes, f.eks. ved kontorforrenting, skal dette bli en tom array",
+          "description": "Dersom rettsmøte ikke avholdes, f.eks. ved kontorforrenting, skal dette være en tom array",
           "$comment": "Trenger påtale disse? Og kan vi filtrere på møtetyper - f.eks. kun hovedforhandling"
         },
         "avgjoerelse": {
@@ -88,23 +88,23 @@
     "avgjoerelse": {
       "properties": {
         "avgjoerelseId": {
-          "type": "string",
-          "description": "Domstolen sin id til avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseIs beholdes ved korigeringer"
+          "$ref": "#/definitions/GUID",
+          "description": "Domstolen sin id for avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseId beholdes ved korrigeringer"
         },
         "avgjoerelseIdForrigeInstans": {
-          "type": "string",
+          "$ref": "#/definitions/GUID",
           "description": "Domstolen sin id til avgjørelsen i forrige instans. Settes kun dersom dette er en dom i en ankesak"
         },
         "avsagtDato": {
           "$ref": "#/definitions/dato"
         },
-        "kravid": {
-          "type": "string",
-          "description": "Kravid i nåværende instans. Kan være null dersom saken er opprettet manuelt"
+        "kravId": {
+          "$ref": "#/definitions/GUID",
+          "description": "KravId i nåværende instans. Kan være null dersom saken er opprettet manuelt"
         },
-        "opprinneligKravid": {
-          "type": "string",
-          "description": "Kravid'en i første instans"
+        "opprinneligKravId": {
+          "$ref": "#/definitions/GUID",
+          "description": "KravId i første instans"
         },
         "domsresultatType": {
           "$ref": "#/definitions/domsresultatType"
@@ -123,7 +123,7 @@
       "required": [
         "avgjoerelseId",
         "avsagtDato",
-        "opprinneligKravid",
+        "opprinneligKravId",
         "domsresultatType",
         "resultat",
         "reaksjon"
@@ -175,7 +175,8 @@
             "$ref": "#/definitions/reaksjonsType"
           },
           "minItems": 0,
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom"
+          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
+          "$comment": "Kan vi gjøre noe i kontrakten for å sikere at denne ikke er tom ved dom??"
         }
       },
       "required": ["personForetak", "reaksjoner"],
@@ -240,23 +241,6 @@
       },
       "additionalProperties": false
     },
-
-    "utmaalingsregel": {
-      "$comment": "Bør har referanse til basissak(punkt) og reaksjon. Er dette det samme som vilkår i spesifkke reaksjonen??",
-      "properties": {
-        "lovreferanse": {
-          "$ref": "#/definitions/lovbud",
-          "description": "F.eks: n § 62, § 63, § 55 m.v.)"
-        },
-        "tekst": {
-          "type": "string",
-          "description": "Kortversion av lovtekst",
-          "$comment": "Mulig denne ikke er mulig"
-        }
-      },
-      "additionalProperties": false
-    },
-
     "fengsel": {
       "properties": {
         "straff": {
@@ -285,66 +269,6 @@
       "required": ["straff"],
       "additionalProperties": false
     },
-    "betinget": {
-      "comment:": "Denne tas ut og erstattes med 'fengsel'",
-      "properties": {
-        "subsidiaerStraff": {
-          "type": "boolean",
-          "default": false,
-          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
-        },
-        "straff": {
-          "$ref": "#/definitions/varighet",
-          "description": "Lengden betinget straff"
-        },
-        "fradrag": {
-          "$ref": "#/definitions/varighet",
-          "description": "Fradrag for betinget straff"
-        },
-        "proevetid": {
-          "$ref": "#/definitions/varighet",
-          "description": "Orøvedtid for betinget straff"
-        },
-        "utsattStraffeutmaaling": {
-          "type": "boolean",
-          "description": "Om straffeutmålingen er utsatt"
-        },
-        "tilknyttedePoster": {
-          "$comment": "Er det på denne måten vi ønsker å tilknytte poster til en reaksjon? I så tilfelle bør den ligge på hver reaksjon",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "description": "Peker til unik id som indentifiserer punktet/posten"
-          },
-          "minItems": 1
-        }
-      },
-      "additionalProperties": false
-    },
-    "ubetinget": {
-      "comment:": "Denne tas ut og erstattes med 'fengsel'",
-      "properties": {
-        "subsidiaerStraff": {
-          "type": "boolean",
-          "default": false,
-          "description": "Settes til 'true' desrom dette er et alternativ til en prinsipal reaksjon"
-        },
-        "straff": {
-          "$ref": "#/definitions/varighet",
-          "description": "Lengden betinget straff"
-        },
-        "fradrag": {
-          "$ref": "#/definitions/varighet",
-          "description": "Fradrag for betinget straff"
-        },
-        "utsattStraffeutmaaling": {
-          "type": "boolean",
-          "description": "Om straffeutmålingen er utsatt",
-          "$comment": "Trenger vi denne ved ubtinget fengsel"
-        }
-      },
-      "additionalProperties": false
-    },
     "forvaring": {
       "properties": {
         "tidsramme": {
@@ -357,10 +281,10 @@
         },
         "fradrag": {
           "$ref": "#/definitions/varighet",
-          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt 'utholdt frihetsberøvelse'"
         },
         "hjemmel": {
-          "$comment": "Usiker på om dette er en liste eller kun ett element",
+          "$comment": "Usikker på om dette er en liste eller kun ett element",
           "type": "array",
           "items": {
             "$ref": "#/definitions/lovbud"
@@ -487,7 +411,8 @@
           "$ref": "#/definitions/periode"
         },
         "kontaktType": {
-          "$comment": "Enum? besøks-/kontakt-/forfølge-forbud. Multichoice"
+          "type": "string",
+          "$comment": "Enum? besøks-/kontakt-/forfølge-forbud. Multichoice?"
         },
         "individ": {
           "$comment": "Kanskje finne på et bedre navn??",
@@ -552,7 +477,6 @@
       "additionalProperties": false
     },
     "annet": {
-      "$comment": "Trenger vi noe mer enn en fritekst??",
       "properties": {
         "tekst": {
           "type": "string",
@@ -567,7 +491,7 @@
       "properties": {
         "nummer": {
           "type": "string",
-          "description": "Romertall I, II osv. som identifiserer posten"
+          "description": "Romertall I, II osv. som navngir posten"
         },
         "prinsipal": {
           "$ref": "#/definitions/postDetaljer",
@@ -752,7 +676,7 @@
     "forsendelse": {
       "properties": {
         "meldingsId": {
-          "type": "string"
+          "$ref": "#/definitions/GUID"
         },
         "sendtTid": {
           "type": "string",
@@ -1074,7 +998,8 @@
       "type": "string",
       "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
       "maxLength": 40,
-      "minLength": 1
+      "minLength": 1,
+      "$comment": "Kan vi låse den til GUID? Description er litt rar - blander unik og ikke unik"
     },
     "personIdentifikator": {
       "description": "Fødselsnummer, D-nummer eller SSP nummer.",
@@ -1192,8 +1117,8 @@
       "type": "string"
     },
     "basissakResultat": {
-      "description": "Resultatet av basissaken",
-      "enum": ["SKYLDIG", "FRIKJENT", "IKKE_VURDERT"],
+      "description": "Resultatet av basissaken. 'IKKE_VURDERT' betyr at det er sekundær posten som blir vurdert. 'HENLAGT' betyr at punktet tas ut av siktelsen/tiltalen",
+      "enum": ["SKYLDIG", "FRIKJENT", "IKKE_VURDERT,", "HENLAGT"],
       "type": "string"
     },
     "kjoenn": {
@@ -1208,6 +1133,10 @@
     "dato": {
       "type": "string",
       "format": "date"
+    },
+    "GUID": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
     }
   }
 }

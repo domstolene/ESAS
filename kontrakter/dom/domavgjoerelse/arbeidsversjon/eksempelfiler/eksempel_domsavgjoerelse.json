@@ -99,8 +99,8 @@
     "avgjoerelse": {
       "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
       "avsagtDato": "2022-07-05",
-      "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
-      "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+      "kravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
+      "opprinneligKravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "domsresultatType": "REAKSJON",
       "resultat": {
         "poster": [
