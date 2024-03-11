@@ -1,0 +1,109 @@
+{
+  "kodeType": "UTFALLSKODER",
+  "koder": [
+    {
+      "kode": "MEKLET_HELT_LOEST",
+      "beskrivelse": "Meklet - helt løst"
+    },
+    {
+      "kode": "MEKLET_DELVIST_LOEST",
+      "beskrivelse": "Meklet - delvis løst"
+    },
+    {
+      "kode": "MEKLET_IKKE_LOEST",
+      "beskrivelse": "Meklet - ikke løst"
+    },
+    {
+      "kode": "IKKE_MEKLET_LOEST_FOER_MEKLING",
+      "beskrivelse": "Ikke meklet - løst før mekling"
+    },
+    {
+      "kode": "IKKE_MEKLET",
+      "beskrivelse": "Ikke meklet"
+    },
+    {
+      "kode": "AVVIST_IKKE_EGNET",
+      "beskrivelse": "Avvist - ikke egnet"
+    },
+    {
+      "kode": "SAMTYKKE_IKKE_GITT",
+      "beskrivelse": "Samtykke ikke gitt"
+    },
+    {
+      "kode": "SAMTYKKE_TRUKKET",
+      "beskrivelse": "Samtykke ble trukket"
+    },
+    {
+      "kode": "OPPNAADDE_IKKE_KONTAKT_MED_PART",
+      "beskrivelse": "Oppnådde ikke kontakt med part"
+    },
+    {
+      "kode": "ANDRE_AARSAKER",
+      "beskrivelse": "Andre årsaker"
+    },
+    {
+      "kode": "UTSATT_GJENNOMFOERING",
+      "beskrivelse": "Utsatt gjennomføring"
+    },
+    {
+      "kode": "BRUDD_PGA_VILKÅR",
+      "beskrivelse": "Avbrudd pga. brudd på vilkår - §31/33"
+    },
+    {
+      "kode": "BRUDD_PGA_STRAFFBARE_FORHOLD",
+      "beskrivelse": "Avbrudd pga. nye straffbare forhold - §32/34"
+    },
+    {
+      "kode": "BRUDD_PGA_VILKÅR_OG_STRAFFBARE_FORHOLD",
+      "beskrivelse": "Avbrudd pga. brudd på vilkår og nye straffbare forhold"
+    },
+    {
+      "kode": "AARSAK_TIL_BRUDD_IKKE_LENGER_TIL_STEDE",
+      "beskrivelse": "Årsak til brudd ikke lenger til stede"
+    },
+    {
+      "kode": "OENSKER_IKKE_OMGJOERE",
+      "beskrivelse": "Kriminalomsorg/påtale/domstol ønsker ikke å omgjøre"
+    },
+    {
+      "kode": "NYTT_STRAFFBART_FORHOLD_HENLAGT",
+      "beskrivelse": "Nytt straffbart forhold er henlagt/frifunnet"
+    },
+    {
+      "kode": "SAERSKILT_DOM_I_NY_SAK",
+      "beskrivelse": "Særskilt dom/påtaleavgjørelse i ny sak"
+    },
+    {
+      "kode": "FULLFOERT",
+      "beskrivelse": "Fullført straffegjennomføring"
+    },
+    {
+      "kode": "BRUDD_PAA_VILKAAR",
+      "beskrivelse": "Brudd på vilkår"
+    },
+    {
+      "kode": "BRUDD_NYE_LOVBRUDD",
+      "beskrivelse": "Brudd pga. nye lovbrudd"
+    },
+    {
+      "kode": "BRUDD_NYE_LOVBRUDD_OG_VILKAAR",
+      "beskrivelse": "Brudd pga. nye lovbrudd og brudd på vilkår"
+    },
+    {
+      "kode": "BRUDD_NYE_LOVBRUDD_FOER_IVERKSETTELSE",
+      "beskrivelse": "Brudd pga. nye lovbrudd før iverksettelse"
+    },
+    {
+      "kode": "SAMTYKKE_TRUKKET_FOER_SIGNERT_UNGDOMSPLAN",
+      "beskrivelse": "Samtykke trukket før signert ungdomsplan"
+    },
+    {
+      "kode": "SAMTYKKE_TRUKKET_ETTER_SIGNERT_UNGDOMSPLAN",
+      "beskrivelse": "Samtykke trukket etter signert ungdomsplan"
+    },
+    {
+      "kode": "ANNEN_AARSAK",
+      "beskrivelse": "Annen årsak til avslutning"
+    }
+  ]
+}

@@ -212,7 +212,7 @@
       "description": "Mekling gjennomført og resultat av mekling",
       "properties": {
         "resultat": {
-          "$ref": "#/definitions/meklingGjennomFoertType"
+          "$ref": "#/definitions/utfall"
         },
         "avtale": {
           "$ref": "#/definitions/avtaleType"
@@ -226,10 +226,10 @@
       "description": "Mekling er ikke gjennomført og årsak til dette",
       "properties": {
         "resultat": {
-          "$ref": "#/definitions/meklingIkkeGjennomFoertType"
+          "$ref": "#/definitions/utfall"
         },
         "aarsak": {
-          "$ref": "#/definitions/aarsakMeklingIkkeGjennomFoertType"
+          "$ref": "#/definitions/utfall"
         }
       },
       "required": ["resultat", "aarsak"],
@@ -243,14 +243,9 @@
           "type": "string",
           "description": "Dato for signering av ungdomsplan",
           "format": "date"
-        },
-        "datoGjenopprettendeMoete": {
-          "type": "string",
-          "description": "Dato for første gjenopprettende møte",
-          "format": "date"
         }
       },
-      "required": ["datoSignering", "datoGjenopprettendeMoete"],
+      "required": ["datoSignering"],
       "additionalProperties": false
     },
     "stansUngdomsreaksjon": {
@@ -258,7 +253,7 @@
       "description": "Hvis det er midlertidig stans i gjennomføring av ungdomsreaksjon",
       "properties": {
         "aarsak": {
-          "$ref": "#/definitions/stansUngdomsreaksjonType"
+          "$ref": "#/definitions/utfall"
         }
       },
       "required": ["aarsak"],
@@ -269,7 +264,7 @@
       "description": "Oppstart i gjennomføring av ungdomsreaksjon etter stans",
       "properties": {
         "aarsak": {
-          "$ref": "#/definitions/oppstartEtterStansUngdomsreaksjonType"
+          "$ref": "#/definitions/utfall"
         }
       },
       "required": ["aarsak"],
@@ -280,7 +275,7 @@
       "description": "Gjennomføring av ungdomsreaksjon er avsluttet",
       "properties": {
         "aarsak": {
-          "$ref": "#/definitions/avsluttetUngdomsreaksjonType"
+          "$ref": "#/definitions/utfall"
         },
         "totalLengde": {
           "type": "integer",
@@ -305,68 +300,10 @@
       "required": ["konfliktraad", "nySaksansvarlig"],
       "additionalProperties": false
     },
-    "meklingGjennomFoertType": {
-      "type": "string",
-      "description": "Resultat av gjennomført mekling",
-      "enum": ["MEKLET_HELT_LOEST", "MEKLET_DELVIST_LOEST", "MEKLET_IKKE_LOEST"]
-    },
     "avtaleType": {
       "type": "string",
       "description": "Avtaletype for mekling",
       "enum": ["SKRIFTLIG", "MUNTLIG", "NEI"]
-    },
-    "meklingIkkeGjennomFoertType": {
-      "type": "string",
-      "description": "Resultat av ikke gjennomført mekling",
-      "enum": [
-        "IKKE_MEKLET_LOEST_FOER_MEKLING",
-        "IKKE_MEKLET",
-        "AVVIST_IKKE_EGNET"
-      ]
-    },
-    "aarsakMeklingIkkeGjennomFoertType": {
-      "type": "string",
-      "description": "Årsak til hvorfor mekling ikke er gjennomført",
-      "enum": [
-        "SAMTYKKE_IKKE_GITT",
-        "SAMTYKKE_TRUKKET",
-        "OPPNAADDE_IKKE_KONTAKT_MED_PART",
-        "ANDRE_AARSAKER"
-      ]
-    },
-    "stansUngdomsreaksjonType": {
-      "type": "string",
-      "description": "Årsak til stans",
-      "enum": [
-        "UTSATT_GJENNOMFOERING",
-        "BRUDD_PGA_VILKÅR",
-        "BRUDD_PGA_STRAFFBARE_FORHOLD",
-        "BRUDD_PGA_VILKÅR_OG_STRAFFBARE_FORHOLD"
-      ]
-    },
-    "oppstartEtterStansUngdomsreaksjonType": {
-      "type": "string",
-      "description": "Årsak til oppstart etter stans",
-      "enum": [
-        "AARSAK_TIL_BRUDD_IKKE_LENGER_TIL_STEDE",
-        "OENSKER_IKKE_OMGJOERE",
-        "NYTT_STRAFFBART_FORHOLD_HENLAGT",
-        "SAERSKILT_DOM_I_NY_SAK"
-      ]
-    },
-    "avsluttetUngdomsreaksjonType": {
-      "type": "string",
-      "description": "Årsak til gjennomføring er avsluttet",
-      "enum": [
-        "FULLFOERT",
-        "BRUDD_PAA_VILKAAR",
-        "BRUDD_NYE_LOVBRUDD",
-        "BRUDD_NYE_LOVBRUDD_OG_VILKAAR",
-        "BRUDD_NYE_LOVBRUDD_FOER_IVERKSETTELSE",
-        "SAMTYKKE_TRUKKET_FOER_SIGNERT_UNGDOMSPLAN",
-        "SAMTYKKE_TRUKKET_ETTER_SIGNERT_UNGDOMSPLAN",
-        "ANNEN_AARSAK"
-      ]
     },
     "dokument": {
       "type": "object",
@@ -409,6 +346,10 @@
       },
       "required": ["mimeType", "uri", "sjekksum"],
       "additionalProperties": false
+    },
+    "utfall": {
+      "type": "string",
+      "description": "En utfallskode som representerer ulike utfall for en sak"
     },
     "kodeverk": {
       "type": "object",

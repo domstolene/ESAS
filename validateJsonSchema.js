@@ -19,7 +19,7 @@ const jsonSchemaFolders = [
   "kontrakter/personundersoekelse/returPersonundersoekelse",
 ];
 
-const jsonKodeverkFolders = ["kodeverk/felles"];
+const jsonKodeverkFolders = ["kodeverk/felles", "kodeverk/konfliktraad"];
 
 const isDirectory = (path) => {
   return fs.statSync(path).isDirectory();
@@ -73,15 +73,15 @@ const validateJsonSchemas = (directory) => {
 };
 
 const findAndValidate = (schemaFolderBasePath) => {
-  var path = require('path');
+  var path = require("path");
   const folderContents = fs
     .readdirSync(schemaFolderBasePath)
     .map((content) => schemaFolderBasePath + "/" + content);
 
   folderContents
     .filter(isDirectory)
-    .filter(d => path.basename(d) !== "target")
-    .filter(d => path.basename(d) !== "gammel")
+    .filter((d) => path.basename(d) !== "target")
+    .filter((d) => path.basename(d) !== "gammel")
     .forEach(validateJsonSchemas);
 };
 
