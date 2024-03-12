@@ -1,0 +1,428 @@
+{
+  "forsendelse": {
+    "meldingsId": "C1886E43-E409-4D96-B3B5-AE146EE457D6",
+    "sendtTid": "2024-03-05T22:23:14+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983998178",
+        "navn": "Sør-Øst politidistrikt"
+      },
+      "person": {
+        "etternavn": "Politiets Datatjeneste"
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "926723480",
+      "navn": "Agder tingrett"
+    }
+  },
+  "hovedStraffesaksnummer": "15434059",
+  "begjaeringAnmodning": {
+    "kravId": "1076DCE5-70B8-4BD9-AD91-7981F7CD831F"
+  },
+  "siktelseTiltale": {
+    "siktelsesId": "3BF13793-CE95-411B-95DF-00D69EF95B88",
+    "siktelsesType": "SIKTELSE",
+    "poster": [
+      {
+        "nummer": "I",
+        "prinsipalLovbud": {
+          "lovbudKombinertId": "6796E98B-2F46-49A4-AE90-7D642178C398",
+          "lovbud": [
+            {
+              "lovbudId": "{1713FA29-57D6-7F97-E053-0B3EA30AAE0D}",
+              "lovbudStreng": "Straffeloven (1902) § 233 annet ledd, jf. første ledd",
+              "gjengivelse": "for med overlegg eller for å lette eller skjule en annen forbrytelse eller unndra seg straffen for en slik, eller hvor forøvrig særdeles skjerpende omstendigheter forelå, å ha forvoldt en annens død"
+            }
+          ]
+        },
+        "straffbareForhold": [
+          {
+            "straffesaksnummer": "15439557",
+            "prinsipalGrunnlag": {
+              "grunnlagTekst": "Lørdag 1. august 2015 kl. 00.00 i Wergelands vei 11 i Larvik ... @*fornaermet@ ..."
+            },
+            "basissaker": [
+              {
+                "basissakId": "NzAzODU5MTAz",
+                "personForetak": {
+                  "personRef": "700892045"
+                }
+              }
+            ],
+            "inkluderteForhold": []
+          }
+        ]
+      },
+      {
+        "nummer": "II",
+        "prinsipalLovbud": {
+          "lovbudKombinertId": "E47D07CA-DD12-4917-9B03-D6C95E259A67",
+          "lovbud": [
+            {
+              "lovbudId": "{EE57A116-D7B4-4F5B-99DB-F4D52FA75F06}",
+              "lovbudStreng": "Straffeloven § 258, jf. § 257 annet ledd",
+              "gjengivelse": "for å ha\r\n\r\na) lagt forholdene til rette for tvang, utnyttelse eller forledelse til  prostitusjon eller andre seksuelle ytelser, arbeid eller tjenester, herunder tigging, krigstjeneste i fremmed land, eller å samtykke i fjerning av et av vedkommendes indre organer, ved å anskaffe, transportere eller motta personen,\r\nb) på annen måte medvirket til tvangen, utnyttelsen eller forledelsen, eller \r\nc) gitt betaling eller annen fordel for å få samtykke til en slik handlemåte fra en person som har myndighet over den fornærmede, eller som mottatt slik betaling eller fordel.\r\n\r\nOvertredelsen er grov fordi det særlig legges vekt på at den som ble utsatt for handlingen var under 18 år, at det ble brukt grov vold eller tvang og at handlingen har medført betydelig utbytte."
+            }
+          ]
+        },
+        "straffbareForhold": [
+          {
+            "straffesaksnummer": "15434059",
+            "prinsipalGrunnlag": {
+              "grunnlagTekst": "Søndag 11. november 2018 kl. 00.00 i Wahlstrøms gate 9 i Ringerike ... Deilig Dagbok"
+            },
+            "basissaker": [
+              {
+                "basissakId": "NzAzODU5MTAx",
+                "personForetak": {
+                  "personRef": "700895208"
+                }
+              },
+              {
+                "basissakId": "NzAzODUwMzAy",
+                "personForetak": {
+                  "personRef": "700892045"
+                }
+              }
+            ],
+            "inkluderteForhold": []
+          }
+        ]
+      },
+      {
+        "nummer": "III",
+        "prinsipalLovbud": {
+          "lovbudKombinertId": "EA84CAAB-6982-42D0-BBAB-A00E14B797C4",
+          "lovbud": [
+            {
+              "lovbudId": "{1713FA29-5638-7F97-E053-0B3EA30AAE0D}",
+              "lovbudStreng": "Straffeloven (1902) § 258, jf. § 257 og straffeloven § 321",
+              "gjengivelse": "for å ha borttatt en gjenstand som helt eller delvis tilhørte en annen, i hensikt å skaffe seg eller andre en uberettiget vinning ved tilegnelsen av gjenstanden, idet tyveriet anses som grovt, særlig fordi det er forøvet ved innbrudd"
+            }
+          ]
+        },
+        "straffbareForhold": [
+          {
+            "straffesaksnummer": "15439558",
+            "prinsipalGrunnlag": {
+              "grunnlagTekst": "Lørdag 1. august 2015 kl. 00.00 i Wergelands vei 11 i Larvik banet han seg adgang til Rala Yous avlåste hytte ved å .... Han borttok ....Veldig treg tyv og ikke så bra eksempel på ting som foregår over tid. Kommer bedre eksempler etter hvert."
+            },
+            "basissaker": [
+              {
+                "basissakId": "NzAzODU5MTA1",
+                "personForetak": {
+                  "personRef": "700892045"
+                }
+              }
+            ],
+            "inkluderteForhold": []
+          }
+        ]
+      },
+      {
+        "nummer": "IV",
+        "prinsipalLovbud": {
+          "lovbudKombinertId": "EF1F9E1D-CD52-4961-ABAB-77E7D29C470F",
+          "lovbud": [
+            {
+              "lovbudId": "{FA8DEA3F-7462-450F-9413-BC3A697F2DDA}",
+              "lovbudStreng": "Straffeloven § 321",
+              "gjengivelse": "for å ha tatt en gjenstand som tilhører en annen, med forsett om å skaffe seg eller andre en uberettiget vinning ved å selge, forbruke eller på annen måte tilegne seg den."
+            }
+          ]
+        },
+        "straffbareForhold": [
+          {
+            "straffesaksnummer": "15439559",
+            "prinsipalGrunnlag": {
+              "grunnlagTekst": "Fredag 1. juli 2022 kl. 00.00 i Wesselvegen 29 i Skien ..."
+            },
+            "subsidiaerLovbudGrunnlag": {
+              "subsidiaerLovbud": {
+                "lovbudKombinertId": "C20224DA-8376-4CC2-A71E-D026FD37D988",
+                "lovbud": [
+                  {
+                    "lovbudId": "{A8D49A21-02B9-429A-9C2D-E4A45CFFD228}",
+                    "lovbudStreng": "Straffeloven § 332",
+                    "gjengivelse": "for å ha mottatt eller skaffet seg eller andre del i utbytte av en straffbar handling. Likestilt med utbytte er en gjenstand, fordring eller tjeneste som trer istedenfor det."
+                  }
+                ]
+              },
+              "grunnlagTekst": "Fredag 1. juli 2022 kl. 00.00 i Wesselvegen 29 i Skien ..."
+            },
+            "basissaker": [
+              {
+                "basissakId": "NzAzODU5MTA4",
+                "personForetak": {
+                  "personRef": "700892045"
+                }
+              },
+              {
+                "basissakId": "NzAzODU5MTA5",
+                "personForetak": {
+                  "personRef": "700895208"
+                }
+              }
+            ],
+            "inkluderteForhold": []
+          }
+        ]
+      },
+      {
+        "nummer": "V",
+        "prinsipalLovbud": {
+          "lovbudKombinertId": "70B1393C-8EEC-4011-B89D-BF4BBEB8DF29",
+          "lovbud": [
+            {
+              "lovbudId": "{E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5}",
+              "lovbudStreng": "Straffeloven § 336",
+              "gjengivelse": "for å ha inngått forbund om å begå heleri."
+            }
+          ]
+        },
+        "straffbareForhold": [
+          {
+            "straffesaksnummer": "15438441",
+            "prinsipalGrunnlag": {
+              "grunnlagTekst": "Onsdag 1. februar 2023 kl. 00.00 i Westadkleiva 9 i Mo, her er det noe tyvegods som skal selges."
+            },
+            "basissaker": [
+              {
+                "basissakId": "NzAzODU2NzAz",
+                "personForetak": {
+                  "personRef": "700895208"
+                }
+              }
+            ],
+            "inkluderteForhold": []
+          }
+        ]
+      },
+      {
+        "nummer": "VI",
+        "prinsipalLovbud": {
+          "lovbudKombinertId": "F1F1FEA8-8ED0-4981-9A63-7F5174621AD1",
+          "lovbud": [
+            {
+              "lovbudId": "{E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5}",
+              "lovbudStreng": "Straffeloven § 336, jf. straffeloven § 79c",
+              "gjengivelse": "for som ledd i aktivitetene til en organisert kriminell gruppe å ha inngått forbund om å begå heleri."
+            }
+          ]
+        },
+        "straffbareForhold": [
+          {
+            "straffesaksnummer": "15440390",
+            "prinsipalGrunnlag": {
+              "grunnlagTekst": "Fredag 1. desember 2023 kl. 00.00 i Weidemanns gate 5 i Holmestrand ..."
+            },
+            "basissaker": [
+              {
+                "basissakId": "NzAzODYzMjIw",
+                "personForetak": {
+                  "personRef": "700895208"
+                }
+              }
+            ],
+            "inkluderteForhold": []
+          }
+        ]
+      }
+    ],
+    "skrevetAv": {
+      "fornavn": "Gunstein",
+      "etternavn": "Bjørgum"
+    }
+  },
+  "personer": [
+    {
+      "internId": "700892045",
+      "navn": {
+        "fornavn": "Komplisert",
+        "etternavn": "BAR"
+      },
+      "identitetsnummer": {
+        "foedselsnummer": "29838099694"
+      },
+      "tilleggsId": [],
+      "kjoenn": "KVINNE",
+      "foedselsdato": "1980-03-29",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "personAdresse": {
+        "adresse": {
+          "adresselinjer": ["Prestegårdsveien 14A"],
+          "postnummer": "1912",
+          "poststed": "ENEBAKK"
+        }
+      }
+    },
+    {
+      "internId": "700895208",
+      "navn": {
+        "fornavn": "Real",
+        "etternavn": "KIWI"
+      },
+      "identitetsnummer": {
+        "foedselsnummer": "20923148036"
+      },
+      "tilleggsId": [],
+      "kjoenn": "KVINNE",
+      "foedselsdato": "1931-12-20",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "personAdresse": {
+        "adresse": {
+          "adresselinjer": ["Åsliavegen 226"],
+          "postnummer": "2266",
+          "poststed": "ARNEBERG"
+        }
+      }
+    }
+  ],
+  "foretak": [],
+  "straffesaker": [
+    {
+      "straffesaksnummer": "15439559",
+      "detaljer": {
+        "hendelse": {
+          "gjerningstidspunktFra": "2022-07-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2022-07-01T00:00:00+02:00",
+          "gjerningssted": {
+            "adresselinjer": ["Wesselvegen 29"],
+            "postnummer": "3740",
+            "poststed": "SKIEN",
+            "land": {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          }
+        },
+        "statistikkgruppe": {
+          "kode": "0906",
+          "navn": "Tyveri fra hytte/fritidsbolig"
+        }
+      }
+    },
+    {
+      "straffesaksnummer": "15440390",
+      "detaljer": {
+        "hendelse": {
+          "gjerningstidspunktFra": "2023-12-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2023-12-01T00:00:00+02:00",
+          "gjerningssted": {
+            "adresselinjer": ["Weidemanns gate 5"],
+            "postnummer": "3080",
+            "poststed": "HOLMESTRAND",
+            "land": {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          }
+        },
+        "statistikkgruppe": {
+          "kode": "0966",
+          "navn": "Forbund om heleri"
+        }
+      }
+    },
+    {
+      "straffesaksnummer": "15439558",
+      "detaljer": {
+        "hendelse": {
+          "gjerningstidspunktFra": "2015-08-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2015-11-01T00:00:00+02:00",
+          "gjerningssted": {
+            "adresselinjer": ["Wergelands vei 11"],
+            "postnummer": "3256",
+            "poststed": "LARVIK",
+            "land": {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          }
+        },
+        "statistikkgruppe": {
+          "kode": "2204",
+          "navn": "Grovt tyveri fra hytte"
+        }
+      }
+    },
+    {
+      "straffesaksnummer": "15439557",
+      "detaljer": {
+        "hendelse": {
+          "gjerningstidspunktFra": "2015-08-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2015-08-01T00:00:00+02:00",
+          "gjerningssted": {
+            "adresselinjer": ["Wergelands vei 11"],
+            "postnummer": "3256",
+            "poststed": "LARVIK",
+            "land": {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          }
+        },
+        "statistikkgruppe": {
+          "kode": "1708",
+          "navn": "Drap (§ 233)"
+        }
+      }
+    },
+    {
+      "straffesaksnummer": "15438441",
+      "detaljer": {
+        "hendelse": {
+          "gjerningstidspunktFra": "2023-02-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2023-02-01T00:00:00+02:00",
+          "gjerningssted": {
+            "adresselinjer": ["Westadkleiva 9"],
+            "postnummer": "3360",
+            "poststed": "GEITHUS",
+            "land": {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          }
+        },
+        "statistikkgruppe": {
+          "kode": "0966",
+          "navn": "Forbund om heleri"
+        }
+      }
+    },
+    {
+      "straffesaksnummer": "15434059",
+      "detaljer": {
+        "hendelse": {
+          "gjerningstidspunktFra": "2018-11-11T00:00:00+02:00",
+          "gjerningstidspunktTil": "2018-11-11T00:00:00+02:00",
+          "gjerningssted": {
+            "adresselinjer": ["Wahlstrøms gate 9"],
+            "postnummer": "3513",
+            "poststed": "HØNEFOSS",
+            "land": {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          }
+        },
+        "statistikkgruppe": {
+          "kode": "1669",
+          "navn": "Menneskehandel tilrettelegge mv - grov"
+        }
+      }
+    }
+  ],
+  "dokumenter": []
+}
