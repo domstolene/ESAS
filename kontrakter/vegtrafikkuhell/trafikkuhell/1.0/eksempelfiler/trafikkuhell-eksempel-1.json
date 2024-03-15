@@ -1,3 +1,70 @@
 {
-  "trafikkuhellId": "123141lkuhusdf"
+  "Anmeldelsenummer": "2711762e-32e3-493e-a8a1-4e604b162a9b",
+  "Ulykkesdato": "08.03.2024",
+  "Klokkeslett": "16:56",
+  "Politidistrikt/tjenestested": "Trøndelag politidistrikt",
+  "Gjerningskommune": "Ørland",
+  "Åsteds beskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
+  "Vegtype": "Gang/sykkelveg",
+  "Ulykkeskode": 23,
+  "Vegbredde": 30,
+  "Stedsforhold": "3-armet veikryss",
+  "Antall kjørefelt": 3,
+  "Fysisk midtdeler": "Fysisk adskilt",
+  "Vegdekke": "Betong",
+  "Føreforhold": "Snø, eller isbelagt",
+  "Værforhold": "Dårlig sikt, nedbør",
+  "Temperatur": 17,
+  "Lysforhold": "Mørkt m/belysning",
+  "Fartsgrense": 60,
+  "Politiets beskrivelse av stedet": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+  "nord koordinat": 7011342,
+  "øst koordinat": 289395,
+  "Veg/gate": "Elines vei",
+  "Vegkategori": "Fylkesveg",
+  "Vegnr": 9,
+  "Kryssende veg": "Annes gate",
+  "Kryssende Vegkategori": "Komm. veg",
+  "Kryssende Vegnr": 10,
+  "Påkjørt dyr/hinder/gjenstand": "Elg",
+  "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": 8,
+  "Regulering for trafikkenhet i vegkryss": "Forkjørsvei (skilt 206, 210) - denne er både her og under enhet er det riktig?",
+  "enhet": [
+    {
+      "Enhetsbokstav": "A",
+      "Registreringsnummer": 123456789,
+      "Enhetstype": "Personbil, stasjonsvogn",
+      "Årsmodell": 2020,
+      "Registreringsland": "N",
+      "Dekktype": "Vinterdekk uten pigger",
+      "Kommentar dekk": "veldig slitte dekk",
+      "Regulering for trafikkenhet i vegkryss": "3: Forkjørsvei (skilt 206, 210)",
+      "person/trafikant": [
+        {
+          "Kjønn": "M",
+          "Fødselsdato": "04.06.2003",
+          "Plassering i kjøretøy": "Førerplass",
+          "Skadegrad": "Illebefinnende (fører)",
+          "Beskyttelsesutstyr": "Bilbelte og kollisjonspute",
+          "Skadeforløp": "Nakkeskade",
+          "Ferdselsformål": "Fritidsreise",
+          "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
+          "Postnr": 3530,
+          "Poststed": "Røyse"
+        },
+        {
+          "Kjønn": "M",
+          "Fødselsdato": "21.05.2011",
+          "Plassering i kjøretøy": "Bak",
+          "Skadegrad": "Meget alv.skadd",
+          "Beskyttelsesutstyr": "Bilbelte",
+          "Skadeforløp": "Skadd mot interiør",
+          "Ferdselsformål": "Fritidsreise",
+          "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
+          "Postnr": 3530,
+          "Poststed": "Røyse"
+        }
+      ]
+    }
+  ]
 }
