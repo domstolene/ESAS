@@ -547,6 +547,32 @@
       ],
       "additionalProperties": false
     },
+    "basissakSkyldig_2": {
+      "properties": {
+        "basissakId": {
+          "$ref": "#/definitions/internId",
+          "description": "politiets interne id for basissaken"
+        },
+        "personForetak": {
+          "$ref": "#/definitions/personForetakRef",
+          "description": "Intern id til person eller foretak. Denne skal være det samme som internId til en av personene i 'siktede' elementet"
+        },
+        "resultat": {
+          "type": "#/definitions/basissakResultat",
+          "description": "Om retten finner den siketede skyldig eller ikke skyldig for denne basissaken"
+        },
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer",
+          "desctioption": "Politiets interne saksnummer"
+        },
+        "omsubsummert": {
+          "$ref": "#/definitions/lovbud",
+          "desctioption": "Satt kun dersom basissaken er omsubsumert i domstolen. Om satt, inneholder dette feltet verdien av det omsubsumerte lovbudet."
+        }
+      },
+      "required": ["personForetak", "resultat", "straffesaksnummer"],
+      "additionalProperties": false
+    },
     "basissakSkyldig": {
       "$comment": "Ønsker poltiet den interne id'en tilbake (kalt basissakId i siktelsen)?",
       "properties": {

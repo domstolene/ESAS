@@ -34,39 +34,59 @@
       "tittel": "Saksbehandler"
     }
   },
-  "siktedeTiltaltePersoner": [
+  "siktedeTiltaltePersonerForetak": [
     {
-      "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
-      "identitetsnummer": {
-        "foedselsnummer": "14846399381"
-      },
-      "tilleggsId": [],
-      "fornavn": "Morsom",
-      "etternavn": "Kiwi",
-      "kjoenn": "MANN",
-      "foedselsdato": "1963-04-14",
-      "nasjonalitet": {
-        "kode": "NOR",
-        "navn": "Norge"
+      "person": {
+          "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
+          "identitetsnummer": {
+            "foedselsnummer": "14846399381"
+          },
+          "tilleggsId": [],
+          "fornavn": "Morsom",
+          "etternavn": "Kiwi",
+          "kjoenn": "MANN",
+          "foedselsdato": "1963-04-14",
+          "nasjonalitet": {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
       }
     },
     {
-      "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
-      "identitetsnummer": {
-        "foedselsnummer": "19077046529"
-      },
-      "tilleggsId": [],
-      "fornavn": "Masse",
-      "etternavn": "Kiwi",
-      "kjoenn": "MANN",
-      "foedselsdato": "1970-07-19",
-      "nasjonalitet": {
-        "kode": "NOR",
-        "navn": "Norge"
+      "person": {
+        "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
+        "identitetsnummer": {
+          "foedselsnummer": "14846399381"
+        },
+        "tilleggsId": [],
+        "fornavn": "Morsom",
+        "etternavn": "Kiwi",
+        "kjoenn": "MANN",
+        "foedselsdato": "1963-04-14",
+        "nasjonalitet": {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      }
+    },
+    {
+      "person": {
+        "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
+        "identitetsnummer": {
+          "foedselsnummer": "19077046529"
+        },
+        "tilleggsId": [],
+        "fornavn": "Masse",
+        "etternavn": "Kiwi",
+        "kjoenn": "MANN",
+        "foedselsdato": "1970-07-19",
+        "nasjonalitet": {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
       }
     }
   ],
-  "siktedeTiltalteForetak": [],
   "dokumenter": [
     {
       "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb",
