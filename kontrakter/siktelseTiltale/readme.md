@@ -7,13 +7,17 @@ SchemaVersion=1.0
 [RFC](../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
+## Status
+2. runde med kommentarer fra domstolene, sender ut til ny PR.
+
+## skjemadealjer
+### internId
+internId brukes på referanser innenfor en melding og lever ikke utenfor en melding, hvis samme siktelse/begjæring sendes på nytt så vil de kanskje ha nye id'er
+
 ## Siktelse / tiltale
 Ref Harmoniseringsrapporten av 2006 så er en siktelse/tiltale en liste over basissaker som skal avgjøres.
 En basissak er et straffbart forhold (tid og sted), et lovbud og en siktet/tiltalt person.
-## Status
-Jobber med første utkast som er basert på siktelsen vi leverte sammen med opprinnelig begjæring om varetekt.
 
-## Dokumentasjon
 ### basissak
 Se [basissak](basissak.md). Domstolene skal avgjøre alle basissaker med skyld ikke skyld.
 _Sjekk opp fordi i Harmoniseringsrapporten står det straffeskyld / ikke straffeskyld_

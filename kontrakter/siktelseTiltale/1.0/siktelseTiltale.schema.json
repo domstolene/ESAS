@@ -55,13 +55,13 @@
 
   "definitions": {
     "basissakId": {
-      "$ref": "#/definitions/unikId"
+      "$ref": "#/definitions/GUID", "description": "Unik id for basissak, ved dom må denne id følge med og det skal vær definert skyld/ikke skyld"
     },
     "begjaeringAnmodningsId": {
       "type": "object",
       "description": "Referanse til begjæring til domstolen (kravId) eller forsendelse til Kriminalomsorgen anmodningsId",
       "properties": {
-        "kravId": { "$ref": "#/definitions/unikId" },
+        "kravId": { "$ref": "#/definitions/GUID", "description": "" },
         "anmodningsId": {
           "$ref": "#/definitions/unikId"
         }
@@ -200,7 +200,8 @@
       "type": "object",
       "properties": {
         "meldingsId": {
-          "type": "string"
+          "$ref": "#/definitions/GUID",
+          "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
         },
         "sendtTid": {
           "type": "string",
@@ -366,8 +367,8 @@
       "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. fornærmet",
       "properties": {
         "internId": {
-          "type": "string",
-          "description": "unik id lokalt i meldingen, samme internId er samme foretak."
+          "$ref": "#/definitions/GUID",
+          "description": "unik id kun lokalt i en melding, samme internId er samme foretak."
         },
         "organisasjonsnummer": {
           "$ref": "#/definitions/organisasjonsnummer"
@@ -407,8 +408,8 @@
       "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
       "properties": {
         "internId": {
-          "type": "string",
-          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme internId."
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
@@ -635,8 +636,8 @@
       "description": "Dokument som oversendes på justishub",
       "properties": {
         "internId": {
-          "type": "string",
-          "description": "Id for dokumentet internt i meldingen slik at det kan refereres til et bestemt dokument (dokumentRef)"
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id for dokumentet kun lokalt i en melding. Bruker dokumentRef for å referere"
         },
         "kategori": {
           "$ref": "#/definitions/kodeverk"
@@ -676,9 +677,7 @@
       "type": "object",
       "description": "Referanse internt i melding til dokumenter i dokumentlisten",
       "properties": {
-        "internId": {
-          "type": "string"
-        }
+        "internId": { "$ref": "#/definitions/GUID" }
       },
       "required": ["internId"],
       "additionalProperties": false
@@ -716,18 +715,12 @@
       ]
     },
     "personRef": {
-      "$ref": "#/definitions/internId",
+      "$ref": "#/definitions/GUID",
       "description": "Referanse inn i personlisten"
     },
     "foretakRef": {
-      "$ref": "#/definitions/internId",
+      "$ref": "#/definitions/GUID",
       "description": "Referanse inn i foretakslisten"
-    },
-    "internId": {
-      "type": "string",
-      "description": "id, unik innenfor melding",
-      "maxLength": 40,
-      "minLength": 1
     },
     "organisasjonsnummer": {
       "type": "string",
@@ -752,7 +745,11 @@
       "type": "string",
       "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
       "maxLength": 40,
-      "minLength": 1
+      "minLength": 3
+    },
+    "GUID": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
     }
   }
 }
