@@ -2,7 +2,7 @@
 
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til   |
 |---------|---------------------------------------------|----------------|--------------|-------------|
-| 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     |              |             |
+| 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |             |
 | 1.3     | Håndter vitner uten identifikator           | ??             |              | 20.03.2024  |
 | 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     |              |             |
 | 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              | 09.10.2023  |
