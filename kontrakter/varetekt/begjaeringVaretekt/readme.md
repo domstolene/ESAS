@@ -4,10 +4,10 @@ Det legges ved sakstyrende dokumenter som vedlegg til denne meldingen. Restene a
 til riktig begjæring om varetekt (kravId). Sammenstillingen lages vha. BL Straffesaksforsendelse.
 ## Headere forsendelse justisHub
 SchemaName=BEGJAERING_VARETEKT  
-SchemaVersion=1.3  
+SchemaVersion=1.4
 [RFC](../../../rfc/MessageName-header.md)
 
-Aktiv versjon i produksjon er versjon 1.3
+Aktiv versjon i produksjon er versjon 1.4
 
 ### [Se changelog for endringer](./changelog.md)
 
