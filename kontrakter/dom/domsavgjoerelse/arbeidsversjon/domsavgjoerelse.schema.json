@@ -19,6 +19,7 @@
           "description": "Saksbehandler på saken"
         }
       },
+      "required": ["dommer", "saksbehandler"],
       "type": "object",
       "additionalProperties": false
     },
@@ -208,8 +209,8 @@
         "samfunnsstraff": {
           "$ref": "#/definitions/samfunnsstraff"
         },
-        "ungdomststraff": {
-          "$ref": "#/definitions/ungdomststraff"
+        "ungdomsstraff": {
+          "$ref": "#/definitions/ungdomsstraff"
         },
         "rettighetstap": {
           "$ref": "#/definitions/rettighetstap"
@@ -311,7 +312,7 @@
       "required": ["straff"],
       "additionalProperties": false
     },
-    "ungdomststraff": {
+    "ungdomsstraff": {
       "properties": {
         "straff": {
           "$ref": "#/definitions/varighet",
