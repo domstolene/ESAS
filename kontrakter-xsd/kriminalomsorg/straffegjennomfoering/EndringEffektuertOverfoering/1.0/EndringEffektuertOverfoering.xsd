@@ -29,6 +29,8 @@
 
       <xs:element name="Overfoeringstype" type="fns:OverfoeringstypeType"/>
 
+      <xs:element name="TilleggITid" type="xs:int" nillable="true" />
+
     </xs:all>
   </xs:complexType>
 </xs:schema>
