@@ -18,15 +18,20 @@
       "description": "Referanse til oversendelse siktelsen/tiltalen er en del av"
     },
     "siktelseTiltale": { "$ref": "#/definitions/siktelseTiltale" },
-    "personer": {
+    "siktedePersoner": {
       "type": "array",
       "description": "Alle siktede/tiltalte personer i siktelsen/tiltalen, kan være tom liste",
-      "items": { "$ref": "#/definitions/person" }
+      "items": { "$ref": "#/definitions/siktetPerson" }
     },
     "foretak": {
       "type": "array",
-      "description": "Alle siktede/tiltalte foretak i siktelsen/tiltalen, kan være tom liste",
+      "description": "Alle siktede eller fornærmede som er foretak. Kan være tom listen",
       "items": { "$ref": "#/definitions/foretak" }
+    },
+    "fornaermedePersoner": {
+      "type": "array",
+      "description": "Fornærmede personer.",
+      "items": { "$ref": "#/definitions/person" }
     },
     "straffesaker": {
       "type": "array",
@@ -46,8 +51,9 @@
     "hovedStraffesaksnummer",
     "begjaeringAnmodning",
     "siktelseTiltale",
-    "personer",
+    "siktedePersoner",
     "foretak",
+    "fornaermedePersoner",
     "straffesaker",
     "dokumenter"
   ],
@@ -55,15 +61,20 @@
 
   "definitions": {
     "basissakId": {
-      "$ref": "#/definitions/GUID", "description": "Unik id for basissak, ved dom må denne id følge med og det skal vær definert skyld/ikke skyld"
+      "$ref": "#/definitions/GUID",
+      "description": "Unik id for basissak, ved dom må denne id følge med og det skal vær definert skyld/ikke skyld"
     },
     "begjaeringAnmodningsId": {
       "type": "object",
       "description": "Referanse til begjæring til domstolen (kravId) eller forsendelse til Kriminalomsorgen anmodningsId",
       "properties": {
-        "kravId": { "$ref": "#/definitions/GUID", "description": "" },
+        "kravId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Krav om avgjørelse kravId referanse til begjæring (varetekt, dom, annet) hvor denne siktelsen er vedlagt"
+        },
         "anmodningsId": {
-          "$ref": "#/definitions/unikId"
+          "$ref": "#/definitions/unikId",
+          "description": "Referanse til anmodning som sendes KO, f.eks. bestilling av varetektsplass"
         }
       },
       "oneOf": [
@@ -88,6 +99,62 @@
       ]
     },
     "adresse": {
+      "type": "object",
+      "description": "Norsk eller utenlandsk adresse",
+      "properties": {
+        "norge": {
+          "$ref": "#/definitions/adresseNorge",
+          "description": "Norsk adresse"
+        },
+        "utland": {
+          "$ref": "#/definitions/adresseUtland"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "norge": {
+              "$ref": "#/definitions/adresseNorge"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["norge"]
+        },
+        {
+          "properties": {
+            "utland": {
+              "$ref": "#/definitions/adresseUtland"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["utland"]
+        }
+      ]
+    },
+    "adresseNorge": {
+      "type": "object",
+      "description": "Norske med litt strengere validering på postnummer",
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "maxItems": 4
+        },
+        "postnummer": {
+          "$ref": "#/definitions/norskPostnummer"
+        },
+        "poststed": {
+          "type": "string"
+        }
+      },
+      "required": ["adresselinjer", "postnummer"],
+      "additionalProperties": false
+    },
+    "adresseUtland": {
       "type": "object",
       "properties": {
         "adresselinjer": {
@@ -126,18 +193,16 @@
       "required": ["kode"],
       "additionalProperties": false
     },
-    "kontaktInfo": {
+    "kontaktInfoPerson": {
       "type": "object",
+      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
       "properties": {
         "epost": {
           "type": "string"
         },
-        "telefonnummer": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/telefonnummer" }
-        }
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
       },
-      "required": ["telefonnummer"],
+      "required": ["epost"],
       "additionalProperties": false
     },
     "land": {
@@ -154,7 +219,7 @@
           "type": "string"
         }
       },
-      "required": ["kode"],
+      "required": ["kode", "navn"],
       "additionalProperties": false
     },
     "organisasjon": {
@@ -172,6 +237,28 @@
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
+    "paataleJurist": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker. Beholder brukeridentifikasjon pga. av gammel historikk og behov for identifisering.",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "BID hos politiet nå"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson",
+          "description": "Frivillig fordi kan referere til en person som ikke lenger jobber i politiet"
+        }
+      },
+      "required": ["brukeridentifikasjon", "navn"],
+      "additionalProperties": false
+    },
     "ansattPerson": {
       "type": "object",
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
@@ -179,21 +266,15 @@
         "tittel": {
           "type": "string"
         },
-        "fornavn": {
-          "type": "string"
-        },
-        "mellomnavn": {
-          "type": "string"
-        },
-        "etternavn": {
-          "type": "string"
+        "navn": {
+          "$ref": "#/definitions/personnavn"
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
+          "$ref": "#/definitions/kontaktInfoPerson",
           "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["etternavn"],
+      "required": ["navn", "kontakt"],
       "additionalProperties": false
     },
     "forsendelse": {
@@ -234,7 +315,7 @@
           "description": "Person som trykker på send til domstolen."
         }
       },
-      "required": ["organisasjon"],
+      "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
     "lovbudKombinert": {
@@ -294,7 +375,7 @@
           "type": "string"
         }
       },
-      "required": ["etternavn"],
+      "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
     "foedselsnummer": {
@@ -377,7 +458,8 @@
           "type": "string"
         },
         "adresse": {
-          "$ref": "#/definitions/adresse"
+          "$ref": "#/definitions/adresse",
+          "description": "hvis adresse er ugyldig, f.eks. skrevet ned koordinater i vanlig adresse så blir den ikke med."
         }
       },
       "required": ["internId", "navn"],
@@ -401,6 +483,60 @@
         }
       },
       "required": ["adresse"],
+      "additionalProperties": false
+    },
+    "siktetPerson": {
+      "type": "object",
+      "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
+      "properties": {
+        "internId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme internId."
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          },
+          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        }
+      },
+      "required": [
+        "internId",
+        "navn",
+        "foedselsdato",
+        "statsborgerskap",
+        "tilleggsId",
+        "identitetsnummer"
+      ],
       "additionalProperties": false
     },
     "person": {
@@ -497,7 +633,7 @@
       "properties": {
         "nummer": {
           "type": "string",
-          "description": "Brukes til visning i siktelse/tiltale dokument og er et romertall I, II osv. med for å lettere sammenligne med dokument."
+          "description": "Brukes til visning i siktelse/tiltale dokument og er et romertall I, II osv. med for å lettere sammenligne med dokument (OBS. vises ikke i dokument hvis det er bare en post)"
         },
         "prinsipalLovbud": {
           "$ref": "#/definitions/lovbudKombinert",
@@ -510,7 +646,7 @@
           "minItems": 1
         }
       },
-      "required": ["prinsipalLovbud", "straffbareForhold"],
+      "required": ["prinsipalLovbud", "straffbareForhold", "nummer"],
       "additionalProperties": false
     },
     "siktelsesType": {
@@ -538,7 +674,10 @@
           },
           "minItems": 1
         },
-        "skrevetAv": { "$ref": "#/definitions/ansattPerson" },
+        "skrevetAv": {
+          "$ref": "#/definitions/paataleJurist",
+          "description": "Person som har skrevet under siktelsen."
+        },
         "dokument": {
           "$ref": "#/definitions/dokumentRef",
           "description": "Referanse til siktelsesdokumentet (PDF) som er vedlagt meldingen"
@@ -574,7 +713,10 @@
       "type": "object",
       "description": "Hendelse, tid, siktede (basissaker), fornærmede og vitner.",
       "properties": {
-        "bokstav": { "type": "string" },
+        "bokstav": {
+          "type": "string",
+          "description": "a) b) i dokumentet så vil det ikke vises bokstav hvis det er bare en straffesak"
+        },
         "straffesaksnummer": {
           "$ref": "#/definitions/straffesaksnummer",
           "description": "Straffesaken er BL sin implementasjon av et straffbart forhold. Detaljer om straffesaken i egen liste."
@@ -596,21 +738,31 @@
           "items": { "$ref": "#/definitions/straffesaksnummer" }
         }
       },
-      "required": ["straffesaksnummer", "basissaker", "inkluderteForhold"],
+      "required": [
+        "straffesaksnummer",
+        "basissaker",
+        "inkluderteForhold",
+        "bokstav"
+      ],
       "additionalProperties": false
     },
     "straffesak": {
       "type": "object",
-      "description": "Straffesak, hendelse og koding",
+      "description": "Straffesak, hendelse og koding og fornærmede som ikke er med i siktelsen",
       "properties": {
         "straffesaksnummer": {
           "type": "string"
         },
         "detaljer": {
           "$ref": "#/definitions/straffesakDetaljer"
+        },
+        "fornaermede": {
+          "type": "array",
+          "description": "Fornærmede personer og foretak knyttet til straffesaken, siktede personer/foretak er knyttet til saken i siktelsen.",
+          "items": { "$ref": "#/definitions/personForetakRef" }
         }
       },
-      "required": ["straffesaksnummer", "detaljer"],
+      "required": ["straffesaksnummer", "detaljer", "fornaermede"],
       "additionalProperties": false
     },
     "straffesakDetaljer": {
@@ -683,36 +835,8 @@
       "additionalProperties": false
     },
     "personForetakRef": {
-      "type": "object",
-      "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
-      "properties": {
-        "personRef": {
-          "$ref": "#/definitions/personRef"
-        },
-        "foretakRef": {
-          "$ref": "#/definitions/foretakRef"
-        }
-      },
-      "oneOf": [
-        {
-          "properties": {
-            "personRef": {
-              "$ref": "#/definitions/personRef"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["personRef"]
-        },
-        {
-          "properties": {
-            "foretakRef": {
-              "$ref": "#/definitions/foretakRef"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["foretakRef"]
-        }
-      ]
+      "$ref": "#/definitions/GUID",
+      "description": "Referanse inn person eller foretak lister"
     },
     "personRef": {
       "$ref": "#/definitions/GUID",
@@ -729,6 +853,13 @@
       "minLength": 9,
       "maxLength": 9
     },
+    "norskPostnummer": {
+      "type": "string",
+      "description": "Norsk postnummer er i dag 4 siffer",
+      "pattern": "^[0-9]+$",
+      "minLength": 4,
+      "maxLength": 4
+    },
     "straffesaksnummer": {
       "type": "string",
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
@@ -737,9 +868,10 @@
     },
     "telefonnummer": {
       "type": "string",
-      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
+      "pattern": "^\\+?[0-9, ,\\-,\\(,)]*$",
       "maxLength": 30,
-      "minLength": 1
+      "minLength": 3
     },
     "unikId": {
       "type": "string",
