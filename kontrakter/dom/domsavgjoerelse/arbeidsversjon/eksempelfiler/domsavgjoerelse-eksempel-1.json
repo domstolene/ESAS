@@ -218,7 +218,17 @@
                   ]
                 }
               }
-            ]
+            ],
+            "erklaering": {
+              "erklaeringPaatale": {
+                "meddeltIRettsmoete": true,
+                "erklaert": "VEDTATT"
+              },
+              "erklaeringSiktede": {
+                "meddeltIRettsmoete": true,
+                "erklaert": "VEDTATT"
+              }
+            }
           },
           {
             "personForetak": {
@@ -235,19 +245,19 @@
                 "straffesaksnummer": "131221"
               }
             ],
-            "reaksjoner": []
+            "reaksjoner": [],
+            "erklaering": {
+              "erklaeringPaatale": {
+                "meddeltIRettsmoete": true,
+                "erklaert": "VEDTATT"
+              },
+              "erklaeringSiktede": {
+                "meddeltIRettsmoete": true,
+                "erklaert": "VEDTATT"
+              }
+            }
           }
         ]
-      },
-      "erklaering": {
-        "erklaeringPaatale": {
-          "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT"
-        },
-        "erklaeringSiktede": {
-          "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT"
-        }
       }
     }
   }

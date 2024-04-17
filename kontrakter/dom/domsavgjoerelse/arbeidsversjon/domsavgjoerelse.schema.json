@@ -115,10 +115,6 @@
               "minItems": 1
             }
           }
-        },
-        "erklaering": {
-          "$ref": "#/definitions/erklaering",
-          "description": "Erklæring fra siktede og påtale"
         }
       },
       "required": [
@@ -151,9 +147,13 @@
             "$ref": "#/definitions/reaksjonsType"
           },
           "minItems": 0
+        },
+        "erklaering": {
+          "$ref": "#/definitions/erklaering",
+          "description": "Erklæring fra siktede og påtale"
         }
       },
-      "required": ["personForetak", "resultat", "reaksjoner"],
+      "required": ["personForetak", "resultat", "reaksjoner", "erklaering"],
       "additionalProperties": false
     },
     "basissakResultat": {
