@@ -10,6 +10,14 @@ SchemaVersion=1.0
 ## Status
 2. runde med kommentarer fra domstolene, sender ut til ny PR.
 
+## Utestående punkter
+### Kodeverk
+Bedre løsning på kodeverk, hvordan skal vi kunne dele politiets kodeverk.
+### Kontakt
+Hvis det er noe trøbbel spørsmål med en begjæring om tilståelsessak, hvem skal domstolen kontakte hos politiet?
+Legger ved informasjon om avsender inkludert epost adresse og telefon hvis det finnes.
+ spesifikke kontaktdetaljer fordi det er begjæringen om tilståelse som skal fange alle, men hvis vi ettersender hva da (meddomssaker)
+
 ## skjemadealjer
 ### internId
 internId brukes på referanser innenfor en melding og lever ikke utenfor en melding, hvis samme siktelse/begjæring sendes på nytt så vil de kanskje ha nye id'er
