@@ -20,12 +20,12 @@
     "siktelseTiltale": { "$ref": "#/definitions/siktelseTiltale" },
     "siktedePersoner": {
       "type": "array",
-      "description": "Alle siktede/tiltalte personer i siktelsen/tiltalen, kan være tom liste",
+      "description": "Alle siktede/tiltalte personer i siktelsen/tiltalen, kan være tom liste, hvis kun foretak er siktet/tiltalt",
       "items": { "$ref": "#/definitions/siktetPerson" }
     },
     "foretak": {
       "type": "array",
-      "description": "Alle siktede eller fornærmede som er foretak. Kan være tom listen",
+      "description": "Alle siktede eller fornærmede som er foretak. Kan være tom liste",
       "items": { "$ref": "#/definitions/foretak" }
     },
     "fornaermedePersoner": {
@@ -61,7 +61,7 @@
 
   "definitions": {
     "basissakId": {
-      "$ref": "#/definitions/GUID",
+      "$ref": "#/definitions/unikId",
       "description": "Unik id for basissak, ved dom må denne id følge med og det skal vær definert skyld/ikke skyld"
     },
     "begjaeringAnmodningsId": {
@@ -447,9 +447,9 @@
       "type": "object",
       "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. fornærmet",
       "properties": {
-        "internId": {
+        "personForetakRef": {
           "$ref": "#/definitions/GUID",
-          "description": "unik id kun lokalt i en melding, samme internId er samme foretak."
+          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme foretak."
         },
         "organisasjonsnummer": {
           "$ref": "#/definitions/organisasjonsnummer"
@@ -462,7 +462,7 @@
           "description": "hvis adresse er ugyldig, f.eks. skrevet ned koordinater i vanlig adresse så blir den ikke med."
         }
       },
-      "required": ["internId", "navn"],
+      "required": ["personForetakRef", "navn"],
       "additionalProperties": false
     },
     "kjoenn": {
@@ -489,9 +489,9 @@
       "type": "object",
       "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
       "properties": {
-        "internId": {
+        "personForetakRef": {
           "$ref": "#/definitions/GUID",
-          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme internId."
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
@@ -530,7 +530,7 @@
         }
       },
       "required": [
-        "internId",
+        "personForetakRef",
         "navn",
         "foedselsdato",
         "statsborgerskap",
@@ -541,11 +541,11 @@
     },
     "person": {
       "type": "object",
-      "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
+      "description": "Person som ikke er siktet eller tiltalt, vil aldri ha SSP nummer",
       "properties": {
-        "internId": {
+        "personForetakRef": {
           "$ref": "#/definitions/GUID",
-          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme internId."
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
@@ -566,14 +566,14 @@
         },
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
-          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
+          "description": "Fødselsnummer eller D-nummer."
         },
         "tilleggsId": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/personIdentifikator"
           },
-          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
+          "description": "D-nummer, tidligere fødselsnummer ?"
         },
         "adresseGradering": {
           "$ref": "#/definitions/adresseGradering",
@@ -584,7 +584,7 @@
         }
       },
       "required": [
-        "internId",
+        "personForetakRef",
         "navn",
         "foedselsdato",
         "statsborgerskap",
@@ -690,14 +690,8 @@
       "type": "object",
       "description": "Tid og sted for det straffbare forholdet",
       "properties": {
-        "gjerningstidspunktFra": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "gjerningstidspunktTil": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "gjerningstidspunktFra": { "$ref": "#/definitions/lokalTid" },
+        "gjerningstidspunktTil": { "$ref": "#/definitions/lokalTid" },
         "gjerningssted": {
           "$ref": "#/definitions/adresse"
         }
@@ -787,7 +781,7 @@
       "type": "object",
       "description": "Dokument som oversendes på justishub",
       "properties": {
-        "internId": {
+        "dokumentRef": {
           "$ref": "#/definitions/GUID",
           "description": "Unik id for dokumentet kun lokalt i en melding. Bruker dokumentRef for å referere"
         },
@@ -825,26 +819,10 @@
       "required": ["mimeType", "uri", "sjekksum"],
       "additionalProperties": false
     },
-    "dokumentRef": {
-      "type": "object",
-      "description": "Referanse internt i melding til dokumenter i dokumentlisten",
-      "properties": {
-        "internId": { "$ref": "#/definitions/GUID" }
-      },
-      "required": ["internId"],
-      "additionalProperties": false
-    },
+    "dokumentRef": { "$ref": "#/definitions/GUID" },
     "personForetakRef": {
       "$ref": "#/definitions/GUID",
       "description": "Referanse inn person eller foretak lister"
-    },
-    "personRef": {
-      "$ref": "#/definitions/GUID",
-      "description": "Referanse inn i personlisten"
-    },
-    "foretakRef": {
-      "$ref": "#/definitions/GUID",
-      "description": "Referanse inn i foretakslisten"
     },
     "organisasjonsnummer": {
       "type": "string",
@@ -852,6 +830,11 @@
       "pattern": "^[0-9]+$",
       "minLength": 9,
       "maxLength": 9
+    },
+    "lokalTid": {
+      "type": "string",
+      "description": "Lokal tid uten tidssone og millisekunder. 2023-04-03T12:33:45 ISO 8601 uten millisekunder og tidssone",
+      "format": "date-time"
     },
     "norskPostnummer": {
       "type": "string",
@@ -877,7 +860,7 @@
       "type": "string",
       "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
       "maxLength": 40,
-      "minLength": 3
+      "minLength": 5
     },
     "GUID": {
       "type": "string",

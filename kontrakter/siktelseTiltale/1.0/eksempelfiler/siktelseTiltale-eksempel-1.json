@@ -1,14 +1,20 @@
 {
   "forsendelse": {
-    "meldingsId": "F16E9255-FDA4-4024-AA23-8A2C62C14497",
-    "sendtTid": "2024-02-28T17:47:36+02:00",
+    "meldingsId": "1A51B95E-D989-425B-9C0E-1417773B4C1F",
+    "sendtTid": "2024-04-17T22:45:38+02:00",
     "avsender": {
       "organisasjon": {
         "organisasjonsnummer": "983998178",
         "navn": "Sør-Øst politidistrikt"
       },
       "person": {
-        "etternavn": "Politiets Datatjeneste"
+        "navn": {
+          "fornavn": "Peder",
+          "etternavn": "Politiets Datatjeneste"
+        },
+        "kontakt": {
+          "epost": "jubal.long@politiet.no"
+        }
       }
     },
     "mottakerOrganisasjon": {
@@ -18,16 +24,16 @@
   },
   "hovedStraffesaksnummer": "15439560",
   "begjaeringAnmodning": {
-    "kravId": "305B944C-7D1D-491E-AFD3-473F245DABBC"
+    "kravId": "E33B9049-34B7-4D31-92A7-4D7CB478B538"
   },
   "siktelseTiltale": {
-    "siktelsesId": "16D161D4-33F4-4651-B1AD-A80917BCB647",
+    "siktelsesId": "57653CD7-EF0D-4FA5-B889-07EF90E9FCAF",
     "siktelsesType": "SIKTELSE",
     "poster": [
       {
         "nummer": "I",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "DB1A21B4-5D0B-4B95-9EA4-94306A75DF9B",
+          "lovbudKombinertId": "6236FDDC-213D-4A2F-BAAA-4FD75AFA9DF7",
           "lovbud": [
             {
               "lovbudId": "{A1D0F6A9-D4C1-4F2D-A69E-039ACB090304}",
@@ -38,6 +44,7 @@
         },
         "straffbareForhold": [
           {
+            "bokstav": "a",
             "straffesaksnummer": "15439561",
             "prinsipalGrunnlag": {
               "grunnlagTekst": "Mandag 1. mai 2023 kl. 00.00 i Gartneriveien 2 i Kragerø ..."
@@ -45,14 +52,13 @@
             "basissaker": [
               {
                 "basissakId": "NzAzODU5MTE0",
-                "personForetak": {
-                  "personRef": "700896090"
-                }
+                "personForetak": "BD159522-BD2B-4984-BEA0-48A3F9CC830C"
               }
             ],
             "inkluderteForhold": []
           },
           {
+            "bokstav": "b",
             "straffesaksnummer": "15439560",
             "prinsipalGrunnlag": {
               "grunnlagTekst": "Lørdag 1. juli 2023 kl. 00.00 i Weiss gate 5D i Kongsberg ..."
@@ -60,9 +66,7 @@
             "basissaker": [
               {
                 "basissakId": "NzAzODU5MTEz",
-                "personForetak": {
-                  "personRef": "700896090"
-                }
+                "personForetak": "BD159522-BD2B-4984-BEA0-48A3F9CC830C"
               }
             ],
             "inkluderteForhold": []
@@ -71,13 +75,16 @@
       }
     ],
     "skrevetAv": {
-      "fornavn": "NinaTerese",
-      "etternavn": "Eriksen"
+      "brukeridentifikasjon": "BLC210",
+      "navn": {
+        "fornavn": "NinaTerese",
+        "etternavn": "Eriksen"
+      }
     }
   },
-  "personer": [
+  "siktedePersoner": [
     {
-      "internId": "700896090",
+      "personForetakRef": "BD159522-BD2B-4984-BEA0-48A3F9CC830C",
       "navn": {
         "fornavn": "Vokal",
         "etternavn": "FABRIKKPIPE"
@@ -96,28 +103,86 @@
       ],
       "personAdresse": {
         "adresse": {
-          "adresselinjer": ["Pampusvegen 32"],
-          "postnummer": "6285",
-          "poststed": "STOREKALVØY"
+          "norge": {
+            "adresselinjer": ["Pampusvegen 32"],
+            "postnummer": "6285",
+            "poststed": "STOREKALVØY"
+          }
         }
       }
     }
   ],
   "foretak": [],
+  "fornaermedePersoner": [
+    {
+      "personForetakRef": "F34CAFDB-F3FB-4AC9-8FE0-2463BA57FC16",
+      "navn": {
+        "fornavn": "Entusiastisk",
+        "etternavn": "HARE"
+      },
+      "identitetsnummer": {
+        "foedselsnummer": "25835799770"
+      },
+      "tilleggsId": [],
+      "kjoenn": "MANN",
+      "foedselsdato": "1957-03-25",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "personAdresse": {
+        "adresse": {
+          "norge": {
+            "adresselinjer": ["Olsbryggevegen 34"],
+            "postnummer": "3830",
+            "poststed": "ULEFOSS"
+          }
+        }
+      }
+    },
+    {
+      "personForetakRef": "922E9192-CBB8-4A32-B2CC-CA7B3498D484",
+      "navn": {
+        "fornavn": "Fiolett",
+        "etternavn": "POSTKASSE"
+      },
+      "identitetsnummer": {
+        "foedselsnummer": "15858796374"
+      },
+      "tilleggsId": [],
+      "kjoenn": "MANN",
+      "foedselsdato": "1987-05-15",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ],
+      "personAdresse": {
+        "adresse": {
+          "norge": {
+            "adresselinjer": ["Galterudstubben 9"],
+            "postnummer": "2614",
+            "poststed": "LILLEHAMMER"
+          }
+        }
+      }
+    }
+  ],
   "straffesaker": [
     {
       "straffesaksnummer": "15439561",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2023-05-01T00:00:00+02:00",
-          "gjerningstidspunktTil": "2023-05-01T00:00:00+02:00",
+          "gjerningstidspunktFra": "2023-05-01T00:00:00",
+          "gjerningstidspunktTil": "2023-05-01T00:00:00",
           "gjerningssted": {
-            "adresselinjer": ["Gartneriveien 2"],
-            "postnummer": "3770",
-            "poststed": "KRAGERØ",
-            "land": {
-              "kode": "NOR",
-              "navn": "Norge"
+            "norge": {
+              "adresselinjer": ["Gartneriveien 2"],
+              "postnummer": "3770",
+              "poststed": "KRAGERØ"
             }
           }
         },
@@ -125,21 +190,20 @@
           "kode": "0915",
           "navn": "Tyveri fra person på annet offentlig sted"
         }
-      }
+      },
+      "fornaermede": ["F34CAFDB-F3FB-4AC9-8FE0-2463BA57FC16"]
     },
     {
       "straffesaksnummer": "15439560",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2023-07-01T00:00:00+02:00",
-          "gjerningstidspunktTil": "2023-07-01T00:00:00+02:00",
+          "gjerningstidspunktFra": "2023-07-01T00:00:00",
+          "gjerningstidspunktTil": "2023-07-01T00:00:00",
           "gjerningssted": {
-            "adresselinjer": ["Weiss gate 5D"],
-            "postnummer": "3611",
-            "poststed": "KONGSBERG",
-            "land": {
-              "kode": "NOR",
-              "navn": "Norge"
+            "norge": {
+              "adresselinjer": ["Weiss gate 5D"],
+              "postnummer": "3611",
+              "poststed": "KONGSBERG"
             }
           }
         },
@@ -147,7 +211,8 @@
           "kode": "0906",
           "navn": "Tyveri fra hytte/fritidsbolig"
         }
-      }
+      },
+      "fornaermede": ["922E9192-CBB8-4A32-B2CC-CA7B3498D484"]
     }
   ],
   "dokumenter": []

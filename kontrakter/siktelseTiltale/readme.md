@@ -18,6 +18,10 @@ Hvis det er noe trøbbel spørsmål med en begjæring om tilståelsessak, hvem s
 Legger ved informasjon om avsender inkludert epost adresse og telefon hvis det finnes.
  spesifikke kontaktdetaljer fordi det er begjæringen om tilståelse som skal fange alle, men hvis vi ettersender hva da (meddomssaker)
 
+### Adresser kommer med oppdatering
+Dekker ikke alle tilfeller nå, adresse med gate,navn osv. er greit, men offshore, og annet lurt er ikke dekket.
+Ønsker ikke veldig mange versjoner.
+
 ## skjemadealjer
 ### internId
 internId brukes på referanser innenfor en melding og lever ikke utenfor en melding, hvis samme siktelse/begjæring sendes på nytt så vil de kanskje ha nye id'er
