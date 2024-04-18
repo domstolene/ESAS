@@ -535,6 +535,10 @@
         },
         "tittel": {
           "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson",
+          "description": "Frivillig fordi kan referere til en person som ikke lenger jobber i domstolen"
         }
       },
       "required": ["etternavn", "fornavn", "tittel"],
@@ -688,12 +692,21 @@
         "kjoenn": {
           "$ref": "#/definitions/kjoenn"
         },
-        "nasjonalitet": {
-          "$ref": "#/definitions/landType",
-          "description": "Nasjonalitet ikke med hvis det er ukjent."
+        "statsborgerskap": {
+          "description": "Tom array dersom statsborgerskap er ukjennt",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
         }
       },
-      "required": ["internId", "etternavn", "identitetsnummer", "tilleggsId"],
+      "required": [
+        "internId",
+        "etternavn",
+        "identitetsnummer",
+        "tilleggsId",
+        "statsborgerskap"
+      ],
       "type": "object",
       "additionalProperties": false
     },
@@ -773,8 +786,21 @@
       },
       "additionalProperties": false
     },
-    "landType": {
-      "description": "En landkode bestaar av tre store bokstaver fra kodelisten ISO 3166-1-alpha-3. Hentes fra kodeverk nationality.xml",
+    "kontaktInfoPerson": {
+      "type": "object",
+      "description": "Epost og/eller telefonnummer/mobil om tilgjengelig",
+      "properties": {
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": {
+          "$ref": "#/definitions/telefonnummer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "land": {
+      "description": "En landkode består av tre store bokstaver fra kodelisten ISO 3166-1-alpha-3. Hentes fra kodeverk nationality.xml",
       "type": "object",
       "properties": {
         "kode": {
@@ -787,7 +813,7 @@
           "type": "string"
         }
       },
-      "required": ["kode"],
+      "required": ["kode", "navn"],
       "additionalProperties": false
     },
     "personIdentifikator": {
@@ -930,10 +956,18 @@
       "maxLength": 30
     },
     "epost": {
-      "description": "Lange epostadresser.",
+      "type": "string",
+      "description": "Patternet sørger for at det ikke er mellomrom, kun en '@' og alltid kun èn '.' i domene",
       "maxLength": 150,
       "minLength": 5,
-      "type": "string"
+      "pattern": "^[^\\s@]+@([^\\s@.,]+\\.)+[^\\s@.,]{2,}$"
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
+      "pattern": "^\\+?[0-9, ,\\-,\\(,)]*$",
+      "maxLength": 30,
+      "minLength": 3
     },
     "datoTid": {
       "type": "string",

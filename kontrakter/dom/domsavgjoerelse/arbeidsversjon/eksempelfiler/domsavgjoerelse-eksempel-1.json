@@ -10,7 +10,10 @@
       "person": {
         "etternavn": "Saksbehandler",
         "fornavn": "Litt",
-        "tittel": "Saksbehandler"
+        "tittel": "Saksbehandler",
+        "kontakt": {
+          "epost": "litt.saksbehandler@domstol.no"
+        }
       },
       "rettsInstans": "TINGRETT"
     },
@@ -46,10 +49,12 @@
         "etternavn": "Kiwi",
         "kjoenn": "MANN",
         "foedselsdato": "1963-04-14",
-        "nasjonalitet": {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ]
       }
     },
     {
@@ -63,10 +68,12 @@
         "etternavn": "Kiwi",
         "kjoenn": "MANN",
         "foedselsdato": "1963-04-14",
-        "nasjonalitet": {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ]
       }
     },
     {
@@ -80,10 +87,12 @@
         "etternavn": "Kiwi",
         "kjoenn": "MANN",
         "foedselsdato": "1970-07-19",
-        "nasjonalitet": {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ]
       }
     }
   ],
