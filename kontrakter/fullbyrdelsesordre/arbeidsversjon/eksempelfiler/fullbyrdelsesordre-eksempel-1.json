@@ -1,0 +1,145 @@
+{
+  "forsendelse": {
+    "meldingsId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+    "sendtTid": "1892-06-30T19:21:41.0Z",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Gunnarsen",
+        "fornavn": "Gunnar",
+        "tittel": "Konsulent",
+        "kontakt": {
+          "epost": "gunnar.gunnarsen@politi.no"
+        }
+      }
+    },
+    "mottaker": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Kriminalomsorgen"
+      }
+    }
+  },
+  "saksInformasjon": {
+    "domstolSaksnummer": "1234",
+    "hovedstraffesaksnummer": "1234"
+  },
+  "kontaktpersoner": {
+    "paataleansvarlig": {
+      "etternavn": "Klausonius",
+      "fornavn": "Lars",
+      "tittel": "Påtaleansvarlig",
+      "kontakt": {
+        "epost": "lars.klausonius@politiet.no",
+        "telefonnummer": "0047 97 97 97 97"
+      }
+    }
+  },
+  "fullbyrdelsesordre": {
+    "avsagtDato": "1957-11-25",
+    "rettskraftigFraOgMedDato": "1944-05-18",
+    "avgjoerelseSomSkalFullbyrdes": {
+      "domfelte": {
+        "internId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+        "etternavn": "Skurkesen",
+        "fornavn": "Ronald",
+        "identitetsnummer": {
+          "foedselsnummer": "07099715094"
+        },
+        "tilleggsId": [],
+        "foedselsdato": "1896-05-10",
+        "kjoenn": "MANN",
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ]
+      },
+      "resultat": [
+        {
+          "basissakId": "1",
+          "lovbudKombinert": {
+            "lovbudKombinertId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+            "lovbud": [
+              {
+                "lovbudId": "8d5e1fe3-a6e7-44e1-9c99-6ea140320375",
+                "lovbudstreng": "Straffeloven § 332",
+                "gjengivelse": "for å ha mottatt eller skaffet seg eller andre del i utbytte av en straffbar handling. Likestilt med utbytte er en gjenstand, fordring eller tjeneste som trer istedenfor det.",
+                "hjemmler": [
+                  {
+                    "rettskilde": {
+                      "kode": "603",
+                      "navn": "Straffeloven"
+                    },
+                    "elementer": [
+                      {
+                        "type": "PARAGRAF",
+                        "verdi": "332"
+                      }
+                    ]
+                  }
+                ],
+                "strafferamme": 24,
+                "statistikkgruppe": {
+                  "kode": "0960",
+                  "navn": "Heleri"
+                },
+                "krimtype": {
+                  "kode": "02",
+                  "navn": "Vinningskriminalitet"
+                }
+              }
+            ]
+          },
+          "straffesaksnummer": "123456789101",
+          "grunnlagstekst": "Mandag 1. mai 2023 kl. 00.00 i Gartneriveien 2 i Kragerø, nappet veske...",
+          "Fornaermede": [
+            {
+              "personForetakRef": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+              "navn": {
+                "fornavn": "Linda",
+                "mellomnavn": "Irene",
+                "etternavn": "Moltubakk"
+              },
+              "foedselsdato": "1961-03-03",
+              "kjoenn": "KVINNE",
+              "statsborgerskap": [],
+              "identitetsnummer": {
+                "foedselsnummer": "07099715094"
+              },
+              "tilleggsId": [],
+              "adresseGradering": "STRENGT_FORTROLIG",
+              "personAdresse": {
+                "adresse": {
+                  "utland": {
+                    "adresselinjer": ["Solsvingen", "Leilighet l"]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "reaksjoner": []
+    }
+  },
+  "dokumenter": [
+    {
+      "internId": "1234567879",
+      "overskrift": "Vedlegg",
+      "skrevetDato": "2023-03-30",
+      "kategori": {
+        "kode": "siktelse"
+      },
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    }
+  ]
+}
