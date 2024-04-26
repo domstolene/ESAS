@@ -1,0 +1,120 @@
+{
+    "forsendelse": {
+        "meldingsId": "1A51B95E-D989-425B-9C0E-1417773B4C1F",
+        "sendtTid": "2024-04-17T22:45:38+02:00",
+        "avsender": {
+            "organisasjon": {
+                "organisasjonsnummer": "983998178",
+                "navn": "Sør-Øst politidistrikt"
+            },
+            "person": {
+                "navn": {
+                    "fornavn": "Peder",
+                    "etternavn": "Politiets Datatjeneste"
+                },
+                "kontakt": {
+                    "epost": "jubal.long@politiet.no"
+                }
+            }
+        },
+        "mottakerOrganisasjon": {
+            "organisasjonsnummer": "926723480",
+            "navn": "Agder tingrett"
+        }
+    },
+    "dokumenter": [],
+    "siktetTiltaltPersonForetak": {
+        "person": {
+            "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
+            "identitetsnummer": {
+                "foedselsnummer": "14846399381"
+            },
+            "tilleggsId": [],
+            "fornavn": "Morsom",
+            "etternavn": "Kiwi",
+            "kjoenn": "MANN",
+            "foedselsdato": "1963-04-14",
+            "statsborgerskap": [
+                {
+                    "kode": "NOR",
+                    "navn": "Norge"
+                }
+            ]
+        }
+    },
+    "paastandOmStraff": {
+        "kravId": "c2f05c05-79d3-4722-853c-cf3614e8101f",
+        "paastandOmStraffPersonForetak": [
+            {
+                "personForetak": {
+                    "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
+                },
+                "paastandOmStraff": [
+                    {
+                        "basissakId": "NzAzODU5MTE0",
+                        "lovbudKombinertId": "6236FDDC-213D-4A2F-BAAA-4FD75AFA9DF7",
+                        "lovbud": [
+                            {
+                                "lovbudId": "A1D0F6A9-D4C1-4F2D-A69E-039ACB090304",
+                                "lovbudStreng": "Straffeloven § 321",
+                                "gjengivelse": "for å ha tatt en gjenstand som tilhører en annen, med forsett om å skaffe seg eller andre en uberettiget vinning ved å selge, forbruke eller på annen måte tilegne seg den."
+                            }
+                        ],
+                        "reaksjoner": [
+                            {
+                                "bot": {
+                                    "beloep": 24000,
+                                    "proevetid": {
+                                        "lengde": {
+                                            "antallAar": 2
+                                        }
+                                    },
+                                    "subsidaerFengseltraff": {
+                                        "lengde": {
+                                            "antallDager": 24
+                                        }
+                                    }
+                                },
+                                "fengsel": {
+                                    "straff": {
+                                        "lengde": {
+                                            "antallAar": 2,
+                                            "antallMaaneder": 4
+                                        }
+                                    },
+                                    "betinget": {
+                                        "lengde": {
+                                            "antallMaaneder": 6
+                                        }
+                                    },
+                                    "proevetid": {
+                                        "lengde": {
+                                            "antallAar": 2
+                                        }
+                                    },
+                                    "fradrag": {
+                                        "lengde": {
+                                            "antallDager": 24
+                                        }
+                                    },
+                                    "saervilkaar": [
+                                        {
+                                            "paragraf": "§35",
+                                            "tekst": "Særvilkår om meldeplikt",
+                                            "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+                                        },
+                                        {
+                                            "paragraf": "§36",
+                                            "tekst": "Andre særvilkår",
+                                            "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
