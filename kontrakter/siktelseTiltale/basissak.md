@@ -2,7 +2,7 @@
 ## Definisjon i siktelse/tiltale straffesaker i BL
 En person/fortakt, en straffbar handling, ett lovbud du blir funnet skyldig i.
 Ser på prinsipal og subsidiært lovbud som to mulige lovbud en siktet kan bli funnet skyldig i (Harmoniseringsrapporten sier to basissaker).
-
+ a
 Et straffbart forhold er i BL straffesaken med tid og sted samt koblinger til alle roller i saken.
 Det er forskjellig grunnlag på prinsipal og subsidiært lovbud. Ser på det som to mulige beskrivelser av det samme straffbare forholdet.
 
