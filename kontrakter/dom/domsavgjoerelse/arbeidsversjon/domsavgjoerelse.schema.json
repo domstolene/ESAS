@@ -361,7 +361,7 @@
     },
     "inndragning": {
       "properties": {
-        "hjemmel":{
+        "hjemmel": {
           "$ref": "#/definitions/lovbud",
           "description": "Type inndragning. Eks. '§ 67 Inndragning av utbytte', '§ 68 Utvidet inndragning' etc."
         },
