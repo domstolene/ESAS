@@ -225,6 +225,15 @@
                       "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
                     }
                   ]
+                },
+                "inndragning": {
+                  "hjemmel": {
+                    "lovbudStreng": "§ 69 Inndragning av produktet av, gjenstanden for og redskapet til en straffbar handling"
+                  },
+                  "alternativBelopForGjenstand": true,
+                  "beloep": 20000,
+                  "beskrivelse": "Indragelse av.. ifm. tyveri i ... Alternativt skal 20 000 NOK tilfalle fornærmede",
+                  "tilfaller": "Peder Ås"
                 }
               }
             ],

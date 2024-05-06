@@ -224,7 +224,6 @@
         "inndragning": {
           "$ref": "#/definitions/inndragning"
         },
-
         "annet": {
           "$ref": "#/definitions/annet"
         }
@@ -327,6 +326,7 @@
           "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         }
       },
+      "required": ["straff"],
       "additionalProperties": false
     },
     "rettighetstap": {
@@ -339,6 +339,7 @@
           "minItems": 1
         }
       },
+      "required": ["detaljer"],
       "additionalProperties": false
     },
     "rettighetstapDetaljer": {
@@ -359,7 +360,29 @@
       "additionalProperties": false
     },
     "inndragning": {
-      "properties": {},
+      "properties": {
+        "hjemmel":{
+          "$ref": "#/definitions/lovbud",
+          "description": "Type inndragning. Eks. '§ 67 Inndragning av utbytte', '§ 68 Utvidet inndragning' etc."
+        },
+        "beloep": {
+          "type": "integer",
+          "description": "Beløp i norske kroner"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av inndragningen"
+        },
+        "tilfaller": {
+          "type": "string",
+          "description": "Navn på person beløpet tilfaller. Ikke satt dersom beløpet tilfaller statskassen"
+        },
+        "alternativBelopForGjenstand": {
+          "type": "boolean",
+          "description": "Dersom inndragning dreier seg om type '§ 69 Inndragning av produkt' Kan man velge å sette alternativt belæp for gjenstand"
+        }
+      },
+      "required": ["hjemmel"],
       "additionalProperties": false
     },
     "annet": {
@@ -369,6 +392,7 @@
           "description": "Fritekst som beskriver 'annet'-reaksjonen"
         }
       },
+      "required": ["tekst"],
       "additionalProperties": false
     },
     "erklaering": {
