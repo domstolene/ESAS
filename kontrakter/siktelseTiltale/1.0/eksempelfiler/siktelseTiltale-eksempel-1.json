@@ -36,7 +36,7 @@
           "lovbudKombinertId": "6236FDDC-213D-4A2F-BAAA-4FD75AFA9DF7",
           "lovbud": [
             {
-              "lovbudId": "{A1D0F6A9-D4C1-4F2D-A69E-039ACB090304}",
+              "lovbudId": "A1D0F6A9-D4C1-4F2D-A69E-039ACB090304",
               "lovbudStreng": "Straffeloven § 321",
               "gjengivelse": "for å ha tatt en gjenstand som tilhører en annen, med forsett om å skaffe seg eller andre en uberettiget vinning ved å selge, forbruke eller på annen måte tilegne seg den."
             }
@@ -112,7 +112,7 @@
       }
     }
   ],
-  "foretak": [],
+  "siktedeForetak": [],
   "fornaermedePersoner": [
     {
       "personForetakRef": "F34CAFDB-F3FB-4AC9-8FE0-2463BA57FC16",
@@ -171,6 +171,7 @@
       }
     }
   ],
+  "fornaermedeForetak": [],
   "straffesaker": [
     {
       "straffesaksnummer": "15439561",

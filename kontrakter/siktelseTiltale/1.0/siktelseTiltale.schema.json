@@ -23,15 +23,20 @@
       "description": "Alle siktede/tiltalte personer i siktelsen/tiltalen, kan være tom liste, hvis kun foretak er siktet/tiltalt",
       "items": { "$ref": "#/definitions/siktetPerson" }
     },
-    "foretak": {
+    "siktedeForetak": {
       "type": "array",
-      "description": "Alle siktede eller fornærmede som er foretak. Kan være tom liste",
+      "description": "Alle siktede foretak. Kan være tom liste",
       "items": { "$ref": "#/definitions/foretak" }
     },
     "fornaermedePersoner": {
       "type": "array",
       "description": "Fornærmede personer.",
       "items": { "$ref": "#/definitions/person" }
+    },
+    "fornaermedeForetak": {
+      "type": "array",
+      "description": "Alle fornaermede foretak. Kan være tom liste",
+      "items": { "$ref": "#/definitions/foretak" }
     },
     "straffesaker": {
       "type": "array",
@@ -52,8 +57,9 @@
     "begjaeringAnmodning",
     "siktelseTiltale",
     "siktedePersoner",
-    "foretak",
+    "siktedeForetak",
     "fornaermedePersoner",
+    "fornaermedeForetak",
     "straffesaker",
     "dokumenter"
   ],
@@ -198,7 +204,7 @@
       "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
       "properties": {
         "epost": {
-          "type": "string"
+          "$ref": "#/definitions/epost"
         },
         "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
       },
@@ -789,11 +795,13 @@
           "$ref": "#/definitions/kodeverk"
         },
         "overskrift": {
-          "type": "string"
+          "type": "string",
+          "description":  "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
         },
         "skrevetDato": {
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "description": "Når dokumentet er skrevet ferdig."
         },
         "forsendelse": {
           "$ref": "#/definitions/dokumentForsendelse"
@@ -831,9 +839,13 @@
       "minLength": 9,
       "maxLength": 9
     },
+    "epost": {
+      "type": "string",
+      "pattern": "^[^\\s@]+@([^\\s@.,]+\\.)+[^\\s@.,]{2,}$"
+    },
     "lokalTid": {
       "type": "string",
-      "description": "Lokal tid uten tidssone og millisekunder. 2023-04-03T12:33:45 ISO 8601 uten millisekunder og tidssone",
+      "description": "Lokal tid uten tidssone. 2023-04-03T12:33:45 ISO 8601 uten tidssone. Det vil ikke være med millisekunder.",
       "format": "date-time"
     },
     "norskPostnummer": {

@@ -36,7 +36,7 @@
           "lovbudKombinertId": "D57EFE89-6C8C-489E-A92E-5E9CC7261CF4",
           "lovbud": [
             {
-              "lovbudId": "{1713FA29-57D6-7F97-E053-0B3EA30AAE0D}",
+              "lovbudId": "1713FA29-57D6-7F97-E053-0B3EA30AAE0D",
               "lovbudStreng": "Straffeloven (1902) § 233 annet ledd, jf. første ledd",
               "gjengivelse": "for med overlegg eller for å lette eller skjule en annen forbrytelse eller unndra seg straffen for en slik, eller hvor forøvrig særdeles skjerpende omstendigheter forelå, å ha forvoldt en annens død"
             }
@@ -65,7 +65,7 @@
           "lovbudKombinertId": "E4AC5E62-7047-4213-8A27-AA4D8333614B",
           "lovbud": [
             {
-              "lovbudId": "{EE57A116-D7B4-4F5B-99DB-F4D52FA75F06}",
+              "lovbudId": "EE57A116-D7B4-4F5B-99DB-F4D52FA75F06",
               "lovbudStreng": "Straffeloven § 258, jf. § 257 annet ledd",
               "gjengivelse": "for å ha\r\n\r\na) lagt forholdene til rette for tvang, utnyttelse eller forledelse til  prostitusjon eller andre seksuelle ytelser, arbeid eller tjenester, herunder tigging, krigstjeneste i fremmed land, eller å samtykke i fjerning av et av vedkommendes indre organer, ved å anskaffe, transportere eller motta personen,\r\nb) på annen måte medvirket til tvangen, utnyttelsen eller forledelsen, eller \r\nc) gitt betaling eller annen fordel for å få samtykke til en slik handlemåte fra en person som har myndighet over den fornærmede, eller som mottatt slik betaling eller fordel.\r\n\r\nOvertredelsen er grov fordi det særlig legges vekt på at den som ble utsatt for handlingen var under 18 år, at det ble brukt grov vold eller tvang og at handlingen har medført betydelig utbytte."
             }
@@ -98,7 +98,7 @@
           "lovbudKombinertId": "165AB44B-701C-4E11-BB0F-8ED21BC2AE82",
           "lovbud": [
             {
-              "lovbudId": "{1713FA29-5638-7F97-E053-0B3EA30AAE0D}",
+              "lovbudId": "1713FA29-5638-7F97-E053-0B3EA30AAE0D",
               "lovbudStreng": "Straffeloven (1902) § 258, jf. § 257 og straffeloven § 321",
               "gjengivelse": "for å ha borttatt en gjenstand som helt eller delvis tilhørte en annen, i hensikt å skaffe seg eller andre en uberettiget vinning ved tilegnelsen av gjenstanden, idet tyveriet anses som grovt, særlig fordi det er forøvet ved innbrudd"
             }
@@ -127,7 +127,7 @@
           "lovbudKombinertId": "433E8CD6-1B06-4C65-BD56-D98464AAC13C",
           "lovbud": [
             {
-              "lovbudId": "{FA8DEA3F-7462-450F-9413-BC3A697F2DDA}",
+              "lovbudId": "FA8DEA3F-7462-450F-9413-BC3A697F2DDA",
               "lovbudStreng": "Straffeloven § 321",
               "gjengivelse": "for å ha tatt en gjenstand som tilhører en annen, med forsett om å skaffe seg eller andre en uberettiget vinning ved å selge, forbruke eller på annen måte tilegne seg den."
             }
@@ -145,7 +145,7 @@
                 "lovbudKombinertId": "A713BBFB-3457-480A-B21E-B393914B4BBB",
                 "lovbud": [
                   {
-                    "lovbudId": "{A8D49A21-02B9-429A-9C2D-E4A45CFFD228}",
+                    "lovbudId": "A8D49A21-02B9-429A-9C2D-E4A45CFFD228",
                     "lovbudStreng": "Straffeloven § 332",
                     "gjengivelse": "for å ha mottatt eller skaffet seg eller andre del i utbytte av en straffbar handling. Likestilt med utbytte er en gjenstand, fordring eller tjeneste som trer istedenfor det."
                   }
@@ -173,7 +173,7 @@
           "lovbudKombinertId": "02A6F54C-0F82-4489-82B6-9DE1C887DF29",
           "lovbud": [
             {
-              "lovbudId": "{E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5}",
+              "lovbudId": "E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5",
               "lovbudStreng": "Straffeloven § 336",
               "gjengivelse": "for å ha inngått forbund om å begå heleri."
             }
@@ -202,7 +202,7 @@
           "lovbudKombinertId": "E5C3975D-6AE3-404B-91B7-A437C4620AEA",
           "lovbud": [
             {
-              "lovbudId": "{E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5}",
+              "lovbudId": "E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5",
               "lovbudStreng": "Straffeloven § 336, jf. straffeloven § 79c",
               "gjengivelse": "for som ledd i aktivitetene til en organisert kriminell gruppe å ha inngått forbund om å begå heleri."
             }
@@ -292,7 +292,7 @@
       }
     }
   ],
-  "foretak": [],
+  "siktedeForetak": [],
   "fornaermedePersoner": [
     {
       "personForetakRef": "FC894809-0F66-46AE-BC59-A19CE86250B5",
@@ -367,6 +367,7 @@
       }
     }
   ],
+  "fornaermedeForetak": [],
   "straffesaker": [
     {
       "straffesaksnummer": "15439559",

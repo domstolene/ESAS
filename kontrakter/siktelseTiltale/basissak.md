@@ -6,7 +6,7 @@ Ser på prinsipal og subsidiært lovbud som to mulige lovbud en siktet kan bli f
 Et straffbart forhold er i BL straffesaken med tid og sted samt koblinger til alle roller i saken.
 Det er forskjellig grunnlag på prinsipal og subsidiært lovbud. Ser på det som to mulige beskrivelser av det samme straffbare forholdet.
 
-Hvis en hendelse er flere brudd på loveen så blir det i BL flere straffesaker med samme tid og sted. Dvs. en dupliering av hendelsen.
+Hvis en hendelse er flere brudd på loven så blir det i BL flere straffesaker med samme tid og sted. Dvs. en dupliering av hendelsen.
 ```mermaid
 erDiagram
     basissak }o..|| "Straffbart forhold": l
