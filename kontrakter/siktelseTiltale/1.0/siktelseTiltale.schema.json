@@ -796,7 +796,7 @@
         },
         "overskrift": {
           "type": "string",
-          "description":  "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
+          "description": "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
         },
         "skrevetDato": {
           "type": "string",
