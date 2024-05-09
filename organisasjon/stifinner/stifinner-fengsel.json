@@ -1,0 +1,287 @@
+{
+  "fengsler": [
+    {
+      "jusenhet": "10453",
+      "navn": "Stavanger fengsel, avdeling Auklend Overgangsbolig"
+    },
+    {
+      "jusenhet": "10564",
+      "navn": "Bastøy fengsel"
+    },
+    {
+      "jusenhet": "10600",
+      "navn": "Søndre Vestfold fengsel, Berg avdeling"
+    },
+    {
+      "jusenhet": "10618",
+      "navn": "Bergen fengsel"
+    },
+    {
+      "jusenhet": "10619",
+      "navn": "Bergen fengsel, Osterøy avdeling"
+    },
+    {
+      "jusenhet": "10776",
+      "navn": "Kriminalomsorgen Nordland avdeling Lavere Sikkerhet Fauske"
+    },
+    {
+      "jusenhet": "10779",
+      "navn": "Kriminalomsorgen Nordland avdeling Høy Sikkerhet Bodø"
+    },
+    {
+      "jusenhet": "10842",
+      "navn": "Bredtveit fengsel, forvarings- og sikringsanstalt"
+    },
+    {
+      "jusenhet": "11493",
+      "navn": "Drammen Overgangsbolig"
+    },
+    {
+      "jusenhet": "11495",
+      "navn": "Drammen fengsel"
+    },
+    {
+      "jusenhet": "11652",
+      "navn": "Indre Østfold fengsel, Eidsberg avdeling"
+    },
+    {
+      "jusenhet": "12506",
+      "navn": "Kriminalomsorgen Innlandet, avdeling Høy Sikkerhet Gjøvik"
+    },
+    {
+      "jusenhet": "12768",
+      "navn": "Kriminalomsorgen Innlandet, avdeling Høy Sikkerhet Hamar"
+    },
+    {
+      "jusenhet": "12830",
+      "navn": "Hassel fengsel"
+    },
+    {
+      "jusenhet": "12854",
+      "navn": "Haugesund fengsel"
+    },
+    {
+      "jusenhet": "13057",
+      "navn": "Nordre Vestfold fengsel, Hof avdeling"
+    },
+    {
+      "jusenhet": "13152",
+      "navn": "Nordre Vestfold fengsel, Horten avdeling"
+    },
+    {
+      "jusenhet": "13292",
+      "navn": "Ila fengsel og forvaringsanstalt"
+    },
+    {
+      "jusenhet": "13295",
+      "navn": "Kriminalomsorgen Innlandet, avdeling Lavere Sikkerhet Ilseng"
+    },
+    {
+      "jusenhet": "13729",
+      "navn": "Telemark fengsel, Kragerø avdeling"
+    },
+    {
+      "jusenhet": "13837",
+      "navn": "Romerike fengsel, Kroksrud avdeling"
+    },
+    {
+      "jusenhet": "13995",
+      "navn": "Søndre Vestfold fengsel, Larvik avdeling"
+    },
+    {
+      "jusenhet": "14517",
+      "navn": "Kriminalomsorgen Nordland avdeling Høy Sikkerhet Mosjøen"
+    },
+    {
+      "jusenhet": "15137",
+      "navn": "Oslo fengsel"
+    },
+    {
+      "jusenhet": "15680",
+      "navn": "Ringerike fengsel"
+    },
+    {
+      "jusenhet": "16067",
+      "navn": "Søndre Vestfold fengsel, Sandefjord avdeling"
+    },
+    {
+      "jusenhet": "16072",
+      "navn": "Sandeid fengsel"
+    },
+    {
+      "jusenhet": "16185",
+      "navn": "Sem fengsel"
+    },
+    {
+      "jusenhet": "16397",
+      "navn": "Telemark fengsel, Skien avdeling"
+    },
+    {
+      "jusenhet": "16738",
+      "navn": "Stavanger fengsel"
+    },
+    {
+      "jusenhet": "17298",
+      "navn": "Trondheim fengsel, Kongens Gt. avdeling"
+    },
+    {
+      "jusenhet": "17299",
+      "navn": "Trondheim fengsel, Leira avdeling"
+    },
+    {
+      "jusenhet": "17365",
+      "navn": "Tromsø fengsel"
+    },
+    {
+      "jusenhet": "17387",
+      "navn": "Trondheim fengsel"
+    },
+    {
+      "jusenhet": "17415",
+      "navn": "Indre Østfold fengsel, Trøgstad avdeling"
+    },
+    {
+      "jusenhet": "17601",
+      "navn": "Romerike fengsel, Ullersmo avdeling"
+    },
+    {
+      "jusenhet": "17951",
+      "navn": "Utenlandsk fengsel"
+    },
+    {
+      "jusenhet": "17999",
+      "navn": "Kriminalomsorgen Innlandet, Avd Lavere Sikkerhet Valdres"
+    },
+    {
+      "jusenhet": "18012",
+      "navn": "Vadsø fengsel"
+    },
+    {
+      "jusenhet": "18148",
+      "navn": "Verdal fengsel"
+    },
+    {
+      "jusenhet": "18290",
+      "navn": "Vik fengsel"
+    },
+    {
+      "jusenhet": "18568",
+      "navn": "Østfold friomsorgskontor og Ravneberget fengsel Avd. fengsel"
+    },
+    {
+      "jusenhet": "18707",
+      "navn": "Ålesund fengsel"
+    },
+    {
+      "jusenhet": "18733",
+      "navn": "Åna fengsel"
+    },
+    {
+      "jusenhet": "18810",
+      "navn": "Bredtveit fengsel, B 2 avdeling"
+    },
+    {
+      "jusenhet": "18812",
+      "navn": "Ventes Inn fengsel"
+    },
+    {
+      "jusenhet": "22191",
+      "navn": "Kriminalomsorgen Innlandet, Avd. Utenl.innsatte Kongsvinger"
+    },
+    {
+      "jusenhet": "22541",
+      "navn": "Hustad fengsel"
+    },
+    {
+      "jusenhet": "22626",
+      "navn": "Bjørgvin fengsel"
+    },
+    {
+      "jusenhet": "22632",
+      "navn": "Lyderhorn Overgangsbolig"
+    },
+    {
+      "jusenhet": "22696",
+      "navn": "Kriminalomsorgen Nordland avdeling Lavere Sikkerhet Bodø"
+    },
+    {
+      "jusenhet": "22775",
+      "navn": "Halden fengsel"
+    },
+    {
+      "jusenhet": "22800",
+      "navn": "Hedmark fengsel, Hamar avdeling (Lav Sikkerhet)"
+    },
+    {
+      "jusenhet": "22858",
+      "navn": "Senter for Narkotikaprogram Med Domstolskontroll i Oslo"
+    },
+    {
+      "jusenhet": "22859",
+      "navn": "Senter for Narkotikaprogram Med Domstolskontroll i Bergen"
+    },
+    {
+      "jusenhet": "22862",
+      "navn": "Åna fengsel, Rødgata avdeling"
+    },
+    {
+      "jusenhet": "22977",
+      "navn": "Romerike fengsel, Ungdomsenhet Øst"
+    },
+    {
+      "jusenhet": "22978",
+      "navn": "Ungdomsenhet Vest"
+    },
+    {
+      "jusenhet": "23625",
+      "navn": "§12 Region Øst"
+    },
+    {
+      "jusenhet": "23626",
+      "navn": "§12 Region Sør"
+    },
+    {
+      "jusenhet": "23627",
+      "navn": "§12 Region Sørvest"
+    },
+    {
+      "jusenhet": "23628",
+      "navn": "§12 Region Vest"
+    },
+    {
+      "jusenhet": "23629",
+      "navn": "§12 Region Nord"
+    },
+    {
+      "jusenhet": "23934",
+      "navn": "Oslo Overgangsbolig, Torshov avdeling"
+    },
+    {
+      "jusenhet": "23935",
+      "navn": "Oslo Overgangsbolig, Gamlebyen avdeling"
+    },
+    {
+      "jusenhet": "23936",
+      "navn": "Halden fengsel, Sarpsborg"
+    },
+    {
+      "jusenhet": "24255",
+      "navn": "Kriminalomsorgen Innlandet, Avd Lavere Sikkerhet Kongsvinger"
+    },
+    {
+      "jusenhet": "24268",
+      "navn": "Agder fengsel, Mandal avdeling"
+    },
+    {
+      "jusenhet": "24269",
+      "navn": "Agder fengsel, Solholmen avdeling"
+    },
+    {
+      "jusenhet": "24270",
+      "navn": "Agder fengsel, Evje avdeling"
+    },
+    {
+      "jusenhet": "24271",
+      "navn": "Agder fengsel, Froland avdeling"
+    }]
+}

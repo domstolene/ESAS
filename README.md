@@ -2,6 +2,9 @@
 
 Samling av kontrakter for meldinger som skal utveksles i ESAS-prosjektet.
 
+## Organisasjon
+[Organisasjoner som har tilgang til JustisHub, gamle meldinger og ny](organisasjon/readme.md)
+
 ## Validering av JSON-schema
 
 Validering av JSON-schema skjer ved pull-requester og push på main-branch, med `npm run json:validate`.

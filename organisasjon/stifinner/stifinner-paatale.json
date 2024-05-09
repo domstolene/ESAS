@@ -1,0 +1,148 @@
+{
+  "paatale": [
+    {
+      "id": "201",
+      "jusenhet": "15140",
+      "navn": "Oslo politidistrikt"
+    },
+    {
+      "id": "202",
+      "jusenhet": "16116",
+      "navn": "Øst politidistrikt"
+    },
+    {
+      "id": "203",
+      "jusenhet": "22678",
+      "navn": "Innlandet politidistrikt"
+    },
+    {
+      "id": "204",
+      "jusenhet": "17490",
+      "navn": "Sør-Øst politidistrikt"
+    },
+    {
+      "id": "205",
+      "jusenhet": "22224",
+      "navn": "Agder politidistrikt"
+    },
+    {
+      "id": "206",
+      "jusenhet": "16733",
+      "navn": "Sør-Vest politidistrikt"
+    },
+    {
+      "id": "207",
+      "jusenhet": "10611",
+      "navn": "Vest politidistrikt"
+    },
+    {
+      "id": "208",
+      "jusenhet": "16935",
+      "navn": "Møre og Romsdal politidistrikt"
+    },
+    {
+      "id": "209",
+      "jusenhet": "22318",
+      "navn": "Trøndelag politidistrikt"
+    },
+    {
+      "id": "210",
+      "jusenhet": "12948",
+      "navn": "Nordland politidistrikt"
+    },
+    {
+      "id": "211",
+      "jusenhet": "17349",
+      "navn": "Troms politidistrikt"
+    },
+    {
+      "id": "212",
+      "jusenhet": "12788",
+      "navn": "Finnmark politidistrikt"
+    },
+    {
+      "id": "56",
+      "jusenhet": "13806",
+      "navn": "Kripos"
+    },
+    {
+      "id": "57",
+      "jusenhet": "15379",
+      "navn": "politiets Sikkerhetstjeneste"
+    },
+    {
+      "id": "60",
+      "jusenhet": "18484",
+      "navn": "Økokrim"
+    },
+    {
+      "id": "62",
+      "jusenhet": "17019",
+      "navn": "Sysselmesteren på Svalbard"
+    },
+    {
+      "id": "63",
+      "jusenhet": "15624",
+      "navn": "Riksadvokaten"
+    },
+    {
+      "id": "110",
+      "jusenhet": "10171",
+      "navn": "Agder statsadvokatembeter"
+    },
+    {
+      "id": "111",
+      "jusenhet": "12916",
+      "navn": "Hedmark og Oppland statsadvokatembeter"
+    },
+    {
+      "id": "112",
+      "jusenhet": "13135",
+      "navn": "Hordaland, Sogn og Fjordane statsadvokatembeter"
+    },
+    {
+      "id": "113",
+      "jusenhet": "14570",
+      "navn": "Møre og Romsdal statsadvokatembeter"
+    },
+    {
+      "id": "114",
+      "jusenhet": "14841",
+      "navn": "Nordland statsadvokatembeter"
+    },
+    {
+      "id": "115",
+      "jusenhet": "15150",
+      "navn": "Oslo statsadvokatembeter"
+    },
+    {
+      "id": "116",
+      "jusenhet": "15736",
+      "navn": "Rogaland statsadvokatembeter"
+    },
+    {
+      "id": "117",
+      "jusenhet": "17357",
+      "navn": "Troms og Finnmark statsadvokatembeter"
+    },
+    {
+      "id": "118",
+      "jusenhet": "17393",
+      "navn": "Trøndelag statsadvokatembeter"
+    },
+    {
+      "id": "119",
+      "jusenhet": "18199",
+      "navn": "Vestfold, Telemark og Buskerud statsadvokatembeter"
+    },
+    {
+      "id": "120",
+      "jusenhet": "22574",
+      "navn": "Det nasjonale statsadvokatembete"
+    },
+    {
+      "id": "123",
+      "jusenhet": "22597",
+      "navn": "Spesialenheten for politisaker"
+    }]
+}

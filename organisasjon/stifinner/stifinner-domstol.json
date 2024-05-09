@@ -1,0 +1,123 @@
+{
+  "domstoler": [
+    {
+      "jusenhet": "13259",
+      "navn": "Høyesterett"
+    },
+    {
+      "jusenhet": "10796",
+      "navn": "Borgarting lagmannsrett"
+    },
+    {
+      "jusenhet": "10167",
+      "navn": "Agder lagmannsrett"
+    },
+    {
+      "jusenhet": "12674",
+      "navn": "Gulating lagmannsrett"
+    },
+    {
+      "jusenhet": "12294",
+      "navn": "Frostating lagmannsrett"
+    },
+    {
+      "jusenhet": "11659",
+      "navn": "Eidsivating lagmannsrett"
+    },
+    {
+      "jusenhet": "13275",
+      "navn": "Hålogaland lagmannsrett"
+    },
+    {
+      "jusenhet": "15131",
+      "navn": "Oslo tingrett"
+    },
+    {
+      "jusenhet": "24079",
+      "navn": "Vestfold tingrett"
+    },
+    {
+      "jusenhet": "24300",
+      "navn": "Østre Innlandet tingrett"
+    },
+    {
+      "jusenhet": "16930",
+      "navn": "Sogn og Fjordane tingrett"
+    },
+    {
+      "jusenhet": "24281",
+      "navn": "Vestre Finnmark tingrett"
+    },
+    {
+      "jusenhet": "24282",
+      "navn": "Indre og Østre Finnmark tingrett"
+    },
+    {
+      "jusenhet": "24283",
+      "navn": "Nord-Troms og Senja tingrett"
+    },
+    {
+      "jusenhet": "24284",
+      "navn": "Midtre Hålogaland tingrett"
+    },
+    {
+      "jusenhet": "24285",
+      "navn": "Salten og Lofoten tingrett"
+    },
+    {
+      "jusenhet": "24286",
+      "navn": "Helgeland tingrett"
+    },
+    {
+      "jusenhet": "24287",
+      "navn": "Trøndelag tingrett"
+    },
+    {
+      "jusenhet": "24288",
+      "navn": "Møre og Romsdal tingrett"
+    },
+    {
+      "jusenhet": "24289",
+      "navn": "Hordaland tingrett"
+    },
+    {
+      "jusenhet": "24290",
+      "navn": "Haugaland og Sunnhordland tingrett"
+    },
+    {
+      "jusenhet": "24291",
+      "navn": "Sør-Rogaland tingrett"
+    },
+    {
+      "jusenhet": "24292",
+      "navn": "Agder tingrett"
+    },
+    {
+      "jusenhet": "24293",
+      "navn": "Telemark tingrett"
+    },
+    {
+      "jusenhet": "24294",
+      "navn": "Buskerud tingrett"
+    },
+    {
+      "jusenhet": "24295",
+      "navn": "Ringerike, Asker og Bærum tingrett"
+    },
+    {
+      "jusenhet": "24296",
+      "navn": "Follo og Nordre Østfold tingrett"
+    },
+    {
+      "jusenhet": "24297",
+      "navn": "Søndre Østfold tingrett"
+    },
+    {
+      "jusenhet": "24298",
+      "navn": "Romerike og Glåmdal tingrett"
+    },
+    {
+      "jusenhet": "24299",
+      "navn": "Vestre Innlandet tingrett"
+    }]
+}
