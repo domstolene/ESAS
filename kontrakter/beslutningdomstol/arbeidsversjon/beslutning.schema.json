@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/avgjoerelse/besluttning/arbeidsversjon/beslutningsavgjoerelse.schema.json",
-  "description": "Schemadefinisjon av en beslutningsavgjørelse",
+  "$id": "https://domstol.no/beslutningdomstol/arbeidsversjon/beslutning.schema.json",
+  "description": "Skjema som definerer en beslutning",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
@@ -75,7 +75,7 @@
         },
         "opprinneligKravId": {
           "$ref": "#/definitions/GUID",
-          "description": "KravId i første instans"
+          "description": "KravId i første instans."
         },
         "beslutningsKaegori": {
           "$ref": "#/definitions/beslutningsKategori",
@@ -86,7 +86,7 @@
           "description": "Fritekst som beskriver beslutningen"
         }
       },
-      "required": ["avgjoerelseId", "avsagtDato", "opprinneligKravId"],
+      "required": ["avgjoerelseId", "avsagtDato"],
       "type": "object",
       "additionalProperties": false
     },
