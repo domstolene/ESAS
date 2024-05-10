@@ -14,16 +14,14 @@
         "kontakt": {
           "epost": "litt.saksbehandler@domstol.no"
         }
-      },
-      "rettsInstans": "TINGRETT"
+      }
     },
     "mottaker": {
       "organisasjon": {
         "organisasjonsnummer": "983997953",
         "navn": "Innlandet politidistrikt"
       }
-    },
-    "rettelse": false
+    }
   },
   "aktoerer": {
     "dommer": {
