@@ -124,7 +124,58 @@
           ]
         }
       ],
-      "reaksjoner": []
+      "reaksjoner": [
+        {
+          "bot": {
+            "beloep": 24000,
+            "proevetid": {
+              "lengde": {
+                "antallAar": 2
+              }
+            },
+            "subsidaerFengseltraff": {
+              "lengde": {
+                "antallDager": 24
+              }
+            }
+          },
+          "fengsel": {
+            "straff": {
+              "lengde": {
+                "antallAar": 2,
+                "antallMaaneder": 4
+              }
+            },
+            "betinget": {
+              "lengde": {
+                "antallMaaneder": 6
+              }
+            },
+            "proevetid": {
+              "lengde": {
+                "antallAar": 2
+              }
+            },
+            "fradrag": {
+              "lengde": {
+                "antallDager": 24
+              }
+            },
+            "saervilkaar": [
+              {
+                "paragraf": "§35",
+                "tekst": "Særvilkår om meldeplikt",
+                "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+              },
+              {
+                "paragraf": "§36",
+                "tekst": "Andre særvilkår",
+                "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "dokumenter": [
