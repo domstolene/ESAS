@@ -35,7 +35,7 @@
           "$ref": "#/definitions/GUID",
           "description": "Krav om avgjørelse til domstolen, tingretten ønsker avgjørelse (dom tilbake)"
         },
-        "begjaeringType": {
+        "begjaeringstype": {
           "type": "string",
           "description": "Hvilken sak skal dette være, se readme for forklaring. Kun TILSTAAELSE i første omgang.",
           "enum": [
