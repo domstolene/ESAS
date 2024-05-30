@@ -177,8 +177,8 @@
       "straffesaksnummer": "15439561",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2023-05-01T00:00:00",
-          "gjerningstidspunktTil": "2023-05-01T00:00:00",
+          "gjerningstidspunktFra": "2023-05-01T00:00:00+01:00",
+          "gjerningstidspunktTil": "2023-05-01T00:00:00+01:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Gartneriveien 2"],
@@ -198,8 +198,8 @@
       "straffesaksnummer": "15439560",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2023-07-01T00:00:00",
-          "gjerningstidspunktTil": "2023-07-01T00:00:00",
+          "gjerningstidspunktFra": "2023-07-01T00:00:00+01:00",
+          "gjerningstidspunktTil": "2023-07-01T00:00:00+01:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Weiss gate 5D"],
