@@ -373,8 +373,8 @@
       "straffesaksnummer": "15439559",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2022-07-01T00:00:00",
-          "gjerningstidspunktTil": "2022-07-01T00:00:00",
+          "gjerningstidspunktFra": "2022-07-01T00:00:00+01:00",
+          "gjerningstidspunktTil": "2022-07-01T00:00:00+01:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Wesselvegen 29"],
@@ -394,8 +394,8 @@
       "straffesaksnummer": "15440390",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2023-12-01T00:00:00",
-          "gjerningstidspunktTil": "2023-12-01T00:00:00",
+          "gjerningstidspunktFra": "2023-12-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2023-12-01T00:00:00+02:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Weidemanns gate 5"],
@@ -415,8 +415,8 @@
       "straffesaksnummer": "15439558",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2015-08-01T00:00:00",
-          "gjerningstidspunktTil": "2015-11-01T00:00:00",
+          "gjerningstidspunktFra": "2015-08-01T00:00:00+01:00",
+          "gjerningstidspunktTil": "2015-11-01T00:00:00+02:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Wergelands vei 11"],
@@ -436,8 +436,8 @@
       "straffesaksnummer": "15439557",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2015-08-01T00:00:00",
-          "gjerningstidspunktTil": "2015-08-01T00:00:00",
+          "gjerningstidspunktFra": "2015-08-01T00:00:00+01:00",
+          "gjerningstidspunktTil": "2015-08-01T00:00:00+01:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Wergelands vei 11"],
@@ -457,8 +457,8 @@
       "straffesaksnummer": "15438441",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2023-02-01T00:00:00",
-          "gjerningstidspunktTil": "2023-02-01T00:00:00",
+          "gjerningstidspunktFra": "2023-02-01T00:00:00+02:00",
+          "gjerningstidspunktTil": "2023-02-01T00:00:00+02:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Westadkleiva 9"],
@@ -478,8 +478,8 @@
       "straffesaksnummer": "15434059",
       "detaljer": {
         "hendelse": {
-          "gjerningstidspunktFra": "2018-11-11T00:00:00",
-          "gjerningstidspunktTil": "2018-11-11T00:00:00",
+          "gjerningstidspunktFra": "2018-11-11T00:00:00+02:00",
+          "gjerningstidspunktTil": "2018-11-11T00:00:00+02:00",
           "gjerningssted": {
             "norge": {
               "adresselinjer": ["Wahlstrøms gate 9"],
