@@ -276,10 +276,6 @@
       "properties": {
         "aarsak": {
           "$ref": "#/definitions/utfall"
-        },
-        "totalLengde": {
-          "type": "integer",
-          "description": "Straffens totale lengde"
         }
       },
       "required": ["aarsak"],
