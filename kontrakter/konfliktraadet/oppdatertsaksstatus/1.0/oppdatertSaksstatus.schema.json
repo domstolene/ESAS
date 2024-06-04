@@ -76,7 +76,7 @@
           "$ref": "#/definitions/ansattPerson"
         },
         "tildeltMekler": {
-          "$ref": "#/definitions/ansattPerson"
+          "type": "boolean"
         },
         "meklingGjennomfoert": {
           "$ref": "#/definitions/meklingGjennomfoert"
@@ -101,7 +101,7 @@
         {
           "properties": {
             "tildeltMekler": {
-              "$ref": "#/definitions/ansattPerson"
+              "type": "boolean"
             }
           },
           "required": ["tildeltMekler"],
