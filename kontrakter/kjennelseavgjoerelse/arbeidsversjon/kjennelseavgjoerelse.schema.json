@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/beslutningdomstol/arbeidsversjon/beslutning.schema.json",
-  "description": "Skjema som definerer en beslutning",
+  "$id": "https://domstol.no/kjennelseAvgjoerelse/arbeidsversjon/beslutning.schema.json",
+  "description": "Skjema som definerer en generell kjennelseavgjørelse",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
@@ -77,13 +77,13 @@
           "$ref": "#/definitions/GUID",
           "description": "KravId i første instans."
         },
-        "beslutningsKaegori": {
-          "$ref": "#/definitions/beslutningsKategori",
-          "description": "Kategori for beslutningen"
+        "kategori": {
+          "$ref": "#/definitions/avgjoerelseKategori",
+          "description": "Kategori for avgjørelsen"
         },
-        "besluttning": {
+        "beskrivelse": {
           "type": "string",
-          "description": "Fritekst som beskriver beslutningen"
+          "description": "Fritekst som beskriver avgjørelsen"
         }
       },
       "required": ["avgjoerelseId", "avsagtDato"],
@@ -104,20 +104,9 @@
         },
         "mottaker": {
           "$ref": "#/definitions/mottaker"
-        },
-        "rettelse": {
-          "type": "boolean",
-          "description": "Settes til true dersom det er en menneskelig endring av en tidligere avgjørelse. (Dersom meldingen er resendt av tekniske årsaker vil denne stå som false)",
-          "default": false
         }
       },
-      "required": [
-        "meldingsId",
-        "sendtTid",
-        "avsender",
-        "mottaker",
-        "rettelse"
-      ],
+      "required": ["meldingsId", "sendtTid", "avsender", "mottaker"],
       "type": "object",
       "additionalProperties": false
     },
@@ -129,13 +118,9 @@
         "person": {
           "description": "Person som sender meldingen. Vanligvis dommeren eller saksbehandleren",
           "$ref": "#/definitions/ansattPerson"
-        },
-        "rettsInstans": {
-          "$ref": "#/definitions/rettsInstansType",
-          "description": "Rettsinstans avjørelsen er sendt fra"
         }
       },
-      "required": ["organisasjon", "rettsInstans"],
+      "required": ["organisasjon"],
       "type": "object",
       "additionalProperties": false
     },
@@ -228,23 +213,9 @@
       "type": "object",
       "additionalProperties": false
     },
-    "rettsInstansType": {
-      "enum": ["TINGRETT", "LAGMANNSRETT", "HOEYESTERETT"],
-      "type": "string"
-    },
-    "beslutningsKategori": {
+    "avgjoerelseKategori": {
       "$comment": "Vi kan vurdere å bruke kodeverk i stedet for enum her",
-      "enum": [
-        "BEVIS",
-        "MIDLERTIDIG",
-        "RETTSLIG_PROSESS",
-        "RETTSKOSTNAD",
-        "RETTSBIDLER",
-        "FORTSETTELSE_AV_SAK",
-        "OPPHØR_AV_SAK",
-        "LUKKEDE_DØRER",
-        "ANNET"
-      ],
+      "enum": ["SAKEN_AVVIST", "ANNET"],
       "type": "string"
     },
     "internId": {
