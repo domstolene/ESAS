@@ -23,14 +23,6 @@
       "type": "object",
       "additionalProperties": false
     },
-    "siktedeTiltaltePersonerForetak": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/personForetak"
-      },
-      "minItems": 1,
-      "$description": "Liste av siktede (eller tiltale) personer/foretak."
-    },
     "dokumenter": {
       "type": "array",
       "items": {
@@ -40,13 +32,16 @@
     },
     "saksInformasjon": {
       "$ref": "#/definitions/saksInformasjon"
+    },
+    "avgjoerelse": {
+      "$ref": "#/definitions/avgjoerelse"
     }
   },
   "required": [
     "forsendelse",
     "aktoerer",
-    "siktedeTiltaltePersonerForetak",
     "saksInformasjon",
+    "avgjoerelse",
     "dokumenter"
   ],
   "type": "object",
@@ -70,17 +65,9 @@
           "minItems": 0,
           "description": "Dersom rettsmøte ikke avholdes, f.eks. ved kontorforrenting, skal dette være en tom array",
           "$comment": "Trenger påtale disse? Og kan vi filtrere på møtetyper - f.eks. kun hovedforhandling"
-        },
-        "avgjoerelse": {
-          "$ref": "#/definitions/avgjoerelse"
         }
       },
-      "required": [
-        "saksnummer",
-        "straffesaksnummer",
-        "rettsmoeter",
-        "avgjoerelse"
-      ],
+      "required": ["saksnummer", "straffesaksnummer", "rettsmoeter"],
       "type": "object",
       "additionalProperties": false
     },
@@ -105,7 +92,7 @@
           "$ref": "#/definitions/GUID",
           "description": "KravId i første instans"
         },
-        "avgjoerelseSiktedeTiltaltePersonerForetak": {
+        "avgjoerelsePrSiktetTiltalt": {
           "properties": {
             "personForetak": {
               "type": "array",
@@ -121,7 +108,7 @@
         "avgjoerelseId",
         "avsagtDato",
         "opprinneligKravId",
-        "avgjoerelseSiktedeTiltaltePersonerForetak"
+        "avgjoerelsePrSiktetTiltalt"
       ],
       "type": "object",
       "additionalProperties": false
@@ -129,8 +116,7 @@
     "personForetakAvjoerelse": {
       "properties": {
         "personForetak": {
-          "$ref": "#/definitions/personForetakRef",
-          "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i 'siktedeTiltaltePersonerForetak' listen"
+          "$ref": "#/definitions/personForetak"
         },
         "resultat": {
           "type": "array",
@@ -630,46 +616,6 @@
         }
       ]
     },
-    "personForetakRef": {
-      "type": "object",
-      "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
-      "properties": {
-        "personRef": {
-          "$ref": "#/definitions/personRef"
-        },
-        "foretakRef": {
-          "$ref": "#/definitions/foretakRef"
-        }
-      },
-      "oneOf": [
-        {
-          "properties": {
-            "personRef": {
-              "$ref": "#/definitions/personRef"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["personRef"]
-        },
-        {
-          "properties": {
-            "foretakRef": {
-              "$ref": "#/definitions/foretakRef"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["foretakRef"]
-        }
-      ]
-    },
-    "personRef": {
-      "$ref": "#/definitions/internId",
-      "description": "Referanse inn i siktedeTiltaltePersonerForetak"
-    },
-    "foretakRef": {
-      "$ref": "#/definitions/internId",
-      "description": "Referanse inn i siktedeTiltaltePersonerForetak"
-    },
     "privatPerson": {
       "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
       "properties": {
@@ -777,10 +723,10 @@
     },
     "lengde": {
       "properties": {
-        "antallAar": { "type": "integer" },
-        "antallMaaneder": { "type": "integer" },
-        "antallDager": { "type": "integer" },
-        "antallTimer": { "type": "integer" }
+        "antallAar": { "$ref": "#/definitions/aar" },
+        "antallMaaneder": { "$ref": "#/definitions/maaneder" },
+        "antallDager": { "$ref": "#/definitions/dager" },
+        "antallTimer": { "$ref": "#/definitions/timer" }
       },
       "additionalProperties": false
     },
@@ -963,9 +909,7 @@
     "epost": {
       "type": "string",
       "description": "Patternet sørger for at det ikke er mellomrom, kun en '@' og alltid kun èn '.' i domene",
-      "maxLength": 150,
-      "minLength": 5,
-      "pattern": "^[^\\s@]+@([^\\s@.,]+\\.)+[^\\s@.,]{2,}$"
+      "format": "email"
     },
     "telefonnummer": {
       "type": "string",
@@ -981,6 +925,26 @@
     "dato": {
       "type": "string",
       "format": "date"
+    },
+    "aar": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 21
+    },
+    "maaneder": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 99
+    },
+    "dager": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 999
+    },
+    "timer": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 999
     },
     "GUID": {
       "type": "string",
