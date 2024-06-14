@@ -219,15 +219,15 @@
     "fengsel": {
       "properties": {
         "straff": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Lengden på fengselsstraffen"
         },
         "betinget": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Fylles kun dersom deler eller hele straffen er betinget"
         },
         "proevetid": {
-          "$ref": "#/definitions/varighet"
+          "$ref": "#/definitions/lengde"
         },
         "saervilkaar": {
           "type": "array",
@@ -237,7 +237,7 @@
           "minItems": 0
         },
         "fradrag": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         }
       },
@@ -252,7 +252,7 @@
           "$comment": "Trenger vi støtte for andre valuta??"
         },
         "proevetid": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Kan settes dersom boten er betinget"
         },
         "saervilkaar": {
@@ -263,9 +263,9 @@
           },
           "minItems": 0
         },
-        "subsidaerFengseltraff": {
-          "$ref": "#/definitions/varighet",
-          "description": "Varighet på subsidiær fengselsstraff"
+        "subsidaerFengselsstraff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på subsidiær fengselsstraff"
         }
       },
       "required": ["beloep"],
@@ -274,19 +274,19 @@
     "samfunnsstraff": {
       "properties": {
         "straff": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Lengden på idømt samfunnsstraff - som regel oppgitt i timer"
         },
         "gjennomfoeringstid": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Innen hvor lang tidsperiode straffen må gjennomføres. Som regel oppgitt i timer"
         },
-        "subsidaerFengseltraff": {
-          "$ref": "#/definitions/varighet",
-          "description": "Varighet på subsidiær fengselsstraff"
+        "subsidaerFengselsstraff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på subsidiær fengselsstraff"
         },
         "fradrag": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         },
         "vilkaar": {
@@ -300,15 +300,15 @@
     "ungdomsstraff": {
       "properties": {
         "straff": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Lengden på idømt straff"
         },
-        "subsidaerFengseltraff": {
-          "$ref": "#/definitions/varighet",
-          "description": "Varighet på subsidiær fengselsstraff"
+        "subsidaerFengselsstraff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på subsidiær fengselsstraff"
         },
         "fradrag": {
-          "$ref": "#/definitions/varighet",
+          "$ref": "#/definitions/lengde",
           "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
         }
       },
@@ -329,7 +329,7 @@
       "additionalProperties": false
     },
     "rettighetstapDetaljer": {
-      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel ting (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
+      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel til (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
       "properties": {
         "hjemmel": {
           "$ref": "#/definitions/lovbud"
@@ -697,7 +697,7 @@
       "additionalProperties": false
     },
     "varighet": {
-      "description": "Definisjon på en varighet. F.eks. varighet på en betinget fengselsstraff",
+      "description": "Definisjon på en varighet. F.eks. varighet på 'tap av rettighet'",
       "properties": {
         "lengde": { "$ref": "#/definitions/lengde" },
         "ubestemtTid": { "type": "boolean" }
@@ -732,7 +732,7 @@
     },
     "periode": {
       "properties": {
-        "TidFra": {
+        "tidFra": {
           "$ref": "#/definitions/datoTid"
         },
         "tidTil": {
