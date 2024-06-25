@@ -48,5 +48,15 @@ siktelseTiltale, begjaeringDom, paastandStraff, fullbyrdelsesOrdre
 
 Politiet må håndtere retting av dom, dvs. at dommen kommer på nytt fra domstolene.
 
+## Elementer
+### Straffesaksinformasjon 
+Detaljer om tid og sted på straffesakene finnes i siktelsen og er ikke listet på nytt her.
+### Person og foretak.
+Oppdatert detaljert informasjon om siktede, fornærmede personer og foretak som også finnes i siktelsen er listet her.
+Informasjon om vitner som ikke finnes i siktelsen ligger her. 
+
+### Verger
+ligger nå på siktede som i begjæring om varetekt.
+
 ## Meldinger
 ### [Begjæring om dom](./begjaeringDom/readme.md)
