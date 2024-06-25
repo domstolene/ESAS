@@ -35,55 +35,69 @@
     },
     "siktedePersoner": [
       {
-        "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
-        "navn": {
-          "fornavn": "Vokal",
-          "etternavn": "FABRIKKPIPE"
-        },
-        "identitetsnummer": {
-          "foedselsnummer": "22918197870"
-        },
-        "tilleggsId": [],
-        "kjoenn": "KVINNE",
-        "foedselsdato": "1981-11-22",
-        "statsborgerskap": [
-          {
-            "kode": "NOR",
-            "navn": "Norge"
-          }
-        ],
-        "personAdresse": {
-          "adresse": {
-            "norge": {
+        "person": {
+          "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
+          "navn": {
+            "fornavn": "Vokal",
+            "etternavn": "FABRIKKPIPE"
+          },
+          "identitetsnummer": {
+            "idType": "FOEDSELSNUMMER",
+            "verdi": "22918197870"
+          },
+          "tilleggsId": [],
+          "kjoenn": "KVINNE",
+          "foedselsdato": "1981-11-22",
+          "statsborgerskap": [
+            {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          ],
+          "personAdresse": {
+            "adresse": {
               "adresselinjer": ["Pampusvegen 32"],
               "postnummer": "6285",
-              "poststed": "STOREKALVØY"
+              "poststed": "STOREKALVØY",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
             }
           }
-        }
+        },
+        "verger": []
       }
     ],
-    "siktedeForetak": []
+    "siktedeForetak": [],
+    "fornaermedePersoner": [],
+    "fornaermedeForetak": [],
+    "vitner": []
   },
-  "hovedStraffesak": {
-    "straffesaksnummer": "15439560",
-    "detaljer": {
-      "hendelse": {
-        "gjerningstidspunktFra": "2023-07-01T00:00:00",
-        "gjerningstidspunktTil": "2023-07-01T00:00:00",
-        "gjerningssted": {
-          "norge": {
-            "adresselinjer": ["Weiss gate 5D"],
-            "postnummer": "3611",
-            "poststed": "KONGSBERG"
-          }
-        }
+  "hovedStraffesaksnummer": "15439560",
+  "dokumenter": [
+    {
+      "dokumentRef": "59E1FECE-A9DF-434C-B8D6-CE44B3FF4E1D",
+      "overskrift": "Begjæring om tilståelsessak",
+      "skrevetDato": "2023-03-30",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    },
+    {
+      "dokumentRef": "D59A4F14-5219-4E31-A95F-5C31545C00E8",
+      "overskrift": "Siktelse",
+      "kategori": {
+        "kode": "siktelse"
       },
-      "statistikkgruppe": {
-        "kode": "0906",
-        "navn": "Tyveri fra hytte/fritidsbolig"
+      "skrevetDato": "2023-03-10",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdf",
+        "sjekksum": "234asass"
       }
     }
-  },
-  "dokumenter": []
+  ]
 }

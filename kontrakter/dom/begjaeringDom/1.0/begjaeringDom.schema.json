@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://politiet.no/dom/1.0/begjaeringDom",
-  "description": "Begjæring om dom fra politiet til tingretten, ønsker dom avgjørelse tilbake.",
+  "description": "Begjæring om dom fra politiet til tingretten, ønsker domsavgjørelse tilbake.",
 
   "type": "object",
   "properties": {
@@ -12,18 +12,25 @@
     "begjaeringDom": {
       "$ref": "#/definitions/begjaeringDom"
     },
-    "hovedStraffesak": {
-      "$ref": "#/definitions/straffesak",
-      "description": "Hoved straffesaken saksbehandler saken."
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "Hoved straffesaken saksbehandler saken, trenger ikke å være med i siktelsen."
     },
     "dokumenter": {
       "type": "array",
+      "description": "Det vil alltid være minst 1 dokument som er begjæringsdokumentet, men det skal også legges ved siktelse ...",
       "items": {
         "$ref": "#/definitions/dokument"
-      }
+      },
+      "minItems": 1
     }
   },
-  "required": ["forsendelse", "hovedStraffesak", "dokumenter"],
+  "required": [
+    "forsendelse",
+    "begjaeringDom",
+    "hovedStraffesaksnummer",
+    "dokumenter"
+  ],
   "additionalProperties": false,
 
   "definitions": {
@@ -51,89 +58,47 @@
         },
         "siktedePersoner": {
           "type": "array",
-          "description": "Alle siktede personer som skal til retten, det vil alltid være bare en person i tilståelsessaker",
+          "description": "Alle siktede personer som skal til retten, det vil alltid være bare en person i tilståelsessaker, kobling til basissaker og straffesaker i siktelseTiltale",
           "items": { "$ref": "#/definitions/siktetPerson" }
         },
         "siktedeForetak": {
           "type": "array",
-          "description": "Alle siktede foretak som skal til retten",
+          "description": "Alle siktede foretak som skal til retten, kobling til basissaker og straffesaker i siktelseTiltale",
+          "items": { "$ref": "#/definitions/siktetForetak" }
+        },
+        "fornaermedePersoner": {
+          "type": "array",
+          "description": "Alle fornærmede personer, kobling til straffesaken i siktelseTiltale",
+          "items": { "$ref": "#/definitions/personRelatert" }
+        },
+        "fornaermedeForetak": {
+          "type": "array",
+          "description": "Alle fornærmede foretak, kobling til straffesaken i siktelseTiltale",
           "items": { "$ref": "#/definitions/foretak" }
+        },
+        "vitner": {
+          "type": "array",
+          "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
+          "items": { "$ref": "#/definitions/vitneStraffesak" }
         }
       },
       "required": [
         "kravId",
         "siktedePersoner",
         "siktedeForetak",
-        "ansvarligPaatalejurist"
+        "fornaermedePersoner",
+        "fornaermedeForetak",
+        "ansvarligPaatalejurist",
+        "vitner"
       ],
       "additionalProperties": false
     },
     "adresse": {
       "type": "object",
-      "description": "Norsk eller utenlandsk adresse",
-      "properties": {
-        "norge": {
-          "$ref": "#/definitions/adresseNorge",
-          "description": "Norsk adresse"
-        },
-        "utland": {
-          "$ref": "#/definitions/adresseUtland"
-        }
-      },
-      "oneOf": [
-        {
-          "properties": {
-            "norge": {
-              "$ref": "#/definitions/adresseNorge"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["norge"]
-        },
-        {
-          "properties": {
-            "utland": {
-              "$ref": "#/definitions/adresseUtland"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["utland"]
-        }
-      ]
-    },
-    "adresseNorge": {
-      "type": "object",
-      "description": "Norske med litt strengere validering på postnummer",
       "properties": {
         "adresselinjer": {
           "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 500
-          },
-          "maxItems": 4
-        },
-        "postnummer": {
-          "$ref": "#/definitions/norskPostnummer"
-        },
-        "poststed": {
-          "type": "string"
-        }
-      },
-      "required": ["adresselinjer", "postnummer"],
-      "additionalProperties": false
-    },
-    "adresseUtland": {
-      "type": "object",
-      "properties": {
-        "adresselinjer": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 500
-          },
+          "items": { "type": "string" },
           "minItems": 1,
           "maxItems": 4
         },
@@ -147,7 +112,20 @@
           "$ref": "#/definitions/land"
         }
       },
-      "required": ["adresselinjer"],
+      "required": ["adresselinjer", "land"],
+      "additionalProperties": false
+    },
+    "kommune": {
+      "type": "object",
+      "properties": {
+        "kommunenummer": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kommunenummer"],
       "additionalProperties": false
     },
     "kodeverk": {
@@ -309,49 +287,18 @@
       "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
-    "personIdentifikator": {
+    "siktetForetak": {
       "type": "object",
-      "description": "Fødselsnummer, D-nummer eller SSP nummer",
       "properties": {
-        "foedselsnummer": {
-          "$ref": "#/definitions/foedselsnummer"
+        "foretak": {
+          "$ref": "#/definitions/foretak"
         },
-        "sspNummer": {
-          "$ref": "#/definitions/sspNummer"
-        },
-        "dNummer": {
-          "$ref": "#/definitions/dNummer"
+        "forsvarerinformasjon": {
+          "$ref": "#/definitions/forsvarerinformasjon"
         }
       },
-      "oneOf": [
-        {
-          "properties": {
-            "foedselsnummer": {
-              "$ref": "#/definitions/foedselsnummer"
-            }
-          },
-          "required": ["foedselsnummer"],
-          "additionalProperties": false
-        },
-        {
-          "properties": {
-            "sspNummer": {
-              "$ref": "#/definitions/sspNummer"
-            }
-          },
-          "required": ["sspNummer"],
-          "additionalProperties": false
-        },
-        {
-          "properties": {
-            "dNummer": {
-              "$ref": "#/definitions/dNummer"
-            }
-          },
-          "required": ["dNummer"],
-          "additionalProperties": false
-        }
-      ]
+      "required": ["foretak"],
+      "additionalProperties": false
     },
     "foretak": {
       "type": "object",
@@ -397,6 +344,40 @@
     },
     "siktetPerson": {
       "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/person",
+          "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
+        },
+        "tolk": {
+          "type": "object",
+          "properties": {
+            "behov": {
+              "$ref": "#/definitions/behovForTolkType"
+            },
+            "spraak": {
+              "$ref": "#/definitions/spraakkodeType"
+            }
+          },
+          "required": ["behov"],
+          "additionalProperties": false
+        },
+        "forsvarerinformasjon": {
+          "$ref": "#/definitions/forsvarerinformasjon"
+        },
+        "verger": {
+          "type": "array",
+          "description": "Verger trenger ikke å ha fødselsnummer og vil aldri ha SSP nummer",
+          "items": {
+            "$ref": "#/definitions/personRelatert"
+          }
+        }
+      },
+      "required": ["person", "verger"],
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
       "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
       "properties": {
         "personForetakRef": {
@@ -437,6 +418,13 @@
         },
         "personAdresse": {
           "$ref": "#/definitions/personAdresse"
+        },
+        "verger": {
+          "type": "array",
+          "description": "Verger",
+          "items": {
+            "$ref": "#/definitions/personRelatert"
+          }
         }
       },
       "required": [
@@ -449,13 +437,13 @@
       ],
       "additionalProperties": false
     },
-    "person": {
+    "personRelatert": {
       "type": "object",
-      "description": "Person som ikke er siktet eller tiltalt, vil aldri ha SSP nummer",
+      "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
       "properties": {
         "personForetakRef": {
           "$ref": "#/definitions/GUID",
-          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
+          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme person."
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
@@ -476,14 +464,7 @@
         },
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
-          "description": "Fødselsnummer eller D-nummer."
-        },
-        "tilleggsId": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/personIdentifikator"
-          },
-          "description": "D-nummer, tidligere fødselsnummer ?"
+          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
         },
         "adresseGradering": {
           "$ref": "#/definitions/adresseGradering",
@@ -493,64 +474,69 @@
           "$ref": "#/definitions/personAdresse"
         }
       },
-      "required": [
-        "personForetakRef",
-        "navn",
-        "foedselsdato",
-        "statsborgerskap",
-        "tilleggsId"
-      ],
+      "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
-    "hendelse": {
+    "vitneStraffesak": {
       "type": "object",
-      "description": "Tid og sted for det straffbare forholdet",
+      "description": "Vitne informasjon med kobling til straffesakene de er vitner i",
       "properties": {
-        "gjerningstidspunktFra": { "$ref": "#/definitions/lokalTid" },
-        "gjerningstidspunktTil": { "$ref": "#/definitions/lokalTid" },
-        "gjerningssted": {
-          "$ref": "#/definitions/adresse"
+        "person": { "$ref": "#/definitions/personRelatert" },
+        "straffesaker": {
+          "type": "array",
+          "description": "Liste over straffesaker vitne er vitne i",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
         }
       },
-      "required": [
-        "gjerningstidspunktFra",
-        "gjerningstidspunktTil",
-        "gjerningssted"
-      ],
+      "required": ["person", "straffesaker"],
       "additionalProperties": false
     },
-    "straffesak": {
+    "profesjonellPerson": {
       "type": "object",
-      "description": "Straffesak, hendelse og koding og fornærmede som ikke er med i siktelsen",
+      "description": "Advokater, tolker, sakkyndige vitner",
       "properties": {
-        "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer"
+        "tittel": {
+          "type": "string"
         },
-        "detaljer": {
-          "$ref": "#/definitions/straffesakDetaljer"
+        "navn": {
+          "type": "object",
+          "properties": {
+            "fornavn": {
+              "type": "string"
+            },
+            "mellomnavn": {
+              "type": "string"
+            },
+            "etternavn": {
+              "type": "string"
+            }
+          },
+          "required": ["etternavn"],
+          "additionalProperties": false
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo"
         }
       },
-      "required": ["straffesaksnummer", "detaljer"],
+      "required": ["navn"],
       "additionalProperties": false
     },
-    "straffesakDetaljer": {
+    "kontaktInfo": {
       "type": "object",
-      "description": "Detaljer rundt straffesaken",
       "properties": {
-        "hendelse": {
-          "$ref": "#/definitions/hendelse"
+        "epost": {
+          "type": "string"
         },
-        "statistikkgruppe": {
-          "$ref": "#/definitions/kodeverk"
-        },
-        "krimtype": {
-          "$ref": "#/definitions/kodeverk"
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
         }
       },
-      "required": ["hendelse", "statistikkgruppe"],
+      "required": ["telefonnummer"],
       "additionalProperties": false
     },
-
     "dokument": {
       "type": "object",
       "description": "Dokument som oversendes på justishub",
@@ -600,26 +586,68 @@
       "$ref": "#/definitions/GUID",
       "description": "Referanse inn person eller foretak lister"
     },
-    "foedselsnummer": {
-      "type": "string",
-      "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
-      "pattern": "^[0-3][0-9][0189][0-9]+$",
-      "minLength": 11,
-      "maxLength": 11
+    "spraakkodeType": {
+      "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
+      "pattern": "^([A-Z]{3,3})$",
+      "type": "string"
     },
-    "sspNummer": {
+    "behovForTolkType": {
       "type": "string",
-      "description": "Personidentifikator brukt av det sentrale straffe- og personopplysningsregisteret (SSP) hvis personen ikke har fødselsnummer. Validerer som et fødselsnummer med +20 på måned så noen født 10.01.1990 begynner med 102190",
-      "pattern": "^[0-3][0-9][2-3][0-9]+$",
-      "minLength": 11,
-      "maxLength": 11
+      "description": "Er det behov for tolk",
+      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER"]
     },
-    "dNummer": {
+    "forsvarerinformasjon": {
+      "type": "object",
+      "description": "Informasjon om det er oppnevnt og/eller ønsket forsvarer. Dersom hverken oppnevnt eller ønsket forsvarer er satt, betyr dette at domstolen skal oppnevne en forsvarer",
+      "properties": {
+        "oppnevntForsvarer": {
+          "type": "object",
+          "description": "Informasjon om oppnevnt forsvarer. Det er personen som står som forsvarer når begjæringen blir sendt, som skal varsles om fengslingsmøte.",
+          "properties": {
+            "person": {
+              "$ref": "#/definitions/profesjonellPerson"
+            },
+            "erVarsletOmFenglingsmoete": {
+              "type": "boolean"
+            }
+          },
+          "required": ["person", "erVarsletOmFenglingsmoete"],
+          "additionalProperties": false
+        },
+        "oensketForsvarer": {
+          "type": "object",
+          "description": "Informasjon om ønsket forsvarer. Kan ikke ha vært varslet om fengslingsmøte, da ny forsvarer evnt. oppnevnes av domsstolen og ikke kan ha fått beskjed i forkant av begjæringen.",
+          "properties": {
+            "person": {
+              "$ref": "#/definitions/profesjonellPerson"
+            }
+          },
+          "required": ["person"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "personIdType": {
       "type": "string",
-      "description": "Se skatteetaten. Dag på datodelen er +40. Født 10.01.1990, begynner med 51.01.90. Fiktivt (Tenor) dNummer vil har +80 på måned som for Tenor fødselsnummer",
-      "pattern": "^[4-7][0-9][0189][0-9]+$",
-      "minLength": 11,
-      "maxLength": 11
+      "description": "Person ID typer, alle valideres med Modulus 11",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
     },
     "organisasjonsnummer": {
       "type": "string",
