@@ -31,19 +31,22 @@
       "type": "object",
       "description": "Informasjon om trafikkuhell registrert av politiet",
       "properties": {
-        "Anmeldelsenummer": {
+        "anmeldelsenummer": {
           "type": "string",
           "description": "Tilsvarer saksnummer i BL?"
         },
-        "Ulykkestidspunk": {
+        "ulykkestidspunk": {
           "type": "string",
           "format": "date-time",
           "description": "Kan denne sendes i ett eller må den deles?"
         },
-        "Politidistrikt/tjenestested": {
+        "politidistrikt": {
           "type": "string"
         },
-        "Gjerningskommune": {
+        "plassering": {
+          "$ref": "#/definitions/uhellPlassering"
+        },
+        "gjerningskommune": {
           "type": "string"
         },
         "Åsteds beskrivelse": {
@@ -135,102 +138,408 @@
         },
         "enhet": {
           "type": "array",
-          "$ref": "#/definitions/enhet",
+          "items": { "$ref": "#/definitions/enhet" },
           "description": "Fartøy innvolvert i ulykken."
         }
       }
     },
+    "ulykkesforhold": {
+      "description": "Beskrivelse av ulike forhold da ulykke inntraff",
+      "type": "object",
+      "properties": {
+        "vegtype": { "$ref": "#/definitions/vegtype" },
+        "vegbreddeMeter": {
+          "type": "number"
+        },
+        "stedsforhold": { "$ref": "#/definitions/stedsforhold" },
+        "vegdekke": { "$ref": "#/definitions/vegdekke" },
+        "foererforhold": { "$ref": "#/definitions/foererforhold" },
+        "vaerforhold": { "$ref": "#/definitions/vaerforhold" },
+        "temperatur": {
+          "type": "number",
+          "description": "Temperatur i celsius"
+        },
+        "lysforhold": { "$ref": "#/definitions/lysforhold" },
+        "fartsgrense": {
+          "type": "number",
+          "description": "Fartsgrense i km/t"
+        },
+        "antallKjoerefelt": { "type": "number" },
+        "fysiskMidtdeler": { "$ref": "#/definitions/fysiskMidtdelerType" }
+      }
+    },
+    "vegtype": {
+      "type": "string",
+      "enum":[
+        "VANLIG_VEG",
+        "MOTORVEG",
+        "MOTORTRAFIKKVEG",
+        "RAMPE_INN_UT_TIL_MOTORVEG",
+        "GANG_ELLER_SYKKELVEG",
+        "GAAGATE",
+        "BOLIGGATE",
+        "SKOGSVEG",
+        "ANNET",
+        "UKJENT"
+      ]
+    },
+    "stedsforhold": {
+      "type": "string",
+      "enum":[
+        "VEGSTREKNING",
+        "TRE_ARMET_VEGKRYSS",
+        "FIRE_ARMET_VEGKRYSS",
+        "RUNDKJOERING",
+        "ANNET_KRYSS",
+        "AVKJOERSEL",
+        "PLANOVERGANG",
+        "BRO",
+        "TUNNELL_UNDERGANG",
+        "BOMSTASJON",
+        "GANG_SYKKELVEG_UNDERGANG",
+        "TUNNEL_MOTORKJOERETOEY",
+        "ANNET"
+      ]
+    },
+    "vegdekke": {
+      "type": "string",
+      "enum":[
+        "ASFALT_OLJEGRUS",
+        "GRUS",
+        "GATESTEIN",
+        "BETONG",
+        "ANNET",
+        "UKJENT"
+      ]
+    },
+    "foererforhold": {
+      "type": "string",
+      "enum":[
+        "TOERR_BAR_VEI",
+        "VAAT_BAR_VEI",
+        "SNOE_ELLER_ISBELAGT",
+        "DELVIS_SNOE_ELLER_ISBELAGT",
+        "GLATT_ELLERS",
+        "UKJENT"
+      ]
+    },
+    "vaerforhold": {
+      "type": "string",
+      "enum":[
+        "GOD_SIKT_OPPHOLD",
+        "GOD_SIKT_NEDBOER",
+        "DAARLIG_SIKT_NEDBOER",
+        "DAARLIG_SIKT_TAAKE_DIS",
+        "DAARLIG_SIKT_FOROEVRIG",
+        "UKJENT"
+      ]
+    },
+    "lysforhold": {
+      "type": "string",
+      "enum":[
+        "DAGSLYS",
+        "TUSMOERKE",
+        "MOERKT_MED_BELYSNING",
+        "MOERKT_UTEN_BELYSNING",
+        "MOERKETID",
+        "MIDNATTSSOL",
+        "UKJENT"
+      ]
+    },
+    "fysiskMidtdelerType": {
+      "type": "string",
+      "enum": [
+        "IKKE_FYSISK_ADSKILT",
+        "FYSISK_ADSKILT",
+        "ENVEGSREGULERING"
+      ]
+    },
+    "enhetstype": {
+      "type": "string",
+      "enum": [
+        "FOTGJENGER",
+        "AKENDE",
+        "SKILOEPER",
+        "RULLESKI_SKOEYTE_BRETT",
+        "SPARK",
+        "SYKKEL",
+        "HEST_MED_RYTTER",
+        "HEST_MED_VOGN",
+        "MOPED",
+        "LETT_MOTORSYKKEL",
+        "TUNG_MOTORSYKKEL",
+        "MOTORSYKKEL_MED_SIDEVOGN",
+        "SNOESCOOTER_ELLER_BELTEMOTORSYKKEL",
+        "RULLESTOL",
+        "ATV",
+        "EL_BIL",
+        "LUKKET_3_ELLER_4_HJULS_MC_MOPED_TRAKTOR",
+        "PERSONBIL_STASJONSVOGN",
+        "DROSJE_MINUBUSS",
+        "BUSS_MINIBUSS_I_RUTE",
+        "MINUBUSS",
+        "ANNEN_BUSS_TURVOGN",
+        "ANNEN_AKTUELL_SYKETRANSPORT",
+        "POLITI_UNDER_UTRYKNING",
+        "BRANNBIL_UNDER_UTRYKNING",
+        "VAREBIL",
+        "LASTEBIL",
+        "KOMBINERT_BIL",
+        "TREKKBIL",
+        "PERSONBIL_MED_CAMPINGVOGN",
+        "VAREBIL_MED_CAMPINGVOGN",
+        "TANKBIL",
+        "CAMPINGBIL",
+        "PERSONBIL_MED_TILHENGER",
+        "VAREBIL_MED_TILHENGER",
+        "LAST_MED_PAAHENGSVOGN_1_AKSLET",
+        "LAST_MED_PAAHENGSVOGN_2_AKSLET",
+        "LAST_MED_TILHENGERREDSKAP",
+        "KOMB_BIL_MED_TILHENGER",
+        "TREKKBIL_MED_SEMITRAILER",
+        "TANKBIL_MED_TILHENGER",
+        "BELTEBIL_ANNEN_LASTEBIL",
+        "TRAKTOR",
+        "TILHOERENDE_REDSKAP_UTEN_TREKKVOGN",
+        "JERNBANETOG",
+        "SPORVOGN",
+        "ANNET_KJOERETOEY",
+        "UKJENT_KJOERETOEY"
+      ]
+    },
+    "regulerTrafikkenhetVegkryss": {
+      "type": "string",
+      "enum": [
+        "IKKE_I_VEIKRYSS_ELLER_GANGFELT",
+        "INTET_SPESIELT",
+        "LYSSIGNAL_I_FUNKSJON_VEGKRYSS_ELLER_GANGFELT_UTENFOR_KRYSS",
+        "FORKJOERSVEI",
+        "VIKEPLIKT",
+        "STOPPSKILT",
+        "SKILTET_OPPMERKET_GANGFELT_U_LYSREGULERING_I_OG_UTENFOR_KRYSS",
+        "LYSSIGNAL_MED_GULT_BLINK_ELLER_UTEN_LYS_I_VEGKRYSS_ELLER_GANGFELT",
+        "ANNEN_REGULERING_I_KRYSS_INKL_MIDLERTIDIG"
+      ]
+    },
+    "dekktype": {
+      "type": "string",
+      "enum": [
+        "SOMMERDEKK",
+        "VINTERDEKK_UTEN_PIGGER",
+        "VINTERDEKK_MED_PIGGER",
+        "ANNET",
+        "UKJENT"
+      ]
+    },
+
+
+
     "enhet": {
       "type": "object",
       "description": "Informasjon om kjøretøy",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "Gjør enheten unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
-        },"Enhetsbokstav": {
+        },
+        "enhetsbokstav": {
           "type": "string"
         },
-        "Registreringsnummer": {
+        "registreringsnummer": {
+          "type": "string"
+        },
+        "enhetstype": {
+          "$ref": "#/definitions/enhetstype"
+        },
+        "aarsmodell": {
           "type": "integer"
         },
-        "Enhetstype": {
-          "type": "string"
-        },
-        "Årsmodell": {
-          "type": "integer"
-        },
-        "Registreringsland": {
-          "type": "string"
-        },
-        "Dekktype": {
-          "type": "string"
-        },
-        "Kommentar dekk": {
-          "type": "string"
-        },
-        "Regulering for trafikkenhet i vegkryss": {
+        "registreringsland": {
           "type": "string",
-          "description": "Kodeverk."
+          "description": "ISO 3166-1-alpha-3 landkode"
+        },
+        "dekktype": {
+          "$ref": "#/definitions/dekktype"
+        },
+        "kommentarDekk": {
+          "type": "string"
+        },
+        "regulerTrafikkenhetVegkryss": {
+          "$ref": "#/definitions/regulerTrafikkenhetVegkryss"
         },
         "person/trafikant": {
           "type": "array",
-          "$ref": "#/definitions/person",
+          "items": {
+            "$ref": "#/definitions/person"
+          },
           "description": "Informasjon om person involvert i ulykken."
         }
       },
       "required": [
-        "ID"
+        "id"
       ],
       "additionalProperties": false
     },
+
+
+    "plasseringKjoeretoey": {
+      "type": "string",
+      "enum": [
+        "FOERERPLASS",
+        "FORAN",
+        "BAK",
+        "ANNET"
+      ]
+    },
+    "skadegrad": {
+      "type": "string",
+      "enum": [
+        "DREPT",
+        "MEGET_ALVORLIG_SKADD",
+        "ALVORLIG_SKADD",
+        "LETTERE_SKADD",
+        "USKADD",
+        "ILLEBEFINNENDE_FOERER",
+        "SELVDRAP",
+        "IKKE_KONTROLLERT"
+      ]
+    },
+    "beskyttelsesutstyr": {
+      "type": "string",
+      "enum": [
+        "INGEN_BESKYTTELSE",
+        "BILBELTE",
+        "KOLLISJONSPUTE",
+        "BILBELTE_OG_KOLLISJONSPUTE",
+        "BARNESETE",
+        "HJELM",
+        "REFLEKS_ELLER_LYKT",
+        "ANNEN_BESKYTTELSE",
+        "UKJENT"
+      ]
+    },
+    "skadeforloep": {
+      "type": "string",
+      "enum": [
+        "TODO"
+      ]
+    },
+    "ferdselsformaal": {
+      "type": "string",
+      "enum": [
+        "TIL_FRA_ARBEID",
+        "I_ARBEID",
+        "TIL_FRA_SKOLE",
+        "TIL_FRA_BUTIKK_BANK_ETC",
+        "FRITIDSREISE",
+        "OEVELSESKJOERING",
+        "LEK",
+        "HJEM_PAA_PERMISJON",
+        "TIL_FRA_FEST",
+        "ANNET_FORMAAL",
+        "UKJENT"
+      ]
+    },
+
+
     "person": {
       "type": "object",
       "description": "Informasjon om person involvert i ulykken",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
-        },"Kjønn": {
-          "type": "string"
         },
-        "Fødselsdato": {
-          "type": "date"
+        "kjoenn": {
+          "type": "string",
+          "enum": [
+            "MANN",
+            "KVINNE"
+          ]
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
         },
         "Enhetstype": {
           "type": "string"
         },
-        "Plassering i kjøretøy": {
-          "type": "string",
-          "description": "Kodeverk."
+        "plasseringKjoeretoey": {
+          "$ref": "#/definitions/plasseringKjoeretoey"
         },
-        "Skadegrad": {
-          "type": "string",
-          "description": "Kodeverk."
+        "skadegrad": {
+          "$ref": "#/definitions/skadegrad"
         },
-        "Beskyttelsesutstyr": {
-          "type": "string",
-          "description": "Kodeverk."
+        "beskyttelsesutstyr": {
+          "$ref": "#/definitions/beskyttelsesutstyr"
         },
-        "Skadeforløp": {
-          "type": "string",
-          "description": "Kodeverk."
+        "skadeforloep": {
+          "$ref": "#/definitions/skadeforloep"
         },
-        "Ferdselsformål": {
-          "type": "string",
-          "description": "Kodeverk."
+        "ferdselsformaal": {
+          "$ref": "#/definitions/ferdselsformaal"
         },
-        "Kort beskrivelse av personskade": {
+        "beskrivelsePersonskade": {
           "type": "string"
         },
-        "Postnr": {
+        "postnummer": {
           "type": "integer"
         },
-        "Poststed": {
+        "poststed": {
           "type": "string"
         }
       },
       "required": [
-        "ID"
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "uhellPlassering": {
+      "description": "Informasjon om hvor ulykken skjedde",
+      "type": "object",
+      "properties": {
+        "veg": { "$ref": "#/definitions/vegInformasjon"},
+        "kryssendeVeg": { "$ref": "#/definitions/vegInformasjon"},
+        "beskrivelse": {
+          "type": "string"
+        },
+        "koordinater": { "$ref": "#/definitions/koordinater" }
+      },
+      "required": [
+        "veg",
+        "kryssendeVeg",
+        "beskrivelse"
+      ],
+      "additionalProperties": false
+    },
+    "vegInformasjon": {
+      "description": "Informasjon om vei",
+      "type": "object",
+      "properties": {
+        "gate": { "type": "string" },
+        "kommune": { "type": "string" },
+        "vegkategori": { "type": "string" },
+        "vegnummer": { "type": "number" }
+      },
+      "required": [
+        "gate",
+        "kommune",
+        "vegkategori",
+        "vegnummer"
+      ]
+    },
+    "koordinater": {
+      "description": "Koordinater som angir et visst sted",
+      "type": "object",
+      "properties": {
+        "koordinatOest": { "type": "string" },
+        "koordinatNord": { "type": "string" },
+        "koordinatsystem": { "type": "string" }
+      },
+      "required": [
+        "koordinatOest",
+        "koordinatNord",
+        "koordinatsystem"
       ],
       "additionalProperties": false
     },
@@ -239,7 +548,7 @@
       "type": "object",
       "properties": {
         "internId": { "type": "string" },
-        "overskrift": { "type": "string" },
+        "tittel": { "type": "string" },
         "skrevetDato": {
           "description": "Dato",
           "type": "string",
@@ -247,7 +556,7 @@
         },
         "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
       },
-      "required": ["overskrift", "forsendelse"],
+      "required": ["tittel", "forsendelse"],
       "additionalProperties": false
     },
     "dokumentForsendelse": {

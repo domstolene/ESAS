@@ -22,71 +22,88 @@
     }
   },
   "trafikkuhell": {
-    "Anmeldelsenummer": "0322B3E2-B12B-40B6-8940-799C48706123",
-    "Ulykkestidspunk": "09.11.2023 16:56",
-    "Politidistrikt/tjenestested": "Trøndelag politidistrikt",
-    "Gjerningskommune": "Ørland",
-    "Åsteds beskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
-    "Vegtype": "4: Gang/sykkelveg",
-    "Ulykkeskode": 23,
-    "Vegbredde": 30,
-    "Stedsforhold": "2: 3-armet veikryss",
-    "Antall kjørefelt": 3,
-    "Fysisk midtdeler": "2: Fysisk adskilt",
-    "Vegdekke": "4: Betong",
-    "Føreforhold": "4: Delvis snø eller isbelagt",
-    "Værforhold": "3: Dårlig sikt, nedbør",
-    "Temperatur": 17,
-    "Lysforhold": "3: Mørkt m/belysning",
-    "Fartsgrense": 60,
-    "Politiets beskrivelse av stedet": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
-    "nord koordinat": 7011342,
-    "øst koordinat": 289395,
-    "Veg/gate": "Elines vei",
-    "Vegkategori": "3: Fylkesveg",
-    "Vegnr": 9,
-    "Kryssende veg": "Annes gate",
-    "Kryssende Vegkategori": "4: Komm. veg",
-    "Kryssende Vegnr": 10,
-    "Påkjørt dyr/hinder/gjenstand": "15: Elg",
-    "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": 8,
+    "anmeldelsenummer": "0322B3E2-B12B-40B6-8940-799C48706123",
+    "ulykkestidspunkt": "2023-11-09T16:56:00+02:00",
+    "ulykkeskode": 23,
+    "politidistrikt": "Trøndelag politidistrikt",
+    "plassering": {
+      "veg": {
+        "gate": "Elines vei",
+        "kommune": "Ørland",
+        "vegkategori": "3: Fylkesveg",
+        "vegnummer": 9
+      },
+      "kryssendeVeg": {
+        "gate": "Annes gate",
+        "kommune": "Ørland",
+        "vegkategori": "4: Komm. veg",
+        "vegnummer": 10
+      },
+      "beskrivelse": "Beskrivelse av gjerningssted/åsted/ulykkessted",
+      "koordinater": {
+        "koordinatOest": "123",
+        "koordinatNord": "321",
+        "koordinatsystem": "UTM33"
+      }
+    },
+    "forhold": {
+      "vegtype": "4: Gang/sykkelveg",
+      "vegbreddeMeter": 30,
+      "stedsforhold": "2: 3-armet veikryss",
+      "vegdekke": "4: Betong",
+      "foereforhold": "4: Delvis snø eller isbelagt",
+      "vaerforhold": "3: Dårlig sikt, nedbør",
+      "temperatur": 17,
+      "lysforhold": "3: Mørkt m/belysning",
+      "fartsgrense": 60,
+      "antallKjoerefelt": 3,
+      "fysiskMidtdeler": "2: Fysisk adskilt"
+    },
+    "aastedsBeskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
+    "politietsAastedsBeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+    "paakjoerelser": [
+      {
+        "type": "15: Elg",
+        "avstandVegskulderMeter": 8
+      }
+    ],
     "enhet": [
       {
-        "ID": "enhet_1",
-        "Enhetsbokstav": "A",
-        "Registreringsnummer": 123456789,
-        "Enhetstype": "31: Personbil, stasjonsvogn",
-        "Årsmodell": 2020,
-        "Registreringsland": "N",
-        "Dekktype": "Vinterdekk uten pigger",
-        "Kommentar dekk": "veldig slitte dekk",
-        "Regulering for trafikkenhet i vegkryss": "3: Forkjørsvei (skilt 206, 210)",
+        "id": "enhet_1",
+        "enhetsbokstav": "A",
+        "registreringsnummer": "AB123456789",
+        "enhetstype": "PERSONBIL_STASJONSVOGN",
+        "aarsmodell": 2020,
+        "registreringsland": "N",
+        "dekktype": "VINTERDEKK_UTEN_PIGGER",
+        "kommentarDekk": "veldig slitte dekk",
+        "regulerTrafikkenhetVegkryss": "FORKJOERSVEI",
         "person/trafikant": [
           {
-            "ID": "person_1",
-            "Kjønn": "2: K",
-            "Fødselsdato": "11.11.1977",
-            "Plassering i kjøretøy": "Førerplass",
-            "Skadegrad": "6: Illebefinnende (fører)",
-            "Beskyttelsesutstyr": "2: Bilbelte",
-            "Skadeforløp": "7: Nakkeskade",
-            "Ferdselsformål": "5: Fritidsreise",
-            "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
-            "Postnr": 3530,
-            "Poststed": "Røyse"
+            "id": "person_1",
+            "kjoenn": "MANN",
+            "foedselsdato": "1977-11-11",
+            "plasseringKjoeretoey": "FOERERPLASS",
+            "skadegrad": "ILLEBEFINNENDE_FOERER",
+            "beskyttelsesutstyr": "BILBELTE",
+            "skadeforloep": "TODO",
+            "ferdselsformaal": "FRITIDSREISE",
+            "beskrivelsePersonskade": "Slo hodet mot vinduet",
+            "postnummer": 3530,
+            "poststed": "Røyse"
           },
           {
-            "ID": "person_2",
-            "Kjønn": "2: K",
-            "Fødselsdato": "31.03.2022",
-            "Plassering i kjøretøy": "3: Bak",
-            "Skadegrad": "2: Meget alv.skadd",
-            "Beskyttelsesutstyr": "5: Barnesete",
-            "Skadeforløp": "7: Nakkeskade",
-            "Ferdselsformål": "5: Fritidsreise",
-            "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
-            "Postnr": 3530,
-            "Poststed": "Røyse"
+            "id": "person_2",
+            "kjoenn": "KVINNE",
+            "foedselsdato": "2022-02-12",
+            "plasseringKjoeretoey": "BAK",
+            "skadegrad": "MEGET_ALVORLIG_SKADD",
+            "beskyttelsesutstyr": "BARNESETE",
+            "skadeforloep": "TODO",
+            "ferdselsformaal": "FRITIDSREISE",
+            "beskrivelsePersonskade": "Slo hodet mot vinduet",
+            "postnummer": 3530,
+            "poststed": "Røyse"
           }
         ]
       }
