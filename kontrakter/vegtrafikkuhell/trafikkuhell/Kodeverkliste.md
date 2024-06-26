@@ -1,4 +1,4 @@
-#Kodeverk liste
+# Kodeverk liste
 
 [Beskyttelse](kodeverk/Beskyttelse.md)
 
@@ -12,9 +12,9 @@
 
 [Lysforhold](kodeverk/Lysforhold.md)
 
-[Plassering i/på kjøretøy](kodeverk/Plassering i på kjøretøy.md)
+[Plassering i/på kjøretøy](kodeverk/Plassering_kjøretøy)
 
-[Påkjørt dyr/hinder/gjenstand](kodeverk/Påkjørt dyr hinder gjenstand.md)
+[Påkjørt dyr/hinder/gjenstand](kodeverk/Påkjørt_dyr_hinder_gjenstand)
 
 [Regulering for trafikkenhet i vegkryss](kodeverk/Regulering for trafikkenhet i vegkryss.md)
 
