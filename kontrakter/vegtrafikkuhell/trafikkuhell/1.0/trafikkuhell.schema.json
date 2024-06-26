@@ -55,7 +55,8 @@
           "description": "Politiets beskrivelse av åstedet."
         },
         "ulykkeskode": {
-          "type": "integer"
+          "type": "integer",
+          "description": "TODO - bør være enum?"
         },
         "forhold": {
           "$ref": "#/definitions/ulykkesforhold"
