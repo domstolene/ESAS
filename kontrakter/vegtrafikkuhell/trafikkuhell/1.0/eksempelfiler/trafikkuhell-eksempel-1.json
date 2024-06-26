@@ -30,13 +30,13 @@
       "veg": {
         "gate": "Elines vei",
         "kommune": "Ørland",
-        "vegkategori": "3: Fylkesveg",
+        "vegkategori": "FYLKESVEG",
         "vegnummer": 9
       },
       "kryssendeVeg": {
         "gate": "Annes gate",
         "kommune": "Ørland",
-        "vegkategori": "4: Komm. veg",
+        "vegkategori": "KOMMUNAL_VEG",
         "vegnummer": 10
       },
       "beskrivelse": "Beskrivelse av gjerningssted/åsted/ulykkessted",
@@ -47,27 +47,27 @@
       }
     },
     "forhold": {
-      "vegtype": "4: Gang/sykkelveg",
+      "vegtype": "GANG_ELLER_SYKKELVEG",
       "vegbreddeMeter": 30,
-      "stedsforhold": "2: 3-armet veikryss",
-      "vegdekke": "4: Betong",
-      "foereforhold": "4: Delvis snø eller isbelagt",
-      "vaerforhold": "3: Dårlig sikt, nedbør",
+      "stedsforhold": "TRE_ARMET_VEGKRYSS",
+      "vegdekke": "BETONG",
+      "foererforhold": "DELVIS_SNOE_ELLER_ISBELAGT",
+      "vaerforhold": "DAARLIG_SIKT_NEDBOER",
       "temperatur": 17,
-      "lysforhold": "3: Mørkt m/belysning",
+      "lysforhold": "MOERKT_MED_BELYSNING",
       "fartsgrense": 60,
       "antallKjoerefelt": 3,
-      "fysiskMidtdeler": "2: Fysisk adskilt"
+      "fysiskMidtdeler": "FYSISK_ADSKILT"
     },
-    "aastedsBeskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
-    "politietsAastedsBeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+    "aastedsbeskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
+    "politietsAastedsbeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
     "paakjoerelser": [
       {
-        "type": "15: Elg",
+        "type": "ELG",
         "avstandVegskulderMeter": 8
       }
     ],
-    "enhet": [
+    "involverteEnheter": [
       {
         "id": "enhet_1",
         "enhetsbokstav": "A",
@@ -86,7 +86,7 @@
             "plasseringKjoeretoey": "FOERERPLASS",
             "skadegrad": "ILLEBEFINNENDE_FOERER",
             "beskyttelsesutstyr": "BILBELTE",
-            "skadeforloep": "TODO",
+            "skadeforloep": "SKADD_MOT_EKSTERIOER",
             "ferdselsformaal": "FRITIDSREISE",
             "beskrivelsePersonskade": "Slo hodet mot vinduet",
             "postnummer": 3530,
@@ -99,7 +99,7 @@
             "plasseringKjoeretoey": "BAK",
             "skadegrad": "MEGET_ALVORLIG_SKADD",
             "beskyttelsesutstyr": "BARNESETE",
-            "skadeforloep": "TODO",
+            "skadeforloep": "SKADD_MOT_INTERIOER",
             "ferdselsformaal": "FRITIDSREISE",
             "beskrivelsePersonskade": "Slo hodet mot vinduet",
             "postnummer": 3530,
@@ -111,7 +111,7 @@
   },
   "vedlegg": [
     {
-      "internId": "987654132",
+      "internId": "0322B3E2-B12B-40B6-8940-799C48706123",
       "tittel": "Skisse",
       "skrevetDato": "2022-10-14T00:00:00+02:00",
       "forsendelse": {

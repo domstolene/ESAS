@@ -35,7 +35,7 @@
           "type": "string",
           "description": "Tilsvarer saksnummer i BL?"
         },
-        "ulykkestidspunk": {
+        "ulykkestidspunkt": {
           "type": "string",
           "format": "date-time",
           "description": "Kan denne sendes i ett eller må den deles?"
@@ -46,102 +46,66 @@
         "plassering": {
           "$ref": "#/definitions/uhellPlassering"
         },
-        "gjerningskommune": {
-          "type": "string"
-        },
-        "Åsteds beskrivelse": {
+        "aastedsbeskrivelse": {
           "type": "string",
           "description": "En beskrivelse av åstedet."
         },
-        "Vegtype": {
+        "politietsAastedsbeskrivelse":{
           "type": "string",
-          "description": "Kodeverk."
+          "description": "Politiets beskrivelse av åstedet."
         },
-        "Ulykkeskode": {
+        "ulykkeskode": {
           "type": "integer"
         },
-        "Vegbredde": {
-          "type": "integer"
+        "forhold": {
+          "$ref": "#/definitions/ulykkesforhold"
         },
-        "Stedsforhold": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Antall kjørefelt": {
-          "type": "integer"
-        },
-        "Fysisk midtdeler": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Vegdekke": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Føreforhold": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Værforhold": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Temperatur": {
-          "type": "integer",
-          "description": "Celcius."
-        },
-        "Lysforhold": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Fartsgrense": {
-          "type": "integer"
-        },
-        "Politiets beskrivelse av stedet": {
-          "type": "string",
-          "description": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere."
-        },
-        "nord koordinat": {
-          "type": "integer",
-          "description": "UTM33N."
-        },
-        "øst koordinat": {
-          "type": "integer",
-          "description": "UTM33N."
-        },
-        "Veg/gate": {
-          "type": "string"
-        },
-        "Vegkategori": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Vegnr": {
-          "type": "integer"
-        },
-        "Kryssende veg": {
-          "type": "string"
-        },
-        "Kryssende Vegkategori": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Kryssende Vegnr": {
-          "type": "integer"
-        },
-        "Påkjørt dyr/hinder/gjenstand": {
-          "type": "string",
-          "description": "Kodeverk."
-        },
-        "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": {
-          "type": "integer"
-        },
-        "enhet": {
+        "paakjoerelser": {
           "type": "array",
-          "items": { "$ref": "#/definitions/enhet" },
+          "items": { "$ref": "#/definitions/paakjoerelse" }
+        },
+        "involverteEnheter": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/involverteEnheter" },
           "description": "Fartøy innvolvert i ulykken."
         }
-      }
+      },
+      "additionalProperties": false
+    },
+    "paakjoerelse": {
+      "type": "object",
+      "properties": {
+        "type": { "$ref": "#/definitions/paakjoerelsetype" },
+        "avstandVegskulderMeter": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "paakjoerelsetype": {
+      "type": "string",
+      "enum": [
+        "INGEN_HINDRE_PAAKJOERT",
+        "SKILTSTOLPE",
+        "SIGNALSTOLPE",
+        "LYSMAST_AV_TRE",
+        "LYSMAST_AV_STAAL",
+        "ANNEN_MAST_ELLER_STOLPE",
+        "TRE",
+        "GJERDE",
+        "MUR_BYGNING",
+        "STEIN_FJELLVEGG",
+        "KANTSTEIN",
+        "PARKERT_KJOERETOEY",
+        "ANNEN_GJERNSTAND_I_KJOEREBANEN",
+        "STOERRE_TAMDYR",
+        "MINDRE_TAMDYR",
+        "ELG",
+        "REIN",
+        "RAADYR_HJORT",
+        "ANNET_VILT",
+        "UKJENT_DYR",
+        "ANNET_EKS_GROEFT_VANN",
+        "UKJENT"
+      ]
     },
     "ulykkesforhold": {
       "description": "Beskrivelse av ulike forhold da ulykke inntraff",
@@ -166,7 +130,8 @@
         },
         "antallKjoerefelt": { "type": "number" },
         "fysiskMidtdeler": { "$ref": "#/definitions/fysiskMidtdelerType" }
-      }
+      },
+      "additionalProperties": false
     },
     "vegtype": {
       "type": "string",
@@ -331,10 +296,7 @@
         "UKJENT"
       ]
     },
-
-
-
-    "enhet": {
+    "involverteEnheter": {
       "type": "object",
       "description": "Informasjon om kjøretøy",
       "properties": {
@@ -343,7 +305,8 @@
           "description": "Gjør enheten unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
         },
         "enhetsbokstav": {
-          "type": "string"
+          "type": "string",
+          "description": "Enheten sin ID i saken. A, B, C...."
         },
         "registreringsnummer": {
           "type": "string"
@@ -380,8 +343,6 @@
       ],
       "additionalProperties": false
     },
-
-
     "plasseringKjoeretoey": {
       "type": "string",
       "enum": [
@@ -421,7 +382,16 @@
     "skadeforloep": {
       "type": "string",
       "enum": [
-        "TODO"
+        "INGEN_PERSONSKADE",
+        "SKADD_MOT_INTERIOER",
+        "KASTET_UT_AV_KJOERETOEY",
+        "PAAKJOERT_FOTGJENGER_AKENDE_ELLER_LIGNENDE",
+        "BRANN",
+        "DRUKNING",
+        "SKADD_MOT_EKSTERIOER",
+        "NAKKESKADE",
+        "ANNET",
+        "UKJENT"
       ]
     },
     "ferdselsformaal": {
@@ -440,8 +410,6 @@
         "UKJENT"
       ]
     },
-
-
     "person": {
       "type": "object",
       "description": "Informasjon om person involvert i ulykken",
@@ -460,9 +428,6 @@
         "foedselsdato": {
           "type": "string",
           "format": "date"
-        },
-        "Enhetstype": {
-          "type": "string"
         },
         "plasseringKjoeretoey": {
           "$ref": "#/definitions/plasseringKjoeretoey"
@@ -518,7 +483,7 @@
       "properties": {
         "gate": { "type": "string" },
         "kommune": { "type": "string" },
-        "vegkategori": { "type": "string" },
+        "vegkategori": { "$ref": "#/definitions/vegkategori" },
         "vegnummer": { "type": "number" }
       },
       "required": [
@@ -526,6 +491,18 @@
         "kommune",
         "vegkategori",
         "vegnummer"
+      ],
+      "additionalProperties": false
+    },
+    "vegkategori": {
+      "type": "string",
+      "enum": [
+        "EUROPAVEG",
+        "RIKSVEG",
+        "FYLKESVEG",
+        "KOMMUNAL_VEG",
+        "PRIVAT_VEG",
+        "ANNET"
       ]
     },
     "koordinater": {
@@ -547,7 +524,10 @@
       "description": "Dokument som oversendes på justishub - skisse fra ulykkessted",
       "type": "object",
       "properties": {
-        "internId": { "type": "string" },
+        "internId": {
+          "type": "string",
+          "format": "uuid"
+        },
         "tittel": { "type": "string" },
         "skrevetDato": {
           "description": "Dato",
@@ -564,7 +544,10 @@
       "type": "object",
       "properties": {
         "mimeType": { "type": "string" },
-        "uri": { "type": "string" },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
         "sjekksum": { "type": "string" }
       },
       "required": ["mimeType", "uri", "sjekksum"],
@@ -658,7 +641,8 @@
       "type": "object",
       "properties": {
         "epost": {
-          "type": "string"
+          "type": "string",
+          "format": "email"
         },
         "telefonnummer": {
           "type": "array",
