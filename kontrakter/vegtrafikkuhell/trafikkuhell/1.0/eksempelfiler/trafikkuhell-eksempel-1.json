@@ -1,70 +1,107 @@
 {
-  "Anmeldelsenummer": "2711762e-32e3-493e-a8a1-4e604b162a9b",
-  "Ulykkesdato": "08.03.2024",
-  "Klokkeslett": "16:56",
-  "Politidistrikt/tjenestested": "Trøndelag politidistrikt",
-  "Gjerningskommune": "Ørland",
-  "Åsteds beskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
-  "Vegtype": "Gang/sykkelveg",
-  "Ulykkeskode": 23,
-  "Vegbredde": 30,
-  "Stedsforhold": "3-armet veikryss",
-  "Antall kjørefelt": 3,
-  "Fysisk midtdeler": "Fysisk adskilt",
-  "Vegdekke": "Betong",
-  "Føreforhold": "Snø, eller isbelagt",
-  "Værforhold": "Dårlig sikt, nedbør",
-  "Temperatur": 17,
-  "Lysforhold": "Mørkt m/belysning",
-  "Fartsgrense": 60,
-  "Politiets beskrivelse av stedet": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
-  "nord koordinat": 7011342,
-  "øst koordinat": 289395,
-  "Veg/gate": "Elines vei",
-  "Vegkategori": "Fylkesveg",
-  "Vegnr": 9,
-  "Kryssende veg": "Annes gate",
-  "Kryssende Vegkategori": "Komm. veg",
-  "Kryssende Vegnr": 10,
-  "Påkjørt dyr/hinder/gjenstand": "Elg",
-  "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": 8,
-  "Regulering for trafikkenhet i vegkryss": "Forkjørsvei (skilt 206, 210) - denne er både her og under enhet er det riktig?",
-  "enhet": [
-    {
-      "Enhetsbokstav": "A",
-      "Registreringsnummer": 123456789,
-      "Enhetstype": "Personbil, stasjonsvogn",
-      "Årsmodell": 2020,
-      "Registreringsland": "N",
-      "Dekktype": "Vinterdekk uten pigger",
-      "Kommentar dekk": "veldig slitte dekk",
-      "Regulering for trafikkenhet i vegkryss": "3: Forkjørsvei (skilt 206, 210)",
-      "person/trafikant": [
-        {
-          "Kjønn": "M",
-          "Fødselsdato": "04.06.2003",
-          "Plassering i kjøretøy": "Førerplass",
-          "Skadegrad": "Illebefinnende (fører)",
-          "Beskyttelsesutstyr": "Bilbelte og kollisjonspute",
-          "Skadeforløp": "Nakkeskade",
-          "Ferdselsformål": "Fritidsreise",
-          "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
-          "Postnr": 3530,
-          "Poststed": "Røyse"
-        },
-        {
-          "Kjønn": "M",
-          "Fødselsdato": "21.05.2011",
-          "Plassering i kjøretøy": "Bak",
-          "Skadegrad": "Meget alv.skadd",
-          "Beskyttelsesutstyr": "Bilbelte",
-          "Skadeforløp": "Skadd mot interiør",
-          "Ferdselsformål": "Fritidsreise",
-          "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
-          "Postnr": 3530,
-          "Poststed": "Røyse"
+  "forsendelse": {
+    "meldingsId": "A5E2E221-2B5E-48A9-A9D3-FDAA5F5CE8",
+    "sendtTid": "2024-06-10T16:29:45+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Testesen",
+        "kontakt": {
+          "telefonnummer": [
+            "12 34 56 78"
+          ]
         }
-      ]
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "971032081",
+      "navn": "Statens vegvesen"
+    }
+  },
+  "trafikkuhell": {
+    "Anmeldelsenummer": "0322B3E2-B12B-40B6-8940-799C48706123",
+    "Ulykkestidspunk": "09.11.2023 16:56",
+    "Politidistrikt/tjenestested": "Trøndelag politidistrikt",
+    "Gjerningskommune": "Ørland",
+    "Åsteds beskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
+    "Vegtype": "4: Gang/sykkelveg",
+    "Ulykkeskode": 23,
+    "Vegbredde": 30,
+    "Stedsforhold": "2: 3-armet veikryss",
+    "Antall kjørefelt": 3,
+    "Fysisk midtdeler": "2: Fysisk adskilt",
+    "Vegdekke": "4: Betong",
+    "Føreforhold": "4: Delvis snø eller isbelagt",
+    "Værforhold": "3: Dårlig sikt, nedbør",
+    "Temperatur": 17,
+    "Lysforhold": "3: Mørkt m/belysning",
+    "Fartsgrense": 60,
+    "Politiets beskrivelse av stedet": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+    "nord koordinat": 7011342,
+    "øst koordinat": 289395,
+    "Veg/gate": "Elines vei",
+    "Vegkategori": "3: Fylkesveg",
+    "Vegnr": 9,
+    "Kryssende veg": "Annes gate",
+    "Kryssende Vegkategori": "4: Komm. veg",
+    "Kryssende Vegnr": 10,
+    "Påkjørt dyr/hinder/gjenstand": "15: Elg",
+    "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": 8,
+    "enhet": [
+      {
+        "ID": "enhet_1",
+        "Enhetsbokstav": "A",
+        "Registreringsnummer": 123456789,
+        "Enhetstype": "31: Personbil, stasjonsvogn",
+        "Årsmodell": 2020,
+        "Registreringsland": "N",
+        "Dekktype": "Vinterdekk uten pigger",
+        "Kommentar dekk": "veldig slitte dekk",
+        "Regulering for trafikkenhet i vegkryss": "3: Forkjørsvei (skilt 206, 210)",
+        "person/trafikant": [
+          {
+            "ID": "person_1",
+            "Kjønn": "2: K",
+            "Fødselsdato": "11.11.1977",
+            "Plassering i kjøretøy": "Førerplass",
+            "Skadegrad": "6: Illebefinnende (fører)",
+            "Beskyttelsesutstyr": "2: Bilbelte",
+            "Skadeforløp": "7: Nakkeskade",
+            "Ferdselsformål": "5: Fritidsreise",
+            "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
+            "Postnr": 3530,
+            "Poststed": "Røyse"
+          },
+          {
+            "ID": "person_2",
+            "Kjønn": "2: K",
+            "Fødselsdato": "31.03.2022",
+            "Plassering i kjøretøy": "3: Bak",
+            "Skadegrad": "2: Meget alv.skadd",
+            "Beskyttelsesutstyr": "5: Barnesete",
+            "Skadeforløp": "7: Nakkeskade",
+            "Ferdselsformål": "5: Fritidsreise",
+            "Kort beskrivelse av personskade": "Slo hodet mot vinduet",
+            "Postnr": 3530,
+            "Poststed": "Røyse"
+          }
+        ]
+      }
+    ]
+  },
+  "vedlegg": [
+    {
+      "internId": "987654132",
+      "tittel": "Skisse",
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "image/png",
+        "uri": "file:///testestest",
+        "sjekksum": "56asd24ad23"
+      }
     }
   ]
 }

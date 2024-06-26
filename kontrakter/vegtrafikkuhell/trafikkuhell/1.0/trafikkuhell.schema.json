@@ -1,19 +1,269 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://politiet.no/vegtrafikkuhell/1.0/trafikkuhell",
-  "description": "Skjema for trafikkuhell melding fra politiet til Statens Vegvesen, JSON Schema versjon 2020-12",
+  "description": "Skjema for trafikkuhell-melding fra politiet til Statens Vegvesen, JSON Schema versjon 2020-12",
   "type": "object",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
+    },
+    "trafikkuhell": {
+      "$ref": "#/definitions/trafikkuhell",
+      "description": "Informasjon om vegtrafikkuhell"
+    },
+    "vedlegg": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/vedlegg"
+      },
+      "description": "Første berøringspunkt(treffpunkt) - skisse"
     }
   },
-  "required": ["forsendelse"],
+  "required": [
+    "forsendelse",
+    "trafikkuhell",
+    "vedlegg"
+  ],
   "additionalProperties": false,
   "definitions": {
+    "trafikkuhell": {
+      "type": "object",
+      "description": "Informasjon om trafikkuhell registrert av politiet",
+      "properties": {
+        "Anmeldelsenummer": {
+          "type": "string",
+          "description": "Tilsvarer saksnummer i BL?"
+        },
+        "Ulykkestidspunk": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Kan denne sendes i ett eller må den deles?"
+        },
+        "Politidistrikt/tjenestested": {
+          "type": "string"
+        },
+        "Gjerningskommune": {
+          "type": "string"
+        },
+        "Åsteds beskrivelse": {
+          "type": "string",
+          "description": "En beskrivelse av åstedet."
+        },
+        "Vegtype": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Ulykkeskode": {
+          "type": "integer"
+        },
+        "Vegbredde": {
+          "type": "integer"
+        },
+        "Stedsforhold": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Antall kjørefelt": {
+          "type": "integer"
+        },
+        "Fysisk midtdeler": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Vegdekke": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Føreforhold": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Værforhold": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Temperatur": {
+          "type": "integer",
+          "description": "Celcius."
+        },
+        "Lysforhold": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Fartsgrense": {
+          "type": "integer"
+        },
+        "Politiets beskrivelse av stedet": {
+          "type": "string",
+          "description": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere."
+        },
+        "nord koordinat": {
+          "type": "integer",
+          "description": "UTM33N."
+        },
+        "øst koordinat": {
+          "type": "integer",
+          "description": "UTM33N."
+        },
+        "Veg/gate": {
+          "type": "string"
+        },
+        "Vegkategori": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Vegnr": {
+          "type": "integer"
+        },
+        "Kryssende veg": {
+          "type": "string"
+        },
+        "Kryssende Vegkategori": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Kryssende Vegnr": {
+          "type": "integer"
+        },
+        "Påkjørt dyr/hinder/gjenstand": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": {
+          "type": "integer"
+        },
+        "enhet": {
+          "type": "array",
+          "$ref": "#/definitions/enhet",
+          "description": "Fartøy innvolvert i ulykken."
+        }
+      }
+    },
+    "enhet": {
+      "type": "object",
+      "description": "Informasjon om kjøretøy",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "Gjør enheten unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
+        },"Enhetsbokstav": {
+          "type": "string"
+        },
+        "Registreringsnummer": {
+          "type": "integer"
+        },
+        "Enhetstype": {
+          "type": "string"
+        },
+        "Årsmodell": {
+          "type": "integer"
+        },
+        "Registreringsland": {
+          "type": "string"
+        },
+        "Dekktype": {
+          "type": "string"
+        },
+        "Kommentar dekk": {
+          "type": "string"
+        },
+        "Regulering for trafikkenhet i vegkryss": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "person/trafikant": {
+          "type": "array",
+          "$ref": "#/definitions/person",
+          "description": "Informasjon om person involvert i ulykken."
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
+      "description": "Informasjon om person involvert i ulykken",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
+        },"Kjønn": {
+          "type": "string"
+        },
+        "Fødselsdato": {
+          "type": "date"
+        },
+        "Enhetstype": {
+          "type": "string"
+        },
+        "Plassering i kjøretøy": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Skadegrad": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Beskyttelsesutstyr": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Skadeforløp": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Ferdselsformål": {
+          "type": "string",
+          "description": "Kodeverk."
+        },
+        "Kort beskrivelse av personskade": {
+          "type": "string"
+        },
+        "Postnr": {
+          "type": "integer"
+        },
+        "Poststed": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "additionalProperties": false
+    },
+    "vedlegg": {
+      "description": "Dokument som oversendes på justishub - skisse fra ulykkessted",
+      "type": "object",
+      "properties": {
+        "internId": { "type": "string" },
+        "overskrift": { "type": "string" },
+        "skrevetDato": {
+          "description": "Dato",
+          "type": "string",
+          "format": "date-time"
+        },
+        "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
+      },
+      "required": ["overskrift", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "description": "Detaljer om lokasjon og type",
+      "type": "object",
+      "properties": {
+        "mimeType": { "type": "string" },
+        "uri": { "type": "string" },
+        "sjekksum": { "type": "string" }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
     "forsendelse": {
       "type": "object",
+      "description": "Sender (påtale) og mottaker (SVV) av meldingen",
       "properties": {
         "meldingsId": {
           "type": "string"
@@ -27,18 +277,14 @@
         },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
-          "description": "Domstol som skal være mottaker"
-        },
-        "oensketRettssted": {
-          "$ref": "#/definitions/organisasjon",
-          "description": "Ønsket sted for rettsmøtet, f.eks. Brekstad i Trøndelag tingrett. Vil ikke bli implementert til å begynne med"
+          "description": "Statens vegvesen."
         }
       },
       "required": [
         "meldingsId",
+        "sendtTid",
         "avsender",
-        "mottakerOrganisasjon",
-        "sendtTid"
+        "mottakerOrganisasjon"
       ],
       "additionalProperties": false
     },
@@ -50,15 +296,15 @@
         },
         "person": {
           "$ref": "#/definitions/ansattPerson",
-          "description": "Person som trykker på send til domstolen."
+          "description": "Person som har sendt melding."
         }
       },
-      "required": ["organisasjon"],
+      "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
     "organisasjon": {
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt.",
       "type": "object",
-      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
       "properties": {
         "navn": {
           "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
@@ -73,8 +319,12 @@
     },
     "ansattPerson": {
       "type": "object",
-      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "description": "Saksbehandler hos politiet.",
       "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
+        },
         "tittel": {
           "type": "string"
         },
@@ -89,24 +339,11 @@
         },
         "kontakt": {
           "$ref": "#/definitions/kontaktInfo",
-          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
+          "description": "Kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["etternavn"],
+      "required": ["etternavn", "kontakt"],
       "additionalProperties": false
-    },
-    "organisasjonsnummer": {
-      "type": "string",
-      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
-      "pattern": "^[0-9]+$",
-      "minLength": 9,
-      "maxLength": 9
-    },
-    "straffesaksnummer": {
-      "type": "string",
-      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
-      "minLength": 3,
-      "maxLength": 30
     },
     "kontaktInfo": {
       "type": "object",
@@ -116,13 +353,18 @@
         },
         "telefonnummer": {
           "type": "array",
-          "items": {
-            "$ref": "#/definitions/telefonnummer"
-          }
+          "items": { "$ref": "#/definitions/telefonnummer" }
         }
       },
       "required": ["telefonnummer"],
       "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "[0-9]+",
+      "minLength": 9,
+      "maxLength": 9
     },
     "telefonnummer": {
       "type": "string",
