@@ -1,16 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/vegtrafikkuhell/1.0/trafikkuhell",
-  "description": "Skjema for trafikkuhell-melding fra politiet til Statens Vegvesen, JSON Schema versjon 2020-12",
+  "$id": "https://politiet.no/vegtrafikkulykke/1.0/trafikkulykke",
+  "description": "Skjema for trafikkulykke-melding fra politiet til Statens Vegvesen, JSON Schema versjon 2020-12",
   "type": "object",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
     },
-    "trafikkuhell": {
-      "$ref": "#/definitions/trafikkuhell",
-      "description": "Informasjon om vegtrafikkuhell"
+    "trafikkulykke": {
+      "$ref": "#/definitions/trafikkulykke",
+      "description": "Informasjon om vegtrafikkulykke"
     },
     "vedlegg": {
       "type": "array",
@@ -22,14 +22,14 @@
   },
   "required": [
     "forsendelse",
-    "trafikkuhell",
+    "trafikkulykke",
     "vedlegg"
   ],
   "additionalProperties": false,
   "definitions": {
-    "trafikkuhell": {
+    "trafikkulykke": {
       "type": "object",
-      "description": "Informasjon om trafikkuhell registrert av politiet",
+      "description": "Informasjon om trafikkulykke registrert av politiet",
       "properties": {
         "anmeldelsenummer": {
           "type": "string",

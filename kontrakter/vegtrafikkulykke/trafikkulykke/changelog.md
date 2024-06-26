@@ -1,4 +1,4 @@
-# Melding om vegtrafikkuhell
+# Melding om vegtrafikkulykke
 
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til   |
 |---------|---------------------------------------------|----------------|--------------|-------------|
