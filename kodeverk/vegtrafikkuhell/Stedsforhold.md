@@ -15,3 +15,4 @@
 | 11 | Undergang (gang- og sykkelveg)     |
 | 12 | Tunnel (primært for motorkjøretøy) |
 | 88 | Annet                              |
+---- done

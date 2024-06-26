@@ -12,3 +12,4 @@
 | 7  | Skogsveg                                   |
 | 8  | Annet (plass m.m.)                         |
 | 9  | Ukjent                                     |
+-----done

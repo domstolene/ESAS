@@ -8,3 +8,4 @@
 | 4  | Betong         |
 | 5  | Annet          |
 | 9  | Ukjent         |
+---- done

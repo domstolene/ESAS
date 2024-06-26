@@ -8,3 +8,4 @@
 | 4  | Delvis snø eller isbelagt |
 | 5  | Glatt ellers              |
 | 9  | Ukjent                    |
+---- done
