@@ -1,0 +1,122 @@
+{
+  "forsendelse": {
+    "meldingsId": "A5E2E221-2B5E-48A9-A9D3-FDAA5F5CE8",
+    "sendtTid": "2024-06-10T16:29:45+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "etternavn": "Testesen",
+        "kontakt": {
+          "telefonnummer": ["12 34 56 78"]
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "971032081",
+      "navn": "Statens vegvesen"
+    }
+  },
+  "trafikkulykke": {
+    "anmeldelsenummer": "0322B3E2-B12B-40B6-8940-799C48706123",
+    "ulykkestidspunkt": "2023-11-09T16:56:00+02:00",
+    "ulykkeskode": 23,
+    "politidistrikt": "Trøndelag politidistrikt",
+    "plassering": {
+      "veg": {
+        "gate": "Elines vei",
+        "kommune": "Ørland",
+        "vegkategori": "FYLKESVEG",
+        "vegnummer": 9
+      },
+      "kryssendeVeg": {
+        "gate": "Annes gate",
+        "kommune": "Ørland",
+        "vegkategori": "KOMMUNAL_VEG",
+        "vegnummer": 10
+      },
+      "beskrivelse": "Beskrivelse av gjerningssted/åsted/ulykkessted",
+      "koordinater": {
+        "koordinatOest": "123",
+        "koordinatNord": "321",
+        "koordinatsystem": "UTM33"
+      }
+    },
+    "forhold": {
+      "vegtype": "GANG_ELLER_SYKKELVEG",
+      "vegbreddeMeter": 30,
+      "stedsforhold": "TRE_ARMET_VEGKRYSS",
+      "vegdekke": "BETONG",
+      "foererforhold": "DELVIS_SNOE_ELLER_ISBELAGT",
+      "vaerforhold": "DAARLIG_SIKT_NEDBOER",
+      "temperatur": 17,
+      "lysforhold": "MOERKT_MED_BELYSNING",
+      "fartsgrense": 60,
+      "antallKjoerefelt": 3,
+      "fysiskMidtdeler": "FYSISK_ADSKILT"
+    },
+    "aastedsbeskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
+    "politietsAastedsbeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+    "paakjoerelser": [
+      {
+        "type": "ELG",
+        "avstandVegskulderMeter": 8
+      }
+    ],
+    "involverteEnheter": [
+      {
+        "id": "enhet_1",
+        "enhetsbokstav": "A",
+        "registreringsnummer": "AB123456789",
+        "enhetstype": "PERSONBIL_STASJONSVOGN",
+        "aarsmodell": 2020,
+        "registreringsland": "N",
+        "dekktype": "VINTERDEKK_UTEN_PIGGER",
+        "kommentarDekk": "veldig slitte dekk",
+        "regulerTrafikkenhetVegkryss": "FORKJOERSVEI",
+        "person/trafikant": [
+          {
+            "id": "person_1",
+            "kjoenn": "MANN",
+            "foedselsdato": "1977-11-11",
+            "plasseringKjoeretoey": "FOERERPLASS",
+            "skadegrad": "ILLEBEFINNENDE_FOERER",
+            "beskyttelsesutstyr": "BILBELTE",
+            "skadeforloep": "SKADD_MOT_EKSTERIOER",
+            "ferdselsformaal": "FRITIDSREISE",
+            "beskrivelsePersonskade": "Slo hodet mot vinduet",
+            "postnummer": 3530,
+            "poststed": "Røyse"
+          },
+          {
+            "id": "person_2",
+            "kjoenn": "KVINNE",
+            "foedselsdato": "2022-02-12",
+            "plasseringKjoeretoey": "BAK",
+            "skadegrad": "MEGET_ALVORLIG_SKADD",
+            "beskyttelsesutstyr": "BARNESETE",
+            "skadeforloep": "SKADD_MOT_INTERIOER",
+            "ferdselsformaal": "FRITIDSREISE",
+            "beskrivelsePersonskade": "Slo hodet mot vinduet",
+            "postnummer": 3530,
+            "poststed": "Røyse"
+          }
+        ]
+      }
+    ]
+  },
+  "vedlegg": [
+    {
+      "internId": "0322B3E2-B12B-40B6-8940-799C48706123",
+      "tittel": "Skisse",
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "image/png",
+        "uri": "file:///testestest",
+        "sjekksum": "56asd24ad23"
+      }
+    }
+  ]
+}
