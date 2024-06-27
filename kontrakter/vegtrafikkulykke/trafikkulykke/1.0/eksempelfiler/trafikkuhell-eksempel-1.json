@@ -10,9 +10,7 @@
       "person": {
         "etternavn": "Testesen",
         "kontakt": {
-          "telefonnummer": [
-            "12 34 56 78"
-          ]
+          "telefonnummer": ["12 34 56 78"]
         }
       }
     },
