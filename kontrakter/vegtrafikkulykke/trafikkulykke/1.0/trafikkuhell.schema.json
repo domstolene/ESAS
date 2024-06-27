@@ -20,11 +20,7 @@
       "description": "Første berøringspunkt(treffpunkt) - skisse"
     }
   },
-  "required": [
-    "forsendelse",
-    "trafikkulykke",
-    "vedlegg"
-  ],
+  "required": ["forsendelse", "trafikkulykke", "vedlegg"],
   "additionalProperties": false,
   "definitions": {
     "trafikkulykke": {
@@ -50,7 +46,7 @@
           "type": "string",
           "description": "En beskrivelse av åstedet."
         },
-        "politietsAastedsbeskrivelse":{
+        "politietsAastedsbeskrivelse": {
           "type": "string",
           "description": "Politiets beskrivelse av åstedet."
         },
@@ -136,7 +132,7 @@
     },
     "vegtype": {
       "type": "string",
-      "enum":[
+      "enum": [
         "VANLIG_VEG",
         "MOTORVEG",
         "MOTORTRAFIKKVEG",
@@ -151,7 +147,7 @@
     },
     "stedsforhold": {
       "type": "string",
-      "enum":[
+      "enum": [
         "VEGSTREKNING",
         "TRE_ARMET_VEGKRYSS",
         "FIRE_ARMET_VEGKRYSS",
@@ -169,7 +165,7 @@
     },
     "vegdekke": {
       "type": "string",
-      "enum":[
+      "enum": [
         "ASFALT_OLJEGRUS",
         "GRUS",
         "GATESTEIN",
@@ -180,7 +176,7 @@
     },
     "foererforhold": {
       "type": "string",
-      "enum":[
+      "enum": [
         "TOERR_BAR_VEI",
         "VAAT_BAR_VEI",
         "SNOE_ELLER_ISBELAGT",
@@ -191,7 +187,7 @@
     },
     "vaerforhold": {
       "type": "string",
-      "enum":[
+      "enum": [
         "GOD_SIKT_OPPHOLD",
         "GOD_SIKT_NEDBOER",
         "DAARLIG_SIKT_NEDBOER",
@@ -202,7 +198,7 @@
     },
     "lysforhold": {
       "type": "string",
-      "enum":[
+      "enum": [
         "DAGSLYS",
         "TUSMOERKE",
         "MOERKT_MED_BELYSNING",
@@ -214,11 +210,7 @@
     },
     "fysiskMidtdelerType": {
       "type": "string",
-      "enum": [
-        "IKKE_FYSISK_ADSKILT",
-        "FYSISK_ADSKILT",
-        "ENVEGSREGULERING"
-      ]
+      "enum": ["IKKE_FYSISK_ADSKILT", "FYSISK_ADSKILT", "ENVEGSREGULERING"]
     },
     "enhetstype": {
       "type": "string",
@@ -339,19 +331,12 @@
           "description": "Informasjon om person involvert i ulykken."
         }
       },
-      "required": [
-        "id"
-      ],
+      "required": ["id"],
       "additionalProperties": false
     },
     "plasseringKjoeretoey": {
       "type": "string",
-      "enum": [
-        "FOERERPLASS",
-        "FORAN",
-        "BAK",
-        "ANNET"
-      ]
+      "enum": ["FOERERPLASS", "FORAN", "BAK", "ANNET"]
     },
     "skadegrad": {
       "type": "string",
@@ -421,10 +406,7 @@
         },
         "kjoenn": {
           "type": "string",
-          "enum": [
-            "MANN",
-            "KVINNE"
-          ]
+          "enum": ["MANN", "KVINNE"]
         },
         "foedselsdato": {
           "type": "string",
@@ -455,27 +437,21 @@
           "type": "string"
         }
       },
-      "required": [
-        "id"
-      ],
+      "required": ["id"],
       "additionalProperties": false
     },
     "uhellPlassering": {
       "description": "Informasjon om hvor ulykken skjedde",
       "type": "object",
       "properties": {
-        "veg": { "$ref": "#/definitions/vegInformasjon"},
-        "kryssendeVeg": { "$ref": "#/definitions/vegInformasjon"},
+        "veg": { "$ref": "#/definitions/vegInformasjon" },
+        "kryssendeVeg": { "$ref": "#/definitions/vegInformasjon" },
         "beskrivelse": {
           "type": "string"
         },
         "koordinater": { "$ref": "#/definitions/koordinater" }
       },
-      "required": [
-        "veg",
-        "kryssendeVeg",
-        "beskrivelse"
-      ],
+      "required": ["veg", "kryssendeVeg", "beskrivelse"],
       "additionalProperties": false
     },
     "vegInformasjon": {
@@ -487,12 +463,7 @@
         "vegkategori": { "$ref": "#/definitions/vegkategori" },
         "vegnummer": { "type": "number" }
       },
-      "required": [
-        "gate",
-        "kommune",
-        "vegkategori",
-        "vegnummer"
-      ],
+      "required": ["gate", "kommune", "vegkategori", "vegnummer"],
       "additionalProperties": false
     },
     "vegkategori": {
@@ -514,11 +485,7 @@
         "koordinatNord": { "type": "string" },
         "koordinatsystem": { "type": "string" }
       },
-      "required": [
-        "koordinatOest",
-        "koordinatNord",
-        "koordinatsystem"
-      ],
+      "required": ["koordinatOest", "koordinatNord", "koordinatsystem"],
       "additionalProperties": false
     },
     "vedlegg": {
