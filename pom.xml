@@ -38,6 +38,7 @@
         <module>kontrakter/varetekt/begjaeringVaretekt</module>
         <module>kontrakter/varetekt/kjennelsevaretektpoliti</module>
         <module>kontrakter/politi/overfoeresakkonfliktraad</module>
+        <module>kontrakter/siktelseTiltale</module>
         <module>kontrakter/varetekt/bestillvaretektsplass</module>
         <module>kontrakter/varetekt/innsettelsesordre</module>
         <module>kontrakter/varetekt/kjennelseVaretekt</module>
@@ -47,6 +48,7 @@
         <module>kontrakter/konfliktraadet/oppdatertsaksstatus</module>
         <module>kontrakter/felles/kvittering</module>
         <module>kodeverk/felles</module>
+        <module>kodeverk/konfliktraad</module>
         <module>validering-jwks</module>
     </modules>
 
