@@ -17,6 +17,7 @@ const jsonSchemaFolders = [
   "kontrakter/konfliktraadet/oppdatertsaksstatus",
   "kontrakter/personundersoekelse/rekvisisjonPersonundersoekelse",
   "kontrakter/personundersoekelse/returPersonundersoekelse",
+  "kontrakter/vegtrafikkulykke/trafikkulykke"
 ];
 
 const jsonKodeverkFolders = ["kodeverk/felles"];
