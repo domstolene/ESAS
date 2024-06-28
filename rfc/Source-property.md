@@ -19,19 +19,22 @@ Dette er sårbart dersom man senere endrer på integrasjonspatternet ved endring
 
 Avsender legger på ny header-property.
 
-`Source` : Unikt og definert navn på virksomhet for avsender. F.eks. KDI, POLITI, DOMSTOL.
+`Source` : Unikt og definert navn på virksomhet for avsender. F.eks. KRIMINALOMSORGEN, POLITIET, DOMSTOLEN.
 
+Disse unike navnene skal defineres i en kodeverkfil (typ _kjente aktører på Justishub_), samt en beskrivelse i en MD-fil.
+
+Denne propertien skal settes på alle meldinger i ESAS III initiativet som er basert på JSON-formatet (både nye og gamle).
 
 ### Eksempel
 
-Source = DOMSTOL
+Source = DOMSTOLEN
 
 Pseudokode:
 
 ```
 
 Map<String,Object> headerMap = new HashMap<String,Object>();
-headerMap.put("Source", "DOMSTOL");
+headerMap.put("Source", "DOMSTOLEN");
 
 BasicProperties messageProperties = new BasicProperties.Builder()
 .headers(headerMap)
@@ -43,4 +46,6 @@ channel.basicPublish("",myQueue,messageProperties,message.getBytes())
 
 ### Changelog
 
-24.06.2023: Opprettet RFC for header 'Source'.
+24.06.2024: Opprettet RFC for header 'Source'.
+
+28.06.2024: Presisering av hvor virksometer defineres, samt hvile meldinger dette skal gjelde for.
