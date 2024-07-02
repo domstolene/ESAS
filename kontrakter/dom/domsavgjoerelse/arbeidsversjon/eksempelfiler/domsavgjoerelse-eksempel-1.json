@@ -145,17 +145,17 @@
               },
               "fengsel": {
                 "straff": {
-                    "antallAar": 2,
-                    "antallMaaneder": 4
+                  "antallAar": 2,
+                  "antallMaaneder": 4
                 },
                 "betinget": {
-                    "antallMaaneder": 6
+                  "antallMaaneder": 6
                 },
                 "proevetid": {
-                    "antallAar": 2
+                  "antallAar": 2
                 },
                 "fradrag": {
-                    "antallDager": 24
+                  "antallDager": 24
                 },
                 "saervilkaar": [
                   {
