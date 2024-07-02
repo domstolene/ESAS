@@ -48,4 +48,4 @@ channel.basicPublish("",myQueue,messageProperties,message.getBytes())
 
 24.06.2024: Opprettet RFC for header 'Source'.
 
-28.06.2024: Presisering av hvor virksometer defineres, samt hvile meldinger dette skal gjelde for.
+28.06.2024: Presisering av hvor virksomheter defineres, samt hvilke meldinger dette skal gjelde for.
