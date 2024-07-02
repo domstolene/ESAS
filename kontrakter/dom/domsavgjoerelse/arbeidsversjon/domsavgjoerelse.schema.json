@@ -93,15 +93,11 @@
           "description": "KravId i første instans"
         },
         "avgjoerelsePrSiktetTiltalt": {
-          "properties": {
-            "personForetak": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/personForetakAvjoerelse"
-              },
-              "minItems": 1
-            }
-          }
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personForetakAvjoerelse"
+          },
+          "minItems": 1
         }
       },
       "required": [
