@@ -136,6 +136,7 @@
         }
       },
       "required": ["personForetak", "resultat", "reaksjoner", "erklaering"],
+      "type": "object",
       "additionalProperties": false
     },
     "basissakResultat": {
@@ -149,7 +150,7 @@
         },
         "straffesaksnummer": {
           "$ref": "#/definitions/straffesaksnummer",
-          "desctioption": "Politiets interne saksnummer"
+          "description": "Politiets interne saksnummer"
         },
         "grunnlagstekst": {
           "type": "string",
@@ -167,17 +168,18 @@
         "grunnlagstekst",
         "resultatType"
       ],
+      "type": "object",
       "additionalProperties": false
     },
 
     "lovbud": {
-      "type": "object",
       "properties": {
         "lovbudStreng": {
           "type": "string"
         }
       },
       "required": ["lovbudStreng"],
+      "type": "object",
       "additionalProperties": false
     },
     "reaksjonsType": {
@@ -210,6 +212,7 @@
           "$ref": "#/definitions/annet"
         }
       },
+      "type": "object",
       "additionalProperties": false
     },
     "fengsel": {
@@ -238,6 +241,7 @@
         }
       },
       "required": ["straff"],
+      "type": "object",
       "additionalProperties": false
     },
     "bot": {
@@ -265,6 +269,7 @@
         }
       },
       "required": ["beloep"],
+      "type": "object",
       "additionalProperties": false
     },
     "samfunnsstraff": {
@@ -291,6 +296,7 @@
         }
       },
       "required": ["straff"],
+      "type": "object",
       "additionalProperties": false
     },
     "ungdomsstraff": {
@@ -309,6 +315,7 @@
         }
       },
       "required": ["straff"],
+      "type": "object",
       "additionalProperties": false
     },
     "rettighetstap": {
@@ -322,6 +329,7 @@
         }
       },
       "required": ["detaljer"],
+      "type": "object",
       "additionalProperties": false
     },
     "rettighetstapDetaljer": {
@@ -339,6 +347,7 @@
           "description": "Fritekst som beskriver rettighetstapet"
         }
       },
+      "type": "object",
       "additionalProperties": false
     },
     "inndragning": {
@@ -365,6 +374,7 @@
         }
       },
       "required": ["hjemmel"],
+      "type": "object",
       "additionalProperties": false
     },
     "annet": {
@@ -375,6 +385,7 @@
         }
       },
       "required": ["tekst"],
+      "type": "object",
       "additionalProperties": false
     },
     "erklaering": {
@@ -562,6 +573,7 @@
             }
           },
           "additionalProperties": false,
+          "type": "object",
           "required": ["lovbudKombinertId"]
         },
         {
@@ -576,6 +588,7 @@
             }
           },
           "additionalProperties": false,
+          "type": "object",
           "required": ["lovbud"]
         }
       ]
@@ -599,6 +612,7 @@
             }
           },
           "additionalProperties": false,
+          "type": "object",
           "required": ["person"]
         },
         {
@@ -608,6 +622,7 @@
             }
           },
           "additionalProperties": false,
+          "type": "object",
           "required": ["foretak"]
         }
       ]
@@ -616,7 +631,7 @@
       "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
       "properties": {
         "internId": {
-          "ref": "#/definitions/internId",
+          "$ref": "#/definitions/internId",
           "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
         },
         "etternavn": {
@@ -662,11 +677,10 @@
       "additionalProperties": false
     },
     "foretak": {
-      "type": "object",
       "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. siktet",
       "properties": {
         "internId": {
-          "ref": "#/definitions/internId",
+          "$ref": "#/definitions/internId",
           "description": "Unik id lokalt i meldingen, samme internId er samme foretak."
         },
         "organisasjonsnummer": {
@@ -678,10 +692,10 @@
       },
       "$comment": "Bør vi ha med 'adresse' her? (politiet har det i begjæring). Kan også vurdere å slå denne sammen med organisasjon",
       "required": ["internId", "navn"],
+      "type": "object",
       "additionalProperties": false
     },
     "rettsmoete": {
-      "type": "object",
       "properties": {
         "rettsmoeteTidFra": {
           "$ref": "#/definitions/datoTid"
@@ -690,6 +704,7 @@
           "$ref": "#/definitions/datoTid"
         }
       },
+      "type": "object",
       "additionalProperties": false
     },
     "varighet": {
@@ -724,6 +739,7 @@
         "antallDager": { "$ref": "#/definitions/dager" },
         "antallTimer": { "$ref": "#/definitions/timer" }
       },
+      "type": "object",
       "additionalProperties": false
     },
     "periode": {
@@ -833,6 +849,7 @@
         }
       },
       "required": ["paragraf", "tekst"],
+      "type": "object",
       "additionalProperties": false
     },
     "basissakResultatType": {
