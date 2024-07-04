@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/kjennelseAvgjoerelse/arbeidsversjon/beslutning.schema.json",
-  "description": "Skjema som definerer en generell kjennelseavgjørelse",
+  "$id": "https://domstol.no/kjennelseBeslutning/arbeidsversjon/kjennelseBeslutning",
+  "description": "Skjema som definerer en generell kjennelse eller beslutning",
   "properties": {
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
@@ -64,7 +64,7 @@
         },
         "avgjoerelseIdForrigeInstans": {
           "$ref": "#/definitions/GUID",
-          "description": "Domstolen sin id til avgjørelsen i forrige instans. Settes kun dersom dette er en dom i en ankesak"
+          "description": "Domstolen sin id til avgjørelsen i forrige instans. Settes kun dersom dette er en avgjørelse i en ankesak"
         },
         "avsagtDato": {
           "$ref": "#/definitions/dato"
@@ -84,9 +84,18 @@
         "beskrivelse": {
           "type": "string",
           "description": "Fritekst som beskriver avgjørelsen"
+        },
+        "typeAvgjoerelse": {
+          "$ref": "#/definitions/avgjoerelseType",
+          "description": "Hva slags type avgjørelse dette er"
         }
       },
-      "required": ["avgjoerelseId", "avsagtDato"],
+      "required": [
+        "avgjoerelseId",
+        "avsagtDato",
+        "kategori",
+        "typeAvgjoerelse"
+      ],
       "type": "object",
       "additionalProperties": false
     },
@@ -214,8 +223,13 @@
       "additionalProperties": false
     },
     "avgjoerelseKategori": {
-      "$comment": "Vi kan vurdere å bruke kodeverk i stedet for enum her",
-      "enum": ["SAKEN_AVVIST", "ANNET"],
+      "description": "Bruk 'SAKEN_AVVIST' dersom tilståelse trekkes. 'SAK_AVVISET_ANNET' dersom sak lukkes uten avgjørelse. 'ANNET' på andre ting",
+      "enum": ["SAKEN_AVVIST", "SAK_AVVIST_ANNET", "ANNET"],
+      "type": "string"
+    },
+    "avgjoerelseType": {
+      "description": "Type avgjørelse. Kjennelse eller beslutning, og om beslutningen kan ankes eller ikke",
+      "enum": ["KJENNELSE", "BESLUTNING_INGEN_ANKE", "BESLUTNIG_KAN_ANKES"],
       "type": "string"
     },
     "internId": {
@@ -260,7 +274,7 @@
     },
     "GUID": {
       "type": "string",
-      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+      "format": "uuid"
     }
   }
 }

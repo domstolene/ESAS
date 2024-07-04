@@ -57,7 +57,8 @@
       "kravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
       "opprinneligKravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
       "kategori": "SAKEN_AVVIST",
-      "beskrivelse": "Siktede trakk tilståelsen så denne saken blir ikke kjørt som en tilståelsesak"
+      "beskrivelse": "Siktede trakk tilståelsen så denne saken blir ikke kjørt som en tilståelsesak",
+      "typeAvgjoerelse": "BESLUTNING_INGEN_ANKE"
     }
   }
 }
