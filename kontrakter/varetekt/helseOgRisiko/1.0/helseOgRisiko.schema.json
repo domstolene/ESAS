@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politiet.no/politi/fengsling/1.0/helseOgRisiko",
+  "description": "Helse og risiko informasjon i forbindelse fengslinger hos Kriminalomsorgen.",
+
+  "definitions": {
+    "risikoOgHelseInfo": {
+      "type": "object",
+      "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
+      "required": ["risikovurdering", "helseInfo", "tilstandArresten"],
+      "additionalProperties": false,
+      "properties": {
+        "risikovurdering": {
+          "$ref": "#/definitions/risikovurdering",
+          "description": "Opplysninger av betydning for risikovurdering, skal alltid fylles ut."
+        },
+        "helseInfo": {
+          "$ref": "#/definitions/helseInfo",
+          "description": "helseopplysninger skal alltid fylles ut"
+        },
+        "tilstandArresten": {
+          "$ref": "#/definitions/tilstandArresten",
+          "description": "Tilstand til siktede i arresten, skal alltid fylles ut."
+        }
+      }
+    },
+    "risikovurdering": {
+      "type": "object",
+      "description": "Vurdering avkrysning og mulighet for beskrivelse i fritekst",
+      "required": ["risiko"],
+      "additionalProperties": false,
+      "properties": {
+        "risiko": {
+          "type": "array",
+          "description": "Valg av vilke risikotyper, hvis det er ingen risiko så skal INGER_RISIKO brukes.",
+          "items": {
+            "$ref": "#/definitions/risikoVurderingTyper"
+          },
+          "minItems": 1
+        },
+        "beskrivelse": { "type": "string" }
+      }
+    },
+    "risikoVurderingTyper": {
+      "type": "string",
+      "description": "Risikovurderinger",
+      "enum": [
+        "VOLDSHISTORIKK",
+        "PSYKIATRI",
+        "UOENSKET_HENDELSE",
+        "ROEMNINGSFARE",
+        "FARE_ANSLAG",
+        "ANNET",
+        "UKJENT",
+        "INGEN"
+      ]
+    },
+    "tilstandArresten": {
+      "type": "object",
+      "description": "Valg av tilstand i arresten med beskrivelse",
+      "required": ["tilstand"],
+      "additionalProperties": false,
+      "properties": {
+        "tilstand": {
+          "type": "array",
+          "description": "Valg av hvilken tilstand",
+          "items": {
+            "$ref": "#/definitions/tilstandArrestenTyper"
+          },
+          "minItems": 1
+        },
+        "beskrivelse": { "type": "string" }
+      }
+    },
+    "tilstandArrestenTyper": {
+      "type": "string",
+      "description": "Tilstand i arresten",
+      "enum": [
+        "RUSET",
+        "OPPFOERSEL",
+        "FARE_PSYKISK_FYSISK_HELSE",
+        "SELVMORDSRISIKO",
+        "MEDISINER",
+        "UKJENT",
+        "INGEN"
+      ]
+    },
+    "helseInfo": {
+      "type": "object",
+      "description": "Helsetilstanden til personen i arresten",
+      "required": ["helse"],
+      "additionalProperties": false,
+      "properties": {
+        "helse": {
+          "type": "array",
+          "description": "Helseinformasjon, velger ingen hvis det ikke er noe å bemerke.",
+          "items": {
+            "$ref": "#/definitions/helseTyper"
+          },
+          "minItems": 1
+        },
+        "beskrivelse": { "type": "string" }
+      }
+    },
+    "helseTyper": {
+      "type": "string",
+      "description": "Helseopplysninger",
+      "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
+    }
+  }
+
+}
