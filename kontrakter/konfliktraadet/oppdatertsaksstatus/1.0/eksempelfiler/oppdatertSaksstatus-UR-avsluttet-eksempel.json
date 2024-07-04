@@ -24,8 +24,7 @@
   "statusOppdatering": {
     "ungdomsreaksjonStatus": {
       "avsluttetUngdomsreaksjon": {
-        "aarsak": "FULLFOERT",
-        "totalLengde": 56
+        "aarsak": "FULLFOERT"
       }
     }
   },
