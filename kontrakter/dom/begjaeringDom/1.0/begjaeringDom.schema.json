@@ -115,19 +115,6 @@
       "required": ["adresselinjer", "land"],
       "additionalProperties": false
     },
-    "kommune": {
-      "type": "object",
-      "properties": {
-        "kommunenummer": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "required": ["kommunenummer"],
-      "additionalProperties": false
-    },
     "kodeverk": {
       "type": "object",
       "properties": {
@@ -684,12 +671,6 @@
       "pattern": "^\\+?[0-9, ,\\-,\\(,)]*$",
       "maxLength": 30,
       "minLength": 3
-    },
-    "unikId": {
-      "type": "string",
-      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
-      "maxLength": 40,
-      "minLength": 5
     },
     "GUID": {
       "type": "string",
