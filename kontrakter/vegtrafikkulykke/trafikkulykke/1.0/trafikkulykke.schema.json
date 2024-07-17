@@ -40,7 +40,7 @@
           "type": "string"
         },
         "plassering": {
-          "$ref": "#/definitions/uhellPlassering"
+          "$ref": "#/definitions/ulykkePlassering"
         },
         "aastedsbeskrivelse": {
           "type": "string",
@@ -233,9 +233,9 @@
         "EL_BIL",
         "LUKKET_3_ELLER_4_HJULS_MC_MOPED_TRAKTOR",
         "PERSONBIL_STASJONSVOGN",
-        "DROSJE_MINUBUSS",
+        "DROSJE_MINIBUSS",
         "BUSS_MINIBUSS_I_RUTE",
-        "MINUBUSS",
+        "MINIBUSS",
         "ANNEN_BUSS_TURVOGN",
         "ANNEN_AKTUELL_SYKETRANSPORT",
         "POLITI_UNDER_UTRYKNING",
@@ -440,7 +440,7 @@
       "required": ["id"],
       "additionalProperties": false
     },
-    "uhellPlassering": {
+    "ulykkePlassering": {
       "description": "Informasjon om hvor ulykken skjedde",
       "type": "object",
       "properties": {

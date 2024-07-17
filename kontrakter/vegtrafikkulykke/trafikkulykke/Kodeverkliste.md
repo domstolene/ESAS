@@ -1,35 +1,35 @@
 # Kodeverk liste
 
-[Beskyttelse](kodeverk/Beskyttelse.md)
+[Beskyttelse](../../../kodeverk/vegtrafikkulykke/Beskyttelse.md)
 
-[Dekktype](kodeverk/Dekktype.md)
+[Dekktype](../../../kodeverk/vegtrafikkulykke/Dekktype.md)
 
-[Felttype](kodeverk/Felttype.md)
+[Felttype](../../../kodeverk/vegtrafikkulykke/Felttype.md)
 
-[Ferdselsformål](kodeverk/Ferdselsformål.md)
+[Ferdselsformål](../../../kodeverk/vegtrafikkulykke/Ferdselsformål.md)
 
-[Føreforhold](kodeverk/Føreforhold.md)
+[Føreforhold](../../../kodeverk/vegtrafikkulykke/Føreforhold.md)
 
-[Lysforhold](kodeverk/Lysforhold.md)
+[Lysforhold](../../../kodeverk/vegtrafikkulykke/Lysforhold.md)
 
-[Plassering i/på kjøretøy](kodeverk/Plassering_kjøretøy.md)
+[Plassering i/på kjøretøy](../../../kodeverk/vegtrafikkulykke/Plassering_kjøretøy.md)
 
-[Påkjørt dyr/hinder/gjenstand](kodeverk/Påkjørt_dyr_hinder_gjenstand.md)
+[Påkjørt dyr/hinder/gjenstand](../../../kodeverk/vegtrafikkulykke/Påkjørt_dyr_hinder_gjenstand.md)
 
-[Regulering for trafikkenhet i vegkryss](kodeverk/Regulering_trafikkenhet_vegkryss.md)
+[Regulering for trafikkenhet i vegkryss](../../../kodeverk/vegtrafikkulykke/Regulering_trafikkenhet_vegkryss.md)
 
-[Stedsforhold](kodeverk/Stedsforhold.md)
+[Stedsforhold](../../../kodeverk/vegtrafikkulykke/Stedsforhold.md)
 
-[Trafikk i begge retninger](kodeverk/Trafikk_begge_retninger.md)
+[Trafikk i begge retninger](../../../kodeverk/vegtrafikkulykke/Trafikk_begge_retninger.md)
 
-[Type enhet (Kjøretøygruppe)](kodeverk/Enhetstype.md)
+[Type enhet (Kjøretøygruppe)](../../../kodeverk/vegtrafikkulykke/Enhetstype.md)
 
-[Ulykkeskode](kodeverk/Ulykkeskode.md)
+[Ulykkeskode](../../../kodeverk/vegtrafikkulykke/Ulykkeskode.md)
 
-[Vegdekke](kodeverk/Vegdekke.md)
+[Vegdekke](../../../kodeverk/vegtrafikkulykke/Vegdekke.md)
 
-[Vegkategori](kodeverk/Vegkategori.md)
+[Vegkategori](../../../kodeverk/vegtrafikkulykke/Vegkategori.md)
 
-[Vegtype](kodeverk/Vegtype.md)
+[Vegtype](../../../kodeverk/vegtrafikkulykke/Vegtype.md)
 
-[Værforhold](kodeverk/Værforhold.md)
+[Værforhold](../../../kodeverk/vegtrafikkulykke/Værforhold.md)
