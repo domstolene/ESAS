@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politiet.no/1.0/straffesak",
+  "description": "Definisjoner for straffesak",
+
+  "type": "object",
+  "properties": {
+	  "straffesak": {"$ref": "#/definitions/straffesak"}
+  },
+  "required": ["straffesak"],
+  "additionalProperties": false,
+
+  "definitions": {
+    "straffesak": {
+      "type": "object",
+      "description": "Straffesak, hendelse og koding og fornærmede som ikke er med i siktelsen",
+      "properties": {
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer"
+        },
+        "detaljer": {
+          "$ref": "#/definitions/straffesakDetaljer"
+        }
+      },
+      "required": ["straffesaksnummer", "detaljer"],
+      "additionalProperties": false
+    },
+    "straffesakDetaljer": {
+      "type": "object",
+      "description": "Detaljer rundt straffesaken",
+      "properties": {
+        "hendelse": {
+          "$ref": "#/definitions/hendelse"
+        },
+        "statistikkgruppe": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "krimtype": {
+          "$ref": "#/definitions/kodeverk"
+        }
+      },
+      "required": ["hendelse", "statistikkgruppe"],
+      "additionalProperties": false
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "sted": {
+      "type": "object",
+      "description": "Et sted kan være en adresse, en posisjon, eller bare en beskrivelse som krysset på Klett. I dag vil det alltid være en adresse eller en posisjon (se readme.md)",
+      "properties": {
+        "beskrivelse": { "type": "string" },
+        "adresse": { "$ref": "#/definitions/adresse" },
+        "posisjon": {
+          "$ref": "#/definitions/koordinat",
+          "description": "Skal være mulig å sende adresse og posisjon sammen senere."
+        },
+        "kommune": { "$ref": "#/definitions/kommune" }
+      },
+      "additionalProperties": false
+    },
+    "koordinat": {
+      "type": "object",
+      "description": "UTM koordinater, EUREF89",
+      "properties": {
+        "breddeLengdeDesimal": { "$ref": "#/definitions/breddeLengdeDesimal" },
+        "UTM": { "$ref": "#/definitions/UTM" }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "UTM": { "$ref": "#/definitions/UTM" }
+          },
+          "required": ["UTM"]
+        },
+        {
+          "properties": {
+            "breddeLengdeDesimal": {
+              "$ref": "#/definitions/breddeLengdeDesimal"
+            }
+          },
+          "required": ["breddeLengdeDesimal"]
+        }
+      ]
+    },
+    "UTM": {
+      "type": "object",
+      "description": "UTM koordinater, EUREF89, vil være sone 33 nordlige halvkule",
+      "properties": {
+        "sone": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "halvkule": {
+          "type": "string",
+          "pattern": "[NS]",
+          "minLength": 1,
+          "maxLength": 2
+        },
+        "oest": { "type": "integer" },
+        "nord": { "type": "integer" }
+      },
+      "required": ["sone"],
+      "additionalProperties": false
+    },
+    "breddeLengdeDesimal": {
+      "type": "object",
+      "description": "bredde lengde koordinater desimal minutt og sekund (maks 5 desimaler i bredde/lengde",
+      "properties": {
+        "bredde": { "type": "number", "minimum": -90, "maximum": 90 },
+        "lengde": { "type": "number", "minimum": -180, "maximum": 180 }
+      },
+      "required": ["bredde", "lengde"],
+      "additionalProperties": false
+    },
+    "hendelse": {
+      "type": "object",
+      "description": "Tid og sted for det straffbare forholdet",
+      "properties": {
+        "gjerningstidspunktFra": {"type": "string", "format": "date-time" },
+        "gjerningstidspunktTil": {"type": "string", "format": "date-time" },
+        "gjerningssted": {
+          "$ref": "#/definitions/adresse"
+        }
+      },
+      "required": [
+        "gjerningstidspunktFra",
+        "gjerningstidspunktTil",
+        "gjerningssted"
+      ],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "adresse": {
+      "type": "object",
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "postnummer": {
+          "type": "string"
+        },
+        "poststed": {
+          "type": "string"
+        },
+        "land": {
+          "$ref": "#/definitions/land"
+        }
+      },
+      "required": ["adresselinjer", "land"],
+      "additionalProperties": false
+    },
+    "land": {
+      "type": "object",
+      "description": "ISO-3166, Kosovo kommer",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "^[A-Z]+$",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode", "navn"],
+      "additionalProperties": false
+    },
+    "kommune": {
+      "type": "object",
+      "properties": {
+        "kommunenummer": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kommunenummer"],
+      "additionalProperties": false
+    }
+  }	
+}
