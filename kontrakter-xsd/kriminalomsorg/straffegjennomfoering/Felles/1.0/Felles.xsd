@@ -278,6 +278,8 @@
       <xs:enumeration value="Unnveket/uteblitt fra fengsel"/>
       <xs:enumeration value="Autom. endret status fra AKT til STA"/>
       <xs:enumeration value="Periode for straffavbrudd"/>
+      <xs:enumeration value="Innvilgelse av straffavbrudd"/>
+      <xs:enumeration value="Forlengelse av straffavbrudd"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="LoeslatelseFraSamfunnAarsakType">
