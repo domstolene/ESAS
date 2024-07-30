@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xml:lang="no"
+           targetNamespace="http://justishub.justisnett.no/skjema/xml/2.0/"
+           xmlns="http://justishub.justisnett.no/skjema/xml/2.0/"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+           jaxb:version="2.0"
+           jaxb:extensionBindingPrefixes="xjc"
+           elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:globalBindings>
+                <xjc:simple />
+            </jaxb:globalBindings>
+        </xs:appinfo>
+    </xs:annotation>
+ 
+	<xs:include schemaLocation="BasicTypes.xsd"/>
+	<xs:element name="sak" type="SaksType">
+		<xs:annotation>
+			<xs:documentation>Inneholder Stifinner data om en sak i Lovisa med en avgjørelse/kjennelse.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SaksType">
+		<xs:sequence>
+			<xs:element name="domstol" type="DomstolType">
+				<xs:annotation>
+					<xs:documentation>Jusenhet koden kommer fra felles kodeverk slik at BL og Lovisa skal finne hvilken domstol som er sender.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="saksnummer" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Lovisa sitt saksnummer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sakstype" type="DomstolssakstypeLavesteNivaa">
+				<xs:annotation>
+					<xs:documentation>Lovisa sin sakstype kode på saken (CATEGORY)A.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="rettskraftigDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="underInstansVedAnke" type="RelaterteSakType" minOccurs="0"/>
+			<xs:element name="avgjoerelseOmGjenopptagelse" type="RelaterteSakType" minOccurs="0"/>
+			<xs:element name="erstatningUberettigetStraffeforfoelging" type="RelaterteSakType" minOccurs="0"/>
+			<xs:element name="hovedSaksnummreneIBL" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Liste over saksnummer som er hovedsaker i BL, men som domstolene har valgt aa slaa sammen for felles behandling. 
+                              Vaer oppmerksom paa at domstolene kan ogsaa splitte opp en sak i sakskomplekset til BL slik at denne saken 
+                              i lovisa bare avgjoer noen av vedlegg sakene i BL  
+            </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+      <!-- person and foretak are separated because JAXB validator is not able
+        to handle extended types -->
+ 			<xs:element name="person" type="SivilPersonType" minOccurs="0" maxOccurs="unbounded">
+ 				<xs:annotation>
+                    <xs:documentation>Liste over personer som er parter på saken. Hvis personens kjønn er ukjent vil
+                        kjoenn feltet for verdi U. Hvis personens fødselsdato er ukjennt vil foedselsdato være
+                        0001-01-01+01:00.
+                    </xs:documentation>
+ 				</xs:annotation>
+ 			</xs:element>
+ 			<xs:element name="foretak" type="ForetakType" minOccurs="0" maxOccurs="unbounded">
+ 				<xs:annotation>
+ 					<xs:documentation>Liste over foretak er parter på saken.</xs:documentation>
+ 				</xs:annotation>
+ 			</xs:element>
+      <xs:element name="part" type="PartMedIdType" maxOccurs="unbounded">
+ 				<xs:annotation>
+ 					<xs:documentation>Liste over parter på saken.</xs:documentation>
+ 				</xs:annotation>
+ 			</xs:element>
+			<xs:element name="avgjoerelse" type="AvgjoerelseMedIdType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Avgjørelsesdetaljer, det vil alltid være baren avgjørelse per oversending.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="avgjoerelsesDokument" type="DokumentType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RelaterteSakType">
+    <xs:sequence>
+      <xs:element name="saksnummer" type="xs:string"/>
+      <xs:element name="avgjoerelsesDato" type="xs:date" minOccurs="0"/>
+		  <xs:element name="domstolsNavn" type="DomstolsnavnType"/>
+    </xs:sequence>
+  </xs:complexType>
+	<xs:complexType name="AvgjoerelseMedIdType">
+		<xs:annotation>
+			<xs:documentation>Avgjoerelsen avgjoer et sett med krav i saken som tilsvarer et sett av saker(vedlegg saker i BL). 
+                                    Krav/sak i BL kan bare avagjoeres av en avgjoerelse slik at saksnummer inngaar i kun et sett.  Det vil i dag aldri komme mer en en avgjorelse per oversending til BL.
+       </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IdentifiserbartObjektType">
+				<xs:sequence>
+					<xs:element name="avgjoerelsestype" type="xs:string">
+						<xs:annotation>
+							<xs:documentation/>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="kravType" type="KravMedIdType" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Kravtypen for alle krav som er avgjort.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="statistikkgruppe" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Samme koder som BL sine statistikkgruppe (OMRAADE koder).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="datoForAvsigelse" type="xs:date"/>
+					<xs:element name="partResultater" type="PartResultatType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Alle parter og motparter på det kravet som er avgjort.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="saksnummreneIBL" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Liste over saksnummer i BL som som avgjoerelse avgjoer. Listen kan inneholde saksnummer fra forskjellige sakskomplekser/hovedsaker i BL.  Ved kjaeremaal er det ikke en kobling til alle vedleggssakene i BL her.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="KravMedIdType">
+		<xs:complexContent>
+			<xs:extension base="IdentifiserbartObjektType">
+				<xs:sequence>
+					<xs:element name="kode" type="xs:string"/>
+					<xs:element name="beskrivelse" type="xs:string"/>
+          <xs:element name="partRef" type="xs:string" minOccurs="0" maxOccurs="unbounded"/> 
+          <xs:element name="motPartRef" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+  <xs:complexType name="PartResultatType">
+    <xs:annotation>
+      <xs:documentation xml:lang="no">Per part resultater i en avgjørelse på saken </xs:documentation> 
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="partRef" type="xs:string" /> 
+      <xs:element name="resultatType" type="KodeType" minOccurs="0" /> 
+      <xs:element name="resultatbeskrivelse" type="xs:string" minOccurs="0">
+        <xs:annotation><xs:documentation>Resultatbeskrivelsen er fritekst og frivillig i Lovisa</xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element name="forkynnelsesmaate" type="xs:string" minOccurs="0" />
+      <xs:element name="forkynnelsesdato" type="xs:date" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" /> 
+  </xs:complexType>
+  <xs:complexType name="PartMedIdType">
+		<xs:complexContent>
+      <xs:extension base="IdentifiserbartObjektType">
+        <xs:sequence>
+          <xs:choice>
+            <xs:element name="personRef" type="xs:string" />
+            <xs:element name="foretakRef" type="xs:string" />
+          </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="rolle" type="xs:string" use="optional" /> 
+      </xs:extension>
+		</xs:complexContent>
+  </xs:complexType>
+</xs:schema>
