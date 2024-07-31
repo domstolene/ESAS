@@ -33,14 +33,13 @@
         },
         "ulykkestidspunkt": {
           "type": "string",
-          "format": "date-time",
-          "description": "Kan denne sendes i ett eller må den deles?"
+          "format": "date-time"
         },
         "politidistrikt": {
           "type": "string"
         },
-        "plassering": {
-          "$ref": "#/definitions/ulykkePlassering"
+        "stedfesting": {
+          "$ref": "#/definitions/stedfesting"
         },
         "aastedsbeskrivelse": {
           "type": "string",
@@ -59,18 +58,21 @@
         },
         "paakjoerelser": {
           "type": "array",
-          "items": { "$ref": "#/definitions/paakjoerelse" }
+          "description": "Liste over objekter som har blitt påkjørt",
+          "items": { "$ref": "#/definitions/paakjoersel" }
         },
         "involverteEnheter": {
           "type": "array",
-          "items": { "$ref": "#/definitions/involverteEnheter" },
+          "items": { "$ref": "#/definitions/involvertEnhet" },
           "description": "Fartøy innvolvert i ulykken."
         }
       },
+      "required": ["anmeldelsenummer", "ulykkestidspunkt", "politidistrikt", "stedfesting", "ulykkeskode", "forhold", "involverteEnheter"],
       "additionalProperties": false
     },
-    "paakjoerelse": {
+    "paakjoersel": {
       "type": "object",
+      "description": "Beskrivelse av objekt/hinder som har blitt påkjørt",
       "properties": {
         "type": { "$ref": "#/definitions/paakjoerelsetype" },
         "avstandVegskulderMeter": { "type": "number" }
@@ -114,7 +116,7 @@
         },
         "stedsforhold": { "$ref": "#/definitions/stedsforhold" },
         "vegdekke": { "$ref": "#/definitions/vegdekke" },
-        "foererforhold": { "$ref": "#/definitions/foererforhold" },
+        "foereforhold": { "$ref": "#/definitions/foereforhold" },
         "vaerforhold": { "$ref": "#/definitions/vaerforhold" },
         "temperatur": {
           "type": "number",
@@ -122,10 +124,10 @@
         },
         "lysforhold": { "$ref": "#/definitions/lysforhold" },
         "fartsgrense": {
-          "type": "number",
+          "type": "integer",
           "description": "Fartsgrense i km/t"
         },
-        "antallKjoerefelt": { "type": "number" },
+        "antallKjoerefelt": { "type": "integer" },
         "fysiskMidtdeler": { "$ref": "#/definitions/fysiskMidtdelerType" }
       },
       "additionalProperties": false
@@ -149,14 +151,14 @@
       "type": "string",
       "enum": [
         "VEGSTREKNING",
-        "TRE_ARMET_VEGKRYSS",
-        "FIRE_ARMET_VEGKRYSS",
+        "TREARMET_VEGKRYSS",
+        "FIREARMET_VEGKRYSS",
         "RUNDKJOERING",
         "ANNET_KRYSS",
         "AVKJOERSEL",
         "PLANOVERGANG",
         "BRO",
-        "TUNNELL_UNDERGANG",
+        "TUNNEL_UNDERGANG",
         "BOMSTASJON",
         "GANG_SYKKELVEG_UNDERGANG",
         "TUNNEL_MOTORKJOERETOEY",
@@ -174,7 +176,7 @@
         "UKJENT"
       ]
     },
-    "foererforhold": {
+    "foereforhold": {
       "type": "string",
       "enum": [
         "TOERR_BAR_VEI",
@@ -200,7 +202,7 @@
       "type": "string",
       "enum": [
         "DAGSLYS",
-        "TUSMOERKE",
+        "TUSSMOERKE",
         "MOERKT_MED_BELYSNING",
         "MOERKT_UTEN_BELYSNING",
         "MOERKETID",
@@ -265,7 +267,7 @@
         "UKJENT_KJOERETOEY"
       ]
     },
-    "regulerTrafikkenhetVegkryss": {
+    "reguleringEnhetVegkryss": {
       "type": "string",
       "enum": [
         "IKKE_I_VEIKRYSS_ELLER_GANGFELT",
@@ -289,7 +291,7 @@
         "UKJENT"
       ]
     },
-    "involverteEnheter": {
+    "involvertEnhet": {
       "type": "object",
       "description": "Informasjon om kjøretøy",
       "properties": {
@@ -320,10 +322,10 @@
         "kommentarDekk": {
           "type": "string"
         },
-        "regulerTrafikkenhetVegkryss": {
-          "$ref": "#/definitions/regulerTrafikkenhetVegkryss"
+        "reguleringEnhetVegkryss": {
+          "$ref": "#/definitions/reguleringEnhetVegkryss"
         },
-        "person/trafikant": {
+        "personer": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/person"
@@ -431,7 +433,7 @@
           "type": "string"
         },
         "postnummer": {
-          "type": "integer"
+          "type": "string"
         },
         "poststed": {
           "type": "string"
@@ -440,7 +442,7 @@
       "required": ["id"],
       "additionalProperties": false
     },
-    "ulykkePlassering": {
+    "stedfesting": {
       "description": "Informasjon om hvor ulykken skjedde",
       "type": "object",
       "properties": {
@@ -459,11 +461,11 @@
       "type": "object",
       "properties": {
         "gate": { "type": "string" },
-        "kommune": { "type": "string" },
+        "kommunenummer": { "type": "integer" },
         "vegkategori": { "$ref": "#/definitions/vegkategori" },
-        "vegnummer": { "type": "number" }
+        "vegnummer": { "type": "integer" }
       },
-      "required": ["gate", "kommune", "vegkategori", "vegnummer"],
+      "required": ["gate", "kommunenummer", "vegkategori", "vegnummer"],
       "additionalProperties": false
     },
     "vegkategori": {
@@ -478,11 +480,11 @@
       ]
     },
     "koordinater": {
-      "description": "Koordinater som angir et visst sted",
+      "description": "Koordinater som angir et ulykkessted",
       "type": "object",
       "properties": {
-        "koordinatOest": { "type": "string" },
-        "koordinatNord": { "type": "string" },
+        "koordinatOest": { "type": "number" },
+        "koordinatNord": { "type": "number" },
         "koordinatsystem": { "type": "string" }
       },
       "required": ["koordinatOest", "koordinatNord", "koordinatsystem"],
@@ -504,7 +506,7 @@
         },
         "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
       },
-      "required": ["tittel", "forsendelse"],
+      "required": ["internId", "tittel", "forsendelse"],
       "additionalProperties": false
     },
     "dokumentForsendelse": {
@@ -629,7 +631,7 @@
     },
     "telefonnummer": {
       "type": "string",
-      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
+      "description": "Telefonnummer, norsk eller utenlandsk, med eller uten landkode/prefix",
       "maxLength": 30,
       "minLength": 1
     }

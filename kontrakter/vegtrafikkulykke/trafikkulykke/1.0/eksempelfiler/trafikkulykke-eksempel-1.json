@@ -24,32 +24,32 @@
     "ulykkestidspunkt": "2023-11-09T16:56:00+02:00",
     "ulykkeskode": 23,
     "politidistrikt": "Trøndelag politidistrikt",
-    "plassering": {
+    "stedfesting": {
       "veg": {
         "gate": "Elines vei",
-        "kommune": "Ørland",
+        "kommunenummer": 2111,
         "vegkategori": "FYLKESVEG",
         "vegnummer": 9
       },
       "kryssendeVeg": {
         "gate": "Annes gate",
-        "kommune": "Ørland",
+        "kommunenummer": 2020,
         "vegkategori": "KOMMUNAL_VEG",
         "vegnummer": 10
       },
       "beskrivelse": "Beskrivelse av gjerningssted/åsted/ulykkessted",
       "koordinater": {
-        "koordinatOest": "123",
-        "koordinatNord": "321",
+        "koordinatOest": 123,
+        "koordinatNord": 321,
         "koordinatsystem": "UTM33"
       }
     },
     "forhold": {
       "vegtype": "GANG_ELLER_SYKKELVEG",
       "vegbreddeMeter": 30,
-      "stedsforhold": "TRE_ARMET_VEGKRYSS",
+      "stedsforhold": "TREARMET_VEGKRYSS",
       "vegdekke": "BETONG",
-      "foererforhold": "DELVIS_SNOE_ELLER_ISBELAGT",
+      "foereforhold": "DELVIS_SNOE_ELLER_ISBELAGT",
       "vaerforhold": "DAARLIG_SIKT_NEDBOER",
       "temperatur": 17,
       "lysforhold": "MOERKT_MED_BELYSNING",
@@ -75,8 +75,8 @@
         "registreringsland": "N",
         "dekktype": "VINTERDEKK_UTEN_PIGGER",
         "kommentarDekk": "veldig slitte dekk",
-        "regulerTrafikkenhetVegkryss": "FORKJOERSVEI",
-        "person/trafikant": [
+        "reguleringEnhetVegkryss": "FORKJOERSVEI",
+        "personer": [
           {
             "id": "person_1",
             "kjoenn": "MANN",
@@ -87,7 +87,7 @@
             "skadeforloep": "SKADD_MOT_EKSTERIOER",
             "ferdselsformaal": "FRITIDSREISE",
             "beskrivelsePersonskade": "Slo hodet mot vinduet",
-            "postnummer": 3530,
+            "postnummer": "3530",
             "poststed": "Røyse"
           },
           {
@@ -100,7 +100,7 @@
             "skadeforloep": "SKADD_MOT_INTERIOER",
             "ferdselsformaal": "FRITIDSREISE",
             "beskrivelsePersonskade": "Slo hodet mot vinduet",
-            "postnummer": 3530,
+            "postnummer": "3530",
             "poststed": "Røyse"
           }
         ]
