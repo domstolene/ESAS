@@ -197,6 +197,7 @@
       "type": "object",
       "properties": {
         "vegtype": { "$ref": "#/definitions/vegtype" },
+        "felttype": { "$ref": "#/definitions/felttype" },
         "vegbreddeMeter": {
           "type": "number"
         },
@@ -231,6 +232,26 @@
         "SKOGSVEG",
         "ANNET",
         "UKJENT"
+      ]
+    },
+    "felttype": {
+      "type": "string",
+      "enum": [
+        "VANLIG_KJOEREFELT",
+        "FORBIKJOERINGSFELT",
+        "KRABBEFELT",
+        "FLETTEFELT",
+        "KOLLEKTIVFELT",
+        "SVINGEFELT",
+        "PARKERINGSFELT",
+        "AKSELERASJONSFELT",
+        "RETARDASJONSFELT",
+        "SKULDER",
+        "SYKKELFELT",
+        "FORTAU",
+        "GANG_SYKKELVEG",
+        "BUSSLOMME_ELLER_HOLDEPLASS",
+        "ANNET"
       ]
     },
     "stedsforhold": {

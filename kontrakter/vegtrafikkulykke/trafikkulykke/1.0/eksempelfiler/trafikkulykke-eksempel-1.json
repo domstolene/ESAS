@@ -46,6 +46,7 @@
     },
     "forhold": {
       "vegtype": "GANG_ELLER_SYKKELVEG",
+      "felttype": "VANLIG_KJOEREFELT",
       "vegbreddeMeter": 30,
       "stedsforhold": "TREARMET_VEGKRYSS",
       "vegdekke": "BETONG",
