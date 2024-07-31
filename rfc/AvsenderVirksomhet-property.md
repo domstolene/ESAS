@@ -4,7 +4,7 @@
 
 **Authors**: Carl Fredrik Bøkestad
 
-**Status**: Diskusjon (24.06.2024)
+**Status**: Beslutning (31.07.2024)
 
 ### Problemstilling
 
@@ -51,3 +51,5 @@ channel.basicPublish("",myQueue,messageProperties,message.getBytes())
 28.06.2024: Presisering av hvor virksomheter defineres, samt hvilke meldinger dette skal gjelde for.
 
 31.07.2024: Endret 'Source' til 'senderOrganization' etter diskusjon med virksomhetene
+
+31.07.2024 Beslutet RFC
