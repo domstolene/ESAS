@@ -7,5 +7,3 @@
 | 3  | Vinterdekk med pigger  |
 | 4  | Annet                  |
 | 9  | Ukjent                 |
-
----done

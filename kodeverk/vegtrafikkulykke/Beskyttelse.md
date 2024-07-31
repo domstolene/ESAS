@@ -11,5 +11,3 @@
 | 7  | Refleks/lykt (gående/akende etc.) |
 | 8  | Annen beskyttelse                 |
 | 9  | Ukjent                            |
-
----done

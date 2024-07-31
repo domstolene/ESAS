@@ -12,6 +12,3 @@
 | 7  | Lyssignal med gult blink. el. uten lys i vegkryss el. gangfelt   |
 | 8  | Annen regulering i kryss, inkl. midl. (politi mv.)               |
 | 9  | Ukjent                                                           |
-
-
----done

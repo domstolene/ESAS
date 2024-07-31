@@ -8,4 +8,3 @@
 | 4  | Dårlig sikt, tåke/dis |
 | 5  | Dårlig sikt, forøvrig |
 | 9  | Ukjent                |
----done

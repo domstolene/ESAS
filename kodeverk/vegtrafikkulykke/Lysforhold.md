@@ -9,4 +9,3 @@
 | 5  | Mørketid          |
 | 6  | Midnattssol       |
 | 9  | Ukjent            |
---- done

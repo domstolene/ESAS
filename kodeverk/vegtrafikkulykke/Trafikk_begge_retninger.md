@@ -5,4 +5,3 @@
 | 1  | Ikke fysisk adskilt |
 | 2  | Fysisk adskilt      |
 | 3  | Envegsregulering    |
----done

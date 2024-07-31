@@ -50,5 +50,3 @@
 | 82 | Sporvogn                                             |
 | 88 | Annet kjøretøy                                       |
 | 99 | Ukjent kjøretøy                                      |
-
---done

@@ -13,5 +13,3 @@
 | 9  | Til/fra fest              |
 | 88 | Annet formål              |
 | 99 | Ukjent                    |
-
----done
