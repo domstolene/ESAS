@@ -41,7 +41,7 @@
       "koordinater": {
         "koordinatOest": 123,
         "koordinatNord": 321,
-        "koordinatsystem": "UTM33"
+        "srid": 25833
       }
     },
     "forhold": {

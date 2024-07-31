@@ -485,9 +485,12 @@
       "properties": {
         "koordinatOest": { "type": "number" },
         "koordinatNord": { "type": "number" },
-        "koordinatsystem": { "type": "string" }
+        "srid": {
+          "type": "integer",
+          "description": "Spatial Reference System Identifier, identifiserer et koordinatsystem"
+        }
       },
-      "required": ["koordinatOest", "koordinatNord", "koordinatsystem"],
+      "required": ["koordinatOest", "koordinatNord", "srid"],
       "additionalProperties": false
     },
     "vedlegg": {
