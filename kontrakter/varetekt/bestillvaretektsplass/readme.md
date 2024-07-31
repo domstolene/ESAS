@@ -11,9 +11,19 @@ SchemaVersion=1.0
 [Se changelog for endringer](changelog.md)
 
 ## Status
-Venter på avklaring fra styringsgrupp/Justisdepartementet, avslutter alle PR for å kunne omorganisere.
+Vi skal ha pilot av bestilling av varetektsplass, men vi skal splitte dagens melding.
+* Bestilling av varetektsplass
+* [siktelseTiltale](../../siktelseTiltale/readme.md)
+* helse og risiko
 
-## Ønsker / mangler
+## Avklaringer
+1. Når er det nødvendig med restriksjoner/isolasjons informasjon i bestilling av varetektsplass? <br/>Kan den informasjonen vente til kjennelse/innsettelsesordre?
+2. Har vi alltid en siktelse når det bestilles varetektsplass.
+3. medsiktede i samme sak/sakskompleks (siktelse). Skal vi plukke med de automatisk eller kun i feltet for medsiktede. Hvis siktelsen er med flere personer så står det i siktelsen.
+4. Uavklart, da skal det ikke være mulig å velge noen restriksjoner/isolasjonskrav ? 
+5. Ett kommentarfelt på restriksjoner/isolasjonskrav er alltid der som frivillig element.
+
+## Ønsker / mangler ?
 ### Gammel PR #50 gjennomgang med Øivind Bjørløw
 branch feature/paagrepetsted-og-verge-full-person, sletter branch når vi har inkorporert endringer.
 
