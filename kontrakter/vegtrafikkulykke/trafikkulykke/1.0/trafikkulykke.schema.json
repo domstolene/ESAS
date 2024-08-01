@@ -36,7 +36,22 @@
           "format": "date-time"
         },
         "politidistrikt": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "OSLO_POLITIDISTRIKT",
+            "OEST_POLITIDISTRIKT",
+            "INNLANDET_POLITIDISTRIKT",
+            "SOER_OEST_POLITIDISTRIKT",
+            "AGDER_POLITIDISTRIKT",
+            "SOER_VEST_POLITIDISTRIKT",
+            "VEST_POLITIDISTRIKT",
+            "MOERE_OG_ROMSDAL_POLITIDISTRIKT",
+            "TROENDELAG_POLITIDISTRIKT",
+            "NORDLAND_POLITIDISTRIKT",
+            "TROMS_POLITIDISTRIKT",
+            "FINNMARK_POLITIDISTRIKT",
+            "SYSSELMESTEREN"
+          ]
         },
         "stedfesting": {
           "$ref": "#/definitions/stedfesting"
