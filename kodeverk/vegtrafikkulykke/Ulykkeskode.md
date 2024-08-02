@@ -37,7 +37,7 @@
 | 35            |Påkjøring av kjørende fra fortau / G/S veg ved høyresving|
 | 36            |Påkjøring av kjørende fra fortau / G/S veg ved venstresving|
 | 39            |Ulykke med uklart forløp ved avsvinging fra samme kjøreretn.|
-| 40            |Venstresving foran kjørende i motsatt retning|
+| 40            |Avsvigning foran kjørende i motsatt retning|
 | 41            |Avsvinging i samme retning|
 | 42            |Avsvinging i hver sin retning|
 | 43            |Vending foran kjørende i motsatt retning|
