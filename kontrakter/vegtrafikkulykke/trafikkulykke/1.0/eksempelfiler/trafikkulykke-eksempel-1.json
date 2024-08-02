@@ -59,7 +59,7 @@
       "fysiskMidtdeler": "FYSISK_ADSKILT"
     },
     "aastedsbeskrivelse": "En beskrivelse av åstedet. Denne er fritekst.",
-    "politietsAastedsbeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+    "ulykkesbeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
     "paakjoerelser": [
       {
         "type": "ELG",
