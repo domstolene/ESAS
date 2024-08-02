@@ -66,7 +66,7 @@
         },
         "ulykkeskode": {
           "type": "string",
-          "description": "TODO - bør være enum?",
+          "description": "Type ulykke",
           "enum": [
             "ULYKKE_MED_DYR_INNBLANDET",
             "PAAKJOERING_AV_FAST_GJENSTAND_PAA_KJOEREBANE",
