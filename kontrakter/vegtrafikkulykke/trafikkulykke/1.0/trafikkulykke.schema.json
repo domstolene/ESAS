@@ -58,11 +58,11 @@
         },
         "aastedsbeskrivelse": {
           "type": "string",
-          "description": "En beskrivelse av åstedet."
+          "description": "Beskrivelse av åsted, ofte utfyllende stedsbeskrivelse som Parkeringsplass ..."
         },
-        "politietsAastedsbeskrivelse": {
+        "ulykkesbeskrivelse": {
           "type": "string",
-          "description": "Politiets beskrivelse av åstedet."
+          "description": "Kort beskrivelse av ulykken."
         },
         "ulykkeskode": {
           "type": "string",
@@ -171,6 +171,7 @@
       "required": [
         "anmeldelsenummer",
         "ulykkestidspunkt",
+        "ulykkesbeskrivelse",
         "politidistrikt",
         "stedfesting",
         "ulykkeskode",
