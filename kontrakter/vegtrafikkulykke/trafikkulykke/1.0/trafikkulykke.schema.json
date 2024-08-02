@@ -168,7 +168,15 @@
           "description": "Fartøy innvolvert i ulykken."
         }
       },
-      "required": ["anmeldelsenummer", "ulykkestidspunkt", "politidistrikt", "stedfesting", "ulykkeskode", "forhold", "involverteEnheter"],
+      "required": [
+        "anmeldelsenummer",
+        "ulykkestidspunkt",
+        "politidistrikt",
+        "stedfesting",
+        "ulykkeskode",
+        "forhold",
+        "involverteEnheter"
+      ],
       "additionalProperties": false
     },
     "paakjoersel": {
