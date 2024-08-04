@@ -4,7 +4,9 @@
   "description": "Bestilling av varetektsplass fra påtale til Kriminalomsorgen. Schema versjon 2020-12",
   "type": "object",
   "properties": {
-    "forsendelse": { "$ref": "#/definitions/forsendelse" },
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse"
+    },
     "anmodningsId": {
       "$ref": "#/definitions/GUID",
       "description": "Unik nøkkel på bestillingen, brukes til å koble svar fra KO, siktelse og helse og risiko."
@@ -13,17 +15,25 @@
       "$ref": "#/definitions/straffesaksnummer",
       "description": "Hovedsaken i et sakskompleks, også saksbehandlersak."
     },
-    "personVaretektInfo": { "$ref": "#/definitions/personVaretektInfo" },
-    "restriksjonIsolasjon": { "$ref": "#/definitions/restriksjonIsolasjon" }
+    "personVaretektInfo": {
+      "$ref": "#/definitions/personVaretektInfo"
+    },
+    "restriksjonIsolasjon": {
+      "$ref": "#/definitions/restriksjonIsolasjon"
+    },
+    "medsiktedeInnsatteISak": {
+      "$ref": "#/definitions/valgBeskrivelse",
+      "description": "Personer som er medisktet eller innsatt i sak og om samvær godkjennes."
+    }
   },
   "required": [
     "forsendelse",
     "anmodningsId",
     "hovedStraffesaksnummer",
-    "personVaretektInfo"
+    "personVaretektInfo",
+    "medsiktedeInnsatteISak"
   ],
   "additionalProperties": false,
-
   "definitions": {
     "personVaretektInfo": {
       "type": "object",
@@ -31,12 +41,46 @@
       "properties": {
         "personVaretekt": {
           "$ref": "#/definitions/siktetPerson"
+        },
+        "paagripelse": { "$ref": "#/definitions/paagripelse" },
+        "omvendtVoldsalarm": {
+          "$ref": "#/definitions/valgBeskrivelse",
+          "description": "Straffesaksnummer og utfyllende informasjon hvis det er OVA"
+        },
+        "krimineltNettverk": {
+          "$ref": "#/definitions/valgBeskrivelse",
+          "description": "Ufyllende informasjon hvis personen har nettverk som det må tas hensyn til."
         }
       },
-      "required": ["personVaretekt"],
+      "required": [
+        "personVaretekt",
+        "paagripelse",
+        "omvendtVoldsalarm",
+        "krimineltNettverk"
+      ],
       "additionalProperties": false
     },
-
+    "valgBeskrivelse": {
+      "type": "object",
+      "description": "har voldsalarm/... beskrivelse hvis de har",
+      "properties": {
+        "valg": { "type": "boolean" },
+        "beskrivelse": { "type": "string" }
+      },
+      "required": ["valg"],
+      "additionalProperties": false
+    },
+    "paagripelse": {
+      "type": "object",
+      "description": "Tid og sted for pågripelse",
+      "properties": {
+        "tidspunkt": { "type": "string", "format": "date-time" },
+        "sted": {
+          "type": "string",
+          "description": "Stedsbeskrivelsen er kun tekst i BL nå, senere utvidelse med kommune ..."
+        }
+      }
+    },
     "forsendelse": {
       "type": "object",
       "properties": {
@@ -118,7 +162,9 @@
         "epost": {
           "$ref": "#/definitions/epost"
         },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+        "telefonnummer": {
+          "$ref": "#/definitions/telefonnummer"
+        }
       },
       "required": ["epost"],
       "additionalProperties": false
@@ -141,8 +187,13 @@
             "$ref": "#/definitions/isolasjon"
           }
         },
-        "uavklart": { "type": "boolean" },
-        "kommentar": { "type": "string" }
+        "uavklart": {
+          "type": "boolean",
+          "description": "Vet ikke ennå hva slags restriksjonskrav som vil bli stilt."
+        },
+        "beskrivelse": {
+          "type": "string"
+        }
       },
       "required": ["restriksjonsKrav", "isolasjonsKrav", "uavklart"],
       "additionalProperties": false
@@ -151,8 +202,12 @@
       "description": "Basis restriksjon",
       "type": "object",
       "properties": {
-        "restriksjonsType": { "$ref": "#/definitions/restriksjonsType" },
-        "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" }
+        "restriksjonsType": {
+          "$ref": "#/definitions/restriksjonsType"
+        },
+        "lovbudEnkel": {
+          "$ref": "#/definitions/lovbudEnkel"
+        }
       },
       "required": ["restriksjonsType"],
       "additionalProperties": false
@@ -170,8 +225,12 @@
       "type": "object",
       "description": "Basis isolasjon med til og fra dato",
       "properties": {
-        "isolasjonsType": { "$ref": "#/definitions/isolasjonsType" },
-        "lovbudEnkel": { "$ref": "#/definitions/lovbudEnkel" }
+        "isolasjonsType": {
+          "$ref": "#/definitions/isolasjonsType"
+        },
+        "lovbudEnkel": {
+          "$ref": "#/definitions/lovbudEnkel"
+        }
       },
       "required": ["isolasjonsType"],
       "additionalProperties": false
@@ -225,7 +284,9 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
-        "personStraffesakId": {},
+        "personStraffesakId": {
+          "$ref": "#/definitions/personStraffesakId"
+        },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
@@ -327,7 +388,9 @@
       "type": "object",
       "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
       "properties": {
-        "idType": { "$ref": "#/definitions/personIdType" },
+        "idType": {
+          "$ref": "#/definitions/personIdType"
+        },
         "verdi": {
           "type": "string",
           "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
@@ -349,7 +412,9 @@
       "properties": {
         "adresselinjer": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "minItems": 1,
           "maxItems": 4
         },
@@ -386,7 +451,6 @@
       "required": ["adresse"],
       "additionalProperties": false
     },
-
     "land": {
       "type": "object",
       "description": "ISO-3166, Kosovo kommer",
