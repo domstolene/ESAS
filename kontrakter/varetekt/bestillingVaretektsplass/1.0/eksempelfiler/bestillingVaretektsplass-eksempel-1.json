@@ -21,6 +21,13 @@
     }
   },
   "hovedStraffesaksnummer": "15434811",
+  "ansvarligJurist": {
+    "navn": {
+      "etternavn": "Romstrerer",
+      "fornavn": "Jarl"
+    },
+    "kontakt": { "epost": "rar@politiet.no" }
+  },
   "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
   "personVaretektInfo": {
     "personVaretekt": {

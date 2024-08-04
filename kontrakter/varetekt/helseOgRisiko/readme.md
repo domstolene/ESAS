@@ -10,5 +10,5 @@ SchemaVersion=1.0
 
 [Se changelog for endringer](changelog.md)
 
-## Status
+## Bestill
 Splitter bestilling av varetektsplass med bestilling, siktelse og Helse og Risiko melding.

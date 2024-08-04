@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/1.0/bestillingAvVaretektsplass",
+  "$id": "https://politiet.no/politi/fengsling/1.0/bestillingVaretektsplass",
   "description": "Bestilling av varetektsplass fra påtale til Kriminalomsorgen. Schema versjon 2020-12",
   "type": "object",
   "properties": {
@@ -14,6 +14,10 @@
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
       "description": "Hovedsaken i et sakskompleks, også saksbehandlersak."
+    },
+    "ansvarligJurist": {
+      "$ref": "#/definitions/ansattPerson",
+      "description": "Ansvarlig påtalejurist på saken"
     },
     "personVaretektInfo": {
       "$ref": "#/definitions/personVaretektInfo"
@@ -30,6 +34,7 @@
     "forsendelse",
     "anmodningsId",
     "hovedStraffesaksnummer",
+    "ansvarligJurist",
     "personVaretektInfo",
     "medsiktedeInnsatteISak"
   ],
