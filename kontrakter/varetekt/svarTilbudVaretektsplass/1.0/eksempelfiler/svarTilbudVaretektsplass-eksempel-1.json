@@ -1,0 +1,29 @@
+{
+  "forsendelse": {
+    "meldingsId": "A02963AE-D0AD-4897-B4B1-6DB6BBAF8B91",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "etternavn": "Årdal",
+          "fornavn": "Jo"
+        },
+        "kontakt": { "epost": "jaa@politiet.no" }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "890286712",
+      "navn": "Bjørgvin fengsel"
+    }
+  },
+  "hovedStraffesaksnummer": "15434811",
+  "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
+  "tilbudVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE5-23",
+  "svarPlass": {
+    "svar": "AVBESTILLING"
+  }
+}
