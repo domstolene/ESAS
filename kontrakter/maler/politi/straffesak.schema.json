@@ -5,7 +5,7 @@
 
   "type": "object",
   "properties": {
-	  "straffesak": {"$ref": "#/definitions/straffesak"}
+    "straffesak": { "$ref": "#/definitions/straffesak" }
   },
   "required": ["straffesak"],
   "additionalProperties": false,
@@ -121,8 +121,8 @@
       "type": "object",
       "description": "Tid og sted for det straffbare forholdet",
       "properties": {
-        "gjerningstidspunktFra": {"type": "string", "format": "date-time" },
-        "gjerningstidspunktTil": {"type": "string", "format": "date-time" },
+        "gjerningstidspunktFra": { "type": "string", "format": "date-time" },
+        "gjerningstidspunktTil": { "type": "string", "format": "date-time" },
         "gjerningssted": {
           "$ref": "#/definitions/adresse"
         }
@@ -199,5 +199,5 @@
       "required": ["kommunenummer"],
       "additionalProperties": false
     }
-  }	
+  }
 }
