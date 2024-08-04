@@ -32,6 +32,7 @@ Vi skal ha pilot av bestilling av varetektsplass, men vi skal splitte dagens mel
 6. Feltene for omvendt voldsalarm, kriminelt nettverk og medisktede/insatte er felt som i EL-SA frontend skal være påbudt å velge ja/nei.
 7. Pågrepet tidspunkt og pågrepet sted (henter fra begjæring hvis den finnes)
 8. Ansvarlig jurist, kan vi hente direkte fra straffesaken, ikke velge?.
+9. Plass fra dato, finner ikke i frontend skisser (men i tilbud av plass)
 
 ## Ønsker mangler
  Pågrepet sted er mangelfull da det er fritekst i BL i dag og Kriminalomsorgen trenger kommune.
