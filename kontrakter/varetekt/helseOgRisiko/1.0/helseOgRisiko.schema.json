@@ -1,14 +1,43 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/1.0/helseOgRisiko",
-  "description": "Helse og risiko informasjon i forbindelse fengslinger hos Kriminalomsorgen.",
+  "$id": "https://politiet.no/politi/varetekt/1.0/helseOgRisiko",
+  "description": "Helse og risiko informasjon i forbindelse varetektsfengslinger hos Kriminalomsorgen.",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "anmodningsId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Referanse til bestilling av varetektsplass/innsettelsesordre som denne gjelder for (samme person)"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL saksbehandlersak, trenger ikke være med i siktelsen (men er det som regel). Blir kalt hovedsaken i BL"
+    },
+    "siktetPerson": {
+      "$ref": "#/definitions/siktetPersonEnkel",
+      "description": "Siktet person"
+    },
+    "risikoOgHelseInfo": {
+      "$ref": "#/definitions/risikoOgHelseInfo",
+      "description": "Risiko og helseinformasjon til siktede."
+    }
+  },
+  "required": [
+    "forsendelse",
+    "anmodningsId",
+    "hovedStraffesaksnummer",
+    "siktetPerson",
+    "risikoOgHelseInfo"
+  ],
+  "additionalProperties": false,
 
   "definitions": {
     "risikoOgHelseInfo": {
       "type": "object",
       "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
-      "required": ["risikovurdering", "helseInfo", "tilstandArresten"],
-      "additionalProperties": false,
       "properties": {
         "risikovurdering": {
           "$ref": "#/definitions/risikovurdering",
@@ -22,24 +51,28 @@
           "$ref": "#/definitions/tilstandArresten",
           "description": "Tilstand til siktede i arresten, skal alltid fylles ut."
         }
-      }
+      },
+      "required": ["risikovurdering", "helseInfo", "tilstandArresten"],
+      "additionalProperties": false
     },
     "risikovurdering": {
       "type": "object",
       "description": "Vurdering avkrysning og mulighet for beskrivelse i fritekst",
-      "required": ["risiko"],
-      "additionalProperties": false,
       "properties": {
         "risiko": {
           "type": "array",
-          "description": "Valg av vilke risikotyper, hvis det er ingen risiko så skal INGER_RISIKO brukes.",
+          "description": "Valg av vilke risikotyper, hvis det er ingen risiko så skal INGEN brukes.",
           "items": {
             "$ref": "#/definitions/risikoVurderingTyper"
           },
           "minItems": 1
         },
-        "beskrivelse": { "type": "string" }
-      }
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["risiko"],
+      "additionalProperties": false
     },
     "risikoVurderingTyper": {
       "type": "string",
@@ -50,7 +83,7 @@
         "UOENSKET_HENDELSE",
         "ROEMNINGSFARE",
         "FARE_ANSLAG",
-        "ANNET",
+        "ANDRE_FORHOLD",
         "UKJENT",
         "INGEN"
       ]
@@ -58,8 +91,6 @@
     "tilstandArresten": {
       "type": "object",
       "description": "Valg av tilstand i arresten med beskrivelse",
-      "required": ["tilstand"],
-      "additionalProperties": false,
       "properties": {
         "tilstand": {
           "type": "array",
@@ -69,8 +100,12 @@
           },
           "minItems": 1
         },
-        "beskrivelse": { "type": "string" }
-      }
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["tilstand"],
+      "additionalProperties": false
     },
     "tilstandArrestenTyper": {
       "type": "string",
@@ -88,8 +123,6 @@
     "helseInfo": {
       "type": "object",
       "description": "Helsetilstanden til personen i arresten",
-      "required": ["helse"],
-      "additionalProperties": false,
       "properties": {
         "helse": {
           "type": "array",
@@ -99,14 +132,246 @@
           },
           "minItems": 1
         },
-        "beskrivelse": { "type": "string" }
-      }
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["helse"],
+      "additionalProperties": false
     },
     "helseTyper": {
       "type": "string",
       "description": "Helseopplysninger",
       "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
+    },
+    "siktetPersonEnkel": {
+      "type": "object",
+      "description": "Siktede, dømte, tiltalte... personer bruker denne typen for identifiserende data.",
+      "properties": {
+        "personForetakRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
+        },
+        "personStraffesakId": {},
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          },
+          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
+        }
+      },
+      "required": [
+        "personForetakRef",
+        "navn",
+        "foedselsdato",
+        "statsborgerskap",
+        "tilleggsId",
+        "identitetsnummer"
+      ],
+      "additionalProperties": false
+    },
+    "kjoenn": {
+      "type": "string",
+      "description": "Samme enum som folkeregisteret",
+      "enum": ["KVINNE", "MANN"]
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "description": "Person ID typer, alle valideres med Modulus 11",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
+    },
+    "forsendelse": {
+      "type": "object",
+      "properties": {
+        "meldingsId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Domstol som skal være mottaker"
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til domstolen."
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "type": "object",
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson",
+          "description": "Minimum epost adresse til den som sender melding."
+        }
+      },
+      "required": ["navn", "kontakt"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        }
+      },
+      "required": ["fornavn", "etternavn"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
+      "type": "object",
+      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
+      "properties": {
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": {
+          "$ref": "#/definitions/telefonnummer"
+        }
+      },
+      "required": ["epost"],
+      "additionalProperties": false
+    },
+    "land": {
+      "type": "object",
+      "description": "ISO-3166, Kosovo kommer",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "^[A-Z]+$",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode", "navn"],
+      "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
+      "pattern": "^\\+?[0-9 ()-]*$",
+      "maxLength": 30,
+      "minLength": 3
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 5
+    },
+    "GUID": {
+      "type": "string",
+      "format": "uuid"
     }
   }
-
 }
