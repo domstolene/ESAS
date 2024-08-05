@@ -2,11 +2,11 @@
 Versjon 1.0 er første versjon som vi skal i produksjon med som en del av tilståelsessaker.
 
 ## Headere forsendelse justisHub
-SchemaName=LUKK_SKJEMA \
+SchemaName=LUKK_SAK \
 SchemaVersion=arbeidsversjon \
 [RFC](../../../rfc/MessageName-header.md)  
 
-senderOrganization=KRIMINALOMSORGEN|POLITIET|DOMSTOLEN \
+senderOrganization=KRIMINALOMSORGEN | POLITIET | DOMSTOLEN \
 [RFC](../../../rfc/AvsenderVirksomhet-property.md)
 
 # Bruk/beskrivelse

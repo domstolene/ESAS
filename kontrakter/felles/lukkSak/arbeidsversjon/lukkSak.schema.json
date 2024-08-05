@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/lukkSak/arbeidsversjon/lukkSak",
+  "$id": "https://domstol.no/felles/arbeidsversjon/lukkSak",
   "description": "Skjema som definerer en lukking av sak uten avgjørelse",
   "properties": {
     "forsendelse": {
