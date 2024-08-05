@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/kjennelseBeslutning/arbeidsversjon/kjennelseBeslutning",
+  "$id": "https://domstol.no/lukkSak/arbeidsversjon/lukkSak",
   "description": "Skjema som definerer en lukking av sak uten avgjørelse",
   "properties": {
     "forsendelse": {
@@ -35,7 +35,7 @@
         },
         "kravId": {
           "$ref": "#/definitions/GUID",
-          "description": "KravId i nåværende instans. Dersom saken ikke har kravId (f.eks. ved manuell opprettelse), skal ikke lukkSak melding sendes."
+          "description": "KravId i nåværende instans. Dersom saken ikke har kravId (f.eks. ved manuell opprettelse), skal ikke lukkSak-melding sendes."
         }
       },
       "required": ["straffesaksnummer", "kravId"],
