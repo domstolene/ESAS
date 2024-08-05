@@ -18,5 +18,6 @@ sequenceDiagram
   activate pd
   pd->>ko:kjennelseVaretektPoliti
 ```
+Melding `svarTilbudVaretektsplass` kan brukes av politiet til å si ifra at varetektsplassen ikke er nødvendig lenger (avslutte bestilling).
 
 [Innsettelsesordren](../innsettelsesordre/readme.md) er kun ordre om innsettelse og skal kun sendes når det er nødvendig.
