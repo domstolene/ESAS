@@ -12,6 +12,7 @@ sequenceDiagram
     pd->>ko:siktelseTiltale (siktelse)
     pd->>ko:helseOgRisiko
   deactivate pd
+  ko->>pd:tilbudVaretektsplass
   pd-->>ko:innsettelsesordre
   note right of ko: Hvis kjennelsen er for sen<br/>så blir det sendt
   ds->>pd:kjennelseVaretekt
