@@ -47,6 +47,7 @@
         <module>kontrakter/personundersoekelse/returPersonundersoekelse</module>
         <module>kontrakter/konfliktraadet/oppdatertsaksstatus</module>
         <module>kontrakter/kjennelsebeslutning</module>
+        <module>kontrakter/vegtrafikkulykke/trafikkulykke</module>
         <module>kontrakter/felles/kvittering</module>
         <module>kodeverk/felles</module>
         <module>kodeverk/konfliktraad</module>
