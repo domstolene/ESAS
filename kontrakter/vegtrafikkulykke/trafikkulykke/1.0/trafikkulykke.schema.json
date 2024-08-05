@@ -768,7 +768,7 @@
         "kryssendeVeg": { "$ref": "#/definitions/vegInformasjon" },
         "koordinater": { "$ref": "#/definitions/koordinater" }
       },
-      "required": ["veg", "kryssendeVeg", "beskrivelse"],
+      "required": ["veg", "kryssendeVeg"],
       "additionalProperties": false
     },
     "vegInformasjon": {
