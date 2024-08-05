@@ -76,7 +76,8 @@
           "person": {
             "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
             "identitetsnummer": {
-              "foedselsnummer": "14846399381"
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "14846399381"
             },
             "tilleggsId": [],
             "fornavn": "Morsom",
@@ -196,7 +197,8 @@
           "person": {
             "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
             "identitetsnummer": {
-              "foedselsnummer": "19077046529"
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "19077046529"
             },
             "tilleggsId": [],
             "fornavn": "Masse",
