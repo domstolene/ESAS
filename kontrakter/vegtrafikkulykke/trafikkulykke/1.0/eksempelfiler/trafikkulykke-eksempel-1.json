@@ -37,7 +37,6 @@
         "vegkategori": "KOMMUNAL_VEG",
         "vegnummer": 10
       },
-      "beskrivelse": "Beskrivelse av gjerningssted/åsted/ulykkessted",
       "koordinater": {
         "koordinatOest": 123,
         "koordinatNord": 321,

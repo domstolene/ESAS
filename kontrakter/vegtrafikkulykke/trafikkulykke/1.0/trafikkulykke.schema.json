@@ -766,9 +766,6 @@
       "properties": {
         "veg": { "$ref": "#/definitions/vegInformasjon" },
         "kryssendeVeg": { "$ref": "#/definitions/vegInformasjon" },
-        "beskrivelse": {
-          "type": "string"
-        },
         "koordinater": { "$ref": "#/definitions/koordinater" }
       },
       "required": ["veg", "kryssendeVeg", "beskrivelse"],
