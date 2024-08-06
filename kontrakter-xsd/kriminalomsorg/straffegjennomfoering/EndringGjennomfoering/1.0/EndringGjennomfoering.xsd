@@ -34,6 +34,15 @@
 
       <xs:element name="GjennomfoeringEndretTid" type="xs:dateTime" nillable="false"/>
 
+      <xs:element name="Straffavbrud" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="StraffavbrudFra" type="xs:dateTime" nillable="true" />
+            <xs:element name="StraffavbrudTil" type="xs:dateTime" nillable="true" />
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
       <xs:element name="Lokasjon">
         <xs:complexType>
           <xs:all>
