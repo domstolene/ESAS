@@ -8,6 +8,10 @@
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
     },
+    "helseOgRisikoId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Referanse til helse og risiko vurdering."
+    },
     "anmodningsId": {
       "$ref": "#/definitions/GUID",
       "description": "Referanse til bestilling av varetektsplass/innsettelsesordre som denne gjelder for (samme person)"
@@ -27,6 +31,7 @@
   },
   "required": [
     "forsendelse",
+    "helseOgRisikoId",
     "anmodningsId",
     "hovedStraffesaksnummer",
     "siktetPerson",
@@ -39,6 +44,11 @@
       "type": "object",
       "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
       "properties": {
+        "skrevetTid": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Tidspunktet når helse og risiko informasjonen ble skrevet inn."
+        },
         "risikovurdering": {
           "$ref": "#/definitions/risikovurdering",
           "description": "Opplysninger av betydning for risikovurdering, skal alltid fylles ut."
@@ -52,7 +62,12 @@
           "description": "Tilstand til siktede i arresten, skal alltid fylles ut."
         }
       },
-      "required": ["risikovurdering", "helseInfo", "tilstandArresten"],
+      "required": [
+        "skrevetTid",
+        "risikovurdering",
+        "helseInfo",
+        "tilstandArresten"
+      ],
       "additionalProperties": false
     },
     "risikovurdering": {
