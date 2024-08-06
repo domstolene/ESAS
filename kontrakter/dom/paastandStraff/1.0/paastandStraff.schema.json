@@ -8,7 +8,6 @@
             "$ref": "#/definitions/forsendelse",
             "description": "Avsender og mottaker"
         },
-
         "dokumenter": {
             "type": "array",
             "items": {
