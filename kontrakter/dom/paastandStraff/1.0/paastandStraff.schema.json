@@ -257,7 +257,6 @@
                 "inndragning": {
                     "$ref": "#/definitions/inndragning"
                 },
-
                 "annet": {
                     "$ref": "#/definitions/annet"
                 }
@@ -267,15 +266,15 @@
         "fengsel": {
             "properties": {
                 "straff": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Lengden på fengselsstraffen"
                 },
                 "betinget": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Fylles kun dersom deler eller hele straffen er betinget"
                 },
                 "proevetid": {
-                    "$ref": "#/definitions/varighet"
+                    "$ref": "#/definitions/lengde"
                 },
                 "saervilkaar": {
                     "type": "array",
@@ -285,7 +284,7 @@
                     "minItems": 0
                 },
                 "fradrag": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
                 }
             },
@@ -300,7 +299,7 @@
                     "$comment": "Trenger vi støtte for andre valuta??"
                 },
                 "proevetid": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Kan settes dersom boten er betinget"
                 },
                 "saervilkaar": {
@@ -312,8 +311,8 @@
                     "minItems": 0
                 },
                 "subsidaerFengseltraff": {
-                    "$ref": "#/definitions/varighet",
-                    "description": "Varighet på subsidiær fengselsstraff"
+                    "$ref": "#/definitions/lengde",
+                    "description": "Lengden på subsidiær fengselsstraff"
                 }
             },
             "required": ["beloep"],
@@ -322,19 +321,19 @@
         "samfunnsstraff": {
             "properties": {
                 "straff": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Lengden på idømt samfunnsstraff - som regel oppgitt i timer"
                 },
                 "gjennomfoeringstid": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Innen hvor lang tidsperiode straffen må gjennomføres. Som regel oppgitt i timer"
                 },
                 "subsidaerFengseltraff": {
-                    "$ref": "#/definitions/varighet",
-                    "description": "Varighet på subsidiær fengselsstraff"
+                    "$ref": "#/definitions/lengde",
+                    "description": "Lengden på subsidiær fengselsstraff"
                 },
                 "fradrag": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
                 },
                 "vilkaar": {
@@ -348,15 +347,15 @@
         "ungdomsstraff": {
             "properties": {
                 "straff": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Lengden på idømt straff"
                 },
                 "subsidaerFengseltraff": {
-                    "$ref": "#/definitions/varighet",
-                    "description": "Varighet på subsidiær fengselsstraff"
+                    "$ref": "#/definitions/lengde",
+                    "description": "Lengden på subsidiær fengselsstraff"
                 },
                 "fradrag": {
-                    "$ref": "#/definitions/varighet",
+                    "$ref": "#/definitions/lengde",
                     "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
                 }
             },
