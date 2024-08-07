@@ -302,7 +302,7 @@
           },
           "minItems": 0
         },
-        "subsidaerFengseltraff": {
+        "subsidaerfengselsstraff": {
           "$ref": "#/definitions/lengde",
           "description": "Lengden på subsidiær fengselsstraff"
         }
@@ -321,7 +321,7 @@
           "$ref": "#/definitions/lengde",
           "description": "Innen hvor lang tidsperiode straffen må gjennomføres. Som regel oppgitt i timer"
         },
-        "subsidaerFengseltraff": {
+        "subsidaerfengselsstraff": {
           "$ref": "#/definitions/lengde",
           "description": "Lengden på subsidiær fengselsstraff"
         },
@@ -344,7 +344,7 @@
           "$ref": "#/definitions/lengde",
           "description": "Lengden på idømt straff"
         },
-        "subsidaerFengseltraff": {
+        "subsidaerfengselsstraff": {
           "$ref": "#/definitions/lengde",
           "description": "Lengden på subsidiær fengselsstraff"
         },
