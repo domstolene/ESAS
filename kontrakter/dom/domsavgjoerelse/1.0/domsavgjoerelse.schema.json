@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/dom/arbeidsversjon/Domsavgjoerelse",
+  "$id": "https://domstol.no/dom/1.0/Domsavgjoerelse",
   "description": "Schema definisjon av en Domsagjørelse",
   "properties": {
     "forsendelse": {
