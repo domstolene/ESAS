@@ -8,26 +8,52 @@
         "navn": "Sør-Øst politidistrikt"
       },
       "person": {
-        "navn": {
-          "fornavn": "Peder",
-          "etternavn": "Politiets Datatjeneste"
-        },
+        "etternavn": "Saksbehandler",
+        "fornavn": "Litt",
+        "tittel": "Saksbehandler",
         "kontakt": {
-          "epost": "jubal.long@politiet.no"
+          "epost": "litt.saksbehandler@domstol.no"
         }
       }
     },
-    "mottakerOrganisasjon": {
-      "organisasjonsnummer": "926723480",
-      "navn": "Agder tingrett"
+    "mottaker": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      }
     }
   },
-  "dokumenter": [],
+  "dokumenter": [
+    {
+      "dokumentRef": "59E1FECE-A9DF-434C-B8D6-CE44B3FF4E1D",
+      "overskrift": "Begjæring om tilståelsessak",
+      "skrevetDato": "2023-03-30",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    },
+    {
+      "dokumentRef": "D59A4F14-5219-4E31-A95F-5C31545C00E8",
+      "overskrift": "Siktelse",
+      "kategori": {
+        "kode": "siktelse"
+      },
+      "skrevetDato": "2023-03-10",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdf",
+        "sjekksum": "234asass"
+      }
+    }
+  ],
   "siktetTiltaltPersonForetak": {
     "person": {
       "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
       "identitetsnummer": {
-        "foedselsnummer": "14846399381"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "14846399381"
       },
       "tilleggsId": [],
       "fornavn": "Morsom",
@@ -42,14 +68,14 @@
       ]
     }
   },
-  "paastandOmStraff": {
+  "paastandStraff": {
     "kravId": "c2f05c05-79d3-4722-853c-cf3614e8101f",
-    "paastandOmStraffPersonForetak": [
+    "paastandStraffPersonForetak": [
       {
         "personForetak": {
           "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
         },
-        "paastandOmStraff": [
+        "basissakPaastandOmStraff": [
           {
             "basissakId": "NzAzODU5MTE0",
             "lovbudKombinertId": "6236FDDC-213D-4A2F-BAAA-4FD75AFA9DF7",
@@ -65,37 +91,25 @@
                 "bot": {
                   "beloep": 24000,
                   "proevetid": {
-                    "lengde": {
-                      "antallAar": 2
-                    }
+                    "antallAar": 2
                   },
                   "subsidaerFengseltraff": {
-                    "lengde": {
-                      "antallDager": 24
-                    }
+                    "antallDager": 24
                   }
                 },
                 "fengsel": {
                   "straff": {
-                    "lengde": {
-                      "antallAar": 2,
-                      "antallMaaneder": 4
-                    }
+                    "antallAar": 2,
+                    "antallMaaneder": 4
                   },
                   "betinget": {
-                    "lengde": {
-                      "antallMaaneder": 6
-                    }
+                    "antallMaaneder": 6
                   },
                   "proevetid": {
-                    "lengde": {
-                      "antallAar": 2
-                    }
+                    "antallAar": 2
                   },
                   "fradrag": {
-                    "lengde": {
-                      "antallDager": 24
-                    }
+                    "antallDager": 24
                   },
                   "saervilkaar": [
                     {
