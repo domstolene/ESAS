@@ -784,49 +784,19 @@
       "additionalProperties": false
     },
     "personIdentifikator": {
-      "description": "Fødselsnummer, D-nummer eller SSP nummer.",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
       "type": "object",
       "properties": {
-        "foedselsnummer": {
-          "$ref": "#/definitions/foedselsnummer"
-        },
-        "sspNummer": {
-          "$ref": "#/definitions/sspNummer"
-        },
-        "dNummer": {
-          "$ref": "#/definitions/dNummer"
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
         }
       },
-      "oneOf": [
-        {
-          "properties": {
-            "foedselsnummer": {
-              "$ref": "#/definitions/foedselsnummer",
-              "description": "Kun norsk fødselsnummer. Hvis det er et D-nummer så kommer det i eget felt."
-            }
-          },
-          "required": ["foedselsnummer"],
-          "additionalProperties": false
-        },
-        {
-          "properties": {
-            "sspNummer": {
-              "$ref": "#/definitions/sspNummer"
-            }
-          },
-          "required": ["sspNummer"],
-          "additionalProperties": false
-        },
-        {
-          "properties": {
-            "dNummer": {
-              "$ref": "#/definitions/dNummer"
-            }
-          },
-          "required": ["dNummer"],
-          "additionalProperties": false
-        }
-      ],
+      "required": ["idType", "verdi"],
       "additionalProperties": false
     },
     "saervilkaar": {
@@ -882,23 +852,10 @@
       "minLength": 9,
       "maxLength": 9
     },
-    "foedselsnummer": {
+    "personIdType": {
       "type": "string",
-      "pattern": "^[0-3][0-9][0189][0-9]+$",
-      "minLength": 11,
-      "maxLength": 11
-    },
-    "sspNummer": {
-      "type": "string",
-      "pattern": "^[0-3][0-9][2-3][0-9]+$",
-      "minLength": 11,
-      "maxLength": 11
-    },
-    "dNummer": {
-      "type": "string",
-      "pattern": "^[4-7][0-9][0189][0-9]+$",
-      "minLength": 11,
-      "maxLength": 11
+      "description": "Person ID typer, alle valideres med Modulus 11",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
     },
     "kodeverk": {
       "properties": {
