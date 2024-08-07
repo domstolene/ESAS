@@ -302,7 +302,7 @@
           },
           "minItems": 0
         },
-        "subsidaerfengselsstraff": {
+        "subsidaerFengselsstraff": {
           "$ref": "#/definitions/lengde",
           "description": "Lengden på subsidiær fengselsstraff"
         }
@@ -321,7 +321,7 @@
           "$ref": "#/definitions/lengde",
           "description": "Innen hvor lang tidsperiode straffen må gjennomføres. Som regel oppgitt i timer"
         },
-        "subsidaerfengselsstraff": {
+        "subsidaerFengselsstraff": {
           "$ref": "#/definitions/lengde",
           "description": "Lengden på subsidiær fengselsstraff"
         },
@@ -344,7 +344,7 @@
           "$ref": "#/definitions/lengde",
           "description": "Lengden på idømt straff"
         },
-        "subsidaerfengselsstraff": {
+        "subsidaerFengselsstraff": {
           "$ref": "#/definitions/lengde",
           "description": "Lengden på subsidiær fengselsstraff"
         },
@@ -357,17 +357,10 @@
       "additionalProperties": false
     },
     "rettighetstap": {
-      "properties": {
-        "detaljer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/rettighetstapDetaljer"
-          },
-          "minItems": 1
-        }
-      },
-      "type": "object",
-      "additionalProperties": false
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/rettighetstapDetaljer"
+      }
     },
     "rettighetstapDetaljer": {
       "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel ting (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
