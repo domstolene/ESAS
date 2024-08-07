@@ -6,7 +6,7 @@ SchemaName=DOMSAVGJOERELSE \
 SchemaVersion=1.0 \
 [RFC](../../../rfc/MessageName-header.md)  
 
-senderOrganization=KRIMINALOMSORGEN | POLITIET | DOMSTOLEN \
+senderOrganization=DOMSTOLEN \
 [RFC](../../../rfc/AvsenderVirksomhet-property.md)
 
 # Bruk/beskrivelse
