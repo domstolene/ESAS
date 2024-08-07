@@ -45,12 +45,7 @@
           "$ref": "#/definitions/mottaker"
         }
       },
-      "required": [
-        "meldingsId",
-        "avsender",
-        "mottaker",
-        "sendtTid"
-      ],
+      "required": ["meldingsId", "avsender", "mottaker", "sendtTid"],
       "type": "object",
       "additionalProperties": false
     },
@@ -431,13 +426,19 @@
     "varighet": {
       "description": "Definisjon på en varighet. F.eks. varighet på en betinget fengselsstraff",
       "properties": {
-        "lengde": { "$ref": "#/definitions/lengde" },
-        "ubestemtTid": { "type": "boolean" }
+        "lengde": {
+          "$ref": "#/definitions/lengde"
+        },
+        "ubestemtTid": {
+          "type": "boolean"
+        }
       },
       "oneOf": [
         {
           "properties": {
-            "lengde": { "$ref": "#/definitions/lengde" }
+            "lengde": {
+              "$ref": "#/definitions/lengde"
+            }
           },
           "required": ["lengde"]
         },
@@ -455,10 +456,18 @@
     },
     "lengde": {
       "properties": {
-        "antallAar": { "type": "integer" },
-        "antallMaaneder": { "type": "integer" },
-        "antallDager": { "type": "integer" },
-        "antallTimer": { "type": "integer" }
+        "antallAar": {
+          "type": "integer"
+        },
+        "antallMaaneder": {
+          "type": "integer"
+        },
+        "antallDager": {
+          "type": "integer"
+        },
+        "antallTimer": {
+          "type": "integer"
+        }
       },
       "type": "object",
       "additionalProperties": false
@@ -616,7 +625,9 @@
       "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
       "type": "object",
       "properties": {
-        "idType": { "$ref": "#/definitions/personIdType" },
+        "idType": {
+          "$ref": "#/definitions/personIdType"
+        },
         "verdi": {
           "type": "string",
           "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
@@ -675,7 +686,9 @@
         "epost": {
           "$ref": "#/definitions/epost"
         },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+        "telefonnummer": {
+          "$ref": "#/definitions/telefonnummer"
+        }
       },
       "required": ["epost"],
       "additionalProperties": false
