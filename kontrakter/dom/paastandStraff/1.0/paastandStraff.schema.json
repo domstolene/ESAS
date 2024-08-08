@@ -343,6 +343,10 @@
           "$ref": "#/definitions/varighet",
           "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
         },
+        "sperrefrist": {
+          "$ref": "#/definitions/varighet",
+          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
+        },
         "tekst": {
           "type": "string",
           "description": "Fritekst som beskriver rettighetstapet"
