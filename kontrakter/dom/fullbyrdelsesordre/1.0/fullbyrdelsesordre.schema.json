@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorgen.no/dom/1.0/fullbyrdelsesordre",
+  "description": "Schema definisjon av en Fullbyrdelsesordre",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "description": "Avsender og mottaker",
+      "$ref": "#/definitions/forsendelse"
+    },
+    "dokumenter": {
+      "type": "array",
+      "description": "Det vil alltid være minst 1 dokument som er dommen fra domstolen.",
+      "items": {
+        "$ref": "#/definitions/dokument"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "forsendelse","dokumenter"
+  ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "forsendelse": {
+      "type": "object",
+      "properties": {
+        "meldingsId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Domstol som skal være mottaker"
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til domstolen."
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "type": "object",
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson",
+          "description": "Minimum epost adresse til den som sender melding."
+        }
+      },
+      "required": ["navn", "kontakt"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        }
+      },
+      "required": ["fornavn", "etternavn"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
+      "type": "object",
+      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
+      "properties": {
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": ["epost"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "type": "object",
+      "description": "Dokument som oversendes på justishub",
+      "properties": {
+        "dokumentRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id for dokumentet kun lokalt i en melding. Bruker dokumentRef for å referere"
+        },
+        "kategori": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "overskrift": {
+          "type": "string",
+          "description": "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
+        },
+        "skrevetDato": {
+          "type": "string",
+          "format": "date",
+          "description": "Når dokumentet er skrevet ferdig."
+        },
+        "forsendelse": {
+          "$ref": "#/definitions/dokumentForsendelse"
+        }
+      },
+      "required": ["overskrift", "skrevetDato", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "type": "object",
+      "description": "Detaljer om lokasjon og type",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string"
+        }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "land": {
+      "type": "object",
+      "description": "ISO-3166, Kosovo kommer",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "^[A-Z]+$",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode", "navn"],
+      "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
+    "norskPostnummer": {
+      "type": "string",
+      "description": "Norsk postnummer er i dag 4 siffer",
+      "pattern": "^[0-9]+$",
+      "minLength": 4,
+      "maxLength": 4
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
+      "pattern": "^\\+?[0-9 ()-]*$",
+      "maxLength": 30,
+      "minLength": 3
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 5
+    },
+    "GUID": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}
