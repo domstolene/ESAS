@@ -166,35 +166,6 @@
           "$ref": "#/definitions/personForetakRef",
           "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i siktelsen"
         },
-        "basissakPaastandOmStraff": {
-          "type": "array",
-          "description": "Påstand om straff for hver basissak for den siktede/tiltalte",
-          "items": {
-            "$ref": "#/definitions/basissakPaastandOmStraff"
-          },
-          "minItems": 1
-        }
-      }
-    },
-    "basissakPaastandOmStraff": {
-      "type": "object",
-      "properties": {
-        "basissakId": {
-          "$ref": "#/definitions/unikId",
-          "description": "Unik id for basissak, ved dom må denne id følge med og det skal vær definert skyld/ikke skyld"
-        },
-        "lovbudKombinertId": {
-          "$ref": "#/definitions/unikId",
-          "description": "Skal refereres til i resultatet"
-        },
-        "lovbud": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/lovbud"
-          },
-          "minItems": 1,
-          "maxItems": 2
-        },
         "reaksjoner": {
           "type": "array",
           "description": "Liste av reaksjoner for denne personen.",

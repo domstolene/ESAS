@@ -77,57 +77,44 @@
         "personForetak": {
           "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
         },
-        "basissakPaastandOmStraff": [
+        "reaksjoner": [
           {
-            "basissakId": "NzAzODU5MTE0",
-            "lovbudKombinertId": "6236FDDC-213D-4A2F-BAAA-4FD75AFA9DF7",
-            "lovbud": [
-              {
-                "lovbudId": "A1D0F6A9-D4C1-4F2D-A69E-039ACB090304",
-                "lovbudStreng": "Straffeloven § 321",
-                "gjengivelse": "for å ha tatt en gjenstand som tilhører en annen, med forsett om å skaffe seg eller andre en uberettiget vinning ved å selge, forbruke eller på annen måte tilegne seg den."
+            "bot": {
+              "beloep": 24000,
+              "proevetid": {
+                "antallAar": 2
+              },
+              "subsidaerFengselsstraff": {
+                "antallDager": 24
               }
-            ],
-            "reaksjoner": [
-              {
-                "bot": {
-                  "beloep": 24000,
-                  "proevetid": {
-                    "antallAar": 2
-                  },
-                  "subsidaerFengselsstraff": {
-                    "antallDager": 24
-                  }
+            },
+            "fengsel": {
+              "straff": {
+                "antallAar": 2,
+                "antallMaaneder": 4
+              },
+              "betinget": {
+                "antallMaaneder": 6
+              },
+              "proevetid": {
+                "antallAar": 2
+              },
+              "fradrag": {
+                "antallDager": 24
+              },
+              "saervilkaar": [
+                {
+                  "paragraf": "§35",
+                  "tekst": "Særvilkår om meldeplikt",
+                  "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
                 },
-                "fengsel": {
-                  "straff": {
-                    "antallAar": 2,
-                    "antallMaaneder": 4
-                  },
-                  "betinget": {
-                    "antallMaaneder": 6
-                  },
-                  "proevetid": {
-                    "antallAar": 2
-                  },
-                  "fradrag": {
-                    "antallDager": 24
-                  },
-                  "saervilkaar": [
-                    {
-                      "paragraf": "§35",
-                      "tekst": "Særvilkår om meldeplikt",
-                      "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
-                    },
-                    {
-                      "paragraf": "§36",
-                      "tekst": "Andre særvilkår",
-                      "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
-                    }
-                  ]
+                {
+                  "paragraf": "§36",
+                  "tekst": "Andre særvilkår",
+                  "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
                 }
-              }
-            ]
+              ]
+            }
           }
         ]
       }
