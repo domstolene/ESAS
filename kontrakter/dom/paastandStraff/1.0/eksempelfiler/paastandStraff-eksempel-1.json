@@ -8,11 +8,13 @@
         "navn": "Sør-Øst politidistrikt"
       },
       "person": {
-        "etternavn": "Saksbehandler",
-        "fornavn": "Litt",
-        "tittel": "Saksbehandler",
+        "navn": {
+          "fornavn": "Peder",
+          "etternavn": "Politiets Datatjeneste"
+        },
         "kontakt": {
-          "epost": "litt.saksbehandler@domstol.no"
+          "epost": "jube@kolo.ra",
+          "telefonnummer": "23422"
         }
       }
     },
