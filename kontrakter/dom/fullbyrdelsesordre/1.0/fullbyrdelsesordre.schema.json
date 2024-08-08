@@ -8,6 +8,14 @@
       "description": "Avsender og mottaker",
       "$ref": "#/definitions/forsendelse"
     },
+    "fullbyrdelsesordre": {
+      "$ref": "#/definitions/fullbyrdelsesordre",
+      "description": "Selv ordren med detaljer fra dommen"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "Hovedsaken i et sakskompleks, også saksbehandlersak."
+    },
     "dokumenter": {
       "type": "array",
       "description": "Det vil alltid være minst 1 dokument som er dommen fra domstolen.",
@@ -18,11 +26,42 @@
     }
   },
   "required": [
-    "forsendelse","dokumenter"
+    "forsendelse","fullbyrdelsesordre","dokumenter"
   ],
   "additionalProperties": false,
 
   "definitions": {
+    "fullbyrdelsesordre": {
+      "type": "object",
+      "description": "Ordre med detaljer fra dommen, selve ordren utstedes i BL av påtalejurist",
+      "properties": {
+        "anmodningsId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik nøkkel på oversendelse av ordre."
+        },
+        "paataleansvarlig": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Ansvarlig påtalejurist på straffesaken, det kan være annen jurist som har beordret fullbyrdelse"
+        },
+        "dom": {
+          "$ref": "#/definitions/dom",
+          "description": "Dommen fra domstolene (kan være rettsbok)"
+        },
+        "required": [
+          "anmodningsId", "paataleansvarlig","dom"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "dom": {
+      "type": "object",
+      "description": "Dommen fra domstolene, trenger vi å mappe alle reaksjoner?",
+      "properties": {
+      },
+      "requiered": [],
+      "additionalProperties": false
+    },
+
     "forsendelse": {
       "type": "object",
       "properties": {
