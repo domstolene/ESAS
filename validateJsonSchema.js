@@ -15,12 +15,14 @@ const jsonSchemaFolders = [
   "kontrakter/politi/overfoeresakkonfliktraad",
   "kontrakter/felles/kvittering",
   "kontrakter/felles/kodeverk",
+  "kontrakter/felles/lukkSak",
   "kontrakter/konfliktraadet/oppdatertsaksstatus",
   "kontrakter/personundersoekelse/rekvisisjonPersonundersoekelse",
   "kontrakter/personundersoekelse/returPersonundersoekelse",
   "kontrakter/dom/domsavgjoerelse",
   "kontrakter/siktelseTiltale",
   "kontrakter/kjennelsebeslutning",
+  "kontrakter/vegtrafikkulykke/trafikkulykke",
   "kontrakter/dom/paastandStraff"
 ];
 
