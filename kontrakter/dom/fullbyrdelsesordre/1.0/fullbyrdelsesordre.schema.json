@@ -43,22 +43,29 @@
           "$ref": "#/definitions/ansattPerson",
           "description": "Ansvarlig påtalejurist på straffesaken, det kan være annen jurist som har beordret fullbyrdelse"
         },
-        "dom": {
+        "avgjoerelse": {
           "$ref": "#/definitions/dom",
           "description": "Dommen fra domstolene (kan være rettsbok)"
         },
         "required": [
-          "anmodningsId", "paataleansvarlig","dom"
+          "anmodningsId", "paataleansvarlig","avgjoerelse"
         ],
         "additionalProperties": false
       }
     },
-    "dom": {
+    "avgjoerelse": {
       "type": "object",
-      "description": "Dommen fra domstolene, trenger vi å mappe alle reaksjoner?",
+      "description": "Dommen fra domstolene, med struktur på reaksjoner som Kriminalomsorgen skal følge opp.",
       "properties": {
+        "avgjoerelseId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Domstolen sin id for avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseId beholdes ved korrigeringer"
+        },
+        "avsagtDato": {
+          "$ref": "#/definitions/dato"
+        }
       },
-      "requiered": [],
+      "requiered": ["avgjoerelseId"],
       "additionalProperties": false
     },
 

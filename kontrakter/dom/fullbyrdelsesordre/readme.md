@@ -15,4 +15,7 @@ Eventuelle oppdatering vil komme som en ny fullbyrdelsesordre.
 ## Status
 Skriver om for å synkronisere med 
 
-## Utestående punkter
+## Avklaringer
+Strukturerte reaksjoner.
+Hvilke reaksjoner trenger Kriminalomsorgen strukturert?
+Gje
