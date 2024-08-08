@@ -1,0 +1,119 @@
+{
+
+  "Anmeldelsenummer": "",
+
+  "Ulykkesdato": "",
+
+  "Klokkeslett": "",
+
+  "Politidistrikt/tjenestested": "",
+
+  "Gjerningskommune":"",
+
+  "Åsteds beskrivelse": "",
+
+  "Vegtype": "",
+
+  "Ulykkeskode": "",
+
+  "Vegbredde": "",
+
+  "Stedsforhold": "",
+
+  "Antall kjørefelt": "",
+
+  "Fysisk midtdeler": "",
+
+  "Vegdekke": "",
+
+  "Føreforhold": "",
+
+  "Værforhold": "",
+
+  "Temperatur": "",
+
+  "Lysforhold": "",
+
+  "Fartsgrense": "",
+
+  "Politiets beskrivelse av stedet": "",
+
+  "nord koordinat": "",
+
+  "øst koordinat": "",
+
+  "Veg/gate": "",
+
+  "Vegkategori": "",
+
+  "Vegnr": "",
+
+  "Kryssende veg": "",
+
+  "Kryssende Vegkategori": "",
+
+  "Kryssende Vegnr": "",
+
+  "Påkjørt dyr/hinder/gjenstand": "",
+
+  "Avstand fra vegskulder til påkjørt dyr/hinder/gjenstand": "",
+
+  "Regulering for trafikkenhet i vegkryss": "", -- kommer fra politiet på enhetsnivå, vi må bestemme mapping
+
+  "enhet": [
+
+    {
+
+      "Enhetsbokstav": "",
+
+      "Registreringsnummer": "",
+
+      "Enhetstype": "",
+
+      "Årsmodell": "",
+
+      "Registreringsland": "",
+
+      "Dekktype": "",
+
+      "Kommentar dekk": "",
+
+      "Regulering for trafikkenhet i vegkryss": "",
+
+      "Første berøringspunkt(treffpunkt)": ""; -- kan vi få dette som eget informasjonselement, eller kun som del av skisse?
+
+      "person/trafikant": [
+
+        {
+
+          "Kjønn": "",
+
+          "Fødselsdato": "",
+
+          "Plassering i kjøretøy": "",
+
+          "Skadegrad": "",
+
+          "Beskyttelsesutstyr": "",
+
+          "Skadeforløp": "",
+
+          "Ferdselsformål": "",
+
+          "Kort beskrivelse av personskade": "",
+
+          "Postnr": "",
+
+          "Poststed": ""
+
+        }
+
+      ]
+
+    }
+
+  ]
+
+ 
+
+}
