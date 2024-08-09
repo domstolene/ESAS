@@ -166,6 +166,10 @@
           "$ref": "#/definitions/personForetakRef",
           "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i siktelsen"
         },
+        "rusmiddelundersoekelse": {
+          "$ref": "#/definitions/rusmiddelundersoekelse",
+          "description": "Rusundersøkelse for personen"
+        },
         "reaksjoner": {
           "type": "array",
           "description": "Liste av reaksjoner for denne personen.",
@@ -190,6 +194,36 @@
         }
       },
       "required": ["lovbudStreng", "gjengivelse"],
+      "additionalProperties": false
+    },
+    "rusmiddelundersoekelse": {
+      "properties": {
+        "rusmiddelstype": {
+          "enum": ["alkohol", "annet"],
+          "description": "Selve typen av rusmiddel"
+        },
+        "alkoholkonsentrasjon": {
+          "type": "number",
+          "description": "Konsentrasjonen (uten enhet)"
+        },
+        "enhet": {
+          "type": "string",
+          "description": "Enheten for målingen"
+        },
+        "timerEtterKjoering": {
+          "type": "integer",
+          "description": "Timer etter kjøringen"
+        },
+        "tekst": {
+          "type": "string",
+          "description": "Fritekst som beskriver rusmiddelundersøkelsen"
+        },
+        "dok": {
+          "type": "string",
+          "description": "Jf.dok."
+        }
+      },
+      "type": "object",
       "additionalProperties": false
     },
     "reaksjonsType": {
