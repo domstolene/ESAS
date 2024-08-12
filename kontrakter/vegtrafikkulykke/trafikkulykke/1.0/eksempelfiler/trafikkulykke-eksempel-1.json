@@ -8,9 +8,13 @@
         "navn": "Innlandet politidistrikt"
       },
       "person": {
-        "etternavn": "Testesen",
+        "navn": {
+          "fornavn": "Test",
+          "etternavn": "Testesen"
+        },
         "kontakt": {
-          "telefonnummer": ["12 34 56 78"]
+          "telefonnummer": "12 34 56 78",
+          "epost": "test.testesen@politiet.no"
         }
       }
     },

@@ -900,15 +900,25 @@
     },
     "ansattPerson": {
       "type": "object",
-      "description": "Saksbehandler hos politiet.",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
-        "brukeridentifikasjon": {
-          "type": "string",
-          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
-        },
         "tittel": {
           "type": "string"
         },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson",
+          "description": "Minimum epost adresse til den som sender melding."
+        }
+      },
+      "required": ["navn", "kontakt"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
         "fornavn": {
           "type": "string"
         },
@@ -917,28 +927,21 @@
         },
         "etternavn": {
           "type": "string"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
-          "description": "Kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["etternavn", "kontakt"],
+      "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
-    "kontaktInfo": {
+    "kontaktInfoPerson": {
       "type": "object",
+      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
       "properties": {
         "epost": {
-          "type": "string",
-          "format": "email"
+          "$ref": "#/definitions/epost"
         },
-        "telefonnummer": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/telefonnummer" }
-        }
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
       },
-      "required": ["telefonnummer"],
+      "required": ["epost"],
       "additionalProperties": false
     },
     "organisasjonsnummer": {
@@ -953,6 +956,10 @@
       "description": "Telefonnummer, norsk eller utenlandsk, med eller uten landkode/prefix",
       "maxLength": 30,
       "minLength": 1
+    },
+    "epost": {
+      "type": "string",
+      "format": "email"
     }
   }
 }
