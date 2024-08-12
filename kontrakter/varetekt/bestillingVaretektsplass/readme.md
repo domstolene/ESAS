@@ -16,6 +16,7 @@ Når en bestilling av varetektsplass er sendt så vil vi sende [siktelseTiltale]
 [Se beskrivelse av flyt](flyt.md).
 
 ## Felter
+* Feltene for omvendt voldsalarm, kriminelt nettverk og medisktede/insatte er felt som i EL-SA frontend skal være påbudt å velge ja eller nei.
 
 ## Status
 Vi skal ha pilot av bestilling av varetektsplass, men vi skal splitte dagens melding.
@@ -25,11 +26,10 @@ Vi skal ha pilot av bestilling av varetektsplass, men vi skal splitte dagens mel
 
 ## Avklaringer
 1. Når er det nødvendig med restriksjoner/isolasjons informasjon i bestilling av varetektsplass? <br/>Kan den informasjonen vente til kjennelse/innsettelsesordre?
-5. Ett kommentarfelt på restriksjoner/isolasjonskrav er alltid der som frivillig element.
+ Sjekker med Ragnhild, hvis begjæring ikke finnes så kan de fylle ut.
 6. Feltene for omvendt voldsalarm, kriminelt nettverk og medisktede/insatte er felt som i EL-SA frontend skal være påbudt å velge ja/nei.
 7. Pågrepet tidspunkt og pågrepet sted (henter fra begjæring hvis den finnes)
-8. Ansvarlig jurist, kan vi hente direkte fra straffesaken, ikke velge?
-9. Plass fra dato, finner ikke i frontend skisser (men i tilbud av plass)
+8. Ansvarlig jurist. Velger påtaleansvarlig på hovedsaken.
 
 ## Ønsker mangler
  Pågrepet sted er mangelfull da det er fritekst i BL i dag og Kriminalomsorgen trenger kommune.

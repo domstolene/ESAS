@@ -22,11 +22,6 @@
     "personVaretektInfo": {
       "$ref": "#/definitions/personVaretektInfo"
     },
-    "plassFraDato": {
-      "type": "string",
-      "format": "date",
-      "description": "Når trenger politiet varetetektsplassen"
-    },
     "restriksjonIsolasjon": {
       "$ref": "#/definitions/restriksjonIsolasjon"
     },
@@ -41,7 +36,6 @@
     "hovedStraffesaksnummer",
     "ansvarligJurist",
     "personVaretektInfo",
-    "plassFraDato",
     "medsiktedeInnsatteISak"
   ],
   "additionalProperties": false,
