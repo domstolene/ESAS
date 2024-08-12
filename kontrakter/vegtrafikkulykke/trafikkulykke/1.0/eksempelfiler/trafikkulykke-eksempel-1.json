@@ -71,7 +71,6 @@
     ],
     "involverteEnheter": [
       {
-        "id": "enhet_1",
         "enhetsbokstav": "A",
         "registreringsnummer": "AB123456789",
         "enhetstype": "PERSONBIL_STASJONSVOGN",

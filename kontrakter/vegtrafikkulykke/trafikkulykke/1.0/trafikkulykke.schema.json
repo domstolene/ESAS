@@ -427,10 +427,6 @@
       "type": "object",
       "description": "Informasjon om kjøretøy",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Gjør enheten unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
-        },
         "enhetsbokstav": {
           "type": "string",
           "description": "Enheten sin ID i saken. A, B, C...."
