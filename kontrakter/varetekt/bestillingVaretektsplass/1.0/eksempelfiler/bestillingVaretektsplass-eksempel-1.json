@@ -73,6 +73,5 @@
     "omvendtVoldsalarm": { "valg": false },
     "krimineltNettverk": { "valg": false }
   },
-  "plassFraDato": "2022-11-03",
   "medsiktedeInnsatteISak": { "valg": false }
 }
