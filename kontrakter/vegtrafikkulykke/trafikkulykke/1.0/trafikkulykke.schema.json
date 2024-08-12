@@ -648,7 +648,12 @@
           "description": "Informasjon om person involvert i ulykken."
         }
       },
-      "required": ["enhetsbokstav", "registreringsnummer", "enhetstype", "personer"],
+      "required": [
+        "enhetsbokstav",
+        "registreringsnummer",
+        "enhetstype",
+        "personer"
+      ],
       "additionalProperties": false
     },
     "plasseringKjoeretoey": {
