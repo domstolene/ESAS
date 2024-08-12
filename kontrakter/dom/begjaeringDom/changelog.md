@@ -5,6 +5,12 @@
 | 1.0     | Arbeidsverson |            ||
 
 ## Versjon 1.0 arbeidsversjon
+### Justeringer
+Rydde kontaktinfo kontaktinfoperson
+Rydde personer (personStraffesakId)
+epost, uuid osv.
+påtaleansvarlig
+header sjekk
 ### 25.06.2024 oppdatering
 Større oppdatering i neste merge request.
 * Vitner på saken.
