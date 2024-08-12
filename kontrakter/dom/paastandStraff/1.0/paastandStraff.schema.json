@@ -198,7 +198,7 @@
     },
     "rusmiddelundersoekelse": {
       "properties": {
-        "rusmiddelstype": {
+        "rusmiddeltype": {
           "enum": ["alkohol", "annet"],
           "description": "Selve typen av rusmiddel"
         },
