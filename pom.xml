@@ -49,6 +49,7 @@
         <module>kontrakter/kjennelsebeslutning</module>
         <module>kontrakter/vegtrafikkulykke/trafikkulykke</module>
         <module>kontrakter/felles/kvittering</module>
+        <module>kontrakter/dom/begjaeringDom</module>
         <module>kodeverk/felles</module>
         <module>kodeverk/konfliktraad</module>
         <module>validering-jwks</module>
