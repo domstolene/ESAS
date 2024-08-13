@@ -896,7 +896,7 @@
     },
     "ansattPerson": {
       "type": "object",
-      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "description": "Saksbehandler, jurist, etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
         "tittel": {
           "type": "string"
@@ -904,12 +904,12 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "kontakt": {
+        "kontaktinfo": {
           "$ref": "#/definitions/kontaktInfoPerson",
           "description": "Minimum epost adresse til den som sender melding."
         }
       },
-      "required": ["navn", "kontakt"],
+      "required": ["navn", "kontaktinfo"],
       "additionalProperties": false
     },
     "personnavn": {

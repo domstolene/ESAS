@@ -12,7 +12,7 @@
           "fornavn": "Test",
           "etternavn": "Testesen"
         },
-        "kontakt": {
+        "kontaktinfo": {
           "telefonnummer": "12 34 56 78",
           "epost": "test.testesen@politiet.no"
         }
