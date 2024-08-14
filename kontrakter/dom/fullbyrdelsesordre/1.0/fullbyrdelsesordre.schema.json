@@ -25,9 +25,7 @@
       "minItems": 1
     }
   },
-  "required": [
-    "forsendelse","fullbyrdelsesordre","dokumenter"
-  ],
+  "required": ["forsendelse", "fullbyrdelsesordre", "dokumenter", "hovedStraffesaksnummer"],
   "additionalProperties": false,
 
   "definitions": {
@@ -43,15 +41,35 @@
           "$ref": "#/definitions/ansattPerson",
           "description": "Ansvarlig påtalejurist på straffesaken, det kan være annen jurist som har beordret fullbyrdelse"
         },
+        "domfelte": {
+          "$ref": "#/definitions/siktetPerson",
+          "description": "Person som er dømt og som skal til soning"
+        },
         "avgjoerelse": {
-          "$ref": "#/definitions/dom",
+          "$ref": "#/definitions/avgjoerelse",
           "description": "Dommen fra domstolene (kan være rettsbok)"
         },
-        "required": [
-          "anmodningsId", "paataleansvarlig","avgjoerelse"
-        ],
-        "additionalProperties": false
-      }
+        "foregrepetSoning": {
+          "type": "boolean",
+          "description": "Hvis person skal overføres til soning "
+        },
+        "rettskraftigFraOgMed": {
+          "$ref": "#/definitions/dato",
+          "description": "Det er påtale som setter når dommen er rettskraftig. Påbudt hvis det ikke er foregrepet soning"
+        }
+      },
+      "required": ["anmodningsId", "paataleansvarlig", "domfelte" ,"avgjoerelse", "foregrepetSoning"],
+      "allOf": [
+        {
+          "if": {
+            "properties": { "foregrepetSoning": { "const": false } }
+          },
+          "then": {
+            "required": ["rettskraftigFraOgMed"]
+          }
+        }
+      ],
+      "additionalProperties": false
     },
     "avgjoerelse": {
       "type": "object",
@@ -61,14 +79,392 @@
           "$ref": "#/definitions/GUID",
           "description": "Domstolen sin id for avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseId beholdes ved korrigeringer"
         },
+        "saksnummer": {
+          "type": "string",
+          "description": "Domstolen sitt interne saksnummer"
+        },
         "avsagtDato": {
           "$ref": "#/definitions/dato"
+        },
+        "reaksjoner": {
+          "type": "array",
+          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
+          "items": {
+            "$ref": "#/definitions/reaksjonsType"
+          }
+        },
+        "straffbareForhold": {
+          "type": "array",
+          "description": "Alle lovbrudd dømte er funnet skyldig i. Lovreferanse og tilleggsinformasjon fra straffesaken (resultat i domsavgjoerelse)",
+          "items": {
+            "$ref": "#/definitions/straffbartForhold"
+          },
+          "minItems": 1
         }
       },
-      "requiered": ["avgjoerelseId"],
+      "required": ["avgjoerelseId", "saksnummer","avsagtDato","reaksjoner","straffbareForhold"],
       "additionalProperties": false
     },
-
+    "straffbartForhold": {
+      "type": "object",
+      "description": "Lovbudet med detaljer hvis det ikke er omsubsumert av domstolen, detaljer fra Straffesaken.",
+      "properties": {
+        "basissakId": {
+          "$ref": "#/definitions/unikId",
+          "description": "Unik id for basissak som er: En person/fortak, en straffbar handling, ett lovbud"
+        },
+        "lovbudKombinert": {
+          "$ref": "#/definitions/lovbudKombinert"
+        },
+        "straffesak": {
+          "$ref": "#/definitions/straffesak",
+          "description": "Koding av straffesaken"
+        },
+        "fornaermede": {
+          "description": "Fornærmede personer. Benyttes til f.eks varsling ved permisjoner etc.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relatertPerson"
+          }
+        }
+      },
+      "required": ["basissakId", "lovbudKombinert", "straffesak","fornaermede"]
+    },
+    "lovbudKombinert": {
+      "type": "object",
+      "description": "liste over lovbud hvis det straffbare forholdet har skjedde over en lovendring (kombinert)",
+      "properties": {
+        "lovbud": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/lovbud"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        }
+      },
+      "required": ["lovbud"],
+      "additionalProperties": false
+    },
+    "lovbud": {
+      "type": "object",
+      "description": "Lovbud, kun lovbudstreng hvis domstolene har omsubsumert.",
+      "properties": {
+        "lovbudId": {
+          "$ref": "#/definitions/unikId"
+        },
+        "lovbudStreng": {
+          "$ref": "#/definitions/lovbudStreng",
+          "description": "Sammensatt hjemmelsrekke i en lang streng"
+        },
+        "gjengivelse": {
+          "type": "string"
+        },
+        "strafferamme": {
+          "type": "integer",
+          "description": "Antall måneder"
+        }
+      },
+      "required": ["lovbudStreng"],
+      "additionalProperties": false
+    },
+    "straffesak": {
+      "type": "object",
+      "description": "Straffesak koding.",
+      "properties": {
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer"
+        },
+        "statistikkgruppe": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "krimtype": {
+          "$ref": "#/definitions/kodeverk"
+        }
+      },
+      "required": ["straffesaksnummer", "statistikkgruppe"],
+      "additionalProperties": false
+    },
+    "reaksjonsType": {
+      "properties": {
+        "fengsel": {
+          "$ref": "#/definitions/fengsel"
+        },
+        "bot": {
+          "$ref": "#/definitions/bot"
+        },
+        "samfunnsstraff": {
+          "$ref": "#/definitions/samfunnsstraff"
+        },
+        "ungdomsstraff": {
+          "$ref": "#/definitions/ungdomsstraff"
+        },
+        "rettighetstap": {
+          "$ref": "#/definitions/rettighetstap"
+        },
+        "rettighetstapMotorvogn": {
+          "$ref": "#/definitions/rettighetstap"
+        },
+        "rettighetstapTransport": {
+          "$ref": "#/definitions/rettighetstap"
+        },
+        "inndragning": {
+          "$ref": "#/definitions/inndragning"
+        },
+        "annet": {
+          "$ref": "#/definitions/annet"
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "fengsel": {
+      "properties": {
+        "straff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på fengselsstraffen"
+        },
+        "betinget": {
+          "$ref": "#/definitions/lengde",
+          "description": "Fylles kun dersom deler eller hele straffen er betinget"
+        },
+        "proevetid": {
+          "$ref": "#/definitions/lengde"
+        },
+        "saervilkaar": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/saervilkaar"
+          },
+          "minItems": 0
+        },
+        "fradrag": {
+          "$ref": "#/definitions/lengde",
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
+        }
+      },
+      "required": ["straff"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "bot": {
+      "properties": {
+        "beloep": {
+          "type": "integer",
+          "description": "Nettobeløp i NOK",
+          "$comment": "Trenger vi støtte for andre valuta??"
+        },
+        "proevetid": {
+          "$ref": "#/definitions/lengde",
+          "description": "Kan settes dersom boten er betinget"
+        },
+        "saervilkaar": {
+          "description": "Kan settes dersom boten er betinget. Henvisning til §36 eller §37",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/saervilkaar"
+          },
+          "minItems": 0
+        },
+        "subsidaerFengselsstraff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på subsidiær fengselsstraff"
+        }
+      },
+      "required": ["beloep"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "samfunnsstraff": {
+      "properties": {
+        "straff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på idømt samfunnsstraff - som regel oppgitt i timer"
+        },
+        "gjennomfoeringstid": {
+          "$ref": "#/definitions/lengde",
+          "description": "Innen hvor lang tidsperiode straffen må gjennomføres. Som regel oppgitt i timer"
+        },
+        "subsidaerFengselsstraff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på subsidiær fengselsstraff"
+        },
+        "fradrag": {
+          "$ref": "#/definitions/lengde",
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
+        },
+        "vilkaar": {
+          "type": "string",
+          "description": "Vilkår vedrørenede gjennomføring av straffen (jf. §50)"
+        }
+      },
+      "required": ["straff"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ungdomsstraff": {
+      "properties": {
+        "straff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på idømt straff"
+        },
+        "subsidaerFengselsstraff": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på subsidiær fengselsstraff"
+        },
+        "fradrag": {
+          "$ref": "#/definitions/lengde",
+          "description": "Fradrag for straffen (f.eks. tid i varetekt). Også kalt Utholdt frihetsberøvelse"
+        }
+      },
+      "required": ["straff"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "rettighetstap": {
+      "properties": {
+        "detaljer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["detaljer"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "rettighetstapDetaljer": {
+      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel til (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
+      "properties": {
+        "hjemmel": {
+          "$ref": "#/definitions/lovbudStreng"
+        },
+        "varighet": {
+          "$ref": "#/definitions/varighet",
+          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
+        },
+        "tekst": {
+          "type": "string",
+          "description": "Fritekst som beskriver rettighetstapet"
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "inndragning": {
+      "properties": {
+        "hjemmel": {
+          "$ref": "#/definitions/lovbudStreng",
+          "description": "Type inndragning. Eks. '§ 67 Inndragning av utbytte', '§ 68 Utvidet inndragning' etc."
+        },
+        "beloep": {
+          "type": "integer",
+          "description": "Beløp i norske kroner"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av inndragningen"
+        },
+        "tilfaller": {
+          "type": "string",
+          "description": "Navn på person beløpet tilfaller. Ikke satt dersom beløpet tilfaller statskassen"
+        },
+        "alternativBelopForGjenstand": {
+          "type": "boolean",
+          "description": "Dersom inndragning dreier seg om type '§ 69 Inndragning av produkt' Kan man velge å sette alternativt belæp for gjenstand"
+        }
+      },
+      "required": ["hjemmel"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "annet": {
+      "properties": {
+        "tekst": {
+          "type": "string",
+          "description": "Fritekst som beskriver 'annet'-reaksjonen"
+        }
+      },
+      "required": ["tekst"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "varighet": {
+      "type": "object",
+      "description": "Definisjon på en varighet. F.eks. varighet på 'tap av rettighet'",
+      "properties": {
+        "lengde": { "$ref": "#/definitions/lengde" },
+        "ubestemtTid": { "type": "boolean" }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "lengde": { "$ref": "#/definitions/lengde" }
+          },
+          "required": ["lengde"]
+        },
+        {
+          "properties": {
+            "ubestemtTid": {
+              "type": "boolean"
+            }
+          },
+          "required": ["ubestemtTid"]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "lengde": {
+      "type": "object",
+      "properties": {
+        "antallAar": { "$ref": "#/definitions/aar" },
+        "antallMaaneder": { "$ref": "#/definitions/maaneder" },
+        "antallDager": { "$ref": "#/definitions/dager" },
+        "antallTimer": { "$ref": "#/definitions/timer" }
+      },
+      "additionalProperties": false
+    },
+    "periode": {
+      "type": "object",
+      "properties": {
+        "tidFra": {
+          "$ref": "#/definitions/datoTid"
+        },
+        "tidTil": {
+          "$ref": "#/definitions/datoTid"
+        }
+      },
+      "additionalProperties": false
+    },
+    "saervilkaar": {
+      "type": "object",
+      "properties": {
+        "paragraf": {
+          "type": "string",
+          "description": "Eks. '§37'"
+        },
+        "tekst": {
+          "type": "string",
+          "description": "Eks. Andre særvilkår'"
+        },
+        "detaljer": {
+          "type": "string",
+          "description": "Detaljer for særvilkåret. Fylles ut ved '§ 37.Andre særvilkår'"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "description": "Brukerens egen beskrivelse av særvilkåret"
+        }
+      },
+      "required": ["paragraf", "tekst"],
+      "additionalProperties": false
+    },
+    "lovbudStreng": {
+      "type": "string",
+      "description": "Ingen kobling til lovbudserver, kun tekst f.eks. Vegtrafikkloven § 31 første ledd, jf. § 3"
+    },
     "forsendelse": {
       "type": "object",
       "properties": {
@@ -76,13 +472,8 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
         },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "avsender": {
-          "$ref": "#/definitions/avsender"
-        },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
+        "avsender": { "$ref": "#/definitions/avsender" },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
           "description": "Domstol som skal være mottaker"
@@ -136,11 +527,11 @@
           "$ref": "#/definitions/personnavn"
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson",
-          "description": "Minimum epost adresse til den som sender melding."
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Minimum epost adresse til den som sender melding. Det vil være maks 1 telefonnummer"
         }
       },
-      "required": ["navn", "kontakt"],
+      "required": ["navn"],
       "additionalProperties": false
     },
     "personnavn": {
@@ -159,16 +550,216 @@
       "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
-    "kontaktInfoPerson": {
+    "siktetPerson": {
       "type": "object",
-      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
+      "description": "",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/siktetPersonEnkel",
+          "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        },
+        "verger": {
+          "type": "array",
+          "description": "Verger trenger ikke å ha fødselsnummer og vil aldri ha SSP nummer",
+          "items": {
+            "$ref": "#/definitions/relatertPersonEnkel"
+          }
+        }
+      },
+      "required": ["person", "verger"],
+      "additionalProperties": false
+    },
+    "siktetPersonEnkel": {
+      "type": "object",
+      "description": "Siktede, dømte, tiltalte... personer bruker denne typen for identifiserende data.",
+      "properties": {
+        "personForetakRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
+        },
+        "personStraffesakId": {},
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          },
+          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
+        }
+      },
+      "required": [
+        "personForetakRef",
+        "navn",
+        "foedselsdato",
+        "statsborgerskap",
+        "tilleggsId",
+        "identitetsnummer"
+      ],
+      "additionalProperties": false
+    },
+    "relatertPerson": {
+      "type": "object",
+      "description": "Person med adresser og mulige verger",
+      "properties": {
+        "person": {   "$ref": "#/definitions/relatertPersonEnkel"},
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        },
+        "verger": {
+          "type": "array",
+          "description": "Verger trenger ikke å ha fødselsnummer og vil aldri ha SSP nummer",
+          "items": {
+            "$ref": "#/definitions/relatertPersonEnkel"
+          }
+        }
+      },
+      "required": ["person", "verger"],
+      "additionalProperties": false
+    },
+    "relatertPersonEnkel": {
+      "type": "object",
+      "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, adresse",
+      "properties": {
+        "personForetakRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme person."
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
+        }
+      },
+      "required": ["personForetakRef", "navn", "statsborgerskap"],
+      "additionalProperties": false
+    },
+    "kjoenn": {
+      "type": "string",
+      "description": "Samme enum som folkeregisteret",
+      "enum": ["KVINNE", "MANN"]
+    },
+    "personStraffesakId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Referanse til person i straffesak, se readme"
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "description": "Person ID typer, alle valideres med Modulus 11",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
+    },
+    "adresse": {
+      "type": "object",
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "postnummer": {
+          "type": "string"
+        },
+        "poststed": {
+          "type": "string"
+        },
+        "land": {
+          "$ref": "#/definitions/land"
+        }
+      },
+      "required": ["adresselinjer", "land"],
+      "additionalProperties": false
+    },
+    "adresseGradering": {
+      "type": "string",
+      "description": "Samme enum som folkeregisteret, ugradert hvis den ikke er gradert",
+      "enum": ["KLIENT_ADRESSE", "FORTROLIG", "STRENGT_FORTROLIG"]
+    },
+    "personAdresse": {
+      "type": "object",
+      "description": "Kan være graderte adresser",
+      "properties": {
+        "gradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Vi sender ikke med graderte adresser bortsett fra kanskje KLIENT_ADRESSE (sjekker)"
+        },
+        "adresse": {
+          "$ref": "#/definitions/adresse"
+        }
+      },
+      "required": ["adresse"],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "description": "Skal aldri forekomme med ingen verdier på epost eller telefonnummer",
       "properties": {
         "epost": {
-          "$ref": "#/definitions/epost"
+          "type": "string"
         },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
+        }
       },
-      "required": ["epost"],
       "additionalProperties": false
     },
     "dokument": {
@@ -187,8 +778,7 @@
           "description": "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
         },
         "skrevetDato": {
-          "type": "string",
-          "format": "date",
+          "$ref": "#/definitions/dato",
           "description": "Når dokumentet er skrevet ferdig."
         },
         "forsendelse": {
@@ -268,6 +858,34 @@
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
       "minLength": 3,
       "maxLength": 30
+    },
+    "aar": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 21
+    },
+    "maaneder": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 99
+    },
+    "dager": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 999
+    },
+    "timer": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 999
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "telefonnummer": {
       "type": "string",
