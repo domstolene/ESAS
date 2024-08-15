@@ -70,16 +70,17 @@
         "avgjoerelse",
         "foregrepetSoning"
       ],
-      "allOf": [
-        {
-          "if": {
-            "properties": { "foregrepetSoning": { "const": false } }
-          },
-          "then": {
-            "required": ["rettskraftigFraOgMed"]
+      "if": {
+        "properties": {
+          "foregrepetSoning": { "const": false },
+          "rettskraftigFraOgMed": {
+            "$ref": "#/definitions/dato"
           }
         }
-      ],
+      },
+      "then": {
+        "required": ["rettskraftigFraOgMed"]
+      },
       "additionalProperties": false
     },
     "avgjoerelse": {
