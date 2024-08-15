@@ -25,7 +25,12 @@
       "minItems": 1
     }
   },
-  "required": ["forsendelse", "fullbyrdelsesordre", "dokumenter", "hovedStraffesaksnummer"],
+  "required": [
+    "forsendelse",
+    "fullbyrdelsesordre",
+    "dokumenter",
+    "hovedStraffesaksnummer"
+  ],
   "additionalProperties": false,
 
   "definitions": {
@@ -58,7 +63,13 @@
           "description": "Det er påtale som setter når dommen er rettskraftig. Påbudt hvis det ikke er foregrepet soning"
         }
       },
-      "required": ["anmodningsId", "paataleansvarlig", "domfelte" ,"avgjoerelse", "foregrepetSoning"],
+      "required": [
+        "anmodningsId",
+        "paataleansvarlig",
+        "domfelte",
+        "avgjoerelse",
+        "foregrepetSoning"
+      ],
       "allOf": [
         {
           "if": {
@@ -102,7 +113,13 @@
           "minItems": 1
         }
       },
-      "required": ["avgjoerelseId", "saksnummer","avsagtDato","reaksjoner","straffbareForhold"],
+      "required": [
+        "avgjoerelseId",
+        "saksnummer",
+        "avsagtDato",
+        "reaksjoner",
+        "straffbareForhold"
+      ],
       "additionalProperties": false
     },
     "straffbartForhold": {
@@ -128,7 +145,7 @@
           }
         }
       },
-      "required": ["basissakId", "lovbudKombinert", "straffesak","fornaermede"]
+      "required": ["basissakId", "lovbudKombinert", "straffesak", "fornaermede"]
     },
     "lovbudKombinert": {
       "type": "object",
@@ -168,6 +185,7 @@
       "required": ["lovbudStreng"],
       "additionalProperties": false
     },
+    "grunnlagstekst": { "type": "string" },
     "straffesak": {
       "type": "object",
       "description": "Straffesak koding.",
@@ -625,7 +643,7 @@
       "type": "object",
       "description": "Person med adresser og mulige verger",
       "properties": {
-        "person": {   "$ref": "#/definitions/relatertPersonEnkel"},
+        "person": { "$ref": "#/definitions/relatertPersonEnkel" },
         "adresseGradering": {
           "$ref": "#/definitions/adresseGradering",
           "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
