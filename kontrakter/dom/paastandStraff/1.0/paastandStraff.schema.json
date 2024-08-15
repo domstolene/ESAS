@@ -85,7 +85,7 @@
           "$ref": "#/definitions/organisasjonsnummer"
         }
       },
-      "required": ["navn","organisasjonsnummer"],
+      "required": ["navn", "organisasjonsnummer"],
       "type": "object",
       "additionalProperties": false
     },
