@@ -14,7 +14,7 @@
     },
     "anmodningsId": {
       "$ref": "#/definitions/GUID",
-      "description": "Referanse til bestilling av varetektsplass/innsettelsesordre som denne gjelder for (samme person)"
+      "description": "Referanse til bestilling av varetektsplass som denne gjelder for (samme person)"
     },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
@@ -45,8 +45,7 @@
       "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
       "properties": {
         "skrevetTid": {
-          "type": "string",
-          "format": "date-time",
+          "$ref": "#/definitions/datoTid",
           "description": "Tidspunktet når helse og risiko informasjonen ble skrevet inn."
         },
         "risikovurdering": {
@@ -171,10 +170,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -240,10 +236,7 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
         },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": {
           "$ref": "#/definitions/avsender"
         },
@@ -383,6 +376,14 @@
       "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
       "maxLength": 40,
       "minLength": 5
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "GUID": {
       "type": "string",

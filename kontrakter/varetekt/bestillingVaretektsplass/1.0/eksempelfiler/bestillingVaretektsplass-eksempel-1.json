@@ -16,12 +16,12 @@
       }
     },
     "mottakerOrganisasjon": {
-      "organisasjonsnummer": "890286712",
-      "navn": "Bjørgvin fengsel"
+      "organisasjonsnummer": "911830868",
+      "navn": "Kriminalomsorgsdirektoratet"
     }
   },
   "hovedStraffesaksnummer": "15434811",
-  "ansvarligJurist": {
+  "paataleansvarlig": {
     "navn": {
       "etternavn": "Romstrerer",
       "fornavn": "Jarl"
@@ -29,6 +29,7 @@
     "kontakt": { "epost": "rar@politiet.no" }
   },
   "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
+  "plassFraDato": "2022-11-03",
   "personVaretektInfo": {
     "personVaretekt": {
       "person": {
