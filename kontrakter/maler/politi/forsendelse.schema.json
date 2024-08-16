@@ -20,10 +20,7 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
         },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": {
           "$ref": "#/definitions/avsender"
         },
@@ -103,16 +100,20 @@
       "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
-    "kontaktInfoPerson": {
+    "kontaktInfo": {
       "type": "object",
-      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
       "properties": {
         "epost": {
-          "$ref": "#/definitions/epost"
+          "type": "string"
         },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
+        }
       },
-      "required": ["epost"],
+      "required": ["telefonnummer"],
       "additionalProperties": false
     },
     "telefonnummer": {
@@ -121,6 +122,14 @@
       "pattern": "^\\+?[0-9 ()-]*$",
       "maxLength": 30,
       "minLength": 3
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "organisasjonsnummer": {
       "type": "string",

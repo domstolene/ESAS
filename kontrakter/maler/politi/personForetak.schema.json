@@ -51,10 +51,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -87,6 +84,29 @@
       ],
       "additionalProperties": false
     },
+    "relatertPerson": {
+      "type": "object",
+      "description": "Person med adresser og mulige verger",
+      "properties": {
+        "person": {   "$ref": "#/definitions/relatertPersonEnkel"},
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        },
+        "verger": {
+          "type": "array",
+          "description": "Verger trenger ikke å ha fødselsnummer og vil aldri ha SSP nummer",
+          "items": {
+            "$ref": "#/definitions/relatertPersonEnkel"
+          }
+        }
+      },
+      "required": ["person", "verger"],
+      "additionalProperties": false
+    },
     "relatertPersonEnkel": {
       "type": "object",
       "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
@@ -98,10 +118,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -246,6 +263,22 @@
       "type": "string",
       "format": "email"
     },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
     "norskPostnummer": {
       "type": "string",
       "description": "Norsk postnummer er i dag 4 siffer",
@@ -271,6 +304,14 @@
       "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
       "maxLength": 40,
       "minLength": 5
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "GUID": {
       "type": "string",

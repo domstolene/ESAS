@@ -127,6 +127,14 @@
       "maxLength": 40,
       "minLength": 5
     },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
+    },
     "GUID": {
       "type": "string",
       "format": "uuid"

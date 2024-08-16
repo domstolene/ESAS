@@ -12,3 +12,6 @@ over tid selv om personer endrer navn, fødselsnummer osv.
 
 Denne nøkkelen kan endre seg på en fysisk person i noen tilfeller.
 
+## Begreper
+### paataleansvarlig
+Brukes som generelt begrep på jurister som er påtaleansvarlig på straffesaker eller har utstedt en innsettelsesordre ...
