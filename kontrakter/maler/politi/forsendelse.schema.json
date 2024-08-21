@@ -51,6 +51,19 @@
       "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
+    "paataleansvarlig": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker. Beholder brukeridentifikasjon pga. av gammel historikk og behov for identifisering.",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "BID hos politiet nå, skal på sikt erstattes med annen unik identifikasjon."
+        },
+        "ansatt": {"$ref": "#/definitions/ansattPerson"}
+      },
+      "required": ["brukeridentifikasjon", "ansatt"],
+      "additionalProperties": false
+    },
     "organisasjon": {
       "type": "object",
       "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
@@ -77,7 +90,7 @@
           "$ref": "#/definitions/personnavn"
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson",
+          "$ref": "#/definitions/kontaktInfo",
           "description": "Minimum epost adresse til den som sender melding."
         }
       },
@@ -102,9 +115,10 @@
     },
     "kontaktInfo": {
       "type": "object",
+      "description": "epost og/eller telefonnummer en av de skal være med verdier",
       "properties": {
         "epost": {
-          "type": "string"
+          "$ref": "#/definitions/epost"
         },
         "telefonnummer": {
           "type": "array",

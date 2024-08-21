@@ -47,7 +47,9 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
-        "personStraffesakId": {},
+        "personStraffesakId": {
+          "$ref": "#/definitions/personStraffesakId"
+        },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
@@ -265,9 +267,10 @@
     },
     "kontaktInfo": {
       "type": "object",
+      "description": "epost og/eller telefonnummer en av de skal være med verdier",
       "properties": {
         "epost": {
-          "type": "string"
+          "$ref": "#/definitions/epost"
         },
         "telefonnummer": {
           "type": "array",
