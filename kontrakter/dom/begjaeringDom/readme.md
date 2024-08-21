@@ -3,9 +3,13 @@ Versjon 1.0 er første versjon som vi skal i produksjon i tilståelsessaker.
 
 ## Headere forsendelse justisHub
 SchemaName=BEGJAERING_DOM  
-SchemaVersion=1.0  
+SchemaVersion=1.0
+senderOrganization=POLITIET
+
 [RFC](../../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
+
+Mulig Kriminalomsorgen etter hvert vil bruke en variant av denne, men til pilot er det politiet.
 
 ## Status
 1. versjon laget og slettet. Prøver på nytt.
