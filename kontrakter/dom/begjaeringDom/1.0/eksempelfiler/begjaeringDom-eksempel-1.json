@@ -14,7 +14,7 @@
         },
         "kontakt": {
           "epost": "jube@kolo.ra",
-          "telefonnummer": "23422"
+          "telefonnummer": ["23422"]
         }
       }
     },
@@ -26,34 +26,39 @@
   "begjaeringDom": {
     "kravId": "715ED997-479E-4791-A475-5F906341C33E",
     "begjaeringstype": "TILSTAAELSE",
-    "ansvarligPaatalejurist": {
+    "paataleansvarlig": {
       "brukeridentifikasjon": "BLC210",
-      "navn": {
-        "fornavn": "NinaTerese",
-        "etternavn": "Eriksen"
+      "ansatt": {
+        "navn": {
+          "fornavn": "NinaTerese",
+          "etternavn": "Eriksen"
+        },
+        "kontakt": { "epost": "jtte@politiet.no", "telefonnummer": [] }
       }
     },
     "siktedePersoner": [
       {
-        "person": {
-          "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
-          "navn": {
-            "fornavn": "Vokal",
-            "etternavn": "FABRIKKPIPE"
+        "siktetPerson": {
+          "person": {
+            "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
+            "navn": {
+              "fornavn": "Vokal",
+              "etternavn": "FABRIKKPIPE"
+            },
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "22918197870"
+            },
+            "tilleggsId": [],
+            "kjoenn": "KVINNE",
+            "foedselsdato": "1981-11-22",
+            "statsborgerskap": [
+              {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            ]
           },
-          "identitetsnummer": {
-            "idType": "FOEDSELSNUMMER",
-            "verdi": "22918197870"
-          },
-          "tilleggsId": [],
-          "kjoenn": "KVINNE",
-          "foedselsdato": "1981-11-22",
-          "statsborgerskap": [
-            {
-              "kode": "NOR",
-              "navn": "Norge"
-            }
-          ],
           "personAdresse": {
             "adresse": {
               "adresselinjer": ["Pampusvegen 32"],
@@ -64,9 +69,9 @@
                 "navn": "Norge"
               }
             }
-          }
-        },
-        "verger": []
+          },
+          "verger": []
+        }
       }
     ],
     "siktedeForetak": [],
