@@ -37,7 +37,6 @@
     <modules>
         <module>kontrakter/varetekt/begjaeringVaretekt</module>
         <module>kontrakter/varetekt/kjennelsevaretektpoliti</module>
-        <module>kontrakter/politi/overfoeresakkonfliktraad</module>
         <module>kontrakter/siktelseTiltale</module>
         <module>kontrakter/varetekt/bestillingVaretektsplass</module>
         <module>kontrakter/varetekt/innsettelsesordre</module>
@@ -50,6 +49,7 @@
         <module>kontrakter/vegtrafikkulykke/trafikkulykke</module>
         <module>kontrakter/felles/kvittering</module>
         <module>kontrakter/dom/begjaeringDom</module>
+        <module>kontrakter/dom/paastandStraff</module>
         <module>kodeverk/felles</module>
         <module>kodeverk/konfliktraad</module>
         <module>validering-jwks</module>
