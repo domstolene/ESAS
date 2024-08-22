@@ -15,11 +15,7 @@
       "$ref": "#/definitions/paastandStraff"
     }
   },
-  "required": [
-    "forsendelse",
-    "siktetTiltaltPersonForetak",
-    "paastandStraff"
-  ],
+  "required": ["forsendelse", "siktetTiltaltPersonForetak", "paastandStraff"],
   "additionalProperties": false,
   "definitions": {
     "forsendelse": {
