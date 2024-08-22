@@ -8,13 +8,6 @@
       "$ref": "#/definitions/forsendelse",
       "description": "Avsender og mottaker"
     },
-    "dokumenter": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/dokument"
-      },
-      "minItems": 1
-    },
     "siktetTiltaltPersonForetak": {
       "$ref": "#/definitions/personForetak"
     },
@@ -25,7 +18,6 @@
   "required": [
     "forsendelse",
     "siktetTiltaltPersonForetak",
-    "dokumenter",
     "paastandStraff"
   ],
   "additionalProperties": false,
@@ -87,63 +79,6 @@
       },
       "required": ["navn", "organisasjonsnummer"],
       "type": "object",
-      "additionalProperties": false
-    },
-    "dokument": {
-      "type": "object",
-      "description": "Dokument som oversendes på justishub",
-      "properties": {
-        "dokumentRef": {
-          "$ref": "#/definitions/GUID",
-          "description": "Unik id for dokumentet kun lokalt i en melding. Bruker dokumentRef for å referere"
-        },
-        "kategori": {
-          "$ref": "#/definitions/kodeverk"
-        },
-        "overskrift": {
-          "type": "string",
-          "description": "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
-        },
-        "skrevetDato": {
-          "type": "string",
-          "format": "date",
-          "description": "Når dokumentet er skrevet ferdig."
-        },
-        "forsendelse": {
-          "$ref": "#/definitions/dokumentForsendelse"
-        }
-      },
-      "required": ["overskrift", "skrevetDato", "forsendelse"],
-      "additionalProperties": false
-    },
-    "kodeverk": {
-      "type": "object",
-      "properties": {
-        "kode": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "required": ["kode"],
-      "additionalProperties": false
-    },
-    "dokumentForsendelse": {
-      "type": "object",
-      "description": "Detaljer om lokasjon og type",
-      "properties": {
-        "mimeType": {
-          "type": "string"
-        },
-        "uri": {
-          "type": "string"
-        },
-        "sjekksum": {
-          "type": "string"
-        }
-      },
-      "required": ["mimeType", "uri", "sjekksum"],
       "additionalProperties": false
     },
     "paastandStraff": {
