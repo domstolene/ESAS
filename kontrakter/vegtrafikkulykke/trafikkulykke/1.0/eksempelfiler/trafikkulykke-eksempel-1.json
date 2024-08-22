@@ -8,9 +8,13 @@
         "navn": "Innlandet politidistrikt"
       },
       "person": {
-        "etternavn": "Testesen",
-        "kontakt": {
-          "telefonnummer": ["12 34 56 78"]
+        "navn": {
+          "fornavn": "Test",
+          "etternavn": "Testesen"
+        },
+        "kontaktinfo": {
+          "telefonnummer": "12 34 56 78",
+          "epost": "test.testesen@politiet.no"
         }
       }
     },
@@ -67,7 +71,6 @@
     ],
     "involverteEnheter": [
       {
-        "id": "enhet_1",
         "enhetsbokstav": "A",
         "registreringsnummer": "AB123456789",
         "enhetstype": "PERSONBIL_STASJONSVOGN",
