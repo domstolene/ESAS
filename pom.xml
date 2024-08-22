@@ -37,7 +37,6 @@
     <modules>
         <module>kontrakter/varetekt/begjaeringVaretekt</module>
         <module>kontrakter/varetekt/kjennelsevaretektpoliti</module>
-        <module>kontrakter/politi/overfoeresakkonfliktraad</module>
         <module>kontrakter/siktelseTiltale</module>
         <module>kontrakter/varetekt/bestillingVaretektsplass</module>
         <module>kontrakter/varetekt/innsettelsesordre</module>
