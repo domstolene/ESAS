@@ -25,31 +25,6 @@
       }
     }
   },
-  "dokumenter": [
-    {
-      "dokumentRef": "59E1FECE-A9DF-434C-B8D6-CE44B3FF4E1D",
-      "overskrift": "Begjæring om tilståelsessak",
-      "skrevetDato": "2023-03-30",
-      "forsendelse": {
-        "mimeType": "application/pdf",
-        "uri": "file:///asdfasdf",
-        "sjekksum": "234s"
-      }
-    },
-    {
-      "dokumentRef": "D59A4F14-5219-4E31-A95F-5C31545C00E8",
-      "overskrift": "Siktelse",
-      "kategori": {
-        "kode": "siktelse"
-      },
-      "skrevetDato": "2023-03-10",
-      "forsendelse": {
-        "mimeType": "application/pdf",
-        "uri": "file:///asdfaasdfsdf",
-        "sjekksum": "234asass"
-      }
-    }
-  ],
   "siktetTiltaltPersonForetak": {
     "person": {
       "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
