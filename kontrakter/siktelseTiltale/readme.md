@@ -3,7 +3,8 @@ Versjon 1.0 er første versjon som vi skal i produksjon med sammen med tilståel
 
 ## Headere forsendelse justisHub
 SchemaName=SIKTELSE_TILTALE  
-SchemaVersion=1.0  
+SchemaVersion=1.0
+senderOrganization=POLITIET  
 [RFC](../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
