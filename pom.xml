@@ -42,6 +42,7 @@
         <module>kontrakter/varetekt/innsettelsesordre</module>
         <module>kontrakter/varetekt/kjennelseVaretekt</module>
         <module>kontrakter/varetekt/tilbudVaretektsplass</module>
+        <module>kontrakter/varetekt/helseOgRisiko</module>
         <module>kontrakter/personundersoekelse/rekvisisjonPersonundersoekelse</module>
         <module>kontrakter/personundersoekelse/returPersonundersoekelse</module>
         <module>kontrakter/konfliktraadet/oppdatertsaksstatus</module>
