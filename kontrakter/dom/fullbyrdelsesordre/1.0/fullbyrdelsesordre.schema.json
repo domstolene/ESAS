@@ -603,7 +603,7 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
-        "personStraffesakId": {"$ref": "#/definitions/personStraffesakId"},
+        "personStraffesakId": { "$ref": "#/definitions/personStraffesakId" },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
