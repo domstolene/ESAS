@@ -166,11 +166,17 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
-        "personStraffesakId": {},
+        "personStraffesakId": {
+          "$ref": "#/definitions/personStraffesakId"
+        },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
         "foedselsdato": { "$ref": "#/definitions/dato" },
+        "personStraffesakId": {
+          "$ref": "#/definitions/unikId",
+          "description": "Referanse til person i straffesak, se readme"
+        },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
