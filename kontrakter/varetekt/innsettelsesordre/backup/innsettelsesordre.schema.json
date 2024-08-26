@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/currnet/1.0/innsettelsesordre",
+  "$id": "https://politiet.no/politi/fengsling/1.0/innsettelsesordre",
   "description": "Innsettelsesordre fra påtale til fengsel KDI, med ordre fra påtale eller kjennelse. Schema versjon 2020-12",
   "type": "object",
   "properties": {
@@ -46,6 +46,7 @@
     "dokumenter"
   ],
   "additionalProperties": false,
+
   "definitions": {
     "personVaretektInfo": {
       "title": "personVaretektInfo",
@@ -460,7 +461,6 @@
         "fengslingFraDato",
         "fengslingTilDato"
       ],
-
       "additionalProperties": false,
       "properties": {
         "merknad": {
@@ -663,46 +663,6 @@
       "required": ["adresse"],
       "additionalProperties": false
     },
-    "personVitne": {
-      "type": "object",
-      "description": "Representasjon av vitner",
-      "properties": {
-        "internId": {
-          "type": "string",
-          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
-        },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
-        "kjoenn": {
-          "$ref": "#/definitions/kjoenn",
-          "description": "Ukjent kjønn hvis denne ikke er med"
-        },
-        "statsborgerskap": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/land"
-          }
-        },
-        "identitetsnummer": {
-          "$ref": "#/definitions/personFregIdentifikator",
-          "description": "Fødselsnummer eller D-nummer. Vitner skal aldri ha SSP nummer"
-        },
-        "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering",
-          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
-        },
-        "personAdresse": {
-          "$ref": "#/definitions/personAdresse"
-        }
-      },
-      "required": ["internId", "navn", "statsborgerskap"],
-      "additionalProperties": false
-    },
     "person": {
       "type": "object",
       "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
@@ -809,6 +769,46 @@
         }
       },
       "required": ["internId", "navn"],
+      "additionalProperties": false
+    },
+    "personVitne": {
+      "type": "object",
+      "description": "Representasjon av vitner",
+      "properties": {
+        "internId": {
+          "type": "string",
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personFregIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vitner skal aldri ha SSP nummer"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        }
+      },
+      "required": ["internId", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
     "personnavn": {
