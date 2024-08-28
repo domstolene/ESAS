@@ -23,13 +23,12 @@
   "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
   "hovedStraffesaksnummer": "15434811",
   "ordre": {
-  "beordretAv": {
-    "navn": {
-      "etternavn": "Årdal",
-      "fornavn": "Jo"
-    },
-    "kontakt": { "epost": "jaa@politiet.no" }
+    "beordretAv": {
+      "navn": {
+        "etternavn": "Årdal",
+        "fornavn": "Jo"
+      },
+      "kontakt": { "epost": "jaa@politiet.no" }
+    }
   }
-  }
-
 }

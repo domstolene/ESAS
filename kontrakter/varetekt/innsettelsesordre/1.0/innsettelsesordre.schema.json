@@ -20,9 +20,17 @@
     },
     "ordre": {
       "$ref": "#/definitions/ordre"
+    },
+    "dokumenter": {
+      "type": "array",
+      "description": "PDF versjonen av innsettelsesordren følger med (generert).",
+      "items": {
+        "$ref": "#/definitions/dokument"
+      },
+      "minItems": 1
     }
   },
-  "required": ["forsendelse", "hovedStraffesaksnummer", "ordre"],
+  "required": ["forsendelse", "hovedStraffesaksnummer", "ordre", "dokumenter"],
   "additionalProperties": false,
 
   "definitions": {
@@ -33,10 +41,10 @@
         "person": {
           "$ref": "#/definitions/siktetPersonEnkel"
         },
-        "paagrepetTidspunkt": {"$ref": "#/definitions/datoTid"},
+        "paagrepetTidspunkt": { "$ref": "#/definitions/datoTid" },
         "forsvarer": { "$ref": "#/definitions/profesjonellPerson" }
       },
-      "required": ["person","paagrepetTidspunkt"],
+      "required": ["person", "paagrepetTidspunkt"],
       "additionalProperties": false
     },
     "ordre": {
@@ -47,12 +55,17 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik nøkkel til innsettelsesordren."
         },
+        "merknad": { "type": "string" },
         "beordretAv": {
           "$ref": "#/definitions/ansattPerson",
           "description": "Påtalejurist som har beordret innsettelse (trenger ikke være den som sender meldingen)"
+        },
+        "restriksjonIsolasjon": {
+          "$ref": "#/definitions/restriksjonIsolasjon",
+          "description": "Hentes fra bestilling av varetektsplass."
         }
       },
-      "required": ["anmodningsId","beordretAv"],
+      "required": ["anmodningsId", "beordretAv", "restriksjonIsolasjon"],
       "additionalProperties": false
     },
     "siktetPersonEnkel": {
@@ -263,28 +276,150 @@
           }
         }
       },
-      "land": {
-        "type": "object",
-        "description": "ISO-3166, med Kosovo=XXK som folkeregisteret",
-        "properties": {
-          "kode": {
-            "type": "string",
-            "pattern": "^[A-Z]+$",
-            "minLength": 3,
-            "maxLength": 3
-          },
-          "navn": {
-            "type": "string"
+      "additionalProperties": false
+    },
+    "restriksjonIsolasjon": {
+      "type": "object",
+      "description": "Hvilke restriksjoner og isolasjonskrav skal gjelde (til kjennelse kommer)",
+      "properties": {
+        "restriksjonsKrav": {
+          "type": "array",
+          "description": "Liste over restriksjonskrav. Tom liste når bruker har valgt ingen.",
+          "items": {
+            "$ref": "#/definitions/restriksjon"
           }
         },
-        "required": ["kode", "navn"],
-        "additionalProperties": false
+        "isolasjonsKrav": {
+          "type": "array",
+          "description": "Liste over isolasjonskrav. Tom liste når bruker har valgt ingen.",
+          "items": {
+            "$ref": "#/definitions/isolasjon"
+          }
+        },
+        "uavklart": {
+          "type": "boolean",
+          "description": "Vet ikke ennå hva slags restriksjonskrav som vil bli stilt."
+        },
+        "beskrivelse": {
+          "type": "string"
+        }
       },
+      "required": ["restriksjonsKrav", "isolasjonsKrav", "uavklart"],
+      "additionalProperties": false
+    },
+    "restriksjon": {
+      "description": "Basis restriksjon",
+      "type": "object",
+      "properties": {
+        "restriksjonsType": {
+          "$ref": "#/definitions/restriksjonsType"
+        },
+        "lovbudEnkel": {
+          "$ref": "#/definitions/lovbudEnkel"
+        }
+      },
+      "required": ["restriksjonsType"],
+      "additionalProperties": false
+    },
+    "restriksjonsType": {
+      "type": "string",
+      "description": "Liste over de ulike restriksjonene",
+      "enum": [
+        "BREV_OG_BESOEKSFORBUD",
+        "BREV_OG_BESOEKSKONTROLL",
+        "MEDIEFORBUD"
+      ]
+    },
+    "isolasjon": {
+      "type": "object",
+      "description": "Basis isolasjon med til og fra dato",
+      "properties": {
+        "isolasjonsType": {
+          "$ref": "#/definitions/isolasjonsType"
+        },
+        "lovbudEnkel": {
+          "$ref": "#/definitions/lovbudEnkel"
+        }
+      },
+      "required": ["isolasjonsType"],
+      "additionalProperties": false
+    },
+    "isolasjonsType": {
+      "type": "string",
+      "description": "Liste over de ulike isolasjonstyper",
+      "enum": ["FULL_ISOLASJON", "DELVIS_ISOLASJON"]
+    },
+    "lovbudEnkel": {
+      "type": "object",
+      "description": "Enkel lovbudreferanse kun lovbudstreng",
+      "properties": {
+        "lovbudStreng": {
+          "type": "string"
+        }
+      },
+      "required": ["lovbudStreng"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "type": "object",
+      "description": "Dokument som oversendes på justishub",
+      "properties": {
+        "dokumentRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id for dokumentet kun lokalt i en melding. Bruker dokumentRef for å referere"
+        },
+        "kategori": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "overskrift": {
+          "type": "string",
+          "description": "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
+        },
+        "skrevetDato": {
+          "type": "string",
+          "format": "date",
+          "description": "Når dokumentet er skrevet ferdig."
+        },
+        "forsendelse": {
+          "$ref": "#/definitions/dokumentForsendelse"
+        }
+      },
+      "required": ["overskrift", "skrevetDato", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "type": "object",
+      "description": "Detaljer om lokasjon og type",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string"
+        }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
       "additionalProperties": false
     },
     "land": {
       "type": "object",
-      "description": "ISO-3166, Kosovo kommer",
+      "description": "ISO-3166, med Kosovo=XXK som folkeregisteret",
       "properties": {
         "kode": {
           "type": "string",
