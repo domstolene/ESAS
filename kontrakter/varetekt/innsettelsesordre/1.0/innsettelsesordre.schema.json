@@ -7,23 +7,127 @@
     "forsendelse": {
       "$ref": "#/definitions/forsendelse"
     },
-    "anmodningsId": {
+    "bestillingVaretektsplassId": {
       "$ref": "#/definitions/GUID",
-      "description": "Unik nøkkel til innsettelsesordren."
+      "description": "AnmodningsId for bestilling av varetektsplass."
     },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
-      "description": "Hovedsaken i et sakskompleks, også saksbehandlersak."
+      "description": "Hovedsaken i et sakskompleks, også saksbehandlersak"
     },
-    "paataleansvarlig": {
-      "$ref": "#/definitions/ansattPerson",
-      "description": "Ansvarlig påtalejurist på saken"
+    "personVaretektInfo": {
+      "$ref": "#/definitions/personVaretektInfo"
+    },
+    "ordre": {
+      "$ref": "#/definitions/ordre"
     }
   },
-  "required": ["forsendelse", "anmodningsId"],
+  "required": ["forsendelse", "hovedStraffesaksnummer", "ordre"],
   "additionalProperties": false,
 
   "definitions": {
+    "personVaretektInfo": {
+      "type": "object",
+      "description": "Informasjon om siktede person.",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/siktetPersonEnkel"
+        },
+        "paagrepetTidspunkt": {"$ref": "#/definitions/datoTid"},
+        "forsvarer": { "$ref": "#/definitions/profesjonellPerson" }
+      },
+      "required": ["person","paagrepetTidspunkt"],
+      "additionalProperties": false
+    },
+    "ordre": {
+      "type": "object",
+      "description": "Ordre fra ... med restriksjoner",
+      "properties": {
+        "anmodningsId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik nøkkel til innsettelsesordren."
+        },
+        "beordretAv": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Påtalejurist som har beordret innsettelse (trenger ikke være den som sender meldingen)"
+        }
+      },
+      "required": ["anmodningsId","beordretAv"],
+      "additionalProperties": false
+    },
+    "siktetPersonEnkel": {
+      "type": "object",
+      "description": "Siktede, dømte, tiltalte... personer bruker denne typen for identifiserende data.",
+      "properties": {
+        "personForetakRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
+        },
+        "personStraffesakId": {
+          "$ref": "#/definitions/personStraffesakId"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          },
+          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
+        }
+      },
+      "required": [
+        "personForetakRef",
+        "navn",
+        "foedselsdato",
+        "statsborgerskap",
+        "tilleggsId",
+        "identitetsnummer"
+      ],
+      "additionalProperties": false
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "description": "Person ID typer, alle valideres med Modulus 11",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
+    },
+    "kjoenn": {
+      "type": "string",
+      "description": "Samme enum som folkeregisteret",
+      "enum": ["KVINNE", "MANN"]
+    },
     "forsendelse": {
       "type": "object",
       "properties": {
@@ -111,6 +215,40 @@
       "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
+    "personStraffesakId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Referanse til person i straffesak, se readme"
+    },
+    "profesjonellPerson": {
+      "type": "object",
+      "description": "Advokater, tolker, sakkyndige vitner",
+      "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "object",
+          "properties": {
+            "fornavn": {
+              "type": "string"
+            },
+            "mellomnavn": {
+              "type": "string"
+            },
+            "etternavn": {
+              "type": "string"
+            }
+          },
+          "required": ["etternavn"],
+          "additionalProperties": false
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo"
+        }
+      },
+      "required": ["navn"],
+      "additionalProperties": false
+    },
     "kontaktInfo": {
       "type": "object",
       "description": "Skal aldri forekomme med ingen verdier på epost eller telefonnummer",
@@ -125,6 +263,40 @@
           }
         }
       },
+      "land": {
+        "type": "object",
+        "description": "ISO-3166, med Kosovo=XXK som folkeregisteret",
+        "properties": {
+          "kode": {
+            "type": "string",
+            "pattern": "^[A-Z]+$",
+            "minLength": 3,
+            "maxLength": 3
+          },
+          "navn": {
+            "type": "string"
+          }
+        },
+        "required": ["kode", "navn"],
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    },
+    "land": {
+      "type": "object",
+      "description": "ISO-3166, Kosovo kommer",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "^[A-Z]+$",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode", "navn"],
       "additionalProperties": false
     },
     "organisasjonsnummer": {
