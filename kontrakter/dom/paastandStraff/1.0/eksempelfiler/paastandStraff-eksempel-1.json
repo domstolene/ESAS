@@ -25,26 +25,6 @@
       }
     }
   },
-  "siktetTiltaltPersonForetak": {
-    "person": {
-      "internId": "5d516a2c-3283-4636-961a-456e1f26ceb0",
-      "identitetsnummer": {
-        "idType": "FOEDSELSNUMMER",
-        "verdi": "14846399381"
-      },
-      "tilleggsId": [],
-      "fornavn": "Morsom",
-      "etternavn": "Kiwi",
-      "kjoenn": "MANN",
-      "foedselsdato": "1963-04-14",
-      "statsborgerskap": [
-        {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
-      ]
-    }
-  },
   "paastandStraff": {
     "kravId": "c2f05c05-79d3-4722-853c-cf3614e8101f",
     "paastandStraffPersonForetak": [
