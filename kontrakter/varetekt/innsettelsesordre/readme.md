@@ -28,5 +28,3 @@ I Straffesaken vil det ligge en innsettelsesordre.
 ### Oppdateringer
 Hvis det er behov for ny innsettelsesordre pga feil i den forrige så sendes
 ny innsettelsesordre med ny anmodningsId.
-
-## Begreper
