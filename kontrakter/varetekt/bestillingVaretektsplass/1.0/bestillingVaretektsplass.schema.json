@@ -41,7 +41,8 @@
     "paataleansvarlig",
     "personVaretektInfo",
     "medsiktedeInnsatteISak",
-    "plassFraDato"
+    "plassFraDato",
+    "restriksjonIsolasjon"
   ],
   "additionalProperties": false,
   "definitions": {
@@ -180,14 +181,14 @@
       "type": "object",
       "description": "Hvilke restriksjoner og isolasjonskrav skal gjelde (til kjennelse kommer)",
       "properties": {
-        "restriksjonsKrav": {
+        "restriksjonskrav": {
           "type": "array",
           "description": "Liste over restriksjonskrav. Tom liste når bruker har valgt ingen.",
           "items": {
             "$ref": "#/definitions/restriksjon"
           }
         },
-        "isolasjonsKrav": {
+        "isolasjonskrav": {
           "type": "array",
           "description": "Liste over isolasjonskrav. Tom liste når bruker har valgt ingen.",
           "items": {
@@ -202,7 +203,7 @@
           "type": "string"
         }
       },
-      "required": ["restriksjonsKrav", "isolasjonsKrav", "uavklart"],
+      "required": ["restriksjonskrav", "isolasjonskrav", "uavklart"],
       "additionalProperties": false
     },
     "restriksjon": {

@@ -74,5 +74,22 @@
     "omvendtVoldsalarm": { "valg": false },
     "krimineltNettverk": { "valg": false }
   },
+  "restriksjonIsolasjon": {
+    "restriksjonskrav": [
+      {
+        "restriksjonsType": "BREV_OG_BESOEKSFORBUD"
+      },
+      {
+        "restriksjonsType": "BREV_OG_BESOEKSKONTROLL"
+      }
+    ],
+    "isolasjonskrav": [
+      {
+        "isolasjonsType": "FULL_ISOLASJON"
+      }
+    ],
+    "uavklart": false,
+    "beskrivelse": "En eller annen valgfri beskrivelse"
+  },
   "medsiktedeInnsatteISak": { "valg": false }
 }
