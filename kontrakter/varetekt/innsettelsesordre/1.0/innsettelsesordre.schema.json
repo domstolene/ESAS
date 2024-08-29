@@ -11,9 +11,9 @@
       "$ref": "#/definitions/GUID",
       "description": "AnmodningsId for bestilling av varetektsplass."
     },
-    "hovedStraffesaksnummer": {
-      "$ref": "#/definitions/straffesaksnummer",
-      "description": "Hovedsaken i et sakskompleks, også saksbehandlersak"
+    "hovedStraffesak": {
+      "$ref": "#/definitions/straffesak",
+      "description": "Hovedsaken i sakskomplekset, litt detaljer, mer i siktelse sammen med bestilling av varetektsplass."
     },
     "personVaretektInfo": {
       "$ref": "#/definitions/personVaretektInfo"
@@ -30,7 +30,14 @@
       "minItems": 1
     }
   },
-  "required": ["forsendelse", "hovedStraffesaksnummer", "ordre", "dokumenter"],
+  "required": [
+    "forsendelse",
+    "hovedStraffesak",
+    "bestillingVaretektsplassId",
+    "personVaretektInfo",
+    "ordre",
+    "dokumenter"
+  ],
   "additionalProperties": false,
 
   "definitions": {
@@ -282,14 +289,14 @@
       "type": "object",
       "description": "Hvilke restriksjoner og isolasjonskrav skal gjelde (til kjennelse kommer)",
       "properties": {
-        "restriksjonsKrav": {
+        "restriksjonskrav": {
           "type": "array",
           "description": "Liste over restriksjonskrav. Tom liste når bruker har valgt ingen.",
           "items": {
             "$ref": "#/definitions/restriksjon"
           }
         },
-        "isolasjonsKrav": {
+        "isolasjonskrav": {
           "type": "array",
           "description": "Liste over isolasjonskrav. Tom liste når bruker har valgt ingen.",
           "items": {
@@ -304,7 +311,7 @@
           "type": "string"
         }
       },
-      "required": ["restriksjonsKrav", "isolasjonsKrav", "uavklart"],
+      "required": ["restriksjonskrav", "isolasjonskrav", "uavklart"],
       "additionalProperties": false
     },
     "restriksjon": {
@@ -385,6 +392,23 @@
         }
       },
       "required": ["overskrift", "skrevetDato", "forsendelse"],
+      "additionalProperties": false
+    },
+    "straffesak": {
+      "type": "object",
+      "description": "Straffesak, hendelse og koding og fornærmede som ikke er med i siktelsen",
+      "properties": {
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer"
+        },
+        "statistikkgruppe": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "krimtype": {
+          "$ref": "#/definitions/kodeverk"
+        }
+      },
+      "required": ["straffesaksnummer", "statistikkgruppe"],
       "additionalProperties": false
     },
     "dokumentForsendelse": {
