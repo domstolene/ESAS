@@ -23,7 +23,7 @@
     }
   },
   "hovedStraffesaksnummer": "15439560",
-  "begjaeringAnmodning": {
+  "begjaeringAnmodningReferanse": {
     "kravId": "E33B9049-34B7-4D31-92A7-4D7CB478B538"
   },
   "siktelseTiltale": {
@@ -33,7 +33,6 @@
       {
         "nummer": "I",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "6236FDDC-213D-4A2F-BAAA-4FD75AFA9DF7",
           "lovbud": [
             {
               "lovbudId": "A1D0F6A9-D4C1-4F2D-A69E-039ACB090304",
@@ -90,7 +89,8 @@
         "etternavn": "FABRIKKPIPE"
       },
       "identitetsnummer": {
-        "foedselsnummer": "22918197870"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "22918197870"
       },
       "tilleggsId": [],
       "kjoenn": "KVINNE",
@@ -100,16 +100,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["Pampusvegen 32"],
-            "postnummer": "6285",
-            "poststed": "STOREKALVØY"
-          }
-        }
-      }
+      ]
     }
   ],
   "siktedeForetak": [],
@@ -121,9 +112,9 @@
         "etternavn": "HARE"
       },
       "identitetsnummer": {
-        "foedselsnummer": "25835799770"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "25835799770"
       },
-      "tilleggsId": [],
       "kjoenn": "MANN",
       "foedselsdato": "1957-03-25",
       "statsborgerskap": [
@@ -131,16 +122,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["Olsbryggevegen 34"],
-            "postnummer": "3830",
-            "poststed": "ULEFOSS"
-          }
-        }
-      }
+      ]
     },
     {
       "personForetakRef": "922E9192-CBB8-4A32-B2CC-CA7B3498D484",
@@ -149,9 +131,9 @@
         "etternavn": "POSTKASSE"
       },
       "identitetsnummer": {
-        "foedselsnummer": "15858796374"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "15858796374"
       },
-      "tilleggsId": [],
       "kjoenn": "MANN",
       "foedselsdato": "1987-05-15",
       "statsborgerskap": [
@@ -159,16 +141,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["Galterudstubben 9"],
-            "postnummer": "2614",
-            "poststed": "LILLEHAMMER"
-          }
-        }
-      }
+      ]
     }
   ],
   "fornaermedeForetak": [],
@@ -180,10 +153,11 @@
           "gjerningstidspunktFra": "2023-05-01T00:00:00+01:00",
           "gjerningstidspunktTil": "2023-05-01T00:00:00+01:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Gartneriveien 2"],
               "postnummer": "3770",
-              "poststed": "KRAGERØ"
+              "poststed": "KRAGERØ",
+              "land": { "kode": "NOR", "navn": "Norge" }
             }
           }
         },
@@ -201,10 +175,11 @@
           "gjerningstidspunktFra": "2023-07-01T00:00:00+01:00",
           "gjerningstidspunktTil": "2023-07-01T00:00:00+01:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Weiss gate 5D"],
               "postnummer": "3611",
-              "poststed": "KONGSBERG"
+              "poststed": "KONGSBERG",
+              "land": { "kode": "NOR", "navn": "Norge" }
             }
           }
         },
