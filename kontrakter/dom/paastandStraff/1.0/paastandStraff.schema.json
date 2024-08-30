@@ -8,14 +8,11 @@
       "$ref": "#/definitions/forsendelse",
       "description": "Avsender og mottaker"
     },
-    "siktetTiltaltPersonForetak": {
-      "$ref": "#/definitions/personForetak"
-    },
     "paastandStraff": {
       "$ref": "#/definitions/paastandStraff"
     }
   },
-  "required": ["forsendelse", "siktetTiltaltPersonForetak", "paastandStraff"],
+  "required": ["forsendelse", "paastandStraff"],
   "additionalProperties": false,
   "definitions": {
     "forsendelse": {
@@ -434,38 +431,6 @@
       "type": "object",
       "required": ["paragraf", "tekst"],
       "additionalProperties": false
-    },
-    "personForetak": {
-      "type": "object",
-      "description": "Person i personliste eller et foretak i foretaklisten",
-      "properties": {
-        "person": {
-          "$ref": "#/definitions/person"
-        },
-        "foretak": {
-          "$ref": "#/definitions/foretak"
-        }
-      },
-      "oneOf": [
-        {
-          "properties": {
-            "person": {
-              "$ref": "#/definitions/person"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["person"]
-        },
-        {
-          "properties": {
-            "foretak": {
-              "$ref": "#/definitions/foretak"
-            }
-          },
-          "additionalProperties": false,
-          "required": ["foretak"]
-        }
-      ]
     },
     "personForetakRef": {
       "type": "object",
