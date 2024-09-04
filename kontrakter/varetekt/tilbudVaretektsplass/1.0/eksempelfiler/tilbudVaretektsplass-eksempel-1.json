@@ -8,8 +8,11 @@
         "navn": "Kriminalomsorgsdirektoratet"
       },
       "person": {
-        "brukeridentifikasjon": "BID123",
-        "etternavn": "KOBrukersen"
+        "navn": {
+          "etternavn": "Årdal",
+          "fornavn": "Jo"
+        },
+        "kontakt": { "epost": "en.bruker@kriminalomsorg.no" }
       }
     },
     "mottakerOrganisasjon": {
@@ -19,14 +22,10 @@
   },
   "tilbudVaretektsplassId": "b04782d3-502e-43d8-8c45-7e84d279d33a",
   "hovedStraffesaksnummer": "15434811",
-  "varetektSyklusId": "D784D27C-C1BB-4BB2-90FD-96C414A64AE1",
-  "bestillingAvVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE2",
-  "kontaktPersonKDI": {
-    "fornavn": "Peder",
-    "etternavn": "Superduper"
-  },
+  "anmodningsId": "D784D27C-C1BB-4BB2-90FD-96C414A64AE1",
   "fengselDerPlassTilbys": {
     "organisasjonsnummer": "890286712",
     "navn": "Bjørgvin fengsel"
-  }
+  },
+  "varetektsplassTilbysFra": "2023-11-04T10:00:00+02:00"
 }
