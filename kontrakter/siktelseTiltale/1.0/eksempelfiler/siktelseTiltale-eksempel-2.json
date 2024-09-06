@@ -23,7 +23,7 @@
     }
   },
   "hovedStraffesaksnummer": "15434059",
-  "begjaeringAnmodning": {
+  "begjaeringAnmodningReferanse": {
     "kravId": "CB00588D-6C04-4A63-B587-438605DF5D6F"
   },
   "siktelseTiltale": {
@@ -33,7 +33,6 @@
       {
         "nummer": "I",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "D57EFE89-6C8C-489E-A92E-5E9CC7261CF4",
           "lovbud": [
             {
               "lovbudId": "1713FA29-57D6-7F97-E053-0B3EA30AAE0D",
@@ -62,7 +61,6 @@
       {
         "nummer": "II",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "E4AC5E62-7047-4213-8A27-AA4D8333614B",
           "lovbud": [
             {
               "lovbudId": "EE57A116-D7B4-4F5B-99DB-F4D52FA75F06",
@@ -95,7 +93,6 @@
       {
         "nummer": "III",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "165AB44B-701C-4E11-BB0F-8ED21BC2AE82",
           "lovbud": [
             {
               "lovbudId": "1713FA29-5638-7F97-E053-0B3EA30AAE0D",
@@ -124,7 +121,6 @@
       {
         "nummer": "IV",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "433E8CD6-1B06-4C65-BD56-D98464AAC13C",
           "lovbud": [
             {
               "lovbudId": "FA8DEA3F-7462-450F-9413-BC3A697F2DDA",
@@ -142,7 +138,6 @@
             },
             "subsidiaerLovbudGrunnlag": {
               "subsidiaerLovbud": {
-                "lovbudKombinertId": "A713BBFB-3457-480A-B21E-B393914B4BBB",
                 "lovbud": [
                   {
                     "lovbudId": "A8D49A21-02B9-429A-9C2D-E4A45CFFD228",
@@ -170,7 +165,6 @@
       {
         "nummer": "V",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "02A6F54C-0F82-4489-82B6-9DE1C887DF29",
           "lovbud": [
             {
               "lovbudId": "E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5",
@@ -199,7 +193,6 @@
       {
         "nummer": "VI",
         "prinsipalLovbud": {
-          "lovbudKombinertId": "E5C3975D-6AE3-404B-91B7-A437C4620AEA",
           "lovbud": [
             {
               "lovbudId": "E482BA83-2664-4BA6-8AB7-C0BDFF3CFBD5",
@@ -242,7 +235,8 @@
         "etternavn": "BAR"
       },
       "identitetsnummer": {
-        "foedselsnummer": "29838099694"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "29838099694"
       },
       "tilleggsId": [],
       "kjoenn": "KVINNE",
@@ -252,16 +246,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["Prestegårdsveien 14A"],
-            "postnummer": "1912",
-            "poststed": "ENEBAKK"
-          }
-        }
-      }
+      ]
     },
     {
       "personForetakRef": "BC2F7372-E548-4B2A-B5E9-0D009A9BA2DB",
@@ -270,7 +255,8 @@
         "etternavn": "KIWI"
       },
       "identitetsnummer": {
-        "foedselsnummer": "20923148036"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "20923148036"
       },
       "tilleggsId": [],
       "kjoenn": "KVINNE",
@@ -280,16 +266,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["Åsliavegen 226"],
-            "postnummer": "2266",
-            "poststed": "ARNEBERG"
-          }
-        }
-      }
+      ]
     }
   ],
   "siktedeForetak": [],
@@ -300,7 +277,6 @@
         "fornavn": "Rala",
         "etternavn": "YOU"
       },
-      "tilleggsId": [],
       "kjoenn": "KVINNE",
       "foedselsdato": "2000-12-01",
       "statsborgerskap": [
@@ -317,9 +293,9 @@
         "etternavn": "JENTE"
       },
       "identitetsnummer": {
-        "foedselsnummer": "19839299845"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "19839299845"
       },
-      "tilleggsId": [],
       "kjoenn": "KVINNE",
       "foedselsdato": "1992-03-19",
       "statsborgerskap": [
@@ -327,16 +303,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["O.j.moums Vei 18A"],
-            "postnummer": "1657",
-            "poststed": "TORP"
-          }
-        }
-      }
+      ]
     },
     {
       "personForetakRef": "1AD4BD7F-7A21-4B4B-9CAE-E0325F6EE2BD",
@@ -345,9 +312,9 @@
         "etternavn": "DAGBOK"
       },
       "identitetsnummer": {
-        "foedselsnummer": "04836396354"
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "04836396354"
       },
-      "tilleggsId": [],
       "kjoenn": "MANN",
       "foedselsdato": "1963-03-04",
       "statsborgerskap": [
@@ -355,16 +322,7 @@
           "kode": "NOR",
           "navn": "Norge"
         }
-      ],
-      "personAdresse": {
-        "adresse": {
-          "norge": {
-            "adresselinjer": ["Hjellane 36"],
-            "postnummer": "6200",
-            "poststed": "STRANDA"
-          }
-        }
-      }
+      ]
     }
   ],
   "fornaermedeForetak": [],
@@ -376,10 +334,11 @@
           "gjerningstidspunktFra": "2022-07-01T00:00:00+01:00",
           "gjerningstidspunktTil": "2022-07-01T00:00:00+01:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Wesselvegen 29"],
               "postnummer": "3740",
-              "poststed": "SKIEN"
+              "poststed": "SKIEN",
+              "land": { "kode": "NOR", "navn": "Norgen" }
             }
           }
         },
@@ -397,10 +356,11 @@
           "gjerningstidspunktFra": "2023-12-01T00:00:00+02:00",
           "gjerningstidspunktTil": "2023-12-01T00:00:00+02:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Weidemanns gate 5"],
               "postnummer": "3080",
-              "poststed": "HOLMESTRAND"
+              "poststed": "HOLMESTRAND",
+              "land": { "kode": "NOR", "navn": "Norgen" }
             }
           }
         },
@@ -418,10 +378,11 @@
           "gjerningstidspunktFra": "2015-08-01T00:00:00+01:00",
           "gjerningstidspunktTil": "2015-11-01T00:00:00+02:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Wergelands vei 11"],
               "postnummer": "3256",
-              "poststed": "LARVIK"
+              "poststed": "LARVIK",
+              "land": { "kode": "NOR", "navn": "Norgen" }
             }
           }
         },
@@ -439,10 +400,11 @@
           "gjerningstidspunktFra": "2015-08-01T00:00:00+01:00",
           "gjerningstidspunktTil": "2015-08-01T00:00:00+01:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Wergelands vei 11"],
               "postnummer": "3256",
-              "poststed": "LARVIK"
+              "poststed": "LARVIK",
+              "land": { "kode": "NOR", "navn": "Norgen" }
             }
           }
         },
@@ -460,10 +422,11 @@
           "gjerningstidspunktFra": "2023-02-01T00:00:00+02:00",
           "gjerningstidspunktTil": "2023-02-01T00:00:00+02:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Westadkleiva 9"],
               "postnummer": "3360",
-              "poststed": "GEITHUS"
+              "poststed": "GEITHUS",
+              "land": { "kode": "NOR", "navn": "Norgen" }
             }
           }
         },
@@ -481,10 +444,11 @@
           "gjerningstidspunktFra": "2018-11-11T00:00:00+02:00",
           "gjerningstidspunktTil": "2018-11-11T00:00:00+02:00",
           "gjerningssted": {
-            "norge": {
+            "adresse": {
               "adresselinjer": ["Wahlstrøms gate 9"],
               "postnummer": "3513",
-              "poststed": "HØNEFOSS"
+              "poststed": "HØNEFOSS",
+              "land": { "kode": "NOR", "navn": "Norgen" }
             }
           }
         },
