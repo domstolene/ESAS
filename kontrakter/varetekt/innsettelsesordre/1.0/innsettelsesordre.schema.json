@@ -11,8 +11,8 @@
       "$ref": "#/definitions/GUID",
       "description": "AnmodningsId for bestilling av varetektsplass."
     },
-    "hovedStraffesak": {
-      "$ref": "#/definitions/straffesak",
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
       "description": "Hovedsaken i sakskomplekset, litt detaljer, mer i siktelse sammen med bestilling av varetektsplass."
     },
     "personVaretektInfo": {
@@ -32,7 +32,7 @@
   },
   "required": [
     "forsendelse",
-    "hovedStraffesak",
+    "hovedStraffesaksnummer",
     "bestillingVaretektsplassId",
     "personVaretektInfo",
     "ordre",
@@ -48,10 +48,9 @@
         "person": {
           "$ref": "#/definitions/siktetPersonEnkel"
         },
-        "paagrepetTidspunkt": { "$ref": "#/definitions/datoTid" },
         "forsvarer": { "$ref": "#/definitions/profesjonellPerson" }
       },
-      "required": ["person", "paagrepetTidspunkt"],
+      "required": ["person"],
       "additionalProperties": false
     },
     "ordre": {
@@ -392,23 +391,6 @@
         }
       },
       "required": ["overskrift", "skrevetDato", "forsendelse"],
-      "additionalProperties": false
-    },
-    "straffesak": {
-      "type": "object",
-      "description": "Straffesak, hendelse og koding og fornærmede som ikke er med i siktelsen",
-      "properties": {
-        "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer"
-        },
-        "statistikkgruppe": {
-          "$ref": "#/definitions/kodeverk"
-        },
-        "krimtype": {
-          "$ref": "#/definitions/kodeverk"
-        }
-      },
-      "required": ["straffesaksnummer", "statistikkgruppe"],
       "additionalProperties": false
     },
     "dokumentForsendelse": {

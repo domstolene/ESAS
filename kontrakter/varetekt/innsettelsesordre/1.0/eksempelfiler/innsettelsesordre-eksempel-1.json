@@ -21,13 +21,7 @@
     }
   },
   "bestillingVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE4",
-  "hovedStraffesak": {
-    "straffesaksnummer": "15434811",
-    "statistikkgruppe": {
-      "kode": "0933",
-      "navn": "Mindre tyveri diverse"
-    }
-  },
+  "hovedStraffesaksnummer": "15434811",
   "personVaretektInfo": {
     "person": {
       "personForetakRef": "3C305F04-9557-4CFB-AC5F-3FF91E6E7D5C",
@@ -48,8 +42,7 @@
           "navn": "Norge"
         }
       ]
-    },
-    "paagrepetTidspunkt": "2022-11-03T10:19:56+02:00"
+    }
   },
   "ordre": {
     "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
