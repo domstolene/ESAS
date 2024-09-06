@@ -1,5 +1,18 @@
 # Innsettelsesordre endringslogg
 
+| Versjon | Beskrivelse   | Aktiv fra | Aktiv til |
+|---------|---------------|-----------|-----------|
+| 1.0     | Arbeidsverson |           |           |
+
+
+## utarbeidelse av første versjon (vil bli slettet)
+Jobber nå i 1.0 versjonen
+## 26.08.24
+Ren innsettelsesordre uten kjennelse, helse og risiko som begge er egne meldinger.
+Jobber i versjon 1.0 og tar i bruk arbeidsvarsjon når vi skal versjonere etter at melding har vært i produksjon.
+Sletter arbeidsversjon nå da den er lik versjon 1.0.
+
+
 ## 03.10.2023 pågripelsesTid og Pågripelsestid er lagt til
 
 ## 28.04.2023 synkroniser med begjæring om varetekt og bestilling av varetektsplass
