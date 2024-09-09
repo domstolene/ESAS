@@ -40,7 +40,8 @@
     "anmodningsId",
     "tilbudVaretektsplassId",
     "fengselDerPlassTilbys",
-    "varetektsplassTilbysFra"
+    "varetektsplassTilbysFra",
+    "fengseletsTelefonnummer"
   ],
   "additionalProperties": false,
 
@@ -56,7 +57,9 @@
           "$ref": "#/definitions/telefonnummer",
           "description": "Telefonnummer til kvelds- og helgevakt."
         }
-      }
+      },
+      "required": ["kontortid", "vakt"],
+      "additionalProperties": false
     },
     "ansattPerson": {
       "type": "object",

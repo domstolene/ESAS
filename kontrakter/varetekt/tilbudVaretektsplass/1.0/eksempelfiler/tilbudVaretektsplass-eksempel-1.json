@@ -27,5 +27,9 @@
     "organisasjonsnummer": "890286712",
     "navn": "Bjørgvin fengsel"
   },
+  "fengseletsTelefonnummer": {
+    "kontortid": "11 22 11 22",
+    "vakt": "11 33 11 33"
+  },
   "varetektsplassTilbysFra": "2023-11-04T10:00:00+02:00"
 }
