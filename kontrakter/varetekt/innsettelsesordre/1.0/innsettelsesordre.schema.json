@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/varetekt/1.0/innsettelsesordre",
+  "$id": "https://kriminalomsorgen.no/varetekt/1.0/innsettelsesordre",
   "description": "Innsettelsesordre fra påtale når kjennelse ikke er kommet ennå",
   "type": "object",
   "properties": {
