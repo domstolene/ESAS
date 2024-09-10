@@ -54,6 +54,10 @@
       "beskrivelse": "Retur / svar på en PeU-rekvisisjon. Normalt en ferdig PeU-rapport, men brukes også når undersøkelsen ikke kunne utføres (f.eks. når siktet nekter)"
     },
     {
+      "kode": "INNSETTELSESORDRE",
+      "beskrivelse": "PDF-versjon av strukturert innsettelsesordre"
+    },
+    {
       "kode": "UKJENT",
       "beskrivelse": "Gamle dok og nye dokument som vi ikke vet eller som ikke passer inn i listen over."
     }
