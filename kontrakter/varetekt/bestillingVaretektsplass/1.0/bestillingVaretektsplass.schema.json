@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/fengsling/1.0/bestillingVaretektsplass",
-  "description": "Bestilling av varetektsplass fra påtale til Kriminalomsorgen. Schema versjon 2020-12",
+  "$id": "https://kriminalomsorgen.no/varetekt/1.0/bestillingVaretektsplass",
+  "description": "Bestilling av varetektsplass fra påtale til Kriminalomsorgen.",
   "type": "object",
   "properties": {
     "forsendelse": {
