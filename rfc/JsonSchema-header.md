@@ -22,5 +22,5 @@ Vi bruker $id til å unikt identifisere schema og for å kunne finne det igjen p
 * Json Schema ligger på folder kontrakter/dom/begjaeringDom/1.0
 
 ### Changelog
-15.08.2024 Første forslag lik [eksisterende retnings på Confluence](https://domstol.atlassian.net/wiki/x/PQG08Q).
+15.08.2024 Første forslag lik [eksisterende retnings på Confluence](https://domstol.atlassian.net/wiki/x/PQG08Q).  
 10.09.2024 Presiserer prinsippet at mottaker-virksomheten av skjemaet typisk blir domenet i $id, [slik tidligere etablert av faggruppe for arkitektur](https://domstol.atlassian.net/wiki/x/-YAb-Q).
