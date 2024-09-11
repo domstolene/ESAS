@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/varetekt/1.0/helseOgRisiko",
+  "$id": "https://kriminalomsorgen.no/varetekt/1.0/helseOgRisiko",
   "description": "Helse og risiko informasjon i forbindelse varetektsfengslinger hos Kriminalomsorgen.",
   "type": "object",
   "properties": {
