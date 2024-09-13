@@ -179,16 +179,6 @@
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
-    "personnavn": {
-      "type": "object",
-      "properties": {
-        "fornavn": { "type": "string" },
-        "mellomnavn": { "type": "string" },
-        "etternavn": { "type": "string" }
-      },
-      "required": ["etternavn"],
-      "additionalProperties": false
-    },
     "organisasjonsnummer": {
       "type": "string",
       "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
