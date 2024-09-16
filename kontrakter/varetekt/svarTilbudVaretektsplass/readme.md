@@ -1,13 +1,14 @@
 # svar på tilbud av varetektsplass
 Versjon 1.0 er første versjon som vi skal i produksjon med.
-* [JSON Schema](1.0/helseOgRisiko.schema.json)
+* [JSON Schema](1.0/svarTilbudVaretektsplass.schema.json)
 * [Eksempler](1.0/eksempelfiler/)
 
 ## Headere forsendelse justisHub
 SchemaName=SVAR_TILBUD_VARETEKTSPLASS  
 SchemaVersion=1.0
-[RFC](../../../rfc/MessageName-header.md)
+senderOrganization=POLITIET 
 
+[RFC](../../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
 ## Beskrivelse
