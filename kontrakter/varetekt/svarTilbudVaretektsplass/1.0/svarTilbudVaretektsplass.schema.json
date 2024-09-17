@@ -16,17 +16,12 @@
       "$ref": "#/definitions/GUID",
       "description": "Referanse til bestilling av varetektsplass/innsettelsesordre som denne gjelder for (samme person)"
     },
-    "tilbudVaretektsplassId": {
-      "$ref": "#/definitions/unikId",
-      "description": "ID på plasstilbudet. alle svar påtilbudet skal koble til denne  nøkkelen."
-    },
     "svarPlass": { "$ref": "#/definitions/svarPlass" }
   },
   "required": [
     "forsendelse",
     "anmodningsId",
     "hovedStraffesaksnummer",
-    "tilbudVaretektsplassId",
     "svarPlass"
   ],
   "additionalProperties": false,
