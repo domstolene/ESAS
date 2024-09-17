@@ -51,6 +51,7 @@
         <module>kontrakter/felles/kvittering</module>
         <module>kontrakter/dom/begjaeringDom</module>
         <module>kontrakter/dom/paastandStraff</module>
+        <module>kontrakter/dom/domsavgjoerelse</module>
         <module>kodeverk/felles</module>
         <module>kodeverk/konfliktraad</module>
         <module>validering-jwks</module>
