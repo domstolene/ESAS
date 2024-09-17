@@ -14,3 +14,5 @@ senderOrganization=POLITIET
 ## Beskrivelse
 Forslag til svar meldings som til å beygnne med kun har med avbestilling av plass.
 Senere kan den utvides til aksept av varetetektsplass hvis det er nødvendig.
+### utsatt
+Ekstra informasjon om at politiet regner med at personen trenger varetektsplass i nær fremtid.
