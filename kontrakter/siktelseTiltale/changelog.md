@@ -5,6 +5,8 @@
 | 0.0     | Arbeidsverson |            ||
 
 ## Versjon 0.0 arbeidsversjon
+### 18.09.2024 anmodningsId
+begjaeringAnmodningsId og anmodningsId skal være GUID overalt også i oneOf definisjon.
 ### 21.08.2024 Synkroniserer 
 Fullbyrdelsesordre og bestilling av varetekt typer.
 
