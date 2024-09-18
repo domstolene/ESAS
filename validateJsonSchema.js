@@ -9,10 +9,11 @@ const jsonSchemaFolders = [
   "kontrakter/dom/begjaeringDom",
   "kontrakter/varetekt/begjaeringVaretekt",
   "kontrakter/varetekt/kjennelsevaretektpoliti",
-  "kontrakter/varetekt/bestillvaretektsplass",
+  "kontrakter/varetekt/bestillingVaretektsplass",
+  "kontrakter/varetekt/helseOgRisiko",
   "kontrakter/varetekt/innsettelsesordre",
   "kontrakter/varetekt/kjennelseVaretekt",
-  "kontrakter/politi/overfoeresakkonfliktraad",
+  "kontrakter/varetekt/svarTilbudVaretektsplass",
   "kontrakter/felles/kvittering",
   "kontrakter/felles/kodeverk",
   "kontrakter/felles/lukkSak",
@@ -22,7 +23,8 @@ const jsonSchemaFolders = [
   "kontrakter/dom/domsavgjoerelse",
   "kontrakter/siktelseTiltale",
   "kontrakter/kjennelsebeslutning",
-  "kontrakter/vegtrafikkulykke/trafikkulykke"
+  "kontrakter/vegtrafikkulykke/trafikkulykke",
+  "kontrakter/dom/paastandStraff"
 ];
 
 const jsonKodeverkFolders = ["kodeverk/felles", "kodeverk/konfliktraad"];

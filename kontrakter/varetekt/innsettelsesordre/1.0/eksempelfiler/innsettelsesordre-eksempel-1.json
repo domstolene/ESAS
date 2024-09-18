@@ -1,0 +1,83 @@
+{
+  "forsendelse": {
+    "meldingsId": "A02963AE-D0AD-4897-B4B1-6DB6BBAF8B91",
+    "sendtTid": "2024-08-01T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "etternavn": "Årdal",
+          "fornavn": "Jo"
+        },
+        "kontakt": { "epost": "jaa@politiet.no" }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "911830868",
+      "navn": "Kriminalomsorgsdirektoratet"
+    }
+  },
+  "bestillingVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706BE4",
+  "hovedStraffesaksnummer": "15434811",
+  "personVaretektInfo": {
+    "person": {
+      "personForetakRef": "3C305F04-9557-4CFB-AC5F-3FF91E6E7D5C",
+      "navn": {
+        "fornavn": "Morsom",
+        "etternavn": "KIWI"
+      },
+      "identitetsnummer": {
+        "idType": "FOEDSELSNUMMER",
+        "verdi": "14846399381"
+      },
+      "tilleggsId": [],
+      "kjoenn": "MANN",
+      "foedselsdato": "1963-04-14",
+      "statsborgerskap": [
+        {
+          "kode": "NOR",
+          "navn": "Norge"
+        }
+      ]
+    }
+  },
+  "ordre": {
+    "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
+    "beordretAv": {
+      "navn": {
+        "etternavn": "Årdal",
+        "fornavn": "Jo"
+      },
+      "kontakt": { "epost": "jaa@politiet.no" }
+    },
+    "restriksjonIsolasjon": {
+      "restriksjonskrav": [
+        {
+          "restriksjonsType": "BREV_OG_BESOEKSFORBUD"
+        }
+      ],
+      "isolasjonskrav": [
+        {
+          "isolasjonsType": "FULL_ISOLASJON"
+        }
+      ],
+      "uavklart": false,
+      "beskrivelse": "Bestemor får komme med lutfesk"
+    }
+  },
+  "dokumenter": [
+    {
+      "dokumentRef": "59E1FECE-A9DF-434C-B8D6-CE44B3FF4E1D",
+      "overskrift": "Ordre om innsettelse",
+      "skrevetDato": "2023-03-30",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    }
+  ]
+}

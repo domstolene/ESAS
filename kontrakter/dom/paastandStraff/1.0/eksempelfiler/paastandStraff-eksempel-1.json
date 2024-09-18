@@ -1,0 +1,78 @@
+{
+  "forsendelse": {
+    "meldingsId": "1A51B95E-D989-425B-9C0E-1417773B4C1F",
+    "sendtTid": "2024-04-17T22:45:38+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983998178",
+        "navn": "Sør-Øst politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "fornavn": "Peder",
+          "etternavn": "Politiets Datatjeneste"
+        },
+        "kontakt": {
+          "epost": "jube@kolo.ra",
+          "telefonnummer": "23422"
+        }
+      }
+    },
+    "mottaker": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      }
+    }
+  },
+  "paastandStraff": {
+    "kravId": "c2f05c05-79d3-4722-853c-cf3614e8101f",
+    "paastandStraffPersonForetak": [
+      {
+        "personForetak": {
+          "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
+        },
+        "reaksjoner": [
+          {
+            "bot": {
+              "beloep": 24000,
+              "proevetid": {
+                "antallAar": 2
+              },
+              "subsidaerFengselsstraff": {
+                "antallDager": 24
+              }
+            },
+            "fengsel": {
+              "straff": {
+                "antallAar": 2,
+                "antallMaaneder": 4
+              },
+              "betinget": {
+                "antallMaaneder": 6
+              },
+              "proevetid": {
+                "antallAar": 2
+              },
+              "fradrag": {
+                "antallDager": 24
+              },
+              "saervilkaar": [
+                {
+                  "paragraf": "§35",
+                  "tekst": "Særvilkår om meldeplikt",
+                  "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+                },
+                {
+                  "paragraf": "§36",
+                  "tekst": "Andre særvilkår",
+                  "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

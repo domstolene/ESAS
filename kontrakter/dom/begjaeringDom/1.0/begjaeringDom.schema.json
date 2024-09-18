@@ -52,14 +52,14 @@
             "MEDDOMSSAK"
           ]
         },
-        "ansvarligPaatalejurist": {
-          "$ref": "#/definitions/paataleJurist",
+        "paataleansvarlig": {
+          "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
         "siktedePersoner": {
           "type": "array",
-          "description": "Alle siktede personer som skal til retten, det vil alltid være bare en person i tilståelsessaker, kobling til basissaker og straffesaker i siktelseTiltale",
-          "items": { "$ref": "#/definitions/siktetPerson" }
+          "description": "Alle siktede personer som skal til retten (tiltalt i hovedforhandling), det vil alltid være bare en person i tilståelsessaker, kobling til basissaker og straffesaker i siktelseTiltale",
+          "items": { "$ref": "#/definitions/siktetPersonInfo" }
         },
         "siktedeForetak": {
           "type": "array",
@@ -69,7 +69,7 @@
         "fornaermedePersoner": {
           "type": "array",
           "description": "Alle fornærmede personer, kobling til straffesaken i siktelseTiltale",
-          "items": { "$ref": "#/definitions/personRelatert" }
+          "items": { "$ref": "#/definitions/relatertPerson" }
         },
         "fornaermedeForetak": {
           "type": "array",
@@ -88,7 +88,7 @@
         "siktedeForetak",
         "fornaermedePersoner",
         "fornaermedeForetak",
-        "ansvarligPaatalejurist",
+        "paataleansvarlig",
         "vitner"
       ],
       "additionalProperties": false
@@ -128,18 +128,6 @@
       "required": ["kode"],
       "additionalProperties": false
     },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
-      },
-      "required": ["epost"],
-      "additionalProperties": false
-    },
     "land": {
       "type": "object",
       "description": "ISO-3166, Kosovo kommer",
@@ -172,26 +160,17 @@
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
-    "paataleJurist": {
+    "paataleansvarlig": {
       "type": "object",
       "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker. Beholder brukeridentifikasjon pga. av gammel historikk og behov for identifisering.",
       "properties": {
         "brukeridentifikasjon": {
           "type": "string",
-          "description": "BID hos politiet nå"
+          "description": "BID hos politiet nå, skal på sikt erstattes med annen unik identifikasjon."
         },
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson",
-          "description": "Frivillig fordi det er ikke sikkert vi har den informasjonen."
-        }
+        "ansatt": { "$ref": "#/definitions/ansattPerson" }
       },
-      "required": ["brukeridentifikasjon", "navn"],
+      "required": ["brukeridentifikasjon", "ansatt"],
       "additionalProperties": false
     },
     "ansattPerson": {
@@ -205,7 +184,7 @@
           "$ref": "#/definitions/personnavn"
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson",
+          "$ref": "#/definitions/kontaktInfo",
           "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
@@ -219,10 +198,7 @@
           "$ref": "#/definitions/GUID",
           "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
         },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": {
           "$ref": "#/definitions/avsender"
         },
@@ -329,11 +305,12 @@
       "required": ["adresse"],
       "additionalProperties": false
     },
-    "siktetPerson": {
+    "siktetPersonInfo": {
       "type": "object",
+      "description": "Samme som siktetPerson + informasjon om tolk og forsvarer",
       "properties": {
-        "person": {
-          "$ref": "#/definitions/person",
+        "siktetPerson": {
+          "$ref": "#/definitions/siktetPerson",
           "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
         },
         "tolk": {
@@ -351,33 +328,51 @@
         },
         "forsvarerinformasjon": {
           "$ref": "#/definitions/forsvarerinformasjon"
+        }
+      },
+      "required": ["siktetPerson"],
+      "additionalProperties": false
+    },
+    "siktetPerson": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/siktetPersonEnkel",
+          "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
         },
         "verger": {
           "type": "array",
           "description": "Verger trenger ikke å ha fødselsnummer og vil aldri ha SSP nummer",
           "items": {
-            "$ref": "#/definitions/personRelatert"
+            "$ref": "#/definitions/relatertPersonEnkel"
           }
         }
       },
       "required": ["person", "verger"],
       "additionalProperties": false
     },
-    "person": {
+    "siktetPersonEnkel": {
       "type": "object",
-      "description": "Person med alle nyttige data som fødselsnummer adresse osv., SSP nummer kun på siktede, tiltalte.",
+      "description": "Siktede, dømte, tiltalte... personer bruker denne typen for identifiserende data.",
       "properties": {
         "personForetakRef": {
           "$ref": "#/definitions/GUID",
           "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
+        "personStraffesakId": {
+          "$ref": "#/definitions/personStraffesakId"
+        },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -398,20 +393,6 @@
             "$ref": "#/definitions/personIdentifikator"
           },
           "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
-        },
-        "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering",
-          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
-        },
-        "personAdresse": {
-          "$ref": "#/definitions/personAdresse"
-        },
-        "verger": {
-          "type": "array",
-          "description": "Verger",
-          "items": {
-            "$ref": "#/definitions/personRelatert"
-          }
         }
       },
       "required": [
@@ -424,7 +405,23 @@
       ],
       "additionalProperties": false
     },
-    "personRelatert": {
+    "relatertPerson": {
+      "type": "object",
+      "description": "Person med adresser og mulige verger",
+      "properties": {
+        "person": { "$ref": "#/definitions/relatertPersonEnkel" },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        }
+      },
+      "required": ["person"],
+      "additionalProperties": false
+    },
+    "relatertPersonEnkel": {
       "type": "object",
       "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
       "properties": {
@@ -435,10 +432,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -452,13 +446,6 @@
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
           "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
-        },
-        "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering",
-          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
-        },
-        "personAdresse": {
-          "$ref": "#/definitions/personAdresse"
         }
       },
       "required": ["personForetakRef", "navn", "statsborgerskap"],
@@ -468,7 +455,7 @@
       "type": "object",
       "description": "Vitne informasjon med kobling til straffesakene de er vitner i",
       "properties": {
-        "person": { "$ref": "#/definitions/personRelatert" },
+        "person": { "$ref": "#/definitions/relatertPerson" },
         "straffesaker": {
           "type": "array",
           "description": "Liste over straffesaker vitne er vitne i",
@@ -510,9 +497,10 @@
     },
     "kontaktInfo": {
       "type": "object",
+      "description": "epost og/eller telefonnummer en av de skal være med verdier",
       "properties": {
         "epost": {
-          "type": "string"
+          "$ref": "#/definitions/epost"
         },
         "telefonnummer": {
           "type": "array",
@@ -575,7 +563,7 @@
     },
     "spraakkodeType": {
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
-      "pattern": "^([A-Z]{3,3})$",
+      "pattern": "^([A-Z]{3})$",
       "type": "string"
     },
     "behovForTolkType": {
@@ -620,6 +608,10 @@
       "description": "Person ID typer, alle valideres med Modulus 11",
       "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
     },
+    "personStraffesakId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Referanse til person i straffesak, se readme"
+    },
     "personIdentifikator": {
       "type": "object",
       "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
@@ -647,11 +639,6 @@
       "type": "string",
       "format": "email"
     },
-    "lokalTid": {
-      "type": "string",
-      "description": "Lokal tid uten tidssone. 2023-04-03T12:33:45 ISO 8601 uten tidssone. Det vil ikke være med millisekunder.",
-      "format": "date-time"
-    },
     "norskPostnummer": {
       "type": "string",
       "description": "Norsk postnummer er i dag 4 siffer",
@@ -668,9 +655,23 @@
     "telefonnummer": {
       "type": "string",
       "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
-      "pattern": "^\\+?[0-9, ,\\-,\\(,)]*$",
+      "pattern": "^\\+?[0-9 ()-]*$",
       "maxLength": 30,
       "minLength": 3
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 5
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "GUID": {
       "type": "string",

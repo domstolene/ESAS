@@ -1,78 +1,162 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorgen.no/varetekt/1.0/innsettelsesordre",
-  "description": "Innsettelsesordre fra påtale når kjennelse ikke er kommet ennå",
+  "$id": "https://kriminalomsorgen.no/varetekt/1.0/helseOgRisiko",
+  "description": "Helse og risiko informasjon i forbindelse varetektsfengslinger hos Kriminalomsorgen.",
   "type": "object",
   "properties": {
     "forsendelse": {
-      "$ref": "#/definitions/forsendelse"
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
     },
-    "bestillingVaretektsplassId": {
+    "helseOgRisikoId": {
       "$ref": "#/definitions/GUID",
-      "description": "AnmodningsId for bestilling av varetektsplass."
+      "description": "Referanse til helse og risiko vurdering."
+    },
+    "anmodningsId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Referanse til bestilling av varetektsplass som denne gjelder for (samme person)"
     },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
-      "description": "Hovedsaken i sakskomplekset, litt detaljer, mer i siktelse sammen med bestilling av varetektsplass."
+      "description": "BL saksbehandlersak, trenger ikke være med i siktelsen (men er det som regel). Blir kalt hovedsaken i BL"
     },
-    "personVaretektInfo": {
-      "$ref": "#/definitions/personVaretektInfo"
+    "siktetPerson": {
+      "$ref": "#/definitions/siktetPersonEnkel",
+      "description": "Siktet person"
     },
-    "ordre": {
-      "$ref": "#/definitions/ordre"
-    },
-    "dokumenter": {
-      "type": "array",
-      "description": "PDF versjonen av innsettelsesordren følger med (generert).",
-      "items": {
-        "$ref": "#/definitions/dokument"
-      },
-      "minItems": 1
+    "risikoOgHelseInfo": {
+      "$ref": "#/definitions/risikoOgHelseInfo",
+      "description": "Risiko og helseinformasjon til siktede."
     }
   },
   "required": [
     "forsendelse",
+    "helseOgRisikoId",
+    "anmodningsId",
     "hovedStraffesaksnummer",
-    "bestillingVaretektsplassId",
-    "personVaretektInfo",
-    "ordre",
-    "dokumenter"
+    "siktetPerson",
+    "risikoOgHelseInfo"
   ],
   "additionalProperties": false,
 
   "definitions": {
-    "personVaretektInfo": {
+    "risikoOgHelseInfo": {
       "type": "object",
-      "description": "Informasjon om siktede person.",
+      "description": "Liste over risikovurderinger og tilstand i arresten (helse)",
       "properties": {
-        "person": {
-          "$ref": "#/definitions/siktetPersonEnkel"
+        "skrevetTid": {
+          "$ref": "#/definitions/datoTid",
+          "description": "Tidspunktet når helse og risiko informasjonen ble skrevet inn."
         },
-        "forsvarer": { "$ref": "#/definitions/profesjonellPerson" }
-      },
-      "required": ["person"],
-      "additionalProperties": false
-    },
-    "ordre": {
-      "type": "object",
-      "description": "Ordre fra ... med restriksjoner",
-      "properties": {
-        "anmodningsId": {
-          "$ref": "#/definitions/GUID",
-          "description": "Unik nøkkel til innsettelsesordren."
+        "risikovurdering": {
+          "$ref": "#/definitions/risikovurdering",
+          "description": "Opplysninger av betydning for risikovurdering, skal alltid fylles ut."
         },
-        "merknad": { "type": "string" },
-        "beordretAv": {
-          "$ref": "#/definitions/ansattPerson",
-          "description": "Påtalejurist som har beordret innsettelse (trenger ikke være den som sender meldingen)"
+        "helseInfo": {
+          "$ref": "#/definitions/helseInfo",
+          "description": "helseopplysninger skal alltid fylles ut"
         },
-        "restriksjonIsolasjon": {
-          "$ref": "#/definitions/restriksjonIsolasjon",
-          "description": "Hentes fra bestilling av varetektsplass."
+        "tilstandArresten": {
+          "$ref": "#/definitions/tilstandArresten",
+          "description": "Tilstand til siktede i arresten, skal alltid fylles ut."
         }
       },
-      "required": ["anmodningsId", "beordretAv", "restriksjonIsolasjon"],
+      "required": [
+        "skrevetTid",
+        "risikovurdering",
+        "helseInfo",
+        "tilstandArresten"
+      ],
       "additionalProperties": false
+    },
+    "risikovurdering": {
+      "type": "object",
+      "description": "Vurdering avkrysning og mulighet for beskrivelse i fritekst",
+      "properties": {
+        "risiko": {
+          "type": "array",
+          "description": "Valg av vilke risikotyper, hvis det er ingen risiko så skal INGEN brukes.",
+          "items": {
+            "$ref": "#/definitions/risikoVurderingTyper"
+          },
+          "minItems": 1
+        },
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["risiko"],
+      "additionalProperties": false
+    },
+    "risikoVurderingTyper": {
+      "type": "string",
+      "description": "Risikovurderinger",
+      "enum": [
+        "VOLDSHISTORIKK",
+        "PSYKIATRI",
+        "UOENSKET_HENDELSE",
+        "ROEMNINGSFARE",
+        "FARE_ANSLAG",
+        "ANDRE_FORHOLD",
+        "UKJENT",
+        "INGEN"
+      ]
+    },
+    "tilstandArresten": {
+      "type": "object",
+      "description": "Valg av tilstand i arresten med beskrivelse",
+      "properties": {
+        "tilstand": {
+          "type": "array",
+          "description": "Valg av hvilken tilstand",
+          "items": {
+            "$ref": "#/definitions/tilstandArrestenTyper"
+          },
+          "minItems": 1
+        },
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["tilstand"],
+      "additionalProperties": false
+    },
+    "tilstandArrestenTyper": {
+      "type": "string",
+      "description": "Tilstand i arresten",
+      "enum": [
+        "RUSET",
+        "OPPFOERSEL",
+        "FARE_PSYKISK_FYSISK_HELSE",
+        "SELVMORDSRISIKO",
+        "MEDISINER",
+        "UKJENT",
+        "INGEN"
+      ]
+    },
+    "helseInfo": {
+      "type": "object",
+      "description": "Helsetilstanden til personen i arresten",
+      "properties": {
+        "helse": {
+          "type": "array",
+          "description": "Helseinformasjon, velger ingen hvis det ikke er noe å bemerke.",
+          "items": {
+            "$ref": "#/definitions/helseTyper"
+          },
+          "minItems": 1
+        },
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["helse"],
+      "additionalProperties": false
+    },
+    "helseTyper": {
+      "type": "string",
+      "description": "Helseopplysninger",
+      "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
     },
     "siktetPersonEnkel": {
       "type": "object",
@@ -89,6 +173,10 @@
           "$ref": "#/definitions/personnavn"
         },
         "foedselsdato": { "$ref": "#/definitions/dato" },
+        "personStraffesakId": {
+          "$ref": "#/definitions/unikId",
+          "description": "Referanse til person i straffesak, se readme"
+        },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -121,6 +209,11 @@
       ],
       "additionalProperties": false
     },
+    "kjoenn": {
+      "type": "string",
+      "description": "Samme enum som folkeregisteret",
+      "enum": ["KVINNE", "MANN"]
+    },
     "personIdentifikator": {
       "type": "object",
       "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
@@ -141,11 +234,6 @@
       "type": "string",
       "description": "Person ID typer, alle valideres med Modulus 11",
       "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
-    },
-    "kjoenn": {
-      "type": "string",
-      "description": "Samme enum som folkeregisteret",
-      "enum": ["KVINNE", "MANN"]
     },
     "forsendelse": {
       "type": "object",
@@ -211,7 +299,7 @@
           "$ref": "#/definitions/personnavn"
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
+          "$ref": "#/definitions/kontaktInfoPerson",
           "description": "Minimum epost adresse til den som sender melding."
         }
       },
@@ -234,198 +322,23 @@
       "required": ["fornavn", "etternavn"],
       "additionalProperties": false
     },
-    "personStraffesakId": {
-      "$ref": "#/definitions/unikId",
-      "description": "Referanse til person i straffesak, se readme"
-    },
-    "profesjonellPerson": {
+    "kontaktInfoPerson": {
       "type": "object",
-      "description": "Advokater, tolker, sakkyndige vitner",
-      "properties": {
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "object",
-          "properties": {
-            "fornavn": {
-              "type": "string"
-            },
-            "mellomnavn": {
-              "type": "string"
-            },
-            "etternavn": {
-              "type": "string"
-            }
-          },
-          "required": ["etternavn"],
-          "additionalProperties": false
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo"
-        }
-      },
-      "required": ["navn"],
-      "additionalProperties": false
-    },
-    "kontaktInfo": {
-      "type": "object",
-      "description": "Skal aldri forekomme med ingen verdier på epost eller telefonnummer",
+      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
       "properties": {
         "epost": {
           "$ref": "#/definitions/epost"
         },
         "telefonnummer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/telefonnummer"
-          }
+          "$ref": "#/definitions/telefonnummer"
         }
       },
-      "additionalProperties": false
-    },
-    "restriksjonIsolasjon": {
-      "type": "object",
-      "description": "Hvilke restriksjoner og isolasjonskrav skal gjelde (til kjennelse kommer)",
-      "properties": {
-        "restriksjonskrav": {
-          "type": "array",
-          "description": "Liste over restriksjonskrav. Tom liste når bruker har valgt ingen.",
-          "items": {
-            "$ref": "#/definitions/restriksjon"
-          }
-        },
-        "isolasjonskrav": {
-          "type": "array",
-          "description": "Liste over isolasjonskrav. Tom liste når bruker har valgt ingen.",
-          "items": {
-            "$ref": "#/definitions/isolasjon"
-          }
-        },
-        "uavklart": {
-          "type": "boolean",
-          "description": "Vet ikke ennå hva slags restriksjonskrav som vil bli stilt."
-        },
-        "beskrivelse": {
-          "type": "string"
-        }
-      },
-      "required": ["restriksjonskrav", "isolasjonskrav", "uavklart"],
-      "additionalProperties": false
-    },
-    "restriksjon": {
-      "description": "Basis restriksjon",
-      "type": "object",
-      "properties": {
-        "restriksjonsType": {
-          "$ref": "#/definitions/restriksjonsType"
-        },
-        "lovbudEnkel": {
-          "$ref": "#/definitions/lovbudEnkel"
-        }
-      },
-      "required": ["restriksjonsType"],
-      "additionalProperties": false
-    },
-    "restriksjonsType": {
-      "type": "string",
-      "description": "Liste over de ulike restriksjonene",
-      "enum": [
-        "BREV_OG_BESOEKSFORBUD",
-        "BREV_OG_BESOEKSKONTROLL",
-        "MEDIEFORBUD"
-      ]
-    },
-    "isolasjon": {
-      "type": "object",
-      "description": "Basis isolasjon med til og fra dato",
-      "properties": {
-        "isolasjonsType": {
-          "$ref": "#/definitions/isolasjonsType"
-        },
-        "lovbudEnkel": {
-          "$ref": "#/definitions/lovbudEnkel"
-        }
-      },
-      "required": ["isolasjonsType"],
-      "additionalProperties": false
-    },
-    "isolasjonsType": {
-      "type": "string",
-      "description": "Liste over de ulike isolasjonstyper",
-      "enum": ["FULL_ISOLASJON", "DELVIS_ISOLASJON"]
-    },
-    "lovbudEnkel": {
-      "type": "object",
-      "description": "Enkel lovbudreferanse kun lovbudstreng",
-      "properties": {
-        "lovbudStreng": {
-          "type": "string"
-        }
-      },
-      "required": ["lovbudStreng"],
-      "additionalProperties": false
-    },
-    "dokument": {
-      "type": "object",
-      "description": "Dokument som oversendes på justishub",
-      "properties": {
-        "dokumentRef": {
-          "$ref": "#/definitions/GUID",
-          "description": "Unik id for dokumentet kun lokalt i en melding. Bruker dokumentRef for å referere"
-        },
-        "kategori": {
-          "$ref": "#/definitions/kodeverk"
-        },
-        "overskrift": {
-          "type": "string",
-          "description": "Overskrift/tittel i straffesaken sin dokumentliste, er ikke det samme som tittel skrevet inn i dokumentet"
-        },
-        "skrevetDato": {
-          "type": "string",
-          "format": "date",
-          "description": "Når dokumentet er skrevet ferdig."
-        },
-        "forsendelse": {
-          "$ref": "#/definitions/dokumentForsendelse"
-        }
-      },
-      "required": ["overskrift", "skrevetDato", "forsendelse"],
-      "additionalProperties": false
-    },
-    "dokumentForsendelse": {
-      "type": "object",
-      "description": "Detaljer om lokasjon og type",
-      "properties": {
-        "mimeType": {
-          "type": "string"
-        },
-        "uri": {
-          "type": "string"
-        },
-        "sjekksum": {
-          "type": "string"
-        }
-      },
-      "required": ["mimeType", "uri", "sjekksum"],
-      "additionalProperties": false
-    },
-    "kodeverk": {
-      "type": "object",
-      "properties": {
-        "kode": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "required": ["kode"],
+      "required": ["epost"],
       "additionalProperties": false
     },
     "land": {
       "type": "object",
-      "description": "ISO-3166, med Kosovo=XXK som folkeregisteret",
+      "description": "ISO-3166, Kosovo kommer",
       "properties": {
         "kode": {
           "type": "string",
@@ -447,15 +360,15 @@
       "minLength": 9,
       "maxLength": 9
     },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
     "straffesaksnummer": {
       "type": "string",
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
       "minLength": 3,
       "maxLength": 30
-    },
-    "epost": {
-      "type": "string",
-      "format": "email"
     },
     "telefonnummer": {
       "type": "string",

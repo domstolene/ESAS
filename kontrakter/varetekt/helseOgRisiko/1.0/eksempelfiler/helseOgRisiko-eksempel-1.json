@@ -1,0 +1,59 @@
+{
+  "forsendelse": {
+    "meldingsId": "A02963AE-D0AD-4897-B4B1-6DB6BBAF8B91",
+    "sendtTid": "2024-07-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "etternavn": "Årdal",
+          "fornavn": "Jo"
+        },
+        "kontakt": { "epost": "jaa@politiet.no" }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "911830868",
+      "navn": "Kriminalomsorgsdirektoratet"
+    }
+  },
+  "helseOgRisikoId": "A3AD7DF6-C2F1-4177-8D20-2CD0C970CD96",
+  "hovedStraffesaksnummer": "15434811",
+  "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
+  "siktetPerson": {
+    "personForetakRef": "3C305F04-9557-4CFB-AC5F-3FF91E6E7D5C",
+    "navn": {
+      "fornavn": "Morsom",
+      "etternavn": "KIWI"
+    },
+    "identitetsnummer": {
+      "idType": "FOEDSELSNUMMER",
+      "verdi": "14846399381"
+    },
+    "tilleggsId": [],
+    "kjoenn": "MANN",
+    "foedselsdato": "1963-04-14",
+    "statsborgerskap": [
+      {
+        "kode": "NOR",
+        "navn": "Norge"
+      }
+    ]
+  },
+  "risikoOgHelseInfo": {
+    "skrevetTid": "2024-07-03T10:19:55+02:00",
+    "risikovurdering": {
+      "risiko": ["ROEMNINGSFARE"],
+      "beskrivelse": "Klatret over muren i dag tidlig"
+    },
+    "helseInfo": {
+      "helse": ["INGEN"]
+    },
+    "tilstandArresten": {
+      "tilstand": ["INGEN"]
+    }
+  }
+}
