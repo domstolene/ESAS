@@ -117,7 +117,7 @@
         {
           "properties": {
             "kravId": {
-              "$ref": "#/definitions/unikId"
+              "$ref": "#/definitions/GUID"
             }
           },
           "additionalProperties": false,
@@ -126,7 +126,7 @@
         {
           "properties": {
             "anmodningsId": {
-              "$ref": "#/definitions/unikId"
+              "$ref": "#/definitions/GUID"
             }
           },
           "additionalProperties": false,
