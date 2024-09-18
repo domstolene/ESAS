@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/dom/1.0/paastandStraff",
+  "$id": "https://domstol.no/dom/1.0/paastandStraff",
   "description": "Schemadefinisjon av Påstand om straff",
   "type": "object",
   "properties": {
@@ -78,7 +78,7 @@
       "type": "object",
       "properties": {
         "kravId": {
-          "type": "string"
+          "$ref": "#/definitions/GUID"
         },
         "paastandStraffPersonForetak": {
           "type": "array",

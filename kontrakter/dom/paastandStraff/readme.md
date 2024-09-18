@@ -3,7 +3,8 @@ Versjon 1.0 er f√∏rste versjon som vi skal i produksjon med som en del av tilst√
 
 ## Headere forsendelse justisHub
 SchemaName=PAASTAND_STRAFF  
-SchemaVersion=1.0
+SchemaVersion=1.0  
+SenderOrganization=POLITI
 
 ## Status
 1. versjon laget.
