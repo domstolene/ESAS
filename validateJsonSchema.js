@@ -13,6 +13,7 @@ const jsonSchemaFolders = [
   "kontrakter/varetekt/helseOgRisiko",
   "kontrakter/varetekt/innsettelsesordre",
   "kontrakter/varetekt/kjennelseVaretekt",
+  "kontrakter/varetekt/svarTilbudVaretektsplass",
   "kontrakter/felles/kvittering",
   "kontrakter/felles/kodeverk",
   "kontrakter/felles/lukkSak",
