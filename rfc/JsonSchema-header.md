@@ -18,7 +18,7 @@ Flytter dokumentasjon til Git på alle JSON Schema retningslinjer (samler alle R
 Vi bruker $id til å unikt identifisere schema og for å kunne finne det igjen på GitHub.<br/>
 `"$id": "https://politiet.no/dom/1.0/begjaeringDom"`
 
-* politiet.no - Det er politiet som mottar meldinger med gitt schema, og dermed har eierskap til hvilken informasjon den må inneholde for å behandle forespørselen meldingen representerer.
+* politiet.no - Det er politiet som mottar meldinger med gitt schema, og dermed har eierskap til hvilken informasjon den må inneholde for å behandle forespørselen meldingen representerer. For felles-meldinger som mottas av mer enn en virksomhet, så benyttes domenet *justishub.no*.
 * Json Schema ligger på folder kontrakter/dom/begjaeringDom/1.0
 
 ### Changelog
