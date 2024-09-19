@@ -471,8 +471,12 @@
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
           "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
+        },
+        "personStraffesakId": {
+          "$ref": "#/definitions/GUID"
         }
-      }
+      },
+      "required": ["identitetsnummer"]
     },
     "foretak": {
       "$ref": "#/definitions/internId",
