@@ -30,7 +30,12 @@
     "paastandStraffPersonForetak": [
       {
         "personForetak": {
-          "personRef": "5d516a2c-3283-4636-961a-456e1f26ceb0"
+          "person": {
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "22918197870"
+            }
+          }
         },
         "reaksjoner": [
           {
