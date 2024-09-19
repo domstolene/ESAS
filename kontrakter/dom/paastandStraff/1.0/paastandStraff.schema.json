@@ -476,7 +476,8 @@
           "$ref": "#/definitions/GUID"
         }
       },
-      "required": ["identitetsnummer"]
+      "required": ["identitetsnummer"],
+      "additionalProperties": false
     },
     "foretak": {
       "$ref": "#/definitions/internId",
