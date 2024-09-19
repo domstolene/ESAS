@@ -5,6 +5,9 @@
 | 1.0     | Arbeidsverson |           |           |
 
 ## Versjon 1.0 arbeidsversjon ennå
+### 18.09.2024 en siktet person
+Endrer skjema til å inneholde bare en siktet person da det er det vi har i tilståelsessaker.
+Fjerner da definisjonen på siktetForetak.
 ### 21.08.2024 Justeringer
 Rydde kontaktinfo kontaktinfoperson - nå likt som fullbyrdelsesordren/bestilling varetektsplass (forenkling)
 epost, uuid osv. - ok
