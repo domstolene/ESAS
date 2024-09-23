@@ -56,15 +56,9 @@
           "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
-        "siktedePersoner": {
-          "type": "array",
-          "description": "Alle siktede personer som skal til retten (tiltalt i hovedforhandling), det vil alltid være bare en person i tilståelsessaker, kobling til basissaker og straffesaker i siktelseTiltale",
-          "items": { "$ref": "#/definitions/siktetPersonInfo" }
-        },
-        "siktedeForetak": {
-          "type": "array",
-          "description": "Alle siktede foretak som skal til retten, kobling til basissaker og straffesaker i siktelseTiltale",
-          "items": { "$ref": "#/definitions/siktetForetak" }
+        "siktetPersonInfo": {
+          "$ref": "#/definitions/siktetPersonInfo",
+          "description": "Det er kun 1 person som blir begjært i en tilståelsessak, må utvides til meddomssak."
         },
         "fornaermedePersoner": {
           "type": "array",
@@ -84,8 +78,7 @@
       },
       "required": [
         "kravId",
-        "siktedePersoner",
-        "siktedeForetak",
+        "siktetPersonInfo",
         "fornaermedePersoner",
         "fornaermedeForetak",
         "paataleansvarlig",
@@ -248,19 +241,6 @@
         }
       },
       "required": ["fornavn", "etternavn"],
-      "additionalProperties": false
-    },
-    "siktetForetak": {
-      "type": "object",
-      "properties": {
-        "foretak": {
-          "$ref": "#/definitions/foretak"
-        },
-        "forsvarerinformasjon": {
-          "$ref": "#/definitions/forsvarerinformasjon"
-        }
-      },
-      "required": ["foretak"],
       "additionalProperties": false
     },
     "foretak": {

@@ -12,7 +12,7 @@ senderOrganization=POLITIET
 Mulig Kriminalomsorgen etter hvert vil bruke en variant av denne, men til pilot er det politiet.
 
 ## Status
-1. versjon laget og slettet. Prøver på nytt.
+Første versjonen dekker nå kun tilståelsessaker med en siktet person (ikke foretak). Når vi begynner å jobbe med meddomssaker så utvider vi meldingen igjen.
 
 ## Beskrivelse
 Begjæaring om dom skal brukes i alle prosesser der påtale får en dom tilbake fra tingretten.
