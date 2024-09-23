@@ -63,17 +63,17 @@
         "fornaermedePersoner": {
           "type": "array",
           "description": "Alle fornærmede personer, kobling til straffesaken i siktelseTiltale",
-          "items": { "$ref": "#/definitions/relatertPerson" }
+          "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
         },
         "fornaermedeForetak": {
           "type": "array",
           "description": "Alle fornærmede foretak, kobling til straffesaken i siktelseTiltale",
-          "items": { "$ref": "#/definitions/foretak" }
+          "items": { "$ref": "#/definitions/foretakStraffesak" }
         },
         "vitner": {
           "type": "array",
           "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
-          "items": { "$ref": "#/definitions/vitneStraffesak" }
+          "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
         }
       },
       "required": [
@@ -431,14 +431,26 @@
       "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
-    "vitneStraffesak": {
+    "foretakStraffesak": {
       "type": "object",
-      "description": "Vitne informasjon med kobling til straffesakene de er vitner i",
+      "description": "Foretak med kobling til straffesakene de er med i",
+      "properties": {
+        "person": { "$ref": "#/definitions/foretak" },
+        "straffesaker": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
+        }
+      },
+      "required": ["person", "straffesaker"],
+      "additionalProperties": false
+    },
+    "relatertPersonStraffesak": {
+      "type": "object",
+      "description": "Fornærmede, vitne informasjon med kobling til straffesakene de er med i",
       "properties": {
         "person": { "$ref": "#/definitions/relatertPerson" },
         "straffesaker": {
           "type": "array",
-          "description": "Liste over straffesaker vitne er vitne i",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
         }
       },
