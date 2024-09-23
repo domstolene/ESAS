@@ -10,12 +10,13 @@ senderOrganization=POLITIET
 
 
 ## Status
-3. runde synkroniser med arbeid gjort på fullbyrdelse osv. for typer
+Klart til tilståelsessaker og bestilling av varetektsplass.
 
 ## beskrivelse
 En siktelse/tiltale en liste over basissaker som skal avgjøres.
 En basissak er et straffbart forhold (tid og sted), et lovbud og en siktet/tiltalt person.
 Ref. Harmoniseringsrapporten.
+Det er en ren siktelse der fornærmede ikke er en del av de strukturerte data.
 
 ## Utestående punkter
 ### Fornærmede
