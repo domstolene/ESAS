@@ -480,7 +480,7 @@
       "additionalProperties": false
     },
     "foretak": {
-      "$ref": "#/definitions/internId",
+      "$ref": "#/definitions/GUID",
       "description": "Referanse inn i siktedeTiltaltePersonerForetak"
     },
     "ansattPerson": {
