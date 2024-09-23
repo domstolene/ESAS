@@ -95,7 +95,7 @@
       "type": "object",
       "properties": {
         "personForetak": {
-          "$ref": "#/definitions/personForetakRef",
+          "$ref": "#/definitions/personForetak",
           "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i siktelsen"
         },
         "rusmiddelundersoekelse": {
@@ -432,124 +432,56 @@
       "required": ["paragraf", "tekst"],
       "additionalProperties": false
     },
-    "personForetakRef": {
+    "personForetak": {
       "type": "object",
       "description": "Refererer til en person i personliste eller et foretak i foretaklisten",
       "properties": {
-        "personRef": {
-          "$ref": "#/definitions/personRef"
+        "person": {
+          "$ref": "#/definitions/personEnkel"
         },
-        "foretakRef": {
-          "$ref": "#/definitions/foretakRef"
+        "foretak": {
+          "$ref": "#/definitions/foretak"
         }
       },
       "oneOf": [
         {
           "properties": {
-            "personRef": {
-              "$ref": "#/definitions/personRef"
+            "person": {
+              "$ref": "#/definitions/personEnkel"
             }
           },
           "additionalProperties": false,
-          "required": ["personRef"]
+          "required": ["person"]
         },
         {
           "properties": {
-            "foretakRef": {
-              "$ref": "#/definitions/foretakRef"
+            "foretak": {
+              "$ref": "#/definitions/foretak"
             }
           },
           "additionalProperties": false,
-          "required": ["foretakRef"]
+          "required": ["foretak"]
         }
       ]
     },
-    "personRef": {
-      "$ref": "#/definitions/internId",
-      "description": "Referanse inn i siktedeTiltaltePersonerForetak"
-    },
-    "foretakRef": {
-      "$ref": "#/definitions/internId",
-      "description": "Referanse inn i siktedeTiltaltePersonerForetak"
-    },
-    "person": {
-      "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
+    "personEnkel": {
+      "type": "object",
+      "description": "ID som refererer til begjæringen",
       "properties": {
-        "internId": {
-          "$ref": "#/definitions/internId",
-          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
-        },
-        "etternavn": {
-          "type": "string"
-        },
-        "fornavn": {
-          "type": "string"
-        },
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
-          "description": "Fødselsnummer, D-nummer eller SSP nummer. Alle personer som det er foretatt tvangsmidler mot skal ha et D-nummer eller fødselsnummer. Dersom politiet ikke har et slikt nummer vil de generere ett 'SSP nummer'"
+          "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
         },
-        "tilleggsId": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/personIdentifikator"
-          },
-          "description": "Kan f.eks. være historiske SSP nummer. "
-        },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
-        "kjoenn": {
-          "$ref": "#/definitions/kjoenn"
-        },
-        "statsborgerskap": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/land"
-          }
+        "personStraffesakId": {
+          "$ref": "#/definitions/GUID"
         }
       },
-      "required": ["internId", "etternavn", "identitetsnummer", "tilleggsId"],
-      "type": "object",
-      "additionalProperties": false
-    },
-    "personIdentifikator": {
-      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
-      "type": "object",
-      "properties": {
-        "idType": {
-          "$ref": "#/definitions/personIdType"
-        },
-        "verdi": {
-          "type": "string",
-          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
-          "pattern": "^[0-7][0-9][012389][0-9]+$",
-          "minLength": 11,
-          "maxLength": 11
-        }
-      },
-      "required": ["idType", "verdi"],
+      "required": ["identitetsnummer"],
       "additionalProperties": false
     },
     "foretak": {
-      "type": "object",
-      "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. siktet",
-      "properties": {
-        "internId": {
-          "$ref": "#/definitions/internId",
-          "description": "Unik id lokalt i meldingen, samme internId er samme foretak."
-        },
-        "organisasjonsnummer": {
-          "$ref": "#/definitions/organisasjonsnummer"
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "$comment": "Bør vi ha med 'adresse' her? (politiet har det i begjæring). Kan også vurdere å slå denne sammen med organisasjon",
-      "required": ["internId", "navn"],
-      "additionalProperties": false
+      "$ref": "#/definitions/GUID",
+      "description": "Referanse inn i siktedeTiltaltePersonerForetak"
     },
     "ansattPerson": {
       "type": "object",
@@ -616,32 +548,26 @@
       "maxLength": 40,
       "minLength": 1
     },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
     "personIdType": {
       "type": "string",
       "description": "Person ID typer, alle valideres med Modulus 11",
       "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
-    },
-    "kjoenn": {
-      "type": "string",
-      "description": "Samme enum som folkeregisteret",
-      "enum": ["KVINNE", "MANN"]
-    },
-    "land": {
-      "type": "object",
-      "description": "ISO-3166, Kosovo kommer",
-      "properties": {
-        "kode": {
-          "type": "string",
-          "pattern": "^[A-Z]+$",
-          "minLength": 3,
-          "maxLength": 3
-        },
-        "navn": {
-          "type": "string"
-        }
-      },
-      "required": ["kode"],
-      "additionalProperties": false
     },
     "epost": {
       "type": "string",
