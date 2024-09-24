@@ -5,6 +5,8 @@
 | 1.0     | Arbeidsverson |           |           |
 
 ## Versjon 1.0 arbeidsversjon ennå
+### 23.09.2024 Fornærmede med kobling til straffesak
+SiktelseTiltale er kun med siktede så fornærmede i begjæringDom må inneholde kobling til hvilken straffesak de er fornærmet i (som vitner).
 ### 18.09.2024 en siktet person
 Endrer skjema til å inneholde bare en siktet person da det er det vi har i tilståelsessaker.
 Fjerner da definisjonen på siktetForetak.
