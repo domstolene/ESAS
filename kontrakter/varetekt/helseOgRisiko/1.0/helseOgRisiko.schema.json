@@ -156,7 +156,7 @@
     "helseTyper": {
       "type": "string",
       "description": "Helseopplysninger",
-      "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
+      "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "BEHOV_FOR_TILRETTELEGGING", "BEHOV_FOR_SAARSTELL", "UKJENT", "INGEN"]
     },
     "siktetPersonEnkel": {
       "type": "object",
