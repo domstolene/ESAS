@@ -120,7 +120,7 @@
           "description": "Person som trykker på send til påtale."
         }
       },
-      "required": ["organisasjon"],
+      "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
     "kontaktInfo": {
