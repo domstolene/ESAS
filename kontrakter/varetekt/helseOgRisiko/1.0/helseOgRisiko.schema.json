@@ -156,7 +156,16 @@
     "helseTyper": {
       "type": "string",
       "description": "Helseopplysninger",
-      "enum": ["OVERVEKT", "HOEYDE", "HANDIKAP", "MEDISINER", "UKJENT", "INGEN"]
+      "enum": [
+        "OVERVEKT",
+        "HOEYDE",
+        "HANDIKAP",
+        "MEDISINER",
+        "BEHOV_FOR_TILRETTELEGGING",
+        "BEHOV_FOR_SAARSTELL",
+        "UKJENT",
+        "INGEN"
+      ]
     },
     "siktetPersonEnkel": {
       "type": "object",
@@ -173,10 +182,6 @@
           "$ref": "#/definitions/personnavn"
         },
         "foedselsdato": { "$ref": "#/definitions/dato" },
-        "personStraffesakId": {
-          "$ref": "#/definitions/unikId",
-          "description": "Referanse til person i straffesak, se readme"
-        },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -234,6 +239,10 @@
       "type": "string",
       "description": "Person ID typer, alle valideres med Modulus 11",
       "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
+    },
+    "personStraffesakId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Referanse til person i straffesak, se readme"
     },
     "forsendelse": {
       "type": "object",

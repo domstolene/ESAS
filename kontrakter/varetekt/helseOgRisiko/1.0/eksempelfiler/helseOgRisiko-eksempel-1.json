@@ -50,7 +50,8 @@
       "beskrivelse": "Klatret over muren i dag tidlig"
     },
     "helseInfo": {
-      "helse": ["INGEN"]
+      "helse": ["HANDIKAP", "BEHOV_FOR_TILRETTELEGGING"],
+      "beskrivelse": "I rullestol"
     },
     "tilstandArresten": {
       "tilstand": ["INGEN"]
