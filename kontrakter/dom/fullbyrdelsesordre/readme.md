@@ -6,6 +6,8 @@ Versjon 1.0 er første versjon som vi skal i produksjon med sammen med tilståel
 
 SchemaName=FULLBYRDELSESORDRE  
 SchemaVersion=1.0  
+senderOrganization=POLITIET  
+
 [RFC](../../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
@@ -24,8 +26,11 @@ Foregrepet soning er det veldig få av i løpet av året så ikke prioriterti f�
 
 ## Status
 
-Skriver om for å synkronisere med alle andre meldinger som begjæring dom, siktelse osv.
-lovbudKombinertId skal bort, unødvendig (siktelseTiltale vil bli oppdatert)
+Første versjon godkjent.
+
+## Videre arbeid ønsker
+KDI ønsker meddømte med i meldingen.
+Ta med i neste versjon, ikke aktuelt i tilståelsessaker.
 
 ## Avklaringer
 
