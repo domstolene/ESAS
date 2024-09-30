@@ -32,13 +32,9 @@
       "description": "avbestille fått plass, feil bestilling eller ikke lenger behov. Kan utvides senere til andre behov.",
       "properties": {
         "svar": { "$ref": "#/definitions/svarType" },
-        "utsatt": {
-          "type": "boolean",
-          "description": "Avbestilling, men regner med at det blir bestilt snart (person på sykehus...)"
-        },
         "beskrivelse": { "type": "string" }
       },
-      "required": ["svar", "utsatt"],
+      "required": ["svar"],
       "additionalProperties": false
     },
     "svarType": {
