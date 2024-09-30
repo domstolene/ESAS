@@ -6,6 +6,11 @@
 
 Denne meldingen sammen med [endreRestriksjoner](../endreRestriksjoner/readme.md) erstatter oppdaterVaretekt (slettet)
 ## Versjon 1.1
+
+### bestillingVaretektsplassId
+
+Referanse til siste sendte bestilling av varetektsplass på siktede i samme straffesak som kjennelsen
+
 ### Fødselsdato på vitner er optional
 
 Fødselsdato for vitner er gjort optional. Dette er noe vi mangler for enkelte, ofte når vitner er politi.
