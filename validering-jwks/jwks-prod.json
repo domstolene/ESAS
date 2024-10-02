@@ -23,6 +23,14 @@
       "alg": "RS256",
       "kid": "kdi",
       "use": "sig"
+    },
+    {
+      "kty": "RSA",
+      "n": "tKqPTZjjFZi0dRZ3aWqCcOdshtjKl_i-0JA4sxngYz9_BfssUfItSSvo2O7aeIKpSfFKrN0XKyIN2PAn68We1aGGIYUUVyGpbPKJs4o6rpyWNdUg5XwvcHJazqRZRIYBgqTgAFHymIT0fHoJGBznhRIqSU9rL5BPBYpDpPv2shcQTmhN7VSIM_dOrU45iYq5juuoR9Kmo_EioC3336PVWVgEPYYPR3cr0lHSENG4LhsD1VyX95tOrrGkxEmzlJPr9CebPbXIXSg8sxZRoCOvbVjpnd8HxhLJmiK31gwt36usN0ElSi42ykP78XGxaLxnLwgZeE83CRX15_Iex62s7w",
+      "e": "AQAB",
+      "alg": "RS256",
+      "kid": "vegvesenet-truls-1",
+      "use": "sig"
     }
   ]
 }
