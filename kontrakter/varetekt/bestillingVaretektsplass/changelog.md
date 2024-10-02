@@ -1,6 +1,8 @@
 # bestilling varetektsplass endringer
 Omorganisert slik at det er en katalog for hver melding og eksempelfiler på samme sted (forrige PR).
 
+### 02.10.2024 Legger til beskrivelse felt på meldingsnivå
+Kan brukes til informasjon om hvor personen sitter inne.
 ### 15.07.2024 Split i bestilling, helse og siktelse
 Vi ble enige om å skille ut helse/risiko og siktelseTiltale for å redusere kompleksiteten i hver enkelt melding og for å senere kunne oppdatere helse og risiko uavhengig.
 [siktelseTiltale](../../siktelseTiltale/readme.md) er splittet i en egen melding i arbeidet med [begjæring om dom](../../dom/begjaeringDom/readme.md)
