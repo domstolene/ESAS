@@ -32,6 +32,10 @@
     "medsiktedeInnsatteISak": {
       "$ref": "#/definitions/valgBeskrivelse",
       "description": "Personer som er medisktet eller innsatt i sak og om samvær godkjennes."
+    },
+    "beskrivelse": {
+      "type": "string",
+      "description": "F.eks. informasjon om hvor siktede sitter inne nå."
     }
   },
   "required": [
