@@ -95,7 +95,7 @@
         "avgjoerelsePrSiktetTiltalt": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/personForetakAvjoerelse"
+            "$ref": "#/definitions/personForetakAvgjoerelse"
           },
           "minItems": 1
         }
@@ -109,7 +109,7 @@
       "type": "object",
       "additionalProperties": false
     },
-    "personForetakAvjoerelse": {
+    "personForetakAvgjoerelse": {
       "properties": {
         "personForetak": {
           "$ref": "#/definitions/personForetak"

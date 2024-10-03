@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorgen.no/varetekt/1.0/tilbudVaretektsplass",
+  "$id": "https://politiet.no/varetekt/1.0/tilbudVaretektsplass",
   "description": "Tilbud om varetektsplass fra Kriminalomsorgen til påtale.",
   "type": "object",
   "properties": {
@@ -120,7 +120,7 @@
           "description": "Person som trykker på send til påtale."
         }
       },
-      "required": ["organisasjon"],
+      "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
     "kontaktInfo": {
@@ -177,16 +177,6 @@
         }
       },
       "required": ["organisasjonsnummer", "navn"],
-      "additionalProperties": false
-    },
-    "personnavn": {
-      "type": "object",
-      "properties": {
-        "fornavn": { "type": "string" },
-        "mellomnavn": { "type": "string" },
-        "etternavn": { "type": "string" }
-      },
-      "required": ["etternavn"],
       "additionalProperties": false
     },
     "organisasjonsnummer": {

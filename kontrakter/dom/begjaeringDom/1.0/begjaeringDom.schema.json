@@ -56,36 +56,29 @@
           "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
-        "siktedePersoner": {
-          "type": "array",
-          "description": "Alle siktede personer som skal til retten (tiltalt i hovedforhandling), det vil alltid være bare en person i tilståelsessaker, kobling til basissaker og straffesaker i siktelseTiltale",
-          "items": { "$ref": "#/definitions/siktetPersonInfo" }
-        },
-        "siktedeForetak": {
-          "type": "array",
-          "description": "Alle siktede foretak som skal til retten, kobling til basissaker og straffesaker i siktelseTiltale",
-          "items": { "$ref": "#/definitions/siktetForetak" }
+        "siktetPersonInfo": {
+          "$ref": "#/definitions/siktetPersonInfo",
+          "description": "Det er kun 1 person som blir begjært i en tilståelsessak, må utvides til meddomssak."
         },
         "fornaermedePersoner": {
           "type": "array",
           "description": "Alle fornærmede personer, kobling til straffesaken i siktelseTiltale",
-          "items": { "$ref": "#/definitions/relatertPerson" }
+          "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
         },
         "fornaermedeForetak": {
           "type": "array",
           "description": "Alle fornærmede foretak, kobling til straffesaken i siktelseTiltale",
-          "items": { "$ref": "#/definitions/foretak" }
+          "items": { "$ref": "#/definitions/foretakStraffesak" }
         },
         "vitner": {
           "type": "array",
           "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
-          "items": { "$ref": "#/definitions/vitneStraffesak" }
+          "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
         }
       },
       "required": [
         "kravId",
-        "siktedePersoner",
-        "siktedeForetak",
+        "siktetPersonInfo",
         "fornaermedePersoner",
         "fornaermedeForetak",
         "paataleansvarlig",
@@ -248,19 +241,6 @@
         }
       },
       "required": ["fornavn", "etternavn"],
-      "additionalProperties": false
-    },
-    "siktetForetak": {
-      "type": "object",
-      "properties": {
-        "foretak": {
-          "$ref": "#/definitions/foretak"
-        },
-        "forsvarerinformasjon": {
-          "$ref": "#/definitions/forsvarerinformasjon"
-        }
-      },
-      "required": ["foretak"],
       "additionalProperties": false
     },
     "foretak": {
@@ -451,14 +431,26 @@
       "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
-    "vitneStraffesak": {
+    "foretakStraffesak": {
       "type": "object",
-      "description": "Vitne informasjon med kobling til straffesakene de er vitner i",
+      "description": "Foretak med kobling til straffesakene de er med i",
+      "properties": {
+        "person": { "$ref": "#/definitions/foretak" },
+        "straffesaker": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
+        }
+      },
+      "required": ["person", "straffesaker"],
+      "additionalProperties": false
+    },
+    "relatertPersonStraffesak": {
+      "type": "object",
+      "description": "Fornærmede, vitne informasjon med kobling til straffesakene de er med i",
       "properties": {
         "person": { "$ref": "#/definitions/relatertPerson" },
         "straffesaker": {
           "type": "array",
-          "description": "Liste over straffesaker vitne er vitne i",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
         }
       },
