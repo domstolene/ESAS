@@ -31,6 +31,14 @@
       "alg": "RS256",
       "kid": "vegvesenet-truls-1",
       "use": "sig"
+    },
+    {
+      "kty": "RSA",
+      "n": "ynP904wPbUJxdOJQMmCYoKHAmgm12L9LmNrb2gz5L0SDMRHZElRr6cHVCq-UdZx8DtjgQ1Yf9cMSC6St4x8NPZXwTetx9a__kY2-9bDLARCpEGg-GmzCA78phoKhE1EOHZlX9N5c-5D2hIeaqvrT1xxyosLBjk309w31vGBeQomoMqBwwoy8jLs7khQt2Jqb0yqG0QotEbpYworYqUBmaIcrZmu-E-D2RA-gWGhpCamDonRJ-YIwuyVb0mzc7SFK99AMw4wqCMHBCvWNRPtvxvxJ0H1f8aiifkU-Pgoh8NeQrYORpIW5nsu0NEO_EThJnDBrNbY_ocQl8_13setnnQ",
+      "e": "AQAB",
+      "alg": "RS256",
+      "kid": "konfliktraad-1",
+      "use": "sig"
     }
   ]
 }
