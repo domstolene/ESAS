@@ -302,15 +302,11 @@
             "$ref": "#/definitions/isolasjon"
           }
         },
-        "uavklart": {
-          "type": "boolean",
-          "description": "Vet ikke ennå hva slags restriksjonskrav som vil bli stilt."
-        },
         "beskrivelse": {
           "type": "string"
         }
       },
-      "required": ["restriksjonskrav", "isolasjonskrav", "uavklart"],
+      "required": ["restriksjonskrav", "isolasjonskrav"],
       "additionalProperties": false
     },
     "restriksjon": {
