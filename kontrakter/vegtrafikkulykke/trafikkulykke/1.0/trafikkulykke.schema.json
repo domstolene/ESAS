@@ -754,7 +754,7 @@
           "type": "string"
         }
       },
-      "required": ["id"],
+      "required": ["id", "beskyttelsesutstyr"],
       "additionalProperties": false
     },
     "stedfesting": {
