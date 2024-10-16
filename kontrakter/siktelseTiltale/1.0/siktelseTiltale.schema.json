@@ -263,7 +263,7 @@
           "type": "string"
         }
       },
-      "required": ["lovbudStreng", "gjengivelse"],
+      "required": ["lovbudId", "lovbudStreng", "gjengivelse"],
       "additionalProperties": false
     },
     "adresseGradering": {
@@ -482,7 +482,7 @@
         },
         "inkluderteForhold": {
           "type": "array",
-          "description": "Samler flere forhold i et straffbartForhold og bruker et annet lovbud",
+          "description": "Samler flere forhold i et straffbartForhold og bruker et annet lovbud, de inkluderte sakene er ikke nødvendigvis subsumert",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
         }
       },
@@ -490,7 +490,8 @@
         "straffesaksnummer",
         "basissaker",
         "inkluderteForhold",
-        "bokstav"
+        "bokstav",
+        "prinsipalGrunnlag"
       ],
       "additionalProperties": false
     },
