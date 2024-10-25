@@ -83,6 +83,7 @@
         "reguleringEnhetVegkryss": "FORKJOERSVEI",
         "personer": [
           {
+            "id": "person_1",
             "identitetsnummer": {
               "idType": "FOEDSELSNUMMER",
               "verdi": "22918197870"
@@ -99,6 +100,7 @@
             "poststed": "Røyse"
           },
           {
+            "id": "person_2",
             "kjoenn": "KVINNE",
             "foedselsdato": "2022-02-12",
             "plasseringKjoeretoey": "BAK",
@@ -118,6 +120,7 @@
         "reguleringEnhetVegkryss": "ANNEN_REGULERING_I_KRYSS_INKL_MIDLERTIDIG",
         "personer": [
           {
+            "id": "person_3",
             "identitetsnummer": {
               "idType": "FOEDSELSNUMMER",
               "verdi": "22918197881"

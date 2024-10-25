@@ -537,6 +537,10 @@
       "type": "object",
       "description": "Informasjon om person involvert i ulykken",
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
+        },
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
           "description": "Fødselsnummer eller D-nummer. Vil alltid komme med om politiet har informasjon. Vil mangle ved feks utenlandsk statsborger"
