@@ -537,9 +537,9 @@
       "type": "object",
       "description": "Informasjon om person involvert i ulykken",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vil alltid komme med om politiet har informasjon. Vil mangle ved feks utenlandsk statsborger"
         },
         "kjoenn": {
           "type": "string",
@@ -574,7 +574,7 @@
           "type": "string"
         }
       },
-      "required": ["id", "beskyttelsesutstyr"],
+      "required": ["beskyttelsesutstyr"],
       "additionalProperties": false
     },
     "stedfesting": {
@@ -967,6 +967,27 @@
         "ZW"
       ],
       "description": "Hvilket land bil er registrert i. Verdier er FN sin liste over landkoder på biler https://www.unece.org/fileadmin/DAM/trans/conventn/Distsigns.pdf"
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor) eller DNummer (inkl Tenor) som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "description": "FNR eller DNR",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER"]
     }
   }
 }
