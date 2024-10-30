@@ -601,7 +601,6 @@
         "vegkategori": { "$ref": "#/definitions/vegkategori" },
         "vegnummer": { "type": "integer" }
       },
-      "required": ["gate", "kommunenummer", "vegkategori", "vegnummer"],
       "additionalProperties": false
     },
     "vegkategori": {
