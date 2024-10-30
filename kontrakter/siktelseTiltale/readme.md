@@ -35,6 +35,16 @@ Se [basissak](basissak.md). Domstolene skal avgjøre alle basissaker med skyld i
 _Sjekk opp fordi i Harmoniseringsrapporten står det straffeskyld / ikke straffeskyld_
 _Hva skjer med saker der personen ikke har skyldevne Straffeloven § 20, blir det fremedeles dømt skyldig / ikke skyldig ?_
 
+### siktelsesType
+| Type            | beskrivelse                                                                                                         |
+|-----------------|---------------------------------------------------------------------------------------------------------------------|
+| SIKTELSE        | Standard siktelse, brukes på tvangsmidler og tilståelsessaker                                                       |
+| TILTALE         | Standard tiltale, kan bli brukt i tilståelsessaker for å spare tid hvis det er tatt ut en tiltale                   |
+| FORELEGG        | Ikke vedtatt forelegg, skal ikke være tilståelsessaker                                                              |                                           |
+| TILLEGSSIKTELSE | Nye siktelsespunkt, ikke støtte for denne i første omgang                                                           |
+|TILLEGSTILTALE| Nye tiltalepunkt, ikke støtte for denne i første omgang.                                                            |
+|PAAGRIPELSE_BESLUTNING| Beslutning om pågripelse med siktelsespunkter. Brukes i noen tilfeller istedet for siktelse i varetektsfengslinger. |
+
 ### Kombinert lovbud
 Når en forbrytelse har foregått over tid og vi har hatt en lovendring i den perioden så er det mulig å definere flere lovbud som gjelder for den straffbare handlingen.
 <!-- Eksempel på en slik post --> 
