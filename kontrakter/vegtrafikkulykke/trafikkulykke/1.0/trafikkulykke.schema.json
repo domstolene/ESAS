@@ -165,7 +165,7 @@
         "involverteEnheter": {
           "type": "array",
           "items": { "$ref": "#/definitions/involvertEnhet" },
-          "description": "Fartøy innvolvert i ulykken."
+          "description": "Enheter involvert i ulykken."
         }
       },
       "required": [
