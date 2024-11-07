@@ -578,6 +578,7 @@
         }
       },
       "required": [
+        "id",
         "skadegrad",
         "skadeforloep",
         "beskyttelsesutstyr"
