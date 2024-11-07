@@ -175,7 +175,6 @@
         "politidistrikt",
         "stedfesting",
         "ulykkeskode",
-        "forhold",
         "involverteEnheter"
       ],
       "additionalProperties": false
@@ -578,7 +577,11 @@
           "type": "string"
         }
       },
-      "required": ["beskyttelsesutstyr"],
+      "required": [
+        "skadegrad",
+        "skadeforloep",
+        "beskyttelsesutstyr"
+      ],
       "additionalProperties": false
     },
     "stedfesting": {
