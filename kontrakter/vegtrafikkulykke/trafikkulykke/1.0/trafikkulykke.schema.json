@@ -538,6 +538,7 @@
       "properties": {
         "id": {
           "type": "string",
+          "format": "uuid",
           "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
         },
         "identitetsnummer": {
