@@ -578,12 +578,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "id",
-        "skadegrad",
-        "skadeforloep",
-        "beskyttelsesutstyr"
-      ],
+      "required": ["id", "skadegrad", "skadeforloep", "beskyttelsesutstyr"],
       "additionalProperties": false
     },
     "stedfesting": {
