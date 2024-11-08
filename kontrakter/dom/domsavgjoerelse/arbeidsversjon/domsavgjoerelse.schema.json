@@ -392,7 +392,7 @@
       "properties": {
         "forkynt": {
           "type": "boolean",
-          "description": "Settes til true dersom avgjørelsen er forkynnt til siktede i rettsmøtet"s
+          "description": "Settes til true dersom avgjørelsen er forkynnt til siktede i rettsmøtet"
         },
         "kommentar": {
           "type": "string",
