@@ -1,0 +1,54 @@
+{
+  "forsendelse": {
+    "meldingsId": "A5E2E221-2B5E-48A9-A9D3-FDAA5F5CE8",
+    "sendtTid": "2024-06-10T16:29:45+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "fornavn": "Test",
+          "etternavn": "Testesen"
+        },
+        "kontaktinfo": {
+          "epost": "test.testesen@politiet.no"
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "971032081",
+      "navn": "Statens vegvesen"
+    }
+  },
+  "trafikkulykke": {
+    "anmeldelsenummer": "0322B3E2-B12B-40B6-8940-799C48706123",
+    "ulykkestidspunkt": "2023-11-09T16:56:00+02:00",
+    "ulykkeskode": "ULYKKE_MED_DYR_INNBLANDET",
+    "politidistrikt": "TROENDELAG_POLITIDISTRIKT",
+    "stedfesting": {
+      "koordinater": {
+        "koordinatOest": 123,
+        "koordinatNord": 321,
+        "srid": 25833
+      }
+    },
+    "ulykkesbeskrivelse": "Kort beskrivelse av ulykken og evt. skade på eiendom (oppgi eier). Angi kjennemerke og data for evt. innblandede tilhengere.",
+    "involverteEnheter": [
+      {
+        "enhetsbokstav": "A",
+        "enhetstype": "FOTGJENGER",
+        "personer": [
+          {
+            "id": "4439ce51-ff91-4205-b8bd-9a67f9da3599",
+            "skadegrad": "ILLEBEFINNENDE_FOERER",
+            "beskyttelsesutstyr": "BILBELTE",
+            "skadeforloep": "SKADD_MOT_EKSTERIOER"
+          }
+        ]
+      }
+    ]
+  },
+  "vedlegg": []
+}
