@@ -124,7 +124,7 @@
         },
         "reaksjoner": {
           "$ref": "#/definitions/reaksjonsType",
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse blir ikke dette elementet med."
+          "description": "Kombinasjon av reaksjoner for denne personen. Ved løslatelse blir ikke dette elementet med."
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
