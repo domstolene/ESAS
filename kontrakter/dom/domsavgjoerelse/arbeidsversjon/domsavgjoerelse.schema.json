@@ -123,19 +123,15 @@
           "minItems": 1
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          },
-          "minItems": 0
+          "$ref": "#/definitions/reaksjonsType",
+          "description": "Liste av reaksjoner for denne personen. Ved løslatelse blir ikke dette elementet med."
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
           "description": "Erklæring fra siktede og påtale"
         }
       },
-      "required": ["personForetak", "resultat", "reaksjoner", "erklaering"],
+      "required": ["personForetak", "resultat", "erklaering"],
       "type": "object",
       "additionalProperties": false
     },

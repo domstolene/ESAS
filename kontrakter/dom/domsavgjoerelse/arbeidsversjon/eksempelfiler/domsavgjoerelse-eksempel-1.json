@@ -116,71 +116,69 @@
             "straffesaksnummer": "131221"
           }
         ],
-        "reaksjoner": [
-          {
-            "rettighetstapMotorvogn": {
-              "detaljer": [
-                {
-                  "hjemmel": {
-                    "lovbudStreng": "§24a annet ledd. Sperrefrist for retten til å føre førerkortpliktig motorvogn pga. straffbart forhold mm."
-                  },
-                  "varighet": {
-                    "lengde": {
-                      "antallAar": 2,
-                      "antallMaaneder": 4
-                    }
-                  },
-                  "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
-                }
-              ]
-            },
-            "bot": {
-              "beloep": 24000,
-              "proevetid": {
-                "antallAar": 2
-              },
-              "subsidaerFengselsstraff": {
-                "antallDager": 24
-              }
-            },
-            "fengsel": {
-              "straff": {
-                "antallAar": 2,
-                "antallMaaneder": 4
-              },
-              "betinget": {
-                "antallMaaneder": 6
-              },
-              "proevetid": {
-                "antallAar": 2
-              },
-              "fradrag": {
-                "antallDager": 24
-              },
-              "saervilkaar": [
-                {
-                  "paragraf": "§35",
-                  "tekst": "Særvilkår om meldeplikt",
-                  "beskrivelse": "Morsom Kiwi skal melde seg til politiet én gang i måneden"
+        "reaksjoner": {
+          "rettighetstapMotorvogn": {
+            "detaljer": [
+              {
+                "hjemmel": {
+                  "lovbudStreng": "§24a annet ledd. Sperrefrist for retten til å føre førerkortpliktig motorvogn pga. straffbart forhold mm."
                 },
-                {
-                  "paragraf": "§36",
-                  "tekst": "Andre særvilkår",
-                  "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
-                }
-              ]
+                "varighet": {
+                  "lengde": {
+                    "antallAar": 2,
+                    "antallMaaneder": 4
+                  }
+                },
+                "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
+              }
+            ]
+          },
+          "bot": {
+            "beloep": 24000,
+            "proevetid": {
+              "antallAar": 2
             },
-            "inndragning": {
-              "hjemmel": {
-                "lovbudStreng": "§ 69 Inndragning av produktet av, gjenstanden for og redskapet til en straffbar handling"
-              },
-              "alternativBelopForGjenstand": true,
-              "beloep": 20000,
-              "beskrivelse": "Indragelse av.. ifm. tyveri i ... Alternativt skal 20 000 NOK tilfalle fornærmede",
-              "tilfaller": "Peder Ås"
+            "subsidaerFengselsstraff": {
+              "antallDager": 24
             }
+          },
+          "fengsel": {
+            "straff": {
+              "antallAar": 2,
+              "antallMaaneder": 4
+            },
+            "betinget": {
+              "antallMaaneder": 6
+            },
+            "proevetid": {
+              "antallAar": 2
+            },
+            "fradrag": {
+              "antallDager": 24
+            },
+            "saervilkaar": [
+              {
+                "paragraf": "§35",
+                "tekst": "Særvilkår om meldeplikt",
+                "beskrivelse": "Morsom Kiwi skal melde seg til politiet én gang i måneden"
+              },
+              {
+                "paragraf": "§36",
+                "tekst": "Andre særvilkår",
+                "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+              }
+            ]
+          },
+          "inndragning": {
+            "hjemmel": {
+              "lovbudStreng": "§ 69 Inndragning av produktet av, gjenstanden for og redskapet til en straffbar handling"
+            },
+            "alternativBelopForGjenstand": true,
+            "beloep": 20000,
+            "beskrivelse": "Indragelse av.. ifm. tyveri i ... Alternativt skal 20 000 NOK tilfalle fornærmede",
+            "tilfaller": "Peder Ås"
           }
-        ],
+        },
         "erklaering": {
           "erklaeringPaatale": {
             "meddeltIRettsmoete": true,
@@ -224,7 +222,6 @@
             "straffesaksnummer": "131221"
           }
         ],
-        "reaksjoner": [],
         "erklaering": {
           "erklaeringPaatale": {
             "meddeltIRettsmoete": true,
