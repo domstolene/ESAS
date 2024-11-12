@@ -165,7 +165,7 @@
         "involverteEnheter": {
           "type": "array",
           "items": { "$ref": "#/definitions/involvertEnhet" },
-          "description": "Fartøy innvolvert i ulykken."
+          "description": "Enheter involvert i ulykken."
         }
       },
       "required": [
@@ -175,7 +175,6 @@
         "politidistrikt",
         "stedfesting",
         "ulykkeskode",
-        "forhold",
         "involverteEnheter"
       ],
       "additionalProperties": false
@@ -539,6 +538,7 @@
       "properties": {
         "id": {
           "type": "string",
+          "format": "uuid",
           "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
         },
         "identitetsnummer": {
@@ -578,7 +578,7 @@
           "type": "string"
         }
       },
-      "required": ["beskyttelsesutstyr"],
+      "required": ["id", "skadegrad", "skadeforloep", "beskyttelsesutstyr"],
       "additionalProperties": false
     },
     "stedfesting": {
