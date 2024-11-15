@@ -117,22 +117,20 @@
           }
         ],
         "reaksjoner": {
-          "rettighetstapMotorvogn": {
-            "detaljer": [
-              {
-                "hjemmel": {
-                  "lovbudStreng": "§24a annet ledd. Sperrefrist for retten til å føre førerkortpliktig motorvogn pga. straffbart forhold mm."
-                },
-                "varighet": {
-                  "lengde": {
-                    "antallAar": 2,
-                    "antallMaaneder": 4
-                  }
-                },
-                "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
-              }
-            ]
-          },
+          "rettighetstapMotorvogn": [
+            {
+              "hjemmel": {
+                "lovbudStreng": "§24a annet ledd. Sperrefrist for retten til å føre førerkortpliktig motorvogn pga. straffbart forhold mm."
+              },
+              "varighet": {
+                "lengde": {
+                  "antallAar": 2,
+                  "antallMaaneder": 4
+                }
+              },
+              "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
+            }
+          ],
           "bot": {
             "beloep": 24000,
             "proevetid": {
@@ -169,15 +167,17 @@
               }
             ]
           },
-          "inndragning": {
-            "hjemmel": {
-              "lovbudStreng": "§ 69 Inndragning av produktet av, gjenstanden for og redskapet til en straffbar handling"
-            },
-            "alternativBelopForGjenstand": true,
-            "beloep": 20000,
-            "beskrivelse": "Indragelse av.. ifm. tyveri i ... Alternativt skal 20 000 NOK tilfalle fornærmede",
-            "tilfaller": "Peder Ås"
-          }
+          "inndragning": [
+            {
+              "hjemmel": {
+                "lovbudStreng": "§ 69 Inndragning av produktet av, gjenstanden for og redskapet til en straffbar handling"
+              },
+              "alternativBelopForGjenstand": true,
+              "beloep": 20000,
+              "beskrivelse": "Indragelse av.. ifm. tyveri i ... Alternativt skal 20 000 NOK tilfalle fornærmede",
+              "tilfaller": "Peder Ås"
+            }
+          ]
         },
         "erklaering": {
           "erklaeringPaatale": {
