@@ -37,6 +37,16 @@
             }
           }
         },
+        "rusmiddelundersoekelse": [
+          {
+            "rusmiddeltype": "ALKOHOL",
+            "alkoholkonsentrasjon": 2.2,
+            "enhet": "promille",
+            "timerEtterKjoering": 4,
+            "tekst": "For mye alkohol i blodet",
+            "dok": ["11", "22"]
+          }
+        ],
         "reaksjoner": {
           "bot": {
             "beloep": 24000,

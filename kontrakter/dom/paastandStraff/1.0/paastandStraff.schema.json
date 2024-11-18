@@ -152,7 +152,10 @@
           "description": "Fritekst som beskriver rusmiddelundersøkelsen"
         },
         "dok": {
-          "type": "string",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
           "description": "Jf.dok."
         }
       },
