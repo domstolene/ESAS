@@ -99,16 +99,15 @@
           "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i siktelsen"
         },
         "rusmiddelundersoekelse": {
-          "$ref": "#/definitions/rusmiddelundersoekelse",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rusmiddelundersoekelse"
+          },
           "description": "Rusundersøkelse for personen"
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen.",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          },
-          "minItems": 1
+          "$ref": "#/definitions/reaksjonsType",
+          "description": "Reaksjoner for denne personen"
         }
       },
       "additionalProperties": false,

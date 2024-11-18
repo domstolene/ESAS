@@ -99,11 +99,8 @@
           "$ref": "#/definitions/dato"
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          }
+          "description": "Reaksjoner for denne personen.",
+          "$ref": "#/definitions/reaksjonsType"
         },
         "straffbareForhold": {
           "type": "array",

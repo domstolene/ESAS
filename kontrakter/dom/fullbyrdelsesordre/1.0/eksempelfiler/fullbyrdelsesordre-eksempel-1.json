@@ -74,46 +74,44 @@
       "avgjoerelseId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
       "saksnummer": "24-113474ENE-TOSL/01",
       "avsagtDato": "1957-11-25",
-      "reaksjoner": [
-        {
-          "bot": {
-            "beloep": 24000,
-            "proevetid": {
-              "antallAar": 2
-            },
-            "subsidaerFengselsstraff": {
-              "antallDager": 24
-            }
+      "reaksjoner": {
+        "bot": {
+          "beloep": 24000,
+          "proevetid": {
+            "antallAar": 2
           },
-          "fengsel": {
-            "straff": {
-              "antallAar": 2,
-              "antallMaaneder": 4
-            },
-            "betinget": {
-              "antallMaaneder": 6
-            },
-            "proevetid": {
-              "antallAar": 2
-            },
-            "fradrag": {
-              "antallDager": 24
-            },
-            "saervilkaar": [
-              {
-                "paragraf": "§35",
-                "tekst": "Særvilkår om meldeplikt",
-                "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
-              },
-              {
-                "paragraf": "§36",
-                "tekst": "Andre særvilkår",
-                "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
-              }
-            ]
+          "subsidaerFengselsstraff": {
+            "antallDager": 24
           }
+        },
+        "fengsel": {
+          "straff": {
+            "antallAar": 2,
+            "antallMaaneder": 4
+          },
+          "betinget": {
+            "antallMaaneder": 6
+          },
+          "proevetid": {
+            "antallAar": 2
+          },
+          "fradrag": {
+            "antallDager": 24
+          },
+          "saervilkaar": [
+            {
+              "paragraf": "§35",
+              "tekst": "Særvilkår om meldeplikt",
+              "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+            },
+            {
+              "paragraf": "§36",
+              "tekst": "Andre særvilkår",
+              "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+            }
+          ]
         }
-      ],
+      },
       "straffbareForhold": [
         {
           "basissakId": "1234121-123",
