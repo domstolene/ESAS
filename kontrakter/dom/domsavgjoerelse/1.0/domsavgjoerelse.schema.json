@@ -95,7 +95,7 @@
         "avgjoerelsePrSiktetTiltalt": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/personForetakAvjoerelse"
+            "$ref": "#/definitions/personForetakAvgjoerelse"
           },
           "minItems": 1
         }
@@ -109,7 +109,7 @@
       "type": "object",
       "additionalProperties": false
     },
-    "personForetakAvjoerelse": {
+    "personForetakAvgjoerelse": {
       "properties": {
         "personForetak": {
           "$ref": "#/definitions/personForetak"
@@ -392,7 +392,7 @@
       "properties": {
         "forkynt": {
           "type": "boolean",
-          "description": "Settes til true dersom avgjørelsen er forkynnt til siktede i rettsmøtet"
+          "description": "Settes til true dersom avgjørelsen er forkynt til siktede i rettsmøtet"
         },
         "kommentar": {
           "type": "string",
@@ -400,7 +400,7 @@
         },
         "erklaeringsType": {
           "$ref": "#/definitions/erklaertType",
-          "description": "Settes dersom 'forynt' er satt til true"
+          "description": "Settes dersom 'forkynt' er satt til true"
         }
       },
       "required": ["forkynt"],
