@@ -126,12 +126,12 @@
           "$ref": "#/definitions/reaksjonsType",
           "description": "Kombinasjon av reaksjoner for denne personen. Ved løslatelse blir ikke dette elementet med."
         },
-        "erklaering": {
-          "$ref": "#/definitions/erklaering",
-          "description": "Erklæring fra siktede og påtale"
+        "forkynning": {
+          "$ref": "#/definitions/forkynning",
+          "description": "Forkynning for siktede"
         }
       },
-      "required": ["personForetak", "resultat", "erklaering"],
+      "required": ["personForetak", "resultat", "forkynning"],
       "type": "object",
       "additionalProperties": false
     },
@@ -388,32 +388,22 @@
       "type": "object",
       "additionalProperties": false
     },
-    "erklaering": {
-      "$comment": "Er erklaering i domsavgjørelser tilsvarende som varetekts-saker?",
+    "forkynning": {
       "properties": {
-        "erklaeringSiktede": {
-          "$ref": "#/definitions/erklaeringsDetaljer"
-        },
-        "erklaeringPaatale": {
-          "$ref": "#/definitions/erklaeringsDetaljer"
-        }
-      },
-      "required": ["erklaeringSiktede", "erklaeringPaatale"],
-      "type": "object",
-      "additionalProperties": false
-    },
-    "erklaeringsDetaljer": {
-      "properties": {
-        "meddeltIRettsmoete": {
+        "forkynt": {
           "type": "boolean",
-          "description": "Settes til true desom avgjørelsen er meddelt i rettsmøtet"
+          "description": "Settes til true dersom avgjørelsen er forkynnt til siktede i rettsmøtet"
         },
-        "erklaert": {
+        "kommentar": {
+          "type": "string",
+          "description": "Frivillig kommentar til forkynningen"
+        },
+        "erklaeringsType": {
           "$ref": "#/definitions/erklaertType",
-          "description": "Settes dersom avgjørelsen er meddelt i retten"
+          "description": "Settes dersom 'forynt' er satt til true"
         }
       },
-      "required": ["meddeltIRettsmoete"],
+      "required": ["forkynt"],
       "type": "object",
       "additionalProperties": false
     },
