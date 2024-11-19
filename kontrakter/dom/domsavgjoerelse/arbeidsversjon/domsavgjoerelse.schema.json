@@ -123,19 +123,15 @@
           "minItems": 1
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          },
-          "minItems": 0
+          "$ref": "#/definitions/reaksjonsType",
+          "description": "Kombinasjon av reaksjoner for denne personen. Ved løslatelse blir ikke dette elementet med."
         },
         "forkynning": {
           "$ref": "#/definitions/forkynning",
           "description": "Forkynning for siktede"
         }
       },
-      "required": ["personForetak", "resultat", "reaksjoner", "forkynning"],
+      "required": ["personForetak", "resultat", "forkynning"],
       "type": "object",
       "additionalProperties": false
     },
@@ -197,16 +193,32 @@
           "$ref": "#/definitions/ungdomsstraff"
         },
         "rettighetstap": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapMotorvogn": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapTransport": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "inndragning": {
-          "$ref": "#/definitions/inndragning"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inndragning"
+          },
+          "minItems": 1
         },
         "annet": {
           "$ref": "#/definitions/annet"
@@ -318,29 +330,16 @@
       "type": "object",
       "additionalProperties": false
     },
-    "rettighetstap": {
-      "properties": {
-        "detaljer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/rettighetstapDetaljer"
-          },
-          "minItems": 1
-        }
-      },
-      "required": ["detaljer"],
-      "type": "object",
-      "additionalProperties": false
-    },
     "rettighetstapDetaljer": {
-      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel til (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
       "properties": {
         "hjemmel": {
           "$ref": "#/definitions/lovbud"
         },
         "varighet": {
-          "$ref": "#/definitions/varighet",
-          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
+          "$ref": "#/definitions/varighet"
+        },
+        "sperrefrist": {
+          "$ref": "#/definitions/varighet"
         },
         "tekst": {
           "type": "string",
@@ -348,6 +347,7 @@
         }
       },
       "type": "object",
+      "required": ["hjemmel", "varighet"],
       "additionalProperties": false
     },
     "inndragning": {
