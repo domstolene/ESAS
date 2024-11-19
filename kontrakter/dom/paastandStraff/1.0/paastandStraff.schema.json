@@ -178,16 +178,32 @@
           "$ref": "#/definitions/ungdomsstraff"
         },
         "rettighetstap": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapMotorvogn": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapTransport": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "inndragning": {
-          "$ref": "#/definitions/inndragning"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inndragning"
+          },
+          "minItems": 1
         },
         "annet": {
           "$ref": "#/definitions/annet"
