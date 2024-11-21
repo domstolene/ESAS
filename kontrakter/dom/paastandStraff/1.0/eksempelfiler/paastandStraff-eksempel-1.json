@@ -37,46 +37,54 @@
             }
           }
         },
-        "reaksjoner": [
+        "rusmiddelundersoekelse": [
           {
-            "bot": {
-              "beloep": 24000,
-              "proevetid": {
-                "antallAar": 2
-              },
-              "subsidaerFengselsstraff": {
-                "antallDager": 24
-              }
-            },
-            "fengsel": {
-              "straff": {
-                "antallAar": 2,
-                "antallMaaneder": 4
-              },
-              "betinget": {
-                "antallMaaneder": 6
-              },
-              "proevetid": {
-                "antallAar": 2
-              },
-              "fradrag": {
-                "antallDager": 24
-              },
-              "saervilkaar": [
-                {
-                  "paragraf": "§35",
-                  "tekst": "Særvilkår om meldeplikt",
-                  "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
-                },
-                {
-                  "paragraf": "§36",
-                  "tekst": "Andre særvilkår",
-                  "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
-                }
-              ]
-            }
+            "rusmiddeltype": "ALKOHOL",
+            "alkoholkonsentrasjon": 2.2,
+            "enhet": "promille",
+            "timerEtterKjoering": 4,
+            "tekst": "For mye alkohol i blodet",
+            "dok": ["11", "22"]
           }
-        ]
+        ],
+        "reaksjoner": {
+          "bot": {
+            "beloep": 24000,
+            "proevetid": {
+              "antallAar": 2
+            },
+            "subsidaerFengselsstraff": {
+              "antallDager": 24
+            }
+          },
+          "fengsel": {
+            "straff": {
+              "antallAar": 2,
+              "antallMaaneder": 4
+            },
+            "betinget": {
+              "antallMaaneder": 6
+            },
+            "proevetid": {
+              "antallAar": 2
+            },
+            "fradrag": {
+              "antallDager": 24
+            },
+            "saervilkaar": [
+              {
+                "paragraf": "§35",
+                "tekst": "Særvilkår om meldeplikt",
+                "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+              },
+              {
+                "paragraf": "§36",
+                "tekst": "Andre særvilkår",
+                "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+              }
+            ]
+          }
+        }
       }
     ]
   }

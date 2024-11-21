@@ -99,11 +99,8 @@
           "$ref": "#/definitions/dato"
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          }
+          "description": "Reaksjoner for denne personen.",
+          "$ref": "#/definitions/reaksjonsType"
         },
         "straffbareForhold": {
           "type": "array",
@@ -219,16 +216,32 @@
           "$ref": "#/definitions/ungdomsstraff"
         },
         "rettighetstap": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapMotorvogn": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapTransport": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "inndragning": {
-          "$ref": "#/definitions/inndragning"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inndragning"
+          },
+          "minItems": 1
         },
         "annet": {
           "$ref": "#/definitions/annet"
@@ -337,20 +350,6 @@
         }
       },
       "required": ["straff"],
-      "type": "object",
-      "additionalProperties": false
-    },
-    "rettighetstap": {
-      "properties": {
-        "detaljer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/rettighetstapDetaljer"
-          },
-          "minItems": 1
-        }
-      },
-      "required": ["detaljer"],
       "type": "object",
       "additionalProperties": false
     },

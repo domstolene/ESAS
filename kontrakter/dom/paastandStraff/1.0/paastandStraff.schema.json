@@ -99,16 +99,15 @@
           "description": "Intern id til person eller foretak. Denne skal peke på en av personene/foretakene i siktelsen"
         },
         "rusmiddelundersoekelse": {
-          "$ref": "#/definitions/rusmiddelundersoekelse",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rusmiddelundersoekelse"
+          },
           "description": "Rusundersøkelse for personen"
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen.",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          },
-          "minItems": 1
+          "$ref": "#/definitions/reaksjonsType",
+          "description": "Reaksjoner for denne personen"
         }
       },
       "additionalProperties": false,
@@ -153,7 +152,10 @@
           "description": "Fritekst som beskriver rusmiddelundersøkelsen"
         },
         "dok": {
-          "type": "string",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
           "description": "Jf.dok."
         }
       },
@@ -176,16 +178,32 @@
           "$ref": "#/definitions/ungdomsstraff"
         },
         "rettighetstap": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapMotorvogn": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapTransport": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "inndragning": {
-          "$ref": "#/definitions/inndragning"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inndragning"
+          },
+          "minItems": 1
         },
         "annet": {
           "$ref": "#/definitions/annet"
