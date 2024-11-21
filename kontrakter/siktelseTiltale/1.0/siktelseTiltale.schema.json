@@ -422,13 +422,14 @@
     },
     "siktelsesType": {
       "type": "string",
-      "description": "Hvilken type siktelse/tiltale er dettte.",
+      "description": "Hvilken type siktelse/tiltale er dettte, se readme for beskrivelse",
       "enum": [
         "SIKTELSE",
         "TILTALE",
         "FORELEGG",
         "TILLEGSSIKTELSE",
-        "TILLEGSTILTALE"
+        "TILLEGSTILTALE",
+        "PAAGRIPELSE_BESLUTNING"
       ]
     },
     "siktelseTiltale": {
