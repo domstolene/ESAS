@@ -12,6 +12,7 @@ SchmaName=REKVISISJON_PERSONUNDERSOEKELSE
 SchemaVersion=1.0  
 [RFC message name header](../../../rfc/MessageName-header.md)
 
+Skjemaversjon 1.0 endelig når PR er godkjent. Endringer etter dette skal ha ny versjon.
 ## Avklaringer
 
 ### Utestående avklaringer
