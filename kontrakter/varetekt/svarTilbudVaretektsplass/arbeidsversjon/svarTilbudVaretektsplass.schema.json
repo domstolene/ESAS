@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorgen.no/varetekt/1.0/svarTilbudVaretektsplass",
+  "$id": "https://kriminalomsorgen.no/varetekt/arbeidsversjon/svarTilbudVaretektsplass",
   "description": "Svar fra politiet til kriminalomsorgen på tilbudt varetektsplass",
   "type": "object",
   "properties": {
