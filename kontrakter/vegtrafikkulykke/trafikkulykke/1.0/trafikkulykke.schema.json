@@ -693,13 +693,9 @@
       "properties": {
         "organisasjon": {
           "$ref": "#/definitions/organisasjon"
-        },
-        "person": {
-          "$ref": "#/definitions/ansattPerson",
-          "description": "Person som har sendt melding."
         }
       },
-      "required": ["organisasjon", "person"],
+      "required": ["organisasjon"],
       "additionalProperties": false
     },
     "organisasjon": {
@@ -717,68 +713,12 @@
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
-    "ansattPerson": {
-      "type": "object",
-      "description": "Saksbehandler, jurist, etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
-      "properties": {
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "kontaktinfo": {
-          "$ref": "#/definitions/kontaktInfoPerson",
-          "description": "Minimum epost adresse til den som sender melding."
-        }
-      },
-      "required": ["navn", "kontaktinfo"],
-      "additionalProperties": false
-    },
-    "personnavn": {
-      "type": "object",
-      "properties": {
-        "fornavn": {
-          "type": "string"
-        },
-        "mellomnavn": {
-          "type": "string"
-        },
-        "etternavn": {
-          "type": "string"
-        }
-      },
-      "required": ["fornavn", "etternavn"],
-      "additionalProperties": false
-    },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
-      },
-      "required": ["epost"],
-      "additionalProperties": false
-    },
     "organisasjonsnummer": {
       "type": "string",
       "description": "Norsk organisasjonsnummer fra BRREG. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
       "pattern": "[0-9]+",
       "minLength": 9,
       "maxLength": 9
-    },
-    "telefonnummer": {
-      "type": "string",
-      "description": "Telefonnummer, norsk eller utenlandsk, med eller uten landkode/prefix",
-      "maxLength": 30,
-      "minLength": 1
-    },
-    "epost": {
-      "type": "string",
-      "format": "email"
     },
     "registreringsland": {
       "type": "string",
