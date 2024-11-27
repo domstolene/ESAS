@@ -16,3 +16,6 @@ Denne versjonen har noen kjente mangler som er planlagt å ta inn på et senere 
 * 'reaksjoner'-elemetet blir ikke med ved frifinnelse (i stedet for tom array som før)
 * 'hjemmel' og 'varighet' er nå required ved rettighetstap
 * 
+### 27.11.2024 LovbudkombinertId utgår fra siktelsen, bruker samme begrep her
+Fint om vi samkjører og fjerner lovbudKombinertId og kjører at en post kan ha flere lovbud som gjelder med hver sin lovbudId.
+Endring i siktelse fra en stund tilbake

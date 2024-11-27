@@ -170,6 +170,7 @@
 
     "lovbud": {
       "properties": {
+        "lovbudId": { "$ref": "#/definitions/unikId" },
         "lovbudStreng": {
           "type": "string"
         }
@@ -541,10 +542,6 @@
       "type": "object",
       "description": "Dersom lovbud er beholdt av domstolen sendes kun den originale lovbudKombinertId'en tilbake til politiet. Ved omsubsumering sendes kun lovbudet tilbake.",
       "properties": {
-        "lovbudKombinertId": {
-          "$ref": "#/definitions/unikId",
-          "description": "Id generert av politiet. Settes ikke ved omsubsumering"
-        },
         "lovbud": {
           "type": "array",
           "description": "Liste over lovbud hvis det straffbare forholdet har skjedde over en lovendring (kombinert). Settes kun ved omsubsumering i domstolen",
@@ -555,33 +552,8 @@
           "maxItems": 2
         }
       },
-      "oneOf": [
-        {
-          "properties": {
-            "lovbudKombinertId": {
-              "$ref": "#/definitions/unikId"
-            }
-          },
-          "additionalProperties": false,
-          "type": "object",
-          "required": ["lovbudKombinertId"]
-        },
-        {
-          "properties": {
-            "lovbud": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/lovbud"
-              },
-              "minItems": 1,
-              "maxItems": 2
-            }
-          },
-          "additionalProperties": false,
-          "type": "object",
-          "required": ["lovbud"]
-        }
-      ]
+      "required": ["lovbud"],
+      "additionalProperties": false
     },
     "personForetak": {
       "type": "object",
