@@ -40,7 +40,7 @@
     "svarType": {
       "type": "string",
       "description": "Kun avbestilling nå",
-      "enum": ["AVBESTILLING"]
+      "enum": ["AVBESTILLING", "GODKJENNELSE"]
     },
     "forsendelse": {
       "type": "object",
