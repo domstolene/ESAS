@@ -1,0 +1,36 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BEZ",
+    "sendtTid": "2023-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "911830868",
+        "navn": "Kriminalomsorgsdirektoratet"
+      },
+      "person": {
+        "navn": {
+          "etternavn": "Årdal",
+          "fornavn": "Jo"
+        },
+        "kontakt": { "epost": "en.bruker@kriminalomsorg.no" }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "982531950",
+      "navn": "Politidirektoratet"
+    }
+  },
+  "tilbudVaretektsplassId": "b04782d3-502e-43d8-8c45-7e84d279d33a",
+  "hovedStraffesaksnummer": "15434811",
+  "anmodningsId": "D784D27C-C1BB-4BB2-90FD-96C414A64AE1",
+  "fengselDerPlassTilbys": {
+    "organisasjonsnummer": "890286712",
+    "navn": "Bjørgvin fengsel"
+  },
+  "fengseletsTelefonnummer": {
+    "kontortid": "11 22 11 22",
+    "vakt": "11 33 11 33"
+  },
+  "kommentarTilPlasstilbudet": "OBS: fengselet stenger om 2 uker for 4 måneders vedlikehold av bygningsmassen.",
+  "varetektsplassTilbysFra": "2023-11-04T10:00:00+02:00"
+}

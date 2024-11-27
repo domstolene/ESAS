@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorgen.no/varetekt/arbeidsversjon/svarTilbudVaretektsplass",
+  "description": "Svar fra politiet til kriminalomsorgen på tilbudt varetektsplass",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "avsender og mottaker"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer",
+      "description": "BL saksbehandlersak"
+    },
+    "anmodningsId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Referanse til bestilling av varetektsplass/innsettelsesordre som denne gjelder for (samme person)"
+    },
+    "svarPlass": { "$ref": "#/definitions/svarPlass" }
+  },
+  "required": [
+    "forsendelse",
+    "anmodningsId",
+    "hovedStraffesaksnummer",
+    "svarPlass"
+  ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "svarPlass": {
+      "type": "object",
+      "description": "avbestille fått plass, feil bestilling eller ikke lenger behov. Kan utvides senere til andre behov.",
+      "properties": {
+        "svar": { "$ref": "#/definitions/svarType" },
+        "beskrivelse": { "type": "string" }
+      },
+      "required": ["svar"],
+      "additionalProperties": false
+    },
+    "svarType": {
+      "type": "string",
+      "description": "Kun avbestilling nå",
+      "enum": ["AVBESTILLING"]
+    },
+    "forsendelse": {
+      "type": "object",
+      "properties": {
+        "meldingsId": {
+          "$ref": "#/definitions/GUID",
+          "description": "Unik ID for denne meldingen, hvis siktelsen blir sendt på nytt vil det være ny meldingsId"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Domstol som skal være mottaker"
+        }
+      },
+      "required": [
+        "meldingsId",
+        "avsender",
+        "mottakerOrganisasjon",
+        "sendtTid"
+      ],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson",
+          "description": "Person som trykker på send til domstolen."
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "type": "object",
+      "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
+      "properties": {
+        "navn": {
+          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
+      "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson",
+          "description": "Minimum epost adresse til den som sender melding."
+        }
+      },
+      "required": ["navn", "kontakt"],
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        }
+      },
+      "required": ["fornavn", "etternavn"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
+      "type": "object",
+      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
+      "properties": {
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": {
+          "$ref": "#/definitions/telefonnummer"
+        }
+      },
+      "required": ["epost"],
+      "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
+      "pattern": "^\\+?[0-9 ()-]*$",
+      "maxLength": 30,
+      "minLength": 3
+    },
+    "unikId": {
+      "type": "string",
+      "description": "GUID eller andre unike id'er. Trenger ikke være global unik.",
+      "maxLength": 40,
+      "minLength": 5
+    },
+    "GUID": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}
