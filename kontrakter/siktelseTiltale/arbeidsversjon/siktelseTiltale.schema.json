@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/1.0/siktelseTiltale",
+  "$id": "https://politiet.no/arbeidsversjon/siktelseTiltale",
   "description": "Siktelse, tiltale, forelegg, tilleggssiktelse, tilleggstiltale som egen melding, JSON Schema versjon 2020-12",
 
   "type": "object",
