@@ -1,10 +1,13 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse   | Aktiv fra  | Aktiv til |
-|---------|---------------|------------|----------|
-| 1.0     | Arbeidsverson |            ||
+| Versjon | Beskrivelse  | Aktiv fra  | Aktiv til |
+|---------|--------------|------------|----------|
+| 1.0     | Låst versjon |            ||
 
 ## Versjon 1.0 arbeidsversjon til vi bruker den i produksjon
+### 21.11.24 Dato for siktelse
+Legger til dato for siktelse som påbudt felt.
+Låser versjon 1.0 slik at videre endringer blir versjon 1.1
 ### 30.10.24 Ny siktelsesType
 PAAGRIPELSE_BESLUTING som er en beslutning om pågripelse som av og til brukes som grunnlag i varetektsfengslinger.
 ### 23.09.2024 personinformasjon
