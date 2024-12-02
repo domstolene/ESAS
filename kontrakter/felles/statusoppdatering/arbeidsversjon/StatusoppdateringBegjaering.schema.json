@@ -26,9 +26,7 @@
   "definitions": {
     "OppdateringsType": {
       "description": "Liste over mulige oppdateringstyper",
-      "enum": [
-        "LUKKET_FOR_KORRIGERING"
-      ],
+      "enum": ["LUKKET_FOR_KORRIGERING"],
       "type": "string"
     },
     "GUID": {
