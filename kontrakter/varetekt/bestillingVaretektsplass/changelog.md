@@ -1,6 +1,12 @@
 # Bestilling varetektsplass endringer
 Omorganisert slik at det er en katalog for hver melding og eksempelfiler på samme sted (forrige PR).
 
+
+| Versjon | Beskrivelse    | Aktiv fra | Aktiv til |
+|---------|----------------|-----------|-----------|
+| 1.1     | Arbeidsversjon |           |           |
+| 1.0     | I produksjon   |           |           |
+
 ### 03.12.2024 Lagt til felt arrestlokasjon
 Lagt til felt arrestlokasjon (hvor den siktede sitter i arresten).
 Oppdatert til versjon 1.1.
