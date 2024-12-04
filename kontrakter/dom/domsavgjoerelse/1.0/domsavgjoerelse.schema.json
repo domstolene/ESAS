@@ -540,7 +540,7 @@
     },
     "lovbudKombinert": {
       "type": "object",
-      "description": "Dersom lovbud er beholdt av domstolen sendes kun den originale lovbudKombinertId'en tilbake til politiet. Ved omsubsumering sendes kun lovbudet tilbake.",
+      "description": "Dersom lovbud er beholdt av domstolen sendes de originale lovbudId tilbake til politiet. Ved omsubsumering sendes sendes ikke lovbudId",
       "properties": {
         "lovbud": {
           "type": "array",
