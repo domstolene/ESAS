@@ -5,7 +5,8 @@ Versjon 1.0 er første versjon som vi skal i produksjon med.
 
 ## Headere forsendelse justisHub
 SchemaName=BESTILLING_VARETEKTSPLASS  
-SchemaVersion=1.0
+SchemaVersion=1.1
+senderOrganization=POLITIET
 [RFC](../../../rfc/MessageName-header.md)
 
 [Se changelog for endringer](changelog.md)
