@@ -591,9 +591,23 @@
       "properties": {
         "hendelse": { "$ref": "#/definitions/hendelse" },
         "statistikkgruppe": { "$ref": "#/definitions/kodeverk" },
-        "krimtype": { "$ref": "#/definitions/kodeverk" }
+        "krimtype": { "$ref": "#/definitions/kodeverk" },
+        "paataleansvarlig": { "$ref": "#/definitions/paataleansvarlig" }
       },
       "required": ["hendelse", "statistikkgruppe"],
+      "additionalProperties": false
+    },
+    "paataleansvarlig": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker.",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "BID hos politiet nå, skal på sikt erstattes med annen unik identifikasjon."
+        },
+        "ansatt": { "$ref": "#/definitions/ansattPerson" }
+      },
+      "required": ["brukeridentifikasjon", "ansatt"],
       "additionalProperties": false
     },
     "hendelse": {
