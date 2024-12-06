@@ -21,4 +21,4 @@ Fint om vi samkjører og fjerner lovbudKombinertId og kjører at en post kan ha 
 Endring i siktelse fra en stund tilbake
 
 ### 05.12.2024 Gjør om basissakId til optional
-Dersom en post omsubsumeres i domstolen har vi ikke lenger basissakId. Gjør derfom om denne til optional i kontrakten
+Dersom en post omsubsumeres i domstolen har vi ikke lenger basissakId. Gjør derfor om denne til optional i kontrakten
