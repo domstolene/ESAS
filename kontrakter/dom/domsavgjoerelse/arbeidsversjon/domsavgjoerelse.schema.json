@@ -139,7 +139,7 @@
       "properties": {
         "basissakId": {
           "$ref": "#/definitions/internId",
-          "description": "Politiets interne id for basissaken"
+          "description": "Politiets interne id for basissaken. Blir ikke med dersom posten er omsubsumert."
         },
         "lovbudKombinert": {
           "$ref": "#/definitions/lovbudKombinert"
@@ -158,7 +158,6 @@
         }
       },
       "required": [
-        "basissakId",
         "lovbudKombinert",
         "straffesaksnummer",
         "grunnlagstekst",

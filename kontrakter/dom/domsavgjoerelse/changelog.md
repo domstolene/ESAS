@@ -19,3 +19,6 @@ Denne versjonen har noen kjente mangler som er planlagt å ta inn på et senere 
 ### 27.11.2024 LovbudkombinertId utgår fra siktelsen, bruker samme begrep her
 Fint om vi samkjører og fjerner lovbudKombinertId og kjører at en post kan ha flere lovbud som gjelder med hver sin lovbudId.
 Endring i siktelse fra en stund tilbake
+
+### 05.12.2024 Gjør om basissakId til optional
+Dersom en post omsubsumeres i domstolen har vi ikke lenger basissakId. Gjør derfom om denne til optional i kontrakten
