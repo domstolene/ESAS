@@ -118,12 +118,11 @@
       "siktede": {
         "informertOmAnmodningOmPersonundersoekelse": true,
         "samtykketTilPersonundersoekelse": true,
-        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": true
+        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": false
       },
       "verger": {
         "informertOmAnmodningOmPersonundersoekelse": true,
-        "samtykketTilPersonundersoekelse": true,
-        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": true
+        "samtykketTilPersonundersoekelse": true
       }
     },
     "straffesaker": [
