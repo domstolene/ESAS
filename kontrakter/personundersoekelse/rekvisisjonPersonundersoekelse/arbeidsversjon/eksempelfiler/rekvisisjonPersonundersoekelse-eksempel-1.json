@@ -80,6 +80,13 @@
       },
       "verger": []
     },
+    "samtykkerOgInformering": {
+      "siktede": {
+        "informertOmAnmodningOmPersonundersoekelse": false,
+        "samtykketTilPersonundersoekelse": false,
+        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": false
+      }
+    },
     "straffesaker": [
       {
         "straffesaksnummer": "15434811",

@@ -33,7 +33,6 @@
     "prioriteringsdetaljer": {
       "$ref": "#/definitions/prioriteringsdetaljer"
     },
-
     "dokumenter": {
       "type": "array",
       "items": { "$ref": "#/definitions/dokument" }
@@ -55,6 +54,7 @@
       "required": [
         "personundersoekelseType",
         "personForPersonundersoekelse",
+        "samtykkerOgInformering",
         "straffesaker"
       ],
       "additionalProperties": false,
@@ -62,6 +62,10 @@
         "personForPersonundersoekelse": {
           "description": "Subjektet for personundersøkelsen. Den siktede det anmodes om personundersøkelse av.",
           "$ref": "#/definitions/person"
+        },
+        "samtykkerOgInformering": {
+          "description": "Innhenting av samstykker og informering om informasjonsdeling for siktede og verger (om relevant).",
+          "$ref": "#/definitions/samtykkerOgInformering"
         },
         "personundersoekelseType": {
           "description": "Typen og formålet med personundersøkelse man rekvirerer. (Det kan revireres både en spesialisert undersøkelse  eller  generell personundesøkelse).",
@@ -86,7 +90,9 @@
         "straffesaker": {
           "type": "array",
           "title": "straffesaker",
-          "items": { "$ref": "#/definitions/straffesakLovbudInvolverte" },
+          "items": {
+            "$ref": "#/definitions/straffesakLovbudInvolverte"
+          },
           "minItems": 1
         }
       }
@@ -96,12 +102,24 @@
       "title": "kontaktopplysningerAdvokater",
       "type": "object",
       "properties": {
-        "paataleansvarligNavn": { "$ref": "#/definitions/personnavn" },
-        "paataleansvarligKontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
-        "aktorNavn": { "$ref": "#/definitions/personnavn" },
-        "aktorKontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
-        "forsvarerNavn": { "$ref": "#/definitions/personnavn" },
-        "forsvarerKontaktInfo": { "$ref": "#/definitions/kontaktInfo" }
+        "paataleansvarligNavn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "paataleansvarligKontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        },
+        "aktorNavn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "aktorKontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        },
+        "forsvarerNavn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "forsvarerKontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        }
       },
       "required": [],
       "additionalProperties": false
@@ -111,7 +129,9 @@
       "title": "kontaktpersonerForInnhentingAvOpplysningerFraKilder",
       "type": "object",
       "properties": {
-        "kontaktpersonBarnevernNavn": { "$ref": "#/definitions/personnavn" },
+        "kontaktpersonBarnevernNavn": {
+          "$ref": "#/definitions/personnavn"
+        },
         "kontaktpersonBarnevernKontaktInfo": {
           "$ref": "#/definitions/kontaktInfo"
         },
@@ -121,7 +141,9 @@
         "kontaktpersonUngdomskoordinatorKontaktInfo": {
           "$ref": "#/definitions/kontaktInfo"
         },
-        "kontaktpersonPoltiNavn": { "$ref": "#/definitions/personnavn" },
+        "kontaktpersonPoltiNavn": {
+          "$ref": "#/definitions/personnavn"
+        },
         "kontaktpersonPolitiKontaktInfo": {
           "$ref": "#/definitions/kontaktInfo"
         }
@@ -129,7 +151,6 @@
       "required": [],
       "additionalProperties": false
     },
-
     "prioriteringsdetaljer": {
       "description": "Opplysninger som ønsket frist for ferdig personundersøkelse, melding om berammingsdato for hovedforhandling.",
       "title": "prioriteringsdetaljer",
@@ -145,6 +166,37 @@
         }
       },
       "required": [],
+      "additionalProperties": false
+    },
+    "samtykkerOgInformering": {
+      "description": "Opplysninger om siktede er informert om undersøkelsen og evt. innhentet samtykke fra siktede og verger.",
+      "title": "samtykkerOgInformering",
+      "type": "object",
+      "properties": {
+        "siktede": {
+          "$ref": "#/definitions/samtykkerOgInformeringDetaljer"
+        },
+        "verger": {
+          "$ref": "#/definitions/samtykkerOgInformeringDetaljer"
+        }
+      },
+      "required": ["siktede"],
+      "additionalProperties": false
+    },
+    "samtykkerOgInformeringDetaljer": {
+      "type": "object",
+      "properties": {
+        "informertOmAnmodningOmPersonundersoekelse": { "type": "boolean" },
+        "samtykketTilPersonundersoekelse": { "type": "boolean" },
+        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "informertOmAnmodningOmPersonundersoekelse",
+        "samtykketTilPersonundersoekelse",
+        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen"
+      ],
       "additionalProperties": false
     },
     "adresse": {
