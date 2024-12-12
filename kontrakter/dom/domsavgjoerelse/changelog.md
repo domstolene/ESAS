@@ -20,5 +20,8 @@ Denne versjonen har noen kjente mangler som er planlagt å ta inn på et senere 
 Fint om vi samkjører og fjerner lovbudKombinertId og kjører at en post kan ha flere lovbud som gjelder med hver sin lovbudId.
 Endring i siktelse fra en stund tilbake
 
-### 05.12.2024 Gjør om basissakId til optional
-Dersom en post omsubsumeres i domstolen har vi ikke lenger basissakId. Gjør derfom om denne til optional i kontrakten
+### 12.12.2024 Gjør om basissakId til optional, lovbud til 'oneof' og fjern straffesaksnummer
+Dersom en post legges i domstolen har vi ikke lenger basissakId. Gjør derfor om denne til optional i kontrakten
+Dersom det er en post politiet kjenner til har politiet allerede mappingen melleom basissakId og straffesaksnummer. Sender derfor ikke straffeaksnummer per post tilbake.
+    Om posten er ny kjenner domstolen uansett ikke til straffesaksnummeret så ingen vits i å inkludere dette.
+Gjort om lovbud til 'oneof'. Dersom vi gjennbruker politiets sitt lovbud returnerer vi kun lovbudId. Dersom domstolen har opprettet lovbudet returneres kun lovbudStreng. 

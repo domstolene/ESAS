@@ -98,14 +98,12 @@
             "lovbudKombinert": {
               "lovbud": [
                 {
-                  "lovbudId": "{61AE16B2-E360-451E-82B5-2D2C3AD68FC4}",
-                  "lovbudStreng": "§ 16-17 jf. § 16-22 jf. § 3-1 andre ledd jf. § 79 c jf. § 15"
+                  "lovbudId": "{61AE16B2-E360-451E-82B5-2D2C3AD68FC4}"
                 }
               ]
             },
             "grunnlagstekst": "Fredag 25. mai 2018 kl. 04.00 eller kort forut for dette, i Toveien 28 i Vestby, som deltaker i en samhandlende gruppe, tok han seg inn i et vogntog og stjal 8 544 stk. 0,5 liters bokser øl av typen Urquell. Tyveriet anses som grovt blant annet fordi tyveriet har et profesjonelt preg og gjaldt betydelige verdier.",
-            "resultatType": "SKYLDIG",
-            "straffesaksnummer": "131221"
+            "resultatType": "SKYLDIG"
           },
           {
             "basissakId": "2",
@@ -117,8 +115,7 @@
               ]
             },
             "grunnlagstekst": "Søndag 29. oktober 2017 kl. 15.53 i Sponvikveien 7 i Halden, som deltaker i en samhandlende gruppe, medvirket de til innførsel av 3 600 liter rødvin av typen Torrero, 11 700 liter øl av typen Carlsberg og Tuborg, samt 1441,44 liter Coca Cola. B foresto det hele ved kontakt med N2 som deretter leide inn N3 som sjåfør. A lot varene betales med sitt bankkort kort forut for at varene ble innført til Norge. Ved vurderingen av om tollovertredelsen er grov, er det særlig lagt vekt på beslagets størrelse og beregnet avgiftsunndragelse",
-            "resultatType": "FRAFALT",
-            "straffesaksnummer": "131221"
+            "resultatType": "FRAFALT"
           }
         ],
         "reaksjoner": {
@@ -217,14 +214,12 @@
             "lovbudKombinert": {
               "lovbud": [
                 {
-                  "lovbudId": "{61AE16B2-E360-451E-82B5-2D2C3AD6sdfC4}",
-                  "lovbudStreng": "§ 3-1 andre ledd jf. § 79 c jf. § 15"
+                  "lovbudId": "{61AE16B2-E360-451E-82B5-2D2C3AD6sdfC4}"
                 }
               ]
             },
             "grunnlagstekst": "Søndag 29. oktober 2017 kl. 15.53 i Sponvikveien 7 i Halden, som deltaker i en samhandlende gruppe, medvirket de til innførsel av 3 600 liter rødvin av typen Torrero, 11 700 liter øl av typen Carlsberg og Tuborg, samt 1441,44 liter Coca Cola. B foresto det hele ved kontakt med N2 som deretter leide inn N3 som sjåfør. A lot varene betales med sitt bankkort kort forut for at varene ble innført til Norge. Ved vurderingen av om tollovertredelsen er grov, er det særlig lagt vekt på beslagets størrelse og beregnet avgiftsunndragelse",
-            "resultatType": "FRIKJENT",
-            "straffesaksnummer": "131221"
+            "resultatType": "FRIKJENT"
           }
         ],
         "forkynning": {
