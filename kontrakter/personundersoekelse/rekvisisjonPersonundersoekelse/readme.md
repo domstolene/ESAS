@@ -1,7 +1,5 @@
 # Rekvirering av personundersøkelse
 
-Versjon 1.0 er første versjon som vi skal i produksjon med.
-
 - [JSON Schema](1.0/rekvirerePersonundersoekelse.schema.json)
 - [Eksempler](1.0/eksempelfiler/)
 
@@ -12,7 +10,6 @@ SchmaName=REKVISISJON_PERSONUNDERSOEKELSE
 SchemaVersion=1.0  
 [RFC message name header](../../../rfc/MessageName-header.md)
 
-Skjemaversjon 1.0 endelig når PR er godkjent. Endringer etter dette skal ha ny versjon.
 ## Avklaringer
 
 ### Utestående avklaringer

@@ -194,8 +194,7 @@
       },
       "required": [
         "informertOmAnmodningOmPersonundersoekelse",
-        "samtykketTilPersonundersoekelse",
-        "samtykketTilDelingAvOpplysningerIKoordineringsgruppen"
+        "samtykketTilPersonundersoekelse"
       ],
       "additionalProperties": false
     },
