@@ -172,44 +172,17 @@
           "$ref": "#/definitions/lovbudStreng",
           "description": "Sammensatt hjemmelsrekke i en lang streng"
         },
+        "gjengivelse": {
+          "type": "string"
+        },
         "strafferamme": {
           "type": "integer",
           "description": "Antall måneder"
         }
       },
-      "oneOf": [
-        {
-          "properties": {
-            "lovbudId": {
-              "$ref": "#/definitions/unikId"
-            },
-            "strafferamme": {
-              "type": "integer",
-              "description": "Antall måneder"
-            }
-          },
-          "additionalProperties": false,
-          "type": "object",
-          "required": ["lovbudId"]
-        },
-        {
-          "properties": {
-            "lovbudStreng": {
-              "type": "string"
-            },
-            "strafferamme": {
-              "type": "integer",
-              "description": "Antall måneder"
-            }
-          },
-          "additionalProperties": false,
-          "type": "object",
-          "required": ["lovbudStreng"]
-        }
-      ],
+      "required": ["lovbudStreng"],
       "additionalProperties": false
     },
-    "grunnlagstekst": { "type": "string" },
     "straffesak": {
       "type": "object",
       "description": "Straffesak koding.",
