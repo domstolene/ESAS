@@ -143,7 +143,7 @@
           }
         }
       },
-      "required": ["basissakId", "lovbudKombinert", "straffesak", "fornaermede"]
+      "required": ["lovbudKombinert", "straffesak", "fornaermede"]
     },
     "lovbudKombinert": {
       "type": "object",
@@ -172,15 +172,41 @@
           "$ref": "#/definitions/lovbudStreng",
           "description": "Sammensatt hjemmelsrekke i en lang streng"
         },
-        "gjengivelse": {
-          "type": "string"
-        },
         "strafferamme": {
           "type": "integer",
           "description": "Antall måneder"
         }
       },
-      "required": ["lovbudStreng"],
+      "oneOf": [
+        {
+          "properties": {
+            "lovbudId": {
+              "$ref": "#/definitions/unikId"
+            },
+            "strafferamme": {
+              "type": "integer",
+              "description": "Antall måneder"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["lovbudId"]
+        },
+        {
+          "properties": {
+            "lovbudStreng": {
+              "type": "string"
+            },
+            "strafferamme": {
+              "type": "integer",
+              "description": "Antall måneder"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["lovbudStreng"]
+        }
+      ],
       "additionalProperties": false
     },
     "grunnlagstekst": { "type": "string" },
