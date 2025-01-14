@@ -6,17 +6,6 @@
       "organisasjon": {
         "organisasjonsnummer": "983997953",
         "navn": "Innlandet politidistrikt"
-      },
-      "person": {
-        "tittel": "Jurist",
-        "navn": {
-          "fornavn": "Test",
-          "etternavn": "Testesen"
-        },
-        "kontaktinfo": {
-          "telefonnummer": "12 34 56 78",
-          "epost": "test.testesen@politiet.no"
-        }
       }
     },
     "mottakerOrganisasjon": {
