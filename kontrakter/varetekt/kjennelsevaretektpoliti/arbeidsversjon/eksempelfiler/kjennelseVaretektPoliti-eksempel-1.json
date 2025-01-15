@@ -69,6 +69,14 @@
           "statistikkgruppe": {
             "kode": "0933",
             "navn": "Mindre tyveri diverse"
+          },
+          "paataleansvarlig": {
+            "brukeridentifikasjon": "BLC210",
+            "ansatt": {
+              "fornavn": "NinaTerese",
+              "etternavn": "Eriksen",
+              "kontakt": { "epost": "jtte@politiet.no", "telefonnummer": [] }
+            }
           }
         },
         "involverte": {
