@@ -96,9 +96,9 @@
         "avgjoerelseResultat": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/avgjoerelseResultat",
-            "minItems": 1
-          }
+            "$ref": "#/definitions/avgjoerelseResultat"
+          },
+          "minItems": 1
         },
         "restriksjoner": {
           "type": "array",
