@@ -97,7 +97,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/avgjoerelseResultat",
-            "minitems": 1
+            "minItems": 1
           }
         },
         "restriksjoner": {
