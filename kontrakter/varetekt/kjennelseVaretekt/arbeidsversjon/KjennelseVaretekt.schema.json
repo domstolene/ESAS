@@ -94,7 +94,11 @@
           "description": "Kraviden i første instans"
         },
         "avgjoerelseResultat": {
-          "$ref": "#/definitions/avgjoerelseResultat"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/avgjoerelseResultat",
+            "minitems": 1
+          }
         },
         "restriksjoner": {
           "type": "array",
@@ -108,8 +112,14 @@
             "$ref": "#/definitions/isolasjon"
           }
         },
+        "lovbud": {
+          "$ref": "#/definitions/lovbud"
+        },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
+        },
+        "fengslingssurrugat": {
+          "$ref": "#/definitions/fengslingssurrugat"
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
@@ -121,7 +131,6 @@
         "avsagtDato",
         "opprinneligKravid",
         "avgjoerelseResultat",
-        "fengsling",
         "restriksjoner",
         "isolasjonsKrav",
         "erklaering"
@@ -144,15 +153,33 @@
         "fengslingsFristDato": {
           "$ref": "#/definitions/dato"
         },
-        "lovbud": {
-          "$ref": "#/definitions/lovbud"
-        },
         "merknad": {
           "type": "string",
           "description": "Merknad til fengslingen"
         }
       },
-      "required": ["fengslingsId"],
+      "required": ["fengslingsId", "fraDato", "tilDato"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "fengslingssurrugat": {
+      "properties": {
+        "surrugatId": {
+          "type": "string",
+          "description": "surrugatId som opprettes i DA (GUID)"
+        },
+        "fraDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "tilDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "surrugatBeskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av fengslingssurrugatet"
+        }
+      },
+      "required": ["surrugatId", "fraDato", "tilDato", "surrugatBeskrivelse"],
       "type": "object",
       "additionalProperties": false
     },

@@ -71,17 +71,17 @@
       "avgjoerelseIdForrigeInstans": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
       "avsagtDato": "2022-07-05",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
-      "avgjoerelseResultat": "FENGSLING",
+      "avgjoerelseResultat": ["FENGSLING"],
       "restriksjoner": [],
       "isolasjonsKrav": [],
+      "lovbud": {
+        "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
+      },
       "fengsling": {
         "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1899",
         "fraDato": "2022-07-06",
         "tilDato": "2022-08-06",
-        "fengslingsFristDato": "2022-07-06",
-        "lovbud": {
-          "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
-        },
+        "fengslingsFristDato": "2022-08-06",
         "merknad": "Anke tas til følge og Kiwi må i fengsel"
       },
       "erklaering": {
