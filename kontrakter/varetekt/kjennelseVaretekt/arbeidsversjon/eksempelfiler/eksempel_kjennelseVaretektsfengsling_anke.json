@@ -71,28 +71,28 @@
       "avgjoerelseIdForrigeInstans": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
       "avsagtDato": "2022-07-05",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
-      "avgjoerelseResultat": "FENGSLING",
-      "restriksjoner": [],
-      "isolasjonsKrav": [],
+      "avgjoerelseResultat": "VARETEKT",
+      "vilkaar": [
+        {
+          "type": "STRPL170A_FORHOLSMESSIGHET",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl §170 a.: Forholdsmessighet"
+          }
+        },
+        {
+          "type": "STRPL171_2_BEVISFORSPILLELSE",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl §171.2: Bevisforspillelsesfare"
+          }
+        }
+      ],
       "fengsling": {
         "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1899",
         "fraDato": "2022-07-06",
         "tilDato": "2022-08-06",
         "fengslingsFristDato": "2022-07-06",
-        "vilkaar": [
-          {
-            "type": "STRPL170A_FORHOLSMESSIGHET",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl §170 a.: Forholdsmessighet"
-            }
-          },
-          {
-            "type": "STRPL171_2_BEVISFORSPILLELSE",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl §171.2: Bevisforspillelsesfare"
-            }
-          }
-        ],
+        "restriksjoner": [],
+        "isolasjonsKrav": [],
         "merknad": "Anke tas til følge og Kiwi må i fengsel"
       },
       "erklaering": {

@@ -73,41 +73,41 @@
       "avsagtDato": "2022-07-05",
       "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
-      "avgjoerelseResultat": "FENGSLING",
-      "restriksjoner": [
+      "avgjoerelseResultat": "VARETEKT",
+      "vilkaar": [
         {
-          "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
-          "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-          "fraDato": "2022-07-06",
-          "tilDato": "2022-07-20"
+          "type": "STRPL170A_FORHOLSMESSIGHET",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl §170 a.: Forholdsmessighet"
+          }
         },
         {
-          "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
-          "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
-          "fraDato": "2022-07-21",
-          "tilDato": "2022-08-06"
+          "type": "STRPL171_1_UNNDRAGELSESFARE",
+          "lovbudEnkel": {
+            "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
+          }
         }
       ],
-      "isolasjonsKrav": [],
       "fengsling": {
         "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
         "fraDato": "2022-07-06",
         "tilDato": "2022-08-06",
         "fengslingsFristDato": "2022-07-06",
-        "vilkaar": [
+        "restriksjoner": [
           {
-            "type": "STRPL170A_FORHOLSMESSIGHET",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl §170 a.: Forholdsmessighet"
-            }
+            "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
+            "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
+            "fraDato": "2022-07-06",
+            "tilDato": "2022-07-20"
           },
           {
-            "type": "STRPL171_1_UNNDRAGELSESFARE",
-            "lovbudEnkel": {
-              "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
-            }
+            "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
+            "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
+            "fraDato": "2022-07-21",
+            "tilDato": "2022-08-06"
           }
         ],
+        "isolasjonsKrav": [],
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
       "erklaering": {
