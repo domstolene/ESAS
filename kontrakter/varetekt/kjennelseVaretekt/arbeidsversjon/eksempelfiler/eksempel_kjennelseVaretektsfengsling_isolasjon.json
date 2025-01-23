@@ -74,15 +74,6 @@
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "avgjoerelseResultat": ["FENGSLING"],
       "avsagtDato": "2022-07-05",
-      "restriksjoner": [],
-      "isolasjonsKrav": [
-        {
-          "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
-          "isolasjonsType": "FULL",
-          "fraDato": "2022-07-06",
-          "tilDato": "2022-08-06"
-        }
-      ],
       "lovbud": {
         "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
       },
@@ -91,6 +82,15 @@
         "fraDato": "2022-07-06",
         "tilDato": "2022-08-06",
         "fengslingsFristDato": "2022-08-06",
+        "restriksjoner": [],
+        "isolasjonsKrav": [
+          {
+            "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
+            "isolasjonsType": "FULL",
+            "fraDato": "2022-07-06",
+            "tilDato": "2022-08-06"
+          }
+        ],
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
       "erklaering": {

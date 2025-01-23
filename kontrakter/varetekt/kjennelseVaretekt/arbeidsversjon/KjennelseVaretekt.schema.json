@@ -100,18 +100,6 @@
           },
           "minItems": 1
         },
-        "restriksjoner": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/restriksjon"
-          }
-        },
-        "isolasjonsKrav": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/isolasjon"
-          }
-        },
         "lovbud": {
           "$ref": "#/definitions/lovbud"
         },
@@ -131,8 +119,6 @@
         "avsagtDato",
         "opprinneligKravid",
         "avgjoerelseResultat",
-        "restriksjoner",
-        "isolasjonsKrav",
         "erklaering"
       ],
       "type": "object",
@@ -153,12 +139,30 @@
         "fengslingsFristDato": {
           "$ref": "#/definitions/dato"
         },
+        "restriksjoner": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/restriksjon"
+          }
+        },
+        "isolasjonsKrav": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/isolasjon"
+          }
+        },
         "merknad": {
           "type": "string",
           "description": "Merknad til fengslingen"
         }
       },
-      "required": ["fengslingsId", "fraDato", "tilDato"],
+      "required": [
+        "fengslingsId",
+        "fraDato",
+        "tilDato",
+        "restriksjoner",
+        "isolasjonsKrav"
+      ],
       "type": "object",
       "additionalProperties": false
     },
