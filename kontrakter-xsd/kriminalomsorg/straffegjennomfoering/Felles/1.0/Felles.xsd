@@ -280,6 +280,8 @@
       <xs:enumeration value="Periode for straffavbrudd"/>
       <xs:enumeration value="Innvilgelse av straffavbrudd"/>
       <xs:enumeration value="Forlengelse av straffavbrudd"/>
+      <xs:enumeration value="Regionens vedtak om straffavbrudd"/>
+      <xs:enumeration value="Gjenopptatt soning etter straffavbrudd*"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="LoeslatelseFraSamfunnAarsakType">
