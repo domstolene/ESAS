@@ -1,13 +1,20 @@
 # Endringslogg begjæring om varetek
 
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til   |
-|---------|---------------------------------------------|----------------|--------------|-------------|
-| 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |             |
-| 1.3     | Håndter vitner uten identifikator           | ??             |              | 20.03.2024  |
-| 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     |              |             |
-| 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              | 09.10.2023  |
-| 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              | 01.08.2023  |
+|--------|---------------------------------------------|----------------|--------------|-------------|
+| arbeid | Begjæring om surrogater                     | | | |
+| 1.4    | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |             |
+| 1.3    | Håndter vitner uten identifikator           | ??             |              | 20.03.2024  |
+| 1.2    | Første versjon til produksjon, pilot        | 09.10.2023     |              |             |
+| 1.1    | Tolk og til hovedforhandling                | 01.08.2023     |              | 09.10.2023  |
+| 1.0    | Brukertest juni 2023, ikke til produksjon   |                |              | 01.08.2023  |
 
+## Versjon arbeid - til 1.5
+Støtte for begjæring om fengslingssurrogater.
+Forbereder til andre former for fengsling som for eksempel varetekt med elektronisk kontroll slik at det bare er å utvide
+enumerert tvangsType
+
+Påtale kan spørre om fengsling, surrogat eller begge deler.
 ## Versjon 1.4 - i produksjon
 
 ### Begjæring om varetekt gyldig fra 
