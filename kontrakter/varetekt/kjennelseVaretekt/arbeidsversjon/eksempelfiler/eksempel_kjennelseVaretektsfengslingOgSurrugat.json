@@ -74,7 +74,7 @@
       "avsagtDato": "2022-07-05",
       "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
-      "avgjoerelseResultat": ["FENGSLING", "FENGSLINGSSURROGAT"],
+      "avgjoerelseResultat": "VARETEKT",
       "lovbud": {
         "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
       },
@@ -107,11 +107,11 @@
         ],
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
-      "fengslingssurrugat": {
-        "surrugatId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
+      "fengslingssurrogat": {
+        "surrogatId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
         "fraDato": "2022-07-21",
         "tilDato": "2022-08-06",
-        "surrugatBeskrivelse": "Meldeplikt: Kiwi må melde seg på politistasjonen klokken 09:00 hver dag"
+        "surrogatBeskrivelse": "Meldeplikt: Kiwi må melde seg på politistasjonen klokken 09:00 hver dag"
       },
       "erklaering": {
         "erklaeringSiktede": {

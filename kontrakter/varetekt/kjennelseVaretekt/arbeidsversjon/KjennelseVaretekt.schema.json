@@ -94,11 +94,7 @@
           "description": "Kraviden i første instans"
         },
         "avgjoerelseResultat": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/avgjoerelseResultat"
-          },
-          "minItems": 1
+          "$ref": "#/definitions/avgjoerelseResultat"
         },
         "lovbud": {
           "$ref": "#/definitions/lovbud"
@@ -106,8 +102,8 @@
         "fengsling": {
           "$ref": "#/definitions/fengsling"
         },
-        "fengslingssurrugat": {
-          "$ref": "#/definitions/fengslingssurrugat"
+        "fengslingssurrogat": {
+          "$ref": "#/definitions/fengslingssurrogat"
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
@@ -166,11 +162,11 @@
       "type": "object",
       "additionalProperties": false
     },
-    "fengslingssurrugat": {
+    "fengslingssurrogat": {
       "properties": {
-        "surrugatId": {
+        "surrogatId": {
           "type": "string",
-          "description": "surrugatId som opprettes i DA (GUID)"
+          "description": "surrogatId som opprettes i DA (GUID)"
         },
         "fraDato": {
           "$ref": "#/definitions/dato"
@@ -178,12 +174,12 @@
         "tilDato": {
           "$ref": "#/definitions/dato"
         },
-        "surrugatBeskrivelse": {
+        "surrogatBeskrivelse": {
           "type": "string",
-          "description": "Beskrivelse av fengslingssurrugatet"
+          "description": "Beskrivelse av fengslingssurrogatet"
         }
       },
-      "required": ["surrugatId", "fraDato", "tilDato", "surrugatBeskrivelse"],
+      "required": ["surrogatId", "fraDato", "tilDato", "surrogatBeskrivelse"],
       "type": "object",
       "additionalProperties": false
     },
@@ -317,13 +313,7 @@
     },
     "avgjoerelseResultat": {
       "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",
-      "enum": [
-        "FENGSLING",
-        "LOESLATELSE",
-        "FENGSLINGSSURROGAT",
-        "ANKEN_FORKASTES",
-        "OPPHEVELSE"
-      ],
+      "enum": ["VARETEKT", "LOESLATELSE", "ANKEN_FORKASTES", "OPPHEVELSE"],
       "type": "string"
     },
     "rettsInstansType": {
