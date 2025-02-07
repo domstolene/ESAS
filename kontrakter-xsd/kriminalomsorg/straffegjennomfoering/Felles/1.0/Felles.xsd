@@ -229,6 +229,7 @@
       <xs:enumeration value="Gjeninnsatt annet fengsel etter straffavbrudd"/>
       <xs:enumeration value="Tilbakeført soning el. sikring etter soning av bøter"/>
       <xs:enumeration value="Ny straffegjennomføring"/>
+      <xs:enumeration value="Gjenopptatt soning etter straffavbrudd*"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EndringGjennomfoeringAarsakType">
