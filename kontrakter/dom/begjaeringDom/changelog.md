@@ -1,10 +1,11 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse   | Aktiv fra | Aktiv til |
-|---------|---------------|-----------|-----------|
-| 1.0     | Arbeidsverson |           |           |
+| Versjon | Beskrivelse | Aktiv fra | Aktiv til |
+|---------|-------------|-----------|-----------|
+| 1.0     | test        |           |           |
 
-## Versjon 1.0 arbeidsversjon ennå
+## Versjon 1.0 er låst begynner med arbeidsversjon for endringer
+
 ### 23.09.2024 Fornærmede med kobling til straffesak
 SiktelseTiltale er kun med siktede så fornærmede i begjæringDom må inneholde kobling til hvilken straffesak de er fornærmet i (som vitner).
 ### 18.09.2024 en siktet person
