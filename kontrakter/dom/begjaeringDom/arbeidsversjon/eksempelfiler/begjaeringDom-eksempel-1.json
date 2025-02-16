@@ -23,6 +23,14 @@
       "navn": "Agder tingrett"
     }
   },
+  "pakke": {
+    "pakkeId": "CADC75FC-22EF-478E-B4EC-27C49F85FD70",
+    "meldinger": [
+      "https://politiet.no/dom/arbeidsversjon/begjaeringDom",
+      "https://politiet.no/1.0/siktelseTiltale",
+      "https://domstol.no/dom/1.0/paastandStraff"
+    ]
+  },
   "begjaeringDom": {
     "kravId": "715ED997-479E-4791-A475-5F906341C33E",
     "begjaeringstype": "TILSTAAELSE",

@@ -6,6 +6,9 @@
 
 ## Versjon 1.0 er låst begynner med arbeidsversjon for endringer
 
+### 17.02.2025 Korrigering av begjæring av dom
+Endres i arbeidsversjon først, blir versjon 1.1.
+Lager pakke med referanse til alle andre meldingstyper.
 ### 23.09.2024 Fornærmede med kobling til straffesak
 SiktelseTiltale er kun med siktede så fornærmede i begjæringDom må inneholde kobling til hvilken straffesak de er fornærmet i (som vitner).
 ### 18.09.2024 en siktet person
