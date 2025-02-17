@@ -7,7 +7,7 @@ SchemaVersion=1.0
 SenderOrganization=POLITI
 
 ## Status
-1. versjon laget.
+1.0 versjonen er låst.
 
 ## Beskrivelse
 Påstand om straff skal brukes sammen med begjæaring om dom i alle prosesser der påtale får en dom tilbake fra tingretten.

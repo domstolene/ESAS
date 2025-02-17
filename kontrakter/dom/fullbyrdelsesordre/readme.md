@@ -26,7 +26,19 @@ Foregrepet soning er det veldig få av i løpet av året så ikke prioriterti f�
 
 ## Status
 
-Første versjon godkjent.
+Første versjon godkjent, men Kriminalomsorgen sier de ønsker mer informasjon, se kommentarer fra politiet i _kursiv_
+1. Alternativ til domsnummer. (La inn domstolens saksnummer i visningen til brukerne her for nå, men er usikker på hva som er best å presentere for brukerne her.)
+_Det kommer en løsning på politiets sitt domsnummer som også skal brukes til SSP, legger til som optional i første omgang._
+2. Flagget som "har nye straffbare forhold". (Finnes i eksisterende XML-melding fra tidligere).
+_Den skal være automatisk og vi får ikke til denne nå._
+3. Tydelig merket som "U18".  (Ligger gjerne som info i påtegninsark nå.)
+_Vi beregner automatisk om det er et forhold der siktede er under 18 år_
+4. Kontaktinformasjon til domfelte. (Telefonnummer(e) med landkode og/eller epost). (Finnes i eksisterende XML-melding fra tidligere)
+_Vi henter inne kontaktinformasjon mobilnummer/epost hvis det finnes.BL har ikke landkode som eget felt._
+5. Fritekst ekstra informasjon om varetekt: (Ligger gjerne som info i påtegningsark nå.) ("Domfelte har vært varetektsfengslet...", "Domfelte sitter i dag i varetekt i Ringerike fengsel, han bes overført...").
+_Vi har et beskrivelsesfelt der det kan skrives inn andre ting._
+6. Domfeltes arbeidsgiver (Ligger gjerne som info i påtegningsark)
+_Vi har ikke den informasjonen med god nok kvalitet da registreringene på straffesaken ikke blir oppdatert._
 
 ## Videre arbeid ønsker
 KDI ønsker meddømte med i meldingen.
