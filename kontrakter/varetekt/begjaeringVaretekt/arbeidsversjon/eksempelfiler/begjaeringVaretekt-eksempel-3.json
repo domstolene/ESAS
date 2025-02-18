@@ -73,6 +73,7 @@
       },
       "verger": []
     },
+    "under18": false,
     "varetekt": {
       "lovbud": {
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
@@ -85,9 +86,7 @@
           },
           "beskrivelse": "Skal være hjemme hos mor på Løkken verft, bare ut for å tisse"
         },
-        "gyldigFraDato": "2024-01-02",
-        "restriksjoner": [],
-        "isolasjon": []
+        "gyldigFraDato": "2024-01-02"
       },
       "vilkaar": [
         {
