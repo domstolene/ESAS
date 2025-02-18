@@ -49,7 +49,7 @@
           "$ref": "#/definitions/saksinformasjon"
         }
       },
-      "required": ["kravId", "siktet", "saksinformasjon"],
+      "required": ["kravId", "siktet", "saksinformasjon", "under18"],
       "additionalProperties": false
     },
     "vedlegg": {
@@ -89,21 +89,8 @@
         "gyldigFraDato": {
           "type": "string",
           "format": "date"
-        },
-        "restriksjoner": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/restriksjonBegjaering"
-          }
-        },
-        "isolasjon": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/isolasjonBegjaering"
-          }
         }
       },
-      "required": ["restriksjoner", "isolasjon"],
       "additionalProperties": false
     },
     "saksinformasjon": {
@@ -178,9 +165,21 @@
       "properties": {
         "varighet": {
           "$ref": "#/definitions/varighet"
+        },
+        "restriksjoner": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/restriksjonBegjaering"
+          }
+        },
+        "isolasjon": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/isolasjonBegjaering"
+          }
         }
       },
-      "required": ["varighet"],
+      "required": ["varighet", "restriksjoner", "isolasjon"],
       "additionalProperties": false
     },
     "substitutt": {
