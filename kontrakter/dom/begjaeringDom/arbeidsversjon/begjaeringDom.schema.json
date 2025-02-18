@@ -9,9 +9,9 @@
       "$ref": "#/definitions/forsendelse",
       "description": "avsender og mottaker"
     },
-    "pakke": {
-      "$ref": "#/definitions/pakke",
-      "description": "Pakke for å anngi flere meldinger som henger sammen."
+    "pakkeId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Hvis meldingen sendes sammen med flere f.eks. siktelse og påstand om straff så vil alle de 3 meldingene ha samme pakke id."
     },
     "begjaeringDom": {
       "$ref": "#/definitions/begjaeringDom"
@@ -210,21 +210,6 @@
         "mottakerOrganisasjon",
         "sendtTid"
       ],
-      "additionalProperties": false
-    },
-    "pakke": {
-      "type": "object",
-      "description": "Denne meldingen sendes sammen med flere",
-      "properties": {
-        "pakkeId": { "$ref": "#/definitions/GUID" },
-        "meldinger": {
-          "type": "array",
-          "description": "Liste over meldingstyper som vil bli sendt",
-          "items": { "type": "string" },
-          "minItems": 2
-        }
-      },
-      "required": ["pakkeId", "meldinger"],
       "additionalProperties": false
     },
     "avsender": {
