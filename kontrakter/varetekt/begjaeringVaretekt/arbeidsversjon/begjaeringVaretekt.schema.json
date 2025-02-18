@@ -271,7 +271,7 @@
     },
     "spraakkodeType": {
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
-      "pattern": "^([A-Z]{3,3})$",
+      "pattern": "^([A-Z]{3})$",
       "type": "string"
     },
     "behovForTolkType": {
@@ -348,10 +348,19 @@
         "STRPL171_3_GJENTAGELSESFARE",
         "STRPL171_4_FYLDESTGJOERENDE_GRUNNER",
         "STRPL172_A_10_AAR",
+        "ARRESTORDREL13",
+        "ARRESTORDREL20",
+        "ARRESTORDREL38",
+        "STRPL88_UTEBLIVELSE",
+        "STRPL171_MINDRE_TYVERI",
+        "STRPL171_MULIG_SAARREAKSJON",
         "STRPL172_B_GROV_VOLD",
+        "STRPL173_FLUKT_TIL_UTLENDET",
         "STRPL173A_A_UNNDRAGELSESFARE_VILK",
         "STRPL173A_B_HINDRE_VILK",
-        "STRPL173A_C_BEGJAERT_SIKTEDE"
+        "STRPL173A_C_BEGJAERT_SIKTEDE",
+        "STRPL187_ANKE_ETTER_FRIFINNELSE",
+        "ANNEN_SPESIALBESTEMMELSE"
       ]
     },
     "vilkaar": {
