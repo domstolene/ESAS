@@ -8,9 +8,17 @@
       "description": "Avsender og mottaker",
       "$ref": "#/definitions/forsendelse"
     },
+    "under18": {
+      "type": "boolean",
+      "description": "Sant hvis siktede var under 18 år på en av gjerningstidspunktene som personen er skyldig i"
+    },
     "fullbyrdelsesordre": {
       "$ref": "#/definitions/fullbyrdelsesordre",
       "description": "Selv ordren med detaljer fra dommen"
+    },
+    "beskrivelse": {
+      "type": "string",
+      "description": "Tilleggsinformasjon om fullbyrdelsen."
     },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
@@ -27,8 +35,10 @@
   },
   "required": [
     "forsendelse",
+    "under18",
     "fullbyrdelsesordre",
     "dokumenter",
+    "beskrivelse",
     "hovedStraffesaksnummer"
   ],
   "additionalProperties": false,
@@ -87,6 +97,10 @@
       "type": "object",
       "description": "Dommen fra domstolene, med struktur på reaksjoner som Kriminalomsorgen skal følge opp.",
       "properties": {
+        "straffesakDomsnummer": {
+          "type": "string",
+          "description": "Påtalemyndigheten sitt nummer/arkivnummer for dommen."
+        },
         "avgjoerelseId": {
           "$ref": "#/definitions/GUID",
           "description": "Domstolen sin id for avgjørelsen. Kan bli brukt i forbindelse med anke/forlengelse. AvgjørelseId beholdes ved korrigeringer"
@@ -581,6 +595,10 @@
         },
         "personAdresse": {
           "$ref": "#/definitions/personAdresse"
+        },
+        "kontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Hvis det finnes registrert på personen i BL."
         },
         "verger": {
           "type": "array",
