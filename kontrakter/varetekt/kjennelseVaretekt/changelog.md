@@ -1,9 +1,12 @@
 # kjennelseVaretekt endringslogg
-| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til  |
-|---------|---------------------------------------------|----------------|--------------|------------|
-| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     |              |            |
-| 1.1     | Kjennelse med minst ett dokument            | aktiv nå       | aktiv nå     |            |
-| 1.0     | Første versjon i produksjon                 |                |              | 05.02.2024 |
+| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender |
+|---------|---------------------------------------------|----------------|--------------|
+| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     | 25.03.2025   | 
+| 1.1     | Kjennelse med minst ett dokument            |                | 26.10.2023   | 
+| 1.0     | Første versjon i produksjon                 |                | 10.10.2023   | 
+
+# Versjon 1.3
+1. Legger til støtte for strukturerte vilkår i varetekts-kjennelse
 
 # Versjon 1.2
 1. Støtte for kjennelse fra Lagmanserett/Høyesterett. Melding inneholder nå:

@@ -100,9 +100,20 @@
         "fraDato": "2022-07-06",
         "tilDato": "2022-08-06",
         "fengslingsFristDato": "2022-07-06",
-        "lovbud": {
-          "lovbudStreng": "strpl § 184, jf. § 185, jf. § 171 nr. 2"
-        },
+        "vilkaar": [
+          {
+            "type": "STRPL170A_FORHOLSMESSIGHET",
+            "lovbudEnkel": {
+              "lovbudStreng": "Strpl §170 a.: Forholdsmessighet"
+            }
+          },
+          {
+            "type": "STRPL171_1_UNNDRAGELSESFARE",
+            "lovbudEnkel": {
+              "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
+            }
+          }
+        ],
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
       "erklaering": {
