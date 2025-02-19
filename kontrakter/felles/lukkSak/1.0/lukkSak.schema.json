@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://domstol.no/felles/1.0/lukkSak",
+  "description": "Skjema som definerer en lukking av sak uten avgjørelse",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse",
+      "description": "Avsender og mottaker"
+    },
+    "saksInformasjon": {
+      "$ref": "#/definitions/saksInformasjon"
+    },
+    "lukkeKategori": {
+      "$ref": "#/definitions/lukkeKategori",
+      "description": "Hvorfor saken lukkes"
+    },
+    "beskrivelse": {
+      "type": "string",
+      "description": "Fritekst som beskriver hvorfor saken lukkes"
+    }
+  },
+  "required": ["forsendelse", "saksInformasjon", "lukkeKategori"],
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "saksInformasjon": {
+      "properties": {
+        "saksnummer": {
+          "type": "string",
+          "description": "Domstolen sitt interne saksnummer. Kan være null dersom sak ikke er opprettet ennå."
+        },
+        "straffesaksnummer": {
+          "$ref": "#/definitions/straffesaksnummer",
+          "description": "Politiet sitt interne hovedstraffesaksnummer"
+        },
+        "kravId": {
+          "$ref": "#/definitions/GUID",
+          "description": "KravId i nåværende instans. Dersom saken ikke har kravId (f.eks. ved manuell opprettelse), skal ikke lukkSak-melding sendes."
+        }
+      },
+      "required": ["straffesaksnummer", "kravId"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "properties": {
+        "meldingsId": {
+          "$ref": "#/definitions/GUID"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottaker": {
+          "$ref": "#/definitions/mottaker"
+        }
+      },
+      "required": ["meldingsId", "sendtTid", "avsender", "mottaker"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "avsender": {
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "description": "Person som sender meldingen. Vanligvis dommeren eller saksbehandleren",
+          "$ref": "#/definitions/ansattPerson"
+        }
+      },
+      "required": ["organisasjon"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "mottaker": {
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        }
+      },
+      "required": ["organisasjon"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "description": "Entydig identifikator av juridisk enhet. F.eks et spesifikt domstol embete eller politidistrikt",
+      "properties": {
+        "navn": {
+          "type": "string",
+          "description": "F.eks. Nordland politidistrikt eller Oslo tingrett."
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "description": "Type for personer som er ansatt hos påtale eller domstolen(saksbehandlere, påtaleadvokater, statsadvokater,...)",
+      "properties": {
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string"
+        }
+      },
+      "required": ["etternavn", "fornavn", "tittel"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "lukkeKategori": {
+      "description": "Kategori for hvorfor saken lukkes",
+      "enum": ["DUPLIKAT", "FEIL", "ANNET"],
+      "type": "string"
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "GUID": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}
