@@ -29,7 +29,7 @@
   "definitions": {
     "begjaeringVaretekt": {
       "type": "object",
-      "description": "Begjæringen med data som er nødvendig for avgjørelsen. Siktede og krav som skal avgjøres. Varetekt og/eller substitutt skal være med",
+      "description": "Begjæringen med data som er nødvendig for avgjørelsen. Siktede og krav som skal avgjøres, varetektInfo",
       "properties": {
         "kravId": {
           "type": "string"
@@ -78,16 +78,17 @@
     },
     "paastandVaretekt": {
       "type": "object",
-      "description": "Påtale sier hvor hvor lenge i varetekt og hvilke restriksjoner/isolasjonskrav som de ønsker. Gydlig fra settes dersom det begjæres om varetekt frem i tid. fengsling og/eller substitutt påbudt.",
+      "description": "Påtale sier hvor hvor lenge i varetekt og hvilke restriksjoner/isolasjonskrav som de ønsker. Fengsling eller surrogat er påbudt.",
       "properties": {
         "fengsling": {
           "$ref": "#/definitions/fengsling"
         },
-        "substitutt": {
-          "$ref": "#/definitions/substitutt"
+        "fengslingssurrogat": {
+          "$ref": "#/definitions/fengslingssurrogat"
         },
         "gyldigFraDato": {
           "type": "string",
+          "description": "Settes dersom det begjæres om varetekt frem i tid.",
           "format": "date"
         }
       },
@@ -182,25 +183,17 @@
       "required": ["varighet", "restriksjoner", "isolasjon"],
       "additionalProperties": false
     },
-    "substitutt": {
+    "fengslingssurrogat": {
       "type": "object",
-      "description": "Surrogat med lengde",
+      "description": "Surrogat med lengde og beskrivelse",
       "properties": {
-        "substituttType": {
-          "$ref": "#/definitions/substituttType"
-        },
         "varighet": {
           "$ref": "#/definitions/varighet"
         },
         "beskrivelse": { "type": "string" }
       },
-      "required": ["substituttType", "varighet", "beskrivelse"],
+      "required": ["varighet", "beskrivelse"],
       "additionalProperties": false
-    },
-    "substituttType": {
-      "type": "string",
-      "description": "Vi begynner med kun fengslingssurrogat, bygger ut med elektronisk kontroll",
-      "enum": ["FENGSLINGSSURROGAT"]
     },
     "varighet": {
       "type": "object",

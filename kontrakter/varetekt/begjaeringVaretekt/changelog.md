@@ -8,7 +8,7 @@
 | 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              |
 
-## Versjon 1.5 arrestordreloven og surrogat
+## Versjon arbeidsversjon (1.5) arrestordreloven og surrogat
 ESAS-1396 og ESAS-476
 Jobber i arbeidsversjon til endringene er godkjent.
 Støtte for begjæring om fengslingssurrogater.

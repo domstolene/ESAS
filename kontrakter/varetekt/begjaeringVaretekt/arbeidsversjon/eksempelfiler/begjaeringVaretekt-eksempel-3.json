@@ -79,8 +79,7 @@
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
       },
       "paastandVaretekt": {
-        "substitutt": {
-          "substituttType": "FENGSLINGSSURROGAT",
+        "fengslingssurrogat": {
           "varighet": {
             "antallDager": 28
           },
