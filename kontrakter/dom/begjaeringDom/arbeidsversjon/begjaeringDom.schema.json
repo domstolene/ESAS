@@ -13,6 +13,10 @@
       "$ref": "#/definitions/GUID",
       "description": "Hvis meldingen sendes sammen med flere f.eks. siktelse og påstand om straff så vil alle de 3 meldingene ha samme pakke id."
     },
+    "under18Gjerningstid": {
+      "type": "boolean",
+      "description": "Sant hvis siktede var under 18 år på en av gjerningstidspunktene som personen er siktet i"
+    },
     "begjaeringDom": {
       "$ref": "#/definitions/begjaeringDom"
     },
@@ -32,6 +36,7 @@
   "required": [
     "forsendelse",
     "begjaeringDom",
+    "under18Gjerningstid",
     "hovedStraffesaksnummer",
     "dokumenter"
   ],
