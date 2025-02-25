@@ -96,20 +96,19 @@
         "avgjoerelseResultat": {
           "$ref": "#/definitions/avgjoerelseResultat"
         },
-        "restriksjoner": {
+        "vilkaar": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/restriksjon"
-          }
-        },
-        "isolasjonsKrav": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/isolasjon"
-          }
+            "$ref": "#/definitions/vilkaar"
+          },
+          "minItems": 0,
+          "description": "Vilkårene listet enkeltvis. Disse er sammenstilt i lovbudStreng"
         },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
+        },
+        "fengslingssurrogat": {
+          "$ref": "#/definitions/fengslingssurrogat"
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
@@ -121,9 +120,7 @@
         "avsagtDato",
         "opprinneligKravid",
         "avgjoerelseResultat",
-        "fengsling",
-        "restriksjoner",
-        "isolasjonsKrav",
+        "vilkaar",
         "erklaering"
       ],
       "type": "object",
@@ -144,19 +141,51 @@
         "fengslingsFristDato": {
           "$ref": "#/definitions/dato"
         },
-        "vilkaar": {
+        "restriksjoner": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/vilkaar"
-          },
-          "description": "Vilkårene listet enkeltvis. Disse er sammenstilt i lovbudStreng"
+            "$ref": "#/definitions/restriksjon"
+          }
+        },
+        "isolasjonsKrav": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/isolasjon"
+          }
         },
         "merknad": {
           "type": "string",
           "description": "Merknad til fengslingen"
         }
       },
-      "required": ["fengslingsId", "vilkaar"],
+      "required": [
+        "fengslingsId",
+        "fraDato",
+        "tilDato",
+        "restriksjoner",
+        "isolasjonsKrav"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "fengslingssurrogat": {
+      "properties": {
+        "surrogatId": {
+          "type": "string",
+          "description": "surrogatId som opprettes i DA (GUID)"
+        },
+        "fraDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "tilDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "surrogatBeskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av fengslingssurrogatet"
+        }
+      },
+      "required": ["surrogatId", "fraDato", "tilDato", "surrogatBeskrivelse"],
       "type": "object",
       "additionalProperties": false
     },
@@ -291,13 +320,7 @@
     },
     "avgjoerelseResultat": {
       "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",
-      "enum": [
-        "FENGSLING",
-        "LOESLATELSE",
-        "FENGSLINGSSURROGAT",
-        "ANKEN_FORKASTES",
-        "OPPHEVELSE"
-      ],
+      "enum": ["VARETEKT", "LOESLATELSE", "ANKEN_FORKASTES", "OPPHEVELSE"],
       "type": "string"
     },
     "rettsInstansType": {

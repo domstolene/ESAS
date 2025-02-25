@@ -74,12 +74,7 @@
       "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "avgjoerelseResultat": "LOESLATELSE",
-      "restriksjoner": [],
-      "isolasjonsKrav": [],
-      "fengsling": {
-        "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
-        "vilkaar": []
-      },
+      "vilkaar": [],
       "erklaering": {
         "erklaeringSiktede": {
           "meddeltIRettsmoete": true,
