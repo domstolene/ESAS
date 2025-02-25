@@ -23,6 +23,8 @@
       "navn": "Agder tingrett"
     }
   },
+
+  "pakkeId": "CADC75FC-22EF-478E-B4EC-27C49F85FD70",
   "begjaeringDom": {
     "kravId": "715ED997-479E-4791-A475-5F906341C33E",
     "begjaeringstype": "TILSTAAELSE",
