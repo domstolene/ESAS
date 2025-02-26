@@ -1,7 +1,7 @@
 # Endringslogg begjæring om varetek
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
-| arbeidsversjon| Arrestordreloven/surrogat                   |  |
+| 1.5     | Arrestordreloven/surrogat                   |                |
 | 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |
 | 1.3     | Håndter vitner uten identifikator           | ??             |              |
 | 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     |              |
