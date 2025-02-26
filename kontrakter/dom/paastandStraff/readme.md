@@ -1,13 +1,12 @@
 # Påstand om straff - ikke i produksjon
-Versjon 1.0 er første versjon som vi skal i produksjon med som en del av tilståelsessaker.
 
 ## Headere forsendelse justisHub
 SchemaName=PAASTAND_STRAFF  
-SchemaVersion=1.0  
+SchemaVersion=1.1  
 SenderOrganization=POLITI
 
 ## Status
-1.0 versjonen er låst.
+1.1 versjonen til produksjon
 
 ## Beskrivelse
 Påstand om straff skal brukes sammen med begjæaring om dom i alle prosesser der påtale får en dom tilbake fra tingretten.
