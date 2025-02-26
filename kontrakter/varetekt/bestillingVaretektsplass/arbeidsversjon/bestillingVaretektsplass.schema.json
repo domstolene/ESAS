@@ -40,6 +40,10 @@
     "arrestlokasjon": {
       "type": "string",
       "description": "Arresten den siktede sitter i"
+    },
+    "oenskerTilbudOmTransport": {
+      "type": "boolean",
+      "description": "Om Politiet ønsker tilbud om transport fra KTT"
     }
   },
   "required": [
@@ -51,7 +55,8 @@
     "medsiktedeInnsatteISak",
     "plassFraDato",
     "restriksjonIsolasjon",
-    "arrestlokasjon"
+    "arrestlokasjon",
+    "oenskerTilbudOmTransport"
   ],
   "additionalProperties": false,
   "definitions": {

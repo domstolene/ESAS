@@ -93,5 +93,6 @@
   },
   "medsiktedeInnsatteISak": { "valg": false },
   "arrestlokasjon": "Grønland Politistasjon",
-  "beskrivelse": "Sitter inne på Grønland polititasjon"
+  "beskrivelse": "Sitter inne på Grønland polititasjon",
+  "oenskerTilbudOmTransport": true
 }
