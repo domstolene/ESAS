@@ -1,9 +1,9 @@
 # Endringslogg begjæring om dom
 
-| Versjon        | Beskrivelse  | Aktiv fra  | Aktiv til |
-|----------------|--------------|------------|-----------|
-| arbeidsversjon | med pakkeId  |            |           |
-| 1.0            | Låst versjon |            |           |
+| Versjon | Beskrivelse  | Aktiv fra  | Aktiv til |
+|---------|--------------|------------|-----------|
+| 1.1     | med pakkeId  |            |           |
+| 1.0     | Låst versjon |            |           |
 
 ### 25.02.25 pakkeId 
 pakkeId for å kunne samle meldinger som hører sammen. begjaeringDom, paastandStraff og siktelseTiltale
