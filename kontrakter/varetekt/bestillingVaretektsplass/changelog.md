@@ -2,10 +2,16 @@
 Omorganisert slik at det er en katalog for hver melding og eksempelfiler på samme sted (forrige PR).
 
 
-| Versjon | Beskrivelse    | Aktiv fra | Aktiv til |
-|---------|----------------|-----------|-----------|
-| 1.1     | Arbeidsversjon |           |           |
-| 1.0     | I produksjon   |           |           |
+| Versjon | Beskrivelse                | Aktiv fra  | Aktiv til  |
+|---------|----------------------------|------------|------------|
+| 1.2     | Ønsker tilbud om transport | 09.01.2025 |            |
+| 1.1     | Arrestlokasjon             | 09.01.2025 |            |
+| 1.0     | I produksjon               |            | 09.01.2025 |
+
+### 26.02.2025
+
+Lagt til felt oenskerTilbudOmTransport.
+Oppdatert til versjon 1.2.
 
 ### 03.12.2024 Lagt til felt arrestlokasjon
 Lagt til felt arrestlokasjon (hvor den siktede sitter i arresten).

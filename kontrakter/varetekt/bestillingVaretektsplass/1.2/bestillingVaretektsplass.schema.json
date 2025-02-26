@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorgen.no/varetekt/arbeidsversjon/bestillingVaretektsplass",
+  "$id": "https://kriminalomsorgen.no/varetekt/1.2/bestillingVaretektsplass",
   "description": "Bestilling av varetektsplass fra påtale til Kriminalomsorgen.",
   "type": "object",
   "properties": {
