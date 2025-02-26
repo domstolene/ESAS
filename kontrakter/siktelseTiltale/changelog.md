@@ -1,10 +1,12 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse  | Aktiv fra  | Aktiv til |
-|---------|--------------|------------|----------|
-| 1.0     | Låst versjon |            ||
+| Versjon        | Beskrivelse  | Aktiv fra  | Aktiv til |
+|----------------|--------------|------------|-----------|
+| arbeidsversjon | med pakkeId  |            |           |
+| 1.0            | Låst versjon |            |           |
 
-## Versjon 1.0 arbeidsversjon til vi bruker den i produksjon
+### 25.02.25 pakkeId 
+pakkeId for å kunne samle meldinger som hører sammen. begjaeringDom, paastandStraff og siktelseTiltale
 ### 21.11.24 Dato for siktelse
 Legger til dato for siktelse som påbudt felt.
 Låser versjon 1.0 slik at videre endringer blir versjon 1.1

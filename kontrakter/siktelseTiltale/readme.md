@@ -5,6 +5,7 @@ Versjon 1.0 er første versjon som vi skal i produksjon med sammen med tilståel
 SchemaName=SIKTELSE_TILTALE  
 SchemaVersion=1.0
 senderOrganization=POLITIET  
+
 [RFC](../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
@@ -13,7 +14,7 @@ senderOrganization=POLITIET
 Klart til tilståelsessaker og bestilling av varetektsplass.
 
 ## beskrivelse
-En siktelse/tiltale en liste over basissaker som skal avgjøres.
+En siktelse/tiltale en liste over basissaker som skal avgjøres. Siktelser som sendes sammen med andre meldinger har lik pakkeId.  
 En basissak er et straffbart forhold (tid og sted), et lovbud og en siktet/tiltalt person.
 Ref. Harmoniseringsrapporten.
 Det er en ren siktelse der fornærmede ikke er en del av de strukturerte data.
