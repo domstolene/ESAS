@@ -8,6 +8,10 @@
       "$ref": "#/definitions/forsendelse",
       "description": "Avsender og mottaker"
     },
+    "pakkeId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Hvis meldingen sendes sammen med flere f.eks. siktelse og påstand om straff så vil alle de 3 meldingene ha samme pakke id."
+    },
     "paastandStraff": {
       "$ref": "#/definitions/paastandStraff"
     }
