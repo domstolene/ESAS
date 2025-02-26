@@ -29,7 +29,7 @@
   "definitions": {
     "begjaeringVaretekt": {
       "type": "object",
-      "description": "Begjæringen med data som er nødvendig for avgjørelsen. Siktede og krav som skal avgjøres.",
+      "description": "Begjæringen med data som er nødvendig for avgjørelsen. Siktede og krav som skal avgjøres, varetektInfo",
       "properties": {
         "kravId": {
           "type": "string"
@@ -49,7 +49,7 @@
           "$ref": "#/definitions/saksinformasjon"
         }
       },
-      "required": ["kravId", "siktet", "varetekt", "saksinformasjon"],
+      "required": ["kravId", "siktet", "saksinformasjon", "under18"],
       "additionalProperties": false
     },
     "vedlegg": {
@@ -78,30 +78,21 @@
     },
     "paastandVaretekt": {
       "type": "object",
-      "description": "Påtale sier hvor hvor lenge i varetekt og hvilke restriksjoner/isolasjonskrav som de ønsker. Gydlig fra settes dersom det begjæres om varetekt frem i tid",
-      "required": ["fengsling", "restriksjoner", "isolasjon"],
-      "additionalProperties": false,
+      "description": "Påtale sier hvor hvor lenge i varetekt og hvilke restriksjoner/isolasjonskrav som de ønsker. Fengsling eller surrogat er påbudt.",
       "properties": {
         "fengsling": {
           "$ref": "#/definitions/fengsling"
         },
+        "fengslingssurrogat": {
+          "$ref": "#/definitions/fengslingssurrogat"
+        },
         "gyldigFraDato": {
           "type": "string",
+          "description": "Settes dersom det begjæres om varetekt frem i tid.",
           "format": "date"
-        },
-        "restriksjoner": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/restriksjonBegjaering"
-          }
-        },
-        "isolasjon": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/isolasjonBegjaering"
-          }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "saksinformasjon": {
       "type": "object",
@@ -171,13 +162,37 @@
     },
     "fengsling": {
       "type": "object",
-      "description": "Hvor lenge i varetekt",
+      "description": "Hvor lenge skal han/hun fengsles",
       "properties": {
         "varighet": {
           "$ref": "#/definitions/varighet"
+        },
+        "restriksjoner": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/restriksjonBegjaering"
+          }
+        },
+        "isolasjon": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/isolasjonBegjaering"
+          }
         }
       },
-      "required": ["varighet"],
+      "required": ["varighet", "restriksjoner", "isolasjon"],
+      "additionalProperties": false
+    },
+    "fengslingssurrogat": {
+      "type": "object",
+      "description": "Surrogat med lengde og beskrivelse",
+      "properties": {
+        "varighet": {
+          "$ref": "#/definitions/varighet"
+        },
+        "beskrivelse": { "type": "string" }
+      },
+      "required": ["varighet", "beskrivelse"],
       "additionalProperties": false
     },
     "varighet": {

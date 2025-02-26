@@ -1,5 +1,4 @@
 # Endringslogg begjæring om varetek
-
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
 | arbeidsversjon| Arrestordreloven/surrogat                   |  |
@@ -9,9 +8,12 @@
 | 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              |
 
-## Versjon 1.5 arrestordreloven og surrogat
+## Versjon arbeidsversjon (1.5) arrestordreloven og surrogat
 ESAS-1396 og ESAS-476
 Jobber i arbeidsversjon til endringene er godkjent.
+Støtte for begjæring om fengslingssurrogater.
+Forbereder til andre former for fengsling som for eksempel varetekt med elektronisk kontroll slik at det bare er å utvide
+enumerert tvangsType
 ## Versjon 1.4 - i produksjon
 ### Begjæring om varetekt gyldig fra 
 Dersom det begjæres om varetekt frem i tid er det lagt til et felt gyldigFraDato i paastandVaretekt som sier når begjæringen skal gjelde fra.

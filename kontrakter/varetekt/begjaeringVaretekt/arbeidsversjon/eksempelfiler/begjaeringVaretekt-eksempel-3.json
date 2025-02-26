@@ -79,51 +79,13 @@
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
       },
       "paastandVaretekt": {
-        "fengsling": {
+        "fengslingssurrogat": {
           "varighet": {
-            "tilHovedforhandling": true
+            "antallDager": 28
           },
-          "restriksjoner": [
-            {
-              "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-              "lovbudEnkel": {
-                "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-              },
-              "periode": {
-                "startDag": 1,
-                "varighet": {
-                  "antallDager": 14
-                }
-              }
-            },
-            {
-              "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
-              "lovbudEnkel": {
-                "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-              },
-              "periode": {
-                "startDag": 15,
-                "varighet": {
-                  "antallDager": 14
-                }
-              }
-            }
-          ],
-          "isolasjon": [
-            {
-              "isolasjonsType": "FULL_ISOLASJON",
-              "lovbudEnkel": {
-                "lovbudStreng": "Strpl. § 186a"
-              },
-              "periode": {
-                "startDag": 1,
-                "varighet": {
-                  "tilHovedforhandling": true
-                }
-              }
-            }
-          ]
-        }
+          "beskrivelse": "Skal være hjemme hos mor på Løkken verft, bare ut for å tisse"
+        },
+        "gyldigFraDato": "2024-01-02"
       },
       "vilkaar": [
         {
@@ -151,7 +113,6 @@
       "forlengelse": {
         "beskrivelse": "forlengelse"
       },
-      "hovedforhandlingsdato": "2023-12-11",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
