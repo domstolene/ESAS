@@ -297,6 +297,10 @@
           "$ref": "#/definitions/siktetPerson",
           "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
         },
+        "under18Gjerningstid": {
+          "type": "boolean",
+          "description": "Sant hvis siktede var under 18 år på en av gjerningstidspunktene som personen er siktet i"
+        },
         "tolk": {
           "type": "object",
           "properties": {
@@ -314,7 +318,7 @@
           "$ref": "#/definitions/forsvarerinformasjon"
         }
       },
-      "required": ["siktetPerson"],
+      "required": ["siktetPerson", "under18Gjerningstid"],
       "additionalProperties": false
     },
     "siktetPerson": {
