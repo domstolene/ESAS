@@ -9,6 +9,7 @@
 Vi trenger en måte å koble sammen meldinger som hører sammen.
 Vi vil sende meldingene med samme pakke id.
 Ved korrigering av begjæring så vil vi sende begjaeringDom, paastandStraff og siktelseTiltale på nytt.
+Legger inn informasjon om at persjon er under 18 på et av gjerningstidspunktene.
 ## Versjon 1.0 er låst begynner med arbeidsversjon for endringer
 ### 17.02.2025 Korrigering av begjæring av dom
 Endres i arbeidsversjon først, blir versjon 1.1.
