@@ -1,10 +1,18 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse   | Aktiv fra | Aktiv til |
-|---------|---------------|-----------|-----------|
-| 1.0     | Arbeidsverson |           |           |
+| Versjon | Beskrivelse                                   | Aktiv fra | Aktiv til |
+|---------|-----------------------------------------------|-----------|-----------|
+|arbeidsversjon | pakkeId for flere meldinger som hører sammen  | |           |
+| 1.0     | test                                          |           |           |
 
-## Versjon 1.0 arbeidsversjon ennå
+## arbeidsversjon korrigering av begjæring
+Vi trenger en måte å koble sammen meldinger som hører sammen.
+Vi vil sende meldingene med samme pakke id.
+Ved korrigering av begjæring så vil vi sende begjaeringDom, paastandStraff og siktelseTiltale på nytt.
+## Versjon 1.0 er låst begynner med arbeidsversjon for endringer
+### 17.02.2025 Korrigering av begjæring av dom
+Endres i arbeidsversjon først, blir versjon 1.1.
+Lager pakke med referanse til alle andre meldingstyper.
 ### 23.09.2024 Fornærmede med kobling til straffesak
 SiktelseTiltale er kun med siktede så fornærmede i begjæringDom må inneholde kobling til hvilken straffesak de er fornærmet i (som vitner).
 ### 18.09.2024 en siktet person
