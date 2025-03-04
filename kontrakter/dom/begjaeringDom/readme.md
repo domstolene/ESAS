@@ -1,9 +1,8 @@
 # Begjæring om dom (tilståelse) - ikke i produksjon
-Versjon 1.0 er første versjon som vi skal i produksjon i tilståelsessaker.
 
 ## Headere forsendelse justisHub
 SchemaName=BEGJAERING_DOM  
-SchemaVersion=1.0
+SchemaVersion=1.1  
 senderOrganization=POLITIET
 
 [RFC](../../../rfc/MessageName-header.md)  
