@@ -44,6 +44,10 @@ _Vi har ikke den informasjonen med god nok kvalitet da registreringene på straf
 KDI ønsker meddømte med i meldingen.
 Ta med i neste versjon, ikke aktuelt i tilståelsessaker.
 
+### Full lovbudsstruktur
+
+Dette for å unngå at vi må vedlikeholde to fullstendige lovbudsstrukturer i to separate systemer uten noen mulighet til å kunne synkronisere disse uten om manuelt ved høve. 
+
 ## Avklaringer
 
 ### Ordre og oversendelse
