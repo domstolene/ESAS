@@ -1,21 +1,22 @@
 # Siktelse og tiltalepunkt - ikke i produksjon
-Versjon 1.0 er første versjon som vi skal i produksjon med sammen med tilståelsessaker.
 
 ## Headere forsendelse justisHub
 SchemaName=SIKTELSE_TILTALE  
-SchemaVersion=1.0
+SchemaVersion=1.1
 senderOrganization=POLITIET  
+
 [RFC](../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
 
 ## Status
-3. runde synkroniser med arbeid gjort på fullbyrdelse osv. for typer
+Klart til tilståelsessaker og bestilling av varetektsplass.
 
 ## beskrivelse
-En siktelse/tiltale en liste over basissaker som skal avgjøres.
+En siktelse/tiltale en liste over basissaker som skal avgjøres. Siktelser som sendes sammen med andre meldinger har lik pakkeId.  
 En basissak er et straffbart forhold (tid og sted), et lovbud og en siktet/tiltalt person.
 Ref. Harmoniseringsrapporten.
+Det er en ren siktelse der fornærmede ikke er en del av de strukturerte data.
 
 ## Utestående punkter
 ### Fornærmede
@@ -33,6 +34,16 @@ Legger ved informasjon om avsender inkludert epost adresse og telefon hvis det f
 Se [basissak](basissak.md). Domstolene skal avgjøre alle basissaker med skyld ikke skyld.
 _Sjekk opp fordi i Harmoniseringsrapporten står det straffeskyld / ikke straffeskyld_
 _Hva skjer med saker der personen ikke har skyldevne Straffeloven § 20, blir det fremedeles dømt skyldig / ikke skyldig ?_
+
+### siktelsesType
+| Type            | beskrivelse                                                                                                         |
+|-----------------|---------------------------------------------------------------------------------------------------------------------|
+| SIKTELSE        | Standard siktelse, brukes på tvangsmidler og tilståelsessaker                                                       |
+| TILTALE         | Standard tiltale, kan bli brukt i tilståelsessaker for å spare tid hvis det er tatt ut en tiltale                   |
+| FORELEGG        | Ikke vedtatt forelegg, skal ikke være tilståelsessaker                                                              |                                           |
+| TILLEGSSIKTELSE | Nye siktelsespunkt, ikke støtte for denne i første omgang                                                           |
+|TILLEGSTILTALE| Nye tiltalepunkt, ikke støtte for denne i første omgang.                                                            |
+|PAAGRIPELSE_BESLUTNING| Beslutning om pågripelse med siktelsespunkter. Brukes i noen tilfeller istedet for siktelse i varetektsfengslinger. |
 
 ### Kombinert lovbud
 Når en forbrytelse har foregått over tid og vi har hatt en lovendring i den perioden så er det mulig å definere flere lovbud som gjelder for den straffbare handlingen.

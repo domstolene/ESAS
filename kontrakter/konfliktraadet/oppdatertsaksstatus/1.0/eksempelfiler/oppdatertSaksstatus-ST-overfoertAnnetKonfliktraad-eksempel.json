@@ -1,0 +1,51 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE5",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "986074465",
+        "navn": "Konfliktrådet Oslo"
+      },
+      "person": {
+        "tittel": "Saksansvarlig",
+        "etternavn": "Årdal",
+        "kontakt": {
+          "telefonnummer": ["999999999"]
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "983997953",
+      "navn": "Innlandet politidistrikt"
+    }
+  },
+  "straffesaksnummer": "15434811",
+  "statusOppdatering": {
+    "straffesakStatus": {
+      "overfoertAnnetKonfliktraad": {
+        "konfliktraad": {
+          "organisasjonsnummer": "986074465",
+          "navn": "Konfliktrådet Agder"
+        },
+        "nySaksansvarlig": {
+          "tittel": "Saksansvarlig",
+          "fornavn": "Ansvarlig",
+          "etternavn": "Voksen",
+          "kontakt": {
+            "telefonnummer": ["77777777"]
+          }
+        }
+      }
+    }
+  },
+  "siktet": {
+    "navn": {
+      "fornavn": "Morsom",
+      "etternavn": "KIWI"
+    },
+    "identitetsnummer": {
+      "foedselsnummer": "31907499858"
+    }
+  }
+}

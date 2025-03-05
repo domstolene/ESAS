@@ -219,6 +219,7 @@
         ]
       }
     ],
+    "datoForSiktelse": "2024-04-17",
     "skrevetAv": {
       "brukeridentifikasjon": "GBJ012",
       "navn": {
@@ -238,15 +239,8 @@
         "idType": "FOEDSELSNUMMER",
         "verdi": "29838099694"
       },
-      "tilleggsId": [],
       "kjoenn": "KVINNE",
-      "foedselsdato": "1980-03-29",
-      "statsborgerskap": [
-        {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
-      ]
+      "foedselsdato": "1980-03-29"
     },
     {
       "personForetakRef": "BC2F7372-E548-4B2A-B5E9-0D009A9BA2DB",
@@ -258,74 +252,11 @@
         "idType": "FOEDSELSNUMMER",
         "verdi": "20923148036"
       },
-      "tilleggsId": [],
       "kjoenn": "KVINNE",
-      "foedselsdato": "1931-12-20",
-      "statsborgerskap": [
-        {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
-      ]
+      "foedselsdato": "1931-12-20"
     }
   ],
   "siktedeForetak": [],
-  "fornaermedePersoner": [
-    {
-      "personForetakRef": "FC894809-0F66-46AE-BC59-A19CE86250B5",
-      "navn": {
-        "fornavn": "Rala",
-        "etternavn": "YOU"
-      },
-      "kjoenn": "KVINNE",
-      "foedselsdato": "2000-12-01",
-      "statsborgerskap": [
-        {
-          "kode": "DZA",
-          "navn": "Algerie"
-        }
-      ]
-    },
-    {
-      "personForetakRef": "625DE28C-43B4-4F46-AAB4-5D835CE8B794",
-      "navn": {
-        "fornavn": "Trådløs",
-        "etternavn": "JENTE"
-      },
-      "identitetsnummer": {
-        "idType": "FOEDSELSNUMMER",
-        "verdi": "19839299845"
-      },
-      "kjoenn": "KVINNE",
-      "foedselsdato": "1992-03-19",
-      "statsborgerskap": [
-        {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
-      ]
-    },
-    {
-      "personForetakRef": "1AD4BD7F-7A21-4B4B-9CAE-E0325F6EE2BD",
-      "navn": {
-        "fornavn": "Deilig",
-        "etternavn": "DAGBOK"
-      },
-      "identitetsnummer": {
-        "idType": "FOEDSELSNUMMER",
-        "verdi": "04836396354"
-      },
-      "kjoenn": "MANN",
-      "foedselsdato": "1963-03-04",
-      "statsborgerskap": [
-        {
-          "kode": "NOR",
-          "navn": "Norge"
-        }
-      ]
-    }
-  ],
-  "fornaermedeForetak": [],
   "straffesaker": [
     {
       "straffesaksnummer": "15439559",

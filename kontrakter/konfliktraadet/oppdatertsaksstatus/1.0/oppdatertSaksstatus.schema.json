@@ -84,6 +84,9 @@
         "meklingIkkeGjennomfoert": {
           "$ref": "#/definitions/meklingIkkeGjennomfoert"
         },
+        "overfoertAnnetKonfliktraad": {
+          "$ref": "#/definitions/overfoertAnnetKonfliktraad"
+        },
         "kommentar": {
           "type": "string"
         }
@@ -123,6 +126,15 @@
             }
           },
           "required": ["meklingIkkeGjennomfoert"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "overfoertAnnetKonfliktraad": {
+              "$ref": "#/definitions/overfoertAnnetKonfliktraad"
+            }
+          },
+          "required": ["overfoertAnnetKonfliktraad"],
           "additionalProperties": false
         }
       ]

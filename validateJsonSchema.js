@@ -6,13 +6,13 @@ const ajv = new Ajv2020((opts = { strict: true }));
 addFormats(ajv);
 
 const jsonSchemaFolders = [
-  "kontrakter/dom/begjaeringDom",
   "kontrakter/varetekt/begjaeringVaretekt",
   "kontrakter/varetekt/kjennelsevaretektpoliti",
   "kontrakter/varetekt/bestillingVaretektsplass",
   "kontrakter/varetekt/helseOgRisiko",
   "kontrakter/varetekt/innsettelsesordre",
   "kontrakter/varetekt/kjennelseVaretekt",
+  "kontrakter/varetekt/svarTilbudVaretektsplass",
   "kontrakter/felles/kvittering",
   "kontrakter/felles/kodeverk",
   "kontrakter/felles/lukkSak",
@@ -20,6 +20,8 @@ const jsonSchemaFolders = [
   "kontrakter/personundersoekelse/rekvisisjonPersonundersoekelse",
   "kontrakter/personundersoekelse/returPersonundersoekelse",
   "kontrakter/dom/domsavgjoerelse",
+  "kontrakter/dom/begjaeringDom",
+  "kontrakter/dom/fullbyrdelsesordre",
   "kontrakter/siktelseTiltale",
   "kontrakter/kjennelsebeslutning",
   "kontrakter/vegtrafikkulykke/trafikkulykke",

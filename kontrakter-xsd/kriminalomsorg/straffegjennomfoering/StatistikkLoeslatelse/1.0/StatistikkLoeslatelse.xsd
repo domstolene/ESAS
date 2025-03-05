@@ -24,6 +24,7 @@
         <xs:element name="DagerBehandling" type="xs:int" nillable="true" />
         <xs:element name="DagerAvkortet" type="xs:int" nillable="true" />
         <xs:element name="DagerVaretektEtterDom" type="xs:int" nillable="true" />
+        <xs:element name="DagerP16" type="xs:int" nillable="true" />
     </xs:all>
   </xs:complexType>
 

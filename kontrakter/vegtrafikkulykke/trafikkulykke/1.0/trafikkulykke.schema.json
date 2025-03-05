@@ -165,7 +165,7 @@
         "involverteEnheter": {
           "type": "array",
           "items": { "$ref": "#/definitions/involvertEnhet" },
-          "description": "Fartøy innvolvert i ulykken."
+          "description": "Enheter involvert i ulykken."
         }
       },
       "required": [
@@ -175,7 +175,6 @@
         "politidistrikt",
         "stedfesting",
         "ulykkeskode",
-        "forhold",
         "involverteEnheter"
       ],
       "additionalProperties": false
@@ -345,6 +344,26 @@
       "type": "string",
       "enum": ["IKKE_FYSISK_ADSKILT", "FYSISK_ADSKILT", "ENVEGSREGULERING"]
     },
+    "kjoeretoeysinformasjon": {
+      "type": "object",
+      "properties": {
+        "aarsmodell": {
+          "type": "integer"
+        },
+        "registreringsland": {
+          "$ref": "#/definitions/registreringsland"
+        },
+        "dekktype": {
+          "$ref": "#/definitions/dekktype"
+        },
+        "kommentarDekk": {
+          "type": "string"
+        },
+        "registreringsnummer": {
+          "type": "string"
+        }
+      }
+    },
     "enhetstype": {
       "type": "string",
       "enum": [
@@ -431,211 +450,11 @@
           "type": "string",
           "description": "Enheten sin ID i saken. A, B, C...."
         },
-        "registreringsnummer": {
-          "type": "string"
+        "kjoeretoeysinformasjon": {
+          "$ref": "#/definitions/kjoeretoeysinformasjon"
         },
         "enhetstype": {
           "$ref": "#/definitions/enhetstype"
-        },
-        "aarsmodell": {
-          "type": "integer"
-        },
-        "registreringsland": {
-          "type": "string",
-          "enum": [
-            "A",
-            "AFG",
-            "AL",
-            "AM",
-            "AND",
-            "AUS",
-            "AZ",
-            "B",
-            "BD",
-            "BDS",
-            "BF",
-            "BG",
-            "BH",
-            "BIH",
-            "BOL",
-            "BR",
-            "BRN",
-            "BRU",
-            "BS",
-            "BUR",
-            "BVI",
-            "BW",
-            "BY",
-            "CAM",
-            "CC",
-            "CD",
-            "CDN",
-            "CH",
-            "CI",
-            "CL",
-            "CO",
-            "CR",
-            "CU",
-            "CY",
-            "CZ",
-            "D",
-            "DK",
-            "DOM",
-            "DY",
-            "DZ",
-            "E",
-            "EAK",
-            "EAT",
-            "EAU",
-            "EAZ",
-            "EC",
-            "ER",
-            "ES",
-            "EST",
-            "ET",
-            "ETH",
-            "F",
-            "FIN",
-            "FJI",
-            "FL",
-            "FO",
-            "G",
-            "GB",
-            "GBA",
-            "GBG",
-            "GBJ",
-            "GBM",
-            "GBZ",
-            "GCA",
-            "GE",
-            "GH",
-            "GR",
-            "GUY",
-            "H",
-            "HK",
-            "HKJ",
-            "HR",
-            "I",
-            "IL",
-            "IND",
-            "IR",
-            "IRL",
-            "IRQ",
-            "IS",
-            "J",
-            "JA",
-            "K",
-            "KS",
-            "KWT",
-            "KZ",
-            "L",
-            "LAO",
-            "LAR",
-            "LB",
-            "LS",
-            "LT",
-            "LV",
-            "M",
-            "MA",
-            "MAL",
-            "MC",
-            "MD",
-            "MEX",
-            "MGL",
-            "MK",
-            "MNE",
-            "MOC",
-            "MS",
-            "MW",
-            "N",
-            "NA",
-            "NAM",
-            "NAU",
-            "NEP",
-            "NIC",
-            "NL",
-            "NZ",
-            "P",
-            "PA",
-            "PE",
-            "PK",
-            "PL",
-            "PNG",
-            "PY",
-            "Q",
-            "RA",
-            "RC",
-            "RCA",
-            "RCB",
-            "RCH",
-            "RG",
-            "RH",
-            "RI",
-            "RIM",
-            "RKS",
-            "RL",
-            "RM",
-            "RMM",
-            "RN",
-            "RNR",
-            "RO",
-            "ROK",
-            "ROU",
-            "RP",
-            "RSM",
-            "RU",
-            "RUC",
-            "RUS",
-            "RWA",
-            "S",
-            "SA",
-            "SD",
-            "SGP",
-            "SK",
-            "SLO",
-            "SME",
-            "SN",
-            "SO",
-            "SRB",
-            "SUD",
-            "SY",
-            "SYR",
-            "T",
-            "TCH",
-            "TD",
-            "TG",
-            "TJ",
-            "TM",
-            "TN",
-            "TR",
-            "TT",
-            "UA",
-            "UAE",
-            "USA",
-            "UZ",
-            "V",
-            "VN",
-            "WAG",
-            "WAL",
-            "WAN",
-            "WD",
-            "WG",
-            "WL",
-            "WS",
-            "WV",
-            "YAR",
-            "YV",
-            "ZA",
-            "ZRE",
-            "ZW"
-          ],
-          "description": "Hvilket land bil er registrert i. Verdier er FN sin liste over landkoder på biler https://www.unece.org/fileadmin/DAM/trans/conventn/Distsigns.pdf"
-        },
-        "dekktype": {
-          "$ref": "#/definitions/dekktype"
-        },
-        "kommentarDekk": {
-          "type": "string"
         },
         "reguleringEnhetVegkryss": {
           "$ref": "#/definitions/reguleringEnhetVegkryss"
@@ -648,7 +467,7 @@
           "description": "Informasjon om person involvert i ulykken."
         }
       },
-      "required": ["enhetsbokstav", "enhetstype", "personer"],
+      "required": ["enhetsbokstav", "personer"],
       "additionalProperties": false
     },
     "plasseringKjoeretoey": {
@@ -719,7 +538,12 @@
       "properties": {
         "id": {
           "type": "string",
+          "format": "uuid",
           "description": "Gjør personen unikt identifiserbar innad i saken, må være lik ved oppdateringsmelding."
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vil alltid komme med om politiet har informasjon. Vil mangle ved feks utenlandsk statsborger"
         },
         "kjoenn": {
           "type": "string",
@@ -754,7 +578,7 @@
           "type": "string"
         }
       },
-      "required": ["id"],
+      "required": ["id", "skadegrad", "skadeforloep", "beskyttelsesutstyr"],
       "additionalProperties": false
     },
     "stedfesting": {
@@ -765,7 +589,7 @@
         "kryssendeVeg": { "$ref": "#/definitions/vegInformasjon" },
         "koordinater": { "$ref": "#/definitions/koordinater" }
       },
-      "required": ["veg"],
+      "required": ["koordinater"],
       "additionalProperties": false
     },
     "vegInformasjon": {
@@ -777,7 +601,6 @@
         "vegkategori": { "$ref": "#/definitions/vegkategori" },
         "vegnummer": { "type": "integer" }
       },
-      "required": ["gate", "kommunenummer", "vegkategori", "vegnummer"],
       "additionalProperties": false
     },
     "vegkategori": {
@@ -870,13 +693,9 @@
       "properties": {
         "organisasjon": {
           "$ref": "#/definitions/organisasjon"
-        },
-        "person": {
-          "$ref": "#/definitions/ansattPerson",
-          "description": "Person som har sendt melding."
         }
       },
-      "required": ["organisasjon", "person"],
+      "required": ["organisasjon"],
       "additionalProperties": false
     },
     "organisasjon": {
@@ -894,52 +713,6 @@
       "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
-    "ansattPerson": {
-      "type": "object",
-      "description": "Saksbehandler, jurist, etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
-      "properties": {
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "kontaktinfo": {
-          "$ref": "#/definitions/kontaktInfoPerson",
-          "description": "Minimum epost adresse til den som sender melding."
-        }
-      },
-      "required": ["navn", "kontaktinfo"],
-      "additionalProperties": false
-    },
-    "personnavn": {
-      "type": "object",
-      "properties": {
-        "fornavn": {
-          "type": "string"
-        },
-        "mellomnavn": {
-          "type": "string"
-        },
-        "etternavn": {
-          "type": "string"
-        }
-      },
-      "required": ["fornavn", "etternavn"],
-      "additionalProperties": false
-    },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
-      },
-      "required": ["epost"],
-      "additionalProperties": false
-    },
     "organisasjonsnummer": {
       "type": "string",
       "description": "Norsk organisasjonsnummer fra BRREG. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
@@ -947,15 +720,217 @@
       "minLength": 9,
       "maxLength": 9
     },
-    "telefonnummer": {
+    "registreringsland": {
       "type": "string",
-      "description": "Telefonnummer, norsk eller utenlandsk, med eller uten landkode/prefix",
-      "maxLength": 30,
-      "minLength": 1
+      "enum": [
+        "A",
+        "AFG",
+        "AL",
+        "AM",
+        "AND",
+        "AUS",
+        "AZ",
+        "B",
+        "BD",
+        "BDS",
+        "BF",
+        "BG",
+        "BH",
+        "BIH",
+        "BOL",
+        "BR",
+        "BRN",
+        "BRU",
+        "BS",
+        "BUR",
+        "BVI",
+        "BW",
+        "BY",
+        "CAM",
+        "CC",
+        "CD",
+        "CDN",
+        "CH",
+        "CI",
+        "CL",
+        "CO",
+        "CR",
+        "CU",
+        "CY",
+        "CZ",
+        "D",
+        "DK",
+        "DOM",
+        "DY",
+        "DZ",
+        "E",
+        "EAK",
+        "EAT",
+        "EAU",
+        "EAZ",
+        "EC",
+        "ER",
+        "ES",
+        "EST",
+        "ET",
+        "ETH",
+        "F",
+        "FIN",
+        "FJI",
+        "FL",
+        "FO",
+        "G",
+        "GB",
+        "GBA",
+        "GBG",
+        "GBJ",
+        "GBM",
+        "GBZ",
+        "GCA",
+        "GE",
+        "GH",
+        "GR",
+        "GUY",
+        "H",
+        "HK",
+        "HKJ",
+        "HR",
+        "I",
+        "IL",
+        "IND",
+        "IR",
+        "IRL",
+        "IRQ",
+        "IS",
+        "J",
+        "JA",
+        "K",
+        "KS",
+        "KWT",
+        "KZ",
+        "L",
+        "LAO",
+        "LAR",
+        "LB",
+        "LS",
+        "LT",
+        "LV",
+        "M",
+        "MA",
+        "MAL",
+        "MC",
+        "MD",
+        "MEX",
+        "MGL",
+        "MK",
+        "MNE",
+        "MOC",
+        "MS",
+        "MW",
+        "N",
+        "NA",
+        "NAM",
+        "NAU",
+        "NEP",
+        "NIC",
+        "NL",
+        "NZ",
+        "P",
+        "PA",
+        "PE",
+        "PK",
+        "PL",
+        "PNG",
+        "PY",
+        "Q",
+        "RA",
+        "RC",
+        "RCA",
+        "RCB",
+        "RCH",
+        "RG",
+        "RH",
+        "RI",
+        "RIM",
+        "RKS",
+        "RL",
+        "RM",
+        "RMM",
+        "RN",
+        "RNR",
+        "RO",
+        "ROK",
+        "ROU",
+        "RP",
+        "RSM",
+        "RU",
+        "RUC",
+        "RUS",
+        "RWA",
+        "S",
+        "SA",
+        "SD",
+        "SGP",
+        "SK",
+        "SLO",
+        "SME",
+        "SN",
+        "SO",
+        "SRB",
+        "SUD",
+        "SY",
+        "SYR",
+        "T",
+        "TCH",
+        "TD",
+        "TG",
+        "TJ",
+        "TM",
+        "TN",
+        "TR",
+        "TT",
+        "UA",
+        "UAE",
+        "USA",
+        "UZ",
+        "V",
+        "VN",
+        "WAG",
+        "WAL",
+        "WAN",
+        "WD",
+        "WG",
+        "WL",
+        "WS",
+        "WV",
+        "YAR",
+        "YV",
+        "ZA",
+        "ZRE",
+        "ZW"
+      ],
+      "description": "Hvilket land bil er registrert i. Verdier er FN sin liste over landkoder på biler https://www.unece.org/fileadmin/DAM/trans/conventn/Distsigns.pdf"
     },
-    "epost": {
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor) eller DNummer (inkl Tenor) som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
       "type": "string",
-      "format": "email"
+      "description": "FNR eller DNR",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER"]
     }
   }
 }

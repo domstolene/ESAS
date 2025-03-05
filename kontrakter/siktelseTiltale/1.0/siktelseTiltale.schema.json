@@ -28,16 +28,6 @@
       "description": "Alle siktede foretak. Kan være tom liste",
       "items": { "$ref": "#/definitions/foretak" }
     },
-    "fornaermedePersoner": {
-      "type": "array",
-      "description": "Fornærmede personer.",
-      "items": { "$ref": "#/definitions/relatertPersonEnkel" }
-    },
-    "fornaermedeForetak": {
-      "type": "array",
-      "description": "Alle fornaermede foretak. Kan være tom liste",
-      "items": { "$ref": "#/definitions/foretak" }
-    },
     "straffesaker": {
       "type": "array",
       "description": "Alle straffesaker (straffbare forhold nesten) som er med i siktelsen/tiltalen eller saksbehandlingssaken",
@@ -58,44 +48,12 @@
     "siktelseTiltale",
     "siktedePersoner",
     "siktedeForetak",
-    "fornaermedePersoner",
-    "fornaermedeForetak",
     "straffesaker",
     "dokumenter"
   ],
   "additionalProperties": false,
 
   "definitions": {
-    "relatertPersonEnkel": {
-      "type": "object",
-      "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
-      "properties": {
-        "personForetakRef": {
-          "$ref": "#/definitions/GUID",
-          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme person."
-        },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "foedselsdato": { "$ref": "#/definitions/dato" },
-        "kjoenn": {
-          "$ref": "#/definitions/kjoenn",
-          "description": "Ukjent kjønn hvis denne ikke er med"
-        },
-        "statsborgerskap": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/land"
-          }
-        },
-        "identitetsnummer": {
-          "$ref": "#/definitions/personIdentifikator",
-          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
-        }
-      },
-      "required": ["personForetakRef", "navn", "statsborgerskap"],
-      "additionalProperties": false
-    },
     "basissakId": {
       "$ref": "#/definitions/unikId",
       "description": "Unik id for basissak, ved dom må denne id følge med og det skal vær definert skyld/ikke skyld"
@@ -117,7 +75,7 @@
         {
           "properties": {
             "kravId": {
-              "$ref": "#/definitions/unikId"
+              "$ref": "#/definitions/GUID"
             }
           },
           "additionalProperties": false,
@@ -126,7 +84,7 @@
         {
           "properties": {
             "anmodningsId": {
-              "$ref": "#/definitions/unikId"
+              "$ref": "#/definitions/GUID"
             }
           },
           "additionalProperties": false,
@@ -305,7 +263,7 @@
           "type": "string"
         }
       },
-      "required": ["lovbudStreng", "gjengivelse"],
+      "required": ["lovbudId", "lovbudStreng", "gjengivelse"],
       "additionalProperties": false
     },
     "adresseGradering": {
@@ -392,30 +350,15 @@
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
         },
-        "statsborgerskap": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/land"
-          }
-        },
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
           "description": "Fødselsnummer, D-nummer eller SSP nummer som er i bruk. Siktede vil alltid ha med denne."
-        },
-        "tilleggsId": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/personIdentifikator"
-          },
-          "description": "Kan være SSP nummer hvis person har D-nummer, fremtidig historiske nummer?"
         }
       },
       "required": [
         "personForetakRef",
         "navn",
         "foedselsdato",
-        "statsborgerskap",
-        "tilleggsId",
         "identitetsnummer"
       ],
       "additionalProperties": false
@@ -479,13 +422,14 @@
     },
     "siktelsesType": {
       "type": "string",
-      "description": "Hvilken type siktelse/tiltale er dettte.",
+      "description": "Hvilken type siktelse/tiltale er dettte, se readme for beskrivelse",
       "enum": [
         "SIKTELSE",
         "TILTALE",
         "FORELEGG",
-        "TILLEGSSIKTELSE",
-        "TILLEGSTILTALE"
+        "TILLEGGSSIKTELSE",
+        "TILLEGGSTILTALE",
+        "PAAGRIPELSE_BESLUTNING"
       ]
     },
     "siktelseTiltale": {
@@ -502,6 +446,10 @@
           },
           "minItems": 1
         },
+        "datoForSiktelse": {
+          "$ref": "#/definitions/dato",
+          "description": "Dato når siktelsen er tatt ut"
+        },
         "skrevetAv": {
           "$ref": "#/definitions/ansattIDPerson",
           "description": "Jurist som har skrevet under siktelsen (en påtaleansvarlig)"
@@ -511,7 +459,13 @@
           "description": "Referanse til siktelsesdokumentet (PDF) som er vedlagt meldingen"
         }
       },
-      "required": ["siktelsesId", "siktelsesType", "poster", "skrevetAv"],
+      "required": [
+        "siktelsesId",
+        "siktelsesType",
+        "poster",
+        "datoForSiktelse",
+        "skrevetAv"
+      ],
       "additionalProperties": false
     },
     "straffbartForhold": {
@@ -539,7 +493,7 @@
         },
         "inkluderteForhold": {
           "type": "array",
-          "description": "Samler flere forhold i et straffbartForhold og bruker et annet lovbud",
+          "description": "Samler flere forhold i et straffbartForhold og bruker et annet lovbud, de inkluderte sakene er ikke nødvendigvis subsumert",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
         }
       },
@@ -547,7 +501,8 @@
         "straffesaksnummer",
         "basissaker",
         "inkluderteForhold",
-        "bokstav"
+        "bokstav",
+        "prinsipalGrunnlag"
       ],
       "additionalProperties": false
     },

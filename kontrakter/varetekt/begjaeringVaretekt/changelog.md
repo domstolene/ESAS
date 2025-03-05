@@ -1,36 +1,32 @@
 # Endringslogg begjæring om varetek
+| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
+|---------|---------------------------------------------|----------------|--------------|
+| 1.5     | Arrestordreloven/surrogat                   |                |
+| 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |
+| 1.3     | Håndter vitner uten identifikator           | ??             |              |
+| 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     |              |
+| 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              |
+| 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              |
 
-| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | Aktiv til   |
-|---------|---------------------------------------------|----------------|--------------|-------------|
-| 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |             |
-| 1.3     | Håndter vitner uten identifikator           | ??             |              | 20.03.2024  |
-| 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     |              |             |
-| 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              | 09.10.2023  |
-| 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              | 01.08.2023  |
-
+## Versjon arbeidsversjon (1.5) arrestordreloven og surrogat
+ESAS-1396 og ESAS-476
+Jobber i arbeidsversjon til endringene er godkjent.
+Støtte for begjæring om fengslingssurrogater.
+Forbereder til andre former for fengsling som for eksempel varetekt med elektronisk kontroll slik at det bare er å utvide
+enumerert tvangsType
 ## Versjon 1.4 - i produksjon
-
 ### Begjæring om varetekt gyldig fra 
-
 Dersom det begjæres om varetekt frem i tid er det lagt til et felt gyldigFraDato i paastandVaretekt som sier når begjæringen skal gjelde fra.
-
 ## Versjon 1.3
-
 ### Fødselsdato på vitner er optional
-
 Fødselsdato for vitner er gjort optional. Dette er noe vi mangler for enkelte, ofte når vitner er politi. 
-
 ## Versjon 1.2
-
 ### Fengsling utløper dato ved forlengelse
-
 Det er lagt til dato for når forrige/gjeldene fengsling utløper under forlengelseInfo ved begjæring om varetekt forlengelse
-
 Andre del av endringer fra brukertest til pilot, planlagte endringer:
 1. Forsvareroppnevning
 2. Fengslingssurrogater (?)
 3. ... 
-
 ## Versjon 1.1 - første del av oppdateringer etter brukertest
 
 ### Oppdatert begrense offentlighet

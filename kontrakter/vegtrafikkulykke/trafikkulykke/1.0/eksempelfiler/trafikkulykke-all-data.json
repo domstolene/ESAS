@@ -6,16 +6,6 @@
       "organisasjon": {
         "organisasjonsnummer": "983997953",
         "navn": "Innlandet politidistrikt"
-      },
-      "person": {
-        "navn": {
-          "fornavn": "Test",
-          "etternavn": "Testesen"
-        },
-        "kontaktinfo": {
-          "telefonnummer": "12 34 56 78",
-          "epost": "test.testesen@politiet.no"
-        }
       }
     },
     "mottakerOrganisasjon": {
@@ -72,16 +62,22 @@
     "involverteEnheter": [
       {
         "enhetsbokstav": "A",
-        "registreringsnummer": "AB123456789",
         "enhetstype": "PERSONBIL_STASJONSVOGN",
-        "aarsmodell": 2020,
-        "registreringsland": "N",
-        "dekktype": "VINTERDEKK_UTEN_PIGGER",
-        "kommentarDekk": "veldig slitte dekk",
+        "kjoeretoeysinformasjon": {
+          "registreringsnummer": "AB123456789",
+          "aarsmodell": 2020,
+          "registreringsland": "N",
+          "dekktype": "VINTERDEKK_UTEN_PIGGER",
+          "kommentarDekk": "veldig slitte dekk"
+        },
         "reguleringEnhetVegkryss": "FORKJOERSVEI",
         "personer": [
           {
-            "id": "person_1",
+            "id": "2f4fbb9f-26e7-4bec-a398-af1a82e8ddde",
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "22918197870"
+            },
             "kjoenn": "MANN",
             "foedselsdato": "1977-11-11",
             "plasseringKjoeretoey": "FOERERPLASS",
@@ -94,13 +90,37 @@
             "poststed": "Røyse"
           },
           {
-            "id": "person_2",
+            "id": "e9c67e1a-7142-4a17-8e4d-c1b186fdae6d",
             "kjoenn": "KVINNE",
             "foedselsdato": "2022-02-12",
             "plasseringKjoeretoey": "BAK",
             "skadegrad": "MEGET_ALVORLIG_SKADD",
             "beskyttelsesutstyr": "BARNESETE",
             "skadeforloep": "SKADD_MOT_INTERIOER",
+            "ferdselsformaal": "FRITIDSREISE",
+            "beskrivelsePersonskade": "Slo hodet mot vinduet",
+            "postnummer": "3530",
+            "poststed": "Røyse"
+          }
+        ]
+      },
+      {
+        "enhetsbokstav": "B",
+        "enhetstype": "FOTGJENGER",
+        "reguleringEnhetVegkryss": "ANNEN_REGULERING_I_KRYSS_INKL_MIDLERTIDIG",
+        "personer": [
+          {
+            "id": "f9a3bf50-383d-4be7-82d2-52cc5e3286e2",
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "22918197881"
+            },
+            "kjoenn": "MANN",
+            "foedselsdato": "1999-01-12",
+            "plasseringKjoeretoey": "FOERERPLASS",
+            "skadegrad": "ILLEBEFINNENDE_FOERER",
+            "beskyttelsesutstyr": "BILBELTE",
+            "skadeforloep": "SKADD_MOT_EKSTERIOER",
             "ferdselsformaal": "FRITIDSREISE",
             "beskrivelsePersonskade": "Slo hodet mot vinduet",
             "postnummer": "3530",

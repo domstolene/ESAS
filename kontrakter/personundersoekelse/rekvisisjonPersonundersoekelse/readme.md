@@ -1,7 +1,5 @@
 # Rekvirering av personundersøkelse
 
-Versjon 1.0 er første versjon som vi skal i produksjon med.
-
 - [JSON Schema](1.0/rekvirerePersonundersoekelse.schema.json)
 - [Eksempler](1.0/eksempelfiler/)
 
@@ -9,7 +7,7 @@ Versjon 1.0 er første versjon som vi skal i produksjon med.
 
 ## Headere forsendelse justisHub
 SchmaName=REKVISISJON_PERSONUNDERSOEKELSE  
-SchemaVersion=1.0  
+SchemaVersion=1.1
 [RFC message name header](../../../rfc/MessageName-header.md)
 
 ## Avklaringer

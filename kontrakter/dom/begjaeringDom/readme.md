@@ -1,9 +1,8 @@
 # Begjæring om dom (tilståelse) - ikke i produksjon
-Versjon 1.0 er første versjon som vi skal i produksjon i tilståelsessaker.
 
 ## Headere forsendelse justisHub
 SchemaName=BEGJAERING_DOM  
-SchemaVersion=1.0
+SchemaVersion=1.1  
 senderOrganization=POLITIET
 
 [RFC](../../../rfc/MessageName-header.md)  
@@ -12,7 +11,7 @@ senderOrganization=POLITIET
 Mulig Kriminalomsorgen etter hvert vil bruke en variant av denne, men til pilot er det politiet.
 
 ## Status
-1. versjon laget og slettet. Prøver på nytt.
+Første versjonen dekker nå kun tilståelsessaker med en siktet person (ikke foretak). Når vi begynner å jobbe med meddomssaker så utvider vi meldingen igjen.
 
 ## Beskrivelse
 Begjæaring om dom skal brukes i alle prosesser der påtale får en dom tilbake fra tingretten.

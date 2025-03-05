@@ -96,20 +96,19 @@
         "avgjoerelseResultat": {
           "$ref": "#/definitions/avgjoerelseResultat"
         },
-        "restriksjoner": {
+        "vilkaar": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/restriksjon"
-          }
-        },
-        "isolasjonsKrav": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/isolasjon"
-          }
+            "$ref": "#/definitions/vilkaar"
+          },
+          "minItems": 0,
+          "description": "Vilkårene listet enkeltvis. Disse er sammenstilt i lovbudStreng"
         },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
+        },
+        "fengslingssurrogat": {
+          "$ref": "#/definitions/fengslingssurrogat"
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
@@ -121,9 +120,7 @@
         "avsagtDato",
         "opprinneligKravid",
         "avgjoerelseResultat",
-        "fengsling",
-        "restriksjoner",
-        "isolasjonsKrav",
+        "vilkaar",
         "erklaering"
       ],
       "type": "object",
@@ -144,15 +141,51 @@
         "fengslingsFristDato": {
           "$ref": "#/definitions/dato"
         },
-        "lovbud": {
-          "$ref": "#/definitions/lovbud"
+        "restriksjoner": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/restriksjon"
+          }
+        },
+        "isolasjonsKrav": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/isolasjon"
+          }
         },
         "merknad": {
           "type": "string",
           "description": "Merknad til fengslingen"
         }
       },
-      "required": ["fengslingsId"],
+      "required": [
+        "fengslingsId",
+        "fraDato",
+        "tilDato",
+        "restriksjoner",
+        "isolasjonsKrav"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "fengslingssurrogat": {
+      "properties": {
+        "surrogatId": {
+          "type": "string",
+          "description": "surrogatId som opprettes i DA (GUID)"
+        },
+        "fraDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "tilDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "surrogatBeskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av fengslingssurrogatet"
+        }
+      },
+      "required": ["surrogatId", "fraDato", "tilDato", "surrogatBeskrivelse"],
       "type": "object",
       "additionalProperties": false
     },
@@ -200,7 +233,8 @@
       "type": "object",
       "additionalProperties": false
     },
-    "lovbud": {
+    "lovbudEnkel": {
+      "description": "Enkel lovbudreferanse kun lovbudstreng",
       "properties": {
         "lovbudStreng": {
           "type": "string"
@@ -286,13 +320,7 @@
     },
     "avgjoerelseResultat": {
       "description": "ANKEN_FORKASTES og OPPHEVELSE kun relevant i ankesaker",
-      "enum": [
-        "FENGSLING",
-        "LOESLATELSE",
-        "FENGSLINGSSURROGAT",
-        "ANKEN_FORKASTES",
-        "OPPHEVELSE"
-      ],
+      "enum": ["VARETEKT", "LOESLATELSE", "ANKEN_FORKASTES", "OPPHEVELSE"],
       "type": "string"
     },
     "rettsInstansType": {
@@ -549,6 +577,45 @@
           "additionalProperties": false
         }
       ]
+    },
+    "vilkaarsType": {
+      "type": "string",
+      "description": "Hvilket vilkår gjelder for varetektsfengslingen. 173 brukes ved vilkårsbrudd.",
+      "enum": [
+        "STRPL88_UTEBLIVELSE",
+        "STRPL170A_FORHOLSMESSIGHET",
+        "STRPL171_MINDRE_TYVERI",
+        "STRPL171_MULIG_SAARREAKSJON",
+        "STRPL171_1_UNNDRAGELSESFARE",
+        "STRPL171_2_BEVISFORSPILLELSE",
+        "STRPL171_3_GJENTAGELSESFARE",
+        "STRPL171_4_FYLDESTGJOERENDE_GRUNNER",
+        "STRPL172_A_10_AAR",
+        "STRPL172_B_GROV_VOLD",
+        "STRPL173_FLUKT_TIL_UTLENDET",
+        "STRPL173A_A_UNNDRAGELSESFARE_VILK",
+        "STRPL173A_B_HINDRE_VILK",
+        "STRPL173A_C_BEGJAERT_SIKTEDE",
+        "STRPL187_ANKE_ETTER_FRIFINNELSE",
+        "ARRESTORDREL13",
+        "ARRESTORDREL20",
+        "ARRESTORDREL38",
+        "ANNEN_SPESIALBESTEMMELSE"
+      ]
+    },
+    "vilkaar": {
+      "type": "object",
+      "description": "Et vilkår for varetektsfengsling",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/vilkaarsType"
+        },
+        "lovbudEnkel": {
+          "$ref": "#/definitions/lovbudEnkel"
+        }
+      },
+      "required": ["type", "lovbudEnkel"],
+      "additionalProperties": false
     },
     "foedselsnummer": {
       "type": "string",

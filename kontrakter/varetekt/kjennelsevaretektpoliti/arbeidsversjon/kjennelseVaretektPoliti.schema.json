@@ -16,6 +16,10 @@
       "$ref": "#/definitions/unikId",
       "description": "En syklus fra pågripelse til løslatelse, vil ikke være med til å begynne med"
     },
+    "bestillingVaretektsplassId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Referanse til siste bestilling av varetektsplass for siktede i samme straffesak, hvis finnes"
+    },
     "personVaretektInfo": {
       "$ref": "#/definitions/personVaretektInfo"
     },
@@ -176,10 +180,7 @@
           "description": "fengslingsid som opprettes i DA (GUID)"
         },
         "fraDato": { "$ref": "#/definitions/dato" },
-        "tilDato": {
-          "$ref": "#/definitions/dato",
-          "description": "Ikke utover gitt til-dato. Dvs til-og-med."
-        },
+        "tilDato": { "$ref": "#/definitions/dato" },
         "fengslingsFristDato": { "$ref": "#/definitions/dato" },
         "lovbud": { "$ref": "#/definitions/lovbudEnkel" },
         "merknad": {
@@ -219,7 +220,7 @@
         },
         "tilDato": {
           "$ref": "#/definitions/dato",
-          "description": "Om begjæringen ikke tas til følge skal dette feltet settes til null. Ikke utover gitt til-dato. Dvs til-og-med."
+          "description": "Om begjæringen ikke tas til følge skal dette feltet settes til null."
         }
       },
       "required": ["isolasjonsId", "isolasjonsType"],
@@ -246,7 +247,7 @@
         },
         "vitner": {
           "type": "array",
-          "items": { "$ref": "#/definitions/personVitne" }
+          "items": { "$ref": "#/definitions/person" }
         }
       },
       "required": ["medsiktede", "fornaermede", "vitner"],
@@ -337,38 +338,6 @@
       "description": "Samme enum som folkeregisteret",
       "type": "string",
       "enum": ["KVINNE", "MANN"]
-    },
-    "personFregIdentifikator": {
-      "type": "object",
-      "description": "Fødselsnummer eller D-nummer. I bruk på de som aldri vil ha SSP nummer",
-      "properties": {
-        "foedselsnummer": {
-          "$ref": "#/definitions/foedselsnummer"
-        },
-        "dNummer": {
-          "$ref": "#/definitions/dNummer"
-        }
-      },
-      "oneOf": [
-        {
-          "properties": {
-            "foedselsnummer": {
-              "$ref": "#/definitions/foedselsnummer"
-            }
-          },
-          "required": ["foedselsnummer"],
-          "additionalProperties": false
-        },
-        {
-          "properties": {
-            "dNummer": {
-              "$ref": "#/definitions/dNummer"
-            }
-          },
-          "required": ["dNummer"],
-          "additionalProperties": false
-        }
-      ]
     },
     "personIdentifikator": {
       "description": "Fødselsnummer, D-nummer eller SSP nummer.",
@@ -467,46 +436,6 @@
         "adresse": { "$ref": "#/definitions/adresse" }
       },
       "required": ["adresse"],
-      "additionalProperties": false
-    },
-    "personVitne": {
-      "type": "object",
-      "description": "Personer som er involverte, men ikke siktet. Kan være verger, vitner, etc.",
-      "properties": {
-        "internId": {
-          "type": "string",
-          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
-        },
-        "navn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
-        "kjoenn": {
-          "$ref": "#/definitions/kjoenn",
-          "description": "Ukjent kjønn hvis denne ikke er med"
-        },
-        "statsborgerskap": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/land"
-          }
-        },
-        "identitetsnummer": {
-          "$ref": "#/definitions/personFregIdentifikator",
-          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
-        },
-        "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering",
-          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
-        },
-        "personAdresse": {
-          "$ref": "#/definitions/personAdresse"
-        }
-      },
-      "required": ["internId", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
     "person": {
@@ -612,7 +541,7 @@
           "$ref": "#/definitions/dato"
         },
         "tilDato": {
-          "description": "Om begjæringen ikke tas til følge er dette feltet satt til null. Ikke utover gitt til-dato. Dvs til-og-med.",
+          "description": "Om begjæringen ikke tas til følge er dette feltet satt til null.",
           "$ref": "#/definitions/dato"
         }
       },
@@ -662,9 +591,23 @@
       "properties": {
         "hendelse": { "$ref": "#/definitions/hendelse" },
         "statistikkgruppe": { "$ref": "#/definitions/kodeverk" },
-        "krimtype": { "$ref": "#/definitions/kodeverk" }
+        "krimtype": { "$ref": "#/definitions/kodeverk" },
+        "paataleansvarlig": { "$ref": "#/definitions/paataleansvarlig" }
       },
       "required": ["hendelse", "statistikkgruppe"],
+      "additionalProperties": false
+    },
+    "paataleansvarlig": {
+      "type": "object",
+      "description": "Jurister hos påtale som er ansvarlig for straffesaker og aktorerer saker.",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string",
+          "description": "BID hos politiet nå, skal på sikt erstattes med annen unik identifikasjon."
+        },
+        "ansatt": { "$ref": "#/definitions/ansattPerson" }
+      },
+      "required": ["brukeridentifikasjon", "ansatt"],
       "additionalProperties": false
     },
     "hendelse": {

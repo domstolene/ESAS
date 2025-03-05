@@ -91,5 +91,6 @@
     "uavklart": false,
     "beskrivelse": "En eller annen valgfri beskrivelse"
   },
-  "medsiktedeInnsatteISak": { "valg": false }
+  "medsiktedeInnsatteISak": { "valg": false },
+  "beskrivelse": "Sitter inne på Grønland polititasjon"
 }

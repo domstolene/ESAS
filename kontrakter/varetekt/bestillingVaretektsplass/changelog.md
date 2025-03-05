@@ -1,6 +1,24 @@
-# bestilling varetektsplass endringer
+# Bestilling varetektsplass endringer
 Omorganisert slik at det er en katalog for hver melding og eksempelfiler på samme sted (forrige PR).
 
+
+| Versjon | Beskrivelse                | Aktiv fra  | Aktiv til  |
+|---------|----------------------------|------------|------------|
+| 1.2     | Ønsker tilbud om transport | 09.01.2025 |            |
+| 1.1     | Arrestlokasjon             | 09.01.2025 |            |
+| 1.0     | I produksjon               |            | 09.01.2025 |
+
+### 26.02.2025
+
+Lagt til felt oenskerTilbudOmTransport.
+Oppdatert til versjon 1.2.
+
+### 03.12.2024 Lagt til felt arrestlokasjon
+Lagt til felt arrestlokasjon (hvor den siktede sitter i arresten).
+Oppdatert til versjon 1.1.
+
+### 02.10.2024 Legger til beskrivelse felt på meldingsnivå
+Kan brukes til informasjon om hvor personen sitter inne.
 ### 15.07.2024 Split i bestilling, helse og siktelse
 Vi ble enige om å skille ut helse/risiko og siktelseTiltale for å redusere kompleksiteten i hver enkelt melding og for å senere kunne oppdatere helse og risiko uavhengig.
 [siktelseTiltale](../../siktelseTiltale/readme.md) er splittet i en egen melding i arbeidet med [begjæring om dom](../../dom/begjaeringDom/readme.md)

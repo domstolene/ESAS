@@ -23,6 +23,22 @@
       "alg": "RS256",
       "kid": "kdi",
       "use": "sig"
-    }
+    },
+    {
+      "kty": "RSA",
+      "n": "tKqPTZjjFZi0dRZ3aWqCcOdshtjKl_i-0JA4sxngYz9_BfssUfItSSvo2O7aeIKpSfFKrN0XKyIN2PAn68We1aGGIYUUVyGpbPKJs4o6rpyWNdUg5XwvcHJazqRZRIYBgqTgAFHymIT0fHoJGBznhRIqSU9rL5BPBYpDpPv2shcQTmhN7VSIM_dOrU45iYq5juuoR9Kmo_EioC3336PVWVgEPYYPR3cr0lHSENG4LhsD1VyX95tOrrGkxEmzlJPr9CebPbXIXSg8sxZRoCOvbVjpnd8HxhLJmiK31gwt36usN0ElSi42ykP78XGxaLxnLwgZeE83CRX15_Iex62s7w",
+      "e": "AQAB",
+      "alg": "RS256",
+      "kid": "vegvesenet-truls-1",
+      "use": "sig"
+    },
+    {
+      "kty": "RSA",
+      "n": "uD7pEt7zG_j6UfrdemQxyrOoT95KxDMOOvadFkAsgiX-2OiQvhzDCF09pSRNM9cYeAUmJclD0XtYlhB_qIHAEgwaT7GjhqZwPiwhhtodGTfOiRB8ahNUjelBXY2fIk04-TTxB_6Dy32oq3DfQ91gtdZGWzwXm6fx8oDBpnXxf51q264qrW8ysrFM4bC-CPg6u_kgh5D6sbNbH-HxJgSLGv3Yo9n_O5ADG7J_TGE9HgeaaTcRnZncBr8fvh9-vKINep5jH_DF4bsFZw0SOr2XZCI56h41fa54iLhe0-xUHyYlkDydQ_VbThYwVgwLreyJ1SZ7GF2dWNRcwIf574SOiQ",
+      "e": "AQAB",
+      "alg": "RS256",
+      "kid": "konfliktraad-1",
+      "use": "sig"
+    }    
   ]
 }

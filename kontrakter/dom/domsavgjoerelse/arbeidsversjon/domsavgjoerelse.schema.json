@@ -95,7 +95,7 @@
         "avgjoerelsePrSiktetTiltalt": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/personForetakAvjoerelse"
+            "$ref": "#/definitions/personForetakAvgjoerelse"
           },
           "minItems": 1
         }
@@ -109,7 +109,7 @@
       "type": "object",
       "additionalProperties": false
     },
-    "personForetakAvjoerelse": {
+    "personForetakAvgjoerelse": {
       "properties": {
         "personForetak": {
           "$ref": "#/definitions/personForetak"
@@ -123,19 +123,15 @@
           "minItems": 1
         },
         "reaksjoner": {
-          "type": "array",
-          "description": "Liste av reaksjoner for denne personen. Ved løslatelse vil denne listen være tom",
-          "items": {
-            "$ref": "#/definitions/reaksjonsType"
-          },
-          "minItems": 0
+          "$ref": "#/definitions/reaksjonsType",
+          "description": "Kombinasjon av reaksjoner for denne personen. Ved løslatelse blir ikke dette elementet med."
         },
-        "erklaering": {
-          "$ref": "#/definitions/erklaering",
-          "description": "Erklæring fra siktede og påtale"
+        "forkynning": {
+          "$ref": "#/definitions/forkynning",
+          "description": "Forkynning for siktede"
         }
       },
-      "required": ["personForetak", "resultat", "reaksjoner", "erklaering"],
+      "required": ["personForetak", "resultat", "forkynning"],
       "type": "object",
       "additionalProperties": false
     },
@@ -143,14 +139,10 @@
       "properties": {
         "basissakId": {
           "$ref": "#/definitions/internId",
-          "description": "Politiets interne id for basissaken"
+          "description": "Politiets interne id for basissaken. Blir ikke med dersom posten er opprettet i domstolen"
         },
         "lovbudKombinert": {
           "$ref": "#/definitions/lovbudKombinert"
-        },
-        "straffesaksnummer": {
-          "$ref": "#/definitions/straffesaksnummer",
-          "description": "Politiets interne saksnummer"
         },
         "grunnlagstekst": {
           "type": "string",
@@ -161,24 +153,41 @@
           "description": "Om retten finner den siketede skyldig eller ikke skyldig for denne basissaken"
         }
       },
-      "required": [
-        "basissakId",
-        "lovbudKombinert",
-        "straffesaksnummer",
-        "grunnlagstekst",
-        "resultatType"
-      ],
+      "required": ["lovbudKombinert", "grunnlagstekst", "resultatType"],
       "type": "object",
       "additionalProperties": false
     },
-
     "lovbud": {
       "properties": {
+        "lovbudId": {
+          "$ref": "#/definitions/unikId"
+        },
         "lovbudStreng": {
           "type": "string"
         }
       },
-      "required": ["lovbudStreng"],
+      "oneOf": [
+        {
+          "properties": {
+            "lovbudId": {
+              "$ref": "#/definitions/unikId"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["lovbudId"]
+        },
+        {
+          "properties": {
+            "lovbudStreng": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["lovbudStreng"]
+        }
+      ],
       "type": "object",
       "additionalProperties": false
     },
@@ -197,16 +206,32 @@
           "$ref": "#/definitions/ungdomsstraff"
         },
         "rettighetstap": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapMotorvogn": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "rettighetstapTransport": {
-          "$ref": "#/definitions/rettighetstap"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapDetaljer"
+          },
+          "minItems": 1
         },
         "inndragning": {
-          "$ref": "#/definitions/inndragning"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inndragning"
+          },
+          "minItems": 1
         },
         "annet": {
           "$ref": "#/definitions/annet"
@@ -318,29 +343,17 @@
       "type": "object",
       "additionalProperties": false
     },
-    "rettighetstap": {
-      "properties": {
-        "detaljer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/rettighetstapDetaljer"
-          },
-          "minItems": 1
-        }
-      },
-      "required": ["detaljer"],
-      "type": "object",
-      "additionalProperties": false
-    },
     "rettighetstapDetaljer": {
-      "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel til (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
       "properties": {
         "hjemmel": {
-          "$ref": "#/definitions/lovbud"
+          "$ref": "#/definitions/lovbud",
+          "description": "Dersom lovbud fra påtale er beholdt av domstolen sendes kun original _lovbudId_ tilbake til politiet. Ved endring i domstolen sendes kun _lovbudstring_ tilbake"
         },
         "varighet": {
-          "$ref": "#/definitions/varighet",
-          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
+          "$ref": "#/definitions/varighet"
+        },
+        "sperrefrist": {
+          "$ref": "#/definitions/varighet"
         },
         "tekst": {
           "type": "string",
@@ -348,13 +361,14 @@
         }
       },
       "type": "object",
+      "required": ["hjemmel", "varighet"],
       "additionalProperties": false
     },
     "inndragning": {
       "properties": {
         "hjemmel": {
           "$ref": "#/definitions/lovbud",
-          "description": "Type inndragning. Eks. '§ 67 Inndragning av utbytte', '§ 68 Utvidet inndragning' etc."
+          "description": "Type inndragning. Eks. '§ 67 Inndragning av utbytte', '§ 68 Utvidet inndragning' etc. Dersom lovbud fra påtale er beholdt av domstolen sendes kun original _lovbudId_ tilbake til politiet. Ved endring i domstolen sendes kun _lovbudstring_ tilbake"
         },
         "beloep": {
           "type": "integer",
@@ -388,32 +402,22 @@
       "type": "object",
       "additionalProperties": false
     },
-    "erklaering": {
-      "$comment": "Er erklaering i domsavgjørelser tilsvarende som varetekts-saker?",
+    "forkynning": {
       "properties": {
-        "erklaeringSiktede": {
-          "$ref": "#/definitions/erklaeringsDetaljer"
-        },
-        "erklaeringPaatale": {
-          "$ref": "#/definitions/erklaeringsDetaljer"
-        }
-      },
-      "required": ["erklaeringSiktede", "erklaeringPaatale"],
-      "type": "object",
-      "additionalProperties": false
-    },
-    "erklaeringsDetaljer": {
-      "properties": {
-        "meddeltIRettsmoete": {
+        "forkynt": {
           "type": "boolean",
-          "description": "Settes til true desom avgjørelsen er meddelt i rettsmøtet"
+          "description": "Settes til true dersom avgjørelsen er forkynt til siktede i rettsmøtet"
         },
-        "erklaert": {
+        "kommentar": {
+          "type": "string",
+          "description": "Frivillig kommentar til forkynningen"
+        },
+        "erklaeringsType": {
           "$ref": "#/definitions/erklaertType",
-          "description": "Settes dersom avgjørelsen er meddelt i retten"
+          "description": "Settes dersom 'forkynt' er satt til true"
         }
       },
-      "required": ["meddeltIRettsmoete"],
+      "required": ["forkynt"],
       "type": "object",
       "additionalProperties": false
     },
@@ -549,15 +553,11 @@
     },
     "lovbudKombinert": {
       "type": "object",
-      "description": "Dersom lovbud er beholdt av domstolen sendes kun den originale lovbudKombinertId'en tilbake til politiet. Ved omsubsumering sendes kun lovbudet tilbake.",
+      "description": "Dersom lovbud er beholdt av domstolen sendes kun original _lovbudId_ tilbake til politiet. Ved omsubsumering eller ny post sendes kun _lovbudstring_ tilbake",
       "properties": {
-        "lovbudKombinertId": {
-          "$ref": "#/definitions/unikId",
-          "description": "Id generert av politiet. Settes ikke ved omsubsumering"
-        },
         "lovbud": {
           "type": "array",
-          "description": "Liste over lovbud hvis det straffbare forholdet har skjedde over en lovendring (kombinert). Settes kun ved omsubsumering i domstolen",
+          "description": "Vanligvis liste av _ett_ element, men kan være flerdersom det straffbare forholdet har skjedd over en lovendring (kombinert).",
           "items": {
             "$ref": "#/definitions/lovbud"
           },
@@ -565,33 +565,8 @@
           "maxItems": 2
         }
       },
-      "oneOf": [
-        {
-          "properties": {
-            "lovbudKombinertId": {
-              "$ref": "#/definitions/unikId"
-            }
-          },
-          "additionalProperties": false,
-          "type": "object",
-          "required": ["lovbudKombinertId"]
-        },
-        {
-          "properties": {
-            "lovbud": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/lovbud"
-              },
-              "minItems": 1,
-              "maxItems": 2
-            }
-          },
-          "additionalProperties": false,
-          "type": "object",
-          "required": ["lovbud"]
-        }
-      ]
+      "required": ["lovbud"],
+      "additionalProperties": false
     },
     "personForetak": {
       "type": "object",
