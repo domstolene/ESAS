@@ -46,6 +46,10 @@ Ta med i neste versjon, ikke aktuelt i tilståelsessaker.
 
 ### Full lovbudsstruktur
 
+Melding inneholder full lovbudsstruktur. 
+Det er i 1.0 optional å fylle inn fullt lovbud, med unntak av lovbudsstreng som er påkrevd. 
+LovbudsID er i praksis påkrevd, med mindre domstolen har subsummert lovbudet, for å gjøre det mulig å slå opp lovbud automatisk hos mottaker. 
+Det er et sterkt ønske fra Kriminalomsorgen å i fremtiden kunne få utvekslet politiets lovbudsdata på full struktur.
 Dette for å unngå at vi må vedlikeholde to fullstendige lovbudsstrukturer i to separate systemer uten noen mulighet til å kunne synkronisere disse uten om manuelt ved høve. 
 
 ## Avklaringer
