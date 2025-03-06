@@ -233,7 +233,7 @@
         "rettskilde": {
           "$ref": "#/definitions/rettskilde"
         },
-        "elementer" : {
+        "elementer": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/hjemmelElement"
@@ -241,13 +241,13 @@
           "minItems": 1
         }
       },
-      "required": ["rettskilde","elementer"],
+      "required": ["rettskilde", "elementer"],
       "additionalProperties": false
     },
     "rettskilde": {
-      "type" : "object",
-      "description":"Rettskilde. For eksempel 'Straffeloven'.",
-      "properties" : {
+      "type": "object",
+      "description": "Rettskilde. For eksempel 'Straffeloven'.",
+      "properties": {
         "kode": {
           "type": "string"
         },
@@ -255,13 +255,13 @@
           "type": "string"
         }
       },
-      "required": ["kode","navn"],
+      "required": ["kode", "navn"],
       "additionalProperties": false
     },
     "hjemmelElement": {
-      "type" : "object",
-      "description":"Hjemmel-element. For eksempel PARAGRAF, LEDD, NR, ",
-      "properties" : {
+      "type": "object",
+      "description": "Hjemmel-element. For eksempel PARAGRAF, LEDD, NR, ",
+      "properties": {
         "type": {
           "type": "string"
         },
@@ -269,7 +269,7 @@
           "type": "string"
         }
       },
-      "required": ["type","verdi"],
+      "required": ["type", "verdi"],
       "additionalProperties": false
     },
     "straffesak": {
