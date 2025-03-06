@@ -5,6 +5,10 @@
 | 1.0     | Initiell vversjon |            ||
 
 ## Versjon 1.0 arbeidsversjon ennå
+
+### 06.03.2025 endring av påkrevde feil ved rettighetstap
+* Enkelte rettihetstap er ikke varighets-betinget. Gjør derfor 'varighet' om til optional
+
 ### 01.08.2024 første versjon av domsavgjørelse
 Denne versjonen har noen kjente mangler som er planlagt å ta inn på et senere tidspunkt:
 * Flere _reaksjoner_ vil bli inkludert etterhvert
