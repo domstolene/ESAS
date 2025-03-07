@@ -166,7 +166,7 @@
         "lovbud": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/lovbud"
+            "$ref": "#/definitions/lovbudFull"
           },
           "minItems": 1,
           "maxItems": 2
@@ -195,6 +195,81 @@
         }
       },
       "required": ["lovbudStreng"],
+      "additionalProperties": false
+    },
+    "lovbudFull": {
+      "type": "object",
+      "description": "Full lovbudsstruktur. LovbudId fylt ut fra påtale. Kun lovbudstreng fylt ut hvis domstolene har omsubsumert.",
+      "properties": {
+        "lovbudId": {
+          "$ref": "#/definitions/unikId"
+        },
+        "lovbudStreng": {
+          "$ref": "#/definitions/lovbudStreng",
+          "description": "Sammensatt hjemmelsrekke i en lang streng"
+        },
+        "gjengivelse": {
+          "type": "string"
+        },
+        "strafferamme": {
+          "type": "integer",
+          "description": "Antall måneder"
+        },
+        "hjemmler": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hjemmel"
+          },
+          "minItems": 0
+        }
+      },
+      "required": ["lovbudStreng"],
+      "additionalProperties": false
+    },
+    "hjemmel": {
+      "type": "object",
+      "description": "Hjemmel bestående av rettskilde og elementer.",
+      "properties": {
+        "rettskilde": {
+          "$ref": "#/definitions/rettskilde"
+        },
+        "elementer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hjemmelElement"
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["rettskilde", "elementer"],
+      "additionalProperties": false
+    },
+    "rettskilde": {
+      "type": "object",
+      "description": "Rettskilde. For eksempel 'Straffeloven'.",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode", "navn"],
+      "additionalProperties": false
+    },
+    "hjemmelElement": {
+      "type": "object",
+      "description": "Hjemmel-element. For eksempel PARAGRAF, LEDD, NR, ",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "verdi": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "verdi"],
       "additionalProperties": false
     },
     "straffesak": {
