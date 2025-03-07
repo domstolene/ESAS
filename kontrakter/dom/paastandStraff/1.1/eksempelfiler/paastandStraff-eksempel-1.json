@@ -84,7 +84,21 @@
                 "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
               }
             ]
-          }
+          },
+          "rettighetstapMotorvogn": [
+            {
+              "hjemmel": {
+                "lovbudStreng": "§24a annet ledd. Sperrefrist for retten til å føre førerkortpliktig motorvogn pga. straffbart forhold mm."
+              },
+              "varighet": {
+                "lengde": {
+                  "antallAar": 2,
+                  "antallMaaneder": 4
+                }
+              },
+              "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
+            }
+          ]
         }
       }
     ]

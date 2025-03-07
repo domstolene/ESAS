@@ -130,7 +130,7 @@
           "type": "string"
         }
       },
-      "required": ["lovbudStreng", "gjengivelse"],
+      "required": ["lovbudStreng"],
       "additionalProperties": false
     },
     "rusmiddelundersoekelse": {
@@ -344,6 +344,7 @@
         }
       },
       "type": "object",
+      "required": ["hjemmel"],
       "additionalProperties": false
     },
     "inndragning": {
