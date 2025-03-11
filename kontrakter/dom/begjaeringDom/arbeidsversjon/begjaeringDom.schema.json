@@ -60,6 +60,7 @@
           "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
+        "aktorMoeter": { "type": "boolean" },
         "siktetPersonInfo": {
           "$ref": "#/definitions/siktetPersonInfo",
           "description": "Det er kun 1 person som blir begjært i en tilståelsessak, må utvides til meddomssak."
@@ -86,6 +87,7 @@
         "fornaermedePersoner",
         "fornaermedeForetak",
         "paataleansvarlig",
+        "aktorMoeter",
         "vitner"
       ],
       "additionalProperties": false
@@ -179,13 +181,9 @@
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
-          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["navn", "kontakt"],
+      "required": ["navn"],
       "additionalProperties": false
     },
     "forsendelse": {
@@ -198,6 +196,10 @@
         "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": {
           "$ref": "#/definitions/avsender"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Distriktet sin kontaktinformasjon"
         },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
@@ -489,13 +491,29 @@
           "additionalProperties": false
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfoPerson"
         }
       },
       "required": ["navn"],
       "additionalProperties": false
     },
     "kontaktInfo": {
+      "type": "object",
+      "description": "Generell kontaktinformasjon",
+      "properties": {
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse f.eks. sentralbord"
+        },
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
       "type": "object",
       "description": "epost og/eller telefonnummer en av de skal være med verdier",
       "properties": {
