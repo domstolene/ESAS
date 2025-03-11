@@ -5,6 +5,12 @@
 | 1.1     | pakkeId for flere meldinger som hører sammen  | |           |
 | 1.0     | test                                          |           |           |
 
+## 1.1 Kontaktdetaljer / aktor møter i retten
+Tilbakemeldinger så langt sier at det er feil å oppgi avsender og påtaleansvarlig sitt telefonnummer.
+* Vi har ikke gode nok data på personer sin telefonnummer.
+* Det er ofte andre personer som skal kontaktes (avdeling) 
+* Vi velger derfor å oppgi distriktet sitt sentralbord som standard på alle meldinger som trenger kontaktdetaljer.
+
 ## 1.1  korrigering av begjæring
 Vi trenger en måte å koble sammen meldinger som hører sammen.
 Vi vil sende meldingene med samme pakke id.
