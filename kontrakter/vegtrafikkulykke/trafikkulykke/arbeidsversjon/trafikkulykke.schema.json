@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/vegtrafikkulykke/1.0/trafikkulykke",
+  "$id": "https://politiet.no/vegtrafikkulykke/arbeidsversjon/trafikkulykke",
   "description": "Skjema for trafikkulykke-melding fra politiet til Statens Vegvesen, JSON Schema versjon 2020-12",
   "type": "object",
   "properties": {
@@ -578,7 +578,7 @@
           "type": "string"
         }
       },
-      "required": ["id", "skadegrad", "skadeforloep", "beskyttelsesutstyr"],
+      "required": ["id", "beskyttelsesutstyr"],
       "additionalProperties": false
     },
     "stedfesting": {

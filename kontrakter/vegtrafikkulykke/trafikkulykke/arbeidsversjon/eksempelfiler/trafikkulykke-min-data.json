@@ -33,9 +33,7 @@
         "personer": [
           {
             "id": "4439ce51-ff91-4205-b8bd-9a67f9da3599",
-            "skadegrad": "ILLEBEFINNENDE_FOERER",
-            "beskyttelsesutstyr": "BILBELTE",
-            "skadeforloep": "SKADD_MOT_EKSTERIOER"
+            "beskyttelsesutstyr": "BILBELTE"
           }
         ]
       }
