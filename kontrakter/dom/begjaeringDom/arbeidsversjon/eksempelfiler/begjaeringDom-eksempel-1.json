@@ -11,12 +11,13 @@
         "navn": {
           "fornavn": "Peder",
           "etternavn": "Politiets Datatjeneste"
-        },
-        "kontakt": {
-          "epost": "jube@kolo.ra",
-          "telefonnummer": ["23422"]
         }
       }
+    },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
     },
     "mottakerOrganisasjon": {
       "organisasjonsnummer": "926723480",
@@ -33,10 +34,10 @@
         "navn": {
           "fornavn": "NinaTerese",
           "etternavn": "Eriksen"
-        },
-        "kontakt": { "epost": "jtte@politiet.no", "telefonnummer": [] }
+        }
       }
     },
+    "aktorMoeter": false,
     "siktetPersonInfo": {
       "siktetPerson": {
         "person": {
