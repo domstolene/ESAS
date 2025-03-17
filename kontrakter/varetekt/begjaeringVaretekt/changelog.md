@@ -8,13 +8,14 @@
 | 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              |
 
-## Arbeidsversjon kontakt
+## Arbeisversjon skrivefeil (1.5) kanskje 1.6
+Små skrivefeil i vilkaarstype enum. 
+## Arbeidsversjon kontakt (1.5) kanskje 1.6
 Tilbakemeldinger så langt sier at det er feil å oppgi avsender og påtaleansvarlig sitt telefonnummer.
 * Vi har ikke gode nok data på personer sin telefonnummer.
 * Det er ofte andre personer som skal kontaktes (avdeling)
 * Vi velger derfor å oppgi distriktet sitt sentralbord som standard på alle meldinger som trenger kontaktdetaljer.
 
-Ønsker inn i versjon 1.5.
 Bruk av dato/datoTid synkronisering.
 ## Versjon arbeidsversjon (1.5) arrestordreloven og surrogat
 ESAS-1396 og ESAS-476
