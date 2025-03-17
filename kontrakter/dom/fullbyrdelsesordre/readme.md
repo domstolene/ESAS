@@ -24,6 +24,10 @@ Foregrepet soning er ikke støttet i melding da vi ikke vil implementere den nå
 Hjemmelsrekken er ikke med i første pilot.
 Foregrepet soning er det veldig få av i løpet av året så ikke prioriterti første del av pilot.
 
+### Hjemmelsrekke 
+KDI ønsker hjemmelsrekke (hjemler) inn som en del av fullbyrdelsesordren og det er forberedt for det i meldingsdefinisjonen.
+PIT vet ikke ennå når det vil kunne implementeres støtte for det da det jobbes i PIT med ny lovbud håndtering og integrasjon med lovdata som kan
+gjøre at meldingsdefinisjonen må endres senere.
 ## Status
 
 Første versjon godkjent, men Kriminalomsorgen sier de ønsker mer informasjon, se kommentarer fra politiet i _kursiv_
