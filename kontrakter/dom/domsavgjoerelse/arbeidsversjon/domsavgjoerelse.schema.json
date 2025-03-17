@@ -585,7 +585,7 @@
       "properties": {
         "lovbud": {
           "type": "array",
-          "description": "Vanligvis liste av _ett_ element, men kan være flerdersom det straffbare forholdet har skjedd over en lovendring (kombinert).",
+          "description": "Vanligvis liste av _ett_ element, men kan være flere dersom det straffbare forholdet har skjedd over en lovendring (kombinert).",
           "items": {
             "$ref": "#/definitions/lovbud"
           },
