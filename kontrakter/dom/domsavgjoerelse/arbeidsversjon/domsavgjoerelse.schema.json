@@ -361,7 +361,7 @@
         }
       },
       "type": "object",
-      "required": ["hjemmel", "varighet"],
+      "required": ["hjemmel"],
       "additionalProperties": false
     },
     "inndragning": {

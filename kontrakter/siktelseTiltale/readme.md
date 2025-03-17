@@ -1,9 +1,8 @@
 # Siktelse og tiltalepunkt - ikke i produksjon
-Versjon 1.0 er første versjon som vi skal i produksjon med sammen med tilståelsessaker.
 
 ## Headere forsendelse justisHub
 SchemaName=SIKTELSE_TILTALE  
-SchemaVersion=1.0
+SchemaVersion=1.1
 senderOrganization=POLITIET  
 
 [RFC](../../rfc/MessageName-header.md)  

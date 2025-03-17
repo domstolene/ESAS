@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/dom/arbeidsversjon/paastandStraff",
+  "$id": "https://domstol.no/dom/1.2/paastandStraff",
   "description": "Schemadefinisjon av Påstand om straff",
   "type": "object",
   "properties": {
