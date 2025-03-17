@@ -11,6 +11,11 @@
         "etternavn": "Politiets Datatjeneste"
       }
     },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
+    },
     "mottakerOrganisasjon": {
       "organisasjonsnummer": "926723480",
       "navn": "Agder tingrett"
@@ -139,7 +144,7 @@
           }
         },
         {
-          "type": "STRPL170A_FORHOLSMESSIGHET",
+          "type": "STRPL170A_FORHOLDSMESSIGHET",
           "lovbudEnkel": {
             "lovbudStreng": "Strpl § 170a"
           }
