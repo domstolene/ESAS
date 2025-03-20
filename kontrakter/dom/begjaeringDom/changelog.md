@@ -1,11 +1,12 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse                                   | Aktiv fra | Aktiv til |
-|---------|-----------------------------------------------|-----------|-----------|
-| 1.1     | pakkeId for flere meldinger som hører sammen  | |           |
-| 1.0     | test                                          |           |           |
+| Versjon | Beskrivelse                                  | Aktiv fra | Aktiv til |
+|---------|----------------------------------------------|-----------|-----------|
+| 1.2     | Kontaktdetaljer/aktor møter i retten         | |           |
+| 1.1     | pakkeId for flere meldinger som hører sammen | |           |
+| 1.0     | test                                         |           |           |
 
-## 1.1 Kontaktdetaljer / aktor møter i retten
+## 1.2 Kontaktdetaljer / aktor møter i retten
 Tilbakemeldinger så langt sier at det er feil å oppgi avsender og påtaleansvarlig sitt telefonnummer.
 * Vi har ikke gode nok data på personer sin telefonnummer.
 * Det er ofte andre personer som skal kontaktes (avdeling) 
