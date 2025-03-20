@@ -10,6 +10,7 @@
 1. Legger til støtte for strukturerte vilkår i varetekts-kjennelse
 2. Legger til støtte for fengslingssurrogat
 3. Litt refaktorering (flytter restriksjon/isolasjon innunder 'fengsling')
+4. Fiks av skrivefeil vilkaarsType enum
 
 # Versjon 1.2
 1. Støtte for kjennelse fra Lagmanserett/Høyesterett. Melding inneholder nå:
