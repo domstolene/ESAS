@@ -87,9 +87,8 @@
           "$ref": "#/definitions/fengslingssurrogat"
         },
         "gyldigFraDato": {
-          "type": "string",
-          "description": "Settes dersom det begjæres om varetekt frem i tid.",
-          "format": "date"
+          "$ref": "#/definitions/dato",
+          "description": "Settes dersom det begjæres om varetekt frem i tid."
         }
       },
       "additionalProperties": false
@@ -106,20 +105,15 @@
           "description": "Hvis det er en forlengelse så er dette elementet med"
         },
         "hovedforhandlingsdato": {
-          "type": "string",
-          "format": "date"
+          "$ref": "#/definitions/dato"
         },
         "paagrepetTidspunkt": {
-          "type": "string",
-          "format": "date-time"
+          "$ref": "#/definitions/datoTid"
         },
         "berammetFengslingsmoete": {
           "type": "object",
           "properties": {
-            "dato": {
-              "type": "string",
-              "format": "date"
-            },
+            "dato": { "$ref": "#/definitions/dato" },
             "tid": {
               "type": "string",
               "format": "time"
@@ -242,8 +236,7 @@
           "description": "Kanskje referanse til dokument etc"
         },
         "fengslingUtloeperDato": {
-          "type": "string",
-          "format": "date",
+          "$ref": "#/definitions/dato",
           "description": "Dato for når gjeldene/forrige fengsling utløper"
         }
       },
@@ -357,7 +350,7 @@
       "type": "string",
       "description": "Hvilket vilkår gjelder for varetektsfengslingen. 173 brukes ved vilkårsbrudd.",
       "enum": [
-        "STRPL170A_FORHOLSMESSIGHET",
+        "STRPL170A_FORHOLDSMESSIGHET",
         "STRPL171_1_UNNDRAGELSESFARE",
         "STRPL171_2_BEVISFORSPILLELSE",
         "STRPL171_3_GJENTAGELSESFARE",
@@ -368,9 +361,9 @@
         "ARRESTORDREL38",
         "STRPL88_UTEBLIVELSE",
         "STRPL171_MINDRE_TYVERI",
-        "STRPL171_MULIG_SAARREAKSJON",
+        "STRPL171_MULIG_SAERREAKSJON",
         "STRPL172_B_GROV_VOLD",
-        "STRPL173_FLUKT_TIL_UTLENDET",
+        "STRPL173_FLUKT_TIL_UTLANDET",
         "STRPL173A_A_UNNDRAGELSESFARE_VILK",
         "STRPL173A_B_HINDRE_VILK",
         "STRPL173A_C_BEGJAERT_SIKTEDE",
@@ -433,10 +426,24 @@
     },
     "kontaktInfo": {
       "type": "object",
+      "description": "Generell kontaktinformasjon",
       "properties": {
-        "epost": {
-          "type": "string"
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse f.eks. sentralbord"
         },
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
+      "type": "object",
+      "properties": {
+        "epost": { "$ref": "#/definitions/epost" },
         "telefonnummer": {
           "type": "array",
           "items": {
@@ -494,10 +501,6 @@
         },
         "etternavn": {
           "type": "string"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
-          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
       "required": ["etternavn"],
@@ -522,10 +525,6 @@
         },
         "etternavn": {
           "type": "string"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
-          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
       "required": ["etternavn"],
@@ -537,12 +536,13 @@
         "meldingsId": {
           "type": "string"
         },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": {
           "$ref": "#/definitions/avsender"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Distriktet sin kontaktinformasjon"
         },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
@@ -580,10 +580,7 @@
       "description": "Anke av fengsling/restriksjon/kjennelse",
       "additionalProperties": false,
       "properties": {
-        "anketDato": {
-          "type": "string",
-          "format": "date"
-        },
+        "anketDato": { "$ref": "#/definitions/dato" },
         "anketAv": {
           "$ref": "#/definitions/anketAvType"
         },
@@ -620,10 +617,7 @@
         "domstol": {
           "$ref": "#/definitions/organisasjon"
         },
-        "avsagtDato": {
-          "type": "string",
-          "format": "date"
-        },
+        "avsagtDato": { "$ref": "#/definitions/dato" },
         "fengsling": {
           "$ref": "#/definitions/fengsling"
         },
@@ -1029,10 +1023,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -1082,10 +1073,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -1122,10 +1110,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        }
+        "foedselsdato": { "$ref": "#/definitions/dato" }
       },
       "required": ["internId", "navn"],
       "additionalProperties": false
@@ -1154,7 +1139,7 @@
           "additionalProperties": false
         },
         "kontakt": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfoPerson"
         }
       },
       "required": ["navn"],
@@ -1267,14 +1252,8 @@
       "type": "object",
       "description": "Tid og sted for det straffbare forholdet",
       "properties": {
-        "gjerningstidspunktFra": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "gjerningstidspunktTil": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "gjerningstidspunktFra": { "$ref": "#/definitions/datoTid" },
+        "gjerningstidspunktTil": { "$ref": "#/definitions/datoTid" },
         "gjerningssted": {
           "$ref": "#/definitions/adresse"
         }
@@ -1363,10 +1342,7 @@
         "overskrift": {
           "type": "string"
         },
-        "skrevetDato": {
-          "type": "string",
-          "format": "date"
-        },
+        "skrevetDato": { "$ref": "#/definitions/dato" },
         "forsendelse": {
           "$ref": "#/definitions/dokumentForsendelse"
         }
@@ -1401,6 +1377,18 @@
       },
       "required": ["internId"],
       "additionalProperties": false
+    },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "organisasjonsnummer": {
       "type": "string",
