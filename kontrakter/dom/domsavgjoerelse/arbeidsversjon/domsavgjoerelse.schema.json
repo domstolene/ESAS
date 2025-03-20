@@ -215,7 +215,7 @@
         "rettighetstapMotorvogn": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/rettighetstapDetaljer"
+            "$ref": "#/definitions/rettighetstapMotorvogn"
           },
           "minItems": 1
         },
@@ -358,6 +358,34 @@
         "tekst": {
           "type": "string",
           "description": "Fritekst som beskriver rettighetstapet"
+        }
+      },
+      "type": "object",
+      "required": ["hjemmel"],
+      "additionalProperties": false
+    },
+    "rettighetstapMotorvogn": {
+      "properties": {
+        "hjemmel": {
+          "$ref": "#/definitions/lovbud",
+          "description": "Dersom lovbud fra påtale er beholdt av domstolen sendes kun original _lovbudId_ tilbake til politiet. Ved endring i domstolen sendes kun _lovbudstring_ tilbake"
+        },
+        "varighet": {
+          "$ref": "#/definitions/varighet"
+        },
+        "sperrefrist": {
+          "$ref": "#/definitions/varighet"
+        },
+        "tekst": {
+          "type": "string",
+          "description": "Fritekst som beskriver rettighetstapet"
+        },
+        "nyFoererproeve": {
+          "type": "string",
+          "enum": ["FULL", "DELVIS"]
+        },
+        "sperrefristGjelderFra": {
+          "$ref": "#/definitions/dato"
         }
       },
       "type": "object",
@@ -557,7 +585,7 @@
       "properties": {
         "lovbud": {
           "type": "array",
-          "description": "Vanligvis liste av _ett_ element, men kan være flerdersom det straffbare forholdet har skjedd over en lovendring (kombinert).",
+          "description": "Vanligvis liste av _ett_ element, men kan være flere dersom det straffbare forholdet har skjedd over en lovendring (kombinert).",
           "items": {
             "$ref": "#/definitions/lovbud"
           },
