@@ -130,7 +130,8 @@
                   "antallMaaneder": 4
                 }
               },
-              "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden"
+              "nyFoererproeve": "FULL",
+              "tekst": "Siktede minster retten til å føre alle typer førerkortpliktige motorvogner i hele perioden"
             }
           ],
           "bot": {
