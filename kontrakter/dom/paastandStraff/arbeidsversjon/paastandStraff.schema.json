@@ -16,7 +16,7 @@
       "$ref": "#/definitions/paastandStraff"
     }
   },
-  "required": ["forsendelse", "paastandStraff"],
+  "required": ["forsendelse", "paastandStraff", "pakkeId"],
   "additionalProperties": false,
   "definitions": {
     "forsendelse": {
