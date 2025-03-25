@@ -381,7 +381,8 @@
         }
       },
       "type": "object",
-      "required": ["hjemmel"]
+      "required": ["hjemmel"],
+      "additionalProperties": false
     },
     "rettighetstapMotorvogn": {
       "properties": {
