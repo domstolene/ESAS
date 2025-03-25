@@ -2,21 +2,25 @@
 Omorganisert slik at det er en katalog for hver melding og eksempelfiler på samme sted (forrige PR).
 
 
-| Versjon | Beskrivelse                | Aktiv fra  | Aktiv til  |
-|---------|----------------------------|------------|------------|
-| 1.2     | Ønsker tilbud om transport | 09.01.2025 |            |
-| 1.1     | Arrestlokasjon             | 09.01.2025 |            |
-| 1.0     | I produksjon               |            | 09.01.2025 |
+| Versjon        | Beskrivelse                | Aktiv fra  | Aktiv til  |
+|----------------|----------------------------|------------|------------|
+| arbeidsversjon | kontakt                    |  |            |
+| 1.2            | Ønsker tilbud om transport | 09.01.2025 |            |
+| 1.1            | Arrestlokasjon             | 09.01.2025 |            |
+| 1.0            | I produksjon               |            | 09.01.2025 |
 
+## Endringer
+### kontaktdetaljer arbeidsversjon til 1.3
+Tilbakemeldinger så langt sier at det er feil å oppgi avsender og påtaleansvarlig sitt telefonnummer.
+* Vi har ikke gode nok data på personer sin telefonnummer.
+* Det er ofte andre personer som skal kontaktes (avdeling), i bestilling av varetektsplass så har Kriminalomsorgen ringelister.
+* Vi velger derfor å oppgi distriktet sitt sentralbord som standard på alle meldinger som trenger kontaktdetaljer.
 ### 26.02.2025
-
 Lagt til felt oenskerTilbudOmTransport.
 Oppdatert til versjon 1.2.
-
 ### 03.12.2024 Lagt til felt arrestlokasjon
 Lagt til felt arrestlokasjon (hvor den siktede sitter i arresten).
 Oppdatert til versjon 1.1.
-
 ### 02.10.2024 Legger til beskrivelse felt på meldingsnivå
 Kan brukes til informasjon om hvor personen sitter inne.
 ### 15.07.2024 Split i bestilling, helse og siktelse

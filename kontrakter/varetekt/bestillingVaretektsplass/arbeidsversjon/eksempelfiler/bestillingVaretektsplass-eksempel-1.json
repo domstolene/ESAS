@@ -11,10 +11,15 @@
         "navn": {
           "etternavn": "Årdal",
           "fornavn": "Jo"
-        },
-        "kontakt": { "epost": "jaa@politiet.no" }
+        }
       }
     },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
+    },
+
     "mottakerOrganisasjon": {
       "organisasjonsnummer": "911830868",
       "navn": "Kriminalomsorgsdirektoratet"
@@ -25,8 +30,7 @@
     "navn": {
       "etternavn": "Romstrerer",
       "fornavn": "Jarl"
-    },
-    "kontakt": { "epost": "rar@politiet.no" }
+    }
   },
   "anmodningsId": "0322B3E2-B12B-40B6-8940-799C48706BE5",
   "plassFraDato": "2022-11-03",
