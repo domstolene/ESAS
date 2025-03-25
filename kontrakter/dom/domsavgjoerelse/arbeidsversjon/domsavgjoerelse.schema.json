@@ -212,6 +212,13 @@
           },
           "minItems": 1
         },
+        "rettighetstapForbudKontakt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/rettighetstapForbudKontakt"
+          },
+          "minItems": 1
+        },
         "rettighetstapMotorvogn": {
           "type": "array",
           "items": {
@@ -358,6 +365,36 @@
         "tekst": {
           "type": "string",
           "description": "Fritekst som beskriver rettighetstapet"
+        }
+      },
+      "type": "object",
+      "required": ["hjemmel"],
+      "additionalProperties": false
+    },
+    "rettighetstapForbudKontakt": {
+      "properties": {
+        "hjemmel": {
+          "$ref": "#/definitions/lovbud"
+        },
+        "varighet": {
+          "$ref": "#/definitions/varighet",
+          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
+        },
+        "tekst": {
+          "type": "string",
+          "description": "Fritekst som beskriver rettighetstapet"
+        },
+        "varighetElektroniskKontroll": {
+          "$ref": "#/definitions/varighet",
+          "$comment": "Kan/bør vi bruke tidsrom i stedet for/tillegg til varighet?"
+        },
+        "tekstElektroniskKontroll": {
+          "type": "string",
+          "description": "Fritekst som beskriver elektronisk kontroll"
+        },
+        "gjelderEgetHjem": {
+          "type": "boolean",
+          "description": "Gjelder eget hjem"
         }
       },
       "type": "object",
