@@ -180,6 +180,27 @@
               "beskrivelse": "Indragelse av.. ifm. tyveri i ... Alternativt skal 20 000 NOK tilfalle fornærmede",
               "tilfaller": "Peder Ås"
             }
+          ],
+          "rettighetstapForbudKontakt": [
+            {
+              "hjemmel": {
+                "lovbudStreng": "§57. Forbud mot kontakt"
+              },
+              "varighet": {
+                "lengde": {
+                  "antallAar": 2,
+                  "antallMaaneder": 4
+                }
+              },
+              "varighetElektroniskKontroll": {
+                "lengde": {
+                  "antallAar": 1,
+                  "antallMaaneder": 4
+                }
+              },
+              "tekstElektroniskKontroll": "Skal kontrolleres elektronisk",
+              "gjelderEgetHjem": true
+            }
           ]
         },
         "forkynning": {
