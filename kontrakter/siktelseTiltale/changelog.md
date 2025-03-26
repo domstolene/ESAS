@@ -1,10 +1,13 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse  | Aktiv fra  | Aktiv til |
-|---------|--------------|------------|-----------|
-| 1.1     | med pakkeId  |            |           |
-| 1.0     | Låst versjon |            |           |
+| Versjon | Beskrivelse      | Aktiv fra | Aktiv til |
+|---------|------------------|-----------|-----------|
+| 1.2     | pakkeId required |           |
+| 1.1     | med pakkeId      |           |           |
+| 1.0     | Låst versjon     |           |           |
 
+### 26.03.25 pakkeId required
+pakkeId er nå obligatorisk
 ### 25.02.25 pakkeId 
 pakkeId for å kunne samle meldinger som hører sammen. begjaeringDom, paastandStraff og siktelseTiltale
 ### 21.11.24 Dato for siktelse

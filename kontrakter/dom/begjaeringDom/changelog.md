@@ -2,10 +2,13 @@
 
 | Versjon | Beskrivelse                                  | Aktiv fra | Aktiv til |
 |---------|----------------------------------------------|-----------|-----------|
-| 1.2     | Kontaktdetaljer/aktor møter i retten         | |           |
-| 1.1     | pakkeId for flere meldinger som hører sammen | |           |
+| 1.3     | pakkeId required                             |           |
+| 1.2     | Kontaktdetaljer/aktor møter i retten         |           |           |
+| 1.1     | pakkeId for flere meldinger som hører sammen |           |           |
 | 1.0     | test                                         |           |           |
 
+## 1.3 pakkeId required
+PakkeId som identifiserer meldinger som sendes samlet er nå required
 ## 1.2 Kontaktdetaljer / aktor møter i retten
 Tilbakemeldinger så langt sier at det er feil å oppgi avsender og påtaleansvarlig sitt telefonnummer.
 * Vi har ikke gode nok data på personer sin telefonnummer.
