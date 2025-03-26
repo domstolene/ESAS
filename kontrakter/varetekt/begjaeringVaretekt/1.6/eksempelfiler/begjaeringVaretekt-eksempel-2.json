@@ -86,7 +86,7 @@
       "paastandVaretekt": {
         "fengsling": {
           "varighet": {
-            "tilHovedforhandling": true
+            "antallDager": 28
           },
           "restriksjoner": [
             {
@@ -123,12 +123,13 @@
               "periode": {
                 "startDag": 1,
                 "varighet": {
-                  "tilHovedforhandling": true
+                  "antallDager": 14
                 }
               }
             }
           ]
-        }
+        },
+        "gyldigFraDato": "2024-01-02"
       },
       "vilkaar": [
         {
@@ -148,13 +149,6 @@
           "lovbudEnkel": {
             "lovbudStreng": "Strpl § 170a"
           }
-        },
-        {
-          "type": "ANNEN_SPESIALBESTEMMELSE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Annen spesialbestemmelse"
-          },
-          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
         }
       ]
     },
@@ -163,7 +157,6 @@
       "forlengelse": {
         "beskrivelse": "forlengelse"
       },
-      "hovedforhandlingsdato": "2023-12-11",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
