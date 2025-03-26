@@ -1,6 +1,7 @@
 # Endringslogg begjæring om varetek
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
+| 1.6     | varetektUtloeperdatao                       |                |
 | 1.5     | Arrestordreloven/surrogat/kontakt           |                |
 | 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |
 | 1.3     | Håndter vitner uten identifikator           | ??             |              |
@@ -8,6 +9,8 @@
 | 1.1     | Tolk og til hovedforhandling                | 01.08.2023     |              |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                |              |
 
+## fengslingUtloeperDato -> varetektUtloeperDato (1.6)
+fengslingUtloeperDato" kommer ikke fra påtale ved forlengelser. Og, burde renames til "varetektUtloeperDato"?
 ## Arbeisversjon skrivefeil  (1.5)
 Små skrivefeil i vilkaarstype enum. 
 ## Arbeidsversjon kontakt (1.5)
