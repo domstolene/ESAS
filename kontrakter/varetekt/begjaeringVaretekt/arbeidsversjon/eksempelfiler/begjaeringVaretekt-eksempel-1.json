@@ -161,7 +161,8 @@
     "saksinformasjon": {
       "varetektsType": "VANLIG",
       "forlengelse": {
-        "beskrivelse": "forlengelse"
+        "beskrivelse": "forlengelse",
+        "varetektUtloeperDato": "2023-10-11"
       },
       "hovedforhandlingsdato": "2023-12-11",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",

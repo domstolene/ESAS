@@ -235,7 +235,7 @@
           "type": "string",
           "description": "Kanskje referanse til dokument etc"
         },
-        "fengslingUtloeperDato": {
+        "varetektUtloeperDato": {
           "$ref": "#/definitions/dato",
           "description": "Dato for når gjeldene/forrige fengsling utløper"
         }
