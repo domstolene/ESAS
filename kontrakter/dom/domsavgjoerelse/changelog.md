@@ -1,10 +1,16 @@
 # Endringslogg domsavgjørelse
 
-| Versjon | Beskrivelse       | Aktiv fra  | Aktiv til |
-|---------|-------------------|------------|----------|
-| 1.0     | Initiell vversjon |            ||
+| Versjon | Beskrivelse      | Aktiv fra | Aktiv til |
+|---------|------------------|-----------|-----------|
+| 1.1     | Kontaktforbud    |           |           |
+| 1.0     | Initiell versjon |           |           |
 
-## Versjon 1.0 arbeidsversjon ennå
+
+## Versjon 1.1
+### 25.03.2025 Kontaktsforbud
+* Lagt til fler detaljer rundt reaksjonen rettighetstap kontaktforbud
+
+## Versjon 1.0
 
 ### 17.03.2025 mer data ifm. tap av retten til å føre motorvogn
 * Mulighet til å sette data om 'ny førerprøve' og 'dato for sperrefrist'
