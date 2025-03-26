@@ -381,7 +381,7 @@
         "lovbudEnkel": {
           "$ref": "#/definitions/lovbudEnkel"
         },
-        "vilaarBeskrivelse": {
+        "vilkaarBeskrivelse": {
           "description": "Utvidet beskrivelse av vilkåret. F.eks. ved bruk av typen 'ANNEN_SPESIALBESTEMMELSE'",
           "type": "string"
         }
