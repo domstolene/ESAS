@@ -593,6 +593,10 @@
         },
         "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": { "$ref": "#/definitions/avsender" },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Distriktet sin kontaktinformasjon"
+        },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
           "description": "Domstol som skal være mottaker"
@@ -644,10 +648,6 @@
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
-          "description": "Minimum epost adresse til den som sender melding. Det vil være maks 1 telefonnummer"
         }
       },
       "required": ["navn"],
@@ -685,7 +685,7 @@
           "$ref": "#/definitions/personAdresse"
         },
         "kontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo",
+          "$ref": "#/definitions/kontaktInfoPerson",
           "description": "Hvis det finnes registrert på personen i BL."
         },
         "verger": {
@@ -870,6 +870,22 @@
       "additionalProperties": false
     },
     "kontaktInfo": {
+      "type": "object",
+      "description": "Generell kontaktinformasjon til distriktet/embetet",
+      "properties": {
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse f.eks. sentralbord"
+        },
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
       "type": "object",
       "description": "Skal aldri forekomme med ingen verdier på epost eller telefonnummer",
       "properties": {

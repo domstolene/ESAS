@@ -12,11 +12,13 @@
           "etternavn": "Gunnarsen",
           "fornavn": "Gunnar"
         },
-        "tittel": "Konsulent",
-        "kontakt": {
-          "epost": "gunnar.gunnarsen@politi.no"
-        }
+        "tittel": "Konsulent"
       }
+    },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
     },
     "mottakerOrganisasjon": {
       "organisasjonsnummer": "983997953",
@@ -31,11 +33,7 @@
         "etternavn": "Klausonius",
         "fornavn": "Lars"
       },
-      "tittel": "Påtaleansvarlig",
-      "kontakt": {
-        "epost": "lars.klausonius@politiet.no",
-        "telefonnummer": ["0047 97 97 97 97"]
-      }
+      "tittel": "Påtaleansvarlig"
     },
     "besluttetAv": {
       "navn": {
