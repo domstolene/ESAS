@@ -41,7 +41,6 @@
     "tilleggsId": [],
     "fornavn": "Morsom",
     "etternavn": "Kivi",
-    "kjoenn": "MANN",
     "foedselsdato": "1963-04-14",
     "nasjonalitet": {
       "kode": "NOR",
@@ -87,13 +86,6 @@
           "lovbudEnkel": {
             "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
           }
-        },
-        {
-          "type": "ANNEN_SPESIALBESTEMMELSE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Annen spesialbestemmelse"
-          },
-          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
         }
       ],
       "fengsling": {
@@ -115,20 +107,13 @@
             "tilDato": "2022-08-06"
           }
         ],
-        "isolasjonsKrav": [
-          {
-            "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
-            "isolasjonsType": "FULL",
-            "fraDato": "2022-07-06",
-            "tilDato": "2022-08-06"
-          }
-        ],
+        "isolasjonsKrav": [],
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
       "erklaering": {
         "erklaeringSiktede": {
           "meddeltIRettsmoete": true,
-          "erklaert": "BETENKNINGSTID"
+          "erklaert": "VEDTATT"
         },
         "erklaeringPaatale": {
           "meddeltIRettsmoete": true,
