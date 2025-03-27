@@ -87,6 +87,13 @@
           "lovbudEnkel": {
             "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
           }
+        },
+        {
+          "type": "ANNEN_SPESIALBESTEMMELSE",
+          "lovbudEnkel": {
+            "lovbudStreng": "Annen spesialbestemmelse"
+          },
+          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
         }
       ],
       "fengsling": {
