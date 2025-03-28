@@ -9,11 +9,13 @@
       },
       "person": {
         "brukeridentifikasjon": "XYZ233",
-        "etternavn": "Årdal",
-        "kontakt": {
-          "telefonnummer": ["22 99 33 44"]
-        }
+        "etternavn": "Årdal"
       }
+    },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
     },
     "mottakerOrganisasjon": {
       "organisasjonsnummer": "911830868",
@@ -24,7 +26,6 @@
   "rekvisisjonPersonundersoekelseId": "0322B3E2-B12B-40B6-8940-799C48706123",
   "kontaktopplysningerAdvokater": {
     "paataleansvarligNavn": { "etternavn": "Paatalesen" },
-    "paataleansvarligKontaktInfo": { "telefonnummer": ["11 22 33 44"] },
     "forsvarerNavn": {
       "fornavn": "Fjodor",
       "etternavn": "Feit"
@@ -91,7 +92,7 @@
         }
       },
       "kontaktInfo": {
-        "telefonnummer": ["11 22 33 40", "11 22 33 41"]
+        "telefonnummer": ["11 22 33 40"]
       },
       "verger": [
         {
@@ -242,7 +243,7 @@
     {
       "internId": "1234567879",
       "overskrift": "Rettsbok fra lavere rettsintans, Kiwi",
-      "skrevetDato": "2022-11-03T00:00:00+02:00",
+      "skrevetDato": "2022-11-03",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfasdf",
@@ -255,7 +256,7 @@
       "kategori": {
         "kode": "Siktelse"
       },
-      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "skrevetDato": "2022-10-14",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdfu",
@@ -268,7 +269,7 @@
       "kategori": {
         "kode": "Straffeattest"
       },
-      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "skrevetDato": "2022-10-14",
       "forsendelse": {
         "mimeType": "application/pdf",
         "uri": "file:///asdfaasdfsdfx",
