@@ -117,6 +117,10 @@
         "avsender": {
           "$ref": "#/definitions/avsender"
         },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Distriktet sin kontaktinformasjon"
+        },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
           "description": "Domstol som skal være mottaker"
@@ -144,6 +148,22 @@
       "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
+    "kontaktInfo": {
+      "type": "object",
+      "description": "Generell kontaktinformasjon",
+      "properties": {
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse f.eks. sentralbord"
+        },
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
     "organisasjon": {
       "type": "object",
       "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
@@ -168,27 +188,9 @@
         },
         "navn": {
           "$ref": "#/definitions/personnavn"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson",
-          "description": "Er ikke med i første fase, burde inneholde kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["navn", "kontakt"],
-      "additionalProperties": false
-    },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "Alle har epost adresse, men kanskje ikke registrert mobil/telefon",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": {
-          "$ref": "#/definitions/telefonnummer"
-        }
-      },
-      "required": ["epost"],
+      "required": ["navn"],
       "additionalProperties": false
     },
     "restriksjonIsolasjon": {
