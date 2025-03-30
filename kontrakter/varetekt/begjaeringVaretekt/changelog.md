@@ -10,7 +10,7 @@
 | 1.1     | Tolk og til hovedforhandling                |                | ikke prod    |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                | ikke prod    |
 
-## fengslingUtloeperDato -> varetektUtloeperDato (1.7)
+## fengslingUtloeperDato -> varetektUtloeperDato (1.7), venter med versjonering ref Carl Fredrik
 fengslingUtloeperDato" kommer ikke fra påtale ved forlengelser. Og, burde renames til "varetektUtloeperDato"?
 Fikser opp i endringslogg, venter med å versjonere til 1.7
 ## Arbeidsversjon skrivefeil  (1.5)
