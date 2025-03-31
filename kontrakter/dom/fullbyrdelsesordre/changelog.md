@@ -1,8 +1,8 @@
 # Endringslogg fullbyrdelsesordre
 
 | Versjon | Beskrivelse         | Aktiv fra | Aktiv til |
-|---------|---------------------| --------- | --------- |
-| 1.1    | besluttetAv/kontakt |      |   |
+|---------|---------------------|-----------|-----------|
+| 1.1    | besluttetAv/kontakt  |           |           |
 | 1.0     | Arbeidsverson       |           |           |
 
 ## Besluttet av til versjon 1.1 (ESAS-1798)
