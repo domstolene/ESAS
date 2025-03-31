@@ -19,7 +19,7 @@
     "personundersoekelseInfo": {
       "$ref": "#/definitions/personundersoekelseInfo"
     },
-    "paagrepetTidspunkt": { "type": "string", "format": "date-time" },
+    "paagrepetTidspunkt": { "$ref": "#/definitions/datoTid" },
     "paagrepetSted": {
       "type": "string",
       "description": "Beskriver hvor pågripelsen fant sted. For bostedsløse er det nødvendig å kontakte NAV-kontoret i denne kommunen. Dette bør struktureres som en adresse i framtiden, men politiet har fritekst p.t."
@@ -105,20 +105,11 @@
         "paataleansvarligNavn": {
           "$ref": "#/definitions/personnavn"
         },
-        "paataleansvarligKontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
-        },
-        "aktorNavn": {
-          "$ref": "#/definitions/personnavn"
-        },
-        "aktorKontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
-        },
         "forsvarerNavn": {
           "$ref": "#/definitions/personnavn"
         },
         "forsvarerKontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfoPerson"
         }
       },
       "required": [],
@@ -133,19 +124,19 @@
           "$ref": "#/definitions/personnavn"
         },
         "kontaktpersonBarnevernKontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfoPerson"
         },
         "kontaktpersonUngdomskoordinatorNavn": {
           "$ref": "#/definitions/personnavn"
         },
         "kontaktpersonUngdomskoordinatorKontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfoPerson"
         },
         "kontaktpersonPoltiNavn": {
           "$ref": "#/definitions/personnavn"
         },
         "kontaktpersonPolitiKontaktInfo": {
-          "$ref": "#/definitions/kontaktInfo"
+          "$ref": "#/definitions/kontaktInfoPerson"
         }
       },
       "required": [],
@@ -157,13 +148,9 @@
       "type": "object",
       "properties": {
         "oensketFristForFerdigPersonundersoekelse": {
-          "type": "string",
-          "format": "date-time"
+          "$ref": "#/definitions/datoTid"
         },
-        "berammetDatoForHovedforhandling": {
-          "type": "string",
-          "format": "date-time"
-        }
+        "berammetDatoForHovedforhandling": { "$ref": "#/definitions/datoTid" }
       },
       "required": [],
       "additionalProperties": false
@@ -253,13 +240,9 @@
         },
         "etternavn": {
           "type": "string"
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfo",
-          "description": "Kontaktinformasjon på forsendelsen."
         }
       },
-      "required": ["etternavn", "kontakt"],
+      "required": ["etternavn"],
       "additionalProperties": false
     },
     "avsender": {
@@ -283,11 +266,7 @@
         "internId": { "type": "string" },
         "kategori": { "$ref": "#/definitions/kodeverk" },
         "overskrift": { "type": "string" },
-        "skrevetDato": {
-          "description": "Dato",
-          "type": "string",
-          "format": "date-time"
-        },
+        "skrevetDato": { "$ref": "#/definitions/dato" },
         "forsendelse": { "$ref": "#/definitions/dokumentForsendelse" }
       },
       "required": ["overskrift", "forsendelse"],
@@ -311,12 +290,13 @@
         "meldingsId": {
           "type": "string"
         },
-        "sendtTid": {
-          "type": "string",
-          "format": "date-time"
-        },
+        "sendtTid": { "$ref": "#/definitions/datoTid" },
         "avsender": {
           "$ref": "#/definitions/avsender"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Distriktet sin kontaktinformasjon"
         },
         "mottakerOrganisasjon": {
           "$ref": "#/definitions/organisasjon",
@@ -333,13 +313,32 @@
     },
     "kontaktInfo": {
       "type": "object",
+      "description": "Generell kontaktinformasjon",
+      "properties": {
+        "beskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse f.eks. sentralbord"
+        },
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "kontaktInfoPerson": {
+      "type": "object",
+      "description": "epost og/eller telefonnummer en av de skal være med verdier",
       "properties": {
         "epost": {
-          "type": "string"
+          "$ref": "#/definitions/epost"
         },
         "telefonnummer": {
           "type": "array",
-          "items": { "$ref": "#/definitions/telefonnummer" }
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
         }
       },
       "required": ["telefonnummer"],
@@ -459,8 +458,8 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "gjerningstidspunktFra": { "type": "string", "format": "date-time" },
-        "gjerningstidspunktTil": { "type": "string", "format": "date-time" },
+        "gjerningstidspunktFra": { "$ref": "#/definitions/datoTid" },
+        "gjerningstidspunktTil": { "$ref": "#/definitions/datoTid" },
         "gjerningssted": { "$ref": "#/definitions/adresse" }
       }
     },
@@ -589,10 +588,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "$ref": "#/definitions/kjoenn",
           "description": "Ukjent kjønn hvis denne ikke er med"
@@ -671,10 +667,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "format": "date"
-        },
+        "foedselsdato": { "$ref": "#/definitions/dato" },
         "kjoenn": {
           "description": "Ukjent kjønn hvis denne ikke er med",
           "$ref": "#/definitions/kjoenn"
@@ -685,7 +678,7 @@
             "$ref": "#/definitions/land"
           }
         },
-        "kontaktInfo": { "$ref": "#/definitions/kontaktInfo" },
+        "kontaktInfo": { "$ref": "#/definitions/kontaktInfoPerson" },
         "identitetsnummer": {
           "description": "Fødselsnummer, D-nummer eller SSP nummer som er den i bruk",
           "$ref": "#/definitions/personIdentifikator"
@@ -745,11 +738,7 @@
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
-        "foedselsdato": {
-          "type": "string",
-          "description": "Dato",
-          "format": "date"
-        }
+        "foedselsdato": { "$ref": "#/definitions/dato" }
       },
       "required": ["internId", "navn"],
       "additionalProperties": false
@@ -860,15 +849,27 @@
       "minLength": 3,
       "maxLength": 30
     },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
     "telefonnummer": {
       "type": "string",
       "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix",
       "maxLength": 30,
       "minLength": 1
     },
+    "datoTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
+    },
     "spraakkodeType": {
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
-      "pattern": "^([A-Z]{3,3})$",
+      "pattern": "^([A-Z]{3})$",
       "type": "string"
     },
     "behovForTolkType": {

@@ -7,13 +7,10 @@
 
 ## Headere forsendelse justisHub
 SchmaName=REKVISISJON_PERSONUNDERSOEKELSE  
-SchemaVersion=1.1
+SchemaVersion=1.0  
 [RFC message name header](../../../rfc/MessageName-header.md)
-
 ## Avklaringer
-
 ### Utestående avklaringer
-
 Kontaktpersonen må oppgis for videre dialog.
 Er påtalejurist alltid kontaktpersonen i politiet for disse sakene, eller kan det være etterforskere m.v.?
 KO må uansett vite hvem som skal ha personundersøkelsen i retur. Vi må derfor enten ha et separat, nytt påkrevd felt for kontaktperson - eller gjøre jurist påbudt.
@@ -25,7 +22,6 @@ Er det nødvendig med Varetekt-markering for "hastesak" (ref. PUM mal) ? Eller h
 KO venter personundersøker kan måtte møte i hovedforhandling - vi tror ikke det er nødvendig å ha dette som et strukturert felt, men la oss dobbeltsjekke.
 
 ### Avklarte avklaringer
-
 Den siktede må identifiseres sikkert (fnr/D-nr) og ha bosted eller oppholdsadresse angitt.
 Kriminalomsorgen bruker oppholdsadresse og bostedsadresse til å rute rekvireringen til rett ansvarlig friomsorgskontor.
 Sikker identitet er nødvendig for å hente korrekte og sensitive personopplysninger fra kildene.
