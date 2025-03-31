@@ -1,5 +1,4 @@
 on:
-  pull_request:
   push:
     branches:
       - "main"
@@ -19,7 +18,6 @@ jobs:
       - run: npm run json:validate
 
       - name: Set up Apache Maven Central
-        if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/setup-java@v3
         with: # running setup-java again overwrites the settings.xml
           distribution: "temurin"
@@ -31,7 +29,6 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
 
       - name: Publish to Apache Maven Central
-        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           DATE_FORMATTED=`date +%d%m%Y`
           GIT_SHA_SHORT=`echo $GITHUB_SHA | cut -c1-7`
