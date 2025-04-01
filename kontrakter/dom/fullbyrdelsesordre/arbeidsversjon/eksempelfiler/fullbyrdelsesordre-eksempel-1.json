@@ -98,6 +98,27 @@
             "antallDager": 24
           }
         },
+        "rettighetstapForbudKontakt": [
+          {
+            "hjemmel": {
+              "lovbudStreng": "§57. Forbud mot kontakt"
+            },
+            "varighet": {
+              "lengde": {
+                "antallAar": 2,
+                "antallMaaneder": 4
+              }
+            },
+            "varighetElektroniskKontroll": {
+              "lengde": {
+                "antallAar": 1,
+                "antallMaaneder": 4
+              }
+            },
+            "tekstElektroniskKontroll": "Skal kontrolleres elektronisk",
+            "gjelderEgetHjem": true
+          }
+        ],
         "fengsel": {
           "straff": {
             "antallAar": 2,
