@@ -1,10 +1,15 @@
 # kjennelseVaretekt endringslogg
-| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender |
-|---------|---------------------------------------------|----------------|--------------|
-| 1.3     | Støtte for surrogat. Strukturerte vilkår    |                |              | 
+| Versjon | Beskrivelse                              | Aktiv mottaker | Aktiv sender |
+|---------|------------------------------------------|----------------|--------------|
+| 1.4     | Beskrivelse vilkår                       |                |              |
+| 1.3     | Støtte for surrogat. Strukturerte vilkår |                |              | 
 | 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     | 25.03.2025   | 
-| 1.1     | Kjennelse med minst ett dokument            |                | 26.10.2023   | 
-| 1.0     | Første versjon i produksjon                 |                | 10.10.2023   | 
+| 1.1     | Kjennelse med minst ett dokument         |                | 26.10.2023   | 
+| 1.0     | Første versjon i produksjon              |                | 10.10.2023   | 
+
+# Versjon 1.4
+
+1. La til beskrivelse på vilkaar (for å kunne beskrive vilkår av typen ANNEN_SPESIALBESTEMMELSE)
 
 # Versjon 1.3
 1. Legger til støtte for strukturerte vilkår i varetekts-kjennelse
