@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/kjennelseVaretektPoliti/arbeidsversjon/kjennelseVaretektPoliti",
+  "$id": "https://politiet.no/politi/kjennelseVaretektPoliti/1.3/kjennelseVaretektPoliti",
   "description": "Kjennelse fra domstolen førtegangsfengsling eller forlengelser.",
   "type": "object",
   "properties": {
@@ -182,6 +182,7 @@
         "fraDato": { "$ref": "#/definitions/dato" },
         "tilDato": { "$ref": "#/definitions/dato" },
         "fengslingsFristDato": { "$ref": "#/definitions/dato" },
+        "lovbud": { "$ref": "#/definitions/lovbudEnkel" },
         "vilkaar": {
           "type": "array",
           "items": {
