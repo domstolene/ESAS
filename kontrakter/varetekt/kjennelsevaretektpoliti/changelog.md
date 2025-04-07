@@ -10,7 +10,7 @@ Denne meldingen sammen med [endreRestriksjoner](../endreRestriksjoner/readme.md)
 ## Versjon 1.3
 
 ### vilkaar
-Liste med vilkaar erstatter én enkelt lobudstreng med alle vilkaar samlet
+Liste med vilkaar erstatter én enkelt lovbudstreng med alle vilkaar samlet
 
 ## Versjon 1.1
 
