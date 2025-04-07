@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://politiet.no/begjaeringKjennelse/arbeidsversjon/begjaeringFoererett",
-  "description": "Begjæring om dom fra politiet til tingretten, ønsker domsavgjørelse tilbake.",
+  "description": "Begjæring om midlertidig tap av førerett. Fra Politiet til Domstolene.",
 
   "type": "object",
   "properties": {
@@ -22,7 +22,7 @@
     },
     "dokumenter": {
       "type": "array",
-      "description": "Det vil alltid være minst 1 dokument som er begjæringsdokumentet, men det skal også legges ved siktelse ...",
+      "description": "Det vil alltid være minst 1 dokument som er begjæringsdokumentet",
       "items": {
         "$ref": "#/definitions/dokument"
       },
@@ -45,7 +45,7 @@
       "properties": {
         "kravId": {
           "$ref": "#/definitions/GUID",
-          "description": "Krav om avgjørelse til domstolen, tingretten ønsker avgjørelse (dom tilbake)"
+          "description": "Krav om avgjørelse til domstolen"
         },
         "paataleansvarlig": {
           "$ref": "#/definitions/paataleansvarlig",
@@ -53,11 +53,11 @@
         },
         "siktetPersonInfo": {
           "$ref": "#/definitions/siktetPersonInfo",
-          "description": "Det er kun 1 person som blir begjært i en tilståelsessak, må utvides til meddomssak."
+          "description": "Informasjon om den siktede"
         },
         "varighetBeslag": {
           "type": "object",
-          "description": "Varighet for beslaget.",
+          "description": "Varighet for førerkortbeslaget",
           "properties": {
             "aar": {
               "type": "integer"
@@ -70,7 +70,7 @@
         },
         "datoBeslag": {
           "$ref": "#/definitions/dato",
-          "description": "Dato for førerkortbeslag."
+          "description": "Dato for førerkortbeslag"
         }
       },
       "required": [
@@ -362,22 +362,6 @@
       ],
       "additionalProperties": false
     },
-    "relatertPerson": {
-      "type": "object",
-      "description": "Person med adresser og mulige verger",
-      "properties": {
-        "person": { "$ref": "#/definitions/relatertPersonEnkel" },
-        "adresseGradering": {
-          "$ref": "#/definitions/adresseGradering",
-          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
-        },
-        "personAdresse": {
-          "$ref": "#/definitions/personAdresse"
-        }
-      },
-      "required": ["person"],
-      "additionalProperties": false
-    },
     "relatertPersonEnkel": {
       "type": "object",
       "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
@@ -406,19 +390,6 @@
         }
       },
       "required": ["personForetakRef", "navn", "statsborgerskap"],
-      "additionalProperties": false
-    },
-    "relatertPersonStraffesak": {
-      "type": "object",
-      "description": "Fornærmede, vitne informasjon med kobling til straffesakene de er med i",
-      "properties": {
-        "person": { "$ref": "#/definitions/relatertPerson" },
-        "straffesaker": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/straffesaksnummer" }
-        }
-      },
-      "required": ["person", "straffesaker"],
       "additionalProperties": false
     },
     "profesjonellPerson": {
