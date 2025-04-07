@@ -182,7 +182,6 @@
         "fraDato": { "$ref": "#/definitions/dato" },
         "tilDato": { "$ref": "#/definitions/dato" },
         "fengslingsFristDato": { "$ref": "#/definitions/dato" },
-        "lovbud": { "$ref": "#/definitions/lovbudEnkel" },
         "vilkaar": {
           "type": "array",
           "items": {
