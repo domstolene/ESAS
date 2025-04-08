@@ -10,7 +10,7 @@ Avgjørelsen er et svar på et krav fra påtale (evt. kriminalomsorgen), f.eks. 
 ## Headere forsendelse justisHub
 SchemaName=KJENNELSE_BESLUTNING  
 SchemaVersion=1.0  
-[RFC](../../rfc/MessageName-header.md)  
+[RFC](../../../rfc/MessageName-header.md)  
 [Se changelog for endringer](changelog.md)
 
 
