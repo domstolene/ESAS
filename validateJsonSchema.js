@@ -23,7 +23,7 @@ const jsonSchemaFolders = [
   "kontrakter/dom/begjaeringDom",
   "kontrakter/dom/fullbyrdelsesordre",
   "kontrakter/siktelseTiltale",
-  "kontrakter/kjennelsebeslutning",
+  "kontrakter/kjennelseBeslutning/kjennelseBeslutning",
   "kontrakter/vegtrafikkulykke/trafikkulykke",
   "kontrakter/dom/paastandStraff"
 ];
