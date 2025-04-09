@@ -10,7 +10,7 @@
         <groupId>io.github.domstolene.esas</groupId>
         <artifactId>kontrakter</artifactId>
         <version>tmp</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../../../pom.xml</relativePath>
     </parent>
 
     <build>
