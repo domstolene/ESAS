@@ -465,7 +465,7 @@
       "$comment": "Hva med tap av rett til å føre 'ikke førerkortpliktig motorvogn', eller ting man trenger kjøreseddel til (f.eks. buss taxi). Egen property eller en form for fritekst? Og burde vi ha med hvilken klasse?",
       "properties": {
         "hjemmel": {
-          "$ref": "#/definitions/lovbudStreng"
+          "$ref": "#/definitions/lovbud"
         },
         "varighet": {
           "$ref": "#/definitions/varighet",
