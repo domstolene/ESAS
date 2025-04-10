@@ -2,8 +2,14 @@
 
 | Versjon | Beskrivelse         | Aktiv fra | Aktiv til |
 |---------|---------------------|-----------|-----------|
-| 1.1    | besluttetAv/kontakt  |           |           |
+| 1.2     | Nye rettighetstap   |           |           |
+| 1.1     | besluttetAv/kontakt |           |           |
 | 1.0     | Arbeidsverson       |           |           |
+
+## Nye rettighetstap
+* Rettighetstap forbud kontakt
+* Rettighetstap motorvogn
+
 
 ## Besluttet av til versjon 1.1 (ESAS-1798)
 Kjører versjonering selv om vi ikke er i produksjon for å kunne følge med en del endringer.

@@ -1,0 +1,217 @@
+{
+  "forsendelse": {
+    "meldingsId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+    "sendtTid": "1892-06-30T19:21:41.0Z",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "etternavn": "Gunnarsen",
+          "fornavn": "Gunnar"
+        },
+        "tittel": "Konsulent"
+      }
+    },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "983997953",
+      "navn": "Kriminalomsorgen"
+    }
+  },
+  "under18": false,
+  "fullbyrdelsesordre": {
+    "anmodningsId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd1",
+    "paataleansvarlig": {
+      "navn": {
+        "etternavn": "Klausonius",
+        "fornavn": "Lars"
+      },
+      "tittel": "Påtaleansvarlig"
+    },
+    "besluttetAv": {
+      "navn": {
+        "etternavn": "Klausonius",
+        "fornavn": "Lars"
+      },
+      "tittel": "Politiadvokat"
+    },
+    "domfelte": {
+      "person": {
+        "personForetakRef": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+        "navn": {
+          "etternavn": "Skurkesen",
+          "fornavn": "Ronald"
+        },
+        "foedselsdato": "1896-05-10",
+        "kjoenn": "MANN",
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ],
+        "identitetsnummer": {
+          "idType": "FOEDSELSNUMMER",
+          "verdi": "07099715094"
+        },
+        "tilleggsId": []
+      },
+      "personAdresse": {
+        "adresse": {
+          "adresselinjer": ["her er det veldig fint", "igjen"],
+          "postnummer": "3244",
+          "poststed": "Jålla",
+          "land": {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        }
+      },
+      "kontaktInfo": {
+        "epost": "rart.tryne@jo.tt"
+      },
+      "verger": []
+    },
+    "avgjoerelse": {
+      "domstol": {
+        "organisasjonsnummer": "826726342",
+        "navn": "Buskerud tingrett"
+      },
+      "avgjoerelseId": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+      "saksnummer": "24-113474ENE-TOSL/01",
+      "avsagtDato": "1957-11-25",
+      "straffesakDomsnummer": "D123/25-201",
+      "reaksjoner": {
+        "bot": {
+          "beloep": 24000,
+          "proevetid": {
+            "antallAar": 2
+          },
+          "subsidaerFengselsstraff": {
+            "antallDager": 24
+          }
+        },
+        "rettighetstapForbudKontakt": [
+          {
+            "hjemmel": {
+              "lovbudStreng": "§57. Forbud mot kontakt"
+            },
+            "varighet": {
+              "lengde": {
+                "antallAar": 2,
+                "antallMaaneder": 4
+              }
+            },
+            "varighetElektroniskKontroll": {
+              "lengde": {
+                "antallAar": 1,
+                "antallMaaneder": 4
+              }
+            },
+            "tekstElektroniskKontroll": "Skal kontrolleres elektronisk",
+            "gjelderEgetHjem": true
+          }
+        ],
+        "fengsel": {
+          "straff": {
+            "antallAar": 2,
+            "antallMaaneder": 4
+          },
+          "betinget": {
+            "antallMaaneder": 6
+          },
+          "proevetid": {
+            "antallAar": 2
+          },
+          "fradrag": {
+            "antallDager": 24
+          },
+          "saervilkaar": [
+            {
+              "paragraf": "§35",
+              "tekst": "Særvilkår om meldeplikt",
+              "beskrivelse": "Masse Kiwi skal melde seg til politiet én gang i måneden"
+            },
+            {
+              "paragraf": "§36",
+              "tekst": "Andre særvilkår",
+              "detaljer": "f. gjennomføre narkotikaprogram med domstolskontroll, jf. § 38,"
+            }
+          ]
+        }
+      },
+      "straffbareForhold": [
+        {
+          "basissakId": "1234121-123",
+          "lovbudKombinert": {
+            "lovbud": [
+              {
+                "lovbudId": "8d5e1fe3-a6e7-44e1-9c99-6ea140320375",
+                "lovbudStreng": "Straffeloven § 332",
+                "gjengivelse": "for å ha mottatt eller skaffet seg eller andre del i utbytte av en straffbar handling. Likestilt med utbytte er en gjenstand, fordring eller tjeneste som trer istedenfor det.",
+                "strafferamme": 24
+              }
+            ]
+          },
+          "straffesak": {
+            "straffesaksnummer": "12345678910",
+            "statistikkgruppe": {
+              "kode": "0960",
+              "navn": "Heleri"
+            },
+            "krimtype": {
+              "kode": "02",
+              "navn": "Vinningskriminalitet"
+            }
+          },
+          "fornaermede": [
+            {
+              "person": {
+                "personForetakRef": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+                "navn": {
+                  "fornavn": "Linda",
+                  "mellomnavn": "Irene",
+                  "etternavn": "Moltubakk"
+                },
+                "foedselsdato": "1961-03-03",
+                "kjoenn": "KVINNE",
+                "statsborgerskap": [],
+                "identitetsnummer": {
+                  "idType": "FOEDSELSNUMMER",
+                  "verdi": "07099715094"
+                }
+              },
+              "verger": []
+            }
+          ]
+        }
+      ]
+    },
+    "foregrepetSoning": false,
+    "rettskraftigFraOgMed": "1944-05-18"
+  },
+  "beskrivelse": "Domfelte ønsker å sone så fort som mulig og er litt vanskelig å ha med å gjøre.",
+  "hovedStraffesaksnummer": "12345678910",
+  "dokumenter": [
+    {
+      "dokumentRef": "f449FBad-AF5C-C40C-7DE5-BfafD382CDd0",
+      "overskrift": "Vedlegg",
+      "skrevetDato": "2023-03-30",
+      "kategori": {
+        "kode": "siktelse"
+      },
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    }
+  ]
+}
