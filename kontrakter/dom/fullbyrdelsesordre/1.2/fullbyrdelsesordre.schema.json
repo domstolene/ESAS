@@ -513,7 +513,7 @@
     "rettighetstapMotorvogn": {
       "properties": {
         "hjemmel": {
-          "$ref": "#/definitions/lovbud",
+          "$ref": "#/definitions/lovbud"
         },
         "varighet": {
           "$ref": "#/definitions/varighet"
