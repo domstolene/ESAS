@@ -2,7 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://politiet.no/kjennelseBeslutning/arbeidsversjon/begjaeringKjennelseBeslutning",
   "description": "Generell begjæring om kjennelse/beslutning",
-
   "type": "object",
   "properties": {
     "forsendelse": {
@@ -13,9 +12,10 @@
       "$ref": "#/definitions/GUID",
       "description": "Hvis meldingen sendes sammen med flere f.eks. siktelse og påstand om straff så vil alle de 3 meldingene ha samme pakke id."
     },
-    "begjaeringFoererett": {
+    "begjaering": {
       "$ref": "#/definitions/begjaeringFoererett"
     },
+    "divPersonOgForetaklister": {"type": "string", "description": "se readme fil"},
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
       "description": "Hoved straffesaken saksbehandler saken, trenger ikke å være med i siktelsen."
@@ -31,15 +31,22 @@
   },
   "required": [
     "forsendelse",
-    "begjaeringFoererett",
+    "begjaering",
     "hovedStraffesaksnummer",
     "dokumenter",
     "pakkeId"
   ],
   "additionalProperties": false,
-
   "definitions": {
-    "begjaeringFoererett": {
+    "begjaeringstype": {
+      "type": "string",
+      "description": "Hvilken sak skal dette være, se readme for forklaring. Kun TILSTAAELSE i første omgang.",
+      "enum": [
+        "MIDL_TAP_FOERERETT",
+        "ANNET"
+      ]
+    },
+    "begjaering": {
       "type": "object",
       "description": "Begjæringen med basisdata",
       "properties": {
@@ -51,10 +58,36 @@
           "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
-        "siktetPersonInfo": {
-          "$ref": "#/definitions/siktetPersonInfo",
-          "description": "Informasjon om den siktede"
+        "begjaeringstype": {"$ref": "#/definitions/begjaeringstype"},
+        "begjaeringsdetaljer": {"type": "string", "description": "oneOf med tap førerett og annet type som må defineres"},
+        "parter": {
+          "type": "array",
+          "description": "Som regel en siktet, men kan være andre roller på saken f.eks. ved ransaking hos 3. person. Eller ingen (ukjent)",
+          "items": {
+            "$ref": "#/definitions/personForetakRef"
+          }
         },
+        "fornaermede": {
+          "type": "array",
+          "description": "Hvis det er nødvendig for begjæring.",
+          "items": {
+            "$ref": "#/definitions/personForetakRef"
+          }
+        }
+      },
+      "required": [
+        "kravId",
+        "begjaeringsType",
+        "paataleansvarlig",
+        "parter",
+        "fornaermede"
+      ],
+      "additionalProperties": false
+    },
+    "begjaeringFoererett": {
+      "type": "object",
+      "description": "Midlertidig tap av førerett spesifikke data",
+      "properties": {
         "varighetBeslag": {
           "type": "object",
           "description": "Varighet for førerkortbeslaget",
@@ -73,12 +106,6 @@
           "description": "Dato for førerkortbeslag"
         }
       },
-      "required": [
-        "kravId",
-        "siktetPersonInfo",
-        "paataleansvarlig",
-        "varighetBeslag"
-      ],
       "additionalProperties": false
     },
     "adresse": {
@@ -320,7 +347,7 @@
       "description": "Siktede, dømte, tiltalte... personer bruker denne typen for identifiserende data.",
       "properties": {
         "personForetakRef": {
-          "$ref": "#/definitions/GUID",
+          "$ref": "#/definitions/personForetakRef",
           "description": "Unik id kun lokalt i en melding, samme person kun i denne meldingen vil ha samme personForetakRef."
         },
         "personStraffesakId": {
@@ -367,7 +394,7 @@
       "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
       "properties": {
         "personForetakRef": {
-          "$ref": "#/definitions/GUID",
+          "$ref": "#/definitions/personForetakRef",
           "description": "unik id kun lokalt i en melding, samme personForetakRef er samme person."
         },
         "navn": {
@@ -502,7 +529,7 @@
     "dokumentRef": { "$ref": "#/definitions/GUID" },
     "personForetakRef": {
       "$ref": "#/definitions/GUID",
-      "description": "Referanse inn person eller foretak lister"
+      "description": "Referanse inn person eller foretak lister internt i samme melding."
     },
     "spraakkodeType": {
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
