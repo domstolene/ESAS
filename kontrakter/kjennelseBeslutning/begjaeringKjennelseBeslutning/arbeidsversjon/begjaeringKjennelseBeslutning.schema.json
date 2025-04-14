@@ -12,10 +12,15 @@
       "$ref": "#/definitions/GUID",
       "description": "Hvis meldingen sendes sammen med flere f.eks. siktelse og påstand om straff så vil alle de 3 meldingene ha samme pakke id."
     },
-    "begjaering": {
-      "$ref": "#/definitions/begjaeringFoererett"
+    "begjaeringstype": {
+      "$ref": "#/definitions/begjaeringstype"
     },
-    "divPersonOgForetaklister": {"type": "string", "description": "se readme fil"},
+    "begjaering": {
+      "$ref": "#/definitions/begjaering"
+    },
+    "personOgForetaklister": {
+      "$ref": "#/definitions/personOgForetaklister"
+    },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
       "description": "Hoved straffesaken saksbehandler saken, trenger ikke å være med i siktelsen."
@@ -40,11 +45,8 @@
   "definitions": {
     "begjaeringstype": {
       "type": "string",
-      "description": "Hvilken sak skal dette være, se readme for forklaring. Kun TILSTAAELSE i første omgang.",
-      "enum": [
-        "MIDL_TAP_FOERERETT",
-        "ANNET"
-      ]
+      "description": "Hvilken type begjæring dette er. I førsteomgang bare midlertidig tap av førerett",
+      "enum": ["MIDL_TAP_FOERERETT", "ANNET"]
     },
     "begjaering": {
       "type": "object",
@@ -58,8 +60,39 @@
           "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
-        "begjaeringstype": {"$ref": "#/definitions/begjaeringstype"},
-        "begjaeringsdetaljer": {"type": "string", "description": "oneOf med tap førerett og annet type som må defineres"},
+        "begjaeringsdetaljer": {
+          "type": "object",
+          "description": "Tar inn nøyaktig ett begjaeringsobjekt med den påkrevde informasjonen til den aktuelle begjæringstypen",
+          "properties": {
+            "begjaeringFoererett": {
+              "$ref": "#/definitions/begjaeringFoererett"
+            },
+            "annenBegjaering": {
+              "$ref": "#/definitions/annenBegjaering"
+            }
+          },
+          "oneOf": [
+            {
+              "properties": {
+                "begjaeringFoererett": {
+                  "$ref": "#/definitions/begjaeringFoererett"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["begjaeringFoererett"]
+            },
+            {
+              "properties": {
+                "annenBegjaering": {
+                  "$ref": "#/definitions/annenBegjaering"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["annenBegjaering"]
+            }
+          ],
+          "additionalProperties": false
+        },
         "parter": {
           "type": "array",
           "description": "Som regel en siktet, men kan være andre roller på saken f.eks. ved ransaking hos 3. person. Eller ingen (ukjent)",
@@ -77,33 +110,76 @@
       },
       "required": [
         "kravId",
-        "begjaeringsType",
         "paataleansvarlig",
         "parter",
         "fornaermede"
       ],
       "additionalProperties": false
     },
+    "personOgForetaklister": {
+      "type": "object",
+      "properties": {
+        "siktedePersoner": {
+          "type": "array",
+          "description": "Alle siktede personer",
+          "items": { "$ref": "#/definitions/siktetPersonInfo" }
+        },
+        "siktedeForetak": {
+          "type": "array",
+          "description": "Alle siktede foretak",
+          "items": { "$ref": "#/definitions/siktetForetakInfo" }
+        },
+        "fornaermedePersoner": {
+          "type": "array",
+          "description": "Alle fornærmede personer",
+          "items": { "$ref": "#/definitions/relatertPerson" }
+        },
+        "fornaermedeForetak": {
+          "type": "array",
+          "description": "Alle fornærmede foretak",
+          "items": { "$ref": "#/definitions/foretak" }
+        },
+        "vitner": {
+          "type": "array",
+          "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
+          "items": { "$ref": "#/definitions/relatertPerson" }
+        },
+        "sakkyndigeVitner": {
+          "type": "array",
+          "description": "Sakkyndige vitner på saken med kun kjent navn",
+          "items": { "$ref": "#/definitions/profesjonellPerson" }
+        }
+      },
+      "required": [
+        "siktedePersoner",
+        "siktedeForetak",
+        "fornaermedePersoner",
+        "fornaermedeForetak",
+        "vitner",
+        "sakkyndigeVitner"
+      ],
+      "additionalProperties": false
+    },
+    "annenBegjaering": {
+      "type": "object",
+      "description": "Annen begjaering. Foreløpig kun med beskrivelse. Bør utvides før bruk",
+      "properties": {
+        "beskrivelse": {
+          "type": "string"
+        }
+      }
+    },
     "begjaeringFoererett": {
       "type": "object",
       "description": "Midlertidig tap av førerett spesifikke data",
       "properties": {
-        "varighetBeslag": {
-          "type": "object",
-          "description": "Varighet for førerkortbeslaget",
-          "properties": {
-            "aar": {
-              "type": "integer"
-            },
-            "maaneder": {
-              "type": "integer"
-            }
-          },
-          "additionalProperties": false
-        },
-        "datoBeslag": {
+        "beslaglagtFraDato": {
           "$ref": "#/definitions/dato",
           "description": "Dato for førerkortbeslag"
+        },
+        "beslaglagtTilDato": {
+          "$ref": "#/definitions/dato",
+          "description": "Dato der førerkortbeslaget utgår"
         }
       },
       "additionalProperties": false
@@ -296,9 +372,6 @@
         "tolk": {
           "type": "object",
           "properties": {
-            "behov": {
-              "$ref": "#/definitions/behovForTolkType"
-            },
             "spraak": {
               "$ref": "#/definitions/spraakkodeType"
             },
@@ -307,7 +380,6 @@
               "description": "Beskrivelse av språket. Dialekt e.l."
             }
           },
-          "required": ["behov"],
           "additionalProperties": false
         },
         "forsvarerinformasjon": {
@@ -482,6 +554,93 @@
       "required": ["telefonnummer"],
       "additionalProperties": false
     },
+    "siktetForetakInfo": {
+      "type": "object",
+      "properties": {
+        "foretak": {
+          "$ref": "#/definitions/foretak"
+        },
+        "forsvarerinformasjon": {
+          "$ref": "#/definitions/forsvarerinformasjon"
+        }
+      },
+      "required": ["foretak"],
+      "additionalProperties": false
+    },
+    "relatertPerson": {
+      "type": "object",
+      "description": "Person med adresser og mulige verger",
+      "properties": {
+        "person": { "$ref": "#/definitions/relatertPersonEnkel" },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering",
+          "description": "Settes hvis en person har en beskyttet adresse. Fortrolig så sendes ikke adresse, strengt fortrolig så sendes pboks. adresse f.eks. SOT6, klient adresse vet ikke ennå"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        },
+        "tolk": {
+          "type": "object",
+          "properties": {
+            "spraak": {
+              "$ref": "#/definitions/spraakkodeType"
+            },
+            "beskrivelse": {
+              "type": "string",
+              "description": "Beskrivelse av språket. Dialekt e.l."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": ["person"],
+      "additionalProperties": false
+    },
+    "fornaermedePersoner": {
+      "type": "array",
+      "description": "Alle fornærmede personer, kobling til straffesaken i siktelseTiltale",
+      "items": { "$ref": "#/definitions/relatertPerson" }
+    },
+    "fornaermedeForetak": {
+      "type": "array",
+      "description": "Alle fornærmede foretak, kobling til straffesaken i siktelseTiltale",
+      "items": { "$ref": "#/definitions/foretakStraffesak" }
+    },
+    "foretakStraffesak": {
+      "type": "object",
+      "description": "Foretak med kobling til straffesakene de er med i",
+      "properties": {
+        "person": { "$ref": "#/definitions/foretak" },
+        "straffesaker": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
+        }
+      },
+      "required": ["person", "straffesaker"],
+      "additionalProperties": false
+    },
+    "foretak": {
+      "type": "object",
+      "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. fornærmet",
+      "properties": {
+        "personForetakRef": {
+          "$ref": "#/definitions/GUID",
+          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme foretak."
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        },
+        "navn": {
+          "type": "string"
+        },
+        "adresse": {
+          "$ref": "#/definitions/adresse",
+          "description": "hvis adresse er ugyldig, f.eks. skrevet ned koordinater i vanlig adresse så blir den ikke med."
+        }
+      },
+      "required": ["personForetakRef", "navn"],
+      "additionalProperties": false
+    },
     "dokument": {
       "type": "object",
       "description": "Dokument som oversendes på justishub",
@@ -535,11 +694,6 @@
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
       "pattern": "^([A-Z]{3})$",
       "type": "string"
-    },
-    "behovForTolkType": {
-      "type": "string",
-      "description": "Er det behov for tolk",
-      "enum": ["JA_POLITIET_STILLER", "JA_DOMSTOLEN_STILLER"]
     },
     "forsvarerinformasjon": {
       "type": "object",

@@ -16,6 +16,7 @@ senderOrganization=POLITIET
 - Vitner?
 - det er domstolene som skal stille med tolk, valg av tolk er viktig.
 - Under 18 gjerningstidspunkt
+- Siktede personer/-foretak i samme liste
 
 ## Beskrivelse
 Generell begjæring om kjennelse eller besluting fra påtale til domstolen 1. nivå tingretten.
