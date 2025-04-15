@@ -15,11 +15,15 @@ senderOrganization=POLITIET
 - Skal aktor_møter være med?
 - Vitner?
 - det er domstolene som skal stille med tolk, valg av tolk er viktig.
-- Under 18 gjerningstidspunkt
+- Under 18 gjerningstidspunkt, er ikke med nå
 
 ## Beskrivelse
 Generell begjæring om kjennelse eller besluting fra påtale til domstolen 1. nivå tingretten.
 Første versjon skal dekke: Begjæring om midlertidig tap av førerett, en siktet og en kjennelse med varighet/dato. 
+### Begjæering om midlertidig (forlengelse) tap av førerett (MIDL_TAP_FOERERETT)
+* Det vil alltid være bare en siktet
+* Ingen andre personroller som fornæermet, osv. vil være med.
+* Begjæringsdetaljer vil alltid inneholde begjaeringFoererett
 ### Fremtidige begjæringer
 Eksempler på begjæring som skal dekkes:
 * Begjæring om midlertidig tap av førerett, en siktet og en kjennelse med varighet/dato.

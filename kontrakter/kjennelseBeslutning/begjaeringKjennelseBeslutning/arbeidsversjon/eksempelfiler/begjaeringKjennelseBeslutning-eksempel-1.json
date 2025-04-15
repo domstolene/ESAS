@@ -25,57 +25,74 @@
     }
   },
   "pakkeId": "CADC75FC-22EF-478E-B4EC-27C49F85FD70",
-  "begjaeringFoererett": {
-    "kravId": "715ED997-479E-4791-A475-5F906341C33E",
+  "begjaeringstype": "MIDL_TAP_FOERERETT",
+  "begjaering": {
+    "kravId": "123E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
     "paataleansvarlig": {
       "brukeridentifikasjon": "BLC210",
       "ansatt": {
         "navn": {
-          "fornavn": "NinaTerese",
+          "fornavn": "Shan",
           "etternavn": "Eriksen"
         }
       }
     },
-    "siktetPersonInfo": {
-      "siktetPerson": {
-        "person": {
-          "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
-          "navn": {
-            "fornavn": "Vokal",
-            "etternavn": "FABRIKKPIPE"
-          },
-          "identitetsnummer": {
-            "idType": "FOEDSELSNUMMER",
-            "verdi": "22918197870"
-          },
-          "tilleggsId": [],
-          "kjoenn": "KVINNE",
-          "foedselsdato": "1981-11-22",
-          "statsborgerskap": [
-            {
-              "kode": "NOR",
-              "navn": "Norge"
-            }
-          ]
-        },
-        "personAdresse": {
-          "adresse": {
-            "adresselinjer": ["Pampusvegen 32"],
-            "postnummer": "6285",
-            "poststed": "STOREKALVØY",
-            "land": {
-              "kode": "NOR",
-              "navn": "Norge"
-            }
-          }
-        },
-        "verger": []
+    "begjaeringsdetaljer": {
+      "begjaeringFoererett": {
+        "beslaglagtFraDato": "2025-01-22",
+        "beslaglagtTilDato": "2026-01-22"
       }
     },
-    "varighetBeslag": {
-      "aar": 1,
-      "maaneder": 2
-    }
+    "fornaermede": ["333E0F52-9DDB-40E7-BDF3-663B8AC93CE2"],
+    "parter": [
+      "111E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+      "222E0F52-9DDB-40E7-BDF3-663B8AC93CE2"
+    ]
+  },
+  "personOgForetaklister": {
+    "siktedePersoner": [
+      {
+        "siktetPerson": {
+          "person": {
+            "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
+            "navn": {
+              "fornavn": "Vokal",
+              "etternavn": "FABRIKKPIPE"
+            },
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "22918197870"
+            },
+            "tilleggsId": [],
+            "kjoenn": "KVINNE",
+            "foedselsdato": "1981-11-22",
+            "statsborgerskap": [
+              {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            ]
+          },
+          "personAdresse": {
+            "adresse": {
+              "adresselinjer": ["Pampusvegen 32"],
+              "postnummer": "6285",
+              "poststed": "STOREKALVØY",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            }
+          },
+          "verger": []
+        }
+      }
+    ],
+    "siktedeForetak": [],
+    "fornaermedePersoner": [],
+    "fornaermedeForetak": [],
+    "vitner": [],
+    "andrePersoner": []
   },
   "hovedStraffesaksnummer": "15439560",
   "dokumenter": [
