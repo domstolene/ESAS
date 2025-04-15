@@ -109,7 +109,7 @@
           }
         }
       },
-      "required": ["kravId", "paataleansvarlig", "parter", "fornaermede"],
+      "required": ["kravId", "paataleansvarlig", "parter", "fornaermede", "begjaeringsdetaljer"],
       "additionalProperties": false
     },
     "personOgForetaklister": {
