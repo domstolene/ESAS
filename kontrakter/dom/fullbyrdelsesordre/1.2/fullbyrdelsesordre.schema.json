@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorgen.no/dom/arbeidsversjon/fullbyrdelsesordre",
+  "$id": "https://kriminalomsorgen.no/dom/1.2/fullbyrdelsesordre",
   "description": "Schema definisjon av en Fullbyrdelsesordre",
   "type": "object",
   "properties": {
@@ -513,8 +513,7 @@
     "rettighetstapMotorvogn": {
       "properties": {
         "hjemmel": {
-          "$ref": "#/definitions/lovbud",
-          "description": "Dersom lovbud fra påtale er beholdt av domstolen sendes kun original _lovbudId_ tilbake til politiet. Ved endring i domstolen sendes kun _lovbudstring_ tilbake"
+          "$ref": "#/definitions/lovbud"
         },
         "varighet": {
           "$ref": "#/definitions/varighet"
