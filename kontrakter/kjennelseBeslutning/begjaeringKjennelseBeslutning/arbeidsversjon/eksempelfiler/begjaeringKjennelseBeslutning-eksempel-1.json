@@ -43,9 +43,7 @@
         "beslaglagtTilDato": "2026-01-22"
       }
     },
-    "fornaermede": [
-      "333E0F52-9DDB-40E7-BDF3-663B8AC93CE2"
-    ],
+    "fornaermede": ["333E0F52-9DDB-40E7-BDF3-663B8AC93CE2"],
     "parter": [
       "111E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
       "222E0F52-9DDB-40E7-BDF3-663B8AC93CE2"
@@ -94,7 +92,7 @@
     "fornaermedePersoner": [],
     "fornaermedeForetak": [],
     "vitner": [],
-    "sakkyndigeVitner": []
+    "andrePersoner": []
   },
   "hovedStraffesaksnummer": "15439560",
   "dokumenter": [

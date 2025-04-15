@@ -39,7 +39,8 @@
     "begjaering",
     "hovedStraffesaksnummer",
     "dokumenter",
-    "pakkeId"
+    "pakkeId",
+    "personOgForetaklister"
   ],
   "additionalProperties": false,
   "definitions": {
@@ -108,12 +109,7 @@
           }
         }
       },
-      "required": [
-        "kravId",
-        "paataleansvarlig",
-        "parter",
-        "fornaermede"
-      ],
+      "required": ["kravId", "paataleansvarlig", "parter", "fornaermede"],
       "additionalProperties": false
     },
     "personOgForetaklister": {
@@ -144,9 +140,9 @@
           "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
           "items": { "$ref": "#/definitions/relatertPerson" }
         },
-        "sakkyndigeVitner": {
+        "andrePersoner": {
           "type": "array",
-          "description": "Sakkyndige vitner på saken med kun kjent navn",
+          "description": "Profeosjonelle vitner (politi), sakkyndige ....",
           "items": { "$ref": "#/definitions/profesjonellPerson" }
         }
       },
@@ -156,18 +152,19 @@
         "fornaermedePersoner",
         "fornaermedeForetak",
         "vitner",
-        "sakkyndigeVitner"
+        "andrePersoner"
       ],
       "additionalProperties": false
     },
     "annenBegjaering": {
       "type": "object",
-      "description": "Annen begjaering. Foreløpig kun med beskrivelse. Bør utvides før bruk",
+      "description": "Annen begjaering. Foreløpig kun med beskrivelse. Bør utvides før bruk, kan legge til properties...",
       "properties": {
         "beskrivelse": {
           "type": "string"
         }
-      }
+      },
+      "required": ["beskrivelse"]
     },
     "begjaeringFoererett": {
       "type": "object",
@@ -179,7 +176,7 @@
         },
         "beslaglagtTilDato": {
           "$ref": "#/definitions/dato",
-          "description": "Dato der førerkortbeslaget utgår"
+          "description": "Ønsker førerett beslaglagt til denne dato"
         }
       },
       "additionalProperties": false
