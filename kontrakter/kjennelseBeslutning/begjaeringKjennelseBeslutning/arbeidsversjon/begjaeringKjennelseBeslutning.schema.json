@@ -109,7 +109,13 @@
           }
         }
       },
-      "required": ["kravId", "paataleansvarlig", "parter", "fornaermede", "begjaeringsdetaljer"],
+      "required": [
+        "kravId",
+        "paataleansvarlig",
+        "parter",
+        "fornaermede",
+        "begjaeringsdetaljer"
+      ],
       "additionalProperties": false
     },
     "personOgForetaklister": {
