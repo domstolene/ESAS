@@ -560,11 +560,23 @@
           "description": "Kontaktinfo til forsvarer."
         },
         "virksomhet": {
-          "$ref": "#/definitions/foretak",
+          "$ref": "#/definitions/advokatvirksomhet",
           "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
         }
       },
       "required": ["navn", "foedselsnummer", "virksomhet"],
+      "additionalProperties": false
+    },
+    "advokatvirksomhet": {
+      "description": "Registrert advokatforetak, enkeltpersonforetak eller annen organisasjon som person med advokatbevilling praktiserer ut i fra.",
+      "type": "object",
+      "properties": {
+        "organisasjonsnummer": { "$ref": "#/definitions/organisasjonsnummer" },
+        "navn": { "type": "string" },
+        "adresse": { "$ref": "#/definitions/adresse" },
+        "postadresse": { "$ref": "#/definitions/adresse" }
+      },
+      "required": ["organisasjonsnummer"],
       "additionalProperties": false
     },
     "personEnkel": {
