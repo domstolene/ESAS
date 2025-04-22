@@ -525,6 +525,10 @@
           "type": "array",
           "description": "Verge skal være med på siktet, fornærmet, vitne.",
           "items": { "$ref": "#/definitions/personRelatert" }
+        },
+        "oppnevntForsvarer": {
+          "$ref": "#/definitions/personForsvarer",
+          "description": "Informasjon om oppnevnt forsvarer. Personen som står som oppnevnt forsvarer når avgjørselsen blir sendt."
         }
       },
       "required": [
@@ -534,6 +538,33 @@
         "tilleggsId",
         "verger"
       ],
+      "additionalProperties": false
+    },
+    "personForsvarer": {
+      "type": "object",
+      "description": "Forsvareren som bistår siktede eller tiltalte i straffesaken (advokat, advokatfullmektig eller annen egnet person.)",
+      "properties": {
+        "tittel": { 
+          "type": "string",
+          "description": "F.eks 'Advokatfullmektig'." 
+        },
+        "navn": { 
+          "$ref": "#/definitions/personnavn" 
+        },
+        "foedselsnummer": {
+          "$ref": "#/definitions/foedselsnummer",
+          "description": "Fødsels- og personnummer."
+        },
+        "kontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo",
+          "description": "Kontaktinfo til forsvarer."
+        },
+        "virksomhet": {
+          "$ref": "#/definitions/foretak",
+          "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
+        }
+      },
+      "required": ["navn", "foedselsnummer", "virksomhet"],
       "additionalProperties": false
     },
     "personEnkel": {
