@@ -1,0 +1,1271 @@
+{
+  "kodeType": "LAND",
+  "beskrivelse": "ISO 3166-1 alpha-3, + tillegg som folkeregisteret bruker",
+  "koder": [
+    {
+      "kode": "ABW",
+      "navn": "Aruba",
+      "kortNavn": "Aruba"
+    },
+    {
+      "kode": "AFG",
+      "navn": "Den Islamske Republikk Afghanistan",
+      "kortNavn": "Afghanistan"
+    },
+    {
+      "kode": "AGO",
+      "navn": "Republikken Angola",
+      "kortNavn": "Angola"
+    },
+    {
+      "kode": "AIA",
+      "navn": "Anguilla",
+      "kortNavn": "Anguilla"
+    },
+    {
+      "kode": "ALA",
+      "navn": "Åland",
+      "kortNavn": "Åland"
+    },
+    {
+      "kode": "ALB",
+      "navn": "Republikken Albania",
+      "kortNavn": "Albania"
+    },
+    {
+      "kode": "AND",
+      "navn": "Fyrstedømmet Andorra",
+      "kortNavn": "Andorra"
+    },
+    {
+      "kode": "ARE",
+      "navn": "De Forente Arabiske Emirater",
+      "kortNavn": "De Forente Arabiske Emirater"
+    },
+    {
+      "kode": "ARG",
+      "navn": "Republikken Argentina",
+      "kortNavn": "Argentina"
+    },
+    {
+      "kode": "ARM",
+      "navn": "Republikken Armenia",
+      "kortNavn": "Armenia"
+    },
+    {
+      "kode": "ASM",
+      "navn": "Amerikansk Samoa",
+      "kortNavn": "Amerikansk Samoa"
+    },
+    {
+      "kode": "ATA",
+      "navn": "Antarktis",
+      "kortNavn": "Antarktis"
+    },
+    {
+      "kode": "ATF",
+      "navn": "De Franske Territoriene i Sør",
+      "kortNavn": "De Franske Territoriene i Sør"
+    },
+    {
+      "kode": "ATG",
+      "navn": "Antigua og Barbuda",
+      "kortNavn": "Antigua og Barbuda"
+    },
+    {
+      "kode": "AUS",
+      "navn": "Australia",
+      "kortNavn": "Australia"
+    },
+    {
+      "kode": "AUT",
+      "navn": "Republikken Østerrike",
+      "kortNavn": "Østerrike"
+    },
+    {
+      "kode": "AZE",
+      "navn": "Republikken Aserbajdsjan",
+      "kortNavn": "Aserbajdsjan"
+    },
+    {
+      "kode": "BDI",
+      "navn": "Republikken Burundi",
+      "kortNavn": "Burundi"
+    },
+    {
+      "kode": "BEL",
+      "navn": "Kongeriket Belgia",
+      "kortNavn": "Belgia"
+    },
+    {
+      "kode": "BEN",
+      "navn": "Republikken Benin",
+      "kortNavn": "Benin"
+    },
+    {
+      "kode": "BES",
+      "navn": "Bonaire, Saint Eustatius og Saba",
+      "kortNavn": "Bonaire, St Eustatius og Saba"
+    },
+    {
+      "kode": "BFA",
+      "navn": "Burkina Faso",
+      "kortNavn": "Burkina Faso"
+    },
+    {
+      "kode": "BGD",
+      "navn": "Folkerepublikken Bangladesh",
+      "kortNavn": "Bangladesh"
+    },
+    {
+      "kode": "BGR",
+      "navn": "Republikken Bulgaria",
+      "kortNavn": "Bulgaria"
+    },
+    {
+      "kode": "BHR",
+      "navn": "Kongeriket Bahrain",
+      "kortNavn": "Bahrain"
+    },
+    {
+      "kode": "BHS",
+      "navn": "Bahamassambandet",
+      "kortNavn": "Bahamas"
+    },
+    {
+      "kode": "BIH",
+      "navn": "Bosnia-Hercegovina",
+      "kortNavn": "Bosnia-Hercegovina"
+    },
+    {
+      "kode": "BLM",
+      "navn": "Saint Barthélemy",
+      "kortNavn": "Saint Barthélemy"
+    },
+    {
+      "kode": "BLR",
+      "navn": "Belarus",
+      "kortNavn": "Belarus"
+    },
+    {
+      "kode": "BLZ",
+      "navn": "Belize",
+      "kortNavn": "Belize"
+    },
+    {
+      "kode": "BMU",
+      "navn": "Bermuda",
+      "kortNavn": "Bermuda"
+    },
+    {
+      "kode": "BOL",
+      "navn": "Den Flernasjonale Stat Bolivia",
+      "kortNavn": "Bolivia"
+    },
+    {
+      "kode": "BRA",
+      "navn": "Forbundsrepublikken Brasil",
+      "kortNavn": "Brasil"
+    },
+    {
+      "kode": "BRB",
+      "navn": "Barbados",
+      "kortNavn": "Barbados"
+    },
+    {
+      "kode": "BRN",
+      "navn": "Brunei Darussalam",
+      "kortNavn": "Brunei Darussalam"
+    },
+    {
+      "kode": "BTN",
+      "navn": "Kongeriket Bhutan",
+      "kortNavn": "Bhutan"
+    },
+    {
+      "kode": "BVT",
+      "navn": "Bovetøya",
+      "kortNavn": "Bovetøya"
+    },
+    {
+      "kode": "BWA",
+      "navn": "Republikken Botswana",
+      "kortNavn": "Botswana"
+    },
+    {
+      "kode": "CAF",
+      "navn": "Den Sentralafrikanske Republikk",
+      "kortNavn": "Den Sentralafrikanske Rep."
+    },
+    {
+      "kode": "CAN",
+      "navn": "Canada",
+      "kortNavn": "Canada"
+    },
+    {
+      "kode": "CCK",
+      "navn": "Kokosøyene (keelingøyene)",
+      "kortNavn": "Kokosøyene (keelingøyene)"
+    },
+    {
+      "kode": "CHE",
+      "navn": "Det Sveitsiske Edsforbundet",
+      "kortNavn": "Sveits"
+    },
+    {
+      "kode": "CHL",
+      "navn": "Republikken Chile",
+      "kortNavn": "Chile"
+    },
+    {
+      "kode": "CHN",
+      "navn": "Folkerepublikken Kina",
+      "kortNavn": "Kina"
+    },
+    {
+      "kode": "CIV",
+      "navn": "Republikken Elfenbenskysten",
+      "kortNavn": "Elfenbenskysten"
+    },
+    {
+      "kode": "CMR",
+      "navn": "Republikken Kamerun",
+      "kortNavn": "Kamerun"
+    },
+    {
+      "kode": "COD",
+      "navn": "Den Demokratiske Republikk Kongo",
+      "kortNavn": "Kongo"
+    },
+    {
+      "kode": "COG",
+      "navn": "Republikken Kongo",
+      "kortNavn": "Kongo, Brazzaville"
+    },
+    {
+      "kode": "COK",
+      "navn": "Cookøyene",
+      "kortNavn": "Cookøyene"
+    },
+    {
+      "kode": "COL",
+      "navn": "Republikken Colombia",
+      "kortNavn": "Colombia"
+    },
+    {
+      "kode": "COM",
+      "navn": "Unionen Komorene",
+      "kortNavn": "Komorene"
+    },
+    {
+      "kode": "CPV",
+      "navn": "Republikken Kapp Verde",
+      "kortNavn": "Kapp Verde"
+    },
+    {
+      "kode": "CRI",
+      "navn": "Republikken Costa Rica",
+      "kortNavn": "Costa Rica"
+    },
+    {
+      "kode": "CUB",
+      "navn": "Republikken Cuba",
+      "kortNavn": "Cuba"
+    },
+    {
+      "kode": "CUW",
+      "navn": "Curacao",
+      "kortNavn": "Curacao"
+    },
+    {
+      "kode": "CXR",
+      "navn": "Christmasøya",
+      "kortNavn": "Christmasøya"
+    },
+    {
+      "kode": "CYM",
+      "navn": "Caymanøyene",
+      "kortNavn": "Caymanøyene"
+    },
+    {
+      "kode": "CYP",
+      "navn": "Republikken Kypros",
+      "kortNavn": "Kypros"
+    },
+    {
+      "kode": "CZE",
+      "navn": "Den Tsjekkiske Republikken",
+      "kortNavn": "Tsjekkia"
+    },
+    {
+      "kode": "DEU",
+      "navn": "Forbundsrepublikken Tyskland",
+      "kortNavn": "Tyskland"
+    },
+    {
+      "kode": "DJI",
+      "navn": "Republikken Djibouti",
+      "kortNavn": "Djibouti"
+    },
+    {
+      "kode": "DMA",
+      "navn": "Samveldet Dominica",
+      "kortNavn": "Dominica"
+    },
+    {
+      "kode": "DNK",
+      "navn": "Kongeriket Danmark",
+      "kortNavn": "Danmark"
+    },
+    {
+      "kode": "DOM",
+      "navn": "Den Dominikanske Republikk",
+      "kortNavn": "Den Dominikanske Republikk"
+    },
+    {
+      "kode": "DZA",
+      "navn": "Den Demokratiske Folkerepublikken Algerie",
+      "kortNavn": "Algerie"
+    },
+    {
+      "kode": "ECU",
+      "navn": "Republikken Ecuador",
+      "kortNavn": "Ecuador"
+    },
+    {
+      "kode": "EGY",
+      "navn": "Den Arabiske Republikken Egypt",
+      "kortNavn": "Egypt"
+    },
+    {
+      "kode": "ERI",
+      "navn": "Eritrea",
+      "kortNavn": "Eritrea"
+    },
+    {
+      "kode": "ESH",
+      "navn": "Vest-Sahara",
+      "kortNavn": "Vest-Sahara"
+    },
+    {
+      "kode": "ESP",
+      "navn": "Kongeriket Spania",
+      "kortNavn": "Spania"
+    },
+    {
+      "kode": "EST",
+      "navn": "Republikken Estland",
+      "kortNavn": "Estland"
+    },
+    {
+      "kode": "ETH",
+      "navn": "Etiopia",
+      "kortNavn": "Etiopia"
+    },
+    {
+      "kode": "FIN",
+      "navn": "Republikken Finland",
+      "kortNavn": "Finland"
+    },
+    {
+      "kode": "FJI",
+      "navn": "Republikken Fiji",
+      "kortNavn": "Fiji"
+    },
+    {
+      "kode": "FLK",
+      "navn": "Falklandsøyene (malvinas)",
+      "kortNavn": "Falklandsøyene (malvinas)"
+    },
+    {
+      "kode": "FRA",
+      "navn": "Republikken Frankrike",
+      "kortNavn": "Frankrike"
+    },
+    {
+      "kode": "FRO",
+      "navn": "Færøyene",
+      "kortNavn": "Færøyene"
+    },
+    {
+      "kode": "FSM",
+      "navn": "Mikronesiaføderasjonen",
+      "kortNavn": "Mikronesiaføderasjonen"
+    },
+    {
+      "kode": "GAB",
+      "navn": "Republikken Gabon",
+      "kortNavn": "Gabon"
+    },
+    {
+      "kode": "GBR",
+      "navn": "Det Forente Kongeriket Storbritannia og Nord-Irland",
+      "kortNavn": "Storbritannia"
+    },
+    {
+      "kode": "GEO",
+      "navn": "Republikken Georgia",
+      "kortNavn": "Georgia"
+    },
+    {
+      "kode": "GGY",
+      "navn": "Guernsey",
+      "kortNavn": "Guernsey"
+    },
+    {
+      "kode": "GHA",
+      "navn": "Republikken Ghana",
+      "kortNavn": "Ghana"
+    },
+    {
+      "kode": "GIB",
+      "navn": "Gibraltar",
+      "kortNavn": "Gibraltar"
+    },
+    {
+      "kode": "GIN",
+      "navn": "Republikken Guinea",
+      "kortNavn": "Guinea"
+    },
+    {
+      "kode": "GLP",
+      "navn": "Guadeloupe",
+      "kortNavn": "Guadeloupe"
+    },
+    {
+      "kode": "GMB",
+      "navn": "Republikken Gambia",
+      "kortNavn": "Gambia"
+    },
+    {
+      "kode": "GNB",
+      "navn": "Republikken Guinea-Bissau",
+      "kortNavn": "Guinea-Bissau"
+    },
+    {
+      "kode": "GNQ",
+      "navn": "Republikken Ekvatorial-Guinea",
+      "kortNavn": "Ekvatorial-Guinea"
+    },
+    {
+      "kode": "GRC",
+      "navn": "Republikken Hellas",
+      "kortNavn": "Hellas"
+    },
+    {
+      "kode": "GRD",
+      "navn": "Grenada",
+      "kortNavn": "Grenada"
+    },
+    {
+      "kode": "GRL",
+      "navn": "Grønland",
+      "kortNavn": "Grønland"
+    },
+    {
+      "kode": "GTM",
+      "navn": "Republikken Guatemala",
+      "kortNavn": "Guatemala"
+    },
+    {
+      "kode": "GUF",
+      "navn": "Departementet Guyana",
+      "kortNavn": "Fransk Guyana"
+    },
+    {
+      "kode": "GUM",
+      "navn": "Guam",
+      "kortNavn": "Guam"
+    },
+    {
+      "kode": "GUY",
+      "navn": "Den Kooperative Republikken Guyana",
+      "kortNavn": "Guyana"
+    },
+    {
+      "kode": "HKG",
+      "navn": "Hong Kong",
+      "kortNavn": "Hong Kong"
+    },
+    {
+      "kode": "HMD",
+      "navn": "Heard- og Mcdonaldøyene",
+      "kortNavn": "Heard- og Mcdonaldøyene"
+    },
+    {
+      "kode": "HND",
+      "navn": "Republikken Honduras",
+      "kortNavn": "Honduras"
+    },
+    {
+      "kode": "HRV",
+      "navn": "Republikken Kroatia",
+      "kortNavn": "Kroatia"
+    },
+    {
+      "kode": "HTI",
+      "navn": "Republikken Haiti",
+      "kortNavn": "Haiti"
+    },
+    {
+      "kode": "HUN",
+      "navn": "Republikken Ungarn",
+      "kortNavn": "Ungarn"
+    },
+    {
+      "kode": "IDN",
+      "navn": "Republikken Indonesia",
+      "kortNavn": "Indonesia"
+    },
+    {
+      "kode": "IKK",
+      "navn": "Ikke Klarlagt",
+      "kortNavn": "Ikke Klarlagt"
+    },
+    {
+      "kode": "IMN",
+      "navn": "Isle Of Man",
+      "kortNavn": "Isle Of Man"
+    },
+    {
+      "kode": "IND",
+      "navn": "Republikken India",
+      "kortNavn": "India"
+    },
+    {
+      "kode": "IOT",
+      "navn": "Det Britiske Territoriet i Indiahavet",
+      "kortNavn": "Chagosøyene, Britisk"
+    },
+    {
+      "kode": "IRL",
+      "navn": "Irland",
+      "kortNavn": "Irland"
+    },
+    {
+      "kode": "IRN",
+      "navn": "Den Islamske Republikken Iran",
+      "kortNavn": "Iran"
+    },
+    {
+      "kode": "IRQ",
+      "navn": "Republikken Irak",
+      "kortNavn": "Irak"
+    },
+    {
+      "kode": "ISL",
+      "navn": "Republikken Island",
+      "kortNavn": "Island"
+    },
+    {
+      "kode": "ISR",
+      "navn": "Staten Israel",
+      "kortNavn": "Israel"
+    },
+    {
+      "kode": "ITA",
+      "navn": "Republikken Italia",
+      "kortNavn": "Italia"
+    },
+    {
+      "kode": "JAM",
+      "navn": "Jamaica",
+      "kortNavn": "Jamaica"
+    },
+    {
+      "kode": "JEY",
+      "navn": "Jersey",
+      "kortNavn": "Jersey"
+    },
+    {
+      "kode": "JOR",
+      "navn": "Det Hasjimittiske Kongeriket Jordan",
+      "kortNavn": "Jordan"
+    },
+    {
+      "kode": "JPN",
+      "navn": "Japan",
+      "kortNavn": "Japan"
+    },
+    {
+      "kode": "KAZ",
+      "navn": "Republikken Kasakhstan",
+      "kortNavn": "Kasakhstan"
+    },
+    {
+      "kode": "KEN",
+      "navn": "Republikken Kenya",
+      "kortNavn": "Kenya"
+    },
+    {
+      "kode": "KGZ",
+      "navn": "Republikken Kirgisistan",
+      "kortNavn": "Kirgisistan"
+    },
+    {
+      "kode": "KHM",
+      "navn": "Kongeriket Kambodsja",
+      "kortNavn": "Kambodsja"
+    },
+    {
+      "kode": "KIR",
+      "navn": "Republikken Kiribati",
+      "kortNavn": "Kiribati"
+    },
+    {
+      "kode": "KNA",
+      "navn": "Saint Christopher og Nevis",
+      "kortNavn": "Saint Christopher og Nevis"
+    },
+    {
+      "kode": "KOR",
+      "navn": "Republikken Korea",
+      "kortNavn": "Sør-Korea"
+    },
+    {
+      "kode": "KWT",
+      "navn": "Staten Kuwait",
+      "kortNavn": "Kuwait"
+    },
+    {
+      "kode": "LAO",
+      "navn": "Den Folkedemokratiske Republikken Laos",
+      "kortNavn": "Laos"
+    },
+    {
+      "kode": "LBN",
+      "navn": "Republikken Libanon",
+      "kortNavn": "Libanon"
+    },
+    {
+      "kode": "LBR",
+      "navn": "Republikken Liberia",
+      "kortNavn": "Liberia"
+    },
+    {
+      "kode": "LBY",
+      "navn": "Libya",
+      "kortNavn": "Libya"
+    },
+    {
+      "kode": "LCA",
+      "navn": "Saint Lucia",
+      "kortNavn": "Saint Lucia"
+    },
+    {
+      "kode": "LIE",
+      "navn": "Fyrstedømmet Liechtenstein",
+      "kortNavn": "Liechtenstein"
+    },
+    {
+      "kode": "LKA",
+      "navn": "Den Demokratiske Sosialistiske Republikken Sri Lanka",
+      "kortNavn": "Sri Lanka"
+    },
+    {
+      "kode": "LSO",
+      "navn": "Kongeriket Lesotho",
+      "kortNavn": "Lesotho"
+    },
+    {
+      "kode": "LTU",
+      "navn": "Republikken Litauen",
+      "kortNavn": "Litauen"
+    },
+    {
+      "kode": "LUX",
+      "navn": "Storhertugdømmet Luxembourg",
+      "kortNavn": "Luxembourg"
+    },
+    {
+      "kode": "LVA",
+      "navn": "Republikken Latvia",
+      "kortNavn": "Latvia"
+    },
+    {
+      "kode": "MAC",
+      "navn": "Macao",
+      "kortNavn": "Macao"
+    },
+    {
+      "kode": "MAF",
+      "navn": "Saint Martin (fransk Del)",
+      "kortNavn": "Saint Martin"
+    },
+    {
+      "kode": "MAR",
+      "navn": "Kongeriket Marokko",
+      "kortNavn": "Marokko"
+    },
+    {
+      "kode": "MCO",
+      "navn": "Fyrstedømmet Monaco",
+      "kortNavn": "Monaco"
+    },
+    {
+      "kode": "MDA",
+      "navn": "Republikken Moldova",
+      "kortNavn": "Moldova"
+    },
+    {
+      "kode": "MDG",
+      "navn": "Republikken Madagaskar",
+      "kortNavn": "Madagaskar"
+    },
+    {
+      "kode": "MDV",
+      "navn": "Republikken Maldivene",
+      "kortNavn": "Maldivene"
+    },
+    {
+      "kode": "MEX",
+      "navn": "De Forente Statene Mexico",
+      "kortNavn": "Mexico"
+    },
+    {
+      "kode": "MHL",
+      "navn": "Republikken Marshalløyene",
+      "kortNavn": "Marshalløyene"
+    },
+    {
+      "kode": "MKD",
+      "navn": "Republikken Nord-Makedonia",
+      "kortNavn": "Nord-Makedonia"
+    },
+    {
+      "kode": "MLI",
+      "navn": "Republikken Mali",
+      "kortNavn": "Mali"
+    },
+    {
+      "kode": "MLT",
+      "navn": "Republikken Malta",
+      "kortNavn": "Malta"
+    },
+    {
+      "kode": "MMR",
+      "navn": "Republikken For Unionen Myanmar",
+      "kortNavn": "Myanmar"
+    },
+    {
+      "kode": "MNE",
+      "navn": "Republikken Montenegro",
+      "kortNavn": "Montenegro"
+    },
+    {
+      "kode": "MNG",
+      "navn": "Mongolia",
+      "kortNavn": "Mongolia"
+    },
+    {
+      "kode": "MNP",
+      "navn": "Samveldet De Nordre Marianene",
+      "kortNavn": "De Nordre Marianene"
+    },
+    {
+      "kode": "MOZ",
+      "navn": "Folkerepublikken Mosambik",
+      "kortNavn": "Mosambik"
+    },
+    {
+      "kode": "MRT",
+      "navn": "Den Islamske Republikken Mauritania",
+      "kortNavn": "Mauritania"
+    },
+    {
+      "kode": "MSR",
+      "navn": "Montserrat",
+      "kortNavn": "Montserrat"
+    },
+    {
+      "kode": "MTQ",
+      "navn": "Departementet Martinique",
+      "kortNavn": "Martinique"
+    },
+    {
+      "kode": "MUS",
+      "navn": "Republikken Mauritius",
+      "kortNavn": "Mauritius"
+    },
+    {
+      "kode": "MWI",
+      "navn": "Republikken Malawi",
+      "kortNavn": "Malawi"
+    },
+    {
+      "kode": "MYS",
+      "navn": "Malaysia",
+      "kortNavn": "Malaysia"
+    },
+    {
+      "kode": "MYT",
+      "navn": "Mayotte",
+      "kortNavn": "Mayotte"
+    },
+    {
+      "kode": "NAM",
+      "navn": "Republikken Namibia",
+      "kortNavn": "Namibia"
+    },
+    {
+      "kode": "NCL",
+      "navn": "Ny-Caledonia",
+      "kortNavn": "Ny-Caledonia"
+    },
+    {
+      "kode": "NER",
+      "navn": "Republikken Niger",
+      "kortNavn": "Niger"
+    },
+    {
+      "kode": "NFK",
+      "navn": "Norfolkøya",
+      "kortNavn": "Norfolkøya"
+    },
+    {
+      "kode": "NGA",
+      "navn": "Forbundsrepublikken Nigeria",
+      "kortNavn": "Nigeria"
+    },
+    {
+      "kode": "NIC",
+      "navn": "Republikken Nicaragua",
+      "kortNavn": "Nicaragua"
+    },
+    {
+      "kode": "NIU",
+      "navn": "Niue",
+      "kortNavn": "Niue"
+    },
+    {
+      "kode": "NLD",
+      "navn": "Kongeriket Nederland",
+      "kortNavn": "Nederland"
+    },
+    {
+      "kode": "NOR",
+      "navn": "Kongeriket Norge",
+      "kortNavn": "Norge"
+    },
+    {
+      "kode": "NPL",
+      "navn": "Nepal",
+      "kortNavn": "Nepal"
+    },
+    {
+      "kode": "NRU",
+      "navn": "Republikken Nauru",
+      "kortNavn": "Nauru"
+    },
+    {
+      "kode": "NZL",
+      "navn": "New Zealand",
+      "kortNavn": "New Zealand"
+    },
+    {
+      "kode": "OMN",
+      "navn": "Sultanatet Oman",
+      "kortNavn": "Oman"
+    },
+    {
+      "kode": "PAK",
+      "navn": "Den Islamske Republikken Pakistan",
+      "kortNavn": "Pakistan"
+    },
+    {
+      "kode": "PAN",
+      "navn": "Republikken Panama",
+      "kortNavn": "Panama"
+    },
+    {
+      "kode": "PCN",
+      "navn": "Pitcairn",
+      "kortNavn": "Pitcairn"
+    },
+    {
+      "kode": "PER",
+      "navn": "Republikken Peru",
+      "kortNavn": "Peru"
+    },
+    {
+      "kode": "PHL",
+      "navn": "Republikken Filippinene",
+      "kortNavn": "Filippinene"
+    },
+    {
+      "kode": "PLW",
+      "navn": "Republikken Palau",
+      "kortNavn": "Palau"
+    },
+    {
+      "kode": "PNG",
+      "navn": "Papua Ny-Guinea",
+      "kortNavn": "Papua Ny-Guinea"
+    },
+    {
+      "kode": "POL",
+      "navn": "Republikken Polen",
+      "kortNavn": "Polen"
+    },
+    {
+      "kode": "PRI",
+      "navn": "Puerto Rico",
+      "kortNavn": "Puerto Rico"
+    },
+    {
+      "kode": "PRK",
+      "navn": "Den Demokratiske Folkerepublikken Korea",
+      "kortNavn": "Nord-Korea"
+    },
+    {
+      "kode": "PRT",
+      "navn": "Republikken Portugal",
+      "kortNavn": "Portugal"
+    },
+    {
+      "kode": "PRY",
+      "navn": "Republikken Paraguay",
+      "kortNavn": "Paraguay"
+    },
+    {
+      "kode": "PSE",
+      "navn": "Staten Palestina",
+      "kortNavn": "Palestina"
+    },
+    {
+      "kode": "PYF",
+      "navn": "Fransk Polynesia",
+      "kortNavn": "Fransk Polynesia"
+    },
+    {
+      "kode": "QAT",
+      "navn": "Staten Qatar",
+      "kortNavn": "Qatar"
+    },
+    {
+      "kode": "REU",
+      "navn": "Departementet Reunion",
+      "kortNavn": "Reunion"
+    },
+    {
+      "kode": "ROU",
+      "navn": "Romania",
+      "kortNavn": "Romania"
+    },
+    {
+      "kode": "RUS",
+      "navn": "Den Russiske Føderasjonen",
+      "kortNavn": "Russland"
+    },
+    {
+      "kode": "RWA",
+      "navn": "Republikken Rwanda",
+      "kortNavn": "Rwanda"
+    },
+    {
+      "kode": "SAU",
+      "navn": "Kongeriket Saudi-Arabia",
+      "kortNavn": "Saudi-Arabia"
+    },
+    {
+      "kode": "SDN",
+      "navn": "Republikken Sudan",
+      "kortNavn": "Sudan"
+    },
+    {
+      "kode": "SEN",
+      "navn": "Republikken Senegal",
+      "kortNavn": "Senegal"
+    },
+    {
+      "kode": "SGP",
+      "navn": "Republikken Singapore",
+      "kortNavn": "Singapore"
+    },
+    {
+      "kode": "SGS",
+      "navn": "Sør-Georgia og De Søndre Sandwichøyene",
+      "kortNavn": "Sør-Georgia og Sandwichøyene"
+    },
+    {
+      "kode": "SHN",
+      "navn": "Sankt Helena, Ascension og Tristan Da Cunha",
+      "kortNavn": "St Helena,ascension og Tristan"
+    },
+    {
+      "kode": "SJM",
+      "navn": "Svalbard og Jan Mayen",
+      "kortNavn": "Svalbard og Jan Mayen"
+    },
+    {
+      "kode": "SLB",
+      "navn": "Salomonøyene",
+      "kortNavn": "Salomonøyene"
+    },
+    {
+      "kode": "SLE",
+      "navn": "Republikken Sierra Leone",
+      "kortNavn": "Sierra Leone"
+    },
+    {
+      "kode": "SLV",
+      "navn": "Republikken El Salvador",
+      "kortNavn": "El Salvador"
+    },
+    {
+      "kode": "SMR",
+      "navn": "Republikken San Marino",
+      "kortNavn": "San Marino"
+    },
+    {
+      "kode": "SOM",
+      "navn": "Republikken Somalia",
+      "kortNavn": "Somalia"
+    },
+    {
+      "kode": "SPM",
+      "navn": "Territoriet St. Pierre og Miquelon",
+      "kortNavn": "St. Pierre og Miquelon"
+    },
+    {
+      "kode": "SRB",
+      "navn": "Republikken Serbia",
+      "kortNavn": "Serbia"
+    },
+    {
+      "kode": "SSD",
+      "navn": "Republikken Sør Sudan",
+      "kortNavn": "Sør Sudan"
+    },
+    {
+      "kode": "STP",
+      "navn": "Den Demokratiske Republikken Sao Tome og Principe",
+      "kortNavn": "Sao Tome og Principe"
+    },
+    {
+      "kode": "SUR",
+      "navn": "Republikken Surinam",
+      "kortNavn": "Surinam"
+    },
+    {
+      "kode": "SVK",
+      "navn": "Den Slovakiske Republikken",
+      "kortNavn": "Slovakia"
+    },
+    {
+      "kode": "SVN",
+      "navn": "Republikken Slovenia",
+      "kortNavn": "Slovenia"
+    },
+    {
+      "kode": "SWE",
+      "navn": "Kongeriket Sverige",
+      "kortNavn": "Sverige"
+    },
+    {
+      "kode": "SWZ",
+      "navn": "Kongeriket Eswatini",
+      "kortNavn": "Eswatini"
+    },
+    {
+      "kode": "SXM",
+      "navn": "Saint Martin (nederlandsk Del)",
+      "kortNavn": "Saint Martin (nederland)"
+    },
+    {
+      "kode": "SYC",
+      "navn": "Republikken Seychellene",
+      "kortNavn": "Seychellene"
+    },
+    {
+      "kode": "SYR",
+      "navn": "Den Arabiske Republikken Syria",
+      "kortNavn": "Syria"
+    },
+    {
+      "kode": "TCA",
+      "navn": "Turks- og Caicosøyene",
+      "kortNavn": "Turks- og Caicosøyene"
+    },
+    {
+      "kode": "TCD",
+      "navn": "Republikken Tsjad",
+      "kortNavn": "Tsjad"
+    },
+    {
+      "kode": "TGO",
+      "navn": "Republikken Togo",
+      "kortNavn": "Togo"
+    },
+    {
+      "kode": "THA",
+      "navn": "Kongeriket Thailand",
+      "kortNavn": "Thailand"
+    },
+    {
+      "kode": "TJK",
+      "navn": "Republikken Tadsjikistan",
+      "kortNavn": "Tadsjikistan"
+    },
+    {
+      "kode": "TKL",
+      "navn": "Tokelau",
+      "kortNavn": "Tokelau"
+    },
+    {
+      "kode": "TKM",
+      "navn": "Turkmenistan",
+      "kortNavn": "Turkmenistan"
+    },
+    {
+      "kode": "TLS",
+      "navn": "Den Demokratiske Republikken Øst-Timor",
+      "kortNavn": "Øst-Timor"
+    },
+    {
+      "kode": "TON",
+      "navn": "Kongeriket Tonga",
+      "kortNavn": "Tonga"
+    },
+    {
+      "kode": "TTO",
+      "navn": "Republikken Trinidad og Tobago",
+      "kortNavn": "Trinidad og Tobago"
+    },
+    {
+      "kode": "TUN",
+      "navn": "Republikken Tunisia",
+      "kortNavn": "Tunisia"
+    },
+    {
+      "kode": "TUR",
+      "navn": "Republikken Tyrkia",
+      "kortNavn": "Tyrkia"
+    },
+    {
+      "kode": "TUV",
+      "navn": "Tuvalu",
+      "kortNavn": "Tuvalu"
+    },
+    {
+      "kode": "TWN",
+      "navn": "Republikken Taiwan",
+      "kortNavn": "Taiwan"
+    },
+    {
+      "kode": "TZA",
+      "navn": "Forbundsrepublikken Tanzania",
+      "kortNavn": "Tanzania"
+    },
+    {
+      "kode": "UGA",
+      "navn": "Republikken Uganda",
+      "kortNavn": "Uganda"
+    },
+    {
+      "kode": "UKR",
+      "navn": "Ukraina",
+      "kortNavn": "Ukraina"
+    },
+    {
+      "kode": "UMI",
+      "navn": "De Forente Stater, Mindre, Avsidesliggende Øyer",
+      "kortNavn": "De Forente Stater, Mindre Øyer"
+    },
+    {
+      "kode": "URY",
+      "navn": "Republikken Uruguay",
+      "kortNavn": "Uruguay"
+    },
+    {
+      "kode": "USA",
+      "navn": "De Forente Stater",
+      "kortNavn": "USA"
+    },
+    {
+      "kode": "UZB",
+      "navn": "Republikken Usbekistan",
+      "kortNavn": "Usbekistan"
+    },
+    {
+      "kode": "VAT",
+      "navn": "Den Hellige Stol (vatikanstaten)",
+      "kortNavn": "Den Hellige Stol"
+    },
+    {
+      "kode": "VCT",
+      "navn": "Saint Vincent og Grenadinene",
+      "kortNavn": "Saint Vincent og Grenadinene"
+    },
+    {
+      "kode": "VEN",
+      "navn": "Republikken Venezuela",
+      "kortNavn": "Venezuela"
+    },
+    {
+      "kode": "VGB",
+      "navn": "De Britiske Jomfruøyene",
+      "kortNavn": "De Britiske Jomfruøyene"
+    },
+    {
+      "kode": "VIR",
+      "navn": "Jomfruøyene (us)",
+      "kortNavn": "Jomfruøyene (us)"
+    },
+    {
+      "kode": "VNM",
+      "navn": "Den Sosialistiske Republikken Vietnam",
+      "kortNavn": "Vietnam"
+    },
+    {
+      "kode": "VUT",
+      "navn": "Republikken Vanuatu",
+      "kortNavn": "Vanuatu"
+    },
+    {
+      "kode": "WLF",
+      "navn": "Wallis- og Futunaøyene",
+      "kortNavn": "Wallis- og Futunaøyene"
+    },
+    {
+      "kode": "WSM",
+      "navn": "Staten Samoa",
+      "kortNavn": "Samoa"
+    },
+    {
+      "kode": "XUK",
+      "navn": "Ukjent",
+      "kortNavn": "Ukjent"
+    },
+    {
+      "kode": "XXK",
+      "navn": "Kosovo",
+      "kortNavn": "Kosovo"
+    },
+    {
+      "kode": "XXX",
+      "navn": "Statsløs",
+      "kortNavn": "Statsløs"
+    },
+    {
+      "kode": "YEM",
+      "navn": "Republikken Jemen",
+      "kortNavn": "Jemen"
+    },
+    {
+      "kode": "ZAF",
+      "navn": "Republikken Sør-Afrika",
+      "kortNavn": "Sør-Afrika"
+    },
+    {
+      "kode": "ZMB",
+      "navn": "Republikken Zambia",
+      "kortNavn": "Zambia"
+    },
+    {
+      "kode": "ZWE",
+      "navn": "Republikken Zimbabwe",
+      "kortNavn": "Zimbabwe"
+    }
+  ]
+}
