@@ -3,6 +3,10 @@
   "$id": "https://domstol.no/kjennelseBeslutning/arbeidsversjon/kjennelseBeslutning",
   "description": "Skjema som definerer en generell kjennelse eller beslutning",
   "properties": {
+    "pakkeId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Hvis meldingen sendes sammen med flere meldinger så vil alle meldingene ha samme pakke-id."
+    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "Avsender og mottaker"
@@ -34,7 +38,13 @@
       "$ref": "#/definitions/saksInformasjon"
     }
   },
-  "required": ["forsendelse", "aktoerer", "dokumenter", "saksInformasjon"],
+  "required": [
+    "pakkeId",
+    "forsendelse",
+    "aktoerer",
+    "dokumenter",
+    "saksInformasjon"
+  ],
   "type": "object",
   "additionalProperties": false,
   "definitions": {
@@ -77,25 +87,54 @@
           "$ref": "#/definitions/GUID",
           "description": "KravId i første instans."
         },
+        "avgjoerelsePrPerson": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personForetakAvgjoerelse"
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["avgjoerelseId", "avsagtDato", "avgjoerelsePrPerson"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "personForetakAvgjoerelse": {
+      "properties": {
+        "personForetak": {
+          "$ref": "#/definitions/personForetak"
+        },
         "kategori": {
           "$ref": "#/definitions/avgjoerelseKategori",
           "description": "Kategori for avgjørelsen"
         },
         "beskrivelse": {
           "type": "string",
-          "description": "Fritekst som beskriver avgjørelsen"
+          "description": "Fritekst som beskriver avgjørelsen."
         },
         "typeAvgjoerelse": {
           "$ref": "#/definitions/avgjoerelseType",
           "description": "Hva slags type avgjørelse dette er"
+        },
+        "reaksjoner": {
+          "$ref": "#/definitions/reaksjonsType",
+          "description": "Kombinasjon av reaksjoner for denne personen. Dersom saken trekkes eller lukkes blir ikke dette elementet med."
+        },
+        "erklaering": {
+          "properties": {
+            "erklaeringSiktede": {
+              "$ref": "#/definitions/erklaeringsDetaljer"
+            },
+            "erklaeringPaatale": {
+              "$ref": "#/definitions/erklaeringsDetaljer"
+            }
+          },
+          "required": ["erklaeringSiktede", "erklaeringPaatale"],
+          "type": "object",
+          "additionalProperties": false
         }
       },
-      "required": [
-        "avgjoerelseId",
-        "avsagtDato",
-        "kategori",
-        "typeAvgjoerelse"
-      ],
+      "required": ["personForetak", "kategori", "typeAvgjoerelse"],
       "type": "object",
       "additionalProperties": false
     },
@@ -222,15 +261,336 @@
       "type": "object",
       "additionalProperties": false
     },
+    "personForetak": {
+      "type": "object",
+      "description": "Person i personliste eller et foretak i foretaklisten",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/siktetPerson"
+        },
+        "foretak": {
+          "$ref": "#/definitions/foretak"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "person": {
+              "$ref": "#/definitions/siktetPerson"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["person"]
+        },
+        {
+          "properties": {
+            "foretak": {
+              "$ref": "#/definitions/foretak"
+            }
+          },
+          "additionalProperties": false,
+          "type": "object",
+          "required": ["foretak"]
+        }
+      ]
+    },
+    "siktetPerson": {
+      "description": "Person som har en rolle i en straffesak (siktet, mistenkt, osv) der det er krav om fødselsnummer for nordmenn. Andre identifikatorer kan være interne, DUF nummer, pass nummer ...",
+      "properties": {
+        "internId": {
+          "$ref": "#/definitions/internId",
+          "description": "Intern id i melding, samme person i denne meldingen vil ha samme internId"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer, D-nummer eller SSP nummer. Alle personer som det er foretatt tvangsmidler mot skal ha et D-nummer eller fødselsnummer. Dersom politiet ikke har et slikt nummer vil de generere ett 'SSP nummer'"
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          },
+          "description": "Kan f.eks. være historiske SSP nummer. "
+        },
+        "foedselsdato": {
+          "$ref": "#/definitions/dato",
+          "description": "Påbudt i BL i dag, men er ikke sikkert politiet vet."
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn"
+        },
+        "statsborgerskap": {
+          "description": "Tom array dersom statsborgerskap er ukjennt",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "oppnevntForsvarer": {
+          "$ref": "#/definitions/profesjonellPerson",
+          "description": "Informasjon om oppnevnt forsvarer."
+        }
+      },
+      "required": [
+        "internId",
+        "etternavn",
+        "identitetsnummer",
+        "tilleggsId",
+        "statsborgerskap"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "profesjonellPerson": {
+      "type": "object",
+      "description": " Typisk advokat.",
+      "properties": {
+        "tittel": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødsels- eller D-nummer"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfoPerson"
+        },
+        "praksis": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Personens praksiss i denne saken"
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "foretak": {
+      "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. siktet",
+      "properties": {
+        "internId": {
+          "$ref": "#/definitions/internId",
+          "description": "Unik id lokalt i meldingen, samme internId er samme foretak."
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["internId", "navn"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "reaksjonsType": {
+      "properties": {
+        "tapAvFoererett": {
+          "description": "Midlertidig tap av førerett",
+          "$ref": "#/definitions/tapAvFoererett"
+        },
+        "annet": {
+          "$ref": "#/definitions/annet"
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "tapAvFoererett": {
+      "properties": {
+        "varighet": {
+          "$ref": "#/definitions/lengde",
+          "description": "Lengden på tapet av føreretten"
+        },
+        "dato": {
+          "$ref": "#/definitions/dato",
+          "description": "Tap av førerett inntil denne datoen"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "varighet": {
+              "$ref": "#/definitions/lengde"
+            }
+          },
+          "required": ["varighet"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "dato": {
+              "$ref": "#/definitions/dato"
+            }
+          },
+          "required": ["dato"],
+          "additionalProperties": false
+        }
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "annet": {
+      "properties": {
+        "tekst": {
+          "type": "string",
+          "description": "Fritekst som beskriver 'annet'-reaksjonen"
+        }
+      },
+      "required": ["tekst"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "erklaeringsDetaljer": {
+      "properties": {
+        "meddeltIRettsmoete": {
+          "type": "boolean",
+          "description": "Settes til true dersom avgjørelsen er meddelt i rettsmøtet"
+        },
+        "meddeltDato": {
+          "$ref": "#/definitions/dato",
+          "description": "Dato for når avgjørelsen ble meddelt"
+        },
+        "erklaert": {
+          "$ref": "#/definitions/erklaertType",
+          "description": "Settes dersom avgjørelsen er meddelt i retten"
+        },
+        "ankeDetaljer": {
+          "$ref": "#/definitions/ankeDetaljer",
+          "description": "Settes dersom parten har anket hele eller deler av avgjørelsen"
+        }
+      },
+      "required": ["meddeltIRettsmoete"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ankeDetaljer": {
+      "properties": {
+        "anketDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "oppsettendeVirkning": {
+          "type": "boolean",
+          "description": "Settes om det ønskes oppsettende virkning"
+        },
+        "ankeBeskrivelse": {
+          "type": "string",
+          "description": "Kan brukes for å utdype hva som er anket."
+        }
+      },
+      "required": ["anketDato"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "erklaertType": {
+      "enum": ["VEDTATT", "ANKET", "BETENKNINGSTID"]
+    },
     "avgjoerelseKategori": {
-      "description": "Bruk 'SAKEN_AVVIST' dersom tilståelse trekkes. 'SAK_AVVISET_ANNET' dersom sak lukkes uten avgjørelse. 'ANNET' på andre ting",
-      "enum": ["SAKEN_AVVIST", "SAK_AVVIST_ANNET", "ANNET"],
+      "description": "Ved 'REAKSJON' skal minst en 'reaksjonsType' være utfylt. 'SAKEN_AVVIST' brukes ved trukket tilståelse. 'SAK_AVVISET_ANNET' dersom sak lukkes uten avgjørelse. 'ANNET' på andre ting",
+      "enum": [
+        "REAKSJON",
+        "FRIFUNNET",
+        "SAKEN_AVVIST",
+        "SAK_AVVIST_ANNET",
+        "ANNET"
+      ],
       "type": "string"
     },
     "avgjoerelseType": {
       "description": "Type avgjørelse. Kjennelse eller beslutning, og om beslutningen kan ankes eller ikke",
-      "enum": ["KJENNELSE", "BESLUTNING_INGEN_ANKE", "BESLUTNIG_KAN_ANKES"],
+      "enum": ["KJENNELSE", "BESLUTNING_INGEN_ANKE", "BESLUTNING_KAN_ANKES"],
       "type": "string"
+    },
+    "kontaktInfoPerson": {
+      "type": "object",
+      "description": "Epost og/eller telefonnummer/mobil om tilgjengelig",
+      "properties": {
+        "epost": {
+          "$ref": "#/definitions/epost"
+        },
+        "telefonnummer": {
+          "$ref": "#/definitions/telefonnummer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "land": {
+      "description": "En landkode består av tre store bokstaver fra kodelisten ISO 3166-1-alpha-3. Hentes fra kodeverk nationality.xml",
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "^[A-Z]+$",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode", "navn"],
+      "additionalProperties": false
+    },
+    "personIdentifikator": {
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "type": "object",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "description": "Person ID typer, alle valideres med Modulus 11",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"]
+    },
+    "kjoenn": {
+      "description": "Samme enum som folkeregisteret",
+      "enum": ["KVINNE", "MANN"],
+      "type": "string"
+    },
+    "lengde": {
+      "properties": {
+        "antallAar": { "$ref": "#/definitions/aar" },
+        "antallMaaneder": { "$ref": "#/definitions/maaneder" },
+        "antallDager": { "$ref": "#/definitions/dager" }
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "aar": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 21
+    },
+    "maaneder": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 99
+    },
+    "dager": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 999
     },
     "internId": {
       "type": "string",
@@ -263,6 +623,17 @@
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
       "minLength": 3,
       "maxLength": 30
+    },
+    "epost": {
+      "type": "string",
+      "format": "email"
+    },
+    "telefonnummer": {
+      "type": "string",
+      "description": "Ett telefonnummer, norsk eller utenlands, med eller uten land prefix. Tillater +før landkode, - tegn, space og paranteser.",
+      "pattern": "^\\+?[0-9 ()-]*$",
+      "maxLength": 30,
+      "minLength": 3
     },
     "datoTid": {
       "type": "string",
