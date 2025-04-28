@@ -1,7 +1,7 @@
 # Fullbyrdelsesordre - ikke i produksjon
 ## Headere forsendelse justisHub
 SchemaName=FULLBYRDELSESORDRE  
-SchemaVersion=1.0  
+SchemaVersion=1.2
 senderOrganization=POLITIET  
 
 [RFC](../../../rfc/MessageName-header.md)  

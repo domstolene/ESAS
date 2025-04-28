@@ -7,6 +7,10 @@
     "forsendelse": {
       "$ref": "#/definitions/forsendelse"
     },
+    "pakkeId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Hvis meldingen sendes sammen med flere f.eks. siktelse, så vil alle meldingene ha samme pakkeId."
+    },
     "anmodningsId": {
       "$ref": "#/definitions/GUID",
       "description": "Unik nøkkel på bestillingen, brukes til å koble svar fra KO, siktelse og helse og risiko."
