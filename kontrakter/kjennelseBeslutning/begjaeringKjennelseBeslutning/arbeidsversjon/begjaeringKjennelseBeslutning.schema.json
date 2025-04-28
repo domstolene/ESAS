@@ -23,7 +23,7 @@
     },
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer",
-      "description": "Hoved straffesaken saksbehandler saken, trenger ikke å være med i siktelsen."
+      "description": "Hovedstraffesakens straffesaksnummer. Trenger ikke være med i siktelsen"
     },
     "dokumenter": {
       "type": "array",
@@ -46,7 +46,7 @@
   "definitions": {
     "begjaeringstype": {
       "type": "string",
-      "description": "Hvilken type begjæring dette er. I førsteomgang bare midlertidig tap av førerett",
+      "description": "Hvilken type begjæring som sendes. Om det er flere begjæringer i samme forsendelse vil dette være typen til 'hovedbegjæringen'",
       "enum": ["MIDL_TAP_FOERERETT", "ANNET"]
     },
     "begjaering": {
@@ -61,35 +61,38 @@
           "$ref": "#/definitions/paataleansvarlig",
           "description": "Ansvarlig påtalejurist på straffesaken, kanskje ikke den som har skrevet begjæringen"
         },
-        "begjaeringsdetaljer": {
+        "aktorMoeter": {
+          "type": "boolean"
+        },
+        "paastand": {
           "type": "object",
-          "description": "Tar inn nøyaktig ett begjaeringsobjekt med den påkrevde informasjonen til den aktuelle begjæringstypen",
+          "description": "Påstand.",
           "properties": {
-            "begjaeringFoererett": {
-              "$ref": "#/definitions/begjaeringFoererett"
+            "paastandFoererett": {
+              "$ref": "#/definitions/paastandFoererett"
             },
-            "annenBegjaering": {
-              "$ref": "#/definitions/annenBegjaering"
+            "paastandAnnen": {
+              "$ref": "#/definitions/paastandAnnen"
             }
           },
-          "oneOf": [
+          "anyOf": [
             {
               "properties": {
-                "begjaeringFoererett": {
-                  "$ref": "#/definitions/begjaeringFoererett"
+                "paastandFoererett": {
+                  "$ref": "#/definitions/paastandFoererett"
                 }
               },
               "additionalProperties": false,
-              "required": ["begjaeringFoererett"]
+              "required": ["paastandFoererett"]
             },
             {
               "properties": {
-                "annenBegjaering": {
-                  "$ref": "#/definitions/annenBegjaering"
+                "paastandAnnen": {
+                  "$ref": "#/definitions/paastandAnnen"
                 }
               },
               "additionalProperties": false,
-              "required": ["annenBegjaering"]
+              "required": ["paastandAnnen"]
             }
           ],
           "additionalProperties": false
@@ -100,21 +103,14 @@
           "items": {
             "$ref": "#/definitions/personForetakRef"
           }
-        },
-        "fornaermede": {
-          "type": "array",
-          "description": "Hvis det er nødvendig for begjæring.",
-          "items": {
-            "$ref": "#/definitions/personForetakRef"
-          }
         }
       },
       "required": [
         "kravId",
         "paataleansvarlig",
+        "paastand",
         "parter",
-        "fornaermede",
-        "begjaeringsdetaljer"
+        "aktorMoeter"
       ],
       "additionalProperties": false
     },
@@ -148,8 +144,8 @@
         },
         "andrePersoner": {
           "type": "array",
-          "description": "Profeosjonelle vitner (politi), sakkyndige ....",
-          "items": { "$ref": "#/definitions/profesjonellPerson" }
+          "description": "Profesjonelle vitner (politi), sakkyndige o.l.",
+          "items": { "$ref": "#/definitions/profesjonellPersonMedRolle" }
         }
       },
       "required": [
@@ -162,30 +158,31 @@
       ],
       "additionalProperties": false
     },
-    "annenBegjaering": {
+    "paastandFoererett": {
       "type": "object",
-      "description": "Annen begjaering. Foreløpig kun med beskrivelse. Bør utvides før bruk, kan legge til properties...",
+      "description": "Midlertidig tap av førerett spesifikke data.",
+      "properties": {
+        "beslaglagtFraDato": {
+          "$ref": "#/definitions/dato",
+          "description": "Dato for førerkortbeslag. Vil kunne være null i de sjeldne tilfeller der begjæring sendes før førerettbeslaget."
+        },
+        "beslaglagtTilDato": {
+          "$ref": "#/definitions/dato",
+          "description": "Ønsker førerett beslaglagt til denne dato."
+        }
+      },
+      "required": ["beslaglagtTilDato"],
+      "additionalProperties": false
+    },
+    "paastandAnnen": {
+      "type": "object",
+      "description": "Kan brukes til å oversende avtalte endringer før ferdig kontraktsendring",
       "properties": {
         "beskrivelse": {
           "type": "string"
         }
       },
       "required": ["beskrivelse"]
-    },
-    "begjaeringFoererett": {
-      "type": "object",
-      "description": "Midlertidig tap av førerett spesifikke data",
-      "properties": {
-        "beslaglagtFraDato": {
-          "$ref": "#/definitions/dato",
-          "description": "Dato for førerkortbeslag"
-        },
-        "beslaglagtTilDato": {
-          "$ref": "#/definitions/dato",
-          "description": "Ønsker førerett beslaglagt til denne dato"
-        }
-      },
-      "additionalProperties": false
     },
     "adresse": {
       "type": "object",
@@ -372,6 +369,10 @@
           "$ref": "#/definitions/siktetPerson",
           "description": "Siktede har alltid identitetsnummer (fødselsnummer, dnummer eller SSP nummer)"
         },
+        "under18Gjerningstid": {
+          "type": "boolean",
+          "description": "Om siktede var under 18 år på gjerningstidspunktet"
+        },
         "tolk": {
           "type": "object",
           "properties": {
@@ -389,7 +390,7 @@
           "$ref": "#/definitions/forsvarerinformasjon"
         }
       },
-      "required": ["siktetPerson"],
+      "required": ["siktetPerson", "under18Gjerningstid"],
       "additionalProperties": false
     },
     "siktetPerson": {
@@ -494,9 +495,31 @@
       "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
+    "profesjonellPersonMedRolle": {
+      "type": "object",
+      "description": "Personobjekt med rolle tenkt brukt for advokater, tolker, sakkyndige vitner o.l.",
+      "properties": {
+        "rolle": {
+          "enum": [
+            "ADVOKAT",
+            "DOMFELT",
+            "IMPLISERT",
+            "MELDER",
+            "SAKKYNDIG",
+            "TOLK",
+            "ANNET"
+          ]
+        },
+        "person": {
+          "$ref": "#/definitions/profesjonellPerson"
+        }
+      },
+      "required": ["rolle", "person"],
+      "additionalProperties": false
+    },
     "profesjonellPerson": {
       "type": "object",
-      "description": "Advokater, tolker, sakkyndige vitner",
+      "description": "Enkle personobjekter for tiltenkt bruk for advokater, tolker, sakkyndige vitner o.l.",
       "properties": {
         "tittel": {
           "type": "string"

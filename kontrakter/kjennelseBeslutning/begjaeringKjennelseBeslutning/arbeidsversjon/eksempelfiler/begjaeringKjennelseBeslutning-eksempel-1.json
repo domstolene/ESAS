@@ -37,17 +37,17 @@
         }
       }
     },
-    "begjaeringsdetaljer": {
-      "begjaeringFoererett": {
+    "paastand": {
+      "paastandFoererett": {
         "beslaglagtFraDato": "2025-01-22",
         "beslaglagtTilDato": "2026-01-22"
       }
     },
-    "fornaermede": ["333E0F52-9DDB-40E7-BDF3-663B8AC93CE2"],
     "parter": [
       "111E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
       "222E0F52-9DDB-40E7-BDF3-663B8AC93CE2"
-    ]
+    ],
+    "aktorMoeter": true
   },
   "personOgForetaklister": {
     "siktedePersoner": [
@@ -85,11 +85,34 @@
             }
           },
           "verger": []
-        }
+        },
+        "under18Gjerningstid": false
       }
     ],
     "siktedeForetak": [],
-    "fornaermedePersoner": [],
+    "fornaermedePersoner": [
+      {
+        "person": {
+          "personForetakRef": "333E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+          "navn": {
+            "fornavn": "Sannferdig",
+            "etternavn": "KOS"
+          },
+          "identitetsnummer": {
+            "idType": "FOEDSELSNUMMER",
+            "verdi": "31907499858"
+          },
+          "kjoenn": "KVINNE",
+          "foedselsdato": "1974-10-31",
+          "statsborgerskap": [
+            {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          ]
+        }
+      }
+    ],
     "fornaermedeForetak": [],
     "vitner": [],
     "andrePersoner": []

@@ -12,10 +12,7 @@ senderOrganization=POLITIET
 ### [Se changelog for endringer](./changelog.md)
 
 ## Avklaringer
-- Skal aktor_møter være med?
-- Vitner?
 - det er domstolene som skal stille med tolk, valg av tolk er viktig.
-- Under 18 gjerningstidspunkt, er ikke med nå
 
 ## Beskrivelse
 Generell begjæring om kjennelse eller besluting fra påtale til domstolen 1. nivå tingretten.
@@ -51,7 +48,7 @@ Bruker begrepet part, som kan være tom f.eks. ved begjæring om inndraging av f
 * Siktet kan være person eller foretak, se begjaeringDom.
 * Fornærmede kan være person eller foretak, se begjaeringDom.
 * Vitner er bare personer, se begjaeringDom.
-* Sakkyndige vitner/personer er profersjonelle personer som vi ikke har annet enn navn på. 
+* Andre personer (under "andrePersoner") er profesjonelle personer som sendes med fullt navn, tittel og rolle. Det kan være sakkyndige, advokater, e.l.
 * Tolk må være tilgjengelig for alle personer.
 
 Meldinger som anke over kjennelse beslutning vil bli håndtert i egne meldinger.
