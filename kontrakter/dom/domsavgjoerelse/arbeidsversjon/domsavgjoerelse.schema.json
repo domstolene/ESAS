@@ -480,6 +480,10 @@
         "erklaeringsType": {
           "$ref": "#/definitions/erklaertType",
           "description": "Settes dersom 'forkynt' er satt til true"
+        },
+        "korrigeringKreverForkynning": {
+          "type": "boolean",
+          "description": "Settes kun ved korrigering av avgjørelse. Dersom 'true' oppdateres de andre feltene (forkynt/kommentar/erklaeringsType). Dersom 'false' brukes opprinnelig data i de andre feltene"
         }
       },
       "required": ["forkynt"],
