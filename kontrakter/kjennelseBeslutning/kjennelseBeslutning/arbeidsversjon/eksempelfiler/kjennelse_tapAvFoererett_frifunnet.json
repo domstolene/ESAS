@@ -1,0 +1,119 @@
+{
+  "pakkeId": "734F011E-4758-4145-B299-8B2072AD06A0",
+  "forsendelse": {
+    "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0CC",
+    "sendtTid": "2025-04-08T15:35:00+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "826726342",
+        "navn": "Buskerud tingrett"
+      },
+      "person": {
+        "etternavn": "Saksbehandler",
+        "fornavn": "Litt",
+        "tittel": "Saksbehandler"
+      }
+    },
+    "mottaker": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      }
+    }
+  },
+  "aktoerer": {
+    "dommer": {
+      "etternavn": "Dommersen",
+      "fornavn": "Lars",
+      "tittel": "Dommerfullmeltig"
+    },
+    "saksbehandler": {
+      "etternavn": "Saksbehandler",
+      "fornavn": "Litt",
+      "tittel": "Saksbehandler"
+    }
+  },
+  "dokumenter": [
+    {
+      "internId": "04CB1930-107B-4419-BB28-40038D8847E2",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7cc",
+        "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7cc"
+      },
+      "overskrift": "Kjennelse - Tap av førerett",
+      "skrevetDato": "2025-04-08",
+      "kategori": {
+        "kode": "KJENNELSE"
+      }
+    }
+  ],
+  "saksInformasjon": {
+    "saksnummer": "55-000132ENE-TBUS/TDRA",
+    "straffesaksnummer": "16000820",
+    "avgjoerelse": {
+      "avgjoerelseId": "EB6432F3-F117-45A5-A4E6-F7860FF16A34",
+      "avsagtDato": "2025-04-08",
+      "kravId": "D16AA05B-1530-4B51-A2B7-C86DE623FC9F",
+      "opprinneligKravId": "D16AA05B-1530-4B51-A2B7-C86DE623FC9F",
+      "avgjoerelsePrPerson": [
+        {
+          "personForetak": {
+            "person": {
+              "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
+              "identitetsnummer": {
+                "idType": "FOEDSELSNUMMER",
+                "verdi": "19077046529"
+              },
+              "tilleggsId": [],
+              "fornavn": "Masse",
+              "etternavn": "Kiwi",
+              "kjoenn": "MANN",
+              "foedselsdato": "1970-07-19",
+              "statsborgerskap": [
+                {
+                  "kode": "NOR",
+                  "navn": "Norge"
+                }
+              ],
+              "oppnevntForsvarer": {
+                "identitetsnummer": {
+                  "verdi": "22830699035",
+                  "idType": "FOEDSELSNUMMER"
+                },
+                "fornavn": "Ultrafiolett",
+                "etternavn": "Drage",
+                "tittel": "Advokat",
+                "kontakt": {
+                  "epost": "udrage@almisse.com",
+                  "telefonnummer": "22112211"
+                },
+                "praksis": {
+                  "navn": "AKADEMISK AKADEMISK KATT ALMISSE",
+                  "organisasjonsnummer": "311032348"
+                }
+              }
+            }
+          },
+          "kategori": "FRIFUNNET",
+          "typeAvgjoerelse": "KJENNELSE",
+          "erklaering": {
+            "erklaeringSiktede": {
+              "erklaert": "VEDTATT",
+              "meddeltIRettsmoete": true
+            },
+            "erklaeringPaatale": {
+              "erklaert": "ANKET",
+              "meddeltIRettsmoete": true,
+              "ankeDetaljer": {
+                "ankeBeskrivelse": "Vi mener Kiwi bør miste lappen likevel",
+                "anketDato": "2025-06-08",
+                "oppsettendeVirkning": true
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
