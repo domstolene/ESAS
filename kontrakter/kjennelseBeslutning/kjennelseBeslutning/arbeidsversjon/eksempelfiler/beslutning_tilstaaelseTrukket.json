@@ -1,4 +1,5 @@
 {
+  "pakkeId": "C9E52A62-286F-40CA-BE74-9D0C6690BB9A",
   "forsendelse": {
     "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0CC",
     "sendtTid": "2022-07-06T16:35:00+02:00",
@@ -43,8 +44,7 @@
       "overskrift": "Avviser tilstståelsesak",
       "skrevetDato": "2022-07-06",
       "kategori": {
-        "kode": "DOKUMENTKATEGORI#AVGJOERELS#1900-01-01",
-        "navn": "Beslutning"
+        "kode": "BESLUTNING"
       }
     }
   ],
@@ -56,9 +56,33 @@
       "avsagtDato": "2022-07-05",
       "kravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
       "opprinneligKravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
-      "kategori": "SAKEN_AVVIST",
-      "beskrivelse": "Siktede trakk tilståelsen så denne saken blir ikke kjørt som en tilståelsesak",
-      "typeAvgjoerelse": "BESLUTNING_INGEN_ANKE"
+      "avgjoerelsePrPerson": [
+        {
+          "personForetak": {
+            "person": {
+              "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
+              "identitetsnummer": {
+                "idType": "FOEDSELSNUMMER",
+                "verdi": "19077046529"
+              },
+              "tilleggsId": [],
+              "fornavn": "Masse",
+              "etternavn": "Kiwi",
+              "kjoenn": "MANN",
+              "foedselsdato": "1970-07-19",
+              "statsborgerskap": [
+                {
+                  "kode": "NOR",
+                  "navn": "Norge"
+                }
+              ]
+            }
+          },
+          "kategori": "SAKEN_AVVIST",
+          "typeAvgjoerelse": "BESLUTNING_INGEN_ANKE",
+          "beskrivelse": "Siktede trakk tilståelsen så denne saken blir ikke kjørt som en tilståelsesak"
+        }
+      ]
     }
   }
 }

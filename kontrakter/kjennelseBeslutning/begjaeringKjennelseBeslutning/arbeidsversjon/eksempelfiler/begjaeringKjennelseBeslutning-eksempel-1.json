@@ -1,0 +1,146 @@
+{
+  "forsendelse": {
+    "meldingsId": "E5FE0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+    "sendtTid": "2024-05-22T17:47:48+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983998178",
+        "navn": "Sør-Øst politidistrikt"
+      },
+      "person": {
+        "navn": {
+          "fornavn": "Peder",
+          "etternavn": "Politiets Datatjeneste"
+        }
+      }
+    },
+    "kontakt": {
+      "beskrivelse": "Distrikt sentralbord/postmottak",
+      "epost": "distrikt@politiet.no",
+      "telefonnummer": "88888888"
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "926723480",
+      "navn": "Agder tingrett"
+    }
+  },
+  "pakkeId": "CADC75FC-22EF-478E-B4EC-27C49F85FD70",
+  "begjaeringstype": "MIDL_TAP_FOERERETT",
+  "begjaering": {
+    "kravId": "123E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+    "paataleansvarlig": {
+      "brukeridentifikasjon": "BLC210",
+      "ansatt": {
+        "navn": {
+          "fornavn": "Shan",
+          "etternavn": "Eriksen"
+        }
+      }
+    },
+    "paastand": {
+      "paastandFoererett": {
+        "beslaglagtFraDato": "2025-01-22",
+        "beslaglagtTilDato": "2026-01-22"
+      }
+    },
+    "parter": [
+      "111E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+      "222E0F52-9DDB-40E7-BDF3-663B8AC93CE2"
+    ],
+    "aktorMoeter": true
+  },
+  "personOgForetaklister": {
+    "siktedePersoner": [
+      {
+        "siktetPerson": {
+          "person": {
+            "personForetakRef": "5FF69D62-43C8-4C25-9F99-58B57F51425C",
+            "navn": {
+              "fornavn": "Vokal",
+              "etternavn": "FABRIKKPIPE"
+            },
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "22918197870"
+            },
+            "tilleggsId": [],
+            "kjoenn": "KVINNE",
+            "foedselsdato": "1981-11-22",
+            "statsborgerskap": [
+              {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            ]
+          },
+          "personAdresse": {
+            "adresse": {
+              "adresselinjer": ["Pampusvegen 32"],
+              "postnummer": "6285",
+              "poststed": "STOREKALVØY",
+              "land": {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            }
+          },
+          "verger": []
+        },
+        "under18Gjerningstid": false
+      }
+    ],
+    "siktedeForetak": [],
+    "fornaermedePersoner": [
+      {
+        "person": {
+          "personForetakRef": "333E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+          "navn": {
+            "fornavn": "Sannferdig",
+            "etternavn": "KOS"
+          },
+          "identitetsnummer": {
+            "idType": "FOEDSELSNUMMER",
+            "verdi": "31907499858"
+          },
+          "kjoenn": "KVINNE",
+          "foedselsdato": "1974-10-31",
+          "statsborgerskap": [
+            {
+              "kode": "NOR",
+              "navn": "Norge"
+            }
+          ]
+        }
+      }
+    ],
+    "fornaermedeForetak": [],
+    "vitner": [],
+    "andrePersoner": []
+  },
+  "hovedStraffesaksnummer": "15439560",
+  "dokumenter": [
+    {
+      "dokumentRef": "59E1FECE-A9DF-434C-B8D6-CE44B3FF4E1D",
+      "overskrift": "Begjæring om midlertidig tap av førerett",
+      "skrevetDato": "2023-03-30",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfasdf",
+        "sjekksum": "234s"
+      }
+    },
+    {
+      "dokumentRef": "D59A4F14-5219-4E31-A95F-5C31545C00E8",
+      "overskrift": "Siktelse",
+      "kategori": {
+        "kode": "siktelse"
+      },
+      "skrevetDato": "2023-03-10",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdf",
+        "sjekksum": "234asass"
+      }
+    }
+  ]
+}
