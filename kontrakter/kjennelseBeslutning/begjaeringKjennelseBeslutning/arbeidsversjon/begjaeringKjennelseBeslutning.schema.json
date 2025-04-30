@@ -37,6 +37,7 @@
   "required": [
     "forsendelse",
     "begjaering",
+    "begjaeringstype",
     "hovedStraffesaksnummer",
     "dokumenter",
     "pakkeId",
