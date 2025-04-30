@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/politi/kjennelseVaretektPoliti/arbeidsversjon/kjennelseVaretektPoliti",
+  "$id": "https://politiet.no/politi/kjennelseVaretektPoliti/1.4/kjennelseVaretektPoliti",
   "description": "Kjennelse fra domstolen førtegangsfengsling eller forlengelser.",
   "type": "object",
   "properties": {
