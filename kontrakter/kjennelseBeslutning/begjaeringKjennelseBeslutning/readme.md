@@ -9,7 +9,7 @@ senderOrganization=POLITIET
 
 [RFC](../../../rfc/MessageName-header.md)
 
-### [Se changelog for endringer](./changelog.md)
+### [Se changelog for endringer](changelog.md)
 
 ## Avklaringer
 - det er domstolene som skal stille med tolk, valg av tolk er viktig.
