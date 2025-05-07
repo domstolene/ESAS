@@ -48,6 +48,7 @@
         <module>kontrakter/personundersoekelse/returPersonundersoekelse</module>
         <module>kontrakter/konfliktraadet/oppdatertsaksstatus</module>
         <module>kontrakter/kjennelseBeslutning/kjennelseBeslutning</module>
+        <module>kontrakter/kjennelseBeslutning/begjaeringKjennelseBeslutning</module>
         <module>kontrakter/vegtrafikkulykke/trafikkulykke</module>
         <module>kontrakter/felles/kvittering</module>
         <module>kontrakter/dom/begjaeringDom</module>
