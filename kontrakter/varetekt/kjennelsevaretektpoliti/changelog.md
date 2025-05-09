@@ -1,11 +1,17 @@
 # kjennelseVaretekt til Kriminalomsrogen
 | Versjon | Beskrivelse                                  | Aktiv fra  | Aktiv til |
 |---------|----------------------------------------------|------------|-----------|
+| 1.4     | La til surrogat                              |            |           |
 | 1.3     | Endret lovbudStreng til liste med vilkår     |            |           |
 | 1.1     | Håndter vitner uten identifikator            |            |           |
 | 1.0     | Første versjon til produksjon, pilot dato ?? | 09.10.2023 |           |
 
 Denne meldingen sammen med [endreRestriksjoner](../endreRestriksjoner/readme.md) erstatter oppdaterVaretekt (slettet)
+
+## Versjon 1.4
+
+### fengslingssurrogat
+La til fengslingssurrogat
 
 ## Versjon 1.3
 
