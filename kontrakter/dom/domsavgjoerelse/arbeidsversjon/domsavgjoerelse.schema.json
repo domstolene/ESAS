@@ -483,7 +483,7 @@
         },
         "korrigeringKreverForkynning": {
           "type": "boolean",
-          "description": "Settes kun ved korrigering av avgjørelse. Dersom 'true' oppdateres de andre feltene (forkynt/kommentar/erklaeringsType). Dersom 'false' brukes opprinnelig data i de andre feltene"
+          "description": "Settes kun ved korrigering av avgjørelse. Dersom 'true' oppdateres de andre feltene (forkynt/kommentar/erklaeringsType). Dersom 'false' brukes verdier fra forrige avgjørelse (original eller korrigering) i de andre feltene"
         }
       },
       "required": ["forkynt"],
