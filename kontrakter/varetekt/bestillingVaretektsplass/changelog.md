@@ -4,9 +4,15 @@ Omorganisert slik at det er en katalog for hver melding og eksempelfiler på sam
 
 | Versjon | Beskrivelse                | Aktiv fra  | Aktiv til  |
 |---------|----------------------------|------------|------------|
+| 1.3     | Pakke-id                   |
 | 1.2     | Ønsker tilbud om transport | 09.01.2025 |            |
 | 1.1     | Arrestlokasjon             | 09.01.2025 |            |
 | 1.0     | I produksjon               |            | 09.01.2025 |
+
+### 25.04.2025
+
+Lagt til pakkeId for å identifisere meldinger som sendes sammen (bestilling og siktelse)
+Oppdatert til versjon 1.3
 
 ### 26.02.2025
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://politiet.no/kjennelseBeslutning/arbeidsversjon/begjaeringKjennelseBeslutning",
+  "$id": "https://politiet.no/kjennelseBeslutning/1.0/begjaeringKjennelseBeslutning",
   "description": "Generell begjæring om kjennelse/beslutning",
   "type": "object",
   "properties": {
