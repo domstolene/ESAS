@@ -23,7 +23,21 @@
       "additionalProperties": false
     },
     "siktede": {
-      "$ref": "#/definitions/privatPerson"
+      "properties": {
+        "siktetPerson": {
+          "$ref": "#/definitions/privatPerson"
+        },
+        "forsvarere": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/forsvarer"
+          },
+          "minItems": 0
+        }
+      },
+      "required": ["siktetPerson", "forsvarere"],
+      "type": "object",
+      "additionalProperties": false
     },
     "dokumenter": {
       "type": "array",
@@ -412,7 +426,9 @@
           "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politidistrikt, embete osv.",
           "maxLength": 20,
           "minLength": 2
-        }
+        },
+        "adresse": { "$ref": "#/definitions/adresse" },
+        "postadresse": { "$ref": "#/definitions/adresse" }
       },
       "required": ["organisasjonsnummer"],
       "type": "object",
@@ -515,6 +531,54 @@
       },
       "required": ["etternavn", "identitetsnummer", "tilleggsId"],
       "type": "object",
+      "additionalProperties": false
+    },
+    "forsvarer": {
+      "description": "Forsvareren som bistår siktede eller tiltalte i straffesaken (advokat, advokatfullmektig eller annen egnet person.)",
+      "properties": {
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string",
+          "description": "F.eks 'Advokatfullmektig'."
+        },
+        "virksomhet": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
+        }
+      },
+      "required": ["etternavn", "identitetsnummer"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "adresse": {
+      "type": "object",
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "postnummer": {
+          "type": "string"
+        },
+        "poststed": {
+          "type": "string"
+        },
+        "land": {
+          "$ref": "#/definitions/landType"
+        }
+      },
+      "required": ["adresselinjer"],
       "additionalProperties": false
     },
     "landType": {

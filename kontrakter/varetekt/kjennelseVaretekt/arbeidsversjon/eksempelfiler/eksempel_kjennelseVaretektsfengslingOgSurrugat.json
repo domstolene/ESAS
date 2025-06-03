@@ -35,18 +35,39 @@
     }
   },
   "siktede": {
-    "identitetsnummer": {
-      "foedselsnummer": "14846399381"
+    "siktetPerson": {
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "fornavn": "Morsom",
+      "etternavn": "Kivi",
+      "kjoenn": "MANN",
+      "foedselsdato": "1963-04-14",
+      "nasjonalitet": {
+        "kode": "NOR",
+        "navn": "Norge"
+      }
     },
-    "tilleggsId": [],
-    "fornavn": "Morsom",
-    "etternavn": "Kivi",
-    "kjoenn": "MANN",
-    "foedselsdato": "1963-04-14",
-    "nasjonalitet": {
-      "kode": "NOR",
-      "navn": "Norge"
-    }
+    "forsvarere": [
+      {
+        "fornavn": "Ultrafiolett",
+        "etternavn": "Drage",
+        "identitetsnummer": {
+          "foedselsnummer": "22830699035"
+        },
+        "tittel": "Advokat",
+        "virksomhet": {
+          "organisasjonsnummer": "311032348",
+          "navn": "Akademisk Akademisk Katt Almisse",
+          "postadresse": {
+            "adresselinjer": ["Vestre Røysenleristedet"],
+            "postnummer": "8742",
+            "poststed": "Svolvær"
+          }
+        }
+      }
+    ]
   },
   "dokumenter": [
     {

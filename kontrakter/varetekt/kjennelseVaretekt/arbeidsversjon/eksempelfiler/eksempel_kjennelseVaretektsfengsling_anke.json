@@ -35,17 +35,20 @@
     }
   },
   "siktede": {
-    "identitetsnummer": {
-      "foedselsnummer": "14846399381"
+    "siktetPerson": {
+      "identitetsnummer": {
+        "foedselsnummer": "14846399381"
+      },
+      "tilleggsId": [],
+      "fornavn": "Morsom",
+      "etternavn": "Kivi",
+      "foedselsdato": "1963-04-14",
+      "nasjonalitet": {
+        "kode": "NOR",
+        "navn": "Norge"
+      }
     },
-    "tilleggsId": [],
-    "fornavn": "Morsom",
-    "etternavn": "Kivi",
-    "foedselsdato": "1963-04-14",
-    "nasjonalitet": {
-      "kode": "NOR",
-      "navn": "Norge"
-    }
+    "forsvarere": []
   },
   "dokumenter": [
     {
