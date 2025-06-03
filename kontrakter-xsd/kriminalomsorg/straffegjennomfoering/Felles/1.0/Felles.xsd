@@ -357,7 +357,9 @@
       <xs:enumeration value="Påtaleunnlatelse"/>
       <xs:enumeration value="Samfunnstjeneste"/>
       <xs:enumeration value="Frisikring-etter lukket si.eller ubet.d."/>
-      <xs:enumeration value="Samfunnstraff"/>            
+      <xs:enumeration value="Samfunnstraff"/>
+      <xs:enumeration value="Elektronisk kontroll for varig soningsudyktige"/>
+      <xs:enumeration value="Varetekt med oppholdsforbud med elektronisk kontroll"/>
     </xs:restriction>
   </xs:simpleType>
 
