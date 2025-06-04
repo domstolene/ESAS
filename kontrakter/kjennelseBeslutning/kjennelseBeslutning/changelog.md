@@ -1,17 +1,17 @@
 # Endringslogg KjennelseBeslutning
 
-| Versjon        | Beskrivelse                                                                | Aktiv mottaker | Aktiv sender | Aktiv til |
-|----------------|----------------------------------------------------------------------------|----------------|--------------|-----------|
-| Arbeidsversjon | Generalisering for gjennbruk på tvers av kjennnelse/beslutning-avgjørelser |                |              |           |
-| 1.0            | Første versjon av KjennelseBeslutning                                      |                |              |           |
+| Versjon | Beskrivelse                                                                | Aktiv mottaker | Aktiv sender | Aktiv til |
+|---------|----------------------------------------------------------------------------|----------------|--------------|-----------|
+| 1.1     | Generalisering for gjennbruk på tvers av kjennnelse/beslutning-avgjørelser |                |              |           |
+| 1.0     | Første versjon av KjennelseBeslutning                                      |                |              |           |
 
-### Arbeidsversjon
-
-24.04.2025
+ss
+### Versjon 1.1
 Generaliserer kjennelseBeslutning kontrakten slik at den kan brukes til alle kjennelser og beslutninger (utenom varetektsfengsling)
 * Lagt til rette for flere reaksjoner. I denne omgang kun 'tapAvFoererett'.
 * Lagt inn pereoner avgjørelsen gjelder
 * Lagt inn mulighet for 'erklæring' fra siktet og påtale
+* Lagt inn pakkeIds
 
 
 ## Versjon 1.0
