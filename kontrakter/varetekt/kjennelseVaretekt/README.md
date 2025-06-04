@@ -2,7 +2,7 @@
 
 ## Headere forsendelse justisHub
 SchmaName=KJENNELSE_VARETEKT  
-SchemaVersion=1.1/1.2
+SchemaVersion=1.4/1.5
 
 [RFC](../../../rfc/MessageName-header.md)
 

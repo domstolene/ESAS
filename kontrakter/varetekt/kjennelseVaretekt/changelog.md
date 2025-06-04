@@ -1,11 +1,16 @@
 # kjennelseVaretekt endringslogg
-| Versjon | Beskrivelse                              | Aktiv mottaker | Aktiv sender |
-|---------|------------------------------------------|----------------|--------------|
-| 1.4     | Beskrivelse vilkår                       |                |              |
-| 1.3     | Støtte for surrogat. Strukturerte vilkår |                |              | 
+| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender |
+|---------|---------------------------------------------|----------------|--------------|
+| 1.5     | Lagt til forsvarere for siktet              |                |              |
+| 1.4     | Beskrivelse vilkår                          |                |              |
+| 1.3     | Støtte for surrogat. Strukturerte vilkår    |                |              | 
 | 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     | 25.03.2025   | 
-| 1.1     | Kjennelse med minst ett dokument         |                | 26.10.2023   | 
-| 1.0     | Første versjon i produksjon              |                | 10.10.2023   | 
+| 1.1     | Kjennelse med minst ett dokument            |                | 26.10.2023   | 
+| 1.0     | Første versjon i produksjon                 |                | 10.10.2023   | 
+
+# Versjon 1.5
+1. Lagt til forsvarere til siktet. Kan være tom liste
+2. For å få lagt til forsvarere på en god måte ble det lagt til et 'siktetPerson' element under 'siktede'
 
 # Versjon 1.4
 
