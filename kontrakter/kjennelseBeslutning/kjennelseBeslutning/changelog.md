@@ -5,7 +5,7 @@
 | 1.1     | Generalisering for gjennbruk på tvers av kjennnelse/beslutning-avgjørelser |                |              |           |
 | 1.0     | Første versjon av KjennelseBeslutning                                      |                |              |           |
 
-ss
+
 ### Versjon 1.1
 Generaliserer kjennelseBeslutning kontrakten slik at den kan brukes til alle kjennelser og beslutninger (utenom varetektsfengsling)
 * Lagt til rette for flere reaksjoner. I denne omgang kun 'tapAvFoererett'.
