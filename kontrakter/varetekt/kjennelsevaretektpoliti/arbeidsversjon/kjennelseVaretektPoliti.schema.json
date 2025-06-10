@@ -611,7 +611,6 @@
     },
     "forsvarer": {
       "description": "Forsvareren som bistår siktede eller tiltalte i straffesaken (advokat, advokatfullmektig eller annen egnet person.)",
-      "type": "object",
       "properties": {
         "identitetsnummer": {
           "$ref": "#/definitions/personIdentifikator",
@@ -631,7 +630,10 @@
           "$ref": "#/definitions/organisasjon",
           "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
         }
-      }
+      },
+      "required": ["etternavn", "identitetsnummer"],
+      "type": "object",
+      "additionalProperties": false
     },
     "restriksjon": {
       "description": "Restriksjon fra domstolen, når vi har mottatt den, uten til fra dato kun når det er anke",
