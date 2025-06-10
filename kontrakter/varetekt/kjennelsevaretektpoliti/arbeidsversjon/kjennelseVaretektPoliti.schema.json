@@ -609,7 +609,7 @@
       "required": ["internId", "navn"],
       "additionalProperties": false
     },
-    "forsvarer":{
+    "forsvarer": {
       "description": "Forsvareren som bistår siktede eller tiltalte i straffesaken (advokat, advokatfullmektig eller annen egnet person.)",
       "type": "object",
       "properties": {
