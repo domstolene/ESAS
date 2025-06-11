@@ -120,7 +120,7 @@
       "properties": {
         "siktedePersoner": {
           "type": "array",
-          "description": "Alle siktede personer",
+          "description": "Alle siktede personer, kobling til straffesakene finnes i siktelsen.",
           "items": { "$ref": "#/definitions/siktetPersonInfo" }
         },
         "siktedeForetak": {
@@ -130,23 +130,25 @@
         },
         "fornaermedePersoner": {
           "type": "array",
-          "description": "Alle fornærmede personer",
-          "items": { "$ref": "#/definitions/relatertPerson" }
+          "description": "Alle fornærmede personer, med kobling til straffesaken",
+          "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
         },
         "fornaermedeForetak": {
           "type": "array",
-          "description": "Alle fornærmede foretak",
-          "items": { "$ref": "#/definitions/foretak" }
+          "description": "Alle fornærmede foretak, med kobling til straffesaken",
+          "items": { "$ref": "#/definitions/foretakStraffesak" }
         },
         "vitner": {
           "type": "array",
           "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
-          "items": { "$ref": "#/definitions/relatertPerson" }
+          "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
         },
         "andrePersoner": {
           "type": "array",
           "description": "Profesjonelle vitner (politi), sakkyndige o.l.",
-          "items": { "$ref": "#/definitions/profesjonellPersonMedRolle" }
+          "items": {
+            "$ref": "#/definitions/profesjonellPersonMedRolleStraffesak"
+          }
         }
       },
       "required": [
@@ -623,21 +625,37 @@
       "required": ["person"],
       "additionalProperties": false
     },
-    "fornaermedePersoner": {
-      "type": "array",
-      "description": "Alle fornærmede personer, kobling til straffesaken i siktelseTiltale",
-      "items": { "$ref": "#/definitions/relatertPerson" }
-    },
-    "fornaermedeForetak": {
-      "type": "array",
-      "description": "Alle fornærmede foretak, kobling til straffesaken i siktelseTiltale",
-      "items": { "$ref": "#/definitions/foretakStraffesak" }
-    },
     "foretakStraffesak": {
       "type": "object",
       "description": "Foretak med kobling til straffesakene de er med i",
       "properties": {
         "person": { "$ref": "#/definitions/foretak" },
+        "straffesaker": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
+        }
+      },
+      "required": ["person", "straffesaker"],
+      "additionalProperties": false
+    },
+    "relatertPersonStraffesak": {
+      "type": "object",
+      "description": "Fornærmede, vitne informasjon med kobling til straffesakene de er med i",
+      "properties": {
+        "person": { "$ref": "#/definitions/relatertPerson" },
+        "straffesaker": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/straffesaksnummer" }
+        }
+      },
+      "required": ["person", "straffesaker"],
+      "additionalProperties": false
+    },
+    "profesjonellPersonMedRolleStraffesak": {
+      "type": "object",
+      "description": "Andre personer med kobling til Straffesak",
+      "properties": {
+        "person": { "$ref": "#/definitions/profesjonellPersonMedRolle" },
         "straffesaker": {
           "type": "array",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
