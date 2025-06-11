@@ -422,10 +422,7 @@
           "description": "F.eks. Nordland politidistrikt eller Oslo tingrett."
         },
         "organisasjonsnummer": {
-          "type": "string",
-          "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politidistrikt, embete osv.",
-          "maxLength": 20,
-          "minLength": 2
+          "$ref": "#/definitions/organisasjonsnummer"
         },
         "adresse": { "$ref": "#/definitions/adresse" },
         "postadresse": { "$ref": "#/definitions/adresse" }
@@ -555,7 +552,7 @@
           "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
         }
       },
-      "required": ["etternavn", "identitetsnummer"],
+      "required": ["etternavn"],
       "type": "object",
       "additionalProperties": false
     },
@@ -564,7 +561,11 @@
       "properties": {
         "adresselinjer": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
           "minItems": 1,
           "maxItems": 4
         },
@@ -702,6 +703,13 @@
       "pattern": "^[4-7][0-9][0189][0-9]+$",
       "minLength": 11,
       "maxLength": 11
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "description": "Norsk organisasjonsnummer fra BRREG. Referanse til politistrikt, domstol, fengsel. https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/",
+      "pattern": "^[0-9]+$",
+      "minLength": 9,
+      "maxLength": 9
     },
     "kodeverk": {
       "properties": {
