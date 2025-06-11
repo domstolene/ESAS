@@ -174,7 +174,26 @@
     "anke": {
       "anketDato": "2022-07-06",
       "oppsettendeVirkning": false
-    }
+    },
+    "forsvarere": [
+      {
+        "fornavn": "Ultrafiolett",
+        "etternavn": "Drage",
+        "identitetsnummer": {
+          "foedselsnummer": "22830699035"
+        },
+        "tittel": "Advokat",
+        "virksomhet": {
+          "organisasjonsnummer": "311032348",
+          "navn": "Akademisk Akademisk Katt Almisse",
+          "postadresse": {
+            "adresselinjer": ["Vestre Røysenleristedet"],
+            "postnummer": "8742",
+            "poststed": "Svolvær"
+          }
+        }
+      }
+    ]
   },
   "paagrepetTidspunkt": "2022-11-03T10:19:59+02:00",
   "dokumenter": [

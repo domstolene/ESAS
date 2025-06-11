@@ -349,6 +349,13 @@
         "anke": {
           "$ref": "#/definitions/anke",
           "description": "Settes kun dersom hele eller deler av avgjørelsen ankes før kjennelsen sendes til påtale"
+        },
+        "forsvarere": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/forsvarer"
+          },
+          "minItems": 0
         }
       },
       "required": [
@@ -462,9 +469,11 @@
           "type": "string",
           "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett"
         },
-        "organisasjonsnummer": { "$ref": "#/definitions/organisasjonsnummer" }
+        "organisasjonsnummer": { "$ref": "#/definitions/organisasjonsnummer" },
+        "adresse": { "$ref": "#/definitions/adresse" },
+        "postadresse": { "$ref": "#/definitions/adresse" }
       },
-      "required": ["organisasjonsnummer", "navn"],
+      "required": ["organisasjonsnummer"],
       "additionalProperties": false
     },
     "personnavn": {
@@ -598,6 +607,32 @@
         }
       },
       "required": ["internId", "navn"],
+      "additionalProperties": false
+    },
+    "forsvarer": {
+      "description": "Forsvareren som bistår siktede eller tiltalte i straffesaken (advokat, advokatfullmektig eller annen egnet person.)",
+      "properties": {
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string",
+          "description": "F.eks 'Advokatfullmektig'."
+        },
+        "virksomhet": {
+          "$ref": "#/definitions/organisasjon",
+          "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
+        }
+      },
+      "required": ["etternavn", "identitetsnummer"],
+      "type": "object",
       "additionalProperties": false
     },
     "restriksjon": {
