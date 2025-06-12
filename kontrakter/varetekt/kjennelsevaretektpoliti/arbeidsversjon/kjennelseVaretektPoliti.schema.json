@@ -631,7 +631,7 @@
           "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
         }
       },
-      "required": ["etternavn", "identitetsnummer"],
+      "required": ["etternavn"],
       "type": "object",
       "additionalProperties": false
     },
