@@ -4,7 +4,7 @@ Er tenkt å skal brukes på andre tvangsmidler osv. i fremtiden.
 
 ## Headere forsendelse justisHub
 SchemaName=BEGJAERING_KJENNELSE_BESLUTNING  
-SchemaVersion=1.0  
+SchemaVersion=1.1  
 senderOrganization=POLITIET  
 
 [RFC](../../../rfc/MessageName-header.md)
