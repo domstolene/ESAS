@@ -93,24 +93,27 @@
     "fornaermedePersoner": [
       {
         "person": {
-          "personForetakRef": "333E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
-          "navn": {
-            "fornavn": "Sannferdig",
-            "etternavn": "KOS"
-          },
-          "identitetsnummer": {
-            "idType": "FOEDSELSNUMMER",
-            "verdi": "31907499858"
-          },
-          "kjoenn": "KVINNE",
-          "foedselsdato": "1974-10-31",
-          "statsborgerskap": [
-            {
-              "kode": "NOR",
-              "navn": "Norge"
-            }
-          ]
-        }
+          "person": {
+            "personForetakRef": "333E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
+            "navn": {
+              "fornavn": "Sannferdig",
+              "etternavn": "KOS"
+            },
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "31907499858"
+            },
+            "kjoenn": "KVINNE",
+            "foedselsdato": "1974-10-31",
+            "statsborgerskap": [
+              {
+                "kode": "NOR",
+                "navn": "Norge"
+              }
+            ]
+          }
+        },
+        "straffesaker": ["15439560"]
       }
     ],
     "fornaermedeForetak": [],
