@@ -2,7 +2,7 @@
 
 ## Headere forsendelse justisHub
 SchemaName=BEGJAERING_DOM  
-SchemaVersion=1.1  
+SchemaVersion=1.3  
 senderOrganization=POLITIET
 
 [RFC](../../../rfc/MessageName-header.md)  
