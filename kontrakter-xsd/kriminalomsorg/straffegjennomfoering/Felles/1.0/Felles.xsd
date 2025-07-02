@@ -315,6 +315,12 @@
       <xs:enumeration value="Avbrutt ved overføring til fengsel"/>
       <xs:enumeration value="Innsatt i varetekt"/>
       <xs:enumeration value="Ombytting av sikringsmidler*"/>
+      <xs:enumeration value="Løslatt pga at dom er sonet (utholdt) i varetekt"/>
+      <xs:enumeration value="Løslatt på grunn av frifinnende dom"/>
+      <xs:enumeration value="Løslatt etter særskilt beslutning før kjennelsens utløp"/>
+      <xs:enumeration value="Løslatt av politiet"/>
+      <xs:enumeration value="Løslatt ved kjennelsens utløp"/>
+      <xs:enumeration value="Overføring til fengsel"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="OverfoeringstypeType">
@@ -357,7 +363,9 @@
       <xs:enumeration value="Påtaleunnlatelse"/>
       <xs:enumeration value="Samfunnstjeneste"/>
       <xs:enumeration value="Frisikring-etter lukket si.eller ubet.d."/>
-      <xs:enumeration value="Samfunnstraff"/>            
+      <xs:enumeration value="Samfunnstraff"/>
+      <xs:enumeration value="Elektronisk kontroll for varig soningsudyktige"/>
+      <xs:enumeration value="Varetekt med oppholdsforbud med elektronisk kontroll"/>
     </xs:restriction>
   </xs:simpleType>
 
