@@ -1,11 +1,11 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse                                  | Aktiv fra | Aktiv til |
-|---------|----------------------------------------------|-----------|-----------|
-| 1.3     | pakkeId required                             |           |
-| 1.2     | Kontaktdetaljer/aktor møter i retten         |           |           |
-| 1.1     | pakkeId for flere meldinger som hører sammen |           |           |
-| 1.0     | test                                         |           |           |
+| Versjon | Beskrivelse                                  | Aktiv fra  |
+|---------|----------------------------------------------|------------|
+| 1.3     | pakkeId required                             | 06.05.2025 |
+| 1.2     | Kontaktdetaljer/aktor møter i retten         | ikke prod  |
+| 1.1     | pakkeId for flere meldinger som hører sammen | ikke prod  |
+| 1.0     | test                                         | ikke prod  |
 
 ## 1.3 pakkeId required
 PakkeId som identifiserer meldinger som sendes samlet er nå required
@@ -14,13 +14,12 @@ Tilbakemeldinger så langt sier at det er feil å oppgi avsender og påtaleansva
 * Vi har ikke gode nok data på personer sin telefonnummer.
 * Det er ofte andre personer som skal kontaktes (avdeling) 
 * Vi velger derfor å oppgi distriktet sitt sentralbord som standard på alle meldinger som trenger kontaktdetaljer.
-
 ## 1.1  korrigering av begjæring
 Vi trenger en måte å koble sammen meldinger som hører sammen.
 Vi vil sende meldingene med samme pakke id.
 Ved korrigering av begjæring så vil vi sende begjaeringDom, paastandStraff og siktelseTiltale på nytt.
 Legger inn informasjon om at persjon er under 18 på et av gjerningstidspunktene.
-## Versjon 1.0 er låst begynner med arbeidsversjon for endringer
+## 1.0 er låst begynner med arbeidsversjon for endringer
 ### 17.02.2025 Korrigering av begjæring av dom
 Endres i arbeidsversjon først, blir versjon 1.1.
 Lager pakke med referanse til alle andre meldingstyper.
@@ -35,7 +34,6 @@ epost, uuid osv. - ok
 tar i bruk "dato" og "datoTid" typer.
 Rydde personer (personStraffesakId), siktetPerson, siktetPersonEnkel, tolk, relatertPerson, relatertPersonEnkel
 påtaleansvarlig ikke ansvarlig paatalejurist
-
 ### 25.06.2024 oppdatering
 Større oppdatering i neste merge request.
 * Vitner på saken.
