@@ -16,6 +16,7 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Eli Marie Strømsnes Landro    | Politi        | Write | @computas-ela      |
 | Monika Holmes                 | Politi        | Write | @msh032            |
 | Reidar Skibrek Håbrekke       | Politi        | Write | @reidosaurus       |
+| Daniel Branil Stoa            | Politi        | Write | @raikoss           |
 |                               |               |       |                    |
 | Jostein Klakegg               | KDI           | Admin | @JosteinKlakegg    |
 | Nikolay Pukhovskiy            | KDI           | Write | @pukhovskiy-bspoke |
