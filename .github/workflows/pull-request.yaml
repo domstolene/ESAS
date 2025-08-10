@@ -1,0 +1,26 @@
+on:
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - run: npm ci
+      - run: npm run prettier:check
+      - run: npm run json:validate
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 11
+
+      - run: mvn clean install
