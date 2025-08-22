@@ -5,7 +5,7 @@ Denne meldingen skal ikke brukes på nye ting,  [generellMelding](../generellMel
 
 # Bruk av meldingStraffesak
 ## Fra domstolene til politi
-Det er kun fra lagmannsrettene og det brukes kun kategori med id=annet i meldinger som er mottatt host politiet i perioden 01.01.2025 - 22.08.2025.
+Det er kun fra lagmannsrettene og det brukes kun kategori med id=annet i meldinger som er mottatt hos politiet i perioden 01.01.2025 - 22.08.2025.  
 Eksempler på bruk er:
 - Rettsbok planmøte.
 - Ankeerklæring - signert
