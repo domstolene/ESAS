@@ -32,7 +32,7 @@ jobs:
       - name: Publish to Github Packages
         # if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          DATE_FORMATTED=`date +%d%m%Y`
+          DATE_FORMATTED=`date +%d%m%Y%H%M`
           GIT_SHA_SHORT=`echo $GITHUB_SHA | cut -c1-7`
           NEW_VERSION=${DATE_FORMATTED}.${GIT_SHA_SHORT}
           mvn versions:set -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
