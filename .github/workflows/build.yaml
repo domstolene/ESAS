@@ -19,7 +19,7 @@ jobs:
       - run: npm run json:validate
 
       - name: Set up Github Packages
-        # if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/setup-java@v3
         with: # running setup-java again overwrites the settings.xml
           distribution: "temurin"
@@ -30,9 +30,9 @@ jobs:
           server-password: GITHUB_TOKEN
 
       - name: Publish to Github Packages
-        # if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          DATE_FORMATTED=`date +%d%m%Y%H%M`
+          DATE_FORMATTED=`date +%d%m%Y`
           GIT_SHA_SHORT=`echo $GITHUB_SHA | cut -c1-7`
           NEW_VERSION=${DATE_FORMATTED}.${GIT_SHA_SHORT}
           mvn versions:set -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
