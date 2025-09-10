@@ -1,0 +1,44 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-4321-48A9-A9D3-FDAA5F9BE2",
+    "sendtTid": "2023-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "911830868",
+        "navn": "Akershus friomsorgskontor"
+      },
+      "person": {
+        "fornavn": "Per",
+        "mellomnavn": "S.",
+        "etternavn": "Undersøkersen",
+        "kontakt": {
+          "telefonnummer": ["22 11 33 44"],
+          "epost": "epost@krimomsorg1.no"
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "911830868",
+      "navn": "Kriminalomsorgsdirektoratet"
+    }
+  },
+  "hovedStraffesaksnummer": "15434811",
+  "anmodningEgnethetsvurderingVaretektId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "svarAnmodningEgnethetsvurderingVaretektId": "0322B3E2-B12B-40B6-1234-799C48706123",
+  "svarAnmodningEgnethetsvurderingVaretektType": "UTFOERT_EGNETHETSVURDERING_EK",
+  "dokumenter": [
+    {
+      "internId": "123234567871",
+      "overskrift": "Egnethetsvurdering(PDF)",
+      "kategori": {
+        "kode": "SVAR_EGNETHETSVURDERING_EK"
+      },
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdfu",
+        "sjekksum": "234asass"
+      }
+    }
+  ]
+}
