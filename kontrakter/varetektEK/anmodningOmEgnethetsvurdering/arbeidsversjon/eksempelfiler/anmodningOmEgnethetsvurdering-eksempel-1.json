@@ -11,20 +11,18 @@
         "brukeridentifikasjon": "XYZ233",
         "etternavn": "Årdal",
         "kontakt": {
-          "telefonnummer": [
-            "22 99 33 44"
-          ]
+          "telefonnummer": ["22 99 33 44"]
         }
       }
     },
     "mottakerOrganisasjon": {
       "organisasjonsnummer": "911830868",
-      "navn": "Akershus friomsorgskontor"
+      "navn": "Kriminalomsorgsdirektoratet"
     }
   },
   "hovedStraffesaksnummer": "15434811",
-  "bestillingEgnethetsvurderingVaretektId": "0322B3E2-B12B-40B6-8940-799C48706123",
-  "bestillingVaretektId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "anmodningEgnethetsvurderingVaretektId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "bestillingVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706123",
   "egnethetsvurderingVaretektInfo": {
     "personForEgnethetsvurdering": {
       "person": {
@@ -49,18 +47,13 @@
         "personAdresse": {
           "gradering": "KLIENT_ADRESSE",
           "adresse": {
-            "adresselinjer": [
-              "Institusjonsveien 1"
-            ],
+            "adresselinjer": ["Institusjonsveien 1"],
             "postnummer": "0177",
             "poststed": "OSLO"
           }
         },
         "kontaktInfo": {
-          "telefonnummer": [
-            "11 22 33 40",
-            "11 22 33 41"
-          ]
+          "telefonnummer": ["11 22 33 40", "11 22 33 41"]
         },
         "verger": [
           {

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.1/anmodningEgnethetsvurderingVaretekt",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/0.1/anmodningEgnethetsvurderingVaretekt",
   "description": "Anmodning om egnethetsvurdering ved varetektsplassering. Schema versjon 2020-12",
   "type": "object",
   "properties": {
@@ -10,10 +10,10 @@
     "hovedStraffesaksnummer": {
       "$ref": "#/definitions/straffesaksnummer"
     },
-    "bestillingEgnethetsvurderingVaretektId": {
+    "anmodningEgnethetsvurderingVaretektId": {
       "$ref": "#/definitions/unikId"
     },
-    "bestillingVaretektId": {
+    "bestillingVaretektsplassId": {
       "$ref": "#/definitions/unikId"
     },
     "egnethetsvurderingVaretektInfo": {
@@ -29,8 +29,8 @@
   "required": [
     "forsendelse",
     "hovedStraffesaksnummer",
-    "bestillingEgnethetsvurderingVaretektId",
-    "bestillingVaretektId",
+    "anmodningEgnethetsvurderingVaretektId",
+    "bestillingVaretektsplassId",
     "egnethetsvurderingVaretektInfo"
   ],
   "additionalProperties": false,
@@ -54,19 +54,19 @@
           "$ref": "#/definitions/adresse"
         },
         "annenSysselsetting": {
-          "$ref": "#/definitions/valgMedBeskrivelse"
+          "$ref": "#/definitions/valgBeskrivelse"
         },
         "risikoSiktet": {
-          "$ref": "#/definitions/valgMedBeskrivelse"
+          "$ref": "#/definitions/valgBeskrivelse"
         },
         "risikoHusstand": {
-          "$ref": "#/definitions/valgMedBeskrivelse"
+          "$ref": "#/definitions/valgBeskrivelse"
         },
         "risikoAndreSteder": {
-          "$ref": "#/definitions/valgMedBeskrivelse"
+          "$ref": "#/definitions/valgBeskrivelse"
         },
         "risikoForholdSiktet": {
-          "$ref": "#/definitions/valgMedBeskrivelse"
+          "$ref": "#/definitions/valgBeskrivelse"
         },
         "tidligerePersonundersoekelser": {
           "type": "array",
@@ -100,7 +100,7 @@
         }
       }
     },
-    "valgMedBeskrivelse": {
+    "valgBeskrivelse": {
       "type": "object",
       "properties": {
         "valg": {
@@ -249,7 +249,7 @@
           "additionalProperties": false
         },
         "behandlingsbehov": {
-          "$ref": "#/definitions/valgMedBeskrivelse"
+          "$ref": "#/definitions/valgBeskrivelse"
         }
       },
       "required": [
