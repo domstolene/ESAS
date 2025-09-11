@@ -30,7 +30,6 @@
     "forsendelse",
     "hovedStraffesaksnummer",
     "anmodningEgnethetsvurderingVaretektId",
-    "bestillingVaretektsplassId",
     "egnethetsvurderingVaretektInfo"
   ],
   "additionalProperties": false,
@@ -49,9 +48,6 @@
           "items": {
             "$ref": "#/definitions/beboer"
           }
-        },
-        "varetektsAdresse": {
-          "$ref": "#/definitions/adresse"
         },
         "annenSysselsetting": {
           "$ref": "#/definitions/valgBeskrivelse"
@@ -82,7 +78,7 @@
           }
         }
       },
-      "required": ["personForEgnethetsvurdering"],
+      "required": ["personForEgnethetsvurdering", "adresseForGjennomfoering"],
       "additionalProperties": false
     },
     "personForEgnethetsvurdering": {
