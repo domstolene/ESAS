@@ -77,16 +77,12 @@
                 "type": "string"
               }
             },
-            "required": [
-              "dokumentId"
-            ],
+            "required": ["dokumentId"],
             "additionalProperties": false
           }
         }
       },
-      "required": [
-        "personForEgnethetsvurdering"
-      ],
+      "required": ["personForEgnethetsvurdering"],
       "additionalProperties": false
     },
     "personForEgnethetsvurdering": {
@@ -110,9 +106,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "valg"
-      ],
+      "required": ["valg"],
       "additionalProperties": false
     },
     "beboer": {
@@ -146,9 +140,7 @@
           }
         }
       },
-      "required": [
-        "navn"
-      ],
+      "required": ["navn"],
       "additionalProperties": false
     },
     "verge": {
@@ -179,9 +171,7 @@
           "description": "Brukes bare ved false på skriftlig"
         }
       },
-      "required": [
-        "valg"
-      ],
+      "required": ["valg"],
       "additionalProperties": false
     },
     "person": {
@@ -243,21 +233,14 @@
               "$ref": "#/definitions/spraakkodeType"
             }
           },
-          "required": [
-            "behov"
-          ],
+          "required": ["behov"],
           "additionalProperties": false
         },
         "behandlingsbehov": {
           "$ref": "#/definitions/valgBeskrivelse"
         }
       },
-      "required": [
-        "internId",
-        "navn",
-        "foedselsdato",
-        "statsborgerskap"
-      ],
+      "required": ["internId", "navn", "foedselsdato", "statsborgerskap"],
       "additionalProperties": false
     },
     "forsendelse": {
@@ -295,10 +278,7 @@
           "$ref": "#/definitions/ansattPerson"
         }
       },
-      "required": [
-        "organisasjon",
-        "person"
-      ],
+      "required": ["organisasjon", "person"],
       "additionalProperties": false
     },
     "ansattPerson": {
@@ -323,10 +303,7 @@
           "$ref": "#/definitions/kontaktInfo"
         }
       },
-      "required": [
-        "etternavn",
-        "kontakt"
-      ],
+      "required": ["etternavn", "kontakt"],
       "additionalProperties": false
     },
     "organisasjon": {
@@ -339,10 +316,7 @@
           "$ref": "#/definitions/organisasjonsnummer"
         }
       },
-      "required": [
-        "organisasjonsnummer",
-        "navn"
-      ],
+      "required": ["organisasjonsnummer", "navn"],
       "additionalProperties": false
     },
     "dokument": {
@@ -365,10 +339,7 @@
           "$ref": "#/definitions/dokumentForsendelse"
         }
       },
-      "required": [
-        "overskrift",
-        "forsendelse"
-      ],
+      "required": ["overskrift", "forsendelse"],
       "additionalProperties": false
     },
     "dokumentForsendelse": {
@@ -384,11 +355,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "mimeType",
-        "uri",
-        "sjekksum"
-      ],
+      "required": ["mimeType", "uri", "sjekksum"],
       "additionalProperties": false
     },
     "personRelatert": {
@@ -423,11 +390,7 @@
           "$ref": "#/definitions/personAdresse"
         }
       },
-      "required": [
-        "internId",
-        "navn",
-        "statsborgerskap"
-      ],
+      "required": ["internId", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
     "personAdresse": {
@@ -440,9 +403,7 @@
           "$ref": "#/definitions/adresse"
         }
       },
-      "required": [
-        "adresse"
-      ],
+      "required": ["adresse"],
       "additionalProperties": false
     },
     "adresse": {
@@ -465,9 +426,7 @@
           "$ref": "#/definitions/land"
         }
       },
-      "required": [
-        "adresselinjer"
-      ],
+      "required": ["adresselinjer"],
       "additionalProperties": false
     },
     "land": {
@@ -481,9 +440,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "kode"
-      ],
+      "required": ["kode"],
       "additionalProperties": false
     },
     "personIdentifikator": {
@@ -514,9 +471,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "etternavn"
-      ],
+      "required": ["etternavn"],
       "additionalProperties": false
     },
     "kontaktInfo": {
@@ -532,9 +487,7 @@
           }
         }
       },
-      "required": [
-        "telefonnummer"
-      ],
+      "required": ["telefonnummer"],
       "additionalProperties": false
     },
     "kodeverk": {
@@ -547,17 +500,12 @@
           "type": "string"
         }
       },
-      "required": [
-        "kode"
-      ],
+      "required": ["kode"],
       "additionalProperties": false
     },
     "kjoenn": {
       "type": "string",
-      "enum": [
-        "KVINNE",
-        "MANN"
-      ]
+      "enum": ["KVINNE", "MANN"]
     },
     "foedselsnummer": {
       "type": "string",
@@ -591,11 +539,7 @@
     },
     "adresseGradering": {
       "type": "string",
-      "enum": [
-        "KLIENT_ADRESSE",
-        "FORTROLIG",
-        "STRENGT_FORTROLIG"
-      ]
+      "enum": ["KLIENT_ADRESSE", "FORTROLIG", "STRENGT_FORTROLIG"]
     },
     "unikId": {
       "type": "string",
