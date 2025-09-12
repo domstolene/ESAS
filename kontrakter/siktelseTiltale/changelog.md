@@ -1,11 +1,14 @@
 # Endringslogg begjæring om dom
 
-| Versjon | Beskrivelse      | Aktiv fra | Aktiv til |
-|---------|------------------|-----------|-----------|
-| 1.2     | pakkeId required |           |
-| 1.1     | med pakkeId      |           |           |
-| 1.0     | Låst versjon     |           |           |
+| Versjon | Beskrivelse                | Aktiv fra | Aktiv til |
+|---------|----------------------------|-----------|-----------|
+| 1.3     | Ny siktelsestype-enumverdi |           |           |
+| 1.2     | pakkeId required           |           |           |
+| 1.1     | med pakkeId                |           |           |
+| 1.0     | Låst versjon               |           |           |
 
+### 26.03.25 pakkeId required
+Legger til typen "FOERERKORT_BESLUTNING" i siktelsestype-enumen.
 ### 26.03.25 pakkeId required
 pakkeId er nå obligatorisk
 ### 25.02.25 pakkeId 
