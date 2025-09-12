@@ -7,7 +7,7 @@
 
 ## Headere forsendelse justisHub
 SchmaName=ANMODNING_EGNETHETSVURDERING  
-SchemaVersion=0.1
+SchemaVersion=1.0
 [RFC message name header](../../../rfc/MessageName-header.md)
 
 ## Avklaringer
