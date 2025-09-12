@@ -36,7 +36,6 @@
 
     <modules>
         <module>kontrakter/varetektEK/anmodningOmEgnethetsvurdering</module>
-        <module>kontrakter/varetektEK/helseOgRisiko</module>
         <module>kontrakter/varetekt/begjaeringVaretekt</module>
         <module>kontrakter/varetekt/kjennelsevaretektpoliti</module>
         <module>kontrakter/siktelseTiltale</module>
