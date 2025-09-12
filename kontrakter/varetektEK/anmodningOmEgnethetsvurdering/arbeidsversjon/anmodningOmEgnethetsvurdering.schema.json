@@ -1,0 +1,546 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/0.1/anmodningEgnethetsvurderingVaretekt",
+  "description": "Anmodning om egnethetsvurdering ved varetektsplassering. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer"
+    },
+    "anmodningEgnethetsvurderingVaretektId": {
+      "$ref": "#/definitions/unikId"
+    },
+    "bestillingVaretektsplassId": {
+      "$ref": "#/definitions/unikId"
+    },
+    "egnethetsvurderingVaretektInfo": {
+      "$ref": "#/definitions/egnethetsvurderingVaretektInfo"
+    },
+    "dokumenter": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/dokument"
+      }
+    }
+  },
+  "required": [
+    "forsendelse",
+    "hovedStraffesaksnummer",
+    "anmodningEgnethetsvurderingVaretektId",
+    "egnethetsvurderingVaretektInfo"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "egnethetsvurderingVaretektInfo": {
+      "type": "object",
+      "properties": {
+        "personForEgnethetsvurdering": {
+          "$ref": "#/definitions/personForEgnethetsvurdering"
+        },
+        "adresseForGjennomfoering": {
+          "$ref": "#/definitions/adresse"
+        },
+        "beboere": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/beboer"
+          }
+        },
+        "annenSysselsetting": {
+          "$ref": "#/definitions/valgBeskrivelse"
+        },
+        "risikoSiktet": {
+          "$ref": "#/definitions/valgBeskrivelse"
+        },
+        "risikoHusstand": {
+          "$ref": "#/definitions/valgBeskrivelse"
+        },
+        "risikoAndreSteder": {
+          "$ref": "#/definitions/valgBeskrivelse"
+        },
+        "risikoForholdSiktet": {
+          "$ref": "#/definitions/valgBeskrivelse"
+        },
+        "tidligerePersonundersoekelser": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dokumentId": {
+                "type": "string"
+              }
+            },
+            "required": ["dokumentId"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["personForEgnethetsvurdering", "adresseForGjennomfoering"],
+      "additionalProperties": false
+    },
+    "personForEgnethetsvurdering": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/person"
+        },
+        "samtykketTilEgnethetsvurdering": {
+          "$ref": "#/definitions/samtykkeDetaljer"
+        }
+      }
+    },
+    "valgBeskrivelse": {
+      "type": "object",
+      "properties": {
+        "valg": {
+          "type": "boolean"
+        },
+        "beskrivelse": {
+          "type": "string"
+        }
+      },
+      "required": ["valg"],
+      "additionalProperties": false
+    },
+    "beboer": {
+      "type": "object",
+      "properties": {
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator"
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          }
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "samtykkeInnhentet": {
+          "$ref": "#/definitions/samtykkeDetaljer"
+        },
+        "relasjon": {
+          "type": "string"
+        },
+        "kontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        },
+        "verger": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/verge"
+          }
+        }
+      },
+      "required": ["navn"],
+      "additionalProperties": false
+    },
+    "verge": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/person"
+        },
+        "samtykkeInnhentet": {
+          "$ref": "#/definitions/samtykkeDetaljer"
+        }
+      }
+    },
+    "samtykkeDetaljer": {
+      "type": "object",
+      "properties": {
+        "valg": {
+          "type": "boolean"
+        },
+        "skriftlig": {
+          "type": "boolean"
+        },
+        "dokumentId": {
+          "type": "string"
+        },
+        "beskrivelse": {
+          "type": "string",
+          "description": "Brukes bare ved false på skriftlig"
+        }
+      },
+      "required": ["valg"],
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "internId": {
+          "type": "string"
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator"
+        },
+        "tilleggsId": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/personIdentifikator"
+          }
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        },
+        "kontaktInfo": {
+          "$ref": "#/definitions/kontaktInfo"
+        },
+        "samtykkeInnhentet": {
+          "$ref": "#/definitions/samtykkeDetaljer"
+        },
+        "verger": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/verge"
+          }
+        },
+        "tolk": {
+          "type": "object",
+          "properties": {
+            "behov": {
+              "type": "boolean"
+            },
+            "spraak": {
+              "$ref": "#/definitions/spraakkodeType"
+            }
+          },
+          "required": ["behov"],
+          "additionalProperties": false
+        },
+        "behandlingsbehov": {
+          "$ref": "#/definitions/valgBeskrivelse"
+        }
+      },
+      "required": ["internId", "navn", "foedselsdato", "statsborgerskap"],
+      "additionalProperties": false
+    },
+    "forsendelse": {
+      "type": "object",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        }
+      },
+      "required": [
+        "meldingsId",
+        "sendtTid",
+        "avsender",
+        "mottakerOrganisasjon"
+      ],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson"
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo"
+        }
+      },
+      "required": ["etternavn", "kontakt"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "type": "object",
+      "properties": {
+        "navn": {
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "dokument": {
+      "type": "object",
+      "properties": {
+        "internId": {
+          "type": "string"
+        },
+        "kategori": {
+          "$ref": "#/definitions/kodeverk"
+        },
+        "overskrift": {
+          "type": "string"
+        },
+        "skrevetDato": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "forsendelse": {
+          "$ref": "#/definitions/dokumentForsendelse"
+        }
+      },
+      "required": ["overskrift", "forsendelse"],
+      "additionalProperties": false
+    },
+    "dokumentForsendelse": {
+      "type": "object",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string"
+        }
+      },
+      "required": ["mimeType", "uri", "sjekksum"],
+      "additionalProperties": false
+    },
+    "personRelatert": {
+      "type": "object",
+      "properties": {
+        "internId": {
+          "type": "string"
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator"
+        },
+        "adresseGradering": {
+          "$ref": "#/definitions/adresseGradering"
+        },
+        "personAdresse": {
+          "$ref": "#/definitions/personAdresse"
+        }
+      },
+      "required": ["internId", "navn", "statsborgerskap"],
+      "additionalProperties": false
+    },
+    "personAdresse": {
+      "type": "object",
+      "properties": {
+        "gradering": {
+          "$ref": "#/definitions/adresseGradering"
+        },
+        "adresse": {
+          "$ref": "#/definitions/adresse"
+        }
+      },
+      "required": ["adresse"],
+      "additionalProperties": false
+    },
+    "adresse": {
+      "type": "object",
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "postnummer": {
+          "type": "string"
+        },
+        "poststed": {
+          "type": "string"
+        },
+        "land": {
+          "$ref": "#/definitions/land"
+        }
+      },
+      "required": ["adresselinjer"],
+      "additionalProperties": false
+    },
+    "land": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string",
+          "pattern": "[A-Z]{3}"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "properties": {
+        "foedselsnummer": {
+          "$ref": "#/definitions/foedselsnummer"
+        },
+        "sspNummer": {
+          "$ref": "#/definitions/sspNummer"
+        },
+        "dNummer": {
+          "$ref": "#/definitions/dNummer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        }
+      },
+      "required": ["etternavn"],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "kodeverk": {
+      "type": "object",
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "kjoenn": {
+      "type": "string",
+      "enum": ["KVINNE", "MANN"]
+    },
+    "foedselsnummer": {
+      "type": "string",
+      "pattern": "[0-9]{11}"
+    },
+    "sspNummer": {
+      "type": "string",
+      "pattern": "[0-9]{11}"
+    },
+    "dNummer": {
+      "type": "string",
+      "pattern": "[0-9]{11}"
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "pattern": "[0-9]{9}"
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "spraakkodeType": {
+      "type": "string",
+      "pattern": "^([A-Z]{3})$"
+    },
+    "adresseGradering": {
+      "type": "string",
+      "enum": ["KLIENT_ADRESSE", "FORTROLIG", "STRENGT_FORTROLIG"]
+    },
+    "unikId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    }
+  }
+}
