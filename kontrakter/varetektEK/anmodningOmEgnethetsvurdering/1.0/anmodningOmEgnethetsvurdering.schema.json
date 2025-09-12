@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorg.no/kriminalomsorg/arbeidsversjon/anmodningEgnethetsvurderingVaretekt",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/anmodningEgnethetsvurderingVaretekt",
   "description": "Anmodning om egnethetsvurdering ved varetekt med EK. Schema versjon 2020-12",
   "type": "object",
   "properties": {
