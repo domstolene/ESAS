@@ -35,6 +35,7 @@
     </scm>
 
     <modules>
+        <module>kontrakter/varetektEK/trekkAvAnmodningOmEgnethetsvurdering</module>
         <module>kontrakter/varetektEK/anmodningOmEgnethetsvurdering</module>
         <module>kontrakter/varetekt/begjaeringVaretekt</module>
         <module>kontrakter/varetekt/kjennelsevaretektpoliti</module>
