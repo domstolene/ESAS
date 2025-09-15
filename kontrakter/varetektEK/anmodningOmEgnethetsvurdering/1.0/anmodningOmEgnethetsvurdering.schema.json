@@ -243,10 +243,6 @@
       "type": "object",
       "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
       "properties": {
-        "personForetakRef": {
-          "$ref": "#/definitions/unikId",
-          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme person."
-        },
         "navn": {
           "$ref": "#/definitions/personnavn"
         },
@@ -269,7 +265,7 @@
           "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
         }
       },
-      "required": ["personForetakRef", "navn", "statsborgerskap"],
+      "required": ["navn", "statsborgerskap"],
       "additionalProperties": false
     },
     "forsendelse": {
