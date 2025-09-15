@@ -1,0 +1,20 @@
+# Anmodning om egnethetsvurdering for varetekt EK
+
+- [JSON Schema](arbeidsversjon/anmodningOmEgnethetsvurdering.schema.json)
+- [Eksempler](arbeidsversjon/eksempelfiler/)
+
+[Se changelog for endringer](changelog.md)
+
+## Headere forsendelse justisHub
+SchmaName=ANMODNING_EGNETHETSVURDERING  
+SchemaVersion=1.0
+[RFC message name header](../../../rfc/MessageName-header.md)
+
+## Avklaringer
+### Utestående avklaringer
+
+Er det nødvendig med informasjon om hvorvidt gjennomføringsadresse for varetekt er en institusjon?
+
+Er det behov for ytterligere kontaktinformasjon til forsvarer, politiadvokat og etterforsker?
+
+Vil et skriftlig samtykke alltid være representert med et vedlagt dokument?
