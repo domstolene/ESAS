@@ -143,7 +143,7 @@
       "type": "object",
       "properties": {
         "person": {
-          "$ref": "#/definitions/person"
+          "$ref": "#/definitions/relatertPersonEnkel"
         },
         "samtykkeInnhentet": {
           "$ref": "#/definitions/samtykkeDetaljer"
@@ -237,6 +237,39 @@
         }
       },
       "required": ["internId", "navn", "foedselsdato", "statsborgerskap"],
+      "additionalProperties": false
+    },
+    "relatertPersonEnkel": {
+      "type": "object",
+      "description": "Personer som er fornærmed, vitner, verger der det ikke er krav om fødselsnummer, osv.",
+      "properties": {
+        "personForetakRef": {
+          "$ref": "#/definitions/unikId",
+          "description": "unik id kun lokalt i en melding, samme personForetakRef er samme person."
+        },
+        "navn": {
+          "$ref": "#/definitions/personnavn"
+        },
+        "foedselsdato": {
+          "type": "string",
+          "format": "date"
+        },
+        "kjoenn": {
+          "$ref": "#/definitions/kjoenn",
+          "description": "Ukjent kjønn hvis denne ikke er med"
+        },
+        "statsborgerskap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/land"
+          }
+        },
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Vitner og verger skal aldri ha SSP nummer"
+        }
+      },
+      "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
     "forsendelse": {
