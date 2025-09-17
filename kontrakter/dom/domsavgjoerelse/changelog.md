@@ -15,7 +15,7 @@
 * Lagt til fler detaljer rundt reaksjonen rettighetstap kontaktforbud
 
 ## Versjon 1.0
-∏
+
 ### 17.03.2025 mer data ifm. tap av retten til å føre motorvogn
 * Mulighet til å sette data om 'ny førerprøve' og 'dato for sperrefrist'
 
