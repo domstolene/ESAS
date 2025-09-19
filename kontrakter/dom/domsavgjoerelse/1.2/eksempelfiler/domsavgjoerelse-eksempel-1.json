@@ -146,7 +146,7 @@
           "fengsel": {
             "straff": {
               "antallAar": 2,
-              "antallMaaneder": 6
+              "antallMaaneder": 4
             },
             "betinget": {
               "antallMaaneder": 6
@@ -204,9 +204,10 @@
           ]
         },
         "forkynning": {
-          "forkynt": false,
-          "kommentar": "Korrigeringen krever at avgjørelsen må forkynnes på nytt til Morsom Kiwi da lengden på fengselsstraffen er endret til 2 år og 6 måneder.",
-          "korrigeringKreverForkynning": true
+          "forkynt": true,
+          "forkyntDato": "2022-07-08",
+          "erklaeringsType": "VEDTATT",
+          "kommentar": "Avgjørelsen ble forkynt til siktede under rettsmøtet"
         }
       },
       {
