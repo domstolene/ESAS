@@ -205,6 +205,7 @@
         },
         "forkynning": {
           "forkynt": true,
+          "forkyntDato": "2022-07-08",
           "erklaeringsType": "VEDTATT",
           "kommentar": "Avgjørelsen ble forkynt til siktede under rettsmøtet"
         }
