@@ -1,0 +1,26 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE2",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "brukeridentifikasjon": "XYZ233",
+        "etternavn": "Årdal",
+        "kontakt": {
+          "telefonnummer": ["22 99 33 44"]
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "911830868",
+      "navn": "Kriminalomsorgsdirektoratet"
+    }
+  },
+  "hovedStraffesaksnummer": "15434811",
+  "anmodningEgnethetsvurderingVaretektId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "begrunnelse": "Trekker anmodning om egnethetsvurdering for varetekt EK da saken er henlagt."
+}
