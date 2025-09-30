@@ -22,8 +22,8 @@
     },
     "svarAnmodningEgnethetsvurderingVaretektType": {
       "type": "string",
-      "enum": ["UTFOERT_EGNETHETSVURDERING_EK", "RETURNERT_IKKE_UTFOERT"],
-      "description": "Spesifiserer om svaret inneholder en ferdig utarbeidet egnethetsvurdering, eller om den er 'returnert ikke utført', f.eks. om siktede har nektet samarbeide. Hvis forholdene som gjorde at vurderingen ikke kunne gjennomføres har endret seg, vil det ikke sendes et nytt svar på samme anmodning, da må en ny anmodning sendes."
+      "enum": ["UTFOERT_EGNET_EGNETHETSVURDERING_EK", "UTFOERT_IKKE_EGNET_EGNETHETSVURDERING_EK", "IKKE_UTFOERT_EGNETHETSVURDERING_EK"],
+      "description": "Spesifiserer om svaret inneholder en ferdig utarbeidet egnethetsvurdering med konklusjon egnet eller ikke-egnet, eller om den ikke lot seg gjennomføre (f.eks. om siktede har nektet å samarbeide). Hvis forholdene som gjorde at vurderingen ikke kunne gjennomføres har endret seg, vil det ikke sendes et nytt svar på samme anmodning, da må en ny anmodning sendes."
     },
     "dokumenter": {
       "type": "array",
@@ -45,10 +45,6 @@
       "type": "object",
       "description": "Saksbehandler, jurist etterforsker hos politiet, ansatte hos domstolene eller kriminalomsorgen",
       "properties": {
-        "brukeridentifikasjon": {
-          "type": "string",
-          "description": "Id som ikke endrer seg, vil være BID hos politiet til å begynne med, men vil endres"
-        },
         "tittel": {
           "type": "string"
         },
