@@ -2,9 +2,13 @@
 
 | Versjon | Beskrivelse      | Aktiv fra | Aktiv til |
 |---------|------------------|-----------|-----------|
+| 1.2     | Forkynt dato     |           |           |
 | 1.1     | Kontaktforbud    |           |           |
 | 1.0     | Initiell versjon |           |           |
 
+## Versjon 1.2
+### 16.09.2025 Forkynt dato
+* Lagt til valgfritt felt for dato for når avgjørelsen ble forkynt til siktede
 
 ## Versjon 1.1
 ### 25.03.2025 Kontaktsforbud
