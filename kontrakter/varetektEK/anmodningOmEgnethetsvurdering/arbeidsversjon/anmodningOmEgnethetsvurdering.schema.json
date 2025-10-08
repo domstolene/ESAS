@@ -64,6 +64,10 @@
         "risikoForholdSiktet": {
           "$ref": "#/definitions/valgBeskrivelse"
         },
+        "infoFraForsvarer": {
+          "description": "Informasjon fra forsvarer som kan ha betydning for vurderingen",
+          "$ref": "#/definitions/valgBeskrivelse"
+        },
         "tidligerePersonundersoekelser": {
           "type": "array",
           "items": {
@@ -76,6 +80,15 @@
             "required": ["dokumentId"],
             "additionalProperties": false
           }
+        },
+        "politiadvokat": {
+          "$ref": "#/definitions/ansattPerson"
+        },
+        "etterforsker": {
+          "$ref": "#/definitions/ansattPerson"
+        },
+        "forsvarer": {
+          "$ref": "#/definitions/ansattPerson"
         }
       },
       "required": ["personForEgnethetsvurdering", "adresseForGjennomfoering"],
@@ -134,6 +147,10 @@
           "items": {
             "$ref": "#/definitions/verge"
           }
+        },
+        "erBarn": {
+          "description": "Hvorvidt beboer er barn av, og beskrivelse av forhold som delt omsorg, samvær, mv.",
+          "$ref": "#/definitions/valgBeskrivelse"
         }
       },
       "required": ["navn"],
@@ -147,6 +164,9 @@
         },
         "samtykkeInnhentet": {
           "$ref": "#/definitions/samtykkeDetaljer"
+        },
+        "tolk": {
+          "$ref": "#/definitions/behovForTolk"
         }
       }
     },
@@ -220,17 +240,7 @@
           }
         },
         "tolk": {
-          "type": "object",
-          "properties": {
-            "behov": {
-              "type": "boolean"
-            },
-            "spraak": {
-              "$ref": "#/definitions/spraakkodeType"
-            }
-          },
-          "required": ["behov"],
-          "additionalProperties": false
+          "$ref": "#/definitions/behovForTolk"
         },
         "behandlingsbehov": {
           "$ref": "#/definitions/valgBeskrivelse"
@@ -570,6 +580,19 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 40
+    },
+    "behovForTolk": {
+      "type": "object",
+      "properties": {
+        "behov": {
+          "type": "boolean"
+        },
+        "spraak": {
+          "$ref": "#/definitions/spraakkodeType"
+        }
+      },
+      "required": ["behov"],
+      "additionalProperties": false
     }
   }
 }
