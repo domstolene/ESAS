@@ -32,13 +32,13 @@
 
       <xs:element name="EndringAarsak" type="fns:EndringGjennomfoeringAarsakType" nillable="false" />
 
-      <xs:element name="GjennomfoeringEndretTid" type="xs:dateTime" nillable="false"/>
+      <xs:element name="GjennomfoeringEndretTid" type="xs:string" nillable="false"/>
 
       <xs:element name="Straffavbrud" nillable="true">
         <xs:complexType>
           <xs:all>
-            <xs:element name="StraffavbrudFra" type="xs:dateTime" nillable="true" />
-            <xs:element name="StraffavbrudTil" type="xs:dateTime" nillable="true" />
+            <xs:element name="StraffavbrudFra" type="xs:string" nillable="true" />
+            <xs:element name="StraffavbrudTil" type="xs:string" nillable="true" />
           </xs:all>
         </xs:complexType>
       </xs:element>
@@ -56,7 +56,7 @@
         <xs:complexType>
           <xs:all>
             <xs:element name="Varighet" type="fns:VarighetType"/> <!-- år, måneder og dager -->
-            <xs:element name="StartDato" type="xs:dateTime"/> <!-- år, måned, dag, time, minutt, sekund -->
+            <xs:element name="StartDato" type="xs:string"/> <!-- år, måned, dag, time, minutt, sekund -->
             <xs:element name="Merknad" type="xs:string" nillable="true"/>  
             <!-- Vilkår -->
             <xs:element name="Meldeplikt" type="fns:MoetepliktType" nillable="true"/>

@@ -13,7 +13,7 @@
   <xs:complexType name="LoeslatelseFraSamfunnType">
 	<xs:all>
 		<xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
-		<xs:element name="DatoFullfoert" type="xs:dateTime" />
+		<xs:element name="DatoFullfoert" type="xs:string" />
 		<xs:element name="LoeslatelseFraSamfunnAarsak" type="fns:LoeslatelseFraSamfunnAarsakType" nillable="false"/>
 
 		<xs:element name="LoeslattTilAdresse" type="fns:AdresseType" nillable="true"/>

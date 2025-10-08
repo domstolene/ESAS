@@ -13,7 +13,7 @@
   <xs:complexType name="LoeslatelseFraFengselType">
     <xs:all>
       <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
-      <xs:element name="Loeslatelsestidspunkt" type="xs:dateTime" nillable="false"/>
+      <xs:element name="Loeslatelsestidspunkt" type="xs:string" nillable="false"/>
       <xs:element name="LoeslatelseFraFengselAarsak" type="fns:LoeslatelseFraFengselAarsakType" nillable="false"/>
       <xs:element name="LokasjonEnhet" type="fns:LokasjonEnhetType" />
 

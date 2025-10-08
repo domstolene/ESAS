@@ -10,8 +10,8 @@
     <xs:all>
       <xs:element name="MeldingsId" type="xs:string" nillable="false" />
       <xs:element name="HendelseId" type="xs:string" nillable="true"/>
-      <xs:element name="HendelseOpprettetTid" type="xs:dateTime" minOccurs="1"/>
-      <xs:element name="HendelseEndretTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="HendelseOpprettetTid" type="xs:string" minOccurs="1"/>
+      <xs:element name="HendelseEndretTid" type="xs:string" nillable="true"/>
       <xs:element name="SSP" type="xs:string" nillable="true" />
       <xs:element name="DUF" type="tns:DUFNummerListe" nillable="true" />
       <xs:element name="StraffesaksNummer" type="xs:string" nillable="true" />
@@ -75,36 +75,36 @@
   <!-- Soningsdatoer -->
   <xs:complexType name="UbetingetDatoerType">
     <xs:all>
-      <xs:element name="StartDato" type="xs:dateTime" nillable="false"/>
-      <xs:element name="EndtTid" type="xs:dateTime" nillable="true"/>
-      <xs:element name="EnTredjedelsTid" type="xs:dateTime" nillable="true"/>
-      <xs:element name="HalvTid" type="xs:dateTime" nillable="true" />
-      <xs:element name="ToTredjedelsTid" type="xs:dateTime" nillable="true" />
-      <xs:element name="PermisjonsDato" type="xs:dateTime" nillable="true" />
-      <xs:element name="EKbakdoerdato" type="xs:dateTime" nillable="true" />
+      <xs:element name="StartDato" type="xs:string" nillable="false"/>
+      <xs:element name="EndtTid" type="xs:string" nillable="true"/>
+      <xs:element name="EnTredjedelsTid" type="xs:string" nillable="true"/>
+      <xs:element name="HalvTid" type="xs:string" nillable="true" />
+      <xs:element name="ToTredjedelsTid" type="xs:string" nillable="true" />
+      <xs:element name="PermisjonsDato" type="xs:string" nillable="true" />
+      <xs:element name="EKbakdoerdato" type="xs:string" nillable="true" />
     </xs:all>
   </xs:complexType>
 
   <xs:complexType name="SamfunnDatoerType">
     <xs:all>
-      <xs:element name="Iverksattdato" type="xs:dateTime" nillable="false"/>
-      <xs:element name="ForventetSluttdato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="Iverksattdato" type="xs:string" nillable="false"/>
+      <xs:element name="ForventetSluttdato" type="xs:string" nillable="true"/>
     </xs:all>
   </xs:complexType>
 
   <xs:complexType name="ForvaringDatoerType">
     <xs:all>
-      <xs:element name="StartDato" type="xs:dateTime" nillable="false"/>
-      <xs:element name="MaksDato" type="xs:dateTime" nillable="true"/>
-      <xs:element name="MinsteDato" type="xs:dateTime" nillable="true"/>
-      <xs:element name="PermisjonsDato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="StartDato" type="xs:string" nillable="false"/>
+      <xs:element name="MaksDato" type="xs:string" nillable="true"/>
+      <xs:element name="MinsteDato" type="xs:string" nillable="true"/>
+      <xs:element name="PermisjonsDato" type="xs:string" nillable="true"/>
     </xs:all>
   </xs:complexType>
 
   <xs:complexType name="VaretektDatoerType">
     <xs:all>
-      <xs:element name="FraDato" type="xs:dateTime" nillable="true"/>
-      <xs:element name="TilDato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="FraDato" type="xs:string" nillable="true"/>
+      <xs:element name="TilDato" type="xs:string" nillable="true"/>
     </xs:all>
   </xs:complexType>
 
@@ -152,14 +152,14 @@
   <!-- Permisjonstype -->
   <xs:complexType name="PermisjonType">
     <xs:all>
-      <xs:element name="FraTid" type="xs:dateTime" nillable="true"/>
-      <xs:element name="TilTid" type="xs:dateTime" nillable="true"/>
+      <xs:element name="FraTid" type="xs:string" nillable="true"/>
+      <xs:element name="TilTid" type="xs:string" nillable="true"/>
       <xs:element name="LokasjonPrivat" type="tns:LokasjonPrivatType" nillable="false"/>
       <xs:element name="Saervilkaar" nillable="true">
         <xs:complexType>
           <xs:all>
             <xs:element name="Varighet" type="tns:VarighetType"/> <!-- år, måneder og dager -->
-            <xs:element name="StartDato" type="xs:dateTime"/>
+            <xs:element name="StartDato" type="xs:string"/>
             <xs:element name="Merknad" type="xs:string" nillable="true"/>
             <!-- Vilkår -->
             <xs:element name="Meldeplikt" type="tns:MeldepliktType" nillable="true"/>
@@ -263,7 +263,7 @@
       <xs:enumeration value="Rømt/unnveket - Sykehus uten vakt"/>
       <xs:enumeration value="Innkomster Straffavbrudd"/>
       <xs:enumeration value="Utganger Straffavbrudd"/>
-      <xs:enumeration value="Uteblivelse - Gjeninnsatt"/>
+      <xs:enumeration value="Uteblivelse - Gjeninnsatt"/>
       <xs:enumeration value="Uteblivelse - Frigang"/>
       <xs:enumeration value="Uteblivelse - Permisjon, ikke kvotebelagt"/>
       <xs:enumeration value="Uteblivelse - Permisjon, kvotebelagt"/>
@@ -372,7 +372,7 @@
   <xs:complexType name="DomsinformasjonType">
     <xs:all>
       <xs:element name="Domstol" type="xs:string"/>
-      <xs:element name="AvsagtDato " type="xs:dateTime" nillable="true"/>
+      <xs:element name="AvsagtDato " type="xs:string" nillable="true"/>
       <xs:element name="LengdeAar" type="xs:int" nillable="true" />
       <xs:element name="LengdeMaaneder" type="xs:int" nillable="true" />
       <xs:element name="LengdeDager" type="xs:int" nillable="true" />
@@ -382,7 +382,7 @@
   <xs:complexType name="MoetepliktType">
     <xs:all>
       <xs:element name="Varighet" type="tns:VarighetType"/> <!-- år, måneder og dager -->
-      <xs:element name="FoersteOppmoete" type="xs:dateTime"/> <!-- år, måned, dag, time, minutt, sekund -->
+      <xs:element name="FoersteOppmoete" type="xs:string"/> <!-- år, måned, dag, time, minutt, sekund -->
       <xs:element name="Merknad" type="xs:string" nillable="true" />
       <xs:element name="KriminalOmsorg" type="tns:LokasjonEnhetType" nillable="true" /> <!-- region, kontor -->
       <xs:element name="EksternKontakt" type="tns:NavnMerknadType" nillable="true" /> <!-- navn, merknad -->
@@ -392,7 +392,7 @@
   <xs:complexType name="MeldepliktType">
     <xs:all>
       <xs:element name="Varighet" type="tns:VarighetType"/> <!-- år, måneder og dager -->
-      <xs:element name="FoersteOppmoete" type="xs:dateTime"/> <!-- år, måned, dag, time, minutt, sekund -->
+      <xs:element name="FoersteOppmoete" type="xs:string"/> <!-- år, måned, dag, time, minutt, sekund -->
       <xs:element name="Merknad" type="xs:string" nillable="true" />
       <xs:element name="Myndighet" type="tns:NavnMerknadType" nillable="true" /> <!-- navn, merknad -->
       <xs:element name="EksternKontakt" type="tns:NavnMerknadType" nillable="true" /> <!-- navn, merknad -->

@@ -14,7 +14,7 @@
     <xs:all>
       <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
 
-      <xs:element name="AnkommetTid" type="xs:dateTime" nillable="false"/>
+      <xs:element name="AnkommetTid" type="xs:string" nillable="false"/>
 
       <xs:element name="FraLokasjon" type="fns:LokasjonEnhetType"  minOccurs="0"/>
 
