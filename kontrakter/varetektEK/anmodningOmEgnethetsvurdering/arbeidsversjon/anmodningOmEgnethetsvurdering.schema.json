@@ -148,8 +148,8 @@
             "$ref": "#/definitions/verge"
           }
         },
-        "erBarn": {
-          "description": "Hvorvidt beboer er barn av, og beskrivelse av forhold som delt omsorg, samvær, mv.",
+        "under18": {
+          "description": "Hvorvidt beboer er mindreårig, og eventuell beskrivelse av forhold til siktet som delt omsorg, samvær, mv.",
           "$ref": "#/definitions/valgBeskrivelse"
         }
       },

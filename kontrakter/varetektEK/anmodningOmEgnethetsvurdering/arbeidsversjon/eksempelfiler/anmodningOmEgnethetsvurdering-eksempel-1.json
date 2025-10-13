@@ -110,9 +110,9 @@
           "etternavn": "BEBOERSEN"
         },
         "relasjon": "Stesønn",
-        "erBarn": {
+        "under18": {
           "valg": true,
-          "beskrivelse": "Siktet kan blir utsatt for vold"
+          "beskrivelse": "Siktet har delt omsorg for barnet hver annen helg"
         },
         "identitetsnummer": {
           "foedselsnummer": "15298533119"
