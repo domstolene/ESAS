@@ -1,14 +1,14 @@
 # Endringslogg begjæring om varetek
-| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
-|---------|---------------------------------------------|----------------|--------------|
-| 1.7     | varetektUtloeperdato                        |                |              |
-| 1.6     | Vilkårbeskrivelse                           |                |              |
-| 1.5     | Arrestordreloven/surrogat/kontakt           |                |              |
+| Versjon | Beskrivelse                                | Aktiv mottaker | Aktiv sender | 
+|---------|--------------------------------------------|----------------|--------------|
+| 1.7     | varetektUtloeperdato + EK                  |                |              |
+| 1.6     | Vilkårbeskrivelse                          |                |              |
+| 1.5     | Arrestordreloven/surrogat/kontakt          |                |              |
 | 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |
-| 1.3     | Håndter vitner uten identifikator           |                | 09.11.2023   |
-| 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     | 21.09.2023   |
-| 1.1     | Tolk og til hovedforhandling                |                | ikke prod    |
-| 1.0     | Brukertest juni 2023, ikke til produksjon   |                | ikke prod    |
+| 1.3     | Håndter vitner uten identifikator          |                | 09.11.2023   |
+| 1.2     | Første versjon til produksjon, pilot       | 09.10.2023     | 21.09.2023   |
+| 1.1     | Tolk og til hovedforhandling               |                | ikke prod    |
+| 1.0     | Brukertest juni 2023, ikke til produksjon  |                | ikke prod    |
 
 ## fengslingUtloeperDato -> varetektUtloeperDato (1.7), venter med versjonering ref Carl Fredrik
 fengslingUtloeperDato" kommer ikke fra påtale ved forlengelser. Og, burde renames til "varetektUtloeperDato"?
