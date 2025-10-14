@@ -124,6 +124,9 @@
         "fengslingssurrogat": {
           "$ref": "#/definitions/fengslingssurrogat"
         },
+        "varetektMedEK": {
+          "$ref": "#/definitions/varetektMedEK"
+        },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
           "description": "Erklæring fra siktede og påtale"
@@ -200,6 +203,32 @@
         }
       },
       "required": ["surrogatId", "fraDato", "tilDato", "surrogatBeskrivelse"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "varetektMedEK": {
+      "properties": {
+        "varetektMedEKId": {
+          "type": "string",
+          "description": "Ids som opprettes i DA (GUID)"
+        },
+        "fraDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "tilDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "varetektMedEKBeskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av varetekten med Elektronisk Kontroll"
+        }
+      },
+      "required": [
+        "varetektMedEKId",
+        "fraDato",
+        "tilDato",
+        "varetektMedEKBeskrivelse"
+      ],
       "type": "object",
       "additionalProperties": false
     },
