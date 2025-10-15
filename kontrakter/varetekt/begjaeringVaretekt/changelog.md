@@ -1,7 +1,7 @@
 # Endringslogg begjæring om varetek
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
-| 1.7     | varetektUtloeperdato                        |                |              |
+| 1.7     | varetektUtloeperdato + EK                   |                |              |
 | 1.6     | Vilkårbeskrivelse                           |                |              |
 | 1.5     | Arrestordreloven/surrogat/kontakt           |                |              |
 | 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |
