@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/trekkAvAnmodningEgnethetsvurderingVaretekt",
+  "description": "Anmodning om egnethetsvurdering ved varetekt med EK. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "forsendelse": {
+      "$ref": "#/definitions/forsendelse"
+    },
+    "hovedStraffesaksnummer": {
+      "$ref": "#/definitions/straffesaksnummer"
+    },
+    "anmodningEgnethetsvurderingVaretektId": {
+      "$ref": "#/definitions/unikId"
+    },
+    "begrunnelse": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "forsendelse",
+    "hovedStraffesaksnummer",
+    "anmodningEgnethetsvurderingVaretektId",
+    "begrunnelse"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "forsendelse": {
+      "type": "object",
+      "properties": {
+        "meldingsId": {
+          "type": "string"
+        },
+        "sendtTid": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "avsender": {
+          "$ref": "#/definitions/avsender"
+        },
+        "mottakerOrganisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        }
+      },
+      "required": [
+        "meldingsId",
+        "sendtTid",
+        "avsender",
+        "mottakerOrganisasjon"
+      ],
+      "additionalProperties": false
+    },
+    "avsender": {
+      "type": "object",
+      "properties": {
+        "organisasjon": {
+          "$ref": "#/definitions/organisasjon"
+        },
+        "person": {
+          "$ref": "#/definitions/ansattPerson"
+        }
+      },
+      "required": ["organisasjon", "person"],
+      "additionalProperties": false
+    },
+    "ansattPerson": {
+      "type": "object",
+      "properties": {
+        "brukeridentifikasjon": {
+          "type": "string"
+        },
+        "tittel": {
+          "type": "string"
+        },
+        "fornavn": {
+          "type": "string"
+        },
+        "mellomnavn": {
+          "type": "string"
+        },
+        "etternavn": {
+          "type": "string"
+        },
+        "kontakt": {
+          "$ref": "#/definitions/kontaktInfo"
+        }
+      },
+      "required": ["etternavn", "kontakt"],
+      "additionalProperties": false
+    },
+    "organisasjon": {
+      "type": "object",
+      "properties": {
+        "navn": {
+          "type": "string"
+        },
+        "organisasjonsnummer": {
+          "$ref": "#/definitions/organisasjonsnummer"
+        }
+      },
+      "required": ["organisasjonsnummer", "navn"],
+      "additionalProperties": false
+    },
+    "kontaktInfo": {
+      "type": "object",
+      "properties": {
+        "epost": {
+          "type": "string"
+        },
+        "telefonnummer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/telefonnummer"
+          }
+        }
+      },
+      "required": ["telefonnummer"],
+      "additionalProperties": false
+    },
+    "organisasjonsnummer": {
+      "type": "string",
+      "pattern": "[0-9]{9}"
+    },
+    "straffesaksnummer": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 30
+    },
+    "telefonnummer": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 1
+    },
+    "unikId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    }
+  }
+}
