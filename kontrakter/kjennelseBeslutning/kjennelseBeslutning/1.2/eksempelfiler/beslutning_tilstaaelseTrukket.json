@@ -1,0 +1,88 @@
+{
+  "pakkeId": "C9E52A62-286F-40CA-BE74-9D0C6690BB9A",
+  "forsendelse": {
+    "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0CC",
+    "sendtTid": "2022-07-06T16:35:00+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "826726342",
+        "navn": "Buskerud tingrett"
+      },
+      "person": {
+        "etternavn": "Saksbehandler",
+        "fornavn": "Litt",
+        "tittel": "Saksbehandler"
+      }
+    },
+    "mottaker": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      }
+    }
+  },
+  "aktoerer": {
+    "dommer": {
+      "etternavn": "Dommersen",
+      "fornavn": "Lars",
+      "tittel": "Dommerfullmeltig"
+    },
+    "saksbehandler": {
+      "etternavn": "Saksbehandler",
+      "fornavn": "Litt",
+      "tittel": "Saksbehandler"
+    }
+  },
+  "dokumenter": [
+    {
+      "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7cc",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7cc",
+        "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7cc"
+      },
+      "overskrift": "Avviser tilstståelsesak",
+      "skrevetDato": "2022-07-06",
+      "kategori": {
+        "kode": "BESLUTNING"
+      }
+    }
+  ],
+  "saksInformasjon": {
+    "saksnummer": "22-025462ENE-TBUS/TDRA",
+    "straffesaksnummer": "15434820",
+    "avgjoerelse": {
+      "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
+      "avsagtDato": "2022-07-05",
+      "kravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
+      "opprinneligKravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1ECC",
+      "avgjoerelsePrPerson": [
+        {
+          "personForetak": {
+            "person": {
+              "internId": "948ca60c-6c7f-437d-a6a3-585cb8534280",
+              "identitetsnummer": {
+                "idType": "FOEDSELSNUMMER",
+                "verdi": "19077046529"
+              },
+              "tilleggsId": [],
+              "fornavn": "Masse",
+              "etternavn": "Kiwi",
+              "kjoenn": "MANN",
+              "foedselsdato": "1970-07-19",
+              "statsborgerskap": [
+                {
+                  "kode": "NOR",
+                  "navn": "Norge"
+                }
+              ]
+            }
+          },
+          "kategori": "SAKEN_AVVIST",
+          "typeAvgjoerelse": "BESLUTNING_INGEN_ANKE",
+          "beskrivelse": "Siktede trakk tilståelsen så denne saken blir ikke kjørt som en tilståelsesak"
+        }
+      ]
+    }
+  }
+}
