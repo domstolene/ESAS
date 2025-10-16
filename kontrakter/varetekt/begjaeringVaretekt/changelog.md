@@ -11,8 +11,8 @@
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                | ikke prod    |
 
 ## Versjon 1.7
-Legger til mulighet for å sende begjæring om varetekt med elektronisk kontroll.
-Omdøper "fengslingUtloeperDato" til "varetektUtloeperDato". 
+* Legger til mulighet for å sende begjæring om varetekt med elektronisk kontroll.
+* Omdøper "fengslingUtloeperDato" til "varetektUtloeperDato". 
 
 ## fengslingUtloeperDato -> varetektUtloeperDato (1.7), venter med versjonering ref Carl Fredrik
 fengslingUtloeperDato" kommer ikke fra påtale ved forlengelser. Og, burde renames til "varetektUtloeperDato"?
