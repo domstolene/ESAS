@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://domstol.no/felles/arbeidsversjon/Status.schema.json",
+  "description": "Schema som beskriver status-oppdateringer på begjæringer",
+  "properties": {
+    "meldingsId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Meldingsid for selve statusoppdatering-meldingen"
+    },
+    "kravId": {
+      "description": "kravId-referanse til begjæring (varetekt, dom, annet) hvor vi oppdaterer status",
+      "$ref": "#/definitions/GUID"
+    },
+    "statusoppdatering": {
+      "$ref": "#/definitions/OppdateringsType",
+      "description": "Type oppdaering for saken vi oppdaterer status på"
+    },
+    "beskrivelse": {
+      "type": "string",
+      "description": "Tekstlig beskrivelse. Kan brukes for å spesifisere type oppdatering ytterligere"
+    }
+  },
+  "required": ["meldingsId", "kravId", "statusoppdatering"],
+  "additionalProperties": false,
+  "type": "object",
+  "definitions": {
+    "OppdateringsType": {
+      "description": "Liste over mulige oppdateringstyper",
+      "enum": ["LUKKET_FOR_KORRIGERING"],
+      "type": "string"
+    },
+    "GUID": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    }
+  }
+}
