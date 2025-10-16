@@ -124,8 +124,8 @@
         "fengslingssurrogat": {
           "$ref": "#/definitions/fengslingssurrogat"
         },
-        "varetektMedEK": {
-          "$ref": "#/definitions/varetektMedEK"
+        "elektroniskKontroll": {
+          "$ref": "#/definitions/elektroniskKontroll"
         },
         "erklaering": {
           "$ref": "#/definitions/erklaering",
@@ -206,11 +206,11 @@
       "type": "object",
       "additionalProperties": false
     },
-    "varetektMedEK": {
+    "elektroniskKontroll": {
       "properties": {
-        "varetektMedEKId": {
+        "elektroniskKontrollId": {
           "type": "string",
-          "description": "Ids som opprettes i DA (GUID)"
+          "description": "Id som opprettes i DA (GUID)"
         },
         "fraDato": {
           "$ref": "#/definitions/dato"
@@ -218,16 +218,16 @@
         "tilDato": {
           "$ref": "#/definitions/dato"
         },
-        "varetektMedEKBeskrivelse": {
+        "elektroniskKontrollBeskrivelse": {
           "type": "string",
           "description": "Beskrivelse av varetekten med Elektronisk Kontroll"
         }
       },
       "required": [
-        "varetektMedEKId",
+        "elektroniskKontrollId",
         "fraDato",
         "tilDato",
-        "varetektMedEKBeskrivelse"
+        "elektroniskKontrollBeskrivelse"
       ],
       "type": "object",
       "additionalProperties": false
@@ -305,6 +305,14 @@
         "meddeltIRettsmoete": {
           "type": "boolean",
           "description": "Settes til true dersom avgjørelsen er meddelt i rettsmøtet"
+        },
+        "meddeltDato": {
+          "$ref": "#/definitions/dato",
+          "description": "Dato for når avgjørelsen ble meddelt"
+        },
+        "kommentar": {
+          "type": "string",
+          "description": "Frivillig kommentar til meddelelsen"
         },
         "erklaert": {
           "$ref": "#/definitions/erklaertType",
