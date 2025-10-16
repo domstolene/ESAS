@@ -149,11 +149,14 @@
       "erklaering": {
         "erklaeringSiktede": {
           "meddeltIRettsmoete": true,
-          "erklaert": "BETENKNINGSTID"
+          "erklaert": "BETENKNINGSTID",
+          "kommentar": "Kiwi må tenke litt på kjennelsen før han eventuelt vedtar eller anker",
+          "meddeltDato": "2022-07-05"
         },
         "erklaeringPaatale": {
           "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT"
+          "erklaert": "VEDTATT",
+          "meddeltDato": "2022-07-05"
         }
       }
     }
