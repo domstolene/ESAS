@@ -105,11 +105,15 @@
           "erklaering": {
             "erklaeringSiktede": {
               "erklaert": "VEDTATT",
-              "meddeltIRettsmoete": true
+              "meddeltIRettsmoete": true,
+              "meddeltDato": "2025-04-08",
+              "kommentar": "Kiwi var tilstede under rettsmøtet og vedtok kjennelsen på stedet."
             },
             "erklaeringPaatale": {
               "erklaert": "VEDTATT",
-              "meddeltIRettsmoete": true
+              "meddeltIRettsmoete": true,
+              "meddeltDato": "2025-04-08",
+              "kommentar": "Påatale var tilstede under rettsmøtet og vedtok kjennelsen på stedet"
             }
           }
         }

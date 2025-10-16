@@ -462,6 +462,10 @@
           "$ref": "#/definitions/dato",
           "description": "Dato for når avgjørelsen ble meddelt"
         },
+        "kommentar": {
+          "type": "string",
+          "description": "Frivillig kommentar til meddelelsen"
+        },
         "erklaert": {
           "$ref": "#/definitions/erklaertType",
           "description": "Settes dersom avgjørelsen er meddelt i retten"
