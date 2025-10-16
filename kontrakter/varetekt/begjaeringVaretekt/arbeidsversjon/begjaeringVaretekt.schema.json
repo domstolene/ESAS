@@ -86,6 +86,9 @@
         "fengslingssurrogat": {
           "$ref": "#/definitions/fengslingssurrogat"
         },
+        "elektroniskKontroll": {
+          "$ref": "#/definitions/elektroniskKontroll"
+        },
         "gyldigFraDato": {
           "$ref": "#/definitions/dato",
           "description": "Settes dersom det begjæres om varetekt frem i tid."
@@ -180,6 +183,18 @@
     "fengslingssurrogat": {
       "type": "object",
       "description": "Surrogat med lengde og beskrivelse",
+      "properties": {
+        "varighet": {
+          "$ref": "#/definitions/varighet"
+        },
+        "beskrivelse": { "type": "string" }
+      },
+      "required": ["varighet", "beskrivelse"],
+      "additionalProperties": false
+    },
+    "elektroniskKontroll": {
+      "type": "object",
+      "description": "Info om elektronisk kontroll, med varighet og beskrivelse",
       "properties": {
         "varighet": {
           "$ref": "#/definitions/varighet"
