@@ -1,0 +1,29 @@
+{
+  "kodeType": "POLITI_DOK",
+  "beskrivelse": "Testliste med rare ting",
+  "koder": [
+    {
+      "kode": "SIKTELSE",
+      "beskrivelse": "Siktelse følger med tvangsmidler og tilståelsessaker",
+      "navn": "Siktelse"
+    },
+    {
+      "kode": "T1ILTALTE_1",
+      "navn": "Tiltale til hovedforhandlinger"
+    },
+    {
+      "kode": "PÅTEGNING_1",
+      "navn": "Følger med en forsendelse, beskrivelse hva som følger med"
+    },
+    {
+      "kode": "1BEGJ_O",
+      "navn": "Begjæering om varetket dokument (skulle hatt noe mer generelt)"
+    },
+    {
+      "kode": "JALLA",
+      "beskrivelse": "Kode gyldig til og med 2023-03-31",
+      "navn": "Bare tull",
+      "gyldigTil": "2023-04-01"
+    }
+  ]
+}
