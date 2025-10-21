@@ -220,6 +220,32 @@
       "type": "object",
       "additionalProperties": false
     },
+    "elektroniskKontroll": {
+      "properties": {
+        "elektroniskKontrollId": {
+          "type": "string",
+          "description": "Id som opprettes i DA (GUID)"
+        },
+        "fraDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "tilDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "elektroniskKontrollBeskrivelse": {
+          "type": "string",
+          "description": "Beskrivelse av varetekten med Elektronisk Kontroll"
+        }
+      },
+      "required": [
+        "elektroniskKontrollId",
+        "fraDato",
+        "tilDato",
+        "elektroniskKontrollBeskrivelse"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
     "foretak": {
       "description": "Foretak/ organisasjon som er med i en straffesak som f.eks. fornærmet",
       "type": "object",
@@ -335,6 +361,9 @@
         },
         "fengslingssurrogat": {
           "$ref": "#/definitions/fengslingssurrogat"
+        },
+        "elektroniskKontroll": {
+          "$ref": "#/definitions/elektroniskKontroll"
         },
         "restriksjoner": {
           "type": "array",
