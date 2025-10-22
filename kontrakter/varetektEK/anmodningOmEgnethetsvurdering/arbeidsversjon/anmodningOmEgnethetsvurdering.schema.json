@@ -89,6 +89,10 @@
         },
         "forsvarer": {
           "$ref": "#/definitions/ansattPerson"
+        },
+        "fritekst": {
+          "description": "Mulighet for å beskrive formålet med anmodningen videre i fritekst.",
+          "type": "string"
         }
       },
       "required": ["personForEgnethetsvurdering", "adresseForGjennomfoering"],
