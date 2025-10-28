@@ -95,25 +95,21 @@
               }
             }
           },
-          "kategori": "REAKSJON",
+          "kategori": "FRIFUNNET",
           "typeAvgjoerelse": "KJENNELSE",
-          "reaksjoner": {
-            "tapAvFoererett": {
-              "dato": "2025-06-08"
-            }
-          },
           "erklaering": {
             "erklaeringSiktede": {
               "erklaert": "VEDTATT",
-              "meddeltIRettsmoete": true,
-              "meddeltDato": "2025-04-08",
-              "kommentar": "Kiwi var tilstede under rettsmøtet og vedtok kjennelsen på stedet."
+              "meddeltIRettsmoete": true
             },
             "erklaeringPaatale": {
-              "erklaert": "VEDTATT",
+              "erklaert": "ANKET",
               "meddeltIRettsmoete": true,
-              "meddeltDato": "2025-04-08",
-              "kommentar": "Påatale var tilstede under rettsmøtet og vedtok kjennelsen på stedet"
+              "ankeDetaljer": {
+                "ankeBeskrivelse": "Vi mener Kiwi bør miste lappen likevel",
+                "anketDato": "2025-06-08",
+                "oppsettendeVirkning": true
+              }
             }
           }
         }

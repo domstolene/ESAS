@@ -1,12 +1,17 @@
 # kjennelseVaretekt endringslogg
-| Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender |
-|---------|---------------------------------------------|----------------|--------------|
-| 1.5     | Lagt til forsvarere for siktet              |                |              |
-| 1.4     | Beskrivelse vilkår                          |                |              |
-| 1.3     | Støtte for surrogat. Strukturerte vilkår    |                |              | 
-| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     | 25.03.2025   | 
-| 1.1     | Kjennelse med minst ett dokument            |                | 26.10.2023   | 
-| 1.0     | Første versjon i produksjon                 |                | 10.10.2023   | 
+| Versjon | Beskrivelse                                | Aktiv mottaker | Aktiv sender |
+|---------|--------------------------------------------|----------------|--------------|
+| 1.6     | Støtte for elektronsik kontroll ++         |                |              |
+| 1.5     | Lagt til forsvarere for siktet             | ~08.06.2025    | ~10.06.2025  |
+| 1.4     | Beskrivelse vilkår                         |                |              |
+| 1.3     | Støtte for surrogat. Strukturerte vilkår   |                |              |
+| 1.2     | Kjennelse varetekt lagmannsrett/Høyesterett | 08.02.2024     | 25.03.2025   |
+| 1.1     | Kjennelse med minst ett dokument           |                | 26.10.2023   |
+| 1.0     | Første versjon i produksjon                |                | 10.10.2023   |
+
+# Versjon 1.6
+1. Lagt til reaksjonen 'varetekt med elektronisk kontroll'
+2. Lagt til 'kommentar' og 'meddeltDato' i erklæringen/meddelelsen
 
 # Versjon 1.5
 1. Lagt til forsvarere til siktet. Kan være tom liste

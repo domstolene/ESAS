@@ -103,6 +103,25 @@
       "postnummer": "0177",
       "poststed": "OSLO"
     },
+    "beboere": [
+      {
+        "navn": {
+          "fornavn": "Bob",
+          "etternavn": "BEBOERSEN"
+        },
+        "relasjon": "Stesønn",
+        "under18": {
+          "valg": true,
+          "beskrivelse": "Siktet har delt omsorg for barnet hver annen helg"
+        },
+        "identitetsnummer": {
+          "foedselsnummer": "15298533119"
+        },
+        "samtykkeInnhentet": {
+          "valg": false
+        }
+      }
+    ],
     "annenSysselsetting": {
       "valg": true,
       "beskrivelse": "Kan gå på jobb"
@@ -123,11 +142,27 @@
       "valg": true,
       "beskrivelse": "Siktet er ofte ruset med risiko for utagering"
     },
+    "infoFraForsvarer": {
+      "valg": true,
+      "beskrivelse": "Forsvarer har gitt informasjon om siktet"
+    },
     "tidligerePersonundersoekelser": [
       {
         "dokumentId": "123234567871"
       }
-    ]
+    ],
+    "forsvarer": {
+      "etternavn": "Eriksen",
+      "kontakt": {
+        "telefonnummer": ["11 99 55 44"]
+      }
+    },
+    "politiadvokat": {
+      "etternavn": "Toresen",
+      "kontakt": {
+        "telefonnummer": ["55 99 88 44"]
+      }
+    }
   },
   "dokumenter": [
     {

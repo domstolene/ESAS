@@ -108,32 +108,25 @@
           "lovbudEnkel": {
             "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
           }
-        },
-        {
-          "type": "ANNEN_SPESIALBESTEMMELSE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Annen spesialbestemmelse"
-          },
-          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
         }
       ],
       "fengsling": {
         "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
         "fraDato": "2022-07-06",
-        "tilDato": "2022-08-06",
-        "fengslingsFristDato": "2022-07-06",
+        "tilDato": "2022-07-20",
+        "fengslingsFristDato": "2022-08-06",
         "restriksjoner": [
           {
             "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
             "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
             "fraDato": "2022-07-06",
-            "tilDato": "2022-07-20"
+            "tilDato": "2022-07-12"
           },
           {
             "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
             "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
-            "fraDato": "2022-07-21",
-            "tilDato": "2022-08-06"
+            "fraDato": "2022-07-13",
+            "tilDato": "2022-07-20"
           }
         ],
         "isolasjonsKrav": [
@@ -141,22 +134,25 @@
             "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
             "isolasjonsType": "FULL",
             "fraDato": "2022-07-06",
-            "tilDato": "2022-08-06"
+            "tilDato": "2022-07-12"
           }
         ],
         "merknad": "Kiwi må i varetekt så fort som fy"
       },
+      "fengslingssurrogat": {
+        "surrogatId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
+        "fraDato": "2022-07-21",
+        "tilDato": "2022-08-06",
+        "surrogatBeskrivelse": "Meldeplikt: Kiwi må melde seg på politistasjonen klokken 09:00 hver dag"
+      },
       "erklaering": {
         "erklaeringSiktede": {
           "meddeltIRettsmoete": true,
-          "erklaert": "BETENKNINGSTID",
-          "kommentar": "Kiwi må tenke litt på kjennelsen før han eventuelt vedtar eller anker",
-          "meddeltDato": "2022-07-05"
+          "erklaert": "BETENKNINGSTID"
         },
         "erklaeringPaatale": {
           "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT",
-          "meddeltDato": "2022-07-05"
+          "erklaert": "VEDTATT"
         }
       }
     }

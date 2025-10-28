@@ -1,6 +1,7 @@
 # kjennelseVaretekt til Kriminalomsrogen
 | Versjon | Beskrivelse                                  | Aktiv fra  | Aktiv til |
 |---------|----------------------------------------------|------------|-----------|
+| 1.6     | Varetekt med EK                              |            |           |
 | 1.5     | Forsvarere fra kjennelsen                    |            |           |
 | 1.4     | La til surrogat                              |            |           |
 | 1.3     | Endret lovbudStreng til liste med vilkår     |            |           |
@@ -8,6 +9,9 @@
 | 1.0     | Første versjon til produksjon, pilot dato ?? | 09.10.2023 |           |
 
 Denne meldingen sammen med [endreRestriksjoner](../endreRestriksjoner/readme.md) erstatter oppdaterVaretekt (slettet)
+
+## Versjon 1.6
+Lag til varetekt med elektronisk kontroll
 
 ## Versjon 1.5
 Forsvarere fra kjennelsen mappes direkte

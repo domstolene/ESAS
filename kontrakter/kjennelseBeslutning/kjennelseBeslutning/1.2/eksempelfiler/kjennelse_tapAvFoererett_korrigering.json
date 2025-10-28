@@ -1,8 +1,8 @@
 {
-  "pakkeId": "734F011E-4758-4145-B299-8B2072AD06A0",
+  "pakkeId": "259A4827-E59C-4829-B5C1-D09CBC8C7989",
   "forsendelse": {
-    "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0CC",
-    "sendtTid": "2025-04-08T15:35:00+02:00",
+    "meldingsId": "5A933AE6-BB8A-401B-A9D8-A50FD21F396B",
+    "sendtTid": "2025-04-09T16:35:00+02:00",
     "avsender": {
       "organisasjon": {
         "organisasjonsnummer": "826726342",
@@ -35,14 +35,14 @@
   },
   "dokumenter": [
     {
-      "internId": "04CB1930-107B-4419-BB28-40038D8847E2",
+      "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7cc",
       "forsendelse": {
         "mimeType": "application/pdf",
         "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7cc",
         "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7cc"
       },
       "overskrift": "Kjennelse - Tap av førerett",
-      "skrevetDato": "2025-04-08",
+      "skrevetDato": "2025-04-09",
       "kategori": {
         "kode": "KJENNELSE"
       }
@@ -53,7 +53,7 @@
     "straffesaksnummer": "16000820",
     "avgjoerelse": {
       "avgjoerelseId": "EB6432F3-F117-45A5-A4E6-F7860FF16A34",
-      "avsagtDato": "2025-04-08",
+      "avsagtDato": "2025-04-09",
       "kravId": "D16AA05B-1530-4B51-A2B7-C86DE623FC9F",
       "opprinneligKravId": "D16AA05B-1530-4B51-A2B7-C86DE623FC9F",
       "avgjoerelsePrPerson": [
@@ -97,23 +97,23 @@
           },
           "kategori": "REAKSJON",
           "typeAvgjoerelse": "KJENNELSE",
+          "beskrivelse": "Korrigert kjennelse - endret fra dato til varighet på tapet",
           "reaksjoner": {
             "tapAvFoererett": {
-              "dato": "2025-06-08"
+              "varighet": {
+                "antallMaaneder": 6
+              }
             }
           },
           "erklaering": {
             "erklaeringSiktede": {
               "erklaert": "VEDTATT",
               "meddeltIRettsmoete": true,
-              "meddeltDato": "2025-04-08",
-              "kommentar": "Kiwi var tilstede under rettsmøtet og vedtok kjennelsen på stedet."
+              "meddeltDato": "2025-04-09"
             },
             "erklaeringPaatale": {
               "erklaert": "VEDTATT",
-              "meddeltIRettsmoete": true,
-              "meddeltDato": "2025-04-08",
-              "kommentar": "Påatale var tilstede under rettsmøtet og vedtok kjennelsen på stedet"
+              "meddeltIRettsmoete": true
             }
           }
         }

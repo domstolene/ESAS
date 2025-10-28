@@ -1,13 +1,13 @@
 {
   "forsendelse": {
-    "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0AA",
+    "meldingsId": "2CB6929E-DE3F-49A4-8AE3-9625640DF0EE",
     "sendtTid": "2022-07-06T16:35:00+02:00",
     "avsender": {
       "organisasjon": {
-        "organisasjonsnummer": "826726342",
-        "navn": "Buskerud tingrett"
+        "organisasjonsnummer": "926720589",
+        "navn": "Frostating lagmannsrett"
       },
-      "rettsInstans": "TINGRETT",
+      "rettsInstans": "LAGMANNSRETT",
       "person": {
         "etternavn": "Saksbehandler",
         "fornavn": "Litt",
@@ -42,39 +42,20 @@
       "tilleggsId": [],
       "fornavn": "Morsom",
       "etternavn": "Kivi",
-      "kjoenn": "MANN",
       "foedselsdato": "1963-04-14",
       "nasjonalitet": {
         "kode": "NOR",
         "navn": "Norge"
       }
     },
-    "forsvarere": [
-      {
-        "fornavn": "Ultrafiolett",
-        "etternavn": "Drage",
-        "identitetsnummer": {
-          "foedselsnummer": "22830699035"
-        },
-        "tittel": "Advokat",
-        "virksomhet": {
-          "organisasjonsnummer": "311032348",
-          "navn": "Akademisk Akademisk Katt Almisse",
-          "postadresse": {
-            "adresselinjer": ["Vestre Røysenleristedet"],
-            "postnummer": "8742",
-            "poststed": "Svolvær"
-          }
-        }
-      }
-    ]
+    "forsvarere": []
   },
   "dokumenter": [
     {
-      "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb",
+      "internId": "9c3eced0-5792-4431-ae5c-ba0942c7e7ee",
       "forsendelse": {
         "mimeType": "application/pdf",
-        "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7ac",
+        "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7ee",
         "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7bb"
       },
       "overskrift": "Rettsbok varetektsfengsling",
@@ -88,12 +69,10 @@
   "saksInformasjon": {
     "saksnummer": "22-025462ENE-TBUS/TDRA",
     "straffesaksnummer": "15434820",
-    "rettsmoeteTidFra": "2022-07-06T10:00:00+02:00",
-    "rettsmoeteTidTil": "2022-07-06T14:00:00+02:00",
     "avgjoerelse": {
-      "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
+      "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1EEE",
+      "avgjoerelseIdForrigeInstans": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
       "avsagtDato": "2022-07-05",
-      "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "avgjoerelseResultat": "VARETEKT",
       "vilkaar": [
@@ -104,29 +83,27 @@
           }
         },
         {
-          "type": "STRPL171_1_UNNDRAGELSESFARE",
+          "type": "STRPL171_2_BEVISFORSPILLELSE",
           "lovbudEnkel": {
-            "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
+            "lovbudStreng": "Strpl §171.2: Bevisforspillelsesfare"
           }
         }
       ],
-      "elektroniskKontroll": {
-        "elektroniskKontrollId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1999",
-        "fraDato": "2022-07-21",
+      "fengsling": {
+        "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1899",
+        "fraDato": "2022-07-06",
         "tilDato": "2022-08-06",
-        "elektroniskKontrollBeskrivelse": "Kiwi skal sone hjemme i hele perioden"
+        "fengslingsFristDato": "2022-07-06",
+        "restriksjoner": [],
+        "isolasjonsKrav": [],
+        "merknad": "Anke tas til følge og Kiwi må i fengsel"
       },
       "erklaering": {
-        "erklaeringSiktede": {
-          "meddeltIRettsmoete": true,
-          "erklaert": "BETENKNINGSTID",
-          "kommentar": "Kiwi må tenke litt på kjennelsen før han eventuelt vedtar eller anker",
-          "meddeltDato": "2022-07-05"
-        },
         "erklaeringPaatale": {
-          "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT",
-          "meddeltDato": "2022-07-05"
+          "meddeltIRettsmoete": false
+        },
+        "erklaeringSiktede": {
+          "meddeltIRettsmoete": false
         }
       }
     }

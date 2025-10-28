@@ -42,7 +42,6 @@
       "tilleggsId": [],
       "fornavn": "Morsom",
       "etternavn": "Kivi",
-      "kjoenn": "MANN",
       "foedselsdato": "1963-04-14",
       "nasjonalitet": {
         "kode": "NOR",
@@ -56,16 +55,7 @@
         "identitetsnummer": {
           "foedselsnummer": "22830699035"
         },
-        "tittel": "Advokat",
-        "virksomhet": {
-          "organisasjonsnummer": "311032348",
-          "navn": "Akademisk Akademisk Katt Almisse",
-          "postadresse": {
-            "adresselinjer": ["Vestre Røysenleristedet"],
-            "postnummer": "8742",
-            "poststed": "Svolvær"
-          }
-        }
+        "tittel": "Advokat"
       }
     ]
   },
@@ -95,68 +85,22 @@
       "avsagtDato": "2022-07-05",
       "kravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
       "opprinneligKravid": "16972F79-0A35-4EC7-90A1-81E4EFAE1E7E",
-      "avgjoerelseResultat": "VARETEKT",
-      "vilkaar": [
-        {
-          "type": "STRPL170A_FORHOLDSMESSIGHET",
-          "lovbudEnkel": {
-            "lovbudStreng": "Strpl §170 a.: Forholdsmessighet"
-          }
-        },
-        {
-          "type": "STRPL171_1_UNNDRAGELSESFARE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
-          }
-        },
-        {
-          "type": "ANNEN_SPESIALBESTEMMELSE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Annen spesialbestemmelse"
-          },
-          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
-        }
-      ],
-      "fengsling": {
-        "fengslingsId": "FFF72F79-0A35-4EC7-90A1-81E4EFAE1888",
-        "fraDato": "2022-07-06",
-        "tilDato": "2022-08-06",
-        "fengslingsFristDato": "2022-07-06",
-        "restriksjoner": [
-          {
-            "restriksjonsId": "CCC72F79-0A35-4EC7-90A1-81E4EFAE1EEE",
-            "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-            "fraDato": "2022-07-06",
-            "tilDato": "2022-07-20"
-          },
-          {
-            "restriksjonsId": "DDD72F79-0A35-4EC7-90A1-81E4EFAE1FFF",
-            "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
-            "fraDato": "2022-07-21",
-            "tilDato": "2022-08-06"
-          }
-        ],
-        "isolasjonsKrav": [
-          {
-            "isolasjonsId": "EEE72F79-0A35-4EC7-90A1-81E4EFAE1777",
-            "isolasjonsType": "FULL",
-            "fraDato": "2022-07-06",
-            "tilDato": "2022-08-06"
-          }
-        ],
-        "merknad": "Kiwi må i varetekt så fort som fy"
-      },
+      "avgjoerelseResultat": "LOESLATELSE",
+      "vilkaar": [],
       "erklaering": {
         "erklaeringSiktede": {
           "meddeltIRettsmoete": true,
-          "erklaert": "BETENKNINGSTID",
-          "kommentar": "Kiwi må tenke litt på kjennelsen før han eventuelt vedtar eller anker",
-          "meddeltDato": "2022-07-05"
+          "erklaert": "VEDTATT"
         },
         "erklaeringPaatale": {
+          "erklaert": "ANKET",
           "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT",
-          "meddeltDato": "2022-07-05"
+          "ankeDetaljer": {
+            "anketDato": "2022-07-06",
+            "oppsettendeVirkning": true,
+            "ankedeForhold": ["LOESLATELSE", "ANNET"],
+            "ankeBeskrivelse": "Påtale stiller spørsmål ved bruk av paragraf x under vurderingen av... fordi..."
+          }
         }
       }
     }

@@ -88,8 +88,6 @@
   "saksInformasjon": {
     "saksnummer": "22-025462ENE-TBUS/TDRA",
     "straffesaksnummer": "15434820",
-    "rettsmoeteTidFra": "2022-07-06T10:00:00+02:00",
-    "rettsmoeteTidTil": "2022-07-06T14:00:00+02:00",
     "avgjoerelse": {
       "avgjoerelseId": "A7972F79-0A35-4EC7-90A1-81E4EFAE1E31",
       "avsagtDato": "2022-07-05",
@@ -108,13 +106,6 @@
           "lovbudEnkel": {
             "lovbudStreng": "Strpl §171.1: Unndragelsesfare"
           }
-        },
-        {
-          "type": "ANNEN_SPESIALBESTEMMELSE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Annen spesialbestemmelse"
-          },
-          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
         }
       ],
       "fengsling": {
@@ -148,15 +139,10 @@
       },
       "erklaering": {
         "erklaeringSiktede": {
-          "meddeltIRettsmoete": true,
-          "erklaert": "BETENKNINGSTID",
-          "kommentar": "Kiwi må tenke litt på kjennelsen før han eventuelt vedtar eller anker",
-          "meddeltDato": "2022-07-05"
+          "meddeltIRettsmoete": false
         },
         "erklaeringPaatale": {
-          "meddeltIRettsmoete": true,
-          "erklaert": "VEDTATT",
-          "meddeltDato": "2022-07-05"
+          "meddeltIRettsmoete": false
         }
       }
     }

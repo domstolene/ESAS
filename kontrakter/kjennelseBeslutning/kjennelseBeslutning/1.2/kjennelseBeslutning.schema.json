@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://domstol.no/kjennelseBeslutning/arbeidsversjon/kjennelseBeslutning",
+  "$id": "https://domstol.no/kjennelseBeslutning/1.2/kjennelseBeslutning",
   "description": "Skjema som definerer en generell kjennelse eller beslutning",
   "properties": {
     "pakkeId": {
