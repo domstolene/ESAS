@@ -94,7 +94,7 @@
           "$ref": "#/definitions/ansattPerson"
         }
       },
-      "required": ["personForEgnethetsvurdering", "adresseForGjennomfoering"],
+      "required": ["personForEgnethetsvurdering", "adresseForGjennomfoering", "oppholdssted"],
       "additionalProperties": false
     },
     "personForEgnethetsvurdering": {
