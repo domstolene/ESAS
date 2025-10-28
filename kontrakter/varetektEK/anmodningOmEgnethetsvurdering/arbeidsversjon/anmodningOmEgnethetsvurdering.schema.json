@@ -40,6 +40,9 @@
         "personForEgnethetsvurdering": {
           "$ref": "#/definitions/personForEgnethetsvurdering"
         },
+        "oppholdssted": {
+          "type": "string"
+        },
         "adresseForGjennomfoering": {
           "$ref": "#/definitions/adresse"
         },
