@@ -14,10 +14,10 @@
     <xs:all>
       <xs:element name="Metadata" type="fns:MetadataType" nillable="false"/>
 
-      <xs:element name="Beslutningsdato" type="xs:dateTime" nillable="false"/>
+      <xs:element name="Beslutningsdato" type="xs:string" nillable="false"/>
       <xs:element name="BesluttetAv" type="xs:string" nillable="false"/>
       <xs:element name="Beslutning" type="xs:string"/>
-      <xs:element name="Effektueringsdato" type="xs:dateTime" nillable="false"/>
+      <xs:element name="Effektueringsdato" type="xs:string" nillable="false"/>
 
       <!-- Når det dreier seg om permisjon, blir denne satt-->
       <xs:element name="Permisjon" type="fns:PermisjonType" />
