@@ -98,6 +98,7 @@
         "beskrivelse": "Vil at KDI innhenter samtykke"
       }
     },
+    "oppholdssted": "Er boende på institusjon",
     "adresseForGjennomfoering": {
       "adresselinjer": ["Institusjonsveien 1"],
       "postnummer": "0177",

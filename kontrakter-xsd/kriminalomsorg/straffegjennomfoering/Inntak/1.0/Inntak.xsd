@@ -21,7 +21,7 @@
       <xs:element name="InnsettelsesData" nillable="true">
         <xs:complexType>
           <xs:all>
-            <xs:element name="InnsettelsesDato" type="xs:dateTime" nillable="false"/>
+            <xs:element name="InnsettelsesDato" type="xs:string" nillable="false"/>
             <xs:element name="Politidistrikt" type="xs:string" nillable="false" />
           </xs:all>
         </xs:complexType>
