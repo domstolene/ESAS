@@ -96,6 +96,11 @@
         "fritekst": {
           "description": "Mulighet for å beskrive formålet med anmodningen videre i fritekst.",
           "type": "string"
+        },
+        "initiativtakerTilAnmodning": {
+          "description": "Frivilling: Indikerer hvem som har tatt initiativ til anmodningen.  Forsvarer, Domstol eller  Påtale etc. ... ",
+          "type": "string",
+          "enum": ["FORSVARER", "PAATALE", "DOMSTOL"]
         }
       },
       "required": [

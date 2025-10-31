@@ -164,7 +164,8 @@
         "telefonnummer": ["55 99 88 44"]
       }
     },
-    "fritekst": "Denne anmodningen haster"
+    "fritekst": "Denne anmodningen haster",
+    "initiativtakerTilAnmodning": "PAATALE"
   },
   "dokumenter": [
     {
