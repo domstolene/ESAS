@@ -28,11 +28,6 @@
   "begjaeringstype": "MIDL_TAP_FOERERETT",
   "begjaering": {
     "kravId": "123E0F52-9DDB-40E7-BDF3-663B8AC93CE2",
-    "forlengelse": {
-      "avgjoerelseId": "5F5B3C38-8F94-499D-A990-854F47AB8983",
-      "beskrivelse": "Forlengelse",
-      "reaksjonUtloeperDato": "2025-01-22"
-    },
     "paataleansvarlig": {
       "brukeridentifikasjon": "BLC210",
       "ansatt": {
@@ -41,6 +36,11 @@
           "etternavn": "Eriksen"
         }
       }
+    },
+    "forlengelse": {
+      "avgjoerelseId": "5F5B3C38-8F94-499D-A990-854F47AB8983",
+      "beskrivelse": "Forlengelse",
+      "reaksjonUtloeperDato": "2025-01-22"
     },
     "paastand": {
       "paastandFoererett": {
