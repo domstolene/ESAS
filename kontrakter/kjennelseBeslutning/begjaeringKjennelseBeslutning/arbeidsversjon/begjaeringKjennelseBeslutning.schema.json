@@ -318,7 +318,7 @@
       "description": "Dette objektet er kun med om det er forlengelse. Da sendes det med en referanse til forrige kjennelsen om dette er tilgjengelig",
       "properties": {
         "avgjoerelseId": {
-          "type": "string",
+          "$ref": "#/definitions/GUID",
           "description": "Domstolene sin nøkkel til den forrige kjennelsen"
         },
         "beskrivelse": {
