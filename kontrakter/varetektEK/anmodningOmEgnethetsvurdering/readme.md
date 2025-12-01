@@ -7,14 +7,5 @@
 
 ## Headere forsendelse justisHub
 SchmaName=ANMODNING_EGNETHETSVURDERING  
-SchemaVersion=1.0
+SchemaVersion=1.1
 [RFC message name header](../../../rfc/MessageName-header.md)
-
-## Avklaringer
-### Utestående avklaringer
-
-Er det nødvendig med informasjon om hvorvidt gjennomføringsadresse for varetekt er en institusjon?
-
-Er det behov for ytterligere kontaktinformasjon til forsvarer, politiadvokat og etterforsker?
-
-Vil et skriftlig samtykke alltid være representert med et vedlagt dokument?
