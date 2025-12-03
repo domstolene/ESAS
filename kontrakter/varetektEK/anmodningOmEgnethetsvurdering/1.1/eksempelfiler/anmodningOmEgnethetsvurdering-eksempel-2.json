@@ -1,0 +1,199 @@
+{
+  "forsendelse": {
+    "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE2",
+    "sendtTid": "2022-11-03T10:19:55+02:00",
+    "avsender": {
+      "organisasjon": {
+        "organisasjonsnummer": "983997953",
+        "navn": "Innlandet politidistrikt"
+      },
+      "person": {
+        "brukeridentifikasjon": "XYZ233",
+        "etternavn": "Årdal",
+        "kontakt": {
+          "telefonnummer": ["22 99 33 44"]
+        }
+      }
+    },
+    "mottakerOrganisasjon": {
+      "organisasjonsnummer": "911830868",
+      "navn": "Kriminalomsorgsdirektoratet"
+    }
+  },
+  "hovedStraffesaksnummer": "15434811",
+  "anmodningEgnethetsvurderingVaretektId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "bestillingVaretektsplassId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "egnethetsvurderingVaretektInfo": {
+    "personForEgnethetsvurdering": {
+      "person": {
+        "internId": "700892414",
+        "identitetsnummer": {
+          "foedselsnummer": "14846399381"
+        },
+        "tilleggsId": [],
+        "navn": {
+          "fornavn": "Ung",
+          "etternavn": "KIWI"
+        },
+        "kjoenn": "MANN",
+        "foedselsdato": "2008-01-01",
+        "statsborgerskap": [
+          {
+            "kode": "NOR",
+            "navn": "Norge"
+          }
+        ],
+        "adresseGradering": "KLIENT_ADRESSE",
+        "personAdresse": {
+          "gradering": "KLIENT_ADRESSE",
+          "adresse": {
+            "adresselinjer": ["Institusjonsveien 1"],
+            "postnummer": "0177",
+            "poststed": "OSLO"
+          }
+        },
+        "kontaktInfo": {
+          "telefonnummer": ["11 22 33 40", "11 22 33 41"]
+        },
+        "verger": [
+          {
+            "person": {
+              "navn": {
+                "fornavn": "Varg",
+                "etternavn": "VERGERNES"
+              },
+              "kjoenn": "KVINNE",
+              "foedselsdato": "1970-01-01",
+              "statsborgerskap": [
+                {
+                  "kode": "NOR",
+                  "navn": "Norge"
+                }
+              ],
+              "identitetsnummer": {
+                "foedselsnummer": "01018012345"
+              }
+            },
+            "samtykketTilEgnethetsvurdering": {
+              "valg": true,
+              "skriftlig": true,
+              "dokumentId": "123456",
+              "beskrivelse": "Vil at KDI innhenter samtykke"
+            }
+          }
+        ],
+        "tolk": {
+          "behov": true,
+          "spraak": "DEU"
+        },
+        "behandlingsbehov": {
+          "valg": true,
+          "beskrivelse": "Siktet trenger medisinering daglig"
+        }
+      },
+      "samtykketTilEgnethetsvurdering": {
+        "valg": true,
+        "skriftlig": true,
+        "dokumentId": "123456",
+        "beskrivelse": "Vil at KDI innhenter samtykke"
+      }
+    },
+    "oppholdssted": "Er boende på institusjon",
+    "adresseForGjennomfoering": {
+      "adresselinjer": ["Institusjonsveien 1"],
+      "postnummer": "0177",
+      "poststed": "OSLO"
+    },
+    "beboere": [
+      {
+        "navn": {
+          "fornavn": "Bob",
+          "etternavn": "BEBOERSEN"
+        },
+        "relasjon": "Stesønn",
+        "under18": {
+          "valg": true,
+          "beskrivelse": "Siktet har delt omsorg for barnet hver annen helg"
+        },
+        "identitetsnummer": {
+          "foedselsnummer": "15298533119"
+        },
+        "samtykkeInnhentet": {
+          "valg": false
+        }
+      }
+    ],
+    "annenSysselsetting": {
+      "valg": true,
+      "beskrivelse": "Kan gå på jobb"
+    },
+    "risikoSiktet": {
+      "valg": true,
+      "beskrivelse": "Siktet kan blir utsatt for vold"
+    },
+    "risikoHusstand": {
+      "valg": true,
+      "beskrivelse": "Siktet kan utøve vold mot husstandsmedlemmer"
+    },
+    "risikoAndreSteder": {
+      "valg": true,
+      "beskrivelse": "Siktet kan utøve vold mot personer på arbeidsplassen"
+    },
+    "risikoForholdSiktet": {
+      "valg": true,
+      "beskrivelse": "Siktet er ofte ruset med risiko for utagering"
+    },
+    "infoFraForsvarer": {
+      "valg": true,
+      "beskrivelse": "Forsvarer har gitt informasjon om siktet"
+    },
+    "tidligerePersonundersoekelser": [
+      {
+        "dokumentId": "123234567871"
+      }
+    ],
+    "forsvarer": {
+      "etternavn": "Eriksen",
+      "kontakt": {
+        "telefonnummer": ["11 99 55 44"]
+      }
+    },
+    "politiadvokat": {
+      "etternavn": "Toresen",
+      "kontakt": {
+        "telefonnummer": ["55 99 88 44"]
+      }
+    },
+    "fritekst": "Denne anmodningen haster",
+    "initiativtakerTilAnmodning": "PAATALE",
+    "beskrivelseAvKorrigering": "Siktede har byttet forsvarer"
+  },
+  "dokumenter": [
+    {
+      "internId": "123234567871",
+      "overskrift": "Siktelse",
+      "kategori": {
+        "kode": "Siktelse"
+      },
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdfu",
+        "sjekksum": "234asass"
+      }
+    },
+    {
+      "internId": "123234567871",
+      "overskrift": "Straffeattest",
+      "kategori": {
+        "kode": "Straffeattest"
+      },
+      "skrevetDato": "2022-10-14T00:00:00+02:00",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "uri": "file:///asdfaasdfsdfx",
+        "sjekksum": "234asass"
+      }
+    }
+  ]
+}
