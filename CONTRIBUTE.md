@@ -19,6 +19,7 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Reidar Skibrek Håbrekke       | Politi        | Write | @reidosaurus          |
 | Daniel Branil Stoa            | Politi        | Write | @raikoss              |
 | Joakim Johanson Lindquister   | Politi        | Write | @JoakimLindquisterPIT |
+| Michael Johansen              | Politi        | Write | @michael-johansen     |
 |                               |               |       |                       |
 | Jostein Klakegg               | KDI           | Admin | @JosteinKlakegg       |
 | Nikolay Pukhovskiy            | KDI           | Write | @pukhovskiy-bspoke    |
