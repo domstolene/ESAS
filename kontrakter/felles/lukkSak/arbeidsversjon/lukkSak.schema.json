@@ -200,6 +200,23 @@
       "minLength": 3,
       "maxLength": 30
     },
+    "kodeverk": {
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
+    },
     "GUID": {
       "type": "string",
       "format": "uuid"
