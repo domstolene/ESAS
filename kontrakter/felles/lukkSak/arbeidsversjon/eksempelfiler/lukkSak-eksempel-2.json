@@ -22,12 +22,26 @@
       }
     }
   },
-  "lukkeKategori": "DUPLIKAT",
-  "beskrivelse": "Lukker denne saken da vi mottok to begjæringer på samme sak fra politiet",
+  "lukkeKategori": "TRUKKET",
+  "beskrivelse": "Lukker denne saken da vi har motatt samtykke til at beslag gjennomføres uten sak",
   "saksInformasjon": {
     "saksnummer": "22-025462ENE-TBUS/TDRA",
     "straffesaksnummer": "15434820",
     "kravId": "16972F79-0A35-4EC7-90A1-81E4EFAE1EAA"
   },
-  "dokumenter": []
+  "dokumenter": [
+    {
+      "internId": "16972F79-0A35-4EC7-90A1-81E4EFAE1EBB",
+      "forsendelse": {
+        "mimeType": "application/pdf",
+        "sjekksum": "1a2eced0-5792-4431-ae5c-ba0942c7e7cc",
+        "uri": "9c3eced0-5792-4431-ae5c-ba0942c7e7cc"
+      },
+      "overskrift": "Samtykke til beslag",
+      "skrevetDato": "2025-12-10",
+      "kategori": {
+        "kode": "ANNET"
+      }
+    }
+  ]
 }

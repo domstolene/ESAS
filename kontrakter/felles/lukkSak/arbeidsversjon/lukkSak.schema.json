@@ -3,6 +3,14 @@
   "$id": "https://domstol.no/felles/arbeidsversjon/lukkSak",
   "description": "Skjema som definerer en lukking av sak uten avgjørelse",
   "properties": {
+    "pakkeId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Hvis meldingen sendes sammen med flere meldinger så vil alle meldingene ha samme pakke-id."
+    },
+    "lukkSakId": {
+      "$ref": "#/definitions/GUID",
+      "description": "Domstolen sin id for lukkSak meldingen. Ved korrigering beholdes id'en uendret"
+    },
     "forsendelse": {
       "$ref": "#/definitions/forsendelse",
       "description": "Avsender og mottaker"
@@ -17,9 +25,23 @@
     "beskrivelse": {
       "type": "string",
       "description": "Fritekst som beskriver hvorfor saken lukkes"
+    },
+    "dokumenter": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/dokument"
+      },
+      "minItems": 0
     }
   },
-  "required": ["forsendelse", "saksInformasjon", "lukkeKategori"],
+  "required": [
+    "lukkSakId",
+    "pakkeId",
+    "forsendelse",
+    "saksInformasjon",
+    "lukkeKategori",
+    "dokumenter"
+  ],
   "type": "object",
   "additionalProperties": false,
   "definitions": {
@@ -118,9 +140,56 @@
       "type": "object",
       "additionalProperties": false
     },
+    "dokument": {
+      "description": "Et dokument har en ID for at det skal kunne refereres til fra andre steder.",
+      "properties": {
+        "internId": {
+          "description": "Referanse/journal nummer fra BL, Lovisa eller KODA/Kompis",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 50
+        },
+        "forsendelse": {
+          "$ref": "#/definitions/dokumentforsendelse"
+        },
+        "overskrift": {
+          "description": "Klippe på slutten hvis det er for langt",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 260
+        },
+        "skrevetDato": {
+          "$ref": "#/definitions/dato"
+        },
+        "kategori": {
+          "$ref": "#/definitions/kodeverk"
+        }
+      },
+      "required": ["internId", "forsendelse", "overskrift", "kategori"],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "dokumentforsendelse": {
+      "description": "Detaljer om lokasjon og type",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        },
+        "sjekksum": {
+          "type": "string",
+          "description": "Sjekksum av dokumentet basert på md5sum algoritmen."
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "required": ["mimeType", "sjekksum", "uri"],
+      "type": "object",
+      "additionalProperties": false
+    },
     "lukkeKategori": {
       "description": "Kategori for hvorfor saken lukkes",
-      "enum": ["DUPLIKAT", "FEIL", "ANNET"],
+      "enum": ["DUPLIKAT", "FEIL", "AVVIST", "TRUKKET", "ANNET"],
       "type": "string"
     },
     "organisasjonsnummer": {
@@ -135,6 +204,23 @@
       "description": "Som regel et løpenummer, men kan i fremtiden også inneholde bokstaver",
       "minLength": 3,
       "maxLength": 30
+    },
+    "kodeverk": {
+      "properties": {
+        "kode": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": ["kode"],
+      "additionalProperties": false
+    },
+    "dato": {
+      "type": "string",
+      "format": "date"
     },
     "GUID": {
       "type": "string",
