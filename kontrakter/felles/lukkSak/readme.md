@@ -1,9 +1,9 @@
-# Lukk sak uten avgjørelse - ikke i produksjon
-Versjon 1.0 er første versjon som vi skal i produksjon med som en del av tilståelsessaker.
+# Lukk sak uten avgjørelse
+Brukes for å lukke en sak uten at det er noen avgjørelse knyttet til saken.
 
 ## Headere forsendelse justisHub
 SchemaName=LUKK_SAK \
-SchemaVersion=arbeidsversjon \
+SchemaVersion=1.1 \
 [RFC](../../../rfc/MessageName-header.md)  
 
 senderOrganization=KRIMINALOMSORGEN | POLITIET | DOMSTOLEN \
@@ -14,4 +14,5 @@ Denne meldingen skal brukes i forbindelse med lukking av saker der det ikke er n
 
 For eksempel i tilfeller der man ser at det har blitt 'noe krøll' med saken og at man i stedet bare kjører hele saken på nytt med ny begjæring. 
 Et annet eksempel kan være at at begjæringen har kommet som duplikat og man ønsker å bare lage avgjørelse kun på den ene.
+Et tredje eksempel kan være at saken trekkes tilbake av påtalemyndigheten/siktet før avgjørelse er fattet.
 
