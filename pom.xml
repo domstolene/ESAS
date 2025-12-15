@@ -54,6 +54,7 @@
         <module>kontrakter/kjennelseBeslutning/begjaeringKjennelseBeslutning</module>
         <module>kontrakter/vegtrafikkulykke/trafikkulykke</module>
         <module>kontrakter/felles/kvittering</module>
+        <module>kontrakter/felles/lukkSak</module>
         <module>kontrakter/dom/begjaeringDom</module>
         <module>kontrakter/dom/paastandStraff</module>
         <module>kontrakter/dom/domsavgjoerelse</module>
