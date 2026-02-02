@@ -1163,14 +1163,14 @@
         },
         "kontakt": {
           "$ref": "#/definitions/kontaktInfoPerson"
-        }
-      },
-      "virksomheter": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/organisasjon"
         },
-        "description": "Virksomhetene personen tilhører (tiltenkt entydig identifisering av advokater)"
+        "virksomheter": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/organisasjon"
+          },
+          "description": "Virksomhetene personen tilhører (tiltenkt entydig identifisering av advokater)"
+        }
       },
       "required": ["navn"],
       "additionalProperties": false
