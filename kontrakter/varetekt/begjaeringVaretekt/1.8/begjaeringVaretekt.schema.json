@@ -1157,7 +1157,7 @@
             "etternavn": {
               "type": "string"
             }
-          }
+          },
           "required": ["etternavn"],
           "additionalProperties": false
         },
