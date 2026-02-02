@@ -1,0 +1,14 @@
+{
+  "sendtTid": "2022-11-03T10:19:55+02:00",
+  "meldingsId": "C5E8E429-2B8E-48A9-A9D3-FDAA5F9BE2",
+  "rekvisisjonsId": "0322B3E2-B12B-40B6-8940-799C48706123",
+  "saksId": "...",
+  "analyseUtfoert": "2022-11-03T10:19:55+02:00",
+  "fortolkningstekst": "...",
+  "analyseresultater": [
+    {
+      "typeAnalyse": "...",
+      "erPaavist": false
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/rekvisisjonRusproeve",
+  "description": "Rekvisisjon av rusprøve for analyse hos OUS. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "sendtTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "meldingsId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Unik ID for denne meldingen, hvis rekvisisjonen blir sendt på nytt vil det være ny meldingsId."
+    },
+    "rekvisisjonsId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Unik ID for denne meldingen, hvis rekvisisjonen blir sendt på nytt vil det være ny meldingsId."
+    },
+    "personIdentitet": {
+      "$ref": "#/definitions/personIdentifikator",
+      "description": "Fødselsnummer, D-nummer eller SSP nummer for avgiver av prøvemateriale."
+    },
+    "enhet": {
+      "type": "string",
+      "description": "Firesiffret enhetsnummer for enheten som rekvirerer prøven."
+    },
+    "saksId": {
+      "type": "string",
+      "description": "OUS sin id på rekvirert prøvesett."
+    },
+    "fengsletSiden": {
+      "type": "string",
+      "format": "date",
+      "description": "Startdato for inneværende fengselsopphold."
+    },
+    "proeveTatt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Tidspunkt for når prøvematerialet ble avgitt."
+    },
+    "medikamenterErKjent": {
+      "type": "boolean",
+      "description": "Hvorvidt det anses kjent hvilke medikamenter som er tatt de siste 30 dagene."
+    },
+    "medikamenter": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/medikament"
+      },
+      "description": "Liste over medikamenter som er tatt de siste 30 dagene."
+    },
+    "proeveType": {
+      "type": "string",
+      "enum": ["URIN", "SPYTT"],
+      "description": "Beskriver hvilket prøvemateriale som er innhentet."
+    },
+    "andreStofferForAnalyse": {
+      "type": "string",
+      "description": "Andre stoffer som ønskes analysert utenom standardprogram."
+    },
+    "andreSaksIderSomKanFortolkes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Liste over ider på tidligere rekviverte prøvesett i nåværende fenglingsopphold."
+    }
+  },
+  "required": [
+    "sendtTid",
+    "meldingsId",
+    "rekvisisjonsId",
+    "personIdentitet",
+    "enhet",
+    "saksId",
+    "fengsletSiden",
+    "proeveTatt",
+    "medikamenterErKjent",
+    "medikamenter",
+    "andreSaksIderSomKanFortolkes",
+    "proeveType"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "medikament": {
+      "type": "object",
+      "properties": {
+        "preparat": { "type": "string" },
+        "dose": { "type": "string" },
+        "sistTatt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["preparat", "dose", "sistTatt"]
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se Skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"],
+      "description": "Person ID typer, alle valideres med Modulus 11"
+    },
+    "unikId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "Representerer en unik identifikator (GUID)."
+    }
+  }
+}
