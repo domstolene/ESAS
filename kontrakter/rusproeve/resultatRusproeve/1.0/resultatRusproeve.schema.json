@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/rekvisisjonRusproeve",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/resultatRusproeve",
   "description": "Analyse av rusprøve for oversendelse Kriminalomsorgen. Schema versjon 2020-12",
   "type": "object",
   "properties": {
