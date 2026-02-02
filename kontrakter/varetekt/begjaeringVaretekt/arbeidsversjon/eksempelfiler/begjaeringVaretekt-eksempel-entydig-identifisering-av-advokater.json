@@ -68,7 +68,8 @@
             },
             "virksomheter": [
               {
-                "navn": "Elden advokatfirma"
+                "navn": "Elden advokatfirma",
+                "organisasjonsnummer": "984954809"
               }
             ]
           },
@@ -86,7 +87,8 @@
             },
             "virksomheter": [
               {
-                "navn": "Elden advokatfirma"
+                "navn": "Elden advokatfirma",
+                "organisasjonsnummer": "984954807"
               }
             ]
           }
