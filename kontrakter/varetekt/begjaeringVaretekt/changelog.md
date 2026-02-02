@@ -1,6 +1,7 @@
 # Endringslogg begjæring om varetek
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
+| 1.8     | Entydig identifisering av advokater         |                |              |
 | 1.7     | varetektUtloeperdato + EK                   |                |              |
 | 1.6     | Vilkårbeskrivelse                           |                |              |
 | 1.5     | Arrestordreloven/surrogat/kontakt           |                |              |
@@ -9,6 +10,9 @@
 | 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     | 21.09.2023   |
 | 1.1     | Tolk og til hovedforhandling                |                | ikke prod    |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                | ikke prod    |
+
+## Versjon 1.8
+* Legger til entydig identifisering av advokater   
 
 ## Versjon 1.7
 * Legger til mulighet for å sende begjæring om varetekt med elektronisk kontroll.
