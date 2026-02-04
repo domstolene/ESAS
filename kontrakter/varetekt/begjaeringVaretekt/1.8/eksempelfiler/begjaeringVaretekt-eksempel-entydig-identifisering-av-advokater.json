@@ -65,13 +65,7 @@
             },
             "identitetsnummer": {
               "foedselsnummer": "14846399383"
-            },
-            "virksomheter": [
-              {
-                "navn": "Elden advokatfirma",
-                "organisasjonsnummer": "984954809"
-              }
-            ]
+            }
           },
           "erVarsletOmFenglingsmoete": true
         },
