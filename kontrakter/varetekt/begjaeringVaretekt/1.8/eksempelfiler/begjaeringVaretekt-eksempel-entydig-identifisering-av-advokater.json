@@ -77,7 +77,7 @@
               "etternavn": "Olsen"
             },
             "identitetsnummer": {
-              "foedselsnummer": "14846399384"
+              "foedselsnummer": "14846399385"
             }
           }
         }
@@ -90,51 +90,13 @@
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
       },
       "paastandVaretekt": {
-        "fengsling": {
+        "elektroniskKontroll": {
           "varighet": {
-            "tilHovedforhandling": true
+            "antallDager": 14
           },
-          "restriksjoner": [
-            {
-              "restriksjonsType": "BREV_OG_BESOEKSFORBUD",
-              "lovbudEnkel": {
-                "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-              },
-              "periode": {
-                "startDag": 1,
-                "varighet": {
-                  "antallDager": 14
-                }
-              }
-            },
-            {
-              "restriksjonsType": "BREV_OG_BESOEKSKONTROLL",
-              "lovbudEnkel": {
-                "lovbudStreng": "Strpl. § 186, 2.ledd 1.pkt."
-              },
-              "periode": {
-                "startDag": 15,
-                "varighet": {
-                  "antallDager": 14
-                }
-              }
-            }
-          ],
-          "isolasjon": [
-            {
-              "isolasjonsType": "FULL_ISOLASJON",
-              "lovbudEnkel": {
-                "lovbudStreng": "Strpl. § 186a"
-              },
-              "periode": {
-                "startDag": 1,
-                "varighet": {
-                  "tilHovedforhandling": true
-                }
-              }
-            }
-          ]
-        }
+          "beskrivelse": "Skal være hjemme hos far i Son"
+        },
+        "gyldigFraDato": "2025-10-18"
       },
       "vilkaar": [
         {
@@ -154,23 +116,14 @@
           "lovbudEnkel": {
             "lovbudStreng": "Strpl § 170a"
           }
-        },
-        {
-          "type": "ANNEN_SPESIALBESTEMMELSE",
-          "lovbudEnkel": {
-            "lovbudStreng": "Annen spesialbestemmelse"
-          },
-          "vilkaarBeskrivelse": "Annen spesialbestemmelse"
         }
       ]
     },
     "saksinformasjon": {
       "varetektsType": "VANLIG",
       "forlengelse": {
-        "beskrivelse": "forlengelse",
-        "varetektUtloeperDato": "2023-10-11"
+        "beskrivelse": "forlengelse"
       },
-      "hovedforhandlingsdato": "2023-12-11",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
       "berammetFengslingsmoete": {
         "dato": "2023-04-19",
