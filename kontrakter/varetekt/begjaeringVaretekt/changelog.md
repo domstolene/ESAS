@@ -1,9 +1,9 @@
 # Endringslogg begjæring om varetek
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
-| 1.8     | Entydig identifisering av advokater         |                |              |
-| 1.7     | varetektUtloeperdato + EK                   |                |              |
-| 1.6     | Vilkårbeskrivelse                           |                |              |
+| 1.8     | Entydig identifisering av advokater ++      |                |              |
+| 1.7     | varetektUtloeperdato + EK                   | 02.11.2025     | 18.11.2025   |
+| 1.6     | Vilkårbeskrivelse                           | 10.04.2025     | 30.04.2025   |
 | 1.5     | Arrestordreloven/surrogat/kontakt           |                |              |
 | 1.4     | Kunne begjære varetektsfengsling frem i tid | 20.03.2024     | 25.03.2024   |
 | 1.3     | Håndter vitner uten identifikator           |                | 09.11.2023   |
@@ -12,7 +12,12 @@
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                | ikke prod    |
 
 ## Versjon 1.8
-* Legger til entydig identifisering av advokater   
+* Legger til entydig identifisering av advokater 
+* Noen småendringer: 
+  * Kun kun "kode" på statsborgerskap
+  * internId for dokumenter endres til UUID 
+  * Fjern _varsleBistandsadvokat_ og _berammetFengslingsmoete_ 
+  * _varetekt_ required
 
 ## Versjon 1.7
 * Legger til mulighet for å sende begjæring om varetekt med elektronisk kontroll.
