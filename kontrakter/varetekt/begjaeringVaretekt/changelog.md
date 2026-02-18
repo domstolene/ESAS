@@ -14,7 +14,7 @@
 ## Versjon 1.8
 * Legger til entydig identifisering av advokater 
 * Noen småendringer: 
-  * Kun kun "kode" på statsborgerskap
+  * Kun "kode" på statsborgerskap
   * internId for dokumenter endres til UUID 
   * Fjern _varsleBistandsadvokat_ og _berammetFengslingsmoete_ 
   * _varetekt_ required
