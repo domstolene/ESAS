@@ -39,8 +39,7 @@
         "foedselsdato": "1970-07-19",
         "statsborgerskap": [
           {
-            "kode": "NOR",
-            "navn": "Norge"
+            "kode": "NOR"
           }
         ],
         "personAdresse": {
@@ -172,11 +171,6 @@
       },
       "hovedforhandlingsdato": "2023-12-11",
       "paagrepetTidspunkt": "2023-02-28T17:21:27+02:00",
-      "berammetFengslingsmoete": {
-        "dato": "2023-04-19",
-        "sted": "Sal 3, tinghuset"
-      },
-      "varsleBistandsadvokat": "Retten anmodes om å varsle bistandsadvokaten om tidspunktet for rettsmøtet, jf. straffeprosessloven § 107c, 2. led",
       "begrenseOffentlighet": ["FORBUD_GJENGIVELSE"],
       "ansvarligPaatalejurist": {
         "brukeridentifikasjon": "BLC218",
@@ -203,8 +197,7 @@
               "postnummer": "2214",
               "poststed": "KONGSVINGER",
               "land": {
-                "kode": "NOR",
-                "navn": "Norge"
+                "kode": "NOR"
               }
             }
           },
@@ -238,8 +231,7 @@
                 "foedselsdato": "1963-04-14",
                 "statsborgerskap": [
                   {
-                    "kode": "NOR",
-                    "navn": "Norge"
+                    "kode": "NOR"
                   }
                 ],
                 "personAdresse": {
@@ -270,8 +262,7 @@
                 "foedselsdato": "1975-12-12",
                 "statsborgerskap": [
                   {
-                    "kode": "SWE",
-                    "navn": "Sverige"
+                    "kode": "SWE"
                   }
                 ]
               }
@@ -293,8 +284,7 @@
                 "foedselsdato": "1974-10-31",
                 "statsborgerskap": [
                   {
-                    "kode": "NOR",
-                    "navn": "Norge"
+                    "kode": "NOR"
                   }
                 ],
                 "personAdresse": {
@@ -320,8 +310,7 @@
               "kjoenn": "MANN",
               "statsborgerskap": [
                 {
-                  "kode": "NOR",
-                  "navn": "Norge"
+                  "kode": "NOR"
                 }
               ],
               "personAdresse": {
@@ -345,8 +334,7 @@
               "foedselsdato": "1957-04-14",
               "statsborgerskap": [
                 {
-                  "kode": "NOR",
-                  "navn": "Norge"
+                  "kode": "NOR"
                 }
               ],
               "personAdresse": {
@@ -363,7 +351,7 @@
     ],
     "dokumenter": [
       {
-        "internId": "1234567879",
+        "internId": "c6a8f1b3-4f9e-4b6a-9e11-c91729221147",
         "overskrift": "Begjæring om varetekt, Kiwi",
         "skrevetDato": "2023-03-30",
         "forsendelse": {
@@ -373,7 +361,7 @@
         }
       },
       {
-        "internId": "123234567879",
+        "internId": "8c5d9f0a-7e1e-4c7b-8d5a-4e2b1f8c9d0e",
         "overskrift": "Siktelse",
         "kategori": {
           "kode": "siktelse"
