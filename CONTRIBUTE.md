@@ -22,7 +22,7 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Michael Johansen              | Politi        | Write | @michael-johansen     |
 |                               |               |       |                       |
 | Nikolay Pukhovskiy            | KDI           | Write | @pukhovskiy-bspoke    |
-| Emil Tørmoen                  | KDI           | Write | @cx-emitor            |
+| Emil Tørmoen                  | KDI           | Admin | @cx-emitor            |
 | Alexander Hovden              | KDI           | Write | @alexhovden           |
 | Tron Lund                     | KDI           | Write | @tronlund             |
 | Henrik Brimsholm              | KDI           | Write | @Henrik2S             |
