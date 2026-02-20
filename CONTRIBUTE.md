@@ -21,13 +21,12 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Joakim Johanson Lindquister   | Politi        | Write | @JoakimLindquisterPIT |
 | Michael Johansen              | Politi        | Write | @michael-johansen     |
 |                               |               |       |                       |
-| Jostein Klakegg               | KDI           | Admin | @JosteinKlakegg       |
 | Nikolay Pukhovskiy            | KDI           | Write | @pukhovskiy-bspoke    |
-| Emil Tørmoen                  | KDI           | Write | @cx-emitor            |
+| Emil Tørmoen                  | KDI           | Admin | @cx-emitor            |
 | Alexander Hovden              | KDI           | Write | @alexhovden           |
 | Tron Lund                     | KDI           | Write | @tronlund             |
-| Eren Inan Canpolat            | KDI           | Write | @eic-2s               |
 | Henrik Brimsholm              | KDI           | Write | @Henrik2S             |
+| Dag Morten Krogh              | KDI           | Write | @Cloudberries-DagM    |
 |                               |               |       |                       |
 | Øyvind M. Asbjørnsen          | Vegvesenet    | Write | @oyvindma             |
 | Alexander Fjellandsbø Uglehus | Konfliktrådet | Write | @AlexanderUglehus     |
