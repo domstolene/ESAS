@@ -2,8 +2,8 @@
 
 Dette repoet forvaltes av alle aktørene tilknyttet Justishub og som bidrar til ESAS-prosjektet.
 
-Per i dag er følgende organisasjoner involvert: Politiet/Påtalemyndighet, Domstolene, Kriminalomsorgen, Konfliktrådet og
-Vegvesenet.
+Per i dag er følgende organisasjoner involvert: Politiet/Påtalemyndighet, Domstolene, Kriminalomsorgen, Konfliktrådet,
+Vegvesenet og Cloudberries.
 
 For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi om at alle brukere registreres her:
 
