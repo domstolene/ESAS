@@ -2,8 +2,8 @@
 
 Dette repoet forvaltes av alle aktørene tilknyttet Justishub og som bidrar til ESAS-prosjektet.
 
-Per i dag er følgende organisasjoner involvert: Politiet/Påtalemyndighet, Domstolene, Kriminalomsorgen, Konfliktrådet,
-Vegvesenet og Cloudberries.
+Per i dag er følgende organisasjoner involvert: Politiet/Påtalemyndighet, Domstolene, Kriminalomsorgen, Konfliktrådet og
+Vegvesenet.
 
 For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi om at alle brukere registreres her:
 
@@ -26,11 +26,11 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Alexander Hovden              | KDI           | Write | @alexhovden           |
 | Tron Lund                     | KDI           | Write | @tronlund             |
 | Henrik Brimsholm              | KDI           | Write | @Henrik2S             |
+| Dag Morten Krogh              | KDI           | Write | @Cloudberries-DagM    |
 |                               |               |       |                       |
 | Øyvind M. Asbjørnsen          | Vegvesenet    | Write | @oyvindma             |
 | Alexander Fjellandsbø Uglehus | Konfliktrådet | Write | @AlexanderUglehus     |
 | Frank Sandersen               | Konfliktrådet | Write | @franksandersen       |
-| Dag Morten Krogh              | Cloudberries  | Write | @Cloudberries-DagM    |
 |                               |               |       |                       |
 
 ## Rutiner for oppdatering av tilganger
