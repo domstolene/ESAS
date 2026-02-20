@@ -29,7 +29,9 @@ const jsonSchemaFolders = [
   "kontrakter/siktelseTiltale",
   "kontrakter/kjennelseBeslutning/kjennelseBeslutning",
   "kontrakter/vegtrafikkulykke/trafikkulykke",
-  "kontrakter/dom/paastandStraff"
+  "kontrakter/dom/paastandStraff",
+  "kontrakter/rusproeve/rekvisisjonRusproeve",
+  "kontrakter/rusproeve/resultatRusproeve"
 ];
 
 const jsonKodeverkFolders = ["kodeverk/felles", "kodeverk/konfliktraad"];

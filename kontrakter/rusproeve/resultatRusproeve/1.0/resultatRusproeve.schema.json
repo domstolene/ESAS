@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/resultatRusproeve",
+  "description": "Analyse av rusprøve for oversendelse Kriminalomsorgen. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "sendtTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "meldingsId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Unik ID for denne meldingen, hvis resultatet blir sendt på nytt vil det være ny meldingsId."
+    },
+    "rekvisisjonsId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Unik ID på rekvisisjonen fra Kriminalomsorgen som resultatet er knyttet til."
+    },
+    "saksId": {
+      "type": "string",
+      "description": "OUS sin id på analysert prøvesett."
+    },
+    "analyseUtfoert": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Tidspunkt for når analysen ble utført."
+    },
+    "fortolkningstekst": {
+      "type": "string",
+      "description": "Fortolkningstekst for resultatet."
+    },
+    "analyseresultater": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/analyseresultat"
+      },
+      "description": "Liste over analyseresultater."
+    }
+  },
+  "required": [
+    "sendtTid",
+    "meldingsId",
+    "rekvisisjonsId",
+    "saksId",
+    "analyseUtfoert",
+    "fortolkningstekst",
+    "analyseresultater"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "analyseresultat": {
+      "type": "object",
+      "properties": {
+        "typeAnalyse": { "type": "string" },
+        "erPaavist": { "type": "boolean" }
+      },
+      "required": ["typeAnalyse", "erPaavist"]
+    },
+    "unikId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "Representerer en unik identifikator (GUID)."
+    }
+  }
+}
