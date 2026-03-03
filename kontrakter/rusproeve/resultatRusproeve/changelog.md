@@ -6,4 +6,4 @@
 
 ## Versjon 1.0
 
-
+Første versjon til produksjon.
