@@ -4,9 +4,15 @@
   "rekvisisjonsId": "0322B3E2-B12B-40B6-8940-799C48706123",
   "person": {
     "identitet": {
-      "idType": "FOEDSELSNUMMER",
+      "idType": "SSPNUMMER",
       "verdi": "14846399381"
-    }
+    },
+    "navn": {
+      "fornavn": "Ung",
+      "etternavn": "KIWI"
+    },
+    "kjoenn": "MANN",
+    "alder": 63
   },
   "enhet": "8410",
   "saksId": "...",
@@ -20,5 +26,9 @@
     }
   ],
   "proeveType": "URIN",
+  "tilleggsanalyser": [
+    "URIN_ALKOHOL",
+    "URIN_ALKOHOLMETABOLITTER"
+  ],
   "andreStofferForAnalyse": "..."
 }

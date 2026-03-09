@@ -16,9 +16,9 @@
       "$ref": "#/definitions/unikId",
       "description": "Unik ID for denne meldingen, hvis rekvisisjonen blir sendt på nytt vil det være ny meldingsId."
     },
-    "personIdentitet": {
-      "$ref": "#/definitions/personIdentifikator",
-      "description": "Fødselsnummer, D-nummer eller SSP nummer for avgiver av prøvemateriale."
+    "person": {
+      "$ref": "#/definitions/person",
+      "description": "Avgiver av prøvemateriale."
     },
     "enhet": {
       "type": "string",
@@ -38,10 +38,6 @@
       "format": "date-time",
       "description": "Tidspunkt for når prøvematerialet ble avgitt."
     },
-    "medikamenterErKjent": {
-      "type": "boolean",
-      "description": "Hvorvidt det anses kjent hvilke medikamenter som er tatt de siste 30 dagene."
-    },
     "medikamenter": {
       "type": "array",
       "items": {
@@ -55,30 +51,29 @@
       "enum": ["URIN", "SPYTT"],
       "description": "Beskriver hvilket prøvemateriale som er innhentet."
     },
-    "andreStofferForAnalyse": {
-      "type": "string",
-      "description": "Andre stoffer som ønskes analysert utenom standardprogram."
-    },
-    "andreSaksIderSomKanFortolkes": {
+    "tilleggsanalyser": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "$ref": "#/definitions/tilleggsanalyse"
       },
-      "description": "Liste over ider på tidligere rekviverte prøvesett i nåværende fenglingsopphold."
+      "description": "Liste over forhåndsdefinerte tilleggsanalyser."
+    },
+    "andreStofferForAnalyse": {
+      "type": "string",
+      "description": "Andre stoffer som ønskes analysert utenom forhåndsdefinerte program."
     }
   },
   "required": [
     "sendtTid",
     "meldingsId",
     "rekvisisjonsId",
-    "personIdentitet",
+    "person",
     "enhet",
     "saksId",
     "fengsletSiden",
     "proeveTatt",
-    "medikamenterErKjent",
     "medikamenter",
-    "andreSaksIderSomKanFortolkes",
     "proeveType"
   ],
   "additionalProperties": false,
@@ -94,6 +89,16 @@
         }
       },
       "required": ["preparat", "dose", "sistTatt"]
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "identitet": { "$ref": "#/definitions/personIdentifikator" },
+        "navn": { "$ref": "#/definitions/personnavn" },
+        "kjoenn": { "$ref": "#/definitions/kjoenn" },
+        "alder": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["identitet"]
     },
     "personIdentifikator": {
       "type": "object",
@@ -116,11 +121,29 @@
       "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"],
       "description": "Person ID typer, alle valideres med Modulus 11"
     },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": { "type": "string" },
+        "mellomnavn": { "type": "string" },
+        "etternavn": { "type": "string" }
+      },
+      "required": ["fornavn", "etternavn"],
+      "additionalProperties": false
+    },
+    "kjoenn": {
+      "type": "string",
+      "enum": ["KVINNE", "MANN"]
+    },
     "unikId": {
       "type": "string",
       "minLength": 1,
       "maxLength": 40,
       "description": "Representerer en unik identifikator (GUID)."
+    },
+    "tilleggsanalyse": {
+      "type": "string",
+      "enum": ["URIN_ALKOHOL", "URIN_ALKOHOLMETABOLITTER", "URIN_ZOPIKLON_ZOLPIDEM", "SPYTT_NYERE_PSYKOAKTIVE_STOFFER"]
     }
   }
 }
