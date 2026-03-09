@@ -26,9 +26,6 @@
     }
   ],
   "proeveType": "URIN",
-  "tilleggsanalyser": [
-    "URIN_ALKOHOL",
-    "URIN_ALKOHOLMETABOLITTER"
-  ],
+  "tilleggsanalyser": ["URIN_ALKOHOL", "URIN_ALKOHOLMETABOLITTER"],
   "andreStofferForAnalyse": "..."
 }
