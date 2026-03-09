@@ -76,7 +76,7 @@
               "etternavn": "Olsen"
             },
             "identitetsnummer": {
-              "foedselsnummer": "14846399384"
+              "foedselsnummer": "14846399385"
             }
           }
         }
@@ -89,13 +89,13 @@
         "lovbudStreng": "Straffeprosessloven § 171 første ledd nr. 2 og 3, jf. §§ 170a og 185"
       },
       "paastandVaretekt": {
-        "fengslingssurrogat": {
+        "elektroniskKontroll": {
           "varighet": {
-            "antallDager": 28
+            "antallDager": 14
           },
-          "beskrivelse": "Skal være hjemme hos mor på Løkken verft, bare ut for å tisse"
+          "beskrivelse": "Skal være hjemme hos far i Son"
         },
-        "gyldigFraDato": "2024-01-02"
+        "gyldigFraDato": "2025-10-18"
       },
       "vilkaar": [
         {
