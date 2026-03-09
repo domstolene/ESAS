@@ -7,7 +7,7 @@
 
 ## Headere forsendelse justisHub
 SchmaName=REKVISISJON_PERSONUNDERSOEKELSE  
-SchemaVersion=1.1
+SchemaVersion=1.2
 [RFC message name header](../../../rfc/MessageName-header.md)
 
 ## Avklaringer
