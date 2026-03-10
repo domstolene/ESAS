@@ -59,6 +59,8 @@
         <module>kontrakter/dom/paastandStraff</module>
         <module>kontrakter/dom/domsavgjoerelse</module>
         <module>kontrakter/dom/fullbyrdelsesordre</module>
+        <module>kontrakter/rusproeve/rekvisisjonRusproeve</module>
+        <module>kontrakter/rusproeve/resultatRusproeve</module>
         <module>kodeverk/felles</module>
         <module>kodeverk/konfliktraad</module>
         <module>validering-jwks</module>

@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kriminalomsorg.no/kriminalomsorg/1.0/rekvisisjonRusproeve",
+  "description": "Rekvisisjon av rusprøve for analyse hos OUS. Schema versjon 2020-12",
+  "type": "object",
+  "properties": {
+    "sendtTid": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "meldingsId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Unik ID for denne meldingen, hvis rekvisisjonen blir sendt på nytt vil det være ny meldingsId."
+    },
+    "rekvisisjonsId": {
+      "$ref": "#/definitions/unikId",
+      "description": "Unik ID for denne meldingen, hvis rekvisisjonen blir sendt på nytt vil det være ny meldingsId."
+    },
+    "person": {
+      "$ref": "#/definitions/person",
+      "description": "Avgiver av prøvemateriale."
+    },
+    "enhet": {
+      "type": "string",
+      "description": "Firesiffret enhetsnummer for enheten som rekvirerer prøven."
+    },
+    "saksId": {
+      "type": "string",
+      "description": "OUS sin id på rekvirert prøvesett."
+    },
+    "fengsletSiden": {
+      "type": "string",
+      "format": "date",
+      "description": "Startdato for inneværende fengselsopphold."
+    },
+    "proeveTatt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Tidspunkt for når prøvematerialet ble avgitt."
+    },
+    "medikamenter": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/medikament"
+      },
+      "description": "Liste over medikamenter som er tatt de siste 30 dagene."
+    },
+    "proeveType": {
+      "type": "string",
+      "enum": ["URIN", "SPYTT"],
+      "description": "Beskriver hvilket prøvemateriale som er innhentet."
+    },
+    "tilleggsanalyser": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "URIN_ALKOHOL",
+          "URIN_ALKOHOLMETABOLITTER",
+          "URIN_ZOPIKLON_ZOLPIDEM",
+          "SPYTT_NYERE_PSYKOAKTIVE_STOFFER"
+        ]
+      },
+      "description": "Liste over forhåndsdefinerte tilleggsanalyser."
+    },
+    "andreStofferForAnalyse": {
+      "type": "string",
+      "description": "Andre stoffer som ønskes analysert utenom forhåndsdefinerte program."
+    }
+  },
+  "required": [
+    "sendtTid",
+    "meldingsId",
+    "rekvisisjonsId",
+    "person",
+    "enhet",
+    "saksId",
+    "fengsletSiden",
+    "proeveTatt",
+    "medikamenter",
+    "proeveType"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "medikament": {
+      "type": "object",
+      "properties": {
+        "preparat": { "type": "string" },
+        "dose": { "type": "string" },
+        "sistTatt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["preparat", "dose", "sistTatt"]
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "identitet": { "$ref": "#/definitions/personIdentifikator" },
+        "navn": { "$ref": "#/definitions/personnavn" }
+      },
+      "required": ["identitet"]
+    },
+    "personIdentifikator": {
+      "type": "object",
+      "description": "Fødselsnummer (inkl. Tenor), DNummer (inkl Tenor) eller SSP nummer som alle validerer til Modulus 11",
+      "properties": {
+        "idType": { "$ref": "#/definitions/personIdType" },
+        "verdi": {
+          "type": "string",
+          "description": "Se Skatteetaten. Kan være vanlig med 6 sifret fødselsdato og fiktivt (Tenor) fødselsnummer med +80 på måned slik at noen født 10.01.1990 begynner fiktivt nummer med 108190",
+          "pattern": "^[0-7][0-9][012389][0-9]+$",
+          "minLength": 11,
+          "maxLength": 11
+        }
+      },
+      "required": ["idType", "verdi"],
+      "additionalProperties": false
+    },
+    "personIdType": {
+      "type": "string",
+      "enum": ["FOEDSELSNUMMER", "DNUMMER", "SSPNUMMER"],
+      "description": "Person ID typer, alle valideres med Modulus 11"
+    },
+    "personnavn": {
+      "type": "object",
+      "properties": {
+        "fornavn": { "type": "string" },
+        "mellomnavn": { "type": "string" },
+        "etternavn": { "type": "string" }
+      },
+      "required": ["fornavn", "etternavn"],
+      "additionalProperties": false
+    },
+    "unikId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "Representerer en unik identifikator (GUID)."
+    }
+  }
+}
