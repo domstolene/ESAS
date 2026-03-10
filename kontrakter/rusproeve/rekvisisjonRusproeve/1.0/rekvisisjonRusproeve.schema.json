@@ -54,8 +54,13 @@
     "tilleggsanalyser": {
       "type": "array",
       "items": {
-        "type": "object",
-        "$ref": "#/definitions/tilleggsanalyse"
+        "type": "string",
+        "enum": [
+        "URIN_ALKOHOL",
+        "URIN_ALKOHOLMETABOLITTER",
+        "URIN_ZOPIKLON_ZOLPIDEM",
+        "SPYTT_NYERE_PSYKOAKTIVE_STOFFER"
+      ]
       },
       "description": "Liste over forhåndsdefinerte tilleggsanalyser."
     },
@@ -140,15 +145,6 @@
       "minLength": 1,
       "maxLength": 40,
       "description": "Representerer en unik identifikator (GUID)."
-    },
-    "tilleggsanalyse": {
-      "type": "string",
-      "enum": [
-        "URIN_ALKOHOL",
-        "URIN_ALKOHOLMETABOLITTER",
-        "URIN_ZOPIKLON_ZOLPIDEM",
-        "SPYTT_NYERE_PSYKOAKTIVE_STOFFER"
-      ]
     }
   }
 }
