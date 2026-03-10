@@ -99,9 +99,7 @@
       "type": "object",
       "properties": {
         "identitet": { "$ref": "#/definitions/personIdentifikator" },
-        "navn": { "$ref": "#/definitions/personnavn" },
-        "kjoenn": { "$ref": "#/definitions/kjoenn" },
-        "alder": { "type": "integer", "minimum": 0 }
+        "navn": { "$ref": "#/definitions/personnavn" }
       },
       "required": ["identitet"]
     },
@@ -135,10 +133,6 @@
       },
       "required": ["fornavn", "etternavn"],
       "additionalProperties": false
-    },
-    "kjoenn": {
-      "type": "string",
-      "enum": ["KVINNE", "MANN"]
     },
     "unikId": {
       "type": "string",
