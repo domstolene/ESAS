@@ -5,13 +5,6 @@ Det er laget en ny [generellMelding](../generellMelding/readme.md) (XML) som bru
 # Bruk av meldingStraffesak
 Brukes kun av domstolene til påtale.
 
-| Avsender         | Mottaker |
-|:-----------------|:---------|
-| Lagmanssretten   | Påtale   |
-|Høyesterett| Påtale   |
-
-Eksempler på bruk er:
-- Rettsbok planmøte.
-- Ankeerklæring - signert
-- Orienteringsbrev
-- Brev - frist for endelig vitneoppgave
+| Avsender                   | Mottaker |kommentar|
+|:---------------------------|:---------|:----|
+| Lagmanssretten/Høyesterett | Påtale   |Rettsbok/planmøte/ankeerklæring ...
