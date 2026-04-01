@@ -1,4 +1,10 @@
 # Melding straffesak
-Første versjon av en generell melding, domstolene bruker den til påtale, men det ble bestemt at påtale skulle sende en [straffesaksforsendelses melding](../straffesaksforsendelse/1.0/sammenstilling.xsd), men ble det til at vi gjorde det eller ikke ?
+Første versjon av en generell melding som kun brukes av lagmannsrettene og Høyesterett til påtale.
+Det er laget en ny [generellMelding](../generellMelding/readme.md) (XML) som brukes mer og bør brukes videre hvis det ikke lages en JSON variant.
 
-Denne meldingen skal ikke brukes på nye ting,  [gnerellMelding](../generellMelding/readme.md) skal brukes istedet.
+# Bruk av meldingStraffesak
+Brukes kun av domstolene til påtale.
+
+| Avsender                   | Mottaker |kommentar|
+|:---------------------------|:---------|:----|
+| Lagmanssretten/Høyesterett | Påtale   |Rettsbok/planmøte/ankeerklæring ...
