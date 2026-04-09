@@ -223,12 +223,7 @@
           "description": "Beskrivelse av varetekten med Elektronisk Kontroll"
         }
       },
-      "required": [
-        "elektroniskKontrollId",
-        "fraDato",
-        "tilDato",
-        "elektroniskKontrollBeskrivelse"
-      ],
+      "required": ["elektroniskKontrollId", "fraDato", "tilDato"],
       "type": "object",
       "additionalProperties": false
     },
