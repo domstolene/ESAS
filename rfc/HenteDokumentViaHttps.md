@@ -1,4 +1,4 @@
-# Hente dokument via URI
+# Hente dokument via HTTPS
 
 **To be Reviewed By**: Alle
 
@@ -15,7 +15,7 @@ HTTPS innføres som alternativ protokoll, noe som forutsetter at virksomheter so
 ## Løsningsforslag
 
 ### API-utforming og identifikator
-API-et skal eksponere et endepunkt der filen kan hentes ved å følge en URI. Denne URI-en skal ende med en unik identifikator i form av en GUID (UUID).
+API-et skal eksponere et endepunkt der filen kan hentes ved å følge en URI. Denne URI-en skal ende med en unik identifikator i form av en GUID (UUID). Når en fil først er tilgjengeliggjort for mottaker med en gitt GUID, så skal ikke bytene som API-et gir for denne GUID-en senere endres.
 
 Eksempel på URI-struktur:
 https://api.virksomhet.no/filer/v1/nedlasting/550e8400-e29b-41d4-a716-446655440000
@@ -23,8 +23,12 @@ https://api.virksomhet.no/filer/v1/nedlasting/550e8400-e29b-41d4-a716-4466554400
 ### Støtte for delvis henting (Partial Content)
 For å håndtere store filer opp til 5GB effektivt og gi mulighet for å gjenoppta avbrutte nedlastinger, skal API-et støtte HTTP status 206 Partial Content ved [Single Part request](https://www.rfc-editor.org/rfc/rfc9110#name-single-part). Dette innebærer at API-et må kunne tolke Range-headeren i forespørselen og returnere det forespurte byteranget, sammen med headere for Content-Range og Content-Length slik forventet av spesifikasjonen.
 
+Hvis forespurt range er større enn filens lengde, så skal det returneres en 200 OK med hele filen. Det støtter opp under en strategi hvor første kall mot avsenders API kan ha en default range, hvor svaret enten er en 200 OK med hele filen, eller en 206 Partial Content som per standarden inneholder Content-Range header som spesifierer lengden på hele filen.
+
 ### Tilgjengelighet og retensjon
 Filer må være tilgjengelige via API-et i minimum 15 dager fra det tidspunktet de først ble gjort tilgjengelige (publisert i en melding på Justishub). Etter 15 dager kan tilbyderen slette filen eller gjøre den utilgjengelig via dette grensesnittet. Filene skal kunne hentes flere ganger i løpet av denne tidsperioden.
+
+Filene kan allikevel slettes eller gjøres utilgjengelig før det er gått 15 dager, hvis avsender har fått en MOTTATT-kvittering på meldingen hvor URI'ene ble delt med mottaker.
 
 ### Autentisering
  API-et må sikre at kun autoriserte mottakere får tilgang til filene. Dette krever at avsender begrenser tilgangen til virksomhetene som er tiltenkte mottakere.
@@ -47,21 +51,15 @@ Filer må være tilgjengelige via API-et i minimum 15 dager fra det tidspunktet 
 | **500 Internal Server Error** | Teknisk feil hos tilbyder. | En uventet feil oppstod på serversiden. Konsumenten bør forsøke på nytt senere med eksponentiell ventetid (backoff). |
 | **503 Service Unavailable** | Tjenesten er nede. | API-et er midlertidig utilgjengelig (vedlikehold eller overbelastning). Prøv igjen senere med eksponentiell ventetid (backoff). |
 
-Diskusjon: 
-* Støtte for throttling - Too Many Requests
-* 410 Gone? Skille på har-vært og aldri-vært?
-* Er det andre 5xx-koder som bør kunne deles uten å generealiseres til 500
-* 304 Not Modified? Kan være nyttig hvis man tillater at filer korrigeres in-situ med samme GUID. MEN: Gir utfordringer med notoritet og checksum i melding.
-
 ### Andre krav som stilles avsender
 
 - Det er ennå meldingen som bærer metadata om filen, og definert endepunkt serverer bare bytes. Det er derfor ennå meldingsmottakers ansvar blant annet å benytte sjekksum i meldingsstrukturen per dokument for å sjekke integriteten på bytene som er mottatt fra endepunkt.
-- API-et må logge hver forespørsel om fil (virksomheten som etterspør fil, kilde-ip), og ta vare på logginnslaget i minimum tre måneder.
-
-Diskusjon: Ønsker man flere metadata, eks. avsender-system i egen header?
+- API-et må logge hver forespørsel om fil. Det må av loggene kunne utledes virsomheten og kilde-IP til forespørselen.
 
 ## Eksempel
 
 ## Changelog
 
 31.03.2026: Opprettet RFC.
+
+16.04.2026: Oppdatert etter Teknisk koordineringsmøte. 
