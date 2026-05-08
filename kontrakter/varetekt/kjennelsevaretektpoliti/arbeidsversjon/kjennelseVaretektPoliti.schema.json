@@ -240,8 +240,7 @@
       "required": [
         "elektroniskKontrollId",
         "fraDato",
-        "tilDato",
-        "elektroniskKontrollBeskrivelse"
+        "tilDato"
       ],
       "type": "object",
       "additionalProperties": false
