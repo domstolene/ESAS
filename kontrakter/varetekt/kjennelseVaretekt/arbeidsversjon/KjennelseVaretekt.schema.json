@@ -569,22 +569,12 @@
           "$ref": "#/definitions/personIdentifikator",
           "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
         },
-        "etternavn": {
-          "type": "string"
-        },
-        "fornavn": {
-          "type": "string"
-        },
-        "tittel": {
-          "type": "string",
-          "description": "F.eks 'Advokatfullmektig'."
-        },
         "virksomhet": {
           "$ref": "#/definitions/organisasjon",
           "description": "Engasjert advokatforetak, enkeltpersonforetak eller annen organisasjon som forsvarer praktiserer ut i fra i den aktuelle saken."
         }
       },
-      "required": ["etternavn"],
+      "required": ["identitetsnummer"],
       "type": "object",
       "additionalProperties": false
     },
