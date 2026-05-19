@@ -189,7 +189,7 @@
         },
         "beskrivelse": { "type": "string" }
       },
-      "required": ["varighet", "beskrivelse"],
+      "required": ["varighet"],
       "additionalProperties": false
     },
     "varighet": {
