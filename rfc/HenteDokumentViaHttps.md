@@ -4,7 +4,7 @@
 
 **Authors**: Emil N. Tørmoen
 
-**Status**: WIP
+**Status**: Diskusjon
 
 ## Problemstilling
 
