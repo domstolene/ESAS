@@ -50,9 +50,12 @@
     },
     "forsvarere": [
       {
+        "fornavn": "Ultrafiolett",
+        "etternavn": "Drage",
         "identitetsnummer": {
           "foedselsnummer": "22830699035"
-        }
+        },
+        "tittel": "Advokat"
       }
     ]
   },

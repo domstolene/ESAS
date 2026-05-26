@@ -50,9 +50,12 @@
     },
     "forsvarere": [
       {
+        "fornavn": "Ultrafiolett",
+        "etternavn": "Drage",
         "identitetsnummer": {
           "foedselsnummer": "22830699035"
         },
+        "tittel": "Advokat",
         "virksomhet": {
           "organisasjonsnummer": "311032348",
           "navn": "Akademisk Akademisk Katt Almisse",
