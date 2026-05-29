@@ -56,28 +56,14 @@
       },
       "forsvarerinformasjon": {
         "oppnevntForsvarer": {
-          "person": {
-            "tittel": "Advokat",
-            "navn": {
-              "fornavn": "Ole",
-              "etternavn": "Olsen"
-            },
-            "identitetsnummer": {
-              "foedselsnummer": "14846399383"
-            }
+          "identitetsnummer": {
+            "foedselsnummer": "14846399383"
           },
           "erVarsletOmFenglingsmoete": true
         },
         "oensketForsvarer": {
-          "person": {
-            "tittel": "Advokat",
-            "navn": {
-              "fornavn": "Ole",
-              "etternavn": "Olsen"
-            },
-            "identitetsnummer": {
-              "foedselsnummer": "14846399385"
-            }
+          "identitetsnummer": {
+            "foedselsnummer": "14846399385"
           }
         }
       },
