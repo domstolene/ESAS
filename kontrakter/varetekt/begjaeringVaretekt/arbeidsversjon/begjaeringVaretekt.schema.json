@@ -430,7 +430,7 @@
           "type": "string"
         }
       },
-      "required": ["kode"],
+      "required": ["kode", "navn"],
       "additionalProperties": false
     },
     "kontaktInfo": {
@@ -467,15 +467,11 @@
       "type": "object",
       "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
       "properties": {
-        "navn": {
-          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
-          "type": "string"
-        },
         "organisasjonsnummer": {
           "$ref": "#/definitions/organisasjonsnummer"
         }
       },
-      "required": ["organisasjonsnummer", "navn"],
+      "required": ["organisasjonsnummer"],
       "additionalProperties": false
     },
     "ansattPerson": {
