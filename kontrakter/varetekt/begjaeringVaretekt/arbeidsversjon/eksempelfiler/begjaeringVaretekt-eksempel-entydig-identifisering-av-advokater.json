@@ -4,8 +4,7 @@
     "sendtTid": "2023-03-30T17:21:27+02:00",
     "avsender": {
       "organisasjon": {
-        "organisasjonsnummer": "983997953",
-        "navn": "Innlandet politidistrikt"
+        "organisasjonsnummer": "983997953"
       },
       "person": {
         "etternavn": "Politiets Datatjeneste"
@@ -17,8 +16,7 @@
       "telefonnummer": "88888888"
     },
     "mottakerOrganisasjon": {
-      "organisasjonsnummer": "926723480",
-      "navn": "Agder tingrett"
+      "organisasjonsnummer": "926723480"
     }
   },
   "hovedStraffesaksnummer": "15434819",
@@ -303,7 +301,8 @@
         "internId": "8c5d9f0a-7e1e-4c7b-8d5a-4e2b1f8c9d0e",
         "overskrift": "Siktelse",
         "kategori": {
-          "kode": "siktelse"
+          "kode": "siktelse",
+          "navn": "Siktelse med siktelsespunkter, ser likt ut som et tiltale. Brukes ved begjæringer om tvangsmidler"
         },
         "skrevetDato": "2023-03-10",
         "forsendelse": {
