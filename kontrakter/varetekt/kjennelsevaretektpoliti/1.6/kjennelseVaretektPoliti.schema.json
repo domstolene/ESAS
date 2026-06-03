@@ -52,13 +52,13 @@
       "properties": {
         "adresselinjer": {
           "type": "array",
-          "contains": {
+          "items": {
             "type": "string",
             "minLength": 1,
             "maxLength": 500
           },
-          "minContains": 1,
-          "maxContains": 4
+          "minItems": 1,
+          "maxItems": 4
         },
         "postnummer": { "type": "string" },
         "poststed": { "type": "string" },
