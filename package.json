@@ -2,9 +2,11 @@
   "name": "esas",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "devDependencies": {
-    "prettier": "3.8.3"
+  "engines": {
+    "node": ">=24"
+  },
+  "volta": {
+    "node": "24.15.0"
   },
   "scripts": {
     "prettier:check": "prettier --check \"kontrakter/**/*.json\"",
@@ -23,7 +25,9 @@
   "homepage": "https://github.com/domstolene/ESAS#readme",
   "dependencies": {
     "ajv": "^8.20.0",
-    "ajv-formats": "^3.0.1",
-    "node": "^22.14.0"
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "prettier": "3.8.3"
   }
 }

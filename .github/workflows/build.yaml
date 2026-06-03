@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 24
 
       - run: npm ci
       - run: npm run prettier:check
@@ -28,7 +28,7 @@ jobs:
           distribution: "temurin"
           java-version: "17"
           cache: maven
-          server-id: github  # matches distributionManagement in pom.xml
+          server-id: github # matches distributionManagement in pom.xml
           server-username: GITHUB_ACTOR
           server-password: GITHUB_TOKEN
 
