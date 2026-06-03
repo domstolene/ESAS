@@ -4,7 +4,29 @@ Samling av kontrakter for meldinger som skal utveksles i ESAS-prosjektet.
 
 ## Validering av JSON-schema
 
-Validering av JSON-schema skjer ved pull-requester og push på main-branch, med `npm run json:validate`.
+### Installering
+
+Installer avhengigheter med `pnpm install`.
+
+Hvis du ikke har `pnpm` tilgjengelig, kan du aktivere det via Corepack:
+
+```bash
+corepack enable
+pnpm install
+```
+
+Hvis `corepack` ikke er tilgjengelig, kan du installere `pnpm` med `npm`:
+
+```bash
+npm install -g pnpm@latest-11
+pnpm install
+```
+
+Kjør deretter `pnpm install` for å hente repoets avhengigheter.
+
+### Kjør validering
+
+Validering av JSON-schema skjer ved pull-requester og push på main-branch, med `pnpm json:validate`.
 
 For å legge til validering av nye schema, utvides variabelen `jsonSchemaFolders` i `validateJsonSchema.js`.
 Scriptet forventer at det refereres til mapper som først inneholder versjoner, 

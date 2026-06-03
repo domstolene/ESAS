@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": ">=24"
+    "node": ">=24",
+    "pnpm": "11.5.1"
   },
   "volta": {
-    "node": "24.15.0"
+    "node": "24.15.0",
+    "pnpm": "11.5.1"
   },
+  "packageManager": "pnpm@11.5.1",
   "scripts": {
     "prettier:check": "prettier --check \"kontrakter/**/*.json\"",
     "prettier:write": "prettier --write \"kontrakter/**/*.json\"",

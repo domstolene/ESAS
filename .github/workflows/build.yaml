@@ -13,13 +13,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.5.1
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+          cache: pnpm
 
-      - run: npm ci
-      - run: npm run prettier:check
-      - run: npm run json:validate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm prettier:check
+      - run: pnpm json:validate
 
       - name: Set up Java
         if: ${{ github.event_name == 'pull_request' }}
