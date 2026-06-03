@@ -21,12 +21,24 @@ jobs:
       - run: npm run prettier:check
       - run: npm run json:validate
 
+      - name: Set up Java
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version: "21"
+          cache: maven
+
+      - name: Validate Maven build
+        if: ${{ github.event_name == 'pull_request' }}
+        run: mvn verify
+
       - name: Set up Github Packages
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/setup-java@v5
         with: # running setup-java again overwrites the settings.xml
           distribution: "temurin"
-          java-version: "17"
+          java-version: "21"
           cache: maven
           server-id: github # matches distributionManagement in pom.xml
           server-username: GITHUB_ACTOR
