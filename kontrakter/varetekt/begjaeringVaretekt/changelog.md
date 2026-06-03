@@ -1,7 +1,8 @@
 # Endringslogg begjæring om varetek
 | Versjon | Beskrivelse                                 | Aktiv mottaker | Aktiv sender | 
 |---------|---------------------------------------------|----------------|--------------|
-| 1.8     | Entydig identifisering av advokater ++      |                |              |
+| 1.9     | Kun id på advokat ++                        |                |              |
+| 1.8     | Entydig identifisering av advokater ++      | 18.01.2026     | 20.04.2026   |
 | 1.7     | varetektUtloeperdato + EK                   | 02.11.2025     | 18.11.2025   |
 | 1.6     | Vilkårbeskrivelse                           | 10.04.2025     | 30.04.2025   |
 | 1.5     | Arrestordreloven/surrogat/kontakt           |                |              |
@@ -10,6 +11,12 @@
 | 1.2     | Første versjon til produksjon, pilot        | 09.10.2023     | 21.09.2023   |
 | 1.1     | Tolk og til hovedforhandling                |                | ikke prod    |
 | 1.0     | Brukertest juni 2023, ikke til produksjon   |                | ikke prod    |
+
+## Versjon 1.9
+* Bruker kun id for å identifisere advokater, og fjerner all annen informasjon om advokaten.
+* Noen småendringer:
+    * Kun "organisasjonsnummer" på organisasjon (fjern "navn")
+    * Endret "navn" på kodeverk til required
 
 ## Versjon 1.8
 * Legger til entydig identifisering av advokater 
