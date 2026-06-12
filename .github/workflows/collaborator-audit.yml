@@ -13,6 +13,8 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     name: Check Outside Collaborators
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.CONTRIBUTORS_SLACK_WEBHOOK_URL }}
 
     steps:
       - name: Checkout toolbox script repository
@@ -84,10 +86,11 @@ jobs:
           retention-days: 30
 
       - name: Send Slack notification
-        if: always() 
+        if: always() && env.SLACK_WEBHOOK_URL != ''
         uses: slackapi/slack-github-action@v1.24.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ env.SLACK_WEBHOOK_URL }}
         with:
-          webhook-url: ${{ secrets.CONTRIBUTORS_SLACK_WEBHOOK_URL }}
           payload: |
             {
               "text": "🔍 Weekly Collaborator Audit Report",
@@ -159,6 +162,10 @@ jobs:
                 }
               ]
             }
+      - name: Slack webhook not configured
+        if: always() && env.SLACK_WEBHOOK_URL == ''
+        run: |
+          echo "Slack notification skipped: secret CONTRIBUTORS_SLACK_WEBHOOK_URL is not configured."
 
       - name: Fail if critical issues found
         if: steps.results.outputs.has_issues == 'true'
