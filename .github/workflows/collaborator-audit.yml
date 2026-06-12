@@ -52,22 +52,24 @@ jobs:
         id: results
         run: |
           # Standardverdier slik at Slack-notifikasjon alltid kan bygges
-          echo 'summary={"outside_total":0,"contribute_total":0,"missing":0,"extra":0}' >> "$GITHUB_OUTPUT"
+          echo 'outside_total=0' >> "$GITHUB_OUTPUT"
+          echo 'contribute_total=0' >> "$GITHUB_OUTPUT"
+          echo 'missing=0' >> "$GITHUB_OUTPUT"
+          echo 'extra=0' >> "$GITHUB_OUTPUT"          
           echo 'has_issues=false' >> "$GITHUB_OUTPUT"
 
           if [ -f collaboration-audit.json ]; then
-            # Parse JSON og lag sammendrag
-            summary=$(jq -c '{
-              outside_total: .outside_collaborators_total,
-              contribute_total: .contribute_usernames_total,
-              missing: (.outside_missing_in_contribute | length),
-              extra: (.contribute_not_outside_collaborators | length)
-            }' collaboration-audit.json)
-            
-            echo "summary=$summary" >> "$GITHUB_OUTPUT"
+            outside_total=$(jq -r '.outside_collaborators_total // 0' collaboration-audit.json)
+            contribute_total=$(jq -r '.contribute_usernames_total // 0' collaboration-audit.json)
+            missing_count=$(jq -r '.outside_missing_in_contribute | length' collaboration-audit.json)
+            extra_count=$(jq -r '.contribute_not_outside_collaborators | length' collaboration-audit.json)
+
+            echo "outside_total=$outside_total" >> "$GITHUB_OUTPUT"
+            echo "contribute_total=$contribute_total" >> "$GITHUB_OUTPUT"
+            echo "missing=$missing_count" >> "$GITHUB_OUTPUT"
+            echo "extra=$extra_count" >> "$GITHUB_OUTPUT"
             
             # Check for issues
-            missing_count=$(jq '.outside_missing_in_contribute | length' collaboration-audit.json)
             if [ "$missing_count" -gt 0 ]; then
               echo "has_issues=true" >> "$GITHUB_OUTPUT"
             fi
@@ -111,11 +113,13 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Outside Collaborators:*\n${{ fromJson(steps.results.outputs.summary).outside_total }}"
+                      "text": "*Outside Collaborators:*\n${{ steps.results.outputs.outside_total }}"
+
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*In CONTRIBUTE.md:*\n${{ fromJson(steps.results.outputs.summary).contribute_total }}"
+                      "text": "*In CONTRIBUTE.md:*\n${{ steps.results.outputs.contribute_total }}"
+
                     }
                   ]
                 },
@@ -131,11 +135,12 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Missing in CONTRIBUTE.md:*\n${{ fromJson(steps.results.outputs.summary).missing }}"
+                      "text": "*Missing in CONTRIBUTE.md:*\n${{ steps.results.outputs.missing }}"
+
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Extra in CONTRIBUTE.md:*\n${{ fromJson(steps.results.outputs.summary).extra }}"
+                      "text": "*Extra in CONTRIBUTE.md:*\n${{ steps.results.outputs.extra }}"
                     }
                   ]
                 },
