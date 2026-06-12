@@ -17,32 +17,22 @@ jobs:
       SLACK_WEBHOOK_URL: ${{ secrets.CONTRIBUTORS_SLACK_WEBHOOK_URL }}
 
     steps:
-      - name: Checkout toolbox script repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          repository: domstolene/toolbox
-          token: ${{ secrets.TOOLBOX_REPO_READ_TOKEN }}
-          path: toolbox
-          sparse-checkout: |
-            repoAnalyse/sjekk_outside_collaborators.sh
-          sparse-checkout-cone-mode: false
 
       - name: Run collaborator audit script
         id: audit
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG: ${{ vars.AUDIT_ORG != '' && vars.AUDIT_ORG || github.repository_owner }}
-          REPO: ${{ vars.AUDIT_REPO != '' && vars.AUDIT_REPO || github.event.repository.name }}
           CONTRIBUTE_PATH: ${{ vars.AUDIT_CONTRIBUTE_PATH || 'CONTRIBUTE.md' }}
         run: |
-          chmod +x toolbox/repoAnalyse/sjekk_outside_collaborators.sh
+          chmod +x tools/sjekk_outside_collaborators.sh
+
           
           output_file="collaboration-audit.json"
           patch_file="contribute-sync.patch"
-          
-          bash toolbox/repoAnalyse/sjekk_outside_collaborators.sh \
-            "$ORG" \
-            "$REPO" \
+
+          bash tools/sjekk_outside_collaborators.sh \
             "$CONTRIBUTE_PATH" \
             "$output_file" \
             "$patch_file"
