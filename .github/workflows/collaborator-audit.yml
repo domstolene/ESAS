@@ -1,0 +1,164 @@
+name: Weekly Collaborator Audit
+
+on:
+  schedule:
+    # Kjører hver mandag kl 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: Check Outside Collaborators
+
+    steps:
+      - name: Checkout toolbox script repository
+        uses: actions/checkout@v4
+        with:
+          repository: domstolene/toolbox
+          token: ${{ secrets.TOOLBOX_REPO_READ_TOKEN }}
+          path: toolbox
+          sparse-checkout: |
+            repoAnalyse/sjekk_outside_collaborators.sh
+          sparse-checkout-cone-mode: false
+
+      - name: Run collaborator audit script
+        id: audit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG: ${{ vars.AUDIT_ORG != '' && vars.AUDIT_ORG || github.repository_owner }}
+          REPO: ${{ vars.AUDIT_REPO != '' && vars.AUDIT_REPO || github.event.repository.name }}
+          CONTRIBUTE_PATH: ${{ vars.AUDIT_CONTRIBUTE_PATH || 'CONTRIBUTE.md' }}
+        run: |
+          chmod +x toolbox/repoAnalyse/sjekk_outside_collaborators.sh
+          
+          output_file="collaboration-audit.json"
+          patch_file="contribute-sync.patch"
+          
+          bash toolbox/repoAnalyse/sjekk_outside_collaborators.sh \
+            "$ORG" \
+            "$REPO" \
+            "$CONTRIBUTE_PATH" \
+            "$output_file" \
+            "$patch_file"
+          
+          # Lagre rapport som artifact
+          echo "audit_report=$output_file" >> $GITHUB_OUTPUT
+
+      - name: Process audit results
+        id: results
+        run: |
+          # Standardverdier slik at Slack-notifikasjon alltid kan bygges
+          echo 'summary={"outside_total":0,"contribute_total":0,"missing":0,"extra":0}' >> "$GITHUB_OUTPUT"
+          echo 'has_issues=false' >> "$GITHUB_OUTPUT"
+
+          if [ -f collaboration-audit.json ]; then
+            # Parse JSON og lag sammendrag
+            summary=$(jq -c '{
+              outside_total: .outside_collaborators_total,
+              contribute_total: .contribute_usernames_total,
+              missing: (.outside_missing_in_contribute | length),
+              extra: (.contribute_not_outside_collaborators | length)
+            }' collaboration-audit.json)
+            
+            echo "summary=$summary" >> "$GITHUB_OUTPUT"
+            
+            # Check for issues
+            missing_count=$(jq '.outside_missing_in_contribute | length' collaboration-audit.json)
+            if [ "$missing_count" -gt 0 ]; then
+              echo "has_issues=true" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: collaborator-audit-report
+          path: collaboration-audit.json
+          retention-days: 30
+
+      - name: Send Slack notification
+        if: always() && secrets.CONTRIBUTORS_SLACK_WEBHOOK_URL != ''
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          webhook-url: ${{ secrets.CONTRIBUTORS_SLACK_WEBHOOK_URL }}
+          payload: |
+            {
+              "text": "🔍 Weekly Collaborator Audit Report",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Weekly Collaborator Audit",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Organization:*\n${{ vars.AUDIT_ORG || 'domstolene' }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repository:*\n${{ vars.AUDIT_REPO || 'ESAS' }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Outside Collaborators:*\n${{ fromJson(steps.results.outputs.summary).outside_total }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*In CONTRIBUTE.md:*\n${{ fromJson(steps.results.outputs.summary).contribute_total }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ steps.results.outputs.has_issues == 'true' && '⚠️ *Issues detected:*' || '✅ *No issues detected*' }}"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Missing in CONTRIBUTE.md:*\n${{ fromJson(steps.results.outputs.summary).missing }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Extra in CONTRIBUTE.md:*\n${{ fromJson(steps.results.outputs.summary).extra }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Run"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+
+      - name: Fail if critical issues found
+        if: steps.results.outputs.has_issues == 'true'
+        run: |
+          echo "❌ Outside collaborators missing in CONTRIBUTE.md found!"
+          exit 1
+
+
