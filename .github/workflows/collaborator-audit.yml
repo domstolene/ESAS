@@ -77,81 +77,87 @@ jobs:
 
       - name: Send Slack notification
         if: always() && env.SLACK_WEBHOOK_URL != ''
-        uses: slackapi/slack-github-action@v1.24.0
         env:
           SLACK_WEBHOOK_URL: ${{ env.SLACK_WEBHOOK_URL }}
-        with:
-          payload: |
-            {
-              "text": "🔍 Weekly Collaborator Audit Report",
-              "blocks": [
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          OUTSIDE_TOTAL: ${{ steps.results.outputs.outside_total }}
+          CONTRIBUTE_TOTAL: ${{ steps.results.outputs.contribute_total }}
+          MISSING_TOTAL: ${{ steps.results.outputs.missing }}
+          EXTRA_TOTAL: ${{ steps.results.outputs.extra }}
+          HAS_ISSUES: ${{ steps.results.outputs.has_issues }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$HAS_ISSUES" = "true" ]; then
+            issue_text='⚠️ *Issues detected:*'
+          else
+            issue_text='✅ *No issues detected*'
+          fi
+
+          jq -n \
+            --arg repository_owner "$REPOSITORY_OWNER" \
+            --arg repository_name "$REPOSITORY_NAME" \
+            --arg outside_total "$OUTSIDE_TOTAL" \
+            --arg contribute_total "$CONTRIBUTE_TOTAL" \
+            --arg missing_total "$MISSING_TOTAL" \
+            --arg extra_total "$EXTRA_TOTAL" \
+            --arg issue_text "$issue_text" \
+            --arg run_url "$RUN_URL" \
+            '{
+              text: "🔍 Weekly Collaborator Audit Report",
+              blocks: [
                 {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "Weekly Collaborator Audit",
-                    "emoji": true
+                  type: "header",
+                  text: {
+                    type: "plain_text",
+                    text: "Weekly Collaborator Audit",
+                    emoji: true
                   }
                 },
                 {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Organization:*\n${{ vars.AUDIT_ORG || 'domstolene' }}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n${{ vars.AUDIT_REPO || 'ESAS' }}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Outside Collaborators:*\n${{ steps.results.outputs.outside_total }}"
-
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*In CONTRIBUTE.md:*\n${{ steps.results.outputs.contribute_total }}"
-
-                    }
+                  type: "section",
+                  fields: [
+                    { type: "mrkdwn", text: "*Organization:*\n\($repository_owner)" },
+                    { type: "mrkdwn", text: "*Repository:*\n\($repository_name)" },
+                    { type: "mrkdwn", text: "*Outside Collaborators:*\n\($outside_total)" },
+                    { type: "mrkdwn", text: "*In CONTRIBUTE.md:*\n\($contribute_total)" }
                   ]
                 },
                 {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ steps.results.outputs.has_issues == 'true' && '⚠️ *Issues detected:*' || '✅ *No issues detected*' }}"
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: $issue_text
                   }
                 },
                 {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Missing in CONTRIBUTE.md:*\n${{ steps.results.outputs.missing }}"
-
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Extra in CONTRIBUTE.md:*\n${{ steps.results.outputs.extra }}"
-                    }
+                  type: "section",
+                  fields: [
+                    { type: "mrkdwn", text: "*Missing in CONTRIBUTE.md:*\n\($missing_total)" },
+                    { type: "mrkdwn", text: "*Extra in CONTRIBUTE.md:*\n\($extra_total)" }
                   ]
                 },
                 {
-                  "type": "actions",
-                  "elements": [
+                  type: "actions",
+                  elements: [
                     {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "View Run"
+                      type: "button",
+                      text: {
+                        type: "plain_text",
+                        text: "View Run"
                       },
-                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                      url: $run_url
                     }
                   ]
                 }
               ]
-            }
+            }' > slack-payload.json
+
+          curl -sS -X POST \
+            -H "Content-type: application/json" \
+            --data @slack-payload.json \
+            "$SLACK_WEBHOOK_URL"
+
       - name: Slack webhook not configured
         if: always() && env.SLACK_WEBHOOK_URL == ''
         run: |
