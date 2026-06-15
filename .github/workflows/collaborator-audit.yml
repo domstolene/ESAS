@@ -1,0 +1,172 @@
+name: Weekly Collaborator Audit
+
+on:
+  schedule:
+    # Kjører hver mandag kl 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: Check Outside Collaborators
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.CONTRIBUTORS_SLACK_WEBHOOK_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run collaborator audit script
+        id: audit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONTRIBUTE_PATH: ${{ vars.AUDIT_CONTRIBUTE_PATH || 'CONTRIBUTE.md' }}
+        run: |
+          chmod +x tools/sjekk_outside_collaborators.sh
+
+          
+          output_file="collaboration-audit.json"
+          patch_file="contribute-sync.patch"
+
+          bash tools/sjekk_outside_collaborators.sh \
+            "$CONTRIBUTE_PATH" \
+            "$output_file" \
+            "$patch_file"
+          
+          # Lagre rapport som artifact
+          echo "audit_report=$output_file" >> $GITHUB_OUTPUT
+
+      - name: Process audit results
+        id: results
+        run: |
+          # Standardverdier slik at Slack-notifikasjon alltid kan bygges
+          echo 'outside_total=0' >> "$GITHUB_OUTPUT"
+          echo 'contribute_total=0' >> "$GITHUB_OUTPUT"
+          echo 'missing=0' >> "$GITHUB_OUTPUT"
+          echo 'extra=0' >> "$GITHUB_OUTPUT"          
+          echo 'has_issues=false' >> "$GITHUB_OUTPUT"
+
+          if [ -f collaboration-audit.json ]; then
+            outside_total=$(jq -r '.outside_collaborators_total // 0' collaboration-audit.json)
+            contribute_total=$(jq -r '.contribute_usernames_total // 0' collaboration-audit.json)
+            missing_count=$(jq -r '.outside_missing_in_contribute | length' collaboration-audit.json)
+            extra_count=$(jq -r '.contribute_not_outside_collaborators | length' collaboration-audit.json)
+
+            echo "outside_total=$outside_total" >> "$GITHUB_OUTPUT"
+            echo "contribute_total=$contribute_total" >> "$GITHUB_OUTPUT"
+            echo "missing=$missing_count" >> "$GITHUB_OUTPUT"
+            echo "extra=$extra_count" >> "$GITHUB_OUTPUT"
+            
+            # Check for issues
+            if [ "$missing_count" -gt 0 ]; then
+              echo "has_issues=true" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: collaborator-audit-report
+          path: collaboration-audit.json
+          retention-days: 30
+
+      - name: Send Slack notification
+        if: always() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ env.SLACK_WEBHOOK_URL }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          OUTSIDE_TOTAL: ${{ steps.results.outputs.outside_total }}
+          CONTRIBUTE_TOTAL: ${{ steps.results.outputs.contribute_total }}
+          MISSING_TOTAL: ${{ steps.results.outputs.missing }}
+          EXTRA_TOTAL: ${{ steps.results.outputs.extra }}
+          HAS_ISSUES: ${{ steps.results.outputs.has_issues }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$HAS_ISSUES" = "true" ]; then
+            issue_text='⚠️ *Issues detected:*'
+          else
+            issue_text='✅ *No issues detected*'
+          fi
+
+          jq -n \
+            --arg repository_owner "$REPOSITORY_OWNER" \
+            --arg repository_name "$REPOSITORY_NAME" \
+            --arg outside_total "$OUTSIDE_TOTAL" \
+            --arg contribute_total "$CONTRIBUTE_TOTAL" \
+            --arg missing_total "$MISSING_TOTAL" \
+            --arg extra_total "$EXTRA_TOTAL" \
+            --arg issue_text "$issue_text" \
+            --arg run_url "$RUN_URL" \
+            '{
+              text: "🔍 Weekly Collaborator Audit Report",
+              blocks: [
+                {
+                  type: "header",
+                  text: {
+                    type: "plain_text",
+                    text: "Weekly Collaborator Audit",
+                    emoji: true
+                  }
+                },
+                {
+                  type: "section",
+                  fields: [
+                    { type: "mrkdwn", text: "*Organization:*\n\($repository_owner)" },
+                    { type: "mrkdwn", text: "*Repository:*\n\($repository_name)" },
+                    { type: "mrkdwn", text: "*Outside Collaborators:*\n\($outside_total)" },
+                    { type: "mrkdwn", text: "*In CONTRIBUTE.md:*\n\($contribute_total)" }
+                  ]
+                },
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: $issue_text
+                  }
+                },
+                {
+                  type: "section",
+                  fields: [
+                    { type: "mrkdwn", text: "*Missing in CONTRIBUTE.md:*\n\($missing_total)" },
+                    { type: "mrkdwn", text: "*Extra in CONTRIBUTE.md:*\n\($extra_total)" }
+                  ]
+                },
+                {
+                  type: "actions",
+                  elements: [
+                    {
+                      type: "button",
+                      text: {
+                        type: "plain_text",
+                        text: "View Run"
+                      },
+                      url: $run_url
+                    }
+                  ]
+                }
+              ]
+            }' > slack-payload.json
+
+          curl -sS -X POST \
+            -H "Content-type: application/json" \
+            --data @slack-payload.json \
+            "$SLACK_WEBHOOK_URL"
+
+      - name: Slack webhook not configured
+        if: always() && env.SLACK_WEBHOOK_URL == ''
+        run: |
+          echo "Slack notification skipped: secret CONTRIBUTORS_SLACK_WEBHOOK_URL is not configured."
+
+      - name: Fail if critical issues found
+        if: steps.results.outputs.has_issues == 'true'
+        run: |
+          echo "❌ Outside collaborators missing in CONTRIBUTE.md found!"
+          exit 1
+
+
