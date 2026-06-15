@@ -20,14 +20,13 @@
       "type": "string",
       "description": "OUS sin id på analysert prøvesett."
     },
-    "analyseUtfoert": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Tidspunkt for når analysen ble utført."
-    },
     "fortolkningstekst": {
       "type": "string",
       "description": "Fortolkningstekst for resultatet."
+    },
+    "sakskommentar": {
+      "type": "string",
+      "description": "Valgfri kommentar til saken."
     },
     "analyseresultater": {
       "type": "array",
@@ -43,7 +42,6 @@
     "meldingsId",
     "rekvisisjonsId",
     "saksId",
-    "analyseUtfoert",
     "fortolkningstekst",
     "analyseresultater"
   ],
@@ -53,9 +51,15 @@
       "type": "object",
       "properties": {
         "typeAnalyse": { "type": "string" },
-        "erPaavist": { "type": "boolean" }
+        "erPaavist": { "type": "boolean" },
+        "erAkkreditertMetode": { "type": "boolean" },
+        "analyseUtfoert": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Tidspunkt for når analysen ble utført."
+        }
       },
-      "required": ["typeAnalyse", "erPaavist"]
+      "required": ["typeAnalyse", "erPaavist", "erAkkreditertMetode", "analyseUtfoert"]
     },
     "unikId": {
       "type": "string",
