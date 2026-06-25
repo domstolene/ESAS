@@ -52,14 +52,9 @@
       "properties": {
         "typeAnalyse": { "type": "string" },
         "erPaavist": { "type": "boolean" },
-        "erAkkreditertMetode": { "type": "boolean" },
-        "analyseUtfoert": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Tidspunkt for når analysen ble utført."
-        }
+        "erAkkreditertMetode": { "type": "boolean" }
       },
-      "required": ["typeAnalyse", "erPaavist", "erAkkreditertMetode", "analyseUtfoert"]
+      "required": ["typeAnalyse", "erPaavist", "erAkkreditertMetode"]
     },
     "unikId": {
       "type": "string",
