@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+# Kommaseparert liste over virksomhetsnavn (slik de står i CONTRIBUTE.md) som er
+# interne GitHub-brukere og aldri vil dukke opp som Outside Collaborators.
+# Disse ignoreres i sammenligningen.
+INTERN_VIRKSOMHETER="${INTERN_VIRKSOMHETER:-Domstolen}"
+
 repo_root=$(git rev-parse --show-toplevel)
 contribute_path="${1:-CONTRIBUTE.md}"
 output_file="${2:-esas-collaborator-audit.json}"
@@ -39,6 +44,8 @@ outside_users_json="$tmp_dir/outside-users.json"
 contribute_users_json="$tmp_dir/contribute-users.json"
 missing_in_contribute_json="$tmp_dir/missing-in-contribute.json"
 only_in_contribute_json="$tmp_dir/only-in-contribute.json"
+intern_users_txt="$tmp_dir/intern-users.txt"
+intern_users_json="$tmp_dir/intern-users.json"
 
 echo "Henter Outside Collaborators for gjeldende repo..."
 gh api "repos/{owner}/{repo}/collaborators?affiliation=outside&per_page=100" --paginate --jq '.[].login' \
@@ -53,6 +60,28 @@ fi
 echo "Leser lokal CONTRIBUTE-fil: $contribute_file"
 cp "$contribute_file" "$contribute_raw"
 
+echo "Finner interne brukere basert på virksomhet: $INTERN_VIRKSOMHETER"
+# Bygg awk-pattern av kommaseparerte virksomhetsnavn
+intern_pattern=$(echo "$INTERN_VIRKSOMHETER" | tr ',' '\n' | awk '{gsub(/^ +| +$/,"")} NF' | paste -s -d '|' -)
+# Parse tabellrader: | Navn | Virksomhet | Rolle | @bruker |
+# Kolonne 2 = virksomhet, kolonne 4 = github-bruker
+awk -F'|' -v pat="$intern_pattern" '
+    /^\|/ {
+        virksomhet = $3
+        gsub(/^ +| +$/, "", virksomhet)
+        bruker = $5
+        gsub(/^ +| +$/, "", bruker)
+        gsub(/^@/, "", bruker)
+        if (bruker != "" && virksomhet ~ ("^(" pat ")$")) {
+            print tolower(bruker)
+        }
+    }
+' "$contribute_raw" | sort -u > "$intern_users_txt"
+
+if [ -s "$intern_users_txt" ]; then
+    echo "Ignorerer $(wc -l < "$intern_users_txt" | tr -d ' ') intern(e) bruker(e) fra: $INTERN_VIRKSOMHETER"
+fi
+
 echo "Parser brukernavn fra $contribute_path..."
 {
     grep -oE '@[A-Za-z0-9][A-Za-z0-9-]{0,38}' "$contribute_raw" | sed 's/^@//'
@@ -62,8 +91,14 @@ echo "Parser brukernavn fra $contribute_path..."
     | tr '[:upper:]' '[:lower:]' \
     | sort -u > "$contribute_users_txt" || true
 
+# Fjern interne brukere fra contribute-listen før sammenligning
+if [ -s "$intern_users_txt" ]; then
+    comm -23 "$contribute_users_txt" "$intern_users_txt" > "$tmp_dir/contribute-users-filtered.txt"
+    mv "$tmp_dir/contribute-users-filtered.txt" "$contribute_users_txt"
+fi
+
 # Sørg for at filer eksisterer selv hvis ingen treff
-touch "$outside_users_txt" "$contribute_users_txt"
+touch "$outside_users_txt" "$contribute_users_txt" "$intern_users_txt"
 
 comm -23 "$outside_users_txt" "$contribute_users_txt" > "$missing_in_contribute_txt"
 comm -13 "$outside_users_txt" "$contribute_users_txt" > "$only_in_contribute_txt"
@@ -72,14 +107,17 @@ jq -R -s 'split("\n") | map(select(length > 0))' "$outside_users_txt" > "$outsid
 jq -R -s 'split("\n") | map(select(length > 0))' "$contribute_users_txt" > "$contribute_users_json"
 jq -R -s 'split("\n") | map(select(length > 0))' "$missing_in_contribute_txt" > "$missing_in_contribute_json"
 jq -R -s 'split("\n") | map(select(length > 0))' "$only_in_contribute_txt" > "$only_in_contribute_json"
+jq -R -s 'split("\n") | map(select(length > 0))' "$intern_users_txt" > "$intern_users_json"
 
 jq -n \
     --arg generated_at "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
     --arg contribute_path "$contribute_path" \
+    --arg intern_virksomheter "$INTERN_VIRKSOMHETER" \
     --slurpfile outside "$outside_users_json" \
     --slurpfile contribute "$contribute_users_json" \
     --slurpfile missing "$missing_in_contribute_json" \
     --slurpfile only "$only_in_contribute_json" \
+    --slurpfile intern "$intern_users_json" \
     '
     ($outside[0]) as $outside_users
     | ($contribute[0]) as $contribute_users
@@ -87,6 +125,8 @@ jq -n \
     | {
         generated_at: $generated_at,
         contribute_path: $contribute_path,
+        intern_virksomheter: ($intern_virksomheter | split(",")),
+        intern_users_ignored: $intern[0],
         outside_collaborators_total: ($outside_users | length),
         contribute_usernames_total: ($contribute_users | length),
         outside_collaborators: (
@@ -207,6 +247,7 @@ echo "JSON-rapport lagret i $output_file"
 echo ""
 echo "=== Sammendrag ==="
 echo "Outside collaborators (faktisk tilgang): $(wc -l < "$outside_users_txt" | tr -d ' ')"
-echo "Brukere funnet i CONTRIBUTE.md: $(wc -l < "$contribute_users_txt" | tr -d ' ')"
+echo "Interne brukere ignorert ($INTERN_VIRKSOMHETER): $(wc -l < "$intern_users_txt" | tr -d ' ')"
+echo "Brukere funnet i CONTRIBUTE.md (ekskl. interne): $(wc -l < "$contribute_users_txt" | tr -d ' ')"
 echo "Outside collaborators som mangler i CONTRIBUTE.md: $(wc -l < "$missing_in_contribute_txt" | tr -d ' ')"
 echo "Brukere i CONTRIBUTE.md som ikke er outside collaborators: $(wc -l < "$only_in_contribute_txt" | tr -d ' ')"
