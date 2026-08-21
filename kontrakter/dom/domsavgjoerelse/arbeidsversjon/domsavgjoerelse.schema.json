@@ -525,9 +525,13 @@
         "person": {
           "description": "Person som sender meldingen. Vanligvis dommeren eller saksbehandleren",
           "$ref": "#/definitions/ansattPerson"
+        },
+        "rettsinstans": {
+          "description": "Rettsinstans som sender domsavgjørelsen",
+          "$ref": "#/definitions/rettsinstansType"
         }
       },
-      "required": ["organisasjon"],
+      "required": ["organisasjon", "rettsinstans"],
       "type": "object",
       "additionalProperties": false
     },
@@ -555,6 +559,11 @@
       "required": ["organisasjonsnummer"],
       "type": "object",
       "additionalProperties": false
+    },
+    "rettsinstansType": {
+      "description": "Rettsinstans som sender domsavgjørelsen",
+      "enum": ["TINGRETT", "LAGMANNSRETT", "HOEYESTERETT"],
+      "type": "string"
     },
     "dokument": {
       "description": "Et dokument har en ID for at det skal kunne refereres til fra andre steder.",
