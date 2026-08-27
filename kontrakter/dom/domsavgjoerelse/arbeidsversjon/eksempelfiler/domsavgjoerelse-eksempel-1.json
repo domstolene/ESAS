@@ -14,7 +14,8 @@
         "kontakt": {
           "epost": "litt.saksbehandler@domstol.no"
         }
-      }
+      },
+      "rettsinstans": "TINGRETT"
     },
     "mottaker": {
       "organisasjon": {

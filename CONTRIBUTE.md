@@ -18,9 +18,9 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Monika Holmes                 | Politi        | Write | @msh032               |
 | Reidar Skibrek Håbrekke       | Politi        | Write | @reidosaurus          |
 | Daniel Branil Stoa            | Politi        | Write | @raikoss              |
-
 | Michael Johansen              | Politi        | Write | @michael-johansen     |
 | Alexander Sjøsten             | Politi        | Write | @alecbalec            |
+| Adriano Stewart               | Politi        | Write | @AdrianoJS            |
 |                               |               |       |                       |
 | Nikolay Pukhovskiy            | KDI           | Write | @pukhovskiy-bspoke    |
 | Emil Tørmoen                  | KDI           | Admin | @cx-emitor            |
