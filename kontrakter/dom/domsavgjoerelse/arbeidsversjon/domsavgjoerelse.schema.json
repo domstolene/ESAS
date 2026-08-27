@@ -86,7 +86,7 @@
         },
         "kravId": {
           "$ref": "#/definitions/GUID",
-          "description": "KravId i nåværende instans. Kan være null dersom saken er opprettet manuelt"
+          "description": "KravId i nåværende instans"
         },
         "opprinneligKravId": {
           "$ref": "#/definitions/GUID",
@@ -103,6 +103,7 @@
       "required": [
         "avgjoerelseId",
         "avsagtDato",
+        "kravId",
         "opprinneligKravId",
         "avgjoerelsePrSiktetTiltalt"
       ],
