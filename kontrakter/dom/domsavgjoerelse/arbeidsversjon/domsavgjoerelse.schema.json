@@ -86,7 +86,7 @@
         },
         "kravId": {
           "$ref": "#/definitions/GUID",
-          "description": "KravId i nåværende instans."
+          "description": "KravId i nåværende instans"
         },
         "opprinneligKravId": {
           "$ref": "#/definitions/GUID",
