@@ -2,9 +2,15 @@
 
 | Versjon | Beskrivelse      | Aktiv fra | Aktiv til |
 |---------|------------------|-----------|-----------|
+| 1.3     | Rettsinstans     |           |           |
 | 1.2     | Forkynt dato     |           |           |
 | 1.1     | Kontaktforbud    |           |           |
 | 1.0     | Initiell versjon |           |           |
+
+## Versjon 1.3
+### 27.08.2026 Rettsinstans
+* Lagt til obligatorisk felt for rettsinstans på avsender
+* Gjort kravId obligatorisk
 
 ## Versjon 1.2
 ### 16.09.2025 Forkynt dato
