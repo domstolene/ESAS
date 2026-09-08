@@ -148,7 +148,7 @@
           "description": "Enheten for målingen"
         },
         "timerEtterKjoering": {
-          "type": "integer",
+          "type": "number",
           "description": "Timer etter kjøringen"
         },
         "tekst": {
