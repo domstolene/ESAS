@@ -135,7 +135,7 @@
           "type": "string",
           "enum": ["ALKOHOL", "ANNET"],
           "description": "Selve typen av rusmiddel"
-        }
+        },
         "alkoholkonsentrasjon": {
           "type": "number",
           "description": "Konsentrasjonen (uten enhet)"
