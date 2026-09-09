@@ -89,14 +89,18 @@
         "under18Gjerningstid": false,
         "forsvarerinformasjon": {
           "oppnevntForsvarer": {
-            "identitetsnummer": {
-              "foedselsnummer": "14846399383"
+            "person": {
+              "identitetsnummer": {
+                "foedselsnummer": "14846399383"
+              }
             },
             "erVarsletOmFenglingsmoete": true
           },
           "oensketForsvarer": {
-            "identitetsnummer": {
-              "foedselsnummer": "14846399385"
+            "person": {
+              "identitetsnummer": {
+                "foedselsnummer": "14846399385"
+              }
             }
           }
         }
