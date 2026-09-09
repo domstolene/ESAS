@@ -91,7 +91,10 @@
           "oppnevntForsvarer": {
             "person": {
               "identitetsnummer": {
-                "foedselsnummer": "14846399383"
+                "identitetsnummer": {
+                  "idType": "FOEDSELSNUMMER",
+                  "verdi": "14846399385"
+                }
               }
             },
             "erVarsletOmFenglingsmoete": true
@@ -99,7 +102,8 @@
           "oensketForsvarer": {
             "person": {
               "identitetsnummer": {
-                "foedselsnummer": "14846399385"
+                "idType": "FOEDSELSNUMMER",
+                "verdi": "14846399385"
               }
             }
           }
