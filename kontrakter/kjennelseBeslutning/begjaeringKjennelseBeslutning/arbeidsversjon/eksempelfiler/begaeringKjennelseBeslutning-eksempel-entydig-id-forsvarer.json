@@ -91,10 +91,8 @@
           "oppnevntForsvarer": {
             "person": {
               "identitetsnummer": {
-                "identitetsnummer": {
-                  "idType": "FOEDSELSNUMMER",
-                  "verdi": "14846399385"
-                }
+                "idType": "FOEDSELSNUMMER",
+                "verdi": "14846399385"
               }
             },
             "erVarsletOmFenglingsmoete": true
