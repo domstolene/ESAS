@@ -296,7 +296,7 @@
         },
         "vilkaar": {
           "type": "string",
-          "description": "Vilkår vedrørenede gjennomføring av straffen (jf. §50)"
+          "description": "Vilkår vedrørende gjennomføring av straffen (jf. §50)"
         }
       },
       "type": "object",
