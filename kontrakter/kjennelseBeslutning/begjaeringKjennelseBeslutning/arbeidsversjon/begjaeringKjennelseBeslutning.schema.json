@@ -146,13 +146,6 @@
           "type": "array",
           "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
           "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
-        },
-        "andrePersoner": {
-          "type": "array",
-          "description": "Profesjonelle vitner (politi), sakkyndige o.l.",
-          "items": {
-            "$ref": "#/definitions/profesjonellPersonMedRolleStraffesak"
-          }
         }
       },
       "required": [
@@ -160,8 +153,7 @@
         "siktedeForetak",
         "fornaermedePersoner",
         "fornaermedeForetak",
-        "vitner",
-        "andrePersoner"
+        "vitner"
       ],
       "additionalProperties": false
     },
@@ -522,32 +514,14 @@
       "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
-    "profesjonellPersonMedRolle": {
-      "type": "object",
-      "description": "Personobjekt med rolle tenkt brukt for advokater, tolker, sakkyndige vitner o.l.",
-      "properties": {
-        "rolle": {
-          "enum": [
-            "ADVOKAT",
-            "DOMFELT",
-            "IMPLISERT",
-            "MELDER",
-            "SAKKYNDIG",
-            "TOLK",
-            "ANNET"
-          ]
-        },
-        "person": {
-          "$ref": "#/definitions/profesjonellPerson"
-        }
-      },
-      "required": ["rolle", "person"],
-      "additionalProperties": false
-    },
     "profesjonellPerson": {
       "type": "object",
       "description": "Enkle personobjekter for tiltenkt bruk for advokater, tolker, sakkyndige vitner o.l.",
       "properties": {
+        "identitetsnummer": {
+          "$ref": "#/definitions/personIdentifikator",
+          "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
+        },
         "tittel": {
           "type": "string"
         },
@@ -571,7 +545,7 @@
           "$ref": "#/definitions/kontaktInfoPerson"
         }
       },
-      "required": ["navn"],
+      "required": ["identitetsnummer"],
       "additionalProperties": false
     },
     "kontaktInfo": {
@@ -667,19 +641,6 @@
       "description": "Fornærmede, vitne informasjon med kobling til straffesakene de er med i",
       "properties": {
         "person": { "$ref": "#/definitions/relatertPerson" },
-        "straffesaker": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/straffesaksnummer" }
-        }
-      },
-      "required": ["person", "straffesaker"],
-      "additionalProperties": false
-    },
-    "profesjonellPersonMedRolleStraffesak": {
-      "type": "object",
-      "description": "Andre personer med kobling til Straffesak",
-      "properties": {
-        "person": { "$ref": "#/definitions/profesjonellPersonMedRolle" },
         "straffesaker": {
           "type": "array",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
