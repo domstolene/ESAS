@@ -89,20 +89,16 @@
         "under18Gjerningstid": false,
         "forsvarerinformasjon": {
           "oppnevntForsvarer": {
-            "person": {
-              "identitetsnummer": {
-                "idType": "FOEDSELSNUMMER",
-                "verdi": "14846399385"
-              }
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "14846399385"
             },
             "erVarsletOmFenglingsmoete": true
           },
           "oensketForsvarer": {
-            "person": {
-              "identitetsnummer": {
-                "idType": "FOEDSELSNUMMER",
-                "verdi": "14846399385"
-              }
+            "identitetsnummer": {
+              "idType": "FOEDSELSNUMMER",
+              "verdi": "14846399385"
             }
           }
         }

@@ -514,40 +514,6 @@
       "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
-    "profesjonellPerson": {
-      "type": "object",
-      "description": "Enkle personobjekter for tiltenkt bruk for advokater, tolker, sakkyndige vitner o.l.",
-      "properties": {
-        "identitetsnummer": {
-          "$ref": "#/definitions/personIdentifikator",
-          "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
-        },
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "object",
-          "properties": {
-            "fornavn": {
-              "type": "string"
-            },
-            "mellomnavn": {
-              "type": "string"
-            },
-            "etternavn": {
-              "type": "string"
-            }
-          },
-          "required": ["etternavn"],
-          "additionalProperties": false
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson"
-        }
-      },
-      "required": ["identitetsnummer"],
-      "additionalProperties": false
-    },
     "kontaktInfo": {
       "type": "object",
       "description": "Generell kontaktinformasjon",
@@ -560,23 +526,6 @@
           "$ref": "#/definitions/epost"
         },
         "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
-      },
-      "required": ["telefonnummer"],
-      "additionalProperties": false
-    },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "epost og/eller telefonnummer en av de skal være med verdier",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/telefonnummer"
-          }
-        }
       },
       "required": ["telefonnummer"],
       "additionalProperties": false
@@ -733,25 +682,27 @@
           "type": "object",
           "description": "Informasjon om oppnevnt forsvarer. Det er personen som står som forsvarer når begjæringen blir sendt, som skal varsles om fengslingsmøte.",
           "properties": {
-            "person": {
-              "$ref": "#/definitions/profesjonellPerson"
+            "identitetsnummer": {
+              "$ref": "#/definitions/personIdentifikator",
+              "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
             },
             "erVarsletOmFenglingsmoete": {
               "type": "boolean"
             }
           },
-          "required": ["person", "erVarsletOmFenglingsmoete"],
+          "required": ["identitetsnummer", "erVarsletOmFenglingsmoete"],
           "additionalProperties": false
         },
         "oensketForsvarer": {
           "type": "object",
           "description": "Informasjon om ønsket forsvarer. Kan ikke ha vært varslet om fengslingsmøte, da ny forsvarer evnt. oppnevnes av domsstolen og ikke kan ha fått beskjed i forkant av begjæringen.",
           "properties": {
-            "person": {
-              "$ref": "#/definitions/profesjonellPerson"
+            "identitetsnummer": {
+              "$ref": "#/definitions/personIdentifikator",
+              "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
             }
           },
-          "required": ["person"],
+          "required": ["identitetsnummer"],
           "additionalProperties": false
         }
       },
