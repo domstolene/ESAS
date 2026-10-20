@@ -73,6 +73,21 @@
         },
         "verger": []
       },
+      "forsvarerinformasjon": {
+        "oppnevntForsvarer": {
+          "identitetsnummer": {
+            "idType": "FOEDSELSNUMMER",
+            "verdi": "14846399385"
+          },
+          "erVarsletOmFenglingsmoete": true
+        },
+        "oensketForsvarer": {
+          "identitetsnummer": {
+            "idType": "FOEDSELSNUMMER",
+            "verdi": "01870094157"
+          }
+        }
+      },
       "under18Gjerningstid": false
     },
     "fornaermedePersoner": [],
