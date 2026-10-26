@@ -2,11 +2,14 @@
 
 | Versjon | Beskrivelse                                  | Aktiv fra  |
 |---------|----------------------------------------------|------------|
+| 1.4     | entydig identifisering advokater + organsisasjon uten navn|            |
 | 1.3     | pakkeId required                             | 06.05.2025 |
 | 1.2     | Kontaktdetaljer/aktor møter i retten         | ikke prod  |
 | 1.1     | pakkeId for flere meldinger som hører sammen | ikke prod  |
 | 1.0     | test                                         | ikke prod  |
 
+## 1.4  entydig identifisering advokater + organsisasjon uten navn
+Sender kun identifikator for advokater og for organisasjon sendes kun org.nummer
 ## 1.3 pakkeId required
 PakkeId som identifiserer meldinger som sendes samlet er nå required
 ## 1.2 Kontaktdetaljer / aktor møter i retten
