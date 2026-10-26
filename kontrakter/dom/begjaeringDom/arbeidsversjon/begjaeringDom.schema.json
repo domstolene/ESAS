@@ -524,11 +524,6 @@
       "required": ["mimeType", "uri", "sjekksum"],
       "additionalProperties": false
     },
-    "dokumentRef": { "$ref": "#/definitions/GUID" },
-    "personForetakRef": {
-      "$ref": "#/definitions/GUID",
-      "description": "Referanse inn person eller foretak lister"
-    },
     "spraakkodeType": {
       "description": "En spraakkode bestaar av tre store bokstaver fra kodelisten ISO 639-3 som representerer spraak",
       "pattern": "^([A-Z]{3})$",
