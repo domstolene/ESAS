@@ -468,36 +468,6 @@
       "required": ["person", "straffesaker"],
       "additionalProperties": false
     },
-    "profesjonellPerson": {
-      "type": "object",
-      "description": "Advokater, tolker, sakkyndige vitner",
-      "properties": {
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "object",
-          "properties": {
-            "fornavn": {
-              "type": "string"
-            },
-            "mellomnavn": {
-              "type": "string"
-            },
-            "etternavn": {
-              "type": "string"
-            }
-          },
-          "required": ["etternavn"],
-          "additionalProperties": false
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson"
-        }
-      },
-      "required": ["navn"],
-      "additionalProperties": false
-    },
     "kontaktInfo": {
       "type": "object",
       "description": "Generell kontaktinformasjon",
@@ -510,23 +480,6 @@
           "$ref": "#/definitions/epost"
         },
         "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
-      },
-      "required": ["telefonnummer"],
-      "additionalProperties": false
-    },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "epost og/eller telefonnummer en av de skal være med verdier",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/telefonnummer"
-          }
-        }
       },
       "required": ["telefonnummer"],
       "additionalProperties": false
