@@ -6,27 +6,38 @@ Samling av kontrakter for meldinger som skal utveksles i ESAS-prosjektet.
 
 ### Installering
 
-Installer avhengigheter med `pnpm install`.
+Prosjektet bruker [mise](https://mise.jdx.dev/getting-started.html) til å styre
+versjonene av Node.js og pnpm. Versjonene er låst i `mise.toml`.
 
-Hvis du ikke har `pnpm` tilgjengelig, kan du aktivere det via Corepack:
-
-```bash
-corepack enable
-pnpm install
-```
-
-Hvis `corepack` ikke er tilgjengelig, kan du installere `pnpm` med `npm`:
+Installer mise etter veiledningen i lenken over. Kjør deretter fra prosjektroten:
 
 ```bash
-npm install -g pnpm@latest-11
-pnpm install
+mise trust
+mise install
+mise exec -- pnpm install --frozen-lockfile
 ```
 
-Kjør deretter `pnpm install` for å hente repoets avhengigheter.
+For å bruke `node` og `pnpm` direkte uten `mise exec --`, aktiver mise i shellet.
+For zsh legger du følgende i `~/.zshrc` og starter et nytt shell:
+
+```zsh
+eval "$(mise activate zsh)"
+```
+
+Ved overgang fra Volta må eventuell Volta-konfigurasjon i shellet ikke overstyre
+mise i `PATH`. Kontroller at `node --version` og `pnpm --version` samsvarer med
+`mise.toml`. Corepack eller en global pnpm-installasjon er ikke nødvendig.
 
 ### Kjør validering
 
 Validering av JSON-schema skjer ved pull-requester og push på main-branch, med `pnpm json:validate`.
+
+Lokalt kan kontrollene kjøres uten shell-aktivering:
+
+```bash
+mise exec -- pnpm prettier:check
+mise exec -- pnpm json:validate
+```
 
 For å legge til validering av nye schema, utvides variabelen `jsonSchemaFolders` i `validateJsonSchema.js`.
 Scriptet forventer at det refereres til mapper som først inneholder versjoner, 
