@@ -47,6 +47,14 @@
       "alg": "RS256",
       "kid": "konfliktraad-1",
       "use": "sig"
-    }    
+    },
+    {
+      "kty": "RSA",
+      "n": "qy9E02chX6E3Y1mTYRzbh1iL8pL8i44JWwFZx4DhECAyPapwwdN97C2d6bx7jrsQjBTj56ya31DGGypMjVHSc39wIYI0jCZs8RWQRU3VH_I-uKVaSJXeNN_JRjzIRD1nnqB5XR9GHkwRgSacFMfLJdoCqhHCb51brex_wRBh2ZClnuY4MP_-rqxrV44NI9W_rsdGxp-zjMvB4KE7qhGXoD6dg716TjQpGaprChQga2xungfWtWfEKieFKfaGZ-AgPfwVUb3ZpuYc-9WiS-39zWOwSh1bsQR6OArxwmYMdU-9mChYC1geRIIpf6AjF6k7G1eKeRJX4NZETFA0zmpIGw",
+      "e": "AQAB",
+      "alg": "RS256",
+      "kid": "ous-1",
+      "use": "sig"
+    }
   ]
 }
