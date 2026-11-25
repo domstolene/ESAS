@@ -12,17 +12,15 @@ For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi
 | Carl Fredrik Bøkestad         | Domstolen     | Admin | @calle-777            | 
 |                               |               |       |                       |
 | Martin Myran                  | Politi        | Admin | @martinmyran          |
-| Mattias Lundmark              | Politi        | Admin | @mattiaslundmark      |
 | Marius Sjølie                 | Politi        | Write | @mariussjolie         |
 | Eli Marie Strømsnes Landro    | Politi        | Write | @computas-ela         |
 | Monika Holmes                 | Politi        | Write | @msh032               |
 | Reidar Skibrek Håbrekke       | Politi        | Write | @reidosaurus          |
-| Daniel Branil Stoa            | Politi        | Write | @raikoss              |
 | Michael Johansen              | Politi        | Write | @michael-johansen     |
 | Alexander Sjøsten             | Politi        | Write | @alecbalec            |
 | Adriano Stewart               | Politi        | Write | @AdrianoJS            |
 |                               |               |       |                       |
-| Nikolay Pukhovskiy            | KDI           | Write | @pukhovskiy-bspoke    |
+| Nikolay Pukhovskiy            | KDI           | Admin | @pukhovskiy-bspoke    |
 | Emil Tørmoen                  | KDI           | Admin | @cx-emitor            |
 | Alexander Hovden              | KDI           | Write | @alexhovden           |
 | Tron Lund                     | KDI           | Write | @tronlund             |

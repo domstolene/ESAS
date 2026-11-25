@@ -146,13 +146,6 @@
           "type": "array",
           "description": "Alle vitner med informasjon om hvilke straffesaker de er vitne i",
           "items": { "$ref": "#/definitions/relatertPersonStraffesak" }
-        },
-        "andrePersoner": {
-          "type": "array",
-          "description": "Profesjonelle vitner (politi), sakkyndige o.l.",
-          "items": {
-            "$ref": "#/definitions/profesjonellPersonMedRolleStraffesak"
-          }
         }
       },
       "required": [
@@ -160,8 +153,7 @@
         "siktedeForetak",
         "fornaermedePersoner",
         "fornaermedeForetak",
-        "vitner",
-        "andrePersoner"
+        "vitner"
       ],
       "additionalProperties": false
     },
@@ -247,15 +239,11 @@
       "type": "object",
       "description": "Entydig identifikator av juridisk enhet. F.eks en spesifik domstol, embete eller politidistrikt",
       "properties": {
-        "navn": {
-          "description": "F.eks. Oslo politidistikt, Riksadvokaten, Borgarting lagmannsrett",
-          "type": "string"
-        },
         "organisasjonsnummer": {
           "$ref": "#/definitions/organisasjonsnummer"
         }
       },
-      "required": ["organisasjonsnummer", "navn"],
+      "required": ["organisasjonsnummer"],
       "additionalProperties": false
     },
     "paataleansvarlig": {
@@ -522,58 +510,6 @@
       "required": ["personForetakRef", "navn", "statsborgerskap"],
       "additionalProperties": false
     },
-    "profesjonellPersonMedRolle": {
-      "type": "object",
-      "description": "Personobjekt med rolle tenkt brukt for advokater, tolker, sakkyndige vitner o.l.",
-      "properties": {
-        "rolle": {
-          "enum": [
-            "ADVOKAT",
-            "DOMFELT",
-            "IMPLISERT",
-            "MELDER",
-            "SAKKYNDIG",
-            "TOLK",
-            "ANNET"
-          ]
-        },
-        "person": {
-          "$ref": "#/definitions/profesjonellPerson"
-        }
-      },
-      "required": ["rolle", "person"],
-      "additionalProperties": false
-    },
-    "profesjonellPerson": {
-      "type": "object",
-      "description": "Enkle personobjekter for tiltenkt bruk for advokater, tolker, sakkyndige vitner o.l.",
-      "properties": {
-        "tittel": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "object",
-          "properties": {
-            "fornavn": {
-              "type": "string"
-            },
-            "mellomnavn": {
-              "type": "string"
-            },
-            "etternavn": {
-              "type": "string"
-            }
-          },
-          "required": ["etternavn"],
-          "additionalProperties": false
-        },
-        "kontakt": {
-          "$ref": "#/definitions/kontaktInfoPerson"
-        }
-      },
-      "required": ["navn"],
-      "additionalProperties": false
-    },
     "kontaktInfo": {
       "type": "object",
       "description": "Generell kontaktinformasjon",
@@ -586,23 +522,6 @@
           "$ref": "#/definitions/epost"
         },
         "telefonnummer": { "$ref": "#/definitions/telefonnummer" }
-      },
-      "required": ["telefonnummer"],
-      "additionalProperties": false
-    },
-    "kontaktInfoPerson": {
-      "type": "object",
-      "description": "epost og/eller telefonnummer en av de skal være med verdier",
-      "properties": {
-        "epost": {
-          "$ref": "#/definitions/epost"
-        },
-        "telefonnummer": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/telefonnummer"
-          }
-        }
       },
       "required": ["telefonnummer"],
       "additionalProperties": false
@@ -667,19 +586,6 @@
       "description": "Fornærmede, vitne informasjon med kobling til straffesakene de er med i",
       "properties": {
         "person": { "$ref": "#/definitions/relatertPerson" },
-        "straffesaker": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/straffesaksnummer" }
-        }
-      },
-      "required": ["person", "straffesaker"],
-      "additionalProperties": false
-    },
-    "profesjonellPersonMedRolleStraffesak": {
-      "type": "object",
-      "description": "Andre personer med kobling til Straffesak",
-      "properties": {
-        "person": { "$ref": "#/definitions/profesjonellPersonMedRolle" },
         "straffesaker": {
           "type": "array",
           "items": { "$ref": "#/definitions/straffesaksnummer" }
@@ -772,25 +678,27 @@
           "type": "object",
           "description": "Informasjon om oppnevnt forsvarer. Det er personen som står som forsvarer når begjæringen blir sendt, som skal varsles om fengslingsmøte.",
           "properties": {
-            "person": {
-              "$ref": "#/definitions/profesjonellPerson"
+            "identitetsnummer": {
+              "$ref": "#/definitions/personIdentifikator",
+              "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
             },
             "erVarsletOmFenglingsmoete": {
               "type": "boolean"
             }
           },
-          "required": ["person", "erVarsletOmFenglingsmoete"],
+          "required": ["identitetsnummer", "erVarsletOmFenglingsmoete"],
           "additionalProperties": false
         },
         "oensketForsvarer": {
           "type": "object",
           "description": "Informasjon om ønsket forsvarer. Kan ikke ha vært varslet om fengslingsmøte, da ny forsvarer evnt. oppnevnes av domsstolen og ikke kan ha fått beskjed i forkant av begjæringen.",
           "properties": {
-            "person": {
-              "$ref": "#/definitions/profesjonellPerson"
+            "identitetsnummer": {
+              "$ref": "#/definitions/personIdentifikator",
+              "description": "Fødselsnummer eller D-nummer. Unik identifisering av forsvareren"
             }
           },
-          "required": ["person"],
+          "required": ["identitetsnummer"],
           "additionalProperties": false
         }
       },

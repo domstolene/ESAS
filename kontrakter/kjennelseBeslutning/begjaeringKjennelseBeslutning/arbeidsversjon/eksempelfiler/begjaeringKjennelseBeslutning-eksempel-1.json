@@ -4,8 +4,7 @@
     "sendtTid": "2024-05-22T17:47:48+02:00",
     "avsender": {
       "organisasjon": {
-        "organisasjonsnummer": "983998178",
-        "navn": "Sør-Øst politidistrikt"
+        "organisasjonsnummer": "983998178"
       },
       "person": {
         "navn": {
@@ -20,8 +19,7 @@
       "telefonnummer": "88888888"
     },
     "mottakerOrganisasjon": {
-      "organisasjonsnummer": "926723480",
-      "navn": "Agder tingrett"
+      "organisasjonsnummer": "926723480"
     }
   },
   "pakkeId": "CADC75FC-22EF-478E-B4EC-27C49F85FD70",
@@ -117,8 +115,7 @@
       }
     ],
     "fornaermedeForetak": [],
-    "vitner": [],
-    "andrePersoner": []
+    "vitner": []
   },
   "hovedStraffesaksnummer": "15439560",
   "dokumenter": [

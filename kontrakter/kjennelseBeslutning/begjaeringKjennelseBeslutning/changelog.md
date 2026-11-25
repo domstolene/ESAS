@@ -1,9 +1,10 @@
 # Endringslogg begjæring om midlertidig tap av førerett
-| Versjon | Beskrivelse                 | Aktiv mottaker | Aktiv sender | 
-|---------|-----------------------------|----------------|-------------|
-| 1.0     | Initiell versjon            |                |             |
-| 1.1     | Kobler straffesak på roller |                |             |
-| 1.2     | Støtte for forlengelser     |                |              |
+| Versjon | Beskrivelse                         | Aktiv mottaker | Aktiv sender | 
+|---------|-------------------------------------|----------------|-------------|
+| 1.0     | Initiell versjon                    |                |             |
+| 1.1     | Kobler straffesak på roller         |                |             |
+| 1.2     | Støtte for forlengelser             |                |              |
+| 1.3     | Entydig identifisering av advokater |                |              |
 
 ## 1.1 Legger til kobling av straffesak
 Legges på alle roller som ikke er siktede. Siktede har kobling til straffesaken gjennom siktelsen.
@@ -12,4 +13,5 @@ Legges på alle roller som ikke er siktede. Siktede har kobling til straffesaken
 ## 1.2 Legger inn støtte for forlengelser
 Legger inn støtte for å markere begjæringer som forlengelser, og da med referanse til tidligere avgjørelse
 
-
+## 1.3 Entydig identifisering av advokater
+Advokater skal nå kun bli identifisert med identitetsnummer. Andre ubrukte felter relatert til personer på sak også fjernet 

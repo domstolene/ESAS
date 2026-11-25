@@ -4,8 +4,7 @@
     "sendtTid": "2024-04-17T22:45:38+02:00",
     "avsender": {
       "organisasjon": {
-        "organisasjonsnummer": "983998178",
-        "navn": "Sør-Øst politidistrikt"
+        "organisasjonsnummer": "983998178"
       },
       "person": {
         "navn": {
@@ -20,8 +19,7 @@
     },
     "mottaker": {
       "organisasjon": {
-        "organisasjonsnummer": "983997953",
-        "navn": "Innlandet politidistrikt"
+        "organisasjonsnummer": "983997953"
       }
     }
   },
@@ -96,7 +94,7 @@
                   "antallMaaneder": 4
                 }
               },
-              "tekst": "Siktede minster retten til å føre alle typer førerkortpliktig motorvogner i hele perioden",
+              "tekst": "Siktede mister retten til å føre alle typer førerkortpliktig motorvogner i hele perioden",
               "datoBeslagleggelse": "2024-04-17",
               "sperrefristGjelderFra": "2024-04-17",
               "nyFoererproeve": "FULL"
