@@ -7,30 +7,33 @@ Vegvesenet.
 
 For å opprettholde en oversikt over bidragsyterne og deres tilhørighet, ber vi om at alle brukere registreres her:
 
-| Navn                          | Virksomhet    | Rolle | GitHub-bruker         |
-|-------------------------------|---------------|-------|-----------------------|
-| Carl Fredrik Bøkestad         | Domstolen     | Admin | @calle-777            | 
-|                               |               |       |                       |
-| Martin Myran                  | Politi        | Admin | @martinmyran          |
-| Marius Sjølie                 | Politi        | Write | @mariussjolie         |
-| Eli Marie Strømsnes Landro    | Politi        | Write | @computas-ela         |
-| Monika Holmes                 | Politi        | Write | @msh032               |
-| Reidar Skibrek Håbrekke       | Politi        | Write | @reidosaurus          |
-| Michael Johansen              | Politi        | Write | @michael-johansen     |
-| Alexander Sjøsten             | Politi        | Write | @alecbalec            |
-| Adriano Stewart               | Politi        | Write | @AdrianoJS            |
-|                               |               |       |                       |
-| Nikolay Pukhovskiy            | KDI           | Admin | @pukhovskiy-bspoke    |
-| Emil Tørmoen                  | KDI           | Admin | @cx-emitor            |
-| Alexander Hovden              | KDI           | Write | @alexhovden           |
-| Tron Lund                     | KDI           | Write | @tronlund             |
-| Henrik Brimsholm              | KDI           | Write | @Henrik2S             |
-| Dag Morten Krogh              | KDI           | Write | @Cloudberries-DagM    |
-|                               |               |       |                       |
-| Øyvind M. Asbjørnsen          | Vegvesenet    | Write | @oyvindma             |
-| Alexander Fjellandsbø Uglehus | Konfliktrådet | Write | @AlexanderUglehus     |
-| Frank Sandersen               | Konfliktrådet | Write | @franksandersen       |
-|                               |               |       |                       |
+| Navn                            | Virksomhet    | Rolle | GitHub-bruker         |
+|---------------------------------|---------------|-------|-----------------------|
+| Carl Fredrik Bøkestad           | Domstolen     | Admin | @calle-777            | 
+|                                 |               |       |                       |
+| Martin Myran                    | Politi        | Admin | @martinmyran          |
+| Marius Sjølie                   | Politi        | Write | @mariussjolie         |
+| Eli Marie Strømsnes Landro      | Politi        | Write | @computas-ela         |
+| Monika Holmes                   | Politi        | Write | @msh032               |
+| Reidar Skibrek Håbrekke         | Politi        | Write | @reidosaurus          |
+| Michael Johansen                | Politi        | Write | @michael-johansen     |
+| Alexander Sjøsten               | Politi        | Write | @alecbalec            |
+| Adriano Stewart                 | Politi        | Write | @AdrianoJS            |
+| Ludvig Valter Angell Uteng      | Politi        | Write | @Valtyr-Angel         |
+| Joakim Lindquister              | Politi        | Write | @JoakimLindquisterPIT |
+| Erik Jansen                     | Politi        | Write | @janzh                |
+|                                 |               |       |                       |
+| Nikolay Pukhovskiy              | KDI           | Admin | @pukhovskiy-bspoke    |
+| Emil Tørmoen                    | KDI           | Admin | @cx-emitor            |
+| Alexander Hovden                | KDI           | Write | @alexhovden           |
+| Tron Lund                       | KDI           | Write | @tronlund             |
+| Henrik Brimsholm                | KDI           | Write | @Henrik2S             |
+| Dag Morten Krogh                | KDI           | Write | @Cloudberries-DagM    |
+|                                 |               |       |                       |
+| Øyvind M. Asbjørnsen            | Vegvesenet    | Write | @oyvindma             |
+| Alexander Fjellandsbø Uglehus   | Konfliktrådet | Write | @AlexanderUglehus     |
+| Frank Sandersen                 | Konfliktrådet | Write | @franksandersen       |
+|                                 |               |       |                       |
 
 ## Rutiner for oppdatering av tilganger
 
